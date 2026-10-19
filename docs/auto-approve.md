@@ -90,6 +90,28 @@ Switch `mergeMethod` to `queue` (or `auto-merge`), give the workflow `contents: 
 back, set `enabled: false` on the default branch. On the next run, opendrs withdraws its own
 approvals.
 
+### Merge only what the captain would wave through
+
+To auto-merge only PRs that are green *and* a captain "quick confirm", keep `mergeMethod: none`
+and let the workflow decide from the same run's outputs. Never from labels: anyone with triage
+access can add a label.
+
+```yaml
+      - uses: error-path/opendrs@v0
+        id: opendrs
+      - if: steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick'
+        env: { GH_TOKEN: "${{ github.token }}", PR: "${{ github.event.pull_request.number }}" }
+        run: gh pr merge "$PR" --auto --squash --repo "$GITHUB_REPOSITORY"
+      - if: ${{ !cancelled() && !(steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick') }}
+        env: { GH_TOKEN: "${{ github.token }}", PR: "${{ github.event.pull_request.number }}" }
+        run: gh pr merge "$PR" --disable-auto --repo "$GITHUB_REPOSITORY" || true
+```
+
+The second step turns auto-merge off whenever a later push is no longer quick-confirm. Give the
+job `contents: write` and allow auto-merge in the repository settings. opendrs's own repository
+runs this setup in [`.github/workflows/opendrs.yml`](https://github.com/error-path/opendrs/blob/main/.github/workflows/opendrs.yml),
+with a GitHub App token instead of `GITHUB_TOKEN`, so its merges also start workflows on `main`.
+
 ## What is never auto-approved
 
 Whatever the score:
