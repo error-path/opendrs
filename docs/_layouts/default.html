@@ -57,7 +57,7 @@
         </ul>
         {% assign in_more = false %}
         {% for item in site.nav.more %}{% if page.url == item.url %}{% assign in_more = true %}{% endif %}{% endfor %}
-        <details class="nav-more"{% if in_more %} open{% endif %}>
+        <details class="nav-more">
           <summary{% if in_more %} aria-current="page"{% endif %}>More</summary>
           <ul>
             {% for item in site.nav.more %}

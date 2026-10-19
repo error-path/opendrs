@@ -59,7 +59,8 @@ strong { color: var(--ink); font-weight: 600; }
 .nav-more ul a:hover, .nav-more ul a[aria-current="page"] { background: var(--raised); }
 
 @media (max-width: 40rem) {
-  .site-header { position: static; }
+  /* No blur when static: backdrop-filter would make the header the containing block of the fixed More sheet. */
+  .site-header { position: static; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .site-header nav { width: 100%; overflow-x: auto; scrollbar-width: none; }
   .nav-more { flex: 0 0 auto; }
   .nav-more ul { position: fixed; top: auto; right: 1rem; left: 1rem; bottom: 1rem; max-height: 60vh; overflow-y: auto; }
