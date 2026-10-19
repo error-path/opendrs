@@ -28,31 +28,35 @@ include:
 exclude:
   - specs
 nav:
-  - title: Auto-approve PRs
-    url: /auto-approve.html
-  - title: Policy
-    url: /policy.html
-  - title: Configuration
-    url: /configuration.html
-  - title: Signals
-    url: /signals.html
-  - title: Blast radius
-    url: /blast-radius.html
-  - title: LLM judge
-    url: /llm-judge.html
-  - title: LLM reviewers
-    url: /llm-reviewers.html
-  - title: Captain brief
-    url: /captain.html
-  - title: GitHub Action
-    url: /github-action.html
-  - title: CLI & MCP
-    url: /cli-and-mcp.html
-  - title: Calibration
-    url: /calibration.html
-  - title: Results
-    url: /results.html
-  - title: Experiments
-    url: /experiments.html
-  - title: Alternatives
-    url: /alternatives.html
+  primary:
+    - title: Captain brief
+      url: /captain.html
+    - title: Auto-approve PRs
+      url: /auto-approve.html
+    - title: GitHub Action
+      url: /github-action.html
+    - title: CLI & MCP
+      url: /cli-and-mcp.html
+    - title: Configuration
+      url: /configuration.html
+  more:
+    - title: Policy
+      url: /policy.html
+    - title: Signals
+      url: /signals.html
+    - title: Blast radius
+      url: /blast-radius.html
+    - title: LLM judge
+      url: /llm-judge.html
+    - title: LLM reviewers
+      url: /llm-reviewers.html
+    - title: Calibration
+      url: /calibration.html
+    - title: Results
+      url: /results.html
+    - title: Experiments
+      url: /experiments.html
+    - title: Alternatives
+      url: /alternatives.html
+    - title: Known limitations
+      url: /limitations.html

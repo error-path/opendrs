@@ -42,14 +42,27 @@ strong { color: var(--ink); font-weight: 600; }
 .header-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 2rem; min-height: 3.75rem; padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .wordmark { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 1.0625rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
 .wordmark svg { width: 1.25rem; height: 1.25rem; }
-.site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
-.site-header nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+.site-header nav { display: flex; align-items: center; gap: 0.25rem 1.5rem; }
+.site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: nowrap; gap: 0.25rem 1.5rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; white-space: nowrap; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+
+/* "More" menu: a <details>/<summary> dropdown, no JavaScript. */
+.nav-more { position: relative; margin: 0; }
+.nav-more summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; list-style: none; white-space: nowrap; }
+.nav-more summary::-webkit-details-marker { display: none; }
+.nav-more summary:hover, .nav-more summary[aria-current="page"], .nav-more[open] summary { color: var(--ink); }
+.nav-more summary::after { content: "▾"; margin-left: 0.3em; font-size: 0.75em; }
+.nav-more[open] summary::after { content: "▴"; }
+.nav-more ul { position: absolute; top: calc(100% + 0.6rem); right: 0; flex-direction: column; flex-wrap: nowrap; gap: 0; min-width: 11rem; padding: 0.4rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); z-index: 20; }
+.nav-more ul a { display: block; padding: 0.45rem 0.6rem; border-radius: 6px; }
+.nav-more ul a:hover, .nav-more ul a[aria-current="page"] { background: var(--raised); }
 
 @media (max-width: 40rem) {
   .site-header { position: static; }
   .site-header nav { width: 100%; overflow-x: auto; scrollbar-width: none; }
-  .site-header ul { flex-wrap: nowrap; white-space: nowrap; }
+  .nav-more { flex: 0 0 auto; }
+  .nav-more ul { position: fixed; top: auto; right: 1rem; left: 1rem; bottom: 1rem; max-height: 60vh; overflow-y: auto; }
   .report { padding: 1.25rem 1rem 0.25rem; }
 }
 

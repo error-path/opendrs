@@ -49,12 +49,22 @@
     <div class="wrap header-row">
       <a class="wordmark" href="{{ '/' | relative_url }}"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="8.5" width="5" height="3" rx="1.5" fill="#5cc08f"/><rect x="7.5" y="8.5" width="6" height="3" rx="1.5" fill="#e3ab4a"/><rect x="15" y="8.5" width="4" height="3" rx="1.5" fill="#ec6e60"/><circle cx="4" cy="10" r="3.2" fill="#000" stroke="#f4f4f5" stroke-width="1.6"/></svg>opendrs</a>
       <nav aria-label="Documentation">
-        <ul>
-          {% for item in site.nav %}
+        <ul class="nav-primary">
+          {% for item in site.nav.primary %}
           <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
           {% endfor %}
           <li><a href="https://github.com/error-path/opendrs">GitHub</a></li>
         </ul>
+        {% assign in_more = false %}
+        {% for item in site.nav.more %}{% if page.url == item.url %}{% assign in_more = true %}{% endif %}{% endfor %}
+        <details class="nav-more"{% if in_more %} open{% endif %}>
+          <summary{% if in_more %} aria-current="page"{% endif %}>More</summary>
+          <ul>
+            {% for item in site.nav.more %}
+            <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </details>
       </nav>
     </div>
   </header>
