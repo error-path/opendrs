@@ -30,7 +30,7 @@ commits in the riskiest X % of commits. How to read the metrics is in
 ## Change coupling on ApacheJIT
 
 **Question.** Does `coupling.missing` (spec §6.1 of
-[`docs/specs/2026-10-19-captain-brief-design.md`](specs/2026-10-19-captain-brief-design.html):
+[`docs/specs/2026-10-19-captain-brief-design.md`](https://github.com/error-path/opendrs/blob/main/docs/specs/2026-10-19-captain-brief-design.md):
 files that historically change together, where a PR changed only one of them) predict ApacheJIT
 bugs enough to ship as a captain-brief fact with specific thresholds, and does it also add ranking
 signal to the calibrated score? Pre-registered 2026-10-19, before any run; the question, setup and
@@ -94,7 +94,7 @@ show on the same history. Full detail, including the "stays brief-only" wording'
 thresholds; it does not enter the calibrated score.
 
 **Where.** `bench/apachejit/coupling-experiment.ts` and
-[`bench/apachejit/coupling-experiment.md`](../bench/apachejit/coupling-experiment.html). No LLM
+[`bench/apachejit/coupling-experiment.md`](../bench/apachejit/coupling-experiment.md). No LLM
 calls; no API spend. The 15 blobless clones were deleted after the run.
 
 ## Planned: LLM plus opendrs vs the LLM alone
