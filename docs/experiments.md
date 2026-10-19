@@ -21,7 +21,7 @@ commits in the riskiest X % of commits. How to read the metrics is in
 | Planned (pre-registered 2026-10-18, amended 2026-10-18) | Does an LLM reviewer plus opendrs beat the LLM alone, by enough to justify the tokens? | Free simulation on cached judgements: with opendrs as the decision layer, AUC 0.772–0.789 → 0.824 at no extra LLM tokens. At a 10 % review budget, 60 bugs caught against 47–51, false-positive rate 3.4 % against 4.9–5.5 % | Planned, paused (no paid runs yet) | [details](#planned-llm-plus-opendrs-vs-the-llm-alone) |
 | 2026-10-18 | Does `calibrate`'s fit, not its features, explain the gap to the Kamei LR? | Yes. The saved weights never saw the newest 20 % of history. Refitting on all of it: AUC 0.819 → 0.823 (Kamei 0.821) | Merged | [details](#fit-experiment-and-the-calibrate-refit) |
 | 2026-10-18 | Do reviewer-checklist signals (concurrency, removed safety code, weakened tests) add ranking signal? | No. AUC 0.782 with and without, on 5 projects | Not merged | [details](#review-heuristic-signals) |
-| 2026-10-18 | Do the missing Kamei features (ent, age, nuc, sexp) close the gap? | No. AUC 0.819 → 0.817 | Not merged | [details](#kamei-features) |
+| 2026-10-18 | Do the missing Kamei features (ent, age, nuc, sexp) close the gap? | No. AUC 0.819 → 0.817 | Rejected (archived as a patch) | [details](#kamei-features) |
 | 2026-10-16 | Do structured outputs fix the judge's malformed replies? | Judge failures 36 → 0 of 1,600 | Merged | [details](#structured-outputs-for-the-llm-judge) |
 | 2026-10-16 | Does a prompted LLM judge improve ranking, and is its `requireSafe` gate useful? | Ranking +0.015 to +0.022 AUC (within noise). Gate passes 28.5 % of commits at 5.3 % buggy (base rate 25.5 %) | Merged (opt-in) | [details](#structured-llm-judge-on-sampled-apachejit) |
 | 2026-10-16 | How do default and calibrated opendrs compare with the classic JIT metrics on a public benchmark? | Calibrated 0.819 vs Kamei 0.821 vs DRS-OSS 0.895 (published, other split) | Merged | [details](#apachejit-benchmark-baseline) |
@@ -321,11 +321,49 @@ projects were replayed and calibrated on the official split.
 opendrs led the Kamei LR in the same 4 of 14 projects as before: activemq, hadoop-mapreduce,
 kafka and zeppelin.
 
-**Verdict.** Not merged. The features cost replay time and added nothing. This result led to the
-fit experiment ([fit experiment](#fit-experiment-and-the-calibrate-refit)).
+**Verdict.** Rejected. The four features gave no significant improvement: pooled AUC moved from
+0.819 to 0.817, recall@10 % from 29.1 % to 29.4 % and recall@30 % from 66.1 % to 65.4 %, all within
+noise, while every replay paid for the extra history queries. The gap to the Kamei LR came from
+how `calibrate` fitted its weights, not from missing features, which the
+[fit experiment](#fit-experiment-and-the-calibrate-refit) then confirmed.
 
-**Where.** Branch `feat/kamei-features`, not merged: commits `7af1abc` (signals) and `cfec653`
-(results).
+**Configuration.** So the experiment can be repeated exactly or deliberately varied:
+
+- **Code.** opendrs 0.2.0 at commit `7af1abc` (bench build `5e4218379fda`), on top of `main` at
+  `0699a9c`. The implementation is archived as
+  [`bench/apachejit/archive/2026-10-18-kamei-features.patch`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/archive/2026-10-18-kamei-features.patch)
+  (`src/` and `tests/` only). It still applied cleanly to `main` on 2026-10-19:
+  `git apply bench/apachejit/archive/2026-10-18-kamei-features.patch`.
+- **Signals**, each point-in-time (only history before the commit), `unknown` with no prior
+  history or a shallow clone:
+
+  | Kamei metric | Signal | Value | Default weight | Range |
+  |---|---|---|---:|---|
+  | ent | `diffusion.entropy` | Shannon entropy of changed lines over the files that have any, divided by `log2(n)`; 0 for one file | 0.2 | 0 to 1 |
+  | age | `history.file_age` | `log1p` of the mean days since each pre-existing changed file last changed; 0 when only new files changed | 0 (sign left to calibration) | 0 to `log1p(3650)` |
+  | nuc | `history.unique_changes` | `log1p` of distinct prior commits touching any changed file, over all history (no lookback window) | 0.05 | 0 to `log1p(1000)` |
+  | sexp | `expertise.subsystem` | `log1p` of the author's prior non-merge commits touching a top-level directory this change touches (root files count as one directory) | −0.1 | 0 to `log1p(1000)` |
+
+- **Model.** The 0.2.0 `calibrate`: L2 logistic regression fitted on the oldest 80 % of labelled
+  commits, with the newest 20 % held out to choose the penalty and whether to keep the priors.
+  This is the fit that 0.3.0 later replaced.
+- **Data.** ApacheJIT, official split: train 2003–2016, test 2017–2019. All 15 projects replayed,
+  pooled over 24,686 test commits (5,818 buggy), excluding `apache/hadoop`, which has no positive
+  labels. Repository heads as listed in `bench/apachejit/results.md` at that commit; default
+  `history` and `graph` settings; no LLM judge.
+
+**When to revisit.** Re-run with the archived patch if any of these change, because each could
+let the features add signal they could not add here:
+
+- **The model.** These features overlap `diffusion.files`, `history.churn` and
+  `expertise.author_commits`. A model that handles correlated or non-linear features
+  (interactions, gradient-boosted trees) might use them where an L2 logistic regression could not.
+- **The baseline.** Since 0.3.0, `calibrate` refits on all labelled commits (calibrated AUC 0.823).
+  Compare against that refit, not against the 0.819 baseline used here.
+- **The data.** ApacheJIT is large, mature Java projects. Smaller repositories, other languages,
+  or AI-era histories with different change patterns may behave differently.
+- **Per-project calibration.** Pooled numbers hide projects; check the ones where opendrs trails
+  the Kamei LR.
 
 ## Structured outputs for the LLM judge
 

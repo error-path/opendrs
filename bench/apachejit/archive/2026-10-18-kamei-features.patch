@@ -1,0 +1,434 @@
+From 7af1abc31c9c21c2742d97028c46c10094e3531c Mon Sep 17 00:00:00 2001
+From: error-path <95665869+error-path@users.noreply.github.com>
+Date: Sun, 18 Oct 2026 13:51:17 +0530
+Subject: [PATCH] feat(signals): Kamei ent, age, nuc and sexp signals
+
+diffusion.entropy, history.file_age, history.unique_changes and
+expertise.subsystem follow Kamei et al.'s JIT metrics, point-in-time like
+the other history signals, with small default weights and plausible ranges
+for the gate's unknown worst case.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ src/model/defaults.ts           |  8 +++++
+ src/policy/gate.ts              |  4 +++
+ src/signals/diffusion.ts        | 19 +++++++++++
+ src/signals/expertise.ts        | 59 +++++++++++++++++++++++++++------
+ src/signals/history.ts          | 38 +++++++++++++++++++--
+ tests/policy/gate.test.ts       |  6 ++++
+ tests/signals/diffusion.test.ts | 21 ++++++++++--
+ tests/signals/expertise.test.ts | 19 ++++++++++-
+ tests/signals/history.test.ts   | 44 ++++++++++++++++++++++--
+ 9 files changed, 199 insertions(+), 19 deletions(-)
+
+diff --git a/src/model/defaults.ts b/src/model/defaults.ts
+index 9c16203..68e505c 100644
+--- a/src/model/defaults.ts
++++ b/src/model/defaults.ts
+@@ -30,6 +30,10 @@ import type { ModelWeights } from "../domain/types.js";
+  *   they get 0.6 (a bit under paths.critical); performance, structural and complex say "look
+  *   closer" rather than "this is wrong" and get 0.3. All positive: like llm.semantic, the judge can
+  *   only add risk. Calibration floors every llm.* weight at 0 for the same reason.
++ * - diffusion.entropy, history.unique_changes, expertise.subsystem and history.file_age are Kamei's
++ *   ent, nuc, sexp and age. They overlap diffusion.files, history.churn and expertise.author_commits,
++ *   so their weights are small. history.file_age is 0: studies disagree on its sign (recently
++ *   changed files are riskier in some projects, old ones in others), so only calibration sets it.
+  * - intercept -2.85 puts an empty diff at ≈ 0.05.
+  */
+ export const DEFAULT_WEIGHTS: ModelWeights = {
+@@ -43,11 +47,15 @@ export const DEFAULT_WEIGHTS: ModelWeights = {
+     "diffusion.files": 0.2,
+     "diffusion.dirs": 0.1,
+     "diffusion.authors": 0.15,
++    "diffusion.entropy": 0.2,
+     "history.prior_fixes": 0.3,
+     "history.incident": 0.8,
+     "history.churn": 0.05,
++    "history.file_age": 0,
++    "history.unique_changes": 0.05,
+     "expertise.author_commits": -0.3,
+     "expertise.owner_ratio": -0.3,
++    "expertise.subsystem": -0.1,
+     "complexity.touched": 0.04,
+     "blast.dependents": 0.2,
+     "blast.public_surface": 0.4,
+diff --git a/src/policy/gate.ts b/src/policy/gate.ts
+index fec449e..0302eb6 100644
+--- a/src/policy/gate.ts
++++ b/src/policy/gate.ts
+@@ -49,11 +49,15 @@ const PLAUSIBLE_RANGE: Record<string, [number, number]> = {
+   "diffusion.files": [Math.log1p(1), Math.log1p(20)],
+   "diffusion.dirs": [Math.log1p(1), Math.log1p(8)],
+   "diffusion.authors": [0, Math.log1p(20)],
++  "diffusion.entropy": [0, 1],
+   "history.prior_fixes": [0, Math.log1p(10)],
+   "history.incident": [0, 1],
+   "history.churn": [0, Math.log1p(100)],
++  "history.file_age": [0, Math.log1p(3650)],
++  "history.unique_changes": [0, Math.log1p(1000)],
+   "expertise.author_commits": [0, Math.log1p(1000)],
+   "expertise.owner_ratio": [0, 1],
++  "expertise.subsystem": [0, Math.log1p(1000)],
+   "complexity.touched": [0, Math.log1p(300)],
+   "blast.dependents": [0, Math.log1p(200)],
+   "blast.public_surface": [0, 1],
+diff --git a/src/signals/diffusion.ts b/src/signals/diffusion.ts
+index 628a2bc..eea1769 100644
+--- a/src/signals/diffusion.ts
++++ b/src/signals/diffusion.ts
+@@ -43,9 +43,28 @@ export const diffusionSignals: SignalProvider = async (ctx) => {
+     },
+     dirSignal,
+     authorSignal,
++    entropySignal(files.map((f) => f.added + f.deleted)),
+   ];
+ };
+ 
++/**
++ * Kamei's "ent": Shannon entropy of the changed lines across the files that have any, divided by its
++ * maximum log2(n), so 1 means evenly spread and 0 means one file holds every line.
++ */
++function entropySignal(lines: number[]): Signal {
++  const counts = lines.filter((n) => n > 0);
++  const total = counts.reduce((a, b) => a + b, 0);
++  const h = counts.reduce((sum, n) => sum - (n / total) * Math.log2(n / total), 0);
++  const value = counts.length > 1 ? h / Math.log2(counts.length) : 0;
++  return {
++    id: "diffusion.entropy",
++    value,
++    status: "observed",
++    summary: `changed lines spread over ${plural(counts.length, "file")} with normalized entropy ${value.toFixed(2)}`,
++    evidence: [],
++  };
++}
++
+ /** First two directory levels of a path; "." for files at the repo root. */
+ function topDir(path: string): string {
+   const parts = path.split("/").slice(0, -1);
+diff --git a/src/signals/expertise.ts b/src/signals/expertise.ts
+index f063917..01c3a9e 100644
+--- a/src/signals/expertise.ts
++++ b/src/signals/expertise.ts
+@@ -1,6 +1,9 @@
+-import type { ScoringContext, Signal, SignalProvider } from "../domain/types.js";
++import type { HistoryIndex, ScoringContext, Signal, SignalProvider } from "../domain/types.js";
+ import { countedFiles, historyAvailable, historyPath, plural, topEvidence, unknown } from "./util.js";
+ 
++const IDS = ["expertise.author_commits", "expertise.owner_ratio", "expertise.subsystem"];
++const allUnknown = (why: string): Signal[] => IDS.map((id) => unknown(id, why));
++
+ /** Spec §4 "expertise.*" signals. */
+ export const expertiseSignals: SignalProvider = async (ctx) => {
+   const untrusted = !ctx.trust.authorVerified
+@@ -8,17 +11,11 @@ export const expertiseSignals: SignalProvider = async (ctx) => {
+     : !ctx.trust.historyComplete
+       ? "history is incomplete (shallow clone), so the author's prior commits cannot be counted"
+       : undefined;
+-  if (untrusted) return [unknown("expertise.author_commits", untrusted), unknown("expertise.owner_ratio", untrusted)];
++  if (untrusted) return allUnknown(untrusted);
+ 
+   const email = ctx.diff.author?.email.toLowerCase();
+-  if (!email) {
+-    const why = "author email unknown for the head commit";
+-    return [unknown("expertise.author_commits", why), unknown("expertise.owner_ratio", why)];
+-  }
+-  if (!historyAvailable(ctx)) {
+-    const why = "no commit history before this change";
+-    return [unknown("expertise.author_commits", why), unknown("expertise.owner_ratio", why)];
+-  }
++  if (!email) return allUnknown("author email unknown for the head commit");
++  if (!historyAvailable(ctx)) return allUnknown("no commit history before this change");
+ 
+   const prior = ctx.history.authorCommitCount(email, ctx.asOf);
+   const authorCommits: Signal = {
+@@ -28,9 +25,49 @@ export const expertiseSignals: SignalProvider = async (ctx) => {
+     summary: `${email} has ${plural(prior, "prior commit")} in this repo`,
+     evidence: [],
+   };
+-  return [authorCommits, ownerRatio(ctx, email)];
++  return [authorCommits, ownerRatio(ctx, email), subsystem(ctx, email)];
+ };
+ 
++/** Kamei's "sexp": the author's prior commits that touched any top-level directory this change touches. */
++function subsystem(ctx: ScoringContext, email: string): Signal {
++  const dirs = new Set(countedFiles(ctx).map((f) => topLevel(f.path)));
++  let n = 0;
++  for (const c of authorCommitsFor(ctx.history).get(email) ?? []) {
++    if (ctx.asOf !== undefined && c.time >= ctx.asOf) break;
++    if (c.dirs.some((d) => dirs.has(d))) n++;
++  }
++  return {
++    id: "expertise.subsystem",
++    value: Math.log1p(n),
++    status: "derived",
++    summary: `${email} has ${plural(n, "prior commit")} in ${[...dirs].slice(0, 5).join(", ") || "no directory"}`,
++    evidence: [],
++  };
++}
++
++const topLevel = (path: string): string => (path.includes("/") ? path.slice(0, path.indexOf("/")) : ".");
++
++// Backtests score thousands of commits against one HistoryIndex; group its commits by author once.
++const byAuthor = new WeakMap<HistoryIndex, Map<string, Array<{ time: number; dirs: string[] }>>>();
++
++/** Each author's non-merge commits (like authorCommitCount), oldest first, with the top-level directories they touched. */
++function authorCommitsFor(history: HistoryIndex): Map<string, Array<{ time: number; dirs: string[] }>> {
++  let hit = byAuthor.get(history);
++  if (hit) return hit;
++  hit = new Map();
++  for (const c of history.commits) {
++    if (c.parents.length > 1) continue;
++    const email = c.authorEmail.toLowerCase();
++    const entry = { time: c.time, dirs: [...new Set(c.files.map(topLevel))] };
++    const list = hit.get(email);
++    if (list) list.push(entry);
++    else hit.set(email, [entry]);
++  }
++  for (const list of hit.values()) list.sort((a, b) => a.time - b.time);
++  byAuthor.set(history, hit);
++  return hit;
++}
++
+ function ownerRatio(ctx: ScoringContext, email: string): Signal {
+   const id = "expertise.owner_ratio";
+   const existing = countedFiles(ctx).filter((f) => f.status !== "added");
+diff --git a/src/signals/history.ts b/src/signals/history.ts
+index 5c693a3..66a6095 100644
+--- a/src/signals/history.ts
++++ b/src/signals/history.ts
+@@ -7,7 +7,13 @@ import { asOfOrNow, countedFiles, historyAvailable, historyPath, plural, shallow
+ export const historySignals: SignalProvider = async (ctx) => {
+   if (!historyAvailable(ctx)) {
+     const why = "no commit history before this change";
+-    return [unknown("history.prior_fixes", why), unknown("history.incident", why), unknown("history.churn", why)];
++    return [
++      unknown("history.prior_fixes", why),
++      unknown("history.incident", why),
++      unknown("history.churn", why),
++      unknown("history.file_age", why),
++      unknown("history.unique_changes", why),
++    ];
+   }
+   const files = countedFiles(ctx);
+   const days = ctx.config.history.lookbackDays;
+@@ -44,9 +50,37 @@ export const historySignals: SignalProvider = async (ctx) => {
+     summary: `${plural(recent.size, "commit")} touched these files ${window}`,
+     evidence: topEvidence(perFile.sort((a, b) => b.n - a.n).map(({ file, n }) => ({ file, detail: `${plural(n, "commit")} ${window}` }))),
+   };
+-  return [priorFixes, await incidentSignal(ctx, files), churn].map((s) => shallowAware(ctx, s));
++  return [priorFixes, await incidentSignal(ctx, files), churn, fileAge(ctx, files, now), uniqueChanges(ctx, files)].map((s) => shallowAware(ctx, s));
+ };
+ 
++/** Kamei's "age": mean days since each pre-existing changed file was last changed. */
++function fileAge(ctx: ScoringContext, files: ChangedFile[], now: number): Signal {
++  const ages = files.flatMap((f) => {
++    const last = f.status === "added" ? undefined : ctx.history.fileCommits(historyPath(f), ctx.asOf)[0];
++    return last ? [{ file: f.path, days: (now - last.time) / 86_400 }] : [];
++  });
++  const mean = ages.length ? ages.reduce((n, a) => n + a.days, 0) / ages.length : 0;
++  return {
++    id: "history.file_age",
++    value: Math.log1p(mean),
++    status: "derived",
++    summary: ages.length ? `changed files were last changed ${Math.round(mean)} days ago on average` : "no pre-existing file with history changed",
++    evidence: topEvidence(ages.sort((a, b) => a.days - b.days).map(({ file, days }) => ({ file, detail: `last changed ${Math.round(days)} days ago` }))),
++  };
++}
++
++/** Kamei's "nuc": distinct prior commits that touched any changed file, with no lookback window. */
++function uniqueChanges(ctx: ScoringContext, files: ChangedFile[]): Signal {
++  const shas = new Set(files.flatMap((f) => ctx.history.fileCommits(historyPath(f), ctx.asOf).map((c) => c.sha)));
++  return {
++    id: "history.unique_changes",
++    value: Math.log1p(shas.size),
++    status: "derived",
++    summary: `${plural(shas.size, "prior commit")} touched these files`,
++    evidence: [],
++  };
++}
++
+ /** A past incident: when it became known, and which files and folders it implicates. */
+ interface IncidentEvent {
+   time?: number;
+diff --git a/tests/policy/gate.test.ts b/tests/policy/gate.test.ts
+index f3a2ef5..81dd8a0 100644
+--- a/tests/policy/gate.test.ts
++++ b/tests/policy/gate.test.ts
+@@ -563,6 +563,12 @@ describe("decide: rule 4 (unknowns and LLM failure)", () => {
+     expect(out.decision).toBe("human-review");
+   });
+ 
++  it.each(["diffusion.entropy", "history.file_age", "history.unique_changes", "expertise.subsystem"])("knows the plausible range of %s", (id) => {
++    // A calibrated model may weigh any signal; a tiny weight keeps the worst case green.
++    const model: ModelWeights = { ...DEFAULT_WEIGHTS, weights: { ...DEFAULT_WEIGHTS.weights, [id]: 0.01 } };
++    expect(decide(input({ score: 0.05, model, signals: [unknown(id, 0)] })).decision).toBe("auto-approve");
++  });
++
+   it("ignores unknowns with zero weight and treats unknowns without a known range as risk", () => {
+     expect(decide(input({ signals: [unknown("lang.js", 0)] })).decision).toBe("auto-approve");
+     const model: ModelWeights = { ...DEFAULT_WEIGHTS, weights: { ...DEFAULT_WEIGHTS.weights, "custom.feature": 0.1 } };
+diff --git a/tests/signals/diffusion.test.ts b/tests/signals/diffusion.test.ts
+index 42eef7f..d4fa883 100644
+--- a/tests/signals/diffusion.test.ts
++++ b/tests/signals/diffusion.test.ts
+@@ -26,7 +26,7 @@ describe("diffusionSignals", () => {
+       T + 500,
+     );
+     const signals = await diffusionSignals(await contextFor(repo, "HEAD~1"));
+-    expect(signals.map((s) => s.id)).toEqual(["diffusion.files", "diffusion.dirs", "diffusion.authors"]);
++    expect(signals.map((s) => s.id)).toEqual(["diffusion.files", "diffusion.dirs", "diffusion.authors", "diffusion.entropy"]);
+ 
+     expect(byId(signals, "diffusion.files")).toMatchObject({ value: Math.log1p(4), status: "observed" });
+     const dirs = byId(signals, "diffusion.dirs");
+@@ -57,11 +57,28 @@ describe("diffusionSignals", () => {
+     expect(byId(signals, "diffusion.authors")).toMatchObject({ value: 0, status: "unknown" });
+   });
+ 
++  it("measures how evenly the changed lines spread over the files (normalized entropy)", async () => {
++    repo = makeRepo();
++    repo.commit({ "a.ts": "x\n", "b.ts": "x\n", "c.ts": "x\n", "d.ts": "x\n" }, "init", ALICE, T + 100);
++    // a: 2 lines, b: 1, c: 1, d: renamed only (0 lines), yarn.lock ignored: p = 1/2, 1/4, 1/4.
++    repo.commit({ "a.ts": "y\n", "b.ts": "x\ny\n", "c.ts": "x\nz\n", "d.ts": null, "e.ts": "x\n", "yarn.lock": "l\n" }, "change", ALICE, T + 200);
++    const entropy = byId(await diffusionSignals(await contextFor(repo, "HEAD~1")), "diffusion.entropy");
++    expect(entropy.status).toBe("observed");
++    expect(entropy.value).toBeCloseTo(1.5 / Math.log2(3));
++  });
++
++  it("reports zero entropy when one file holds every changed line", async () => {
++    repo = makeRepo();
++    repo.commit({ "a.ts": "x\n", "b.ts": "x\n" }, "init", ALICE, T + 100);
++    repo.commit({ "a.ts": "y\n" }, "change", ALICE, T + 200);
++    expect(byId(await diffusionSignals(await contextFor(repo, "HEAD~1")), "diffusion.entropy").value).toBe(0);
++  });
++
+   it("handles an empty diff", async () => {
+     repo = makeRepo();
+     repo.commit({ "a.ts": "a\n" }, "init");
+     const signals = await diffusionSignals(await contextFor(repo, "HEAD"));
+-    expect(signals.map((s) => s.value)).toEqual([0, 0, 0]);
++    expect(signals.map((s) => s.value)).toEqual([0, 0, 0, 0]);
+   });
+ 
+   it("reports diffusion.authors as unknown in a shallow clone, keeping the count as a lower bound", async () => {
+diff --git a/tests/signals/expertise.test.ts b/tests/signals/expertise.test.ts
+index a511ef7..c7dcea9 100644
+--- a/tests/signals/expertise.test.ts
++++ b/tests/signals/expertise.test.ts
+@@ -23,7 +23,7 @@ describe("expertiseSignals", () => {
+     seed();
+     repo.commit({ "own.ts": "x\n", "major.ts": "x\n", "other.ts": "x\n", "brand-new.ts": "n\n" }, "change", { name: "A", email: "ALICE@example.com" }, T + 500);
+     const signals = await expertiseSignals(await contextFor(repo, "HEAD~1"));
+-    expect(signals.map((s) => s.id)).toEqual(["expertise.author_commits", "expertise.owner_ratio"]);
++    expect(signals.map((s) => s.id)).toEqual(["expertise.author_commits", "expertise.owner_ratio", "expertise.subsystem"]);
+     expect(byId(signals, "expertise.author_commits")).toMatchObject({ value: Math.log1p(3), status: "derived" });
+     const owner = byId(signals, "expertise.owner_ratio");
+     expect(owner).toMatchObject({ value: 2 / 3, status: "derived" });
+@@ -48,6 +48,7 @@ describe("expertiseSignals", () => {
+     expect(signals.map((s) => [s.id, s.value, s.status])).toEqual([
+       ["expertise.author_commits", 0, "unknown"],
+       ["expertise.owner_ratio", 0, "unknown"],
++      ["expertise.subsystem", 0, "unknown"],
+     ]);
+     expect(signals[0]!.summary).toMatch(/author/i);
+   });
+@@ -64,10 +65,26 @@ describe("expertiseSignals", () => {
+     expect(signals.map((s) => [s.id, s.value, s.status])).toEqual([
+       ["expertise.author_commits", 0, "unknown"],
+       ["expertise.owner_ratio", 0, "unknown"],
++      ["expertise.subsystem", 0, "unknown"],
+     ]);
+     for (const s of signals) expect(s.summary).toMatch(why);
+   });
+ 
++  it("counts the author's prior commits in the changed top-level directories", async () => {
++    repo = makeRepo();
++    repo.commit({ "core/a.ts": "1\n" }, "alice in core", ALICE, T + 100);
++    repo.commit({ "core/b.ts": "1\n", "web/x.ts": "1\n" }, "alice in core and web", ALICE, T + 200);
++    repo.commit({ "docs/r.md": "1\n" }, "alice in docs", ALICE, T + 300);
++    repo.commit({ "core/a.ts": "2\n" }, "bob in core", BOB, T + 400);
++    repo.commit({ "README.md": "1\n" }, "alice at the root", ALICE, T + 500);
++    repo.commit({ "core/a.ts": "3\n" }, "alice in core, later", ALICE, T + 700);
++    repo.commit({ "core/deep/c.ts": "x\n", "web/y.ts": "y\n", "README.md": "2\n" }, "change", ALICE, T + 800);
++    const at = async (asOf?: number) => byId(await expertiseSignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf })), "expertise.subsystem");
++    // core, web and the root: commits 1, 2 (once), 5 and 6; not docs, not bob's.
++    expect(await at()).toMatchObject({ value: Math.log1p(4), status: "derived" });
++    expect((await at(T + 600)).value).toBeCloseTo(Math.log1p(3));
++  });
++
+   it("reports 0 ownership when only new files changed", async () => {
+     seed();
+     repo.commit({ "fresh.ts": "x\n" }, "change", ALICE, T + 500);
+diff --git a/tests/signals/history.test.ts b/tests/signals/history.test.ts
+index b3171e0..3db00fb 100644
+--- a/tests/signals/history.test.ts
++++ b/tests/signals/history.test.ts
+@@ -28,7 +28,7 @@ describe("historySignals", () => {
+     repo.commit({ "src/c.ts": "3\n" }, "fix: unrelated", undefined, T - 7 * DAY);
+     repo.commit({ "src/a.ts": "4\n", "src/b.ts": "4\n" }, "feat: scored change", undefined, T);
+     const signals = await historySignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf: T }));
+-    expect(signals.map((s) => s.id)).toEqual(["history.prior_fixes", "history.incident", "history.churn"]);
++    expect(signals.map((s) => s.id)).toEqual(["history.prior_fixes", "history.incident", "history.churn", "history.file_age", "history.unique_changes"]);
+     expect(byId(signals, "history.prior_fixes")).toMatchObject({ value: Math.log1p(1), status: "derived" });
+     expect(byId(signals, "history.churn")).toMatchObject({ value: Math.log1p(3), status: "derived" });
+     expect(byId(signals, "history.incident")).toMatchObject({ value: 0, status: "derived" });
+@@ -77,7 +77,7 @@ describe("historySignals", () => {
+     repo = makeRepo();
+     const first = repo.commit({ "a.ts": "1\n" }, "init");
+     const signals = await historySignals(await contextFor(repo, EMPTY_TREE, first));
+-    expect(signals.map((s) => s.status)).toEqual(["unknown", "unknown", "unknown"]);
++    expect(signals.map((s) => s.status)).toEqual(["unknown", "unknown", "unknown", "unknown", "unknown"]);
+   });
+ 
+   it("is unknown in a shallow clone, keeping what it saw as a lower bound", async () => {
+@@ -87,9 +87,47 @@ describe("historySignals", () => {
+     repo.commit({ "src/a.ts": "2\n" }, "feat: scored change", undefined, T);
+     const ctx = await contextFor(repo, "HEAD~1", "HEAD", { asOf: T });
+     const signals = await historySignals({ ...ctx, trust: { authorVerified: true, historyComplete: false } });
+-    expect(signals.map((s) => s.status)).toEqual(["unknown", "unknown", "unknown"]);
++    expect(signals.map((s) => s.status)).toEqual(["unknown", "unknown", "unknown", "unknown", "unknown"]);
+     for (const s of signals) expect(s.summary, s.id).toContain("shallow clone: history incomplete");
+     expect(byId(signals, "history.prior_fixes").value).toBe(Math.log1p(1));
+     expect(byId(signals, "history.churn").value).toBe(Math.log1p(2));
++    expect(byId(signals, "history.unique_changes").value).toBe(Math.log1p(2));
++    expect(byId(signals, "history.file_age").value).toBeCloseTo(Math.log1p(10));
++  });
++
++  function seedAges() {
++    repo = makeRepo();
++    repo.commit({ "src/a.ts": "0\n", "src/b.ts": "0\n" }, "init", undefined, T - 100 * DAY);
++    repo.commit({ "src/a.ts": "1\n" }, "edit a", undefined, T - 50 * DAY);
++    repo.commit({ "src/b.ts": "1\n" }, "edit b", undefined, T - 10 * DAY);
++    repo.commit({ "src/c.ts": "1\n" }, "unrelated", undefined, T - 5 * DAY);
++    repo.commit({ "src/a.ts": "2\n", "src/b.ts": "2\n", "src/new.ts": "n\n" }, "scored change", undefined, T);
++  }
++
++  it("counts every distinct prior commit to the changed files and their mean age, ignoring new files", async () => {
++    seedAges();
++    const signals = await historySignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf: T }));
++    expect(byId(signals, "history.unique_changes")).toMatchObject({ value: Math.log1p(3), status: "derived" });
++    // a last changed 50 days ago, b 10 days ago.
++    const age = byId(signals, "history.file_age");
++    expect(age.status).toBe("derived");
++    expect(age.value).toBeCloseTo(Math.log1p(30));
++  });
++
++  it("only sees file history before asOf", async () => {
++    seedAges();
++    const signals = await historySignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf: T - 20 * DAY }));
++    expect(byId(signals, "history.unique_changes").value).toBe(Math.log1p(2));
++    // a last changed 30 days before the cutoff, b (init) 80 days before.
++    expect(byId(signals, "history.file_age").value).toBeCloseTo(Math.log1p(55));
++  });
++
++  it("reports age 0 when only new files changed", async () => {
++    repo = makeRepo();
++    repo.commit({ "a.ts": "0\n" }, "init", undefined, T - 10 * DAY);
++    repo.commit({ "b.ts": "0\n" }, "add b", undefined, T);
++    const signals = await historySignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf: T }));
++    expect(byId(signals, "history.file_age")).toMatchObject({ value: 0, status: "derived" });
++    expect(byId(signals, "history.unique_changes")).toMatchObject({ value: 0, status: "derived" });
+   });
+ });
+-- 
+2.39.5 (Apple Git-154)
+
