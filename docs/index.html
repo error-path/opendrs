@@ -2,14 +2,16 @@
 layout: default
 layout_class: home
 software: true
-description: "opendrs is an open-source PR blast radius analyzer. It gives every pull request a calibrated 0-1 risk score so AI-reviewed, low-risk PRs can be auto-approved into the merge queue while risky ones wait for a human. GitHub Action, CLI, Claude Code plugin and MCP server."
+description: "opendrs is an open-source PR blast radius analyzer. It gives every pull request a calibrated 0-1 risk score, a review brief for your AI reviewer, and a captain brief for the final human reviewer, with optional auto-approval into the merge queue for low-risk PRs. GitHub Action, CLI, Claude Code plugin and MCP server."
 faq:
   - q: "What is the blast radius of a pull request?"
     a: "It is how much can break if the change is wrong: how many files import the changed code, whether exported or public symbols changed, and whether the change reaches critical paths. opendrs measures it from your import graph and combines it with file history, author experience, size and missing tests into one 0-1 risk score. See [What is PR blast radius?](blast-radius.html)."
   - q: "Can opendrs auto-approve and auto-merge pull requests?"
     a: "Yes, when you turn it on. The GitHub Action approves a PR only when it scores in the green tier (below 0.3 by default), no safety rule fires, and your required AI-review check has passed. It can then enable auto-merge or add the PR to the merge queue. Everything else waits for a human. See [Auto-approve low-risk pull requests](auto-approve.html)."
+  - q: "What does opendrs give the final human reviewer?"
+    a: "A priority (careful review, standard review or quick confirm), one named reviewer, and up to five facts the editor and the AI review rounds didn't show: files that usually change together but weren't this time, a new import between modules, a changed public contract or dependency, or what the PR picked up during its AI review rounds. It is advisory and never approves or blocks a PR on its own. See [the captain brief](captain.html)."
   - q: "How is this different from an AI code review tool?"
-    a: "An AI reviewer reads the diff and comments on correctness. opendrs estimates how risky the change is to ship, from git history and the dependency graph, and decides whether a human still needs to look. They work together: opendrs can require that your AI review (Claude, CodeRabbit, Copilot or any check run) has passed before it approves."
+    a: "An AI reviewer reads the diff and comments on correctness. opendrs estimates how risky the change is to ship, from git history and the dependency graph, decides whether a human still needs to look, and, for the human who does, says how much attention the PR needs and up to five architecture and history facts the editor and the AI review rounds didn't show. They work together: opendrs can require that your AI review (Claude, CodeRabbit, Copilot or any check run) has passed before it approves. See [the captain brief](captain.html)."
   - q: "Does it need an LLM, an API key or a hosted service?"
     a: "No. The score is computed from git alone and runs inside your CI or on your machine. An LLM judge is optional; when enabled it can only raise the score, never lower it."
   - q: "How do I know a 0.3 threshold is right for my repository?"
@@ -20,7 +22,7 @@ faq:
 <div class="wrap">
   <section class="hero">
     <h1>A 0–1 risk score for every pull request</h1>
-    <p class="lede">AI writes and reviews code faster than people can read it, so human review is now the bottleneck. opendrs measures each PR's blast radius and history and turns them into one calibrated score. Low-risk PRs that passed your AI review are approved and sent to the merge queue. Riskier ones wait for a person.</p>
+    <p class="lede">AI writes and reviews code faster than people can read it, so human review is now the bottleneck. opendrs measures each PR's blast radius and history and turns them into one calibrated score, a review brief for your AI reviewer, and a captain brief for whoever does the final human review: how much attention it needs, and up to five architecture and history facts the editor and the AI review rounds didn't show. Turn on auto-approval and low-risk PRs that passed your AI review go straight to the merge queue; riskier ones wait for a person.</p>
     <div class="actions">
       <a class="button primary" href="auto-approve.html">Set up auto-approval</a>
       <a class="button" href="https://github.com/error-path/opendrs">View on GitHub</a>
