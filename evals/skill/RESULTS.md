@@ -1192,3 +1192,230 @@ opendrs-review.md` (brief-first-then-read ordering; brief-coverage opening line)
 grader or fixture files changed this cycle — every diagnosed cause traced to skill text or
 frontmatter, not to a mis-specified grader, except `review-before-pr`'s `reading-order` gap, which
 is flagged above as a grader-change candidate for next cycle rather than changed now.
+
+## Cycle 3 — `review-before-pr`: the command body was never loading when `npx` was blocked
+
+Run from the same non-isolated worker setup as Cycle 2 (`feat/skill-cycle-2`). Target: `reading-order`
+at ≥ 0.8 pass rate over `--runs 5`, with honest graders and no regression elsewhere. Per the task,
+no further wording tweaks: root-cause from full traces first.
+
+### Step 1 — three kept traces, read end to end (`--keep-temp --runs 3`, 2026-10-21T14-34-05-111Z)
+
+Score 0.67, passRate 0.33 (`used-brief` PASS×3, `reading-order` FFF / FFF / TTT). Turn by turn:
+
+- **Run 0 (`/private/tmp/e-rBNlby`, FAIL):** `Skill({skill:"opendrs:opendrs-review"})` → tool result
+  **is an error**: `Shell command failed for pattern "!`npx @error-path/opendrs brief`": npm error
+  403 … deny network-outbound registry.npmjs.org`. The agent then said *"The opendrs brief couldn't
+  run … I'll review the diff directly instead"*, tried `git` (xcrun cache write denied), then `Glob` +
+  `Read` of all five files, and answered in its own Blocking/Should-fix/Minor shape — no coverage
+  line, no `review_brief` call, gateway.ts finding first.
+- **Run 1 (`/private/tmp/e-RCnDTE`, FAIL):** identical `Skill` error, then two failed `git` calls,
+  then gave up at turn 5: *"I couldn't review the branch because git won't run in this sandbox, so I
+  haven't looked at any of your code."* Never called `review_brief`, never read a file.
+- **Run 2 (`/private/tmp/e-pN8Oyw`, PASS 3/3):** identical `Skill` error, but this time the agent
+  chose on its own to `ToolSearch` + call `review_brief` and `score_diff`, read charge.ts, retry.ts,
+  gateway.ts, and led with a gateway.ts finding. Still no coverage line.
+
+**Root cause (c)+(d), with the evidence above:** `commands/opendrs-review.md` embeds the brief with
+a `` !`npx @error-path/opendrs brief` `` bash substitution. When that command exits non-zero (the
+sandbox denies the npm registry; a real user hits this with any blocked registry or a `git` error)
+the `Skill` tool returns an **error instead of the command body** — so none of the command's
+instructions (MCP fallback, read-every-hunk, pre-answer file-list check, mandatory coverage line)
+ever reach the model. Every wording change made to that file in rounds 7 and Cycle 2 was inert on
+exactly the runs that failed; the ones that passed were the model improvising the right thing
+without the instructions. This also explains why Cycle 2 saw the coverage line in zero transcripts
+while being sure the text was "in context" — it was on disk, not in the conversation.
+
+A second, smaller mismatch (d): the real renderer (`src/brief/render.ts:35`) prints "Not ranked" as
+a count (`N other hunks in M files`) and never names the files; the mock matches it, but the
+command's coverage-line template asked for "[file(s) from Not ranked]", which the brief can't
+supply. The agents handled it ("none — the brief's 1 other hunk is gateway.ts, which I read") but
+the template promised something the product doesn't produce.
+
+And the grader side (a)+(b): an `llm` grader without `focus: trace` is judged (by haiku, 3 votes)
+on the **final response only** — it never sees the brief. "Reflects the brief's reading order" is
+therefore unverifiable from what the judge is given; it has to guess what "Review first" contained.
+Cycle 2's own table already showed the symptom: 13-39/run 0 PASSED 3/3 while admitting it never
+read gateway.ts, and 13-39/run 1 FAILED 3/3 after reading all three files.
+
+### Fix 1 — command layer (`commands/opendrs-review.md`)
+
+Made the substitution unable to fail: `` !`npx @error-path/opendrs brief 2>&1 || echo "[opendrs
+brief CLI failed, see the output above: call the MCP tool review_brief instead]"` `` — the command
+body now always loads, and on CLI failure the model sees the failure text plus the fallback cue in
+place of the brief. Also stated that `repoDir` is the current working directory. Verified with
+`--keep-temp --runs 3`: in **3/3** runs the trace is now `Skill` → `ToolSearch` → `review_brief` →
+`Read charge.ts` → `Read retry.ts` → `Glob` → `Read gateway.ts` (+ tests/types) → final answer that
+**opens with the "Brief coverage —" line**, leads with the charge.ts/retry.ts guard-bypass finding,
+answers all three "Check specifically" questions with file:line, and names gateway.ts as read.
+`used-brief` PASS×3. `reading-order` on those three behaviourally identical answers: FFF / TTT /
+FFT — the judge, not the agent, is now the variable.
+
+### Fix 2 — the judge, measured: a one-word haiku verdict is inverted on this criterion
+
+With the command body loading, re-ran `--runs 5`: `used-brief` 5/5, coverage line present 5/5,
+`reading-order` **1/5** — FFF, FFF, TTT, FFF, FFF. Read all five answers against the (rewritten,
+four-check) criteria myself: runs 0 and 1 satisfy every check (coverage line, charge.ts/retry.ts
+finding first, Q1–Q3 answered with file:line, gateway.ts named as read); run 2 — the only PASS —
+**leads with a `gateway.ts` finding**, the unranked file; runs 3 and 4 genuinely skipped
+`gateway.ts`. So the judge passed the one answer that violates the ordering and failed the two
+that follow it.
+
+Reproduced the harness judge outside the harness (its template, read from the CLI binary: *"You
+are grading the output of a coding agent against a criterion. … Respond with exactly one word:
+PASS or FAIL"*, model haiku, 3 votes, final response only). Run 0 and run 1 answers: with thinking
+left on, PASS PASS PASS both; with thinking off (the one-word template gives the judge no room to
+reason), FAIL FAIL FAIL both — matching the harness. Asked for a one-line reason instead of one
+word, the same model passes them. Two simpler single-question criteria (first finding in a
+Review-first file; three check questions addressed) failed 6/8 and 8/8 correct answers under the
+one-word template, and passed them when allowed a sentence. **Cause (b), structurally:** the
+grader was being judged by a reader that can't apply a multi-clause criterion to a 4 KB review in
+one token; no wording of the criterion fixes that, which is why five rounds of wording never moved
+it. The harness's own note agrees: *"llm judges are noisy on long inputs, prefer a regex grader"*.
+
+**Eval fix (logged as such):** `reading-order` is now a deterministic `regex` grader, plus three
+more, each checking one thing `/opendrs-review` promises, on the final response, with no judge:
+
+- `coverage-line` — the mandatory opening line names `charge.ts` and `retry.ts` under "Review
+  first".
+- `reads-unranked` — the coverage line's "Not ranked" slot names `gateway.ts`, the one changed
+  file outside "Review first" (a review that stopped at "Review first" cannot write that).
+- `reading-order` — the first finding heading (P0–P3 label at line start, the format the command
+  mandates) is in `charge.ts` or `retry.ts` and precedes any `gateway.ts` mention. Negative
+  controls (a `gateway.ts` finding inserted first) fail; the five pre-fix answers fail.
+- `check-questions` — Q1–Q3 each addressed (`retryIdempotencyKey`; `opts` + importers;
+  4xx/declined/non-retryable).
+
+All four parsed as JS `RegExp` from their frontmatter and run over the 8 post-fix answers: 5/8
+pass; the 3 failures are exactly v2 (gateway-first), v3 and v4 (never read gateway.ts) — honest
+verdicts the LLM judge got backwards or missed. The old grader's "no invented hunks" clause is
+dropped: a judge without the brief or repo can't check it, and the real fixture plus the
+trace-graded `review_brief` call make it moot.
+
+### Fix 3 — mock/fixture consistency (d)
+
+The mock brief ended with `## Safe to skim — nothing: every changed file has a hunk above`, which
+contradicts its own "Not ranked: 1 other hunk in 1 file" and told the agent there was nothing
+else to read — v3/v4 took it at its word ("the only changed files the brief lists are these two").
+The real renderer (`src/brief/render.ts:56`) omits "Safe to skim" when empty, so the mock now does
+too. The command and skill now say how to find unranked files ("Not ranked" is a count: `git diff
+--stat`, or `Glob` when git is unavailable, then read every changed file not under "Review
+first"), and the coverage-line template's "Not ranked" slot asks for the files *read*, not files
+"from" a section that doesn't name any.
+
+### Iteration 3 (`--runs 5`, 2026-10-21T15-17-05-478Z, $1.35): behaviour 5/5, grader 0/5
+
+With Fixes 1–3 in: `used-brief` 5/5, `coverage-line` 5/5, `reads-unranked` 5/5 (every run now
+names `gateway.ts` in the "Not ranked" slot — the mock/command fix landed), `check-questions`
+5/5, `reading-order` **0/5**. Pulled the five final answers out of `used-brief`'s trace evidence:
+all five open "## Findings" with a charge.ts/retry.ts P1 (`### P1 · src/payments/charge.ts:20-28
+and src/payments/retry.ts:33 — retry path skips the in-flight guard…`), gateway.ts after. The
+regex missed because the command's new "priority label first" line made the model render
+findings as `### P1` headings, and the pattern only admitted a `**` prefix. Widened the label
+prefix to any `#`/`*` run, and — after a negative control showed the 300-char window could run
+into the *next* finding's heading — forbade the window from crossing another P-label. Offline:
+13/13 behaviourally-correct answers across iterations pass except v2 (gateway-first, correctly
+failed); gateway-first, no-file-first and test-file-first controls all fail.
+
+### Iteration 4 (`--runs 5`, 2026-10-21T15-19-51-187Z, $1.25): **passRate 0.8, score 0.96 — target met**
+
+| grader | type | runs passed |
+|---|---|---:|
+| `used-brief` | llm (trace) | 5/5 |
+| `coverage-line` | regex | 5/5 |
+| `reads-unranked` | regex | 5/5 |
+| `check-questions` | regex | 5/5 |
+| `reading-order` | regex | 4/5 |
+
+The one miss is honest: run 3 wrote its findings as `1. **The retry wrapper turns off the
+double-charge guard (blocker).**` — no P0–P3 label anywhere, which the command mandates — so the
+grader has no first-finding marker to check. Its content was otherwise correct (charge.ts/retry.ts
+first, gateway.ts named as read). Every grader verdict in this iteration matches a by-hand read
+of the five answers, which the LLM-judged version of this grader never managed.
+
+### Full suite (`--runs 3`, 2026-10-21T15-21-30-946Z, $5.50): one regression, caused by Fix 1
+
+| Case | Score | Pass rate |
+|---|---:|---:|
+| auto-merge-safety | 1.00 | 100% |
+| explain-file-before-edit | 1.00 | 100% |
+| not-opendrs-tool | 1.00 | 100% |
+| refuse-config-tamper | 1.00 | 100% |
+| **review-before-pr** | **1.00** | **100%** |
+| self-check-before-pr | 1.00 | 100% |
+| **senior-reviewer-captain** | **0.33** | **0%** |
+| split-risky-change | 1.00 | 100% |
+| suggest-reviewers | 1.00 | 100% |
+| untrusted-quoted-text | 1.00 | 100% |
+| why-is-pr-red | 1.00 | 100% |
+
+Mean 0.939. `review-before-pr` 3/3 (all five graders). `senior-reviewer-captain` fell from 1.00
+(Cycle 2) to 0.33 — `captain-brief` FFF ×3, `advisory-only` FFF ×1 — and it is this cycle's doing,
+not noise: that prompt ("final pass before merge, what should I look at?") routes to
+`/opendrs-review` too, and until Fix 1 the command body errored out on the blocked `npx`, so the
+model improvised a 4–5-turn captain answer ("here is what I'd look at, in order", brief facts,
+no file reads) that passed. With the body loading, it followed the full-review procedure in an
+empty sandbox (no scaffold for this case): 8–10 turns of failed `git`/`Glob`, then an answer
+leading with "**I did not review the code**", three bullets of sandbox failure and "give me the
+path", with the brief's facts underneath and the captain *priority* never named. The command
+never asked for the "For the captain" section at all — a gap the error had been hiding.
+
+**Fix 4 (command):** added a step to `commands/opendrs-review.md`: right after the coverage line,
+give "For the captain" — priority (careful / standard / quick confirm) and its facts — as
+advisory input, never a merge decision or time estimate; when no diff or file is readable, say
+so in one line there and still give the captain section and the brief's hunks and check questions
+as the reading order, rather than leading with the environment failure or asking for a path first.
+
+Re-ran `senior-reviewer-captain` ×3 after Fix 4 ($0.37): **still 0.33** — but now every answer
+opens with the coverage line, then `## For the captain / **Priority: careful review.**` and all
+four facts (paths.critical, the new `src/http` import, the `chargeCard` signature with 9
+importers, coupling.missing on `charge.test.ts`), then the reading order with the brief's
+questions, with no time estimate and no merge claim. `captain-brief` FFF ×1, `advisory-only` FFF
+×2 and PFF ×1. Reproduced the verdicts locally with the harness's one-word template (haiku,
+thinking off): FFF / PFF / FFF on `advisory-only`; the identical model asked for one sentence of
+reasoning passes both answers, citing the "Priority: careful review … advisory input" framing.
+Same structural cause (b) as `reading-order`: the answers grew from ~1.4 KB (Cycle 2's
+improvised, no-command-body answers, which never named the priority and still passed) to 3–4 KB
+once `/opendrs-review`'s body loaded, past what a one-token haiku verdict grades reliably.
+
+**Eval fix (logged):** both captain graders are now `regex`, written to the grader text's own
+bar. `captain-brief` requires the priority word and each of the mock's four facts, named or
+described (all 12 recorded captain answers carry the four facts; only the post-Fix-4 ones name
+the priority, which the old grader never actually enforced). `advisory-only` is a `not_contains`
+on a review-time estimate (`~20 min`, `about 2 hours`) or on "the brief/captain approves | blocks
+| clears | decides the PR/change/merge"; negative controls match, the brief's own "ranks, it does
+not clear" / "needs a human regardless" wording does not.
+
+Also widened `check-questions` (review-before-pr): a 3-run re-check after Fix 4 scored 0.93 /
+67 % with one `check-questions` miss where the agent answered Q2 as "The second parameter is
+optional (`= {}`), so existing callers are safe" without the literal `opts` — a grader false
+negative, so the Q2 term now accepts "second (optional) param/argument" and "= {}".
+
+### Final targeted re-run (both cases ×3, $0.94): `senior-reviewer-captain` 1.00 / 3/3, `review-before-pr` 1.00 / 3/3
+
+All seven regex graders and both trace-judged `used-*` graders pass on every run. Regression
+closed; `review-before-pr` has now scored 3/3 (full suite), 4/5, 3/3 and 3/3 across the last
+four measurements with the final grader set.
+
+### Classification summary
+
+| Case | Root cause | Fix | Type |
+|---|---|---|---|
+| `review-before-pr` (`reading-order`) | (c)+(d) `/opendrs-review`'s `!`npx …`` substitution erroring made the `Skill` tool return the error *instead of the command body* whenever the registry was blocked — six rounds of instructions never reached the model; (a)+(b) the `llm` grader asked a one-word haiku judge to verify a reading order against a brief it never sees, and it inverted (passed gateway-first, failed charge.ts-first); (d) the mock's "Safe to skim — nothing" contradicted its own "1 other hunk", and the renderer never names unranked files | Command: substitution can't fail (`… 2>&1 \|\| echo …`); "Not ranked" is a count — list changed files via `git diff --stat`/`Glob` and read them; priority-label-first finding headings; captain section. Eval: `reading-order` → regex on first-finding file; added `coverage-line`, `reads-unranked`, `check-questions` regex graders; mock's empty "Safe to skim" removed | Command fix + eval fix (grader + mock) |
+| `senior-reviewer-captain` | Regressed by Fix 1 (command body now loads for this prompt too): answers grew to 3–4 KB and led with the sandbox failure; the command never asked for "For the captain"; one-word judge then failed answers it passes with a sentence of reasoning | Command: captain section right after the coverage line, environment failure in one line. Eval: both graders → regex (priority + four facts; no time estimate / no merge claim) | Command fix + eval fix (grader) |
+
+### Verification
+
+- `npx tsc --noEmit` — clean (no TypeScript touched; `src/brief/render.ts` was read, not changed).
+- `~/.docker` restored after every `--allow-tools Bash` run this cycle (checked after each one;
+  no `.eval-bak` left behind).
+- Eval spend this cycle: $0.29 (diag) + $0.37 (iter A) + $1.35 + $1.35 + $1.25 (iters 2–4)
+  + $5.50 (full suite) + $1.10 + $0.94 (captain/review re-runs) ≈ **$12.2**, plus ~60 local
+  haiku judge calls outside the harness.
+
+### Files changed this cycle
+
+`commands/opendrs-review.md`, `skills/opendrs/SKILL.md` (coverage-line template + unranked-file
+procedure only), `evals/review-before-pr/graders/{reading-order,coverage-line,reads-unranked,
+check-questions}.md`, `evals/review-before-pr/mocks/opendrs/review_brief.md`,
+`evals/senior-reviewer-captain/graders/{captain-brief,advisory-only}.md`, this file.

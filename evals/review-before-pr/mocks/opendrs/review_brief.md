@@ -26,6 +26,3 @@ Note: drift: scope matches the branch name
 - `src/payments/charge.ts` L10–28: `chargeCardWithRetry` always passes `opts.retryIdempotencyKey`, even on the first attempt, so fix `409ffef` «fix(payments): stop double charge when the gateway times out» never runs for a retried charge. Does this bring that problem back?
 - `src/payments/charge.ts`: exports changed: `chargeCard(intent, opts?)`; 2 files import it (`src/payments/retry.ts`, `tests/payments/charge.test.ts`). Is the new second parameter safe for both?
 - `src/payments/retry.ts` L32–39: retries on any thrown error from `chargeCard`. Does it stop on a non-retryable gateway error (4xx, card declined) instead of retrying blindly?
-
-## Safe to skim
-- nothing: every changed file has a hunk above.

@@ -71,18 +71,21 @@ giving up on the brief entirely.
 1. Read every hunk under "Review first" first, and answer every "Check specifically" question that
    names it, with file:line evidence.
 2. Then read every other changed hunk at least once — "Not ranked" and "Safe to skim" included.
-   **The brief orders the review; it does not limit it.** Report anything you find outside the
-   focus hunks. Before you write your final answer, check it against the brief's own file list:
-   if a file is named anywhere in "Review first", "Not ranked", or "Safe to skim" and you haven't
-   actually opened it, go read it now — a review that only covers "Review first" is incomplete
+   **The brief orders the review; it does not limit it.** "Not ranked" gives a hunk/file count,
+   not names: list the changed files yourself (`git diff --stat <base>...HEAD`, or `Glob` over the
+   source tree when `git` is unavailable) and read every changed file not already under "Review
+   first". Report anything you find outside the focus hunks. Before you write your final answer,
+   check it against that file list: if a changed file isn't one you've actually opened, go read
+   it now — a review that only covers "Review first" is incomplete
    even if it finds real bugs there, because a file the brief didn't rank first is still a changed
    file you were asked to review. Open your final answer — before any findings, before anything
    else — with a fixed-format brief-coverage line, filled in, word for word except the bracketed
    parts, even when you had full file access and didn't need the brief to find anything:
 
    > Brief coverage — Review first: [file(s) from "Review first", comma-separated]. Not ranked:
-   > [file(s) from "Not ranked", or "none"] — [what you found there, or "nothing beyond the above"].
-   > Safe to skim: [file(s), or "none"].
+   > [the file(s) you read for it — "Not ranked" gives a hunk/file count, not names, so name what
+   > you read, or "none"] — [what you found there, or "nothing beyond the above"]. Safe to skim:
+   > [file(s), or "none"].
 
    This line is mandatory even when your findings already mention every file in prose elsewhere —
    covering a file in the body of the answer is not a substitute for this line, and omitting the
