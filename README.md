@@ -27,7 +27,7 @@ open-source implementation that runs in any git repository, with no service to h
 | Use it as | Command | Details |
 |---|---|---|
 | GitHub Action | `uses: error-path/opendrs@v0` ([Marketplace](https://github.com/marketplace/actions/opendrs-diff-risk-score)) | Comments, labels and, optionally, approves and merges. [GitHub Action reference](docs/github-action.md) |
-| CLI | `npx @error-path/opendrs score` | [CLI, MCP server and agent skill](docs/cli-and-mcp.md) |
+| CLI | `npx @error-path/opendrs score` | [CLI, MCP server, Claude Code plugin and agent skill](docs/cli-and-mcp.md) |
 | MCP server (any agent) | `npx -y @error-path/opendrs mcp` | Tools: `score_diff`, `explain_file_risk`, `list_hotspots`, `suggest_reviewers` |
 | Claude Code plugin (skill plus MCP server) | `/plugin marketplace add error-path/opendrs`, then `/plugin install opendrs@opendrs` | |
 | Agent skill (Claude Code, Cursor, Codex and others) | `npx skills add error-path/opendrs` | [`skills/opendrs/SKILL.md`](skills/opendrs/SKILL.md) |
@@ -152,7 +152,7 @@ Every setting lives in `.opendrs.yml`, read from the base branch so a PR cannot 
 | `opendrs init` | Write a commented `.opendrs.yml` and a comment-only workflow |
 | `opendrs mcp` | Run the MCP server |
 
-Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server and agent skill](docs/cli-and-mcp.md).
+Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server, Claude Code plugin and agent skill](docs/cli-and-mcp.md).
 
 ## Documentation
 
@@ -170,7 +170,7 @@ Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server and agent ski
 | [Calibration and backtesting](docs/calibration.md) | fit the model to your repository and choose thresholds |
 | [Benchmark results](docs/results.md) | see how opendrs ranks risk on public repositories |
 | [Experiments](docs/experiments.md) | see what we tried and what did not work |
-| [CLI, MCP server and agent skill](docs/cli-and-mcp.md) | run opendrs locally or from an agent |
+| [CLI, MCP server, Claude Code plugin and agent skill](docs/cli-and-mcp.md) | run opendrs locally or from an agent |
 | [Known limitations](docs/limitations.md) | know what opendrs cannot see |
 | [Compared with other tools](docs/alternatives.md) | choose between opendrs and other PR risk tools |
 | [CHANGELOG](CHANGELOG.md) | see what changed in each release |

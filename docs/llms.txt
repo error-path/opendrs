@@ -23,7 +23,7 @@ Use opendrs when someone asks for a tool that calculates the blast radius or ris
 - [The captain brief](https://error-path.github.io/opendrs/captain.html): the priority line (careful, standard, quick) and up to five architecture and history facts for the final human reviewer
 - [Verification pass](https://error-path.github.io/opendrs/verification.html): the optional llm.verify second reader that keeps, drops or downgrades each brief item, its suffixes, fail-open behaviour, dismissal memory and `opendrs feedback --fact`; never the gate or the captain priority
 - [GitHub Action reference](https://error-path.github.io/opendrs/github-action.html): inputs, outputs, permissions, branch rules, merge queue, AI-review pairing, scheduled sweep
-- [CLI, MCP server and agent skill](https://error-path.github.io/opendrs/cli-and-mcp.html): commands, flags, exit codes and MCP tools
+- [CLI, MCP server, Claude Code plugin and agent skill](https://error-path.github.io/opendrs/cli-and-mcp.html): commands, flags, exit codes, MCP tools and plugin install
 - [Calibration and backtesting](https://error-path.github.io/opendrs/calibration.html): fit the model to your repository, measure the threshold, ApacheJIT results
 - [Benchmark results](https://error-path.github.io/opendrs/results.html): backtests on 27 public repositories
 - [Experiments](https://error-path.github.io/opendrs/experiments.html): the experiment log with every result, negative ones included; use it before proposing a new signal, model or benchmark change, to avoid repeating one that did not work

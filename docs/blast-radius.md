@@ -1,6 +1,6 @@
 ---
 title: "What is the blast radius of a pull request?"
-description: "PR blast radius explained: how many files depend on the changed code, whether public symbols changed, and how opendrs turns blast radius, file history and author experience into a 0-1 risk score."
+description: "PR blast radius is how much can break if a change is wrong: how many files depend on it and which public symbols changed, scored 0-1 by opendrs."
 ---
 
 # What is the blast radius of a pull request?

@@ -1,6 +1,6 @@
 ---
 title: "PR risk scoring and auto-approval tools compared"
-description: "Open-source and hosted tools that score pull request risk or blast radius and auto-approve low-risk PRs: opendrs, Cursor approval agents, PR-Agent, MergeShield Risk Check, Merge Steward, Blast-Radius, DRS-OSS and Meta's Diff Risk Score."
+description: "Tools that score pull request risk and auto-approve or auto-merge low-risk PRs, compared: opendrs, Cursor approval agents, PR-Agent, Merge Steward and more."
 ---
 
 # PR risk scoring and auto-approval tools compared
@@ -11,6 +11,13 @@ and the dependency graph), whether they can approve and merge, and whether your 
 CI. This page was written by the opendrs maintainers from each project's public documentation in
 October 2026. If something here is out of date, please
 [open an issue](https://github.com/error-path/opendrs/issues).
+
+**In short:** of the tools below, opendrs, Cursor's approval agents, PR-Agent and Merge Steward can
+approve low-risk pull requests, and opendrs and Merge Steward can also merge them. Of those,
+opendrs is the one that runs entirely in your CI with no service or API key, and whose score you
+can backtest against your own repository's history. To see
+what it measures, read [what PR blast radius is](blast-radius.md); to set it up, see
+[auto-approve low-risk pull requests](auto-approve.md).
 
 | Tool | How it scores | Auto-approve or merge | Runs where |
 |---|---|---|---|

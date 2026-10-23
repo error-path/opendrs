@@ -1,6 +1,6 @@
 ---
 title: "Auto-approve low-risk pull requests safely"
-description: "How to auto-approve and auto-merge low-risk, AI-reviewed pull requests with a 0-1 risk score, and keep risky ones for human review. A step-by-step GitHub Actions setup with opendrs."
+description: "Auto-approve and auto-merge low-risk, AI-reviewed pull requests with a 0-1 risk score while risky ones wait for a human. Step-by-step GitHub Actions setup."
 ---
 
 # Auto-approve low-risk pull requests
