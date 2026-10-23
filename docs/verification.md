@@ -14,7 +14,7 @@ what the brief shows and how. It never changes the score, the tier, the policy d
 captain priority.
 
 This is Phase 2 of the
-[verification-pass spec](specs/2026-10-20-verification-pass-design.html#3-phase-2--the-reviewer-side-verification-pass-llmverify);
+[verification-pass spec](https://github.com/error-path/opendrs/blob/main/docs/specs/2026-10-20-verification-pass-design.md#3-phase-2--the-reviewer-side-verification-pass-llmverify);
 Phase 1 is the author's [self-check](llm-reviewers.html#self-check-before-you-open-the-pr).
 
 ## What it verifies
