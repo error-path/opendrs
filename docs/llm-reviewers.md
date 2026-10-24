@@ -48,7 +48,7 @@ message** — not a separate commit, not the PR description:
 This is advisory only, never part of opendrs's auto-approve gate or the captain's priority. opendrs
 recomputes the brief from scratch on the exact head commit and only shows where your record and the
 fresh facts agree, disagree, or say nothing; a claimed fix that is still present in the diff is
-called out, not hidden. See [docs/github-action.md](github-action.html#author-self-check-advisory)
+called out, not hidden. See [docs/github-action.md](github-action.md#author-self-check-advisory)
 for what the Action renders.
 
 ## anthropics/claude-code-action
@@ -172,12 +172,12 @@ The brief's `## For the captain` section carries the same priority (careful, sta
 facts as the PR comment's captain line, but with every fact, not just the top five, plus any
 detector notes. It is a mandatory section: `fitBudget` never trims it, whatever the token budget.
 Whichever recipe above you use to get the brief in front of an LLM reviewer, this section comes
-along with it. See [the captain brief](captain.html) for what each fact means and an example of
+along with it. See [the captain brief](captain.md) for what each fact means and an example of
 each.
 
 ### Reading verified facts
 
-With the [verification pass](verification.html) on (`llm.verify.enabled: true`), every fact,
+With the [verification pass](verification.md) on (`llm.verify.enabled: true`), every fact,
 review-first hunk and check carries one suffix, and an agent reading the brief should treat them
 differently:
 

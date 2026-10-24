@@ -5,7 +5,7 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 ## 0.5.0 - 2026-10-23
 
 The verification pass (`llm.verify`) ships, measured against the field test's real corpus (49 PRs,
-six repositories — [docs/experiments.md](docs/experiments.html#verifier-precision-study-on-the-field-test-corpus)).
+six repositories — [docs/experiments.md](docs/experiments.md#verifier-precision-study-on-the-field-test-corpus)).
 The first run (v1) recalled the true-useful facts and correctly handled the noisy
 `coupling.missing` fires, but missed both `contract.dependency` WRONG fires and ran over the cost
 bar: $0.0210/PR against a $0.02 bar, with a dead `confidence` field required on every verified
@@ -15,12 +15,12 @@ them before the verifier ever saw a candidate). Fixed at the root — the dead f
 elimination case now scored correctly — the re-run (v2) passes on all three legs: recall 1/14
 wrongly dropped, `coupling.missing` 14/18 handled, both WRONG fires accounted for, and
 **$0.0192/PR**, under the cap. Full numbers, including the honest v1 FAIL, in
-[docs/experiments.md](docs/experiments.html#verifier-precision-study-on-the-field-test-corpus).
+[docs/experiments.md](docs/experiments.md#verifier-precision-study-on-the-field-test-corpus).
 
 ### Added
 
 - Verification pass (`llm.verify`, Phase 2 of the verification-pass spec,
-  [docs/verification.md](docs/verification.html)): with `llm.verify.enabled: true`, one batched
+  [docs/verification.md](docs/verification.md)): with `llm.verify.enabled: true`, one batched
   call to the judge's provider reads every captain fact, review-first hunk and check of the brief
   with fresh context and keeps, drops or downgrades each one. A drop needs a named class (docs,
   tests, fixtures, generated, formatting) and a cited line, else it is a downgrade; an uncited
@@ -33,7 +33,7 @@ wrongly dropped, `coupling.missing` 14/18 handled, both WRONG fires accounted fo
   commit, `wrong`/`intentional`/`ignored` downgrade that fact on every later run without a model
   call, and `useful` pins it against any verifier drop or downgrade.
 - Pre-PR self-check (Phase 1 of the verification-pass spec,
-  [docs/specs/2026-10-20-verification-pass-design.md](docs/specs/2026-10-20-verification-pass-design.html)):
+  [docs/specs/2026-10-20-verification-pass-design.md](docs/specs/2026-10-20-verification-pass-design.md)):
   `opendrs brief --self-check-template` and the MCP tool `self_check_items` list the ids a pre-PR
   self-check should fix, explain, or (a real, unresolved problem the agent can't fix itself) flag as
   `needs-fix`; the Action reads a `<!-- opendrs-self-check:v1 ... -->` block from the head commit's
@@ -41,13 +41,13 @@ wrongly dropped, `coupling.missing` 14/18 handled, both WRONG fires accounted fo
   (`author agent self-checked: N facts addressed, M explained, K flagged as still needing a fix ·
   not part of the review decision`). Advisory only — never read by the gate or the captain's
   priority. See
-  [docs/llm-reviewers.md](docs/llm-reviewers.html#self-check-before-you-open-the-pr) and
-  [docs/github-action.md](docs/github-action.html#author-self-check-advisory).
+  [docs/llm-reviewers.md](docs/llm-reviewers.md#self-check-before-you-open-the-pr) and
+  [docs/github-action.md](docs/github-action.md#author-self-check-advisory).
 - Two new captain facts from the ApacheJIT captain-fact-lift experiment: `change.concurrency`
   (strong; a changed, non-comment line of non-test code uses a concurrency primitive — 2.04× bug
   lift) and `change.safety_removed` (info; net deleted error-handling or guard lines per hunk —
   1.79× lift, but fires often enough to stay informational). See
-  [docs/captain.md](docs/captain.html#4-the-facts).
+  [docs/captain.md](docs/captain.md#4-the-facts).
 - The captain brief's layers detector (`layers.edge`, `layers.cycle`) and the drift detector's
   "outside the original modules" check now use auto-detected module boundaries instead of a flat
   path-segment split: package roots are found from `package.json` (JS/TS), `go.mod` directories
@@ -80,8 +80,8 @@ for the module-boundaries design.
   either every hunk of the firing file removes lines with no identifier surviving in the partner's
   base text, or the firing file is a test whose source partner is untouched (spec
   §3.8 of
-  [docs/specs/2026-10-20-verification-pass-design.md](docs/specs/2026-10-20-verification-pass-design.html)).
-  See [docs/captain.md](docs/captain.html#4-the-facts).
+  [docs/specs/2026-10-20-verification-pass-design.md](docs/specs/2026-10-20-verification-pass-design.md)).
+  See [docs/captain.md](docs/captain.md#4-the-facts).
 - A repo that already sets `captain.moduleDepth` explicitly in `.opendrs.yml` keeps its exact
   current behaviour: setting it disables auto-detection repo-wide and module boundaries stay a
   flat split on that many path segments from the repo root, unchanged.

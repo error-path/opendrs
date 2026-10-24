@@ -9,7 +9,7 @@ These are the numbers behind opendrs's claims: `opendrs backtest` replayed on op
 
 ## The nine-repository run
 
-On the public [ApacheJIT](calibration.html#results-on-apachejit) benchmark (Apache Java
+On the public [ApacheJIT](calibration.md#results-on-apachejit) benchmark (Apache Java
 projects, official 2017–2019 test years, `apache/hadoop` left out because it has no positive
 labels), calibrated opendrs reaches AUC 0.823 and catches 67 % of buggy commits in its riskiest
 30 %, on par with a regression on the classic JIT metrics (0.821, 66 %).
@@ -98,4 +98,4 @@ Runs took 1 to 16 minutes per repository on a 4-core Linux machine.
 
 ## ApacheJIT
 
-On the public ApacheJIT benchmark, calibrated opendrs is compared with a logistic regression on the classic JIT metrics and with the published DRS-OSS numbers, pooled and per project, with and without the structured LLM judge. Those tables, and the caveats on what the split and labels let you read from them, are in [Calibration and backtesting: Results on ApacheJIT](calibration.html#results-on-apachejit).
+On the public ApacheJIT benchmark, calibrated opendrs is compared with a logistic regression on the classic JIT metrics and with the published DRS-OSS numbers, pooled and per project, with and without the structured LLM judge. Those tables, and the caveats on what the split and labels let you read from them, are in [Calibration and backtesting: Results on ApacheJIT](calibration.md#results-on-apachejit).

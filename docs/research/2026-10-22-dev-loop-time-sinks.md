@@ -155,5 +155,5 @@ To make this kind of audit a five-minute `node scripts/metrics-report.mjs` inste
 transcript-mining exercise next time, every `check`/`test`/`test:slow`/`build:action` run now
 appends one line to the gitignored `.dev-metrics/runs.jsonl`, and `claude plugin eval` runs can be
 appended the same way from their `aggregate-result.json`. See
-[Maintaining opendrs]({{ '/maintaining.html' | relative_url }}#dev-loop-metrics). The numbers in
+[Maintaining opendrs](../maintaining.md#dev-loop-metrics). The numbers in
 this note are seeded into it with `"source": "backfill"`.

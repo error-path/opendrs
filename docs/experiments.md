@@ -13,7 +13,7 @@ Unless stated otherwise, ApacheJIT numbers are on the dataset's official split: 
 test 2017–2019. They are pooled over the held-out test commits, excluding `apache/hadoop`, which
 has no positive labels: 24,686 commits, 5,818 positive. "Recall@X %" is the share of buggy
 commits in the riskiest X % of commits. How to read the metrics is in
-[Calibration and backtesting](calibration.html#reading-the-metrics).
+[Calibration and backtesting](calibration.md#reading-the-metrics).
 
 | Date | Question | Result | Verdict | Details |
 |---|---|---|---|---|
@@ -912,7 +912,7 @@ was adopted separately as a correctness fix, not a saturation fix: folder-level 
 unrelated files (confirmed on vite, where one old revert flagged hundreds of files under
 `packages/vite/src/node/`), and the change carries no accuracy cost (AUC +0.0009, CI 0.0005 to
 0.0014). V1 (the Conventional-Commits `fixPattern` exclusion) is documented as a per-repo override
-in [`docs/configuration.md`](configuration.html#repositories-that-use-conventional-commits) rather
+in [`docs/configuration.md`](configuration.md#repositories-that-use-conventional-commits) rather
 than shipped as a new default.
 
 ## Captain-fact lift on ApacheJIT
@@ -1106,7 +1106,7 @@ before any spend (see Amendments, below). No API spend yet: paid LLM tests are p
 user approves Phase 1. The bench wiring for arm 2 (spec §13 phase 4) is **deferred by decision**:
 it is not built until the user approves the paid experiment. The full plan, with the prompt
 drafts, the context block, the literature and the power analysis, is in
-[the research note, Part 5](research/2026-10-18-review-risk-heuristics.html#part-5-pre-registered-plan-for-the-next-llm-judge-experiment).
+[the research note, Part 5](research/2026-10-18-review-risk-heuristics.md#part-5-pre-registered-plan-for-the-next-llm-judge-experiment).
 
 **Question.** Does an LLM reviewer plus opendrs beat the same LLM alone, by enough to justify any
 extra tokens? It is not opendrs against the LLM. The three headline arms run on the same commits:
@@ -1198,9 +1198,9 @@ review of every commit.
   1's mean input tokens, and the pilot stop rule from +20 % to +35 %. The budget is recomputed to
   ≈ $38.6 of ≤ $43. Reason: the product decided its default brief size; the experiment must
   measure the product as shipped. Full detail in
-  [the research note, Amendments](research/2026-10-18-review-risk-heuristics.html#amendments).
+  [the research note, Amendments](research/2026-10-18-review-risk-heuristics.md#amendments).
 
-**Where.** The plan is in [the research note, Part 5](research/2026-10-18-review-risk-heuristics.html#part-5-pre-registered-plan-for-the-next-llm-judge-experiment).
+**Where.** The plan is in [the research note, Part 5](research/2026-10-18-review-risk-heuristics.md#part-5-pre-registered-plan-for-the-next-llm-judge-experiment).
 The free simulation is `bench/apachejit/judge-sim.ts`. The cached judgements are those of the
 [LLM judge run](#structured-llm-judge-on-sampled-apachejit).
 
@@ -1260,14 +1260,14 @@ Pooled, opendrs now matches the Kamei LR within noise. It does not beat it.
 **Where.** Commits `c14da1c` (fit experiment), `ad0d368` (fix), `35862bc` (regenerated benchmark).
 - [`bench/apachejit/fit-experiment.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/fit-experiment.md) and `bench/apachejit/fit-experiment.ts`.
 - [`bench/apachejit/results.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/results.md).
-- [Calibration and backtesting](calibration.html#what-calibrate-fits-on).
+- [Calibration and backtesting](calibration.md#what-calibrate-fits-on).
 
 ## Review-heuristic signals
 
 **Question.** AI code reviewers check for concurrency changes, removed error handling or guards,
 and weakened tests. Do these, computed deterministically from the diff, add ranking signal? The
 background is in the
-[research note on how AI code reviewers judge PR risk](research/2026-10-18-review-risk-heuristics.html),
+[research note on how AI code reviewers judge PR risk](research/2026-10-18-review-risk-heuristics.md),
 recommendations R4–R6.
 
 **Setup.**
@@ -1424,7 +1424,7 @@ failed commits were judged again with the same model and prompt.
 
 **Where.** Commit `a9f4882` (structured outputs), `59e07e3` (results);
 [`bench/apachejit/results-llm.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/results-llm.md);
-[Calibration and backtesting](calibration.html#with-the-structured-llm-judge).
+[Calibration and backtesting](calibration.md#with-the-structured-llm-judge).
 
 ## Structured LLM judge on sampled ApacheJIT
 
@@ -1469,14 +1469,14 @@ The test sample's base rate is 25.5 % buggy.
 - The gate is the win: the commits it passes are buggy at a fifth of the base rate.
 - The ranking gain (about +0.02 AUC) is within noise on 800 commits.
 - `logic_bug` and `structural` each flag about half the commits, which is why the categories rank
-  poorly. The [research note](research/2026-10-18-review-risk-heuristics.html) proposes prompt
+  poorly. The [research note](research/2026-10-18-review-risk-heuristics.md) proposes prompt
   changes to fix that.
 - This sample was fitted before the refit in [fit experiment](#fit-experiment-and-the-calibrate-refit) and
   has not been re-run.
 
 **Where.** Commits `2c9e452` and `59e07e3`;
 [`bench/apachejit/results-llm.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/results-llm.md);
-[LLM judge](llm-judge.html).
+[LLM judge](llm-judge.md).
 
 ## ApacheJIT benchmark baseline
 
@@ -1510,7 +1510,7 @@ would have to close.
 
 **Where.** Commit `50060c5`; `bench/apachejit/run.ts`;
 [`bench/apachejit/results.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/results.md);
-[Calibration and backtesting](calibration.html#results-on-apachejit).
+[Calibration and backtesting](calibration.md#results-on-apachejit).
 
 ## Public-repository backtests
 
@@ -1538,4 +1538,4 @@ default priors and after `calibrate`, with nothing configured?
   terraform and eslint) because their bugs had not been found yet.
 
 **Where.** Commits `1e557cd` (nine repositories) and `5442193` (18 repositories);
-[Benchmark results](results.html).
+[Benchmark results](results.md).

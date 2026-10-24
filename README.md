@@ -78,7 +78,7 @@ default branch; see [how to auto-approve low-risk PRs](docs/auto-approve.md) and
 flowchart LR
   diff["git diff<br/>merge-base...head"] --> signals
   hist["git history"] --> signals
-  graph["import graph"] --> signals
+  imports["import graph"] --> signals
   llm["LLM judge<br/>(optional)"] --> signals
   signals["Signals<br/>each with evidence<br/>and provenance"] --> model["Logistic model<br/>score = sigmoid(b + Σ w·x)"]
   model --> tier["Tier<br/>green / yellow / red"]
@@ -127,6 +127,8 @@ editor nor the AI review comments showed. See [the captain brief](docs/captain.m
 | Reviewer assignment | One of the top three experts is asked to review risky PRs | on in the Action | [Policy](docs/policy.md) |
 | Hotspots | Rank files by risk at rest | run on demand | [CLI and MCP](docs/cli-and-mcp.md) |
 | Review brief | Ranks hunks to read first, fixed check questions, safe-to-skim list, hard-rule reasons — recipes for claude-code-action, Bugbot, CodeRabbit (limited), Copilot and Codex (paste) | on | [LLM reviewers](docs/llm-reviewers.md), [CLI and MCP](docs/cli-and-mcp.md) |
+| Pre-PR self-check | Lists the ids an author agent should fix or explain before opening the PR; opendrs reads the verdicts back from the head commit and adds one advisory line, never part of the gate | off | [Self-check recipe](docs/llm-reviewers.md#self-check-before-you-open-the-pr) |
+| Verification pass | One batched LLM call re-checks every captain fact, review-first hunk and check with fresh context and keeps, drops or downgrades each one; never changes the score, tier or policy | off | [Verification pass](docs/verification.md) |
 | Incident feedback | `opendrs feedback` records incidents for calibration | run on demand | [Calibration](docs/calibration.md) |
 
 Every setting lives in `.opendrs.yml`, read from the base branch so a PR cannot loosen its own gate:
@@ -167,6 +169,7 @@ Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server, Claude Code 
 | [LLM judge](docs/llm-judge.md) | turn on the optional LLM judge or the `requireSafe` gate |
 | [Feeding the review brief to an LLM reviewer](docs/llm-reviewers.md) | get opendrs's findings in front of Claude Code, claude-code-action, Bugbot, CodeRabbit, Copilot or Codex |
 | [The captain brief](docs/captain.md) | know what the final human reviewer sees: priority, reviewer, and the architecture and history facts |
+| [Verification pass](docs/verification.md) | turn on an LLM re-check of the brief's facts before a human reads them |
 | [Calibration and backtesting](docs/calibration.md) | fit the model to your repository and choose thresholds |
 | [Benchmark results](docs/results.md) | see how opendrs ranks risk on public repositories |
 | [Experiments](docs/experiments.md) | see what we tried and what did not work |

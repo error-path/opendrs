@@ -153,7 +153,7 @@ Anything else is fixed before the switch.
   > opendrs is maintained by error-path and released under the MIT license. The code, these docs
   > and the research notes are written with AI assistance (Claude) and reviewed by the maintainer
   > before they are merged. Every benchmark number on this site comes from a script in the
-  > repository, and [Results](results.html) shows how to reproduce each one. Corrections are
+  > repository, and [Results](../results.md) shows how to reproduce each one. Corrections are
   > welcome as [GitHub issues](https://github.com/error-path/opendrs/issues).
 
   `/about.html` does not match jekyll-seo-tag's homepage-or-about pattern (`/about/`), so it gets

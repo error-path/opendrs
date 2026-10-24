@@ -70,7 +70,7 @@ it, replace both. To preview locally: `cd docs && bundle install && bundle exec 
 A shared, gitignored, append-only `runs.jsonl` is a record of how long `check`, `test`,
 `test:slow`, `build:action`, `claude plugin eval` and any other repeatable command take, so "is
 the dev loop getting slower" has a measured answer instead of a guess. Background: see
-[Where the dev loop's time goes]({{ '/research/2026-10-22-dev-loop-time-sinks.html' | relative_url }}).
+[Where the dev loop's time goes](research/2026-10-22-dev-loop-time-sinks.md).
 
 **Where it lives:** `scripts/metrics-path.mjs` resolves the file the same way for every script,
 in this order: the `OPENDRS_METRICS_FILE` env var if set; otherwise

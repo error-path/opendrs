@@ -202,7 +202,7 @@ A quick confirm with no facts is one line and no block: `**Captain: quick confir
 facts (not capped at five) is also in the "For the captain" section of the brief for AI reviewers,
 and in the `captain` Action output described below.
 
-With the [verification pass](verification.html) on, each fact in the comment and in the brief ends
+With the [verification pass](verification.md) on, each fact in the comment and in the brief ends
 with its verdict (`[verified · new]`, `[verified · pre-existing]`, `[downgraded by verifier: …]`,
 `[unverified]`), a dropped fact becomes a `dropped by verifier` note in the brief, and the "why"
 and the five facts come from the verified list. The priority does not: it is computed before the
@@ -232,7 +232,7 @@ captain:
 ```
 
 As with the rest of `.opendrs.yml`, this is read from the base commit, so a PR cannot switch its
-own captain brief off. See the [configuration reference](configuration.html) for the full file.
+own captain brief off. See the [configuration reference](configuration.md) for the full file.
 
 ## 8. What is measured, and what is not
 
@@ -245,7 +245,7 @@ own captain brief off. See the [configuration reference](configuration.html) for
   split only. That ApacheJIT lift measures whether the file *was buggy*, not whether a reviewer
   would have cared; measured against real review comments and fixes instead (the outcome-labels
   study, §4 above), it did not clear its own bar and was demoted to `info`-only with a narrower
-  trigger, as recorded there. Details: [Experiments](experiments.html).
+  trigger, as recorded there. Details: [Experiments](experiments.md).
 - **Contracts and change risk** (`contract.dependency`, `contract.api`, `contract.schema`,
   `change.concurrency`, `change.safety_removed`) cleared the same pre-registered bug-lift bar
   (≥ 1.2×, ≥ 50 firing test commits) on ApacheJIT's test split (24,690 commits, pooled):
@@ -255,7 +255,7 @@ own captain brief off. See the [configuration reference](configuration.html) for
   (firing on 21 % of test commits — too common to weight `strong` without pushing most PRs to
   "careful review", hence `info`). The docs may say these predict bugs; the facts still ship
   regardless of the number, as decisions a captain signs off on either way. Details:
-  [Experiments](experiments.html#captain-fact-lift-on-apachejit).
+  [Experiments](experiments.md#captain-fact-lift-on-apachejit).
 - **Layers** (`layers.edge`, `layers.cycle`) is not shown to predict bugs: `layers.edge` lifted
   only 1.12× on a 2,000-commit sample (19 firings), short of the bar. It still ships — a new import
   edge is a decision a captain signs off on, not a claim that it causes incidents.

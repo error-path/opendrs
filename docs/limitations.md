@@ -6,8 +6,8 @@ description: "What opendrs cannot see or measure: unfit default weights, noisy i
 # Known limitations
 
 opendrs estimates incident risk from git history and a diff, and these are the places where that
-estimate is weaker than it looks, grouped by the model, the [signals](signals.html), the
-[LLM judge](llm-judge.html) and the GitHub Action.
+estimate is weaker than it looks, grouped by the model, the [signals](signals.md), the
+[LLM judge](llm-judge.md) and the GitHub Action.
 
 ## The model and its labels
 
@@ -42,7 +42,7 @@ estimate is weaker than it looks, grouped by the model, the [signals](signals.ht
 ## The GitHub Action
 
 - **Required checks are matched by name.** opendrs does not verify which app produced a check run,
-  so protect the names you list (see the [GitHub Action guide](github-action.html)).
+  so protect the names you list (see the [GitHub Action guide](github-action.md)).
 - **GitHub only.** The core is host-agnostic, but only a GitHub Action exists today. The Action
   needs full history (`fetch-depth: 0`). In a shallow clone, `diffusion.authors` and `history.*`
   are reported as `unknown` ("shallow clone: history incomplete"), keeping what they saw as a lower

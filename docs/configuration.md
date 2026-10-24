@@ -17,7 +17,7 @@ description: "Every key in .opendrs.yml with its default: thresholds, auto-appro
 | `graph` | The import graph: on or off, depth and file cap |
 | `model` | Where `opendrs calibrate` writes the fitted model; priors are used until it exists |
 | `brief` | Token budget for the review brief's Markdown |
-| `captain` | The [captain brief](captain.html): the module map for the layers detector (auto-detected by default, or a flat depth / literal globs), the change-coupling detector's thresholds, and extra schema/contract globs |
+| `captain` | The [captain brief](captain.md): the module map for the layers detector (auto-detected by default, or a flat depth / literal globs), the change-coupling detector's thresholds, and extra schema/contract globs |
 | `content` | JS regexes matched against each added line (see [What opendrs refuses](#what-opendrs-refuses)) |
 | `freezes` | Windows in which auto-approval is suspended or held to a stricter green (see [What opendrs refuses](#what-opendrs-refuses)) |
 | `sources` | Per-source policy for agent, bot and human PRs; every setting only tightens the gate |
@@ -201,7 +201,7 @@ The default `history.fixPattern` counts any commit subject matching
 `history.prior_fixes`. On a repository that uses Conventional Commits heavily, this also counts
 routine housekeeping — `fix(deps): update dependencies`, `chore(deps)`, `fix(ci)`, `fix(docs)`,
 `fix: typo` — as if it were a real bug fix. The [score-saturation
-experiment](experiments.html#score-saturation-fixpattern-and-incident-granularity-on-apachejit)
+experiment](experiments.md#score-saturation-fixpattern-and-incident-granularity-on-apachejit)
 measured this on `vitejs/vite`: excluding those commits dropped the share matched by
 `fixPattern` by 21.6 %. It was not significant pooled across ApacheJIT's mostly pre-Conventional-
 Commits Java projects, so it is not a new default — but it is worth setting per repo if you use the

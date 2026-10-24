@@ -50,11 +50,11 @@ what it measures, read [what PR blast radius is](blast-radius.md); to set it up,
 - **You've seen CodeRabbit's "Merge Risk" label and "Estimated code review effort":** they are
   useful, but CodeRabbit does not publish how either is computed. opendrs's score is calibrated on
   your own repository's history (`opendrs backtest`), every signal's contribution to it is shown in
-  the comment, and the [captain brief](captain.html) names the actual facts behind a verdict — a
+  the comment, and the [captain brief](captain.md) names the actual facts behind a verdict — a
   new import edge, a broken contract, a file that usually changes with one this PR didn't — instead
   of a label alone. It is also open source, with no service to host or account to create.
 - **You want the single highest accuracy number, and can host a model:** DRS-OSS reports AUC 0.895
   on ApacheJIT's official split; opendrs's calibrated model reports AUC 0.823 on the same benchmark
-  (a different split; see [Calibration and backtesting](calibration.html)). That gap is the
+  (a different split; see [Calibration and backtesting](calibration.md)). That gap is the
   trade-off: DRS-OSS needs a fine-tuned Llama 3.1 8B classifier running behind a REST API you host
   and keep up; opendrs runs as a CLI, GitHub Action or MCP server with no model service to deploy.

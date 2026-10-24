@@ -37,14 +37,14 @@ Meta's baseline is a logistic regression over about a dozen features, chosen fro
 The import graph uses regex-based extractors for TypeScript/JavaScript, Python, Go, Java/Kotlin,
 Rust and Ruby. Files in other languages get `unknown` blast-radius signals, which the policy
 treats as risk, not as zero. How the blast-radius signals are measured is explained in
-[What is the blast radius of a pull request?](blast-radius.html).
+[What is the blast radius of a pull request?](blast-radius.md).
 
 ## LLM signals
 
 The `llm.semantic` and `llm.risk.*` signals come from the optional LLM judge, which can only raise
 a score, never lower it. How it is configured, how it classifies hunks and how it can gate
-auto-approval are on [LLM judge](llm-judge.html).
+auto-approval are on [LLM judge](llm-judge.md).
 
 The signals are combined by a logistic model whose weights `opendrs calibrate` fits to your
-repository's history; see [Calibration and backtesting](calibration.html) and the
+repository's history; see [Calibration and backtesting](calibration.md) and the
 [README](https://github.com/error-path/opendrs).

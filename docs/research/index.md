@@ -6,7 +6,7 @@ description: "Dated research notes behind opendrs: field tests on real repositor
 # Research notes
 
 Dated notes from building opendrs: what was tested, on which repositories, and what changed as a
-result. Each note lists its sources. The [experiment log]({{ '/experiments.html' | relative_url }})
+result. Each note lists its sources. The [experiment log](../experiments.md)
 has the benchmark runs behind them.
 
 {% assign notes = site.pages | where_exp: "p", "p.dir == '/research/'" | where_exp: "p", "p.date" | where_exp: "p", "p.sitemap != false" | sort: "date" | reverse %}

@@ -78,7 +78,7 @@ opendrs checks out and reads the PR's code. opendrs scores on events that carry 
 | `score` | 0 to 1, four decimals |
 | `tier` | `green`, `yellow`, `red` |
 | `decision` | `auto-approve`, `deferred-review`, `waiting-ai-review`, `human-review` (the policy decision, even when approval is disabled or a landing delay is still running) |
-| `captain` | `careful`, `standard` or `quick`: how much attention the captain brief says this PR needs. Empty when `captain.enabled` is false or `brief: false`. See [the captain brief](captain.html). |
+| `captain` | `careful`, `standard` or `quick`: how much attention the captain brief says this PR needs. Empty when `captain.enabled` is false or `brief: false`. See [the captain brief](captain.md). |
 | `brief` | The review brief as Markdown (empty when `brief: false`) |
 | `brief-file` | Path to the review brief as JSON, under `$RUNNER_TEMP` (empty when `brief: false`) |
 
@@ -314,7 +314,7 @@ such as `claude-review`, not `review` or `test`.
 
 ## Author self-check (advisory)
 
-When the PR author (human or agent) followed [the self-check recipe](llm-reviewers.html#self-check-before-you-open-the-pr)
+When the PR author (human or agent) followed [the self-check recipe](llm-reviewers.md#self-check-before-you-open-the-pr)
 and left a `<!-- opendrs-self-check:v1 ... -->` block in the head commit's own message, opendrs
 reads it from that exact commit, rebuilds the brief fresh as if the record did not exist, and adds
 one line next to the captain line:
@@ -395,7 +395,7 @@ On a sweep the `score`, `tier` and `decision` outputs are those of the last PR s
 Every run that updates the comment also writes a hidden machine marker into it, for example
 `<!-- opendrs-state: v1 head=<sha> first=<sha> firstRun=1 score=0.76 tier=yellow decision=human-review run=2 -->`,
 recording this run's result. `first=` is the head of opendrs's first run on this PR and `firstRun=`
-that run's number, which the [captain brief](captain.html)'s drift detector compares against: both
+that run's number, which the [captain brief](captain.md)'s drift detector compares against: both
 are written from a run's own head and number on the first run, and kept unchanged on every later
 run, so the drift text keeps saying "since run `firstRun`" instead of resetting to "run 1" once a
 later run writes the marker. They are optional only when reading, so a marker written by 0.3.x (no

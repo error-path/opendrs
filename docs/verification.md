@@ -15,7 +15,7 @@ captain priority.
 
 This is Phase 2 of the
 [verification-pass spec](https://github.com/error-path/opendrs/blob/main/docs/specs/2026-10-20-verification-pass-design.md#3-phase-2--the-reviewer-side-verification-pass-llmverify);
-Phase 1 is the author's [self-check](llm-reviewers.html#self-check-before-you-open-the-pr).
+Phase 1 is the author's [self-check](llm-reviewers.md#self-check-before-you-open-the-pr).
 
 ## What it verifies
 
@@ -130,7 +130,7 @@ llm:
     maxTokens: 40000         # estimated prompt tokens (chars / 3.5) above which the call is skipped
 ```
 
-The pass needs `llm.enabled: true`; it runs on the same provider as the [judge](llm-judge.html),
+The pass needs `llm.enabled: true`; it runs on the same provider as the [judge](llm-judge.md),
 and `--no-llm` disables both. In the Action, the key comes from the `llm-api-key` input as for the
 judge.
 

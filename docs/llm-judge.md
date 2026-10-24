@@ -53,12 +53,12 @@ For OpenAI or any OpenAI-compatible server (Azure OpenAI, Ollama, vLLM), set `pr
 provider you configure. If the call fails, the signal is `unknown`, and the PR cannot be
 auto-approved on that run.
 
-The same provider can also run the optional [verification pass](verification.html)
+The same provider can also run the optional [verification pass](verification.md)
 (`llm.verify.enabled: true`): a second, batched call that reads the review brief's facts, hunks
 and checks with fresh context and keeps, drops or downgrades each one. Unlike the judge, it never
 enters the score: it changes what the brief shows, never the gate or the captain priority.
 
 The `llm.semantic` and `llm.risk.*` signals sit alongside the git-derived ones listed on
-[Risk signals: what opendrs measures](signals.html). The other rules that apply before a PR is
-auto-approved are on [Auto-approve low-risk pull requests](auto-approve.html), and the full
+[Risk signals: what opendrs measures](signals.md). The other rules that apply before a PR is
+auto-approved are on [Auto-approve low-risk pull requests](auto-approve.md), and the full
 project is at the [README](https://github.com/error-path/opendrs).

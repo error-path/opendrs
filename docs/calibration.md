@@ -139,7 +139,7 @@ labelled positive.
   close, and this benchmark is how to measure it.
 
 Every experiment behind these numbers, including the ones that did not help, is in the
-[experiment log](experiments.html).
+[experiment log](experiments.md).
 
 The full report, with per-project numbers, coverage and caveats, is in
 [`bench/apachejit/results.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/results.md); [`bench/apachejit/README.md`](https://github.com/error-path/opendrs/blob/main/bench/apachejit/README.md)
