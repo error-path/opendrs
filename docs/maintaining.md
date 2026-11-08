@@ -96,9 +96,9 @@ shared by the main checkout and every `git worktree`, so it survives pruning a w
   from different worktrees of the clone distinguishable in the shared file.
 - `evals/` sits outside `plugin/`, and `claude plugin eval` only looks inside the plugin folder. Copy
   it in for the run with `cp -r evals plugin/evals && claude plugin eval ./plugin` (`plugin/evals/` is
-  gitignored). Results land in `plugin/evals/results/`; delete `plugin/evals/` when you are done.
+  gitignored). Results land in `plugin/evals/results/`; record the run below before you delete `plugin/evals/`.
 - After a `claude plugin eval` run, append its result with
-  `node scripts/record-eval-run.mjs evals/results/<timestamp>/aggregate-result.json` — it reads
+  `node scripts/record-eval-run.mjs plugin/evals/results/<timestamp>/aggregate-result.json` — it reads
   `durationSeconds`, `costUsd` and each case's `passRate` out of that file and appends a `kind:
   "eval"` entry the same way. There's no automatic hook for this (eval is run by hand or by a
   worker, not by an npm script), so it's a manual or scripted post-step.
