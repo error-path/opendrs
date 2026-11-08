@@ -26,7 +26,9 @@ A short runbook for the maintainer.
 
 ## Releasing
 
-1. Update `version` in `package.json` and `src/version.ts`, and add a section to `CHANGELOG.md`.
+1. Update `version` in `package.json`, `src/version.ts` and `plugin/.claude-plugin/plugin.json`, update the
+   pinned `@error-path/opendrs@<version>` in `plugin/.claude-plugin/plugin.json` and
+   `plugin/commands/opendrs-review.md`, and add a section to `CHANGELOG.md`.
 2. Merge that PR.
 3. Tag the release and move the major tag (from a network that allows pushes):
 

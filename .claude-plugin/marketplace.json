@@ -5,7 +5,7 @@
   "plugins": [
     {
       "name": "opendrs",
-      "source": "./",
+      "source": "./plugin",
       "description": "Blast radius and risk score (0-1) for every pull request, with a skill and an MCP server.",
       "category": "code-review"
     }

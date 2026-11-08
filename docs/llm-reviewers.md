@@ -17,7 +17,7 @@ Install the opendrs plugin (`/plugin marketplace add error-path/opendrs`, then
 `/plugin install opendrs@opendrs`) and run `/opendrs-review` on a diff. It runs
 `opendrs brief` (or calls the MCP tool `review_brief`), reads every "Review first" hunk and
 answers its questions first, then reads every other hunk at least once, and reports findings with
-file:line and a priority. See [`skills/opendrs/SKILL.md`](https://github.com/error-path/opendrs/blob/main/skills/opendrs/SKILL.md) for the same
+file:line and a priority. See [`plugin/skills/opendrs/SKILL.md`](https://github.com/error-path/opendrs/blob/main/plugin/skills/opendrs/SKILL.md) for the same
 flow as an agent skill in any Claude Code session, with no slash command needed.
 
 ## Self-check before you open the PR

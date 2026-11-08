@@ -30,7 +30,7 @@ open-source implementation that runs in any git repository, with no service to h
 | CLI | `npx @error-path/opendrs score` | [CLI, MCP server, Claude Code plugin and agent skill](docs/cli-and-mcp.md) |
 | MCP server (any agent) | `npx -y @error-path/opendrs mcp` | Tools: `score_diff`, `explain_file_risk`, `list_hotspots`, `suggest_reviewers` |
 | Claude Code plugin (skill plus MCP server) | `/plugin marketplace add error-path/opendrs`, then `/plugin install opendrs@opendrs` | |
-| Agent skill (Claude Code, Cursor, Codex and others) | `npx skills add error-path/opendrs` | [`skills/opendrs/SKILL.md`](skills/opendrs/SKILL.md) |
+| Agent skill (Claude Code, Cursor, Codex and others) | `npx skills add error-path/opendrs` | [`plugin/skills/opendrs/SKILL.md`](plugin/skills/opendrs/SKILL.md) |
 | Docker (MCP server over stdio) | `docker build -t opendrs . && docker run -i --rm -v "$PWD:/repo" opendrs` | Mount the repository to score at `/repo` |
 
 Website and guides: [error-path.github.io/opendrs](https://error-path.github.io/opendrs/).

@@ -64,5 +64,5 @@ it opens a pull request. Install it from inside Claude Code:
 
 ## Agent skill
 
-The agent skill in [`skills/opendrs/SKILL.md`](https://github.com/error-path/opendrs/blob/main/skills/opendrs/SKILL.md) tells an agent to run
+The agent skill in [`plugin/skills/opendrs/SKILL.md`](https://github.com/error-path/opendrs/blob/main/plugin/skills/opendrs/SKILL.md) tells an agent to run
 `opendrs score` before opening a PR and to split changes with a large blast radius.
