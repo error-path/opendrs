@@ -12,8 +12,8 @@ judge. It returns a score, a tier and the gate decision the repo's CI will apply
 ## Score before you open a PR
 
 ```bash
-npx @error-path/opendrs score --base origin/main          # human-readable report
-npx @error-path/opendrs score --base origin/main --json   # machine-readable
+npx @error-path/opendrs@0.5.0 score --base origin/main          # human-readable report
+npx @error-path/opendrs@0.5.0 score --base origin/main --json   # machine-readable
 ```
 
 Read the output in this order:
@@ -41,7 +41,7 @@ Split the PR, or ask the user whether to, when:
 ## Explain one file
 
 ```bash
-npx @error-path/opendrs explain src/path/to/file.ts
+npx @error-path/opendrs@0.5.0 explain src/path/to/file.ts
 ```
 
 This shows the file's history, bug-fix count, authors, direct and transitive dependents, and
@@ -54,8 +54,8 @@ hunks to read first from file history, blast radius and past fixes, and gives fi
 check.
 
 ```bash
-npx @error-path/opendrs brief --base origin/main          # human-readable
-npx @error-path/opendrs brief --base origin/main --json   # machine-readable
+npx @error-path/opendrs@0.5.0 brief --base origin/main          # human-readable
+npx @error-path/opendrs@0.5.0 brief --base origin/main --json   # machine-readable
 ```
 
 Or the MCP tool `review_brief {repoDir, base?, head?, maxTokens?}` when the server is connected.
@@ -117,7 +117,7 @@ fact, `reviewFirst` hunk and "Check specifically" item is something to fix or ex
 read.
 
 ```bash
-npx @error-path/opendrs brief --self-check-template   # the ids to address, as JSON
+npx @error-path/opendrs@0.5.0 brief --self-check-template   # the ids to address, as JSON
 ```
 
 Or the MCP tool `self_check_items {repoDir, base?, head?, maxTokens?}`.
@@ -160,7 +160,7 @@ itself is correct, so fix the prose or drop the count rather than send a mismatc
 
 ## MCP tools
 
-When the `opendrs` MCP server is connected (`npx @error-path/opendrs mcp`, stdio), prefer these tools to
+When the `opendrs` MCP server is connected (`npx @error-path/opendrs@0.5.0 mcp`, stdio), prefer these tools to
 shelling out:
 
 - `score_diff {repoDir, base?, head?}`: same as `score`. The base defaults to origin/HEAD, then main.
