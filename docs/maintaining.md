@@ -94,8 +94,9 @@ shared by the main checkout and every `git worktree`, so it survives pruning a w
   `node scripts/record-run.mjs bench:apachejit -- <bench command>` or
   `node scripts/record-run.mjs eval:case -- <command>`. `gitBranch` and `worktree` keep timings
   from different worktrees of the clone distinguishable in the shared file.
-- `evals/` sits outside `plugin/`, and `claude plugin eval` only looks inside the plugin folder. From
-  the repository root, install the plugin and run `claude plugin eval opendrs@opendrs --eval-dir evals`.
+- `evals/` sits outside `plugin/`, and `claude plugin eval` only looks inside the plugin folder. Copy
+  it in for the run with `cp -r evals plugin/evals && claude plugin eval ./plugin` (`plugin/evals/` is
+  gitignored). Results land in `plugin/evals/results/`; delete `plugin/evals/` when you are done.
 - After a `claude plugin eval` run, append its result with
   `node scripts/record-eval-run.mjs evals/results/<timestamp>/aggregate-result.json` — it reads
   `durationSeconds`, `costUsd` and each case's `passRate` out of that file and appends a `kind:

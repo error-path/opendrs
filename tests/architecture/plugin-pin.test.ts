@@ -8,7 +8,7 @@ const pinnedFiles = [manifestPath, "plugin/commands/opendrs-review.md", "plugin/
 
 // The directory blocks unpinned npx launchers, and a partial bump would run mixed CLI versions.
 describe("plugin version pins", () => {
-  const mentions = pinnedFiles.flatMap((path) => [...read(path).matchAll(/npx (?:-y )?@error-path\/opendrs(@\S+)?/g)]);
+  const mentions = pinnedFiles.flatMap((path) => [...read(path).matchAll(/npx (?:-y )?@error-path\/opendrs(@[^\s`"]+)?/g)]);
   const manifest = JSON.parse(read(manifestPath)) as { version: string; mcpServers: { opendrs: { args: string[] } } };
 
   it("pins every npx call in the plugin to the manifest version", () => {
