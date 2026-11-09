@@ -31490,7 +31490,7 @@ async function attempt(label, url2, init) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(url2, { ...init, signal: controller.signal });
+    const res = await fetch(url2, { ...init, signal: controller.signal, redirect: "error" });
     return { res, text: await res.text() };
   } catch (e) {
     if (controller.signal.aborted) throw new OpendrsError(`${label} request timed out after ${TIMEOUT_MS / 1e3} s`, "llm");
@@ -31674,15 +31674,30 @@ function isLocal(baseUrl) {
     return false;
   }
 }
+var TRUST_REPO_LLM_ENV = "OPENDRS_TRUST_REPO_LLM";
+function untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv) {
+  return [
+    ...baseUrl !== void 0 && !isLocal(baseUrl) ? [`llm.baseUrl (${baseUrl})`] : [],
+    ...apiKeyEnv !== void 0 && apiKeyEnv !== defaultKeyEnv ? [`llm.apiKeyEnv (${apiKeyEnv})`] : []
+  ];
+}
 function createLlmProvider(config2, env = process.env) {
   const { enabled, provider, model, baseUrl, apiKeyEnv } = config2.llm;
   if (!enabled) return void 0;
-  const keyEnv = apiKeyEnv ?? (provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY");
+  const defaultKeyEnv = provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+  const untrusted2 = untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv);
+  if (untrusted2.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
+    throw new OpendrsError(
+      `Refusing to call the LLM: .opendrs.yml sets ${untrusted2.join(" and ")}, and that file comes with the repository. If you trust it, set ${TRUST_REPO_LLM_ENV}=1 for this run only: while set, it applies to every repository.`,
+      "llm"
+    );
+  }
+  const keyEnv = apiKeyEnv ?? defaultKeyEnv;
   const apiKey = env[keyEnv] || void 0;
   const keyOptional = provider === "openai" && isLocal(baseUrl);
   if (!apiKey && !keyOptional) {
     throw new OpendrsError(
-      `The LLM judge is enabled (llm.enabled: true, provider ${provider}) but ${keyEnv} is not set. Export ${keyEnv}, point llm.apiKeyEnv at the variable that holds the key, or set llm.enabled: false in .opendrs.yml.`,
+      `The LLM judge is enabled (llm.enabled: true, provider ${provider}) but ${keyEnv} is not set. Export ${keyEnv}, or set llm.enabled: false in .opendrs.yml.`,
       "llm"
     );
   }
@@ -33076,6 +33091,7 @@ async function scorePullRequest(d, pr) {
   await requireCommit(d.repoDir, pr.head.sha, "Head");
   const { config: config2, model } = await io.group("Configuration", () => loadSettings(d, pr.base.sha));
   if (d.inputs.llmApiKey) d.env[llmKeyEnv(config2)] = d.inputs.llmApiKey;
+  d.env[TRUST_REPO_LLM_ENV] = "1";
   const predictable = config2.autoApprove.enabled && config2.autoApprove.sampleRate > 0 && !d.inputs.sampleSalt;
   if (predictable) io.warning(PREDICTABLE_SAMPLING);
   const checkRuns = await unlessForbidden(

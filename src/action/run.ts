@@ -10,6 +10,7 @@ import { scoreDiff } from "../engine.js";
 import { git, gitMaybe } from "../git/exec.js";
 import { matchAny } from "../git/glob.js";
 import { buildHistoryIndex } from "../git/history.js";
+import { TRUST_REPO_LLM_ENV } from "../llm/provider.js";
 import { assignReviewer, suggestReviewers } from "../policy/reviewers.js";
 import { cell } from "../report/escape.js";
 import { renderMarkdown } from "../report/markdown.js";
@@ -230,6 +231,8 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
 
   const { config, model } = await io.group("Configuration", () => loadSettings(d, pr.base.sha));
   if (d.inputs.llmApiKey) d.env[llmKeyEnv(config)] = d.inputs.llmApiKey;
+  // Safe here: the llm settings come from the base commit, so a PR can't change them.
+  d.env[TRUST_REPO_LLM_ENV] = "1";
   const predictable = config.autoApprove.enabled && config.autoApprove.sampleRate > 0 && !d.inputs.sampleSalt;
   if (predictable) io.warning(PREDICTABLE_SAMPLING);
 

@@ -28,7 +28,7 @@ async function attempt(label: string, url: string, init: RequestInit): Promise<{
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(url, { ...init, signal: controller.signal });
+    const res = await fetch(url, { ...init, signal: controller.signal, redirect: "error" });
     return { res, text: await res.text() };
   } catch (e) {
     if (controller.signal.aborted) throw new OpendrsError(`${label} request timed out after ${TIMEOUT_MS / 1000} s`, "llm");

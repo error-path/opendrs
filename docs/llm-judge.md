@@ -53,6 +53,17 @@ For OpenAI or any OpenAI-compatible server (Azure OpenAI, Ollama, vLLM), set `pr
 provider you configure. If the call fails, the signal is `unknown`, and the PR cannot be
 auto-approved on that run.
 
+`.opendrs.yml` comes with the repository, so outside the Action it can't decide where your key
+goes. opendrs refuses a remote `baseUrl` or a custom `apiKeyEnv` unless you set
+`OPENDRS_TRUST_REPO_LLM=1`. Without this check, a repository you cloned could send its diff and any
+of your environment variables to its own server.
+
+- A refused call counts as a failed call: the signal is `unknown`.
+- Set the variable for one run, not in your shell profile. While it is set, it applies to every
+  repository.
+- You don't need it for a `localhost` `baseUrl` with the default key variable.
+- The Action doesn't need it. It reads the `llm` section from the base commit, which a PR can't change.
+
 The same provider can also run the optional [verification pass](verification.md)
 (`llm.verify.enabled: true`): a second, batched call that reads the review brief's facts, hunks
 and checks with fresh context and keeps, drops or downgrades each one. Unlike the judge, it never
