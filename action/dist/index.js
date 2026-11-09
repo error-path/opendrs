@@ -32475,7 +32475,7 @@ var SIGNAL_PROVIDERS = [
 ];
 
 // src/version.ts
-var VERSION = "0.5.0";
+var VERSION = "0.5.1";
 
 // src/engine.ts
 async function loadModel(repoDir, config2) {

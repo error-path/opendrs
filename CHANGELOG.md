@@ -2,7 +2,9 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.5.1 - 2026-11-09
+
+A security fix for local use, plus quieter captain facts from the outcome-labels study.
 
 ### Security
 
@@ -11,6 +13,21 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
   `OPENDRS_TRUST_REPO_LLM=1` is set; before, opening a malicious repository could send its diff and
   any environment variable to a server it named. **Breaking for local gateway users:** set the
   variable per run to keep using them, since it applies to every repository while set. The GitHub Action is unaffected.
+
+### Fixed
+
+- LLM requests now refuse redirects, so a request can't be forwarded from an allowed localhost URL
+  to a remote server.
+- Facts that share an id, file and line no longer overwrite each other in the verification pass
+  and `opendrs feedback --fact`.
+
+### Changed
+
+- `coupling.missing` is now info-only, so it can't raise a PR's captain priority by itself. It no
+  longer fires when the changed file is a CI workflow, a manifest or a test.
+- `contract.api` and `contract.env` now report one fact per file with a count. `contract.env` skips
+  generated lock files.
+- The Claude Code plugin moved to `plugin/` and pins its `npx` calls to an exact version.
 
 ## 0.5.0 - 2026-10-23
 
