@@ -231,7 +231,7 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
 
   const { config, model } = await io.group("Configuration", () => loadSettings(d, pr.base.sha));
   if (d.inputs.llmApiKey) d.env[llmKeyEnv(config)] = d.inputs.llmApiKey;
-  // loadSettings always takes the llm section from the base commit, so a PR cannot have set it.
+  // Safe here: the llm settings come from the base commit, so a PR can't change them.
   d.env[TRUST_REPO_LLM_ENV] = "1";
   const predictable = config.autoApprove.enabled && config.autoApprove.sampleRate > 0 && !d.inputs.sampleSalt;
   if (predictable) io.warning(PREDICTABLE_SAMPLING);

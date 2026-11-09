@@ -28,6 +28,30 @@ scoring logic.
 - Conventional Commit messages (`feat(cli): ...`, `fix(action): ...`).
 - Docs: plain, specific sentences. Say what a thing does and what it does not.
 
+## Code comments
+
+Function comments use [TSDoc](https://tsdoc.org/). Every new function gets one. When you edit an
+existing function's comment, move it to this format. Don't reformat comments you aren't changing.
+
+```ts
+/**
+ * Calculates the discount for a loyalty customer.
+ *
+ * @param amount - The order subtotal, before taxes.
+ * @param tier - The customer's verified tier.
+ * @returns The value to subtract from the total.
+ * @throws {@link OpendrsError} If amount is negative.
+ */
+```
+
+- Start with one short sentence that says what the function does.
+- Add `@param` for each parameter, `@returns` unless it returns nothing, and `@throws` if callers
+  need to handle an error.
+- Don't repeat types in the tags: the signature already has them.
+- Use Markdown, not HTML.
+- One-line helpers and constants can use a single `/** ... */` line.
+- Inside a function, use `//`, and only to explain why.
+
 ## Reporting a security problem
 
 Do not open a public issue for a way around the Action's approval rails. Use GitHub's private

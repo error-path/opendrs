@@ -14,12 +14,17 @@ function isLocal(baseUrl: string | undefined): boolean {
   }
 }
 
-/** Set to "1" by the person running opendrs (or by the Action, whose llm section comes from the base commit). */
+/** Set to "1" to allow a repo's llm.baseUrl and llm.apiKeyEnv. The Action sets it itself. */
 export const TRUST_REPO_LLM_ENV = "OPENDRS_TRUST_REPO_LLM";
 
 /**
- * Settings that decide where the key goes or which variable is sent as the key. `.opendrs.yml` comes
- * with the repository, so a cloned repo must not be able to choose them on its own.
+ * Lists the LLM settings that need the user's opt-in before they can be used.
+ *
+ * @param baseUrl - The server URL from `.opendrs.yml`. Undefined means the provider's own API. Only an
+ * exact `localhost`, `127.0.0.1` or `[::1]` host counts as local; anything else is risky.
+ * @param apiKeyEnv - The name of the variable to send as the key. Undefined means the default.
+ * @param defaultKeyEnv - The provider's normal key variable.
+ * @returns One readable entry per risky setting, used in the error message. Empty if there are none.
  */
 function untrustedSettings(baseUrl: string | undefined, apiKeyEnv: string | undefined, defaultKeyEnv: string): string[] {
   return [
@@ -29,14 +34,22 @@ function untrustedSettings(baseUrl: string | undefined, apiKeyEnv: string | unde
 }
 
 /**
- * Returns undefined when llm.enabled is false. Throws OpendrsError("llm") when enabled but no API key,
- * or when the config picks a remote endpoint or a custom key variable without TRUST_REPO_LLM_ENV.
+ * Creates the LLM provider from the config, after checking that the config may use the user's key.
+ *
+ * @param config - The loaded opendrs config. Outside the Action, it comes from the repository and
+ * is untrusted. The Action passes `llm` settings from the base commit.
+ * @param env - Where to read the API key and {@link TRUST_REPO_LLM_ENV}. Defaults to `process.env`.
+ * @returns The Anthropic or OpenAI-compatible provider, or undefined when `llm.enabled` is false.
+ * @throws {@link OpendrsError} With code `llm` if `llm.baseUrl` or `llm.apiKeyEnv` is refused, if
+ * the key is missing (only an OpenAI-compatible server on localhost can run without one), or if
+ * the `openai` provider is given a `claude-` model and no `llm.baseUrl`.
  */
 export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv = process.env): LlmProvider | undefined {
   const { enabled, provider, model, baseUrl, apiKeyEnv } = config.llm;
   if (!enabled) return undefined;
 
   const defaultKeyEnv = provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+  // Check before reading the key, so a refused config never touches the variable it named.
   const untrusted = untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv);
   if (untrusted.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
     throw new OpendrsError(
