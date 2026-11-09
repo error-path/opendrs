@@ -14,12 +14,39 @@ function isLocal(baseUrl: string | undefined): boolean {
   }
 }
 
-/** Returns undefined when llm.enabled is false. Throws OpendrsError("llm") when enabled but no API key. */
+/** Set to "1" by the person running opendrs (or by the Action, whose llm section comes from the base commit). */
+export const TRUST_REPO_LLM_ENV = "OPENDRS_TRUST_REPO_LLM";
+
+/**
+ * Settings that decide where the key goes or which variable is sent as the key. `.opendrs.yml` comes
+ * with the repository, so a cloned repo must not be able to choose them on its own.
+ */
+function untrustedSettings(baseUrl: string | undefined, apiKeyEnv: string | undefined, defaultKeyEnv: string): string[] {
+  return [
+    ...(baseUrl !== undefined && !isLocal(baseUrl) ? [`llm.baseUrl (${baseUrl})`] : []),
+    ...(apiKeyEnv !== undefined && apiKeyEnv !== defaultKeyEnv ? [`llm.apiKeyEnv (${apiKeyEnv})`] : []),
+  ];
+}
+
+/**
+ * Returns undefined when llm.enabled is false. Throws OpendrsError("llm") when enabled but no API key,
+ * or when the config picks a remote endpoint or a custom key variable without TRUST_REPO_LLM_ENV.
+ */
 export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv = process.env): LlmProvider | undefined {
   const { enabled, provider, model, baseUrl, apiKeyEnv } = config.llm;
   if (!enabled) return undefined;
 
-  const keyEnv = apiKeyEnv ?? (provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY");
+  const defaultKeyEnv = provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+  const untrusted = untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv);
+  if (untrusted.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
+    throw new OpendrsError(
+      `Refusing to call the LLM: .opendrs.yml sets ${untrusted.join(" and ")}, and that file comes with the repository. ` +
+        `If you trust this repository's config, set ${TRUST_REPO_LLM_ENV}=1.`,
+      "llm",
+    );
+  }
+
+  const keyEnv = apiKeyEnv ?? defaultKeyEnv;
   const apiKey = env[keyEnv] || undefined;
   const keyOptional = provider === "openai" && isLocal(baseUrl);
   if (!apiKey && !keyOptional) {
