@@ -1,4 +1,3 @@
-import { TRUST_REPO_LLM_ENV } from "../llm/provider.js";
 import { writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -11,6 +10,7 @@ import { scoreDiff } from "../engine.js";
 import { git, gitMaybe } from "../git/exec.js";
 import { matchAny } from "../git/glob.js";
 import { buildHistoryIndex } from "../git/history.js";
+import { TRUST_REPO_LLM_ENV } from "../llm/provider.js";
 import { assignReviewer, suggestReviewers } from "../policy/reviewers.js";
 import { cell } from "../report/escape.js";
 import { renderMarkdown } from "../report/markdown.js";

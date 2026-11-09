@@ -10,7 +10,7 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
   goes. With `llm.enabled`, a remote `llm.baseUrl` or a custom `llm.apiKeyEnv` is now refused unless
   `OPENDRS_TRUST_REPO_LLM=1` is set; before, opening a malicious repository could send its diff and
   any environment variable to a server it named. **Breaking for local gateway users:** set the
-  variable to keep using them. The GitHub Action is unaffected.
+  variable per run to keep using them, since it applies to every repository while set. The GitHub Action is unaffected.
 
 ## 0.5.0 - 2026-10-23
 

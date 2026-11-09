@@ -56,8 +56,9 @@ auto-approved on that run.
 Outside the Action, `.opendrs.yml` comes with whatever repository you cloned, so opendrs refuses
 to use a remote `baseUrl` or a custom `apiKeyEnv` from it unless you set `OPENDRS_TRUST_REPO_LLM=1`
 in your own environment. Otherwise a repository could send its diff, and any variable you have set,
-to a server of its choosing. A refused call is treated like a failed one. A `localhost` `baseUrl`
-needs no opt-in. The Action does not need it either: it reads the `llm` section from the base commit.
+to a server of its choosing. A refused call is treated like a failed one. Set it per run, not in your
+shell profile: while set, it applies to every repository. A `localhost` `baseUrl` with the default
+key variable needs no opt-in. The Action does not need it either: it reads the `llm` section from the base commit.
 
 The same provider can also run the optional [verification pass](verification.md)
 (`llm.verify.enabled: true`): a second, batched call that reads the review brief's facts, hunks

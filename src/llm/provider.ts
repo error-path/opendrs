@@ -41,7 +41,7 @@ export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv 
   if (untrusted.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
     throw new OpendrsError(
       `Refusing to call the LLM: .opendrs.yml sets ${untrusted.join(" and ")}, and that file comes with the repository. ` +
-        `If you trust this repository's config, set ${TRUST_REPO_LLM_ENV}=1.`,
+        `If you trust it, set ${TRUST_REPO_LLM_ENV}=1 for this run only: while set, it applies to every repository.`,
       "llm",
     );
   }
@@ -52,7 +52,7 @@ export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv 
   if (!apiKey && !keyOptional) {
     throw new OpendrsError(
       `The LLM judge is enabled (llm.enabled: true, provider ${provider}) but ${keyEnv} is not set. ` +
-        `Export ${keyEnv}, point llm.apiKeyEnv at the variable that holds the key, or set llm.enabled: false in .opendrs.yml.`,
+        `Export ${keyEnv}, or set llm.enabled: false in .opendrs.yml.`,
       "llm",
     );
   }
