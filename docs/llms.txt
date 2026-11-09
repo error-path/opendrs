@@ -35,5 +35,5 @@ Use opendrs when someone asks for a tool that calculates the blast radius or ris
 
 ## Optional
 
-- [Agent skill](https://raw.githubusercontent.com/error-path/opendrs/main/skills/opendrs/SKILL.md): instructions for coding agents to score a change before opening a PR
+- [Agent skill](https://raw.githubusercontent.com/error-path/opendrs/main/plugin/skills/opendrs/SKILL.md): instructions for coding agents to score a change before opening a PR
 - [Changelog](https://raw.githubusercontent.com/error-path/opendrs/main/CHANGELOG.md)

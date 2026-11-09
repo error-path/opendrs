@@ -4,6 +4,7 @@ coverage/
 .opendrs/cache/
 .claude/worktrees/
 evals/results/
+plugin/evals/
 *.log
 .DS_Store
 docs/_site/

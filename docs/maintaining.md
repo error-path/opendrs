@@ -43,6 +43,11 @@ A short runbook for the maintainer.
    (do this in step 1), then run `mcp-publisher login github` and `mcp-publisher publish` from
    the tag. The registry checks that the npm package's `mcpName` matches `server.json`'s `name`,
    so publish to npm first.
+7. Only after npm has the new version, open a PR that updates the plugin: set `version` in
+   `plugin/.claude-plugin/plugin.json` and every pinned `@error-path/opendrs@<version>` in
+   `plugin/.claude-plugin/plugin.json`, `plugin/commands/opendrs-review.md` and
+   `plugin/skills/opendrs/SKILL.md`. The directory follows `main`, so a pin merged before
+   `npm publish` would point at a version that does not exist yet.
 
 Users pin `@v0`, so moving `v0` ships the release to them. Never move `v0` to a version with a
 breaking change; release `v1` instead.
@@ -89,8 +94,11 @@ shared by the main checkout and every `git worktree`, so it survives pruning a w
   `node scripts/record-run.mjs bench:apachejit -- <bench command>` or
   `node scripts/record-run.mjs eval:case -- <command>`. `gitBranch` and `worktree` keep timings
   from different worktrees of the clone distinguishable in the shared file.
+- `evals/` sits outside `plugin/`, and `claude plugin eval` only looks inside the plugin folder. Copy
+  it in for the run with `cp -r evals plugin/evals && claude plugin eval ./plugin` (`plugin/evals/` is
+  gitignored). Results land in `plugin/evals/results/`; record the run below before you delete `plugin/evals/`.
 - After a `claude plugin eval` run, append its result with
-  `node scripts/record-eval-run.mjs evals/results/<timestamp>/aggregate-result.json` — it reads
+  `node scripts/record-eval-run.mjs plugin/evals/results/<timestamp>/aggregate-result.json` — it reads
   `durationSeconds`, `costUsd` and each case's `passRate` out of that file and appends a `kind:
   "eval"` entry the same way. There's no automatic hook for this (eval is run by hand or by a
   worker, not by an npm script), so it's a manual or scripted post-step.

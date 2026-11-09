@@ -8,6 +8,6 @@
   "license": "MIT",
   "keywords": ["blast-radius", "pr-risk", "risk-score", "code-review", "auto-approve", "auto-merge", "merge-queue", "ai-code-review", "diff-risk-score"],
   "mcpServers": {
-    "opendrs": { "command": "npx", "args": ["-y", "@error-path/opendrs", "mcp"] }
+    "opendrs": { "command": "npx", "args": ["-y", "@error-path/opendrs@0.5.0", "mcp"] }
   }
 }

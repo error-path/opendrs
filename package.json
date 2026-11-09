@@ -47,7 +47,8 @@
     "LICENSE",
     "README.md",
     "dist",
-    "skills"
+    "plugin",
+    "!plugin/evals"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
