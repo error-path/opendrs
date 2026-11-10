@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { resolve } from "node:path";
 import type { HistoryIndex, ScoreResult } from "../../src/domain/types.js";
 import { OpendrsError } from "../../src/domain/types.js";
 
@@ -17,7 +18,8 @@ const { suggestReviewers } = await import("../../src/policy/reviewers.js");
 const { gitMaybe } = await import("../../src/git/exec.js");
 const { scoreDiffTool, explainFileRiskTool, listHotspotsTool, suggestReviewersTool } = await import("../../src/mcp/tools.js");
 
-const REPO = "/tmp/opendrs-mcp-test-repo-does-not-exist";
+// The tools resolve repoDir, which on Windows turns /tmp/... into a C: drive path, so compare against that.
+const REPO = resolve("/tmp/opendrs-mcp-test-repo-does-not-exist");
 
 function result(): ScoreResult {
   const contributions = Array.from({ length: 9 }, (_, i) => ({ id: `sig.${i}`, value: i, weight: 0.5, contribution: 9 - i }));

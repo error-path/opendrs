@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { resolve } from "node:path";
 import type { ReviewBrief } from "../../src/domain/types.js";
 
 vi.mock("../../src/engine.js", () => ({ scoreDiff: vi.fn() }));
@@ -7,7 +8,8 @@ vi.mock("../../src/git/exec.js", () => ({ gitMaybe: vi.fn(async (dir: string) =>
 const { scoreDiff } = await import("../../src/engine.js");
 const { selfCheckItemsTool } = await import("../../src/mcp/tools.js");
 
-const REPO = "/tmp/opendrs-mcp-self-check-test-repo-does-not-exist";
+// The tools resolve repoDir, which on Windows turns /tmp/... into a C: drive path, so compare against that.
+const REPO = resolve("/tmp/opendrs-mcp-self-check-test-repo-does-not-exist");
 
 const brief = (): ReviewBrief => ({
   version: 1,

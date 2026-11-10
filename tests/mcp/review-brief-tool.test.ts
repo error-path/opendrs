@@ -1,4 +1,5 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { resolve } from "node:path";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ReviewBrief } from "../../src/domain/types.js";
@@ -10,7 +11,8 @@ const { scoreDiff } = await import("../../src/engine.js");
 const { reviewBriefTool } = await import("../../src/mcp/tools.js");
 const { createMcpServer } = await import("../../src/mcp/server.js");
 
-const REPO = "/tmp/opendrs-mcp-brief-test-repo-does-not-exist";
+// The tools resolve repoDir, which on Windows turns /tmp/... into a C: drive path, so compare against that.
+const REPO = resolve("/tmp/opendrs-mcp-brief-test-repo-does-not-exist");
 
 const brief = (): ReviewBrief => ({
   version: 1,
