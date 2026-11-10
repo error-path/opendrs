@@ -122,7 +122,7 @@ Whatever the score:
 
 - changes to CI workflows, CODEOWNERS and OWNERS files, migrations, Terraform and other
   infrastructure files, build and install scripts, AI agent config that can run commands
-  (`.claude/**`, `.mcp.json`, plugin manifests, hooks, commands and skills), and the opendrs config
+  (`.claude/**`, `.mcp.json`, plugin manifests and hooks), and the opendrs config
   or model;
 - binary files, submodule pointer changes, lockfiles and other ignored files;
 - PRs that delete tests or add a line matching a `content.block` pattern;

@@ -119,8 +119,6 @@ paths:
     - ".claude/**"
     - "**/.claude-plugin/**"
     - "**/hooks/hooks.json"
-    - "**/commands/*.md"
-    - "**/SKILL.md"
     - "**/.mcp.json"
     - ".cursor/mcp.json"
     - ".vscode/mcp.json"

@@ -7,7 +7,7 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 ### Security
 
 - The default `paths.block` list now also covers AI agent config that can run commands
-  (`.claude/**`, `.mcp.json`, plugin manifests, hooks, commands and `SKILL.md`), CI pipelines under
+  (`.claude/**`, `.mcp.json`, plugin manifests and hooks), CI pipelines under
   other names and folders (`.gitlab/`, `Jenkinsfile.*`, Gitea, Forgejo, Woodpecker, TeamCity,
   AppVeyor), build wrappers and install hooks (`gradlew`, `mvnw`, Yarn plugins, Lefthook,
   `composer.json`, `Podfile`, ...), more infrastructure files (`*.tfvars`, Bicep, Pulumi, a Prisma

@@ -68,9 +68,8 @@ paths:
           "**/bitbucket-pipelines.yml", "**/.drone.yml", "**/.travis.yml", "**/cloudbuild.y*ml",
           "**/Earthfile", "**/BUILD", "**/BUILD.bazel", "**/WORKSPACE*", "**/MODULE.bazel", "**/*.bzl",
           # AI agent and editor config that can run commands on a developer's machine
-          ".claude/**", "**/.claude-plugin/**", "**/hooks/hooks.json", "**/commands/*.md",
-          "**/SKILL.md", "**/.mcp.json", ".cursor/mcp.json", ".vscode/mcp.json",
-          ".vscode/tasks.json",
+          ".claude/**", "**/.claude-plugin/**", "**/hooks/hooks.json", "**/.mcp.json",
+          ".cursor/mcp.json", ".vscode/mcp.json", ".vscode/tasks.json",
           # CI pipelines under other names and folders
           ".gitlab-ci.yaml", ".gitlab/**", "**/Jenkinsfile*", "**/azure-pipelines*.y*ml",
           ".gitea/**", ".forgejo/**", "**/.woodpecker.y*ml", ".woodpecker/**", ".semaphore/**",
@@ -177,10 +176,11 @@ and project files (`build.gradle`, `pom.xml`, `build.rs`, `Makefile`, `CMakeList
 `Dockerfile`, Bazel and Nix files, ...), developer hooks and environments (`.husky/`,
 `.pre-commit-config.yaml`, `conftest.py`, `.envrc`, `.devcontainer/`, `gradlew`, ...), CI pipelines
 outside `.github/`, and AI agent config that can run commands (`.claude/`, `.mcp.json`, plugin
-manifests, hooks, commands and skills). It also lists infrastructure files (Terraform variables,
+manifests and hooks). It also lists infrastructure files (Terraform variables,
 Bicep, Pulumi, a Prisma schema) and `OWNERS` and Renovate files, which decide who reviews and what
-bots may merge. Plain agent instructions such as `CLAUDE.md` stay under `paths.instructions`
-instead: they count in full toward the size cap but do not block. Block and critical globs are matched ignoring case, so `makefile` or an EF Core
+bots may merge. Plain agent instructions such as `CLAUDE.md` and `SKILL.md` stay under
+`paths.instructions` instead: they count in full toward the size cap but do not block. Block and
+critical globs are matched ignoring case, so `makefile` or an EF Core
 `Migrations/` folder cannot slip past `**/Makefile` or `**/migrations/**`. A
 one-line change there (a `postinstall` hook, a registry pointed at another host, a new build
 step) scores as small and low-risk, but runs on every developer machine and CI runner. Dependency

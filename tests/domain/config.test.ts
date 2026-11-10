@@ -170,8 +170,6 @@ describe("default paths.block", () => {
     ".claude/commands/deploy.md",
     "plugin/.claude-plugin/plugin.json",
     "plugin/hooks/hooks.json",
-    "plugin/commands/opendrs-review.md",
-    "plugin/skills/opendrs/SKILL.md",
     ".mcp.json",
     "plugin/.mcp.json",
     ".cursor/mcp.json",
@@ -255,6 +253,9 @@ describe("default paths.block", () => {
     for (const path of [
       "CLAUDE.md",
       "AGENTS.md",
+      "skills/writing/SKILL.md",
+      "docs/commands/build.md",
+      "plugin/commands/opendrs-review.md",
       "src/cli/commands/review.ts",
       "docs/cli-and-mcp.md",
       "src/hooks/useAuth.ts",
