@@ -6,3 +6,7 @@ autoApprove:
   # confirm" (.github/workflows/opendrs.yml); a maintainer merges the rest.
   mergeMethod: none
   maxChangedLines: 1000
+paths:
+  # The Claude Code plugin's commands and skill make a user's machine run `npx`, so a human
+  # reviews every change to it. These add to the default block list.
+  block: ["plugin/**"]

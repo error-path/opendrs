@@ -2,7 +2,23 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Security
+
+- The default `paths.block` list now also covers AI agent config that can run commands
+  (`.claude/**`, `.mcp.json`, plugin manifests and hooks), CI pipelines under
+  other names and folders (`.gitlab/`, `Jenkinsfile.*`, Gitea, Forgejo, Woodpecker, TeamCity,
+  AppVeyor), build wrappers and install hooks (`gradlew`, `mvnw`, Yarn plugins, Lefthook,
+  `composer.json`, `Podfile`, ...), more infrastructure files (`*.tfvars`, Bicep, Pulumi, a Prisma
+  schema, Alembic migrations), and `OWNERS` and Renovate files. Before, a low-risk PR touching
+  these could be auto-approved. **More PRs now go to a human:** drop any entry you trust with
+  `paths.unblock`.
+
 ## 0.5.1 - 2026-11-09
+
+The GitHub Action got this release; npm users get its fixes in the next release.
+
 
 A security fix for local use, plus quieter captain facts from the outcome-labels study.
 
