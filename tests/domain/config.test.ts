@@ -163,6 +163,109 @@ describe("default paths.block", () => {
       expect(matchAny(defaultConfig().paths.block, path, { ignoreCase: true }), path).toBe(false);
     }
   });
+
+  it.each([
+    ".claude/settings.json",
+    ".claude/hooks/format.sh",
+    ".claude/commands/deploy.md",
+    "plugin/.claude-plugin/plugin.json",
+    "plugin/hooks/hooks.json",
+    "plugin/commands/opendrs-review.md",
+    "plugin/skills/opendrs/SKILL.md",
+    ".mcp.json",
+    "plugin/.mcp.json",
+    ".cursor/mcp.json",
+    ".vscode/mcp.json",
+    ".vscode/tasks.json",
+  ])("blocks %s, agent or editor config that can run commands", (path) => {
+    expect(matchAny(defaultConfig().paths.block, path, { ignoreCase: true })).toBe(true);
+  });
+
+  it.each([
+    ".gitlab-ci.yaml",
+    ".gitlab/ci/build.yml",
+    "ci/Jenkinsfile",
+    "Jenkinsfile.release",
+    "azure-pipelines.yaml",
+    "build/azure-pipelines.release.yml",
+    ".gitea/workflows/ci.yml",
+    ".forgejo/workflows/ci.yml",
+    ".woodpecker.yml",
+    ".woodpecker/build.yaml",
+    ".semaphore/semaphore.yml",
+    ".teamcity/settings.kts",
+    "appveyor.yml",
+    ".appveyor.yml",
+  ])("blocks %s, a CI pipeline under another name or folder", (path) => {
+    expect(matchAny(defaultConfig().paths.block, path, { ignoreCase: true })).toBe(true);
+  });
+
+  it.each([
+    "gradlew",
+    "android/gradlew.bat",
+    "gradle.properties",
+    "mvnw",
+    "mvnw.cmd",
+    ".yarn/plugins/plugin.cjs",
+    ".yarn/releases/yarn-4.1.0.cjs",
+    "pnpm-workspace.yaml",
+    "bunfig.toml",
+    "deno.json",
+    "deno.jsonc",
+    "lefthook.yml",
+    ".lefthook.yaml",
+    "Pipfile",
+    "ios/Podfile",
+    "composer.json",
+    "mix.exs",
+    "build.sbt",
+    "project/plugins.sbt",
+    "go.work",
+    "rust-toolchain.toml",
+    "configure",
+    "configure.ac",
+    "Makefile.am",
+    "Makefile.in",
+    "meson.build",
+    "Containerfile",
+    "Tiltfile",
+    ".bazelrc",
+    "prod.tfvars",
+    "main.tf.json",
+    "prod.tfvars.json",
+    ".terraform.lock.hcl",
+    "live/terragrunt.hcl",
+    "infra/main.bicep",
+    "Pulumi.yaml",
+    "Pulumi.prod.yaml",
+    "serverless.yml",
+    "prisma/schema.prisma",
+    "db/alembic/versions/0001_init.py",
+    "OWNERS",
+    "pkg/OWNERS_ALIASES",
+    "renovate.json",
+    "renovate.json5",
+    ".renovaterc",
+    ".renovaterc.json",
+  ])("blocks %s, a build, install, infrastructure or ownership file", (path) => {
+    expect(matchAny(defaultConfig().paths.block, path, { ignoreCase: true })).toBe(true);
+  });
+
+  it("leaves plain agent instructions and ordinary source to the score", () => {
+    for (const path of [
+      "CLAUDE.md",
+      "AGENTS.md",
+      "src/cli/commands/review.ts",
+      "docs/cli-and-mcp.md",
+      "src/hooks/useAuth.ts",
+      "src/configure.ts",
+      "vite.config.ts",
+      ".vscode/settings.json",
+      "src/skills/parse.ts",
+    ]) {
+      expect(matchAny(defaultConfig().paths.block, path, { ignoreCase: true }), path).toBe(false);
+    }
+  });
 });
 
 describe("user paths.block, paths.critical and paths.unblock", () => {

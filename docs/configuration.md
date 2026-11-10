@@ -66,7 +66,29 @@ paths:
           "**/.devcontainer/**", "**/.envrc", "**/Taskfile.y*ml", "**/justfile",
           ".gitlab-ci.yml", "Jenkinsfile", ".circleci/**", "azure-pipelines.yml", ".buildkite/**",
           "**/bitbucket-pipelines.yml", "**/.drone.yml", "**/.travis.yml", "**/cloudbuild.y*ml",
-          "**/Earthfile", "**/BUILD", "**/BUILD.bazel", "**/WORKSPACE*", "**/MODULE.bazel", "**/*.bzl"]
+          "**/Earthfile", "**/BUILD", "**/BUILD.bazel", "**/WORKSPACE*", "**/MODULE.bazel", "**/*.bzl",
+          # AI agent and editor config that can run commands on a developer's machine
+          ".claude/**", "**/.claude-plugin/**", "**/hooks/hooks.json", "**/commands/*.md",
+          "**/SKILL.md", "**/.mcp.json", ".cursor/mcp.json", ".vscode/mcp.json",
+          ".vscode/tasks.json",
+          # CI pipelines under other names and folders
+          ".gitlab-ci.yaml", ".gitlab/**", "**/Jenkinsfile*", "**/azure-pipelines*.y*ml",
+          ".gitea/**", ".forgejo/**", "**/.woodpecker.y*ml", ".woodpecker/**", ".semaphore/**",
+          ".teamcity/**", "**/appveyor.yml", "**/.appveyor.yml",
+          # more install scripts, build wrappers and git hooks
+          "**/gradlew", "**/gradlew.bat", "**/gradle.properties", "**/mvnw", "**/mvnw.cmd",
+          "**/.yarn/plugins/**", "**/.yarn/releases/**", "**/pnpm-workspace.yaml", "**/bunfig.toml",
+          "**/deno.json", "**/deno.jsonc", "**/lefthook.y*ml", "**/.lefthook.y*ml", "**/Pipfile",
+          "**/Podfile", "**/composer.json", "**/mix.exs", "**/build.sbt", "**/project/*.sbt",
+          "**/go.work", "**/rust-toolchain*", "**/configure", "**/configure.ac", "**/Makefile.am",
+          "**/Makefile.in", "**/meson.build", "**/Containerfile*", "**/Tiltfile", "**/.bazelrc",
+          # infrastructure and schema changes outside the migrations folders
+          "**/*.tfvars", "**/*.tf.json", "**/*.tfvars.json", "**/.terraform.lock.hcl",
+          "**/terragrunt.hcl", "**/*.bicep", "**/Pulumi*.yaml", "**/serverless.y*ml",
+          "**/schema.prisma", "**/alembic/versions/**",
+          # who reviews and what bots may merge
+          "**/OWNERS", "**/OWNERS_ALIASES", "renovate.json", "renovate.json5", ".renovaterc",
+          ".renovaterc.json"]
   unblock: []           # default block globs to drop, written exactly as above, e.g. ["**/go.mod"]
   critical: ["**/auth/**", "**/payment*/**", "**/billing/**", "**/security/**"]
   # ignore and tests: a list you set replaces the default.
@@ -153,8 +175,12 @@ files that execute code on install, build or CI: package manifests and their reg
 (`package.json`, `.npmrc`, `setup.py`, `pyproject.toml`, `requirements.txt`, ...), build scripts
 and project files (`build.gradle`, `pom.xml`, `build.rs`, `Makefile`, `CMakeLists.txt`, `*.csproj`,
 `Dockerfile`, Bazel and Nix files, ...), developer hooks and environments (`.husky/`,
-`.pre-commit-config.yaml`, `conftest.py`, `.envrc`, `.devcontainer/`, ...) and CI pipelines outside
-`.github/`. Block and critical globs are matched ignoring case, so `makefile` or an EF Core
+`.pre-commit-config.yaml`, `conftest.py`, `.envrc`, `.devcontainer/`, `gradlew`, ...), CI pipelines
+outside `.github/`, and AI agent config that can run commands (`.claude/`, `.mcp.json`, plugin
+manifests, hooks, commands and skills). It also lists infrastructure files (Terraform variables,
+Bicep, Pulumi, a Prisma schema) and `OWNERS` and Renovate files, which decide who reviews and what
+bots may merge. Plain agent instructions such as `CLAUDE.md` stay under `paths.instructions`
+instead: they count in full toward the size cap but do not block. Block and critical globs are matched ignoring case, so `makefile` or an EF Core
 `Migrations/` folder cannot slip past `**/Makefile` or `**/migrations/**`. A
 one-line change there (a `postinstall` hook, a registry pointed at another host, a new build
 step) scores as small and low-risk, but runs on every developer machine and CI runner. Dependency
