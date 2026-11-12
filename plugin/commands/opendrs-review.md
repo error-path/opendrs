@@ -6,7 +6,7 @@ description: Review the current diff using the opendrs review brief as a reading
 
 - Build the review brief **before reading any file directly**, even if `Read`/`Glob` already work
   and you could review from the raw files without it — the brief is the first step, not a fallback
-  for when you can't read files: !`npx @error-path/opendrs@0.5.0 brief 2>&1 || echo "[opendrs brief CLI failed, see the output above: call the MCP tool review_brief instead]"`.
+  for when you can't read files: !`npx @error-path/opendrs@0.5.2 brief 2>&1 || echo "[opendrs brief CLI failed, see the output above: call the MCP tool review_brief instead]"`.
   If that command doesn't hand you a brief for any reason — no Bash, a blocked registry, `git`
   itself erroring, or the repo's files not visible yet — call the MCP tool `review_brief {repoDir,
   base?, head?, maxTokens?}` directly instead (the `repoDir` is the current working directory); it
