@@ -2,7 +2,10 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.5.2 - 2026-11-12
+
+The first npm release since 0.5.0, so it also carries 0.5.1's fixes: see that entry, including its
+breaking change for local LLM gateway users.
 
 ### Security
 
@@ -17,8 +20,7 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 ## 0.5.1 - 2026-11-09
 
-The GitHub Action got this release; npm users get its fixes in the next release.
-
+The GitHub Action got this release; npm users get its fixes in 0.5.2.
 
 A security fix for local use, plus quieter captain facts from the outcome-labels study.
 
