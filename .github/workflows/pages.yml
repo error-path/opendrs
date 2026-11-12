@@ -1,4 +1,4 @@
-name: Docs site
+name: Deploy to GitHub Pages
 
 # Builds docs/ with Jekyll, checks the result (scripts/check-site.mjs), deploys it to GitHub Pages
 # and tells IndexNow which pages were added, changed or removed. Pull requests only build and check.
@@ -81,7 +81,7 @@ jobs:
           path: docs/_site
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy the site
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest

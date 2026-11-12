@@ -2,7 +2,7 @@
 # auto-merge only those that are also a captain "quick confirm", once the required checks pass.
 # Runs the RELEASED action (@v0), never the PR's own copy: a PR must not be able to edit the
 # code that decides whether to approve it.
-name: PR risk review
+name: OpenDRS
 
 on:
   pull_request:

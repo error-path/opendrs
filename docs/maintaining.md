@@ -87,8 +87,8 @@ by hand from the tag with `npm login` and `npm publish` also still works, with y
 
 ## Docs site
 
-The site in `docs/` is built and deployed by the **Docs site** workflow (`pages.yml`), using
-Jekyll 4.4 (see `docs/Gemfile`). It needs no secrets. Every run:
+The site in `docs/` is built and deployed by the **Deploy to GitHub Pages** workflow (`pages.yml`),
+using Jekyll 4.4 (see `docs/Gemfile`). It needs no secrets. Every run:
 
 1. builds the site and runs `scripts/check-site.mjs`, which fails on a broken internal link, a
    missing or duplicate title or description, more than one `<h1>`, a page no other page links

@@ -57,7 +57,9 @@ describe("workflows that run the Action", () => {
 
   it.each(["ci", "opendrs", "pages", "publish"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
     const wf = parse(read(`.github/workflows/${file}.yml`));
-    expect(wf.name).toMatch(/[A-Z].* |^CI$/);
+    // Not the bare file name, which says little in the Actions tab.
+    expect(wf.name).toMatch(/[A-Z]/);
+    expect(wf.name.toLowerCase()).not.toBe(file);
     for (const [id, job] of Object.entries<{ name?: string }>(wf.jobs)) {
       if (file === "ci" && id === "check") continue;
       expect(job.name, `${file}.yml job ${id}`).toMatch(/ /);
