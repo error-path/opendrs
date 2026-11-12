@@ -1,6 +1,6 @@
 {
   "name": "@error-path/opendrs",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "mcpName": "io.github.error-path/opendrs",
   "description": "Open Diff Risk Score: a calibrated 0-1 risk score for every pull request, for risk-based auto-approval.",
   "type": "module",
