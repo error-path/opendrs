@@ -45,7 +45,19 @@ describe("npm publish workflow", () => {
     const names = steps.map((s) => s.name ?? s.run ?? s.uses);
     const check = names.indexOf("Check that the tag is on main and matches package.json");
     expect(check).toBeGreaterThanOrEqual(0);
-    expect(check).toBeLessThan(names.indexOf("Publish"));
+    expect(check).toBeLessThan(names.indexOf("Stage"));
+  });
+
+  it("only stages a version, so it goes live only after a maintainer approves it with 2FA", () => {
+    // Commands only: the step summary `echo`s tell the maintainer to run `npm stage approve`.
+    const runs = steps
+      .flatMap((s) => (s.run ?? "").split("\n"))
+      .filter((line) => !/^\s*echo\b/.test(line))
+      .join("\n");
+    expect(runs).toMatch(/npm stage publish/);
+    // Any `npm publish` not preceded by `stage` would publish directly, past the approval.
+    expect(runs.replace(/npm stage publish/g, "")).not.toMatch(/npm\s+publish/);
+    expect(runs).not.toMatch(/npm\s+(stage\s+approve|dist-tag)/);
   });
 
   it.each(["v0.5.2", "v1.0.0", "v1.2.3-rc.1"])("accepts the release tag %s", (tag) => {

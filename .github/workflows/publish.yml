@@ -1,8 +1,9 @@
 name: publish
 
-# Publishes the package to npm when a GitHub release is published, with npm trusted publishing:
-# npm checks this workflow's OIDC token instead of a stored npm token, and adds provenance.
-# Setup and recovery: docs/maintaining.md, "Releasing".
+# Stages the package on npm when a GitHub release is published, with npm trusted publishing: npm
+# checks this workflow's OIDC token instead of a stored npm token, and adds provenance. The version
+# goes live only when a maintainer approves it on npmjs.com with 2FA, so this workflow alone can
+# never put a version on npm. Setup and recovery: docs/maintaining.md, "Publishing to npm".
 on:
   release:
     types: [published]
@@ -24,8 +25,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # npm's trusted publisher entry names this environment. Add required reviewers to it in the
-    # repository settings to approve each publish by hand.
+    # npm's trusted publisher entry names this environment.
     environment: npm
     permissions:
       contents: read
@@ -56,11 +56,11 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
-      - name: Check that npm supports trusted publishing (11.5.1 or later)
+      - name: Check that npm supports staged publishing (11.15.0 or later)
         run: |
           npm --version
-          node -e 'const [a,b,c]=process.argv[1].split(".").map(Number); process.exit(a>11||(a===11&&(b>5||(b===5&&c>=1)))?0:1)' "$(npm --version)" \
-            || { echo "::error::npm $(npm --version) is too old for trusted publishing"; exit 1; }
+          node -e 'const [a,b]=process.argv[1].split(".").map(Number); process.exit(a>11||(a===11&&b>=15)?0:1)' "$(npm --version)" \
+            || { echo "::error::npm $(npm --version) is too old for staged publishing"; exit 1; }
       - name: Skip a version npm already has
         id: published
         run: |
@@ -74,12 +74,17 @@ jobs:
         run: npm run typecheck
       - if: steps.published.outputs.skip != 'true'
         run: npm test
-      - name: Publish
+      - name: Stage
         if: steps.published.outputs.skip != 'true'
         run: |
           # A prerelease (1.2.3-rc.1) goes to the "next" dist-tag, so `npm i` keeps installing the
           # latest stable version.
           case "$VERSION" in
-            *-*) npm publish --tag next ;;
-            *) npm publish ;;
+            *-*) npm stage publish --tag next ;;
+            *) npm stage publish ;;
           esac
+          {
+            echo "### $VERSION is staged on npm"
+            echo
+            echo "It is not installable yet. Approve it on npmjs.com (the package's **Staged Packages** tab) or with \`npm stage approve <stage-id>\`; both ask for 2FA."
+          } >> "$GITHUB_STEP_SUMMARY"
