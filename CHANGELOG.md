@@ -6,8 +6,9 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 ### Changed
 
-- npm releases are published from GitHub Actions with npm trusted publishing, so each version has
-  a provenance statement that links it to the commit and workflow that built it.
+- npm releases are staged from GitHub Actions with npm trusted publishing and go live only after a
+  maintainer approves them with 2FA. Each version has a provenance statement that links it to the
+  commit and workflow that built it.
 
 ## 0.5.2 - 2026-11-12
 
