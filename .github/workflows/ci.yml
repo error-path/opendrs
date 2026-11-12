@@ -1,4 +1,4 @@
-name: ci
+name: CI
 
 on:
   push:
@@ -9,6 +9,8 @@ permissions:
   contents: read
 
 jobs:
+  # The job id `check` gives the check names `check (22)` and `check (24)`, which the main
+  # ruleset requires: renaming it blocks every merge.
   check:
     runs-on: ubuntu-latest
     strategy:

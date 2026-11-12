@@ -39,8 +39,8 @@ A short runbook for the maintainer.
    ```
 
 4. Create a GitHub release from the tag with the changelog section as notes. Publishing it starts
-   the `publish` workflow, which stages the package on npm (see below).
-5. When the `publish` run passes, approve the staged version on npmjs.com, in the package's
+   the **Publish to npm** workflow (`publish.yml`), which stages the package on npm (see below).
+5. When that run passes, approve the staged version on npmjs.com, in the package's
    **Staged Packages** tab, with your 2FA code. Then check that
    `npm view @error-path/opendrs version` shows the release.
 6. Update the MCP registry entry: run `mcp-publisher login github` and `mcp-publisher publish` from
@@ -80,15 +80,15 @@ or `npm stage download`).
 2. After the first release through the workflow works, set the package's **Publishing access** to
    "Require two-factor authentication and disallow tokens", and delete any old npm tokens.
 
-**If a run fails** (npm down, setup missing), fix the cause, then open the `publish` workflow under
-**Actions**, choose **Run workflow** and give the release tag, such as `v0.5.2`. If the version is
-already staged, approve or reject that one instead of staging it again. Publishing by hand from the
-tag with `npm login` and `npm publish` also still works, with your 2FA code.
+**If a run fails** (npm down, setup missing), fix the cause, then open the **Publish to npm**
+workflow under **Actions**, choose **Run workflow** and give the release tag, such as `v0.5.2`. If
+the version is already staged, approve or reject that one instead of staging it again. Publishing
+by hand from the tag with `npm login` and `npm publish` also still works, with your 2FA code.
 
 ## Docs site
 
-The site in `docs/` is built and deployed by the `pages` workflow, using Jekyll 4.4 (see
-`docs/Gemfile`). It needs no secrets. Every run:
+The site in `docs/` is built and deployed by the **Docs site** workflow (`pages.yml`), using
+Jekyll 4.4 (see `docs/Gemfile`). It needs no secrets. Every run:
 
 1. builds the site and runs `scripts/check-site.mjs`, which fails on a broken internal link, a
    missing or duplicate title or description, more than one `<h1>`, a page no other page links
