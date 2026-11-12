@@ -2,6 +2,13 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Changed
+
+- npm releases are published from GitHub Actions with npm trusted publishing, so each version has
+  a provenance statement that links it to the commit and workflow that built it.
+
 ## 0.5.2 - 2026-11-12
 
 The first npm release since 0.5.0, so it also carries 0.5.1's fixes: see that entry, including its
