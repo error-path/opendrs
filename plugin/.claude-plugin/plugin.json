@@ -1,6 +1,6 @@
 {
   "name": "opendrs",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "Blast radius and risk score (0-1) for every pull request. Lets AI-reviewed, low-risk PRs auto-approve into the merge queue while risky ones wait for a human. Skill + MCP server.",
   "author": { "name": "error-path", "url": "https://github.com/error-path" },
   "homepage": "https://github.com/error-path/opendrs",
@@ -8,6 +8,6 @@
   "license": "MIT",
   "keywords": ["blast-radius", "pr-risk", "risk-score", "code-review", "auto-approve", "auto-merge", "merge-queue", "ai-code-review", "diff-risk-score"],
   "mcpServers": {
-    "opendrs": { "command": "npx", "args": ["-y", "@error-path/opendrs@0.5.0", "mcp"] }
+    "opendrs": { "command": "npx", "args": ["-y", "@error-path/opendrs@0.5.2", "mcp"] }
   }
 }
