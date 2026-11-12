@@ -2,7 +2,7 @@
 # auto-merge only those that are also a captain "quick confirm", once the required checks pass.
 # Runs the RELEASED action (@v0), never the PR's own copy: a PR must not be able to edit the
 # code that decides whether to approve it.
-name: opendrs
+name: OpenDRS
 
 on:
   pull_request:
@@ -22,6 +22,7 @@ permissions:
 
 jobs:
   opendrs:
+    name: Score, label and approve
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

@@ -48,6 +48,24 @@ describe("workflows that run the Action", () => {
     expect(runs.slice(build + 1)).toContain('test -z "$(git status --porcelain action/dist)"');
   });
 
+  it("CI keeps the job id `check` that the main ruleset's required checks name", () => {
+    const check = parse(read(".github/workflows/ci.yml")).jobs.check;
+    expect(check.strategy.matrix.node).toEqual([22, 24]);
+    // A job name would replace `check (22)` and `check (24)` as the check names.
+    expect(check.name).toBeUndefined();
+  });
+
+  it.each(["ci", "opendrs", "pages", "publish"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
+    const wf = parse(read(`.github/workflows/${file}.yml`));
+    // A set name, not GitHub's default (the bare file name), which says little in the Actions tab.
+    expect(wf.name).toMatch(/[A-Z]/);
+    expect(wf.name).not.toBe(file);
+    for (const [id, job] of Object.entries<{ name?: string }>(wf.jobs)) {
+      if (file === "ci" && id === "check") continue;
+      expect(job.name, `${file}.yml job ${id}`).toMatch(/ /);
+    }
+  });
+
   it("the docs warn against pull_request_target", () => {
     expect(docs).toMatch(/`pull_request_target`[^.]*secrets/);
   });

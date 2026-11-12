@@ -1,4 +1,4 @@
-name: publish
+name: Publish to npm
 
 # Stages the package on npm when a GitHub release is published, with npm trusted publishing: npm
 # checks this workflow's OIDC token instead of a stored npm token, and adds provenance. The version
@@ -24,6 +24,7 @@ concurrency:
 
 jobs:
   publish:
+    name: Stage the release on npm
     runs-on: ubuntu-latest
     # npm's trusted publisher entry names this environment.
     environment: npm
