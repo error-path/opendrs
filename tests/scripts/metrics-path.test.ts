@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { mkdtempSync, realpathSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -18,10 +18,14 @@ describe("resolveMetricsFile", () => {
 
   it("falls back to .dev-metrics/runs.jsonl when git is unavailable", () => {
     const cwd = mkdtempSync(join(tmpdir(), "opendrs-metrics-"));
+    // The temp dir can sit inside a git repo (on Windows it is under the home directory, which some
+    // people keep in git), so stop git from looking above it.
+    vi.stubEnv("GIT_CEILING_DIRECTORIES", tmpdir());
     try {
       const result = resolveMetricsFile(cwd, {});
       expect(result).toBe(join(cwd, ".dev-metrics/runs.jsonl"));
     } finally {
+      vi.unstubAllEnvs();
       rmSync(cwd, { recursive: true, force: true });
     }
   });

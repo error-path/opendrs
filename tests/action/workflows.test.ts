@@ -6,8 +6,8 @@ import { WORKFLOW_TEMPLATE } from "../../src/cli/templates.js";
 const read = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 const docs = read("docs/github-action.md");
 
-/** Every complete workflow (has `on:` and `jobs:`) shown in the Action docs. */
-const docWorkflows = [...docs.matchAll(/```yaml\n([\s\S]*?)```/g)]
+/** Every complete workflow (has `on:` and `jobs:`) shown in the Action docs. `\r?`: a Windows checkout uses CRLF. */
+const docWorkflows = [...docs.matchAll(/```yaml\r?\n([\s\S]*?)```/g)]
   .map((m) => m[1]!)
   .filter((y) => /^on:/m.test(y) && /^jobs:/m.test(y));
 
