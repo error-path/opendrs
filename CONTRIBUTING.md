@@ -54,8 +54,8 @@ existing function's comment, move it to this format. Don't reformat comments you
 
 ## Naming
 
-opendrs is read by people seeing the code for the first time, so a name should say what the value
-is without reading the code around it.
+Many contributors and reviewers are new to this codebase. Choose names that make each value's
+meaning clear without reading the surrounding code.
 
 - Use whole words that name the thing: `scoreResult`, not `r`; `baseRef`, not `base`, when the value
   is a git ref such as `origin/main`; `baseSha` when it is a commit hash.
