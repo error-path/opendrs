@@ -100,18 +100,18 @@ describe("rescoreLine", () => {
 });
 
 describe("rescoreNotice", () => {
-  const reportUrl = "https://github.com/o/r/pull/7#issuecomment-2";
+  const reportPermalink = "https://github.com/o/r/pull/7#issuecomment-2";
 
   it("names the short head, the new score, tier and decision, and links to the report", () => {
-    expect(rescoreNotice("abcdef1234567890123456789012345678901234", 0.1834, "green", "auto-approve", { id: 2, url: reportUrl })).toBe(
+    expect(rescoreNotice("abcdef1234567890123456789012345678901234", 0.1834, "green", "auto-approve", { commentId: 2, permalink: reportPermalink })).toBe(
       "opendrs: re-scored at abcdef1 · 0.18 green · auto-approve · [see the updated report](https://github.com/o/r/pull/7#issuecomment-2)",
     );
   });
 
   it("falls back to a link within the page when the report's URL is missing or not a plain https URL", () => {
     const head = "a".repeat(40);
-    for (const badUrl of [undefined, "", "javascript:alert(1)", "https://x/a)b", "https://x/a b"]) {
-      expect(rescoreNotice(head, 0.5, "yellow", "human-review", { id: 2, url: badUrl })).toBe(
+    for (const badPermalink of [undefined, "", "javascript:alert(1)", "https://x/a)b", "https://x/a b"]) {
+      expect(rescoreNotice(head, 0.5, "yellow", "human-review", { commentId: 2, permalink: badPermalink })).toBe(
         "opendrs: re-scored at aaaaaaa · 0.50 yellow · human-review · [see the updated report](#issuecomment-2)",
       );
     }

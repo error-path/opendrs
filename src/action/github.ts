@@ -35,7 +35,10 @@ export interface IssueComment {
   body?: string | null;
   created_at?: string;
   user: GitHubUser | null;
-  /** The comment's permalink. */
+  /**
+   * The comment's permalink, such as `https://github.com/o/r/pull/7#issuecomment-2`. Named as in
+   * GitHub's REST response, like `created_at`, because this interface is that JSON as parsed.
+   */
   html_url?: string;
 }
 

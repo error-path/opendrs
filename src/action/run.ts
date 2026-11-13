@@ -392,7 +392,7 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
         () =>
           client.createComment(
             pr.number,
-            rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { id: mine.id, url: mine.html_url }),
+            rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, permalink: mine.html_url }),
           ),
         () => io.warning(COMMENT_FORBIDDEN),
       );

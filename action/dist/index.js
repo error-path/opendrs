@@ -33049,7 +33049,7 @@ function readState(body) {
 var rescoreLine = (prev, run, head, score, tier) => `Re-scored for \`${head.slice(0, 7)}\` (run ${run}) \xB7 was ${prev.score.toFixed(2)} ${prev.tier} \u2192 now ${score.toFixed(2)} ${tier}`;
 var PLAIN_HTTPS_URL = /^https:\/\/[^\s()<>[\]]+$/;
 function rescoreNotice(headSha, score, tier, decision, report) {
-  const reportLink = report.url && PLAIN_HTTPS_URL.test(report.url) ? report.url : `#issuecomment-${report.id}`;
+  const reportLink = report.permalink && PLAIN_HTTPS_URL.test(report.permalink) ? report.permalink : `#issuecomment-${report.commentId}`;
   return `opendrs: re-scored at ${headSha.slice(0, 7)} \xB7 ${score.toFixed(2)} ${tier} \xB7 ${decision} \xB7 [see the updated report](${reportLink})`;
 }
 
@@ -33287,7 +33287,7 @@ ${report}`}${warning}
       await unlessForbidden(
         () => client.createComment(
           pr.number,
-          rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { id: mine.id, url: mine.html_url })
+          rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, permalink: mine.html_url })
         ),
         () => io.warning(COMMENT_FORBIDDEN)
       );
