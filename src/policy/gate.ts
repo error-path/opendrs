@@ -78,15 +78,26 @@ export function sampleValue(head: string): number {
   return createHash("sha256").update(head).digest().readUIntBE(0, 6) / 2 ** 48;
 }
 
-/** Whether the diff had no changed files at all, so the result says nothing about a change. */
-export function nothingToScore(policy: Pick<PolicyOutcome, "rules"> | undefined): boolean {
-  return policy?.rules?.some((r) => r.rule === "empty-diff") ?? false;
+/**
+ * Checks whether a policy decision was made for a diff with no changed files at all.
+ *
+ * @param policyOutcome - The gate's decision; `undefined` when a caller has none.
+ * @returns True when the `empty-diff` rule fired, so the score says nothing about a change.
+ */
+export function isEmptyDiff(policyOutcome: Pick<PolicyOutcome, "rules"> | undefined): boolean {
+  return policyOutcome?.rules?.some((firedRule) => firedRule.rule === "empty-diff") ?? false;
 }
 
-/** What the CLI and MCP tools say instead of a verdict when {@link nothingToScore}; refs as the user gave them. */
-export function nothingToScoreMessage(base: string, head: string): string {
+/**
+ * Describes an empty diff for the CLI and MCP tools, which print this instead of a verdict.
+ *
+ * @param baseRef - The base ref as the user gave it, such as `origin/main`.
+ * @param headRef - The head ref as the user gave it, such as `HEAD`.
+ * @returns A two-line message that says there is nothing to score and how to get a diff.
+ */
+export function describeEmptyDiff(baseRef: string, headRef: string): string {
   return (
-    `opendrs: nothing to score: no changes between ${base} and ${head}.\n` +
+    `opendrs: nothing to score: no changes between ${baseRef} and ${headRef}.\n` +
     "Run it on a branch with commits that are not on the base, or choose another base with --base <ref>."
   );
 }

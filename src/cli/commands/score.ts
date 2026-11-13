@@ -3,7 +3,7 @@ import { loadConfig } from "../../domain/config.js";
 import { OpendrsError } from "../../domain/types.js";
 import { scoreDiff } from "../../engine.js";
 import { git } from "../../git/exec.js";
-import { nothingToScore, nothingToScoreMessage } from "../../policy/gate.js";
+import { describeEmptyDiff, isEmptyDiff } from "../../policy/gate.js";
 import { renderMarkdown, renderText } from "../../report/markdown.js";
 import { parseScoreArg } from "../args.js";
 import { defaultBase, repoRoot } from "../repo.js";
@@ -50,13 +50,13 @@ Exit codes: 0 ok, 1 score above --fail-above, 2 error.`,
       );
     }
     const config = await loadConfig(repoDir);
-    const base = values.base ?? (await defaultBase(repoDir));
-    const head = values.head ?? "HEAD";
-    const result = await scoreDiff({ repoDir, config, base, head, title: values.title, llm: values["no-llm"] ? null : undefined });
+    const baseRef = values.base ?? (await defaultBase(repoDir));
+    const headRef = values.head ?? "HEAD";
+    const result = await scoreDiff({ repoDir, config, base: baseRef, head: headRef, title: values.title, llm: values["no-llm"] ? null : undefined });
 
     // A verdict on an empty diff would only rate the author; scripts still get the full result with --json.
-    if (!values.json && nothingToScore(result.policy)) {
-      io.out(nothingToScoreMessage(base, head));
+    if (!values.json && isEmptyDiff(result.policy)) {
+      io.out(describeEmptyDiff(baseRef, headRef));
       return 0;
     }
     if (values.json) io.out(JSON.stringify(result, null, 2));

@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { parseConfig } from "../../src/domain/config.js";
 import type { Authorship, ChangedFile, CommitInfo, Decision, LlmHunkVerdict, LlmJudgement, ModelWeights, Signal, SourceKind } from "../../src/domain/types.js";
 import { DEFAULT_WEIGHTS } from "../../src/model/defaults.js";
-import { decide, nothingToScore, sampleValue, type GateInput } from "../../src/policy/gate.js";
+import { decide, isEmptyDiff, sampleValue, type GateInput } from "../../src/policy/gate.js";
 import { NOW, fakeCommit, fakeHistory } from "./fakes.js";
 
 const logit = (p: number) => Math.log(p / (1 - p));
@@ -56,16 +56,16 @@ function input(over: Partial<GateInput> & { cfg?: Record<string, unknown>; files
 
 describe("decide: empty diff", () => {
   it("never auto-approves a diff with no changed files: there is nothing to review", () => {
-    const out = decide(input({ files: [] }));
-    expect(out.decision).toBe("human-review");
-    expect(out.rules!.map((r) => r.rule)).toContain("empty-diff");
-    expect(nothingToScore(out)).toBe(true);
+    const policyOutcome = decide(input({ files: [] }));
+    expect(policyOutcome.decision).toBe("human-review");
+    expect(policyOutcome.rules!.map((firedRule) => firedRule.rule)).toContain("empty-diff");
+    expect(isEmptyDiff(policyOutcome)).toBe(true);
   });
 
   it("does not treat a diff whose files are all ignored as empty", () => {
-    const out = decide(input({ files: [file("package-lock.json", 3, 3, true)] }));
-    expect(out.rules!.map((r) => r.rule)).not.toContain("empty-diff");
-    expect(nothingToScore(out)).toBe(false);
+    const policyOutcome = decide(input({ files: [file("package-lock.json", 3, 3, true)] }));
+    expect(policyOutcome.rules!.map((firedRule) => firedRule.rule)).not.toContain("empty-diff");
+    expect(isEmptyDiff(policyOutcome)).toBe(false);
   });
 });
 
