@@ -392,7 +392,7 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
         () =>
           client.createComment(
             pr.number,
-            rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, linkToCommentOnGitHub: mine.linkToCommentOnGitHub }),
+            rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, commentLink: mine.comment_page_url }),
           ),
         () => io.warning(COMMENT_FORBIDDEN),
       );

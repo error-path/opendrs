@@ -7487,11 +7487,11 @@ var GitHubClient = class {
    * Lists every comment on a pull request, oldest first.
    *
    * @param pr - The pull request number.
-   * @returns The comments, with GitHub's `html_url` renamed to `linkToCommentOnGitHub`.
+   * @returns The comments, with GitHub's `html_url` renamed to `comment_page_url`.
    */
   async listComments(pr) {
     const commentsFromGitHub = await this.paginate(`${this.repoPath}/issues/${pr}/comments`);
-    return commentsFromGitHub.map(({ html_url: linkToCommentOnGitHub, ...commentFields }) => ({ ...commentFields, linkToCommentOnGitHub }));
+    return commentsFromGitHub.map(({ html_url: comment_page_url, ...commentFields }) => ({ ...commentFields, comment_page_url }));
   }
   async createComment(pr, body) {
     await this.rest("POST", `${this.repoPath}/issues/${pr}/comments`, { body });
@@ -33056,9 +33056,9 @@ function readState(body) {
 var rescoreLine = (prev, run, head, score, tier) => `Re-scored for \`${head.slice(0, 7)}\` (run ${run}) \xB7 was ${prev.score.toFixed(2)} ${prev.tier} \u2192 now ${score.toFixed(2)} ${tier}`;
 var PLAIN_HTTPS_URL = /^https:\/\/[^\s()<>[\]]+$/;
 function rescoreNotice(headSha, score, tier, decision, mainComment) {
-  const linkToCommentOnGitHub = mainComment.linkToCommentOnGitHub;
-  const linkToUpdatedReport = linkToCommentOnGitHub && PLAIN_HTTPS_URL.test(linkToCommentOnGitHub) ? linkToCommentOnGitHub : `#issuecomment-${mainComment.commentId}`;
-  return `opendrs: re-scored at ${headSha.slice(0, 7)} \xB7 ${score.toFixed(2)} ${tier} \xB7 ${decision} \xB7 [see the updated report](${linkToUpdatedReport})`;
+  const commentLink = mainComment.commentLink;
+  const mainCommentLink = commentLink && PLAIN_HTTPS_URL.test(commentLink) ? commentLink : `#issuecomment-${mainComment.commentId}`;
+  return `opendrs: re-scored at ${headSha.slice(0, 7)} \xB7 ${score.toFixed(2)} ${tier} \xB7 ${decision} \xB7 [see the updated report](${mainCommentLink})`;
 }
 
 // src/action/run.ts
@@ -33295,7 +33295,7 @@ ${report}`}${warning}
       await unlessForbidden(
         () => client.createComment(
           pr.number,
-          rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, linkToCommentOnGitHub: mine.linkToCommentOnGitHub })
+          rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { commentId: mine.id, commentLink: mine.comment_page_url })
         ),
         () => io.warning(COMMENT_FORBIDDEN)
       );

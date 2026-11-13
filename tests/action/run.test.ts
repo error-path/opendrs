@@ -27,7 +27,7 @@ const { stateMarker } = await import("../../src/action/state.js");
 
 const ENABLED = { autoApprove: { enabled: true } };
 /** The web address GitHub returns for opendrs's earlier comment (id 2) in these tests. */
-const LINK_TO_MAIN_COMMENT = "https://github.com/o/r/pull/7#issuecomment-2";
+const MAIN_COMMENT_LINK = "https://github.com/o/r/pull/7#issuecomment-2";
 
 interface Options {
   /** Base-branch .opendrs.yml as an object (null = no file). */
@@ -104,7 +104,7 @@ async function run(o: Options = {}) {
   const io = createWorkflowIO(ioEnv, (s) => void (log += s));
 
   const comments = o.ownComment
-    ? [{ id: 2, body: `${COMMENT_MARKER}\nold report\n${o.ownComment(headSha)}`, user: BOT, html_url: LINK_TO_MAIN_COMMENT, ...(o.ownCommentCreated ? { created_at: o.ownCommentCreated } : {}) }]
+    ? [{ id: 2, body: `${COMMENT_MARKER}\nold report\n${o.ownComment(headSha)}`, user: BOT, html_url: MAIN_COMMENT_LINK, ...(o.ownCommentCreated ? { created_at: o.ownCommentCreated } : {}) }]
     : [];
   const gh = installFakeGitHub({ labels: [...(o.labels ?? [])], headSha, commits: [prCommit(headSha)], comments, ...o.gh });
   if (o.scoreDiffImpl) vi.mocked(scoreDiff).mockImplementation(o.scoreDiffImpl);
@@ -716,7 +716,7 @@ describe("re-scoring", () => {
     );
     expect(t.gh.ops("createComment")).toHaveLength(1);
     expect(t.gh.comments[1]!.body).toBe(
-      `opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.76 yellow · human-review · [see the updated report](${LINK_TO_MAIN_COMMENT})`,
+      `opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.76 yellow · human-review · [see the updated report](${MAIN_COMMENT_LINK})`,
     );
   });
 
@@ -792,7 +792,7 @@ describe("re-scoring", () => {
     const t = await run({ result: result(0.28, "green", "auto-approve"), ownComment: () => stateMarker(prevState()) });
     await t.promise;
     const notice = t.gh.comments.find((comment) => comment.body.includes("re-scored at"));
-    expect(notice?.body).toBe(`opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.28 green · auto-approve · [see the updated report](${LINK_TO_MAIN_COMMENT})`);
+    expect(notice?.body).toBe(`opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.28 green · auto-approve · [see the updated report](${MAIN_COMMENT_LINK})`);
     expect(notice?.body).not.toContain(COMMENT_MARKER);
   });
 

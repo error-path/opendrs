@@ -75,10 +75,9 @@ export function rescoreNotice(
   score: number,
   tier: Tier,
   decision: Decision,
-  mainComment: { commentId: number; linkToCommentOnGitHub?: string | null },
+  mainComment: { commentId: number; commentLink?: string | null },
 ): string {
-  const linkToCommentOnGitHub = mainComment.linkToCommentOnGitHub;
-  const linkToUpdatedReport =
-    linkToCommentOnGitHub && PLAIN_HTTPS_URL.test(linkToCommentOnGitHub) ? linkToCommentOnGitHub : `#issuecomment-${mainComment.commentId}`;
-  return `opendrs: re-scored at ${headSha.slice(0, 7)} · ${score.toFixed(2)} ${tier} · ${decision} · [see the updated report](${linkToUpdatedReport})`;
+  const commentLink = mainComment.commentLink;
+  const mainCommentLink = commentLink && PLAIN_HTTPS_URL.test(commentLink) ? commentLink : `#issuecomment-${mainComment.commentId}`;
+  return `opendrs: re-scored at ${headSha.slice(0, 7)} · ${score.toFixed(2)} ${tier} · ${decision} · [see the updated report](${mainCommentLink})`;
 }

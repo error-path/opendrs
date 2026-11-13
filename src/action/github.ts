@@ -36,11 +36,11 @@ export interface IssueComment {
   created_at?: string;
   user: GitHubUser | null;
   /** The web address that opens this comment on GitHub, such as `https://github.com/o/r/pull/7#issuecomment-2`. */
-  linkToCommentOnGitHub?: string;
+  comment_page_url?: string;
 }
 
-/** A comment as GitHub's REST API returns it, before {@link GitHubClient.listComments} renames its fields. */
-type IssueCommentFromGitHub = Omit<IssueComment, "linkToCommentOnGitHub"> & { html_url?: string };
+/** A comment as GitHub's REST API returns it, before {@link GitHubClient.listComments} renames `html_url` to `comment_page_url`. */
+type IssueCommentFromGitHub = Omit<IssueComment, "comment_page_url"> & { html_url?: string };
 
 export interface Review {
   id: number;
@@ -167,11 +167,11 @@ export class GitHubClient {
    * Lists every comment on a pull request, oldest first.
    *
    * @param pr - The pull request number.
-   * @returns The comments, with GitHub's `html_url` renamed to `linkToCommentOnGitHub`.
+   * @returns The comments, with GitHub's `html_url` renamed to `comment_page_url`.
    */
   async listComments(pr: number): Promise<IssueComment[]> {
     const commentsFromGitHub = await this.paginate<IssueCommentFromGitHub>(`${this.repoPath}/issues/${pr}/comments`);
-    return commentsFromGitHub.map(({ html_url: linkToCommentOnGitHub, ...commentFields }) => ({ ...commentFields, linkToCommentOnGitHub }));
+    return commentsFromGitHub.map(({ html_url: comment_page_url, ...commentFields }) => ({ ...commentFields, comment_page_url }));
   }
   async createComment(pr: number, body: string) {
     await this.rest("POST", `${this.repoPath}/issues/${pr}/comments`, { body });
