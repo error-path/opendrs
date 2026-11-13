@@ -71,7 +71,7 @@ opendrs checks out and reads the PR's code. opendrs scores on events that carry 
 | `labels` | `true` | Set the risk label, and (when `captain.enabled`) one of `captain:careful`, `captain:standard` or `captain:quick`, and remove stale ones. opendrs creates its labels (`risk:*`, `captain:*`, `opendrs:landing`, `opendrs:hold`, `opendrs:review-after-merge`) with their own colours and descriptions, and recolours one GitHub auto-created in default grey; a colour you chose is kept. |
 | `sample-salt` | empty | **Set it when auto-approval is on**, to a secret such as {% raw %}`${{ secrets.OPENDRS_SAMPLE_SALT }}`{% endraw %}. Without it, sampling is predictable: see [Set sample-salt](#set-sample-salt). The drift sample (`autoApprove.sampleRate`) is keyed by repository, PR number and this salt, so pushing another commit does not re-roll it. |
 | `brief` | `true` | Build the review brief and fold it into the PR comment (a **Review focus** summary plus a collapsed "Review brief for AI reviewers" section), the `brief`/`brief-file` outputs, and the job summary. `false` restores today's comment layout byte for byte, leaves `brief`/`brief-file` empty, and omits the hidden state marker, the re-score line and the change notice: see [Re-scoring on new commits](#re-scoring-on-new-commits). |
-| `notify-changes` | `true` | When a re-score changes the tier or the decision, post one short new comment pointing back at the updated report. `false` keeps the re-score line in the main comment but skips the extra comment. Needs `brief` and `comment` to both be true. |
+| `notify-changes` | `every-push` | After each push, post a one-line comment with the new score at that commit and a link to the updated report. `on-change` posts it only when the tier or the decision changed (the earlier behaviour). `false` keeps the re-score line in the main comment but skips the extra comment; `true` means `every-push`. Needs `brief` and `comment` to both be true. |
 
 | Output | Values |
 |---|---|
@@ -409,11 +409,15 @@ the fixed shape exactly counts as no marker, i.e. a first run) and, when one is 
 - adds one line under the heading: `` Re-scored for `<head7>` (run N) · was 0.76 yellow → now 0.46
   yellow ``, where `N` is the previous run's number plus one. A push restarts nothing here; even a
   re-run on the same commit still bumps `N` and shows the line.
-- when the tier or the decision changed since that previous run, also posts one short **new**
-  comment, with no table and nothing the PR controls, for example: "opendrs: risk changed yellow
-  0.76 → green 0.28 · decision human-review → auto-approve · see the updated report ↑". It never
-  carries the `<!-- opendrs -->` marker, so it is never mistaken for the main comment. Set
-  `notify-changes: false` to keep the re-score line but skip this extra comment.
+- after every push, also posts one short **new** comment, with no table and nothing the PR controls,
+  for example: "opendrs: re-scored at abc1234 · 0.18 green · auto-approve · see the updated report",
+  where "see the updated report" is a link. The link points at the main comment. A push runs the
+  workflow once however many commits it carries, so a push gets one line, not one per commit. A
+  re-run on the same commit (a label added, the PR reopened) posts no line unless the tier or the
+  decision changed. The line never carries the `<!-- opendrs -->` marker, so it is never mistaken
+  for the main comment. Set `notify-changes: on-change` to post it only when the tier or the
+  decision changed, or `notify-changes: false` to keep the re-score line but skip this extra
+  comment.
 
 The first run on a PR has no previous marker, so it shows no re-score line and posts no notice; the
 marker it writes starts `run=1`. Both the marker and the re-score line need the `brief` input:

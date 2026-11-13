@@ -53,7 +53,31 @@ export function readState(body: string | undefined): OpendrsState | undefined {
 export const rescoreLine = (prev: OpendrsState, run: number, head: string, score: number, tier: Tier): string =>
   `Re-scored for \`${head.slice(0, 7)}\` (run ${run}) · was ${prev.score.toFixed(2)} ${prev.tier} → now ${score.toFixed(2)} ${tier}`;
 
-/** "opendrs: risk changed ... · decision ... · see the updated report ↑": a short, separate comment. */
-export const changeNotice = (prev: OpendrsState, score: number, tier: Tier, decision: Decision): string =>
-  `opendrs: risk changed ${prev.tier} ${prev.score.toFixed(2)} → ${tier} ${score.toFixed(2)} · ` +
-  `decision ${prev.decision} → ${decision} · see the updated report ↑`;
+/** A plain https URL with nothing that could end or break a Markdown link. */
+const PLAIN_HTTPS_URL = /^https:\/\/[^\s()<>[\]]+$/;
+
+/**
+ * Builds the one-line comment opendrs posts after a re-score, so a push is not missed in a report
+ * that is updated in place.
+ *
+ * @param headSha - The commit that was scored; the line shows its first seven characters.
+ * @param score - The new risk score.
+ * @param tier - The new tier.
+ * @param decision - The new policy decision.
+ * @param mainComment - opendrs's main comment, which holds the updated report: its id, and the web
+ *   address that opens it on GitHub. The notice links to it.
+ * @returns For example "opendrs: re-scored at abc1234 · 0.18 green · auto-approve · [see the updated report](…)".
+ *   The link falls back to `#issuecomment-<id>` on the same page when the web address is missing or
+ *   is not a plain https URL.
+ */
+export function rescoreNotice(
+  headSha: string,
+  score: number,
+  tier: Tier,
+  decision: Decision,
+  mainComment: { commentId: number; commentLink?: string | null },
+): string {
+  const commentLink = mainComment.commentLink;
+  const mainCommentLink = commentLink && PLAIN_HTTPS_URL.test(commentLink) ? commentLink : `#issuecomment-${mainComment.commentId}`;
+  return `opendrs: re-scored at ${headSha.slice(0, 7)} · ${score.toFixed(2)} ${tier} · ${decision} · [see the updated report](${mainCommentLink})`;
+}

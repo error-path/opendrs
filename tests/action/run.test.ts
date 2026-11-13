@@ -26,6 +26,8 @@ const { eligibleMarker } = await import("../../src/action/approval.js");
 const { stateMarker } = await import("../../src/action/state.js");
 
 const ENABLED = { autoApprove: { enabled: true } };
+/** The web address GitHub returns for opendrs's earlier comment (id 2) in these tests. */
+const MAIN_COMMENT_LINK = "https://github.com/o/r/pull/7#issuecomment-2";
 
 interface Options {
   /** Base-branch .opendrs.yml as an object (null = no file). */
@@ -102,7 +104,7 @@ async function run(o: Options = {}) {
   const io = createWorkflowIO(ioEnv, (s) => void (log += s));
 
   const comments = o.ownComment
-    ? [{ id: 2, body: `${COMMENT_MARKER}\nold report\n${o.ownComment(headSha)}`, user: BOT, ...(o.ownCommentCreated ? { created_at: o.ownCommentCreated } : {}) }]
+    ? [{ id: 2, body: `${COMMENT_MARKER}\nold report\n${o.ownComment(headSha)}`, user: BOT, html_url: MAIN_COMMENT_LINK, ...(o.ownCommentCreated ? { created_at: o.ownCommentCreated } : {}) }]
     : [];
   const gh = installFakeGitHub({ labels: [...(o.labels ?? [])], headSha, commits: [prCommit(headSha)], comments, ...o.gh });
   if (o.scoreDiffImpl) vi.mocked(scoreDiff).mockImplementation(o.scoreDiffImpl);
@@ -123,7 +125,7 @@ async function run(o: Options = {}) {
     },
   };
   const client = new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" });
-  const inputs: ActionInputs = { token: "t", baseConfig: true, comment: true, labels: true, brief: true, notifyChanges: true, ...o.inputs };
+  const inputs: ActionInputs = { token: "t", baseConfig: true, comment: true, labels: true, brief: true, notifyChanges: "every-push", ...o.inputs };
   const promise = runAction({ repoDir: repo.dir, event, inputs, client, io, env });
   return {
     promise,
@@ -212,7 +214,7 @@ describe("scoring", () => {
     const io = createWorkflowIO({}, () => {});
     const client = new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" });
     await expect(
-      runAction({ repoDir: repo.dir, event: { push: {} }, inputs: { token: "t", baseConfig: true, comment: true, labels: true, brief: true, notifyChanges: true }, client, io, env: {} }),
+      runAction({ repoDir: repo.dir, event: { push: {} }, inputs: { token: "t", baseConfig: true, comment: true, labels: true, brief: true, notifyChanges: "every-push" }, client, io, env: {} }),
     ).rejects.toBeInstanceOf(OpendrsError);
   });
 });
@@ -702,7 +704,7 @@ describe("re-scoring", () => {
     expect(t.gh.ops("createComment")).toHaveLength(1);
   });
 
-  it("re-run, no change: shows the re-score line, bumps run, posts no new comment, keeps the first run's first", async () => {
+  it("a push with the same outcome: shows the re-score line, bumps run, keeps the first run's first, posts the one-line notice", async () => {
     const t = await run({ result: result(0.76, "yellow", "human-review"), ownComment: () => stateMarker(prevState()) });
     await t.promise;
     expect(rescoreOpts()).toMatchObject({
@@ -712,8 +714,31 @@ describe("re-scoring", () => {
     expect(t.gh.comments[0]!.body).toContain(
       stateMarker({ head: t.headSha, first: PREV_HEAD, firstRun: 1, score: 0.76, tier: "yellow", decision: "human-review", run: 2 }),
     );
-    expect(t.gh.comments.some((c) => c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.ops("createComment")).toHaveLength(1);
+    expect(t.gh.comments[1]!.body).toBe(
+      `opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.76 yellow · human-review · [see the updated report](${MAIN_COMMENT_LINK})`,
+    );
+  });
+
+  it("on-change: a push with the same outcome posts no notice", async () => {
+    const t = await run({
+      result: result(0.76, "yellow", "human-review"),
+      ownComment: () => stateMarker(prevState()),
+      inputs: { notifyChanges: "on-change" },
+    });
+    await t.promise;
+    expect(rescoreOpts()).toMatchObject({ rescoreLine: expect.stringContaining("Re-scored for") });
     expect(t.gh.ops("createComment")).toEqual([]);
+  });
+
+  it("on-change: a push that changes the tier posts the notice", async () => {
+    const t = await run({
+      result: result(0.28, "green", "auto-approve"),
+      ownComment: () => stateMarker(prevState()),
+      inputs: { notifyChanges: "on-change" },
+    });
+    await t.promise;
+    expect(t.gh.comments.find((comment) => comment.body.includes("re-scored at"))?.body).toContain("0.28 green · auto-approve");
   });
 
   it("a previous 0.3.x marker (no first=): first becomes its head, firstRun becomes its run", async () => {
@@ -742,34 +767,50 @@ describe("re-scoring", () => {
     );
   });
 
-  it("re-run on the same head commit still bumps run and shows the line", async () => {
-    const t = await run({ result: result(0.76, "yellow", "human-review"), ownComment: (head) => stateMarker(prevState({ head })) });
+  it("re-run on the same head commit (a label, a reopen) still bumps run and shows the line, but posts no notice", async () => {
+    const t = await run({
+      action: "labeled",
+      result: result(0.76, "yellow", "human-review"),
+      ownComment: (head) => stateMarker(prevState({ head })),
+    });
     await t.promise;
     expect(rescoreOpts()).toMatchObject({ rescoreLine: expect.stringContaining(`(run 2)`) });
+    expect(t.gh.ops("createComment")).toEqual([]);
   });
 
-  it("tier change: posts a short new comment pointing at the report, without the main marker", async () => {
+  it("re-run on the same head commit that changes the decision still posts the notice", async () => {
+    const t = await run({
+      action: "labeled",
+      result: result(0.76, "yellow", "human-review"),
+      ownComment: (head) => stateMarker(prevState({ head, decision: "waiting-ai-review" })),
+    });
+    await t.promise;
+    expect(t.gh.comments.find((comment) => comment.body.includes("re-scored at"))?.body).toContain("0.76 yellow · human-review");
+  });
+
+  it("tier change: posts a short new comment linking to the report, without the main marker", async () => {
     const t = await run({ result: result(0.28, "green", "auto-approve"), ownComment: () => stateMarker(prevState()) });
     await t.promise;
-    const notice = t.gh.comments.find((c) => c.body.includes("risk changed"));
-    expect(notice?.body).toBe("opendrs: risk changed yellow 0.76 → green 0.28 · decision human-review → auto-approve · see the updated report ↑");
+    const notice = t.gh.comments.find((comment) => comment.body.includes("re-scored at"));
+    expect(notice?.body).toBe(`opendrs: re-scored at ${t.headSha.slice(0, 7)} · 0.28 green · auto-approve · [see the updated report](${MAIN_COMMENT_LINK})`);
     expect(notice?.body).not.toContain(COMMENT_MARKER);
   });
 
   it("posts no change notice when the main comment could not be written", async () => {
     const t = await run({ result: result(0.28, "green", "auto-approve"), ownComment: () => stateMarker(prevState()), gh: { forbid: new Set(["updateComment"]) } });
     await t.promise;
-    expect(t.gh.comments.some((c) => c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.comments.some((c) => c.body.includes("re-scored at"))).toBe(false);
   });
 
-  it("decision-only change (same tier) also notifies", async () => {
+  it("on-change: a decision-only change (same tier) also notifies", async () => {
     const t = await run({
       result: result(0.46, "yellow", "human-review"),
       ownComment: () => stateMarker(prevState({ score: 0.46, tier: "yellow", decision: "waiting-ai-review" })),
+      inputs: { notifyChanges: "on-change" },
     });
     await t.promise;
-    const notice = t.gh.comments.find((c) => c.body.includes("risk changed"));
-    expect(notice?.body).toContain("decision waiting-ai-review → human-review");
+    const notice = t.gh.comments.find((c) => c.body.includes("re-scored at"));
+    expect(notice?.body).toContain("0.46 yellow · human-review");
   });
 
   it("ignores a forged state marker in a comment that is not opendrs's own: counts as first run", async () => {
@@ -778,7 +819,7 @@ describe("re-scoring", () => {
     t.gh.comments.push({ id: 5, body: `${COMMENT_MARKER}\n${forged}`, user: { login: "mallory", type: "User" } });
     await t.promise;
     expect(rescoreOpts()).toEqual({});
-    expect(t.gh.comments.some((c) => c.body.includes("Re-scored for") || c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.comments.some((c) => c.body.includes("Re-scored for") || c.body.includes("re-scored at"))).toBe(false);
   });
 
   it("an invalid marker (bad sha, score, tier, run, or extra fields) counts as a first run", async () => {
@@ -788,18 +829,18 @@ describe("re-scoring", () => {
     });
     await t.promise;
     expect(rescoreOpts()).toEqual({});
-    expect(t.gh.comments.some((c) => c.body.includes("Re-scored for") || c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.comments.some((c) => c.body.includes("Re-scored for") || c.body.includes("re-scored at"))).toBe(false);
   });
 
-  it("notify-changes false: still shows the re-score line but posts no change notice", async () => {
+  it("notify-changes off: still shows the re-score line but posts no notice", async () => {
     const t = await run({
       result: result(0.28, "green", "auto-approve"),
       ownComment: () => stateMarker(prevState()),
-      inputs: { notifyChanges: false },
+      inputs: { notifyChanges: "off" },
     });
     await t.promise;
     expect(rescoreOpts()).toMatchObject({ rescoreLine: expect.stringContaining("Re-scored for") });
-    expect(t.gh.comments.some((c) => c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.comments.some((c) => c.body.includes("re-scored at"))).toBe(false);
   });
 
   it("brief:false: no marker, no re-score line, no change notice", async () => {
@@ -811,7 +852,7 @@ describe("re-scoring", () => {
     await t.promise;
     expect(rescoreOpts()).toEqual({});
     expect(t.gh.comments[0]!.body).not.toContain("opendrs-state");
-    expect(t.gh.comments.some((c) => c.body.includes("risk changed"))).toBe(false);
+    expect(t.gh.comments.some((c) => c.body.includes("re-scored at"))).toBe(false);
   });
 
   it("coexists with the landing-delay eligibility marker", async () => {

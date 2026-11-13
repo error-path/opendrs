@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { OpendrsError } from "../domain/types.js";
 import { GitHubClient } from "./github.js";
-import { runAction, type ActionInputs } from "./run.js";
+import { runAction, type ActionInputs, type NotifyChanges } from "./run.js";
 import { runSweep, SWEEP_EVENTS } from "./sweep.js";
 import { createWorkflowIO } from "./workflow.js";
 
@@ -25,8 +25,23 @@ export function readInputs(env: NodeJS.ProcessEnv): ActionInputs {
     labels: bool("labels", true),
     sampleSalt: get("sample-salt"),
     brief: bool("brief", true),
-    notifyChanges: bool("notify-changes", true),
+    notifyChanges: readNotifyChanges(get("notify-changes")),
   };
+}
+
+/**
+ * Reads the `notify-changes` input. `true` and `false`, its values before it took a mode, still work.
+ *
+ * @param value - The trimmed input; empty when it is not set.
+ * @returns `every-push` when empty or `true`, `off` for `false`, or the mode as given.
+ * @throws {@link OpendrsError} If the value is none of those.
+ */
+function readNotifyChanges(value: string): NotifyChanges {
+  const normalizedValue = value.toLowerCase();
+  if (normalizedValue === "" || normalizedValue === "true" || normalizedValue === "every-push") return "every-push";
+  if (normalizedValue === "on-change") return "on-change";
+  if (normalizedValue === "false") return "off";
+  throw new OpendrsError(`Input 'notify-changes' must be every-push, on-change, true or false, got '${value}'`, "usage");
 }
 
 /** Wire the real environment into runAction, or into the sweep on a schedule / workflow_dispatch event. Returns the process exit code. */
