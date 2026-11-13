@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { changeNotice, readState, rescoreLine, stateMarker, type OpendrsState } from "../../src/action/state.js";
+import { readState, rescoreNotice, rescoreLine, stateMarker, type OpendrsState } from "../../src/action/state.js";
 
 const HEAD = "a".repeat(40);
 
@@ -99,11 +99,21 @@ describe("rescoreLine", () => {
   });
 });
 
-describe("changeNotice", () => {
-  it("names the tier and decision change and points at the report", () => {
-    const prev = state({ score: 0.76, tier: "yellow", decision: "human-review" });
-    expect(changeNotice(prev, 0.28, "green", "auto-approve")).toBe(
-      "opendrs: risk changed yellow 0.76 → green 0.28 · decision human-review → auto-approve · see the updated report ↑",
+describe("rescoreNotice", () => {
+  const reportUrl = "https://github.com/o/r/pull/7#issuecomment-2";
+
+  it("names the short head, the new score, tier and decision, and links to the report", () => {
+    expect(rescoreNotice("abcdef1234567890123456789012345678901234", 0.1834, "green", "auto-approve", { id: 2, url: reportUrl })).toBe(
+      "opendrs: re-scored at abcdef1 · 0.18 green · auto-approve · [see the updated report](https://github.com/o/r/pull/7#issuecomment-2)",
     );
+  });
+
+  it("falls back to a link within the page when the report's URL is missing or not a plain https URL", () => {
+    const head = "a".repeat(40);
+    for (const badUrl of [undefined, "", "javascript:alert(1)", "https://x/a)b", "https://x/a b"]) {
+      expect(rescoreNotice(head, 0.5, "yellow", "human-review", { id: 2, url: badUrl })).toBe(
+        "opendrs: re-scored at aaaaaaa · 0.50 yellow · human-review · [see the updated report](#issuecomment-2)",
+      );
+    }
   });
 });

@@ -33047,7 +33047,11 @@ function readState(body) {
   };
 }
 var rescoreLine = (prev, run, head, score, tier) => `Re-scored for \`${head.slice(0, 7)}\` (run ${run}) \xB7 was ${prev.score.toFixed(2)} ${prev.tier} \u2192 now ${score.toFixed(2)} ${tier}`;
-var changeNotice = (prev, score, tier, decision) => `opendrs: risk changed ${prev.tier} ${prev.score.toFixed(2)} \u2192 ${tier} ${score.toFixed(2)} \xB7 decision ${prev.decision} \u2192 ${decision} \xB7 see the updated report \u2191`;
+var PLAIN_HTTPS_URL = /^https:\/\/[^\s()<>[\]]+$/;
+function rescoreNotice(headSha, score, tier, decision, report) {
+  const reportLink = report.url && PLAIN_HTTPS_URL.test(report.url) ? report.url : `#issuecomment-${report.id}`;
+  return `opendrs: re-scored at ${headSha.slice(0, 7)} \xB7 ${score.toFixed(2)} ${tier} \xB7 ${decision} \xB7 [see the updated report](${reportLink})`;
+}
 
 // src/action/run.ts
 var COMMENT_MARKER = "<!-- opendrs -->";
@@ -33276,9 +33280,15 @@ ${report}`}${warning}
       },
       () => io.warning(COMMENT_FORBIDDEN)
     );
-    if (written && d.inputs.notifyChanges && previousState && (previousState.tier !== result.tier || previousState.decision !== result.policy.decision)) {
+    const isNewPush = previousState !== void 0 && previousState.head !== pr.head.sha;
+    const hasOutcomeChanged = previousState !== void 0 && (previousState.tier !== result.tier || previousState.decision !== result.policy.decision);
+    const shouldNotify = d.inputs.notifyChanges === "every-push" && (isNewPush || hasOutcomeChanged) || d.inputs.notifyChanges === "on-change" && hasOutcomeChanged;
+    if (written && mine && shouldNotify) {
       await unlessForbidden(
-        () => client.createComment(pr.number, changeNotice(previousState, result.score, result.tier, result.policy.decision)),
+        () => client.createComment(
+          pr.number,
+          rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { id: mine.id, url: mine.html_url })
+        ),
         () => io.warning(COMMENT_FORBIDDEN)
       );
     }
@@ -33427,8 +33437,15 @@ function readInputs(env) {
     labels: bool("labels", true),
     sampleSalt: get("sample-salt"),
     brief: bool("brief", true),
-    notifyChanges: bool("notify-changes", true)
+    notifyChanges: readNotifyChanges(get("notify-changes"))
   };
+}
+function readNotifyChanges(value) {
+  const normalizedValue = value.toLowerCase();
+  if (normalizedValue === "" || normalizedValue === "true" || normalizedValue === "every-push") return "every-push";
+  if (normalizedValue === "on-change") return "on-change";
+  if (normalizedValue === "false") return "off";
+  throw new OpendrsError(`Input 'notify-changes' must be every-push, on-change, true or false, got '${value}'`, "usage");
 }
 async function runFromEnv(env, write) {
   const io = createWorkflowIO(env, write);

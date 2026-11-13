@@ -11,6 +11,8 @@ export interface FakeComment {
   id: number;
   body: string;
   user: FakeUser;
+  /** The comment's permalink, as REST returns it. */
+  html_url?: string;
 }
 export interface FakeReview {
   id: number;
@@ -184,7 +186,8 @@ export function installFakeGitHub(init: Partial<FakeGitHub> = {}): FakeGitHub {
       if (route === `GET ${pr}/issues/7/comments`) return handle("listComments", path, undefined, () => json(200, gh.comments));
       if (route === `POST ${pr}/issues/7/comments`)
         return handle("createComment", path, body, () => {
-          const c = { id: nextId++, body: body.body, user: gh.self };
+          const id = nextId++;
+          const c = { id, body: body.body, user: gh.self, html_url: `https://github.com/${REPO}/pull/7#issuecomment-${id}` };
           gh.comments.push(c);
           return json(201, c);
         });

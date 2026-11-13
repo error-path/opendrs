@@ -24,19 +24,27 @@ describe("readInputs", () => {
       llmApiKey: undefined,
       sampleSalt: "",
       brief: true,
-      notifyChanges: true,
+      notifyChanges: "every-push",
     });
   });
 
   it("parses YAML-style booleans and the LLM key", () => {
     expect(
       readInputs({ "INPUT_GITHUB-TOKEN": "t", "INPUT_BASE-CONFIG": "False", INPUT_COMMENT: "FALSE", INPUT_LABELS: "true", "INPUT_LLM-API-KEY": " k " }),
-    ).toEqual({ token: "t", baseConfig: false, comment: false, labels: true, llmApiKey: "k", sampleSalt: "", brief: true, notifyChanges: true });
+    ).toEqual({ token: "t", baseConfig: false, comment: false, labels: true, llmApiKey: "k", sampleSalt: "", brief: true, notifyChanges: "every-push" });
   });
 
-  it("reads INPUT_NOTIFY-CHANGES, defaulting to true", () => {
-    expect(readInputs({ "INPUT_GITHUB-TOKEN": "t" }).notifyChanges).toBe(true);
-    expect(readInputs({ "INPUT_GITHUB-TOKEN": "t", "INPUT_NOTIFY-CHANGES": "false" }).notifyChanges).toBe(false);
+  it("reads INPUT_NOTIFY-CHANGES, defaulting to every-push, with true and false kept from before", () => {
+    const notifyChanges = (value?: string) =>
+      readInputs({ "INPUT_GITHUB-TOKEN": "t", ...(value === undefined ? {} : { "INPUT_NOTIFY-CHANGES": value }) }).notifyChanges;
+    expect(notifyChanges()).toBe("every-push");
+    expect(notifyChanges("every-push")).toBe("every-push");
+    expect(notifyChanges("on-change")).toBe("on-change");
+    expect(notifyChanges("true")).toBe("every-push");
+    expect(notifyChanges("TRUE")).toBe("every-push");
+    expect(notifyChanges("false")).toBe("off");
+    expect(notifyChanges(" False ")).toBe("off");
+    expect(() => notifyChanges("sometimes")).toThrow(/notify-changes.*every-push, on-change, true or false/);
   });
 
   it("reads sample-salt", () => {

@@ -35,9 +35,9 @@ inputs:
     required: false
     default: "true"
   notify-changes:
-    description: When a re-score changes the tier or the decision, post one short new comment pointing back at the updated report. Needs brief and comment to both be true; otherwise nothing is posted.
+    description: When to post a one-line comment with the new score and a link to the updated report. every-push (default) posts after each push, and after a re-run that changes the tier or the decision; on-change posts only when the tier or the decision changed; false never posts. true means every-push. Needs brief and comment to both be true; otherwise nothing is posted.
     required: false
-    default: "true"
+    default: "every-push"
 
 outputs:
   score:

@@ -35,6 +35,8 @@ export interface IssueComment {
   body?: string | null;
   created_at?: string;
   user: GitHubUser | null;
+  /** The comment's permalink. */
+  html_url?: string;
 }
 
 export interface Review {

@@ -17,7 +17,7 @@ import { renderMarkdown } from "../report/markdown.js";
 import { HOLD_LABEL, changesRequested, eligibleMarker, noreplyLogin, ownApprovals, readEligibleSince, reconcileApproval, stopMerge, withdraw } from "./approval.js";
 import { GitHubError, type IssueComment, isSelf, sameLogin, unlessForbidden, type GitHubClient } from "./github.js";
 import { parseSelfCheck, renderSelfCheckLine } from "./selfcheck.js";
-import { changeNotice, readState, rescoreLine, stateMarker } from "./state.js";
+import { readState, rescoreLine, rescoreNotice, stateMarker } from "./state.js";
 import type { WorkflowIO } from "./workflow.js";
 
 export { APPROVAL_MARKER } from "./approval.js";
@@ -43,9 +43,15 @@ export interface ActionInputs {
   sampleSalt?: string;
   /** Build the review brief and add it to the comment, job summary and brief/brief-file outputs. */
   brief: boolean;
-  /** Post a short new comment when a re-score changes the tier or the decision. Needs `brief` and `comment`. */
-  notifyChanges: boolean;
+  /** When to post the one-line re-score comment. Needs `brief` and `comment`. */
+  notifyChanges: NotifyChanges;
 }
+
+/**
+ * When opendrs posts its one-line re-score comment: after every push (a new head commit) or a changed
+ * outcome, only when the tier or the decision changed, or never.
+ */
+export type NotifyChanges = "every-push" | "on-change" | "off";
 
 /** The fields of the `pull_request` webhook payload the action uses. */
 export interface PullRequest {
@@ -371,12 +377,23 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
       },
       () => io.warning(COMMENT_FORBIDDEN),
     );
-    // A short, separate notice so a re-score that changes the outcome is not missed in an updated-in-place
-    // comment; it never carries the opendrs marker, so it is never mistaken for the main comment. Only after
-    // the report itself was written, so a notice never announces a change the report does not show.
-    if (written && d.inputs.notifyChanges && previousState && (previousState.tier !== result.tier || previousState.decision !== result.policy.decision)) {
+    // A short, separate notice so a re-score is not missed in an updated-in-place comment; it never
+    // carries the opendrs marker, so it is never mistaken for the main comment. Only after the report
+    // itself was written, so a notice never announces a score the report does not show. A push runs
+    // the workflow once however many commits it carries, so a new head commit means one new push.
+    const isNewPush = previousState !== undefined && previousState.head !== pr.head.sha;
+    const hasOutcomeChanged =
+      previousState !== undefined && (previousState.tier !== result.tier || previousState.decision !== result.policy.decision);
+    const shouldNotify =
+      (d.inputs.notifyChanges === "every-push" && (isNewPush || hasOutcomeChanged)) ||
+      (d.inputs.notifyChanges === "on-change" && hasOutcomeChanged);
+    if (written && mine && shouldNotify) {
       await unlessForbidden(
-        () => client.createComment(pr.number, changeNotice(previousState, result.score, result.tier, result.policy.decision)),
+        () =>
+          client.createComment(
+            pr.number,
+            rescoreNotice(pr.head.sha, result.score, result.tier, result.policy.decision, { id: mine.id, url: mine.html_url }),
+          ),
         () => io.warning(COMMENT_FORBIDDEN),
       );
     }
