@@ -78,6 +78,19 @@ export function sampleValue(head: string): number {
   return createHash("sha256").update(head).digest().readUIntBE(0, 6) / 2 ** 48;
 }
 
+/** Whether the diff had no changed files at all, so the result says nothing about a change. */
+export function nothingToScore(policy: Pick<PolicyOutcome, "rules"> | undefined): boolean {
+  return policy?.rules?.some((r) => r.rule === "empty-diff") ?? false;
+}
+
+/** What the CLI and MCP tools say instead of a verdict when {@link nothingToScore}; refs as the user gave them. */
+export function nothingToScoreMessage(base: string, head: string): string {
+  return (
+    `opendrs: nothing to score: no changes between ${base} and ${head}.\n` +
+    "Run it on a branch with commits that are not on the base, or choose another base with --base <ref>."
+  );
+}
+
 /** Spec §6 decision order. Pure and deterministic given `now` (sampling is hashed from diff.head). */
 export function decide(input: GateInput): PolicyOutcome {
   const { config, diff, model } = input;
@@ -91,6 +104,11 @@ export function decide(input: GateInput): PolicyOutcome {
     fired.push({ decision, reason });
     if (rule) rules.push({ rule, reason });
   };
+
+  // 0. nothing changed: the score would only reflect the author, so never call it safe
+  if (diff.files.length === 0) {
+    fire("human-review", `no changes between ${diff.base.slice(0, 12)} and ${diff.head.slice(0, 12)}: nothing to score`, "empty-diff");
+  }
 
   // 1. hard block
   const blocked = diff.files

@@ -9,6 +9,7 @@ import { explainFile } from "../explain.js";
 import { gitMaybe } from "../git/exec.js";
 import { buildHistoryIndex } from "../git/history.js";
 import { hotspots } from "../hotspots.js";
+import { nothingToScore, nothingToScoreMessage } from "../policy/gate.js";
 import { suggestReviewers } from "../policy/reviewers.js";
 
 const TOP_CONTRIBUTIONS = 6;
@@ -58,9 +59,11 @@ export async function reviewBriefTool(args: { repoDir: string; base?: string; he
     const repoDir = await repoRoot(resolve(args.repoDir));
     const config = await loadConfig(repoDir);
     const base = args.base ?? (await defaultBase(repoDir));
-    const r = await scoreDiff({ repoDir, base, head: args.head ?? "HEAD", config, brief: { maxTokens: args.maxTokens } });
+    const head = args.head ?? "HEAD";
+    const r = await scoreDiff({ repoDir, base, head, config, brief: { maxTokens: args.maxTokens } });
     const brief = r.brief!;
-    return { content: [{ type: "text", text: renderBriefMarkdown(brief) }], structuredContent: brief as unknown as Record<string, unknown> };
+    const text = nothingToScore(r.policy) ? nothingToScoreMessage(base, head) : renderBriefMarkdown(brief);
+    return { content: [{ type: "text", text }], structuredContent: brief as unknown as Record<string, unknown> };
   } catch (e) {
     return fail(e);
   }

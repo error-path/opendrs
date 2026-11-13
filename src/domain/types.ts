@@ -294,7 +294,7 @@ export type Decision = "auto-approve" | "deferred-review" | "waiting-ai-review" 
 
 /** The gate rules that can fire, by id (see policy/gate.ts). */
 export type PolicyRule =
-  | "paths.block" | "unread-files" | "tests.deleted" | "content.block" | "size-cap" | "tier"
+  | "empty-diff" | "paths.block" | "unread-files" | "tests.deleted" | "content.block" | "size-cap" | "tier"
   | "freeze" | "source" | "submodule" | "control-chars" | "llm-failed" | "llm.requireSafe"
   | "unknowns" | "draft" | "changes-requested" | "ai-review" | "sample";
 

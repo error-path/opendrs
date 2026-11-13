@@ -29,6 +29,14 @@ const brief = (): ReviewBrief => ({
 beforeEach(() => vi.clearAllMocks());
 
 describe("reviewBriefTool", () => {
+  it("tells the agent there is nothing to review when the diff is empty", async () => {
+    const policy = { rules: [{ rule: "empty-diff", reason: "no changes" }] };
+    vi.mocked(scoreDiff).mockResolvedValue({ brief: brief(), policy } as never);
+    const result = await reviewBriefTool({ repoDir: REPO, base: "main" });
+    expect(result.isError).toBeUndefined();
+    expect(result.content).toEqual([{ type: "text", text: expect.stringMatching(/^opendrs: nothing to score: no changes between main and HEAD\./) }]);
+  });
+
   it("asks scoreDiff for a brief and returns the markdown as text and the brief as structured content", async () => {
     vi.mocked(scoreDiff).mockResolvedValue({ brief: brief() } as never);
     const result = await reviewBriefTool({ repoDir: REPO, base: "main", maxTokens: 900 });

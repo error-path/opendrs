@@ -85,6 +85,37 @@ describe("opendrs score", () => {
     expect(lastCall().config.thresholds.green).toBe(0.2);
   });
 
+  describe("with no changes between base and head", () => {
+    const empty = () => {
+      const r = fakeResult(0.01, "green", "human-review");
+      r.policy.rules = [{ rule: "empty-diff", reason: "no changes" }];
+      r.diff = { ...r.diff, files: 0, added: 0, deleted: 0 };
+      return r;
+    };
+
+    it("says there is nothing to score instead of printing a verdict, and exits 0", async () => {
+      vi.mocked(scoreDiff).mockResolvedValue(empty());
+      const t = testIo(repo.dir);
+      expect(await runCli(["score", "--base", "main"], t.io)).toBe(0);
+      expect(t.stdout()).toMatch(/^opendrs: nothing to score: no changes between main and HEAD\./);
+      expect(t.stdout()).not.toContain("TEXT REPORT");
+    });
+
+    it("does the same with --markdown and ignores --fail-above", async () => {
+      vi.mocked(scoreDiff).mockResolvedValue(empty());
+      const t = testIo(repo.dir);
+      expect(await runCli(["score", "--markdown", "--fail-above", "0"], t.io)).toBe(0);
+      expect(t.stdout()).toMatch(/nothing to score/);
+    });
+
+    it("still prints the full result with --json, for scripts", async () => {
+      vi.mocked(scoreDiff).mockResolvedValue(empty());
+      const t = testIo(repo.dir);
+      expect(await runCli(["score", "--json"], t.io)).toBe(0);
+      expect(JSON.parse(t.stdout()).policy.rules[0].rule).toBe("empty-diff");
+    });
+  });
+
   it("prints JSON with --json", async () => {
     const t = testIo(repo.dir);
     await runCli(["score", "--json"], t.io);

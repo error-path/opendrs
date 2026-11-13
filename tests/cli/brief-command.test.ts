@@ -30,6 +30,21 @@ describe("opendrs brief", () => {
     expect(out).toContain("Does this change bring that problem back?");
   });
 
+  it("says there is nothing to score on a branch with no changes, end to end, exit 0", async () => {
+    repo = makeRepo();
+    repo.commit({ "a.ts": "1\n" }, "base");
+    const brief = testIo(repo.dir);
+    expect(await runCli(["brief", "--base", "main"], brief.io)).toBe(0);
+    expect(brief.stdout()).toMatch(/^opendrs: nothing to score: no changes between main and HEAD\./);
+    // The same through `score`, with the real engine and gate: no "auto-approve" for an empty diff.
+    const score = testIo(repo.dir);
+    expect(await runCli(["score", "--base", "main"], score.io)).toBe(0);
+    expect(score.stdout()).toMatch(/^opendrs: nothing to score/);
+    const json = testIo(repo.dir);
+    await runCli(["score", "--base", "main", "--json"], json.io);
+    expect(JSON.parse(json.stdout()).policy.decision).toBe("human-review");
+  });
+
   it("--json prints a parseable ReviewBrief", async () => {
     repo = repoWithFix();
     const { io, stdout } = testIo(repo.dir);

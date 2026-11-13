@@ -125,6 +125,7 @@ Whatever the score:
   (`.claude/**`, `.mcp.json`, plugin manifests and hooks), and the opendrs config
   or model;
 - binary files, submodule pointer changes, lockfiles and other ignored files;
+- PRs with no changed files, which have nothing to review;
 - PRs that delete tests or add a line matching a `content.block` pattern;
 - PRs whose counted size (after excluding inert docs/comment lines) still exceeds `maxChangedLines`;
   a changed agent-instruction file (`CLAUDE.md`, `.claude/**`, …) always counts in full toward it;

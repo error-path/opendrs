@@ -11,7 +11,11 @@ hold when it can approve.
 
 ## Decision rules
 
-The decision rules run in this order; the first that matches wins:
+First, a diff with no changed files at all (`empty-diff`) → `human-review`: with nothing changed,
+the score would only reflect the author, so it is never a reason to approve. The CLI and the
+`review_brief` MCP tool print "nothing to score" instead of a verdict.
+
+Then the decision rules run in this order; the first that matches wins:
 
 1. a changed file matches `paths.block` → `human-review` (hard block);
 2. a changed file is ignored (`paths.ignore`), binary, or a submodule pointer (gitlink), the PR
