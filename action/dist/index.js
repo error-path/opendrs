@@ -31918,6 +31918,9 @@ function decide(input2) {
     fired.push({ decision: decision2, reason });
     if (rule) rules.push({ rule, reason });
   };
+  if (diff.files.length === 0) {
+    fire("human-review", `no changes between ${diff.base.slice(0, 12)} and ${diff.head.slice(0, 12)}: nothing to score`, "empty-diff");
+  }
   const blocked = diff.files.filter((f) => [f.path, f.oldPath].some((p) => p !== void 0 && matchAny(config2.paths.block, p, { ignoreCase: true }))).map((f) => f.path);
   const blockedSignal = input2.signals.find((s) => s.id === "paths.blocked" && s.value >= 1);
   const hardBlocked = blocked.length > 0 || blockedSignal !== void 0;

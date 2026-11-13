@@ -23,6 +23,10 @@ opendrs runs as a command-line tool, as a Model Context Protocol server for codi
 
 Exit codes: 0 success, 1 score above `--fail-above`, 2 error. Set `OPENDRS_DEBUG=1` for stack traces.
 
+When base and head have no changes between them, as on a fresh clone's default branch, `score` and
+`brief` print "nothing to score" and exit 0 instead of printing a verdict. `--json` output still has
+the full result, whose decision is `human-review` with the `empty-diff` rule.
+
 ## MCP server
 
 `opendrs mcp` runs a Model Context Protocol server on stdio, so coding agents can check risk

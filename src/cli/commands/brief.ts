@@ -4,6 +4,7 @@ import { selfCheckItems } from "../../brief/selfcheck.js";
 import { loadConfig } from "../../domain/config.js";
 import { OpendrsError } from "../../domain/types.js";
 import { scoreDiff } from "../../engine.js";
+import { describeEmptyDiff, isEmptyDiff } from "../../policy/gate.js";
 import { parsePositiveInt } from "../args.js";
 import { defaultBase, repoRoot } from "../repo.js";
 import type { Command } from "../types.js";
@@ -50,15 +51,15 @@ Exit codes: 0 ok, 2 error.`,
 
     const repoDir = await repoRoot(io.cwd);
     const config = await loadConfig(repoDir);
-    const result = await scoreDiff({
-      repoDir,
-      config,
-      base: values.base ?? (await defaultBase(repoDir)),
-      head: values.head ?? "HEAD",
-      llm: values["no-llm"] ? null : undefined,
-      brief: { maxTokens },
-    });
+    const baseRef = values.base ?? (await defaultBase(repoDir));
+    const headRef = values.head ?? "HEAD";
+    const result = await scoreDiff({ repoDir, config, base: baseRef, head: headRef, llm: values["no-llm"] ? null : undefined, brief: { maxTokens } });
     if (!result.brief) throw new OpendrsError("internal error: scoreDiff did not build a brief", "io");
+    // The JSON forms stay parseable for scripts and agents; their verdict already routes to a human.
+    if (!values.json && !values["self-check-template"] && isEmptyDiff(result.policy)) {
+      io.out(describeEmptyDiff(baseRef, headRef));
+      return 0;
+    }
 
     if (values["self-check-template"]) {
       io.out(JSON.stringify(selfCheckItems(result.brief), null, 2));

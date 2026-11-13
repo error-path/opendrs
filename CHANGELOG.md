@@ -4,6 +4,13 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 ## Unreleased
 
+### Fixed
+
+- A diff with no changed files is no longer rated green and auto-approved: its score only reflected
+  the author. The new `empty-diff` rule sends it to a human, and `opendrs score`, `opendrs brief`
+  and the `review_brief` MCP tool print "nothing to score" instead of a verdict. Before, running
+  `opendrs score` on a fresh clone's default branch printed "GREEN -> auto-approve".
+
 ### Changed
 
 - npm releases are staged from GitHub Actions with npm trusted publishing and go live only after a

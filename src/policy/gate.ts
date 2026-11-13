@@ -78,6 +78,30 @@ export function sampleValue(head: string): number {
   return createHash("sha256").update(head).digest().readUIntBE(0, 6) / 2 ** 48;
 }
 
+/**
+ * Checks whether a policy decision was made for a diff with no changed files at all.
+ *
+ * @param policyOutcome - The gate's decision; `undefined` when a caller has none.
+ * @returns True when the `empty-diff` rule fired, so the score says nothing about a change.
+ */
+export function isEmptyDiff(policyOutcome: Pick<PolicyOutcome, "rules"> | undefined): boolean {
+  return policyOutcome?.rules?.some((firedRule) => firedRule.rule === "empty-diff") ?? false;
+}
+
+/**
+ * Describes an empty diff for the CLI and MCP tools, which print this instead of a verdict.
+ *
+ * @param baseRef - The base ref as the user gave it, such as `origin/main`.
+ * @param headRef - The head ref as the user gave it, such as `HEAD`.
+ * @returns A two-line message that says there is nothing to score and how to get a diff.
+ */
+export function describeEmptyDiff(baseRef: string, headRef: string): string {
+  return (
+    `opendrs: nothing to score: no changes between ${baseRef} and ${headRef}.\n` +
+    "Run it on a branch with commits that are not on the base, or choose another base with --base <ref>."
+  );
+}
+
 /** Spec §6 decision order. Pure and deterministic given `now` (sampling is hashed from diff.head). */
 export function decide(input: GateInput): PolicyOutcome {
   const { config, diff, model } = input;
@@ -91,6 +115,11 @@ export function decide(input: GateInput): PolicyOutcome {
     fired.push({ decision, reason });
     if (rule) rules.push({ rule, reason });
   };
+
+  // 0. nothing changed: the score would only reflect the author, so never call it safe
+  if (diff.files.length === 0) {
+    fire("human-review", `no changes between ${diff.base.slice(0, 12)} and ${diff.head.slice(0, 12)}: nothing to score`, "empty-diff");
+  }
 
   // 1. hard block
   const blocked = diff.files

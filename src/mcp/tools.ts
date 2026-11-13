@@ -9,6 +9,7 @@ import { explainFile } from "../explain.js";
 import { gitMaybe } from "../git/exec.js";
 import { buildHistoryIndex } from "../git/history.js";
 import { hotspots } from "../hotspots.js";
+import { describeEmptyDiff, isEmptyDiff } from "../policy/gate.js";
 import { suggestReviewers } from "../policy/reviewers.js";
 
 const TOP_CONTRIBUTIONS = 6;
@@ -52,15 +53,24 @@ export async function scoreDiffTool(args: { repoDir: string; base?: string; head
   }
 }
 
-/** The review brief: Markdown as text content for the model, the ReviewBrief itself as structured content. */
+/**
+ * Builds the review brief for the `review_brief` MCP tool.
+ *
+ * @param args - The repository, the base and head refs (default: the base branch and `HEAD`) and
+ *   the brief's token budget.
+ * @returns The brief as Markdown text for the model and as structured content; for an empty diff,
+ *   the text says there is nothing to score instead.
+ */
 export async function reviewBriefTool(args: { repoDir: string; base?: string; head?: string; maxTokens?: number }): Promise<CallToolResult> {
   try {
     const repoDir = await repoRoot(resolve(args.repoDir));
     const config = await loadConfig(repoDir);
-    const base = args.base ?? (await defaultBase(repoDir));
-    const r = await scoreDiff({ repoDir, base, head: args.head ?? "HEAD", config, brief: { maxTokens: args.maxTokens } });
-    const brief = r.brief!;
-    return { content: [{ type: "text", text: renderBriefMarkdown(brief) }], structuredContent: brief as unknown as Record<string, unknown> };
+    const baseRef = args.base ?? (await defaultBase(repoDir));
+    const headRef = args.head ?? "HEAD";
+    const scoreResult = await scoreDiff({ repoDir, base: baseRef, head: headRef, config, brief: { maxTokens: args.maxTokens } });
+    const brief = scoreResult.brief!;
+    const text = isEmptyDiff(scoreResult.policy) ? describeEmptyDiff(baseRef, headRef) : renderBriefMarkdown(brief);
+    return { content: [{ type: "text", text }], structuredContent: brief as unknown as Record<string, unknown> };
   } catch (e) {
     return fail(e);
   }
