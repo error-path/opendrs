@@ -52,6 +52,21 @@ existing function's comment, move it to this format. Don't reformat comments you
 - One-line helpers and constants can use a single `/** ... */` line.
 - Inside a function, use `//`, and only to explain why.
 
+## Naming
+
+opendrs is read by people seeing the code for the first time, so a name should say what the value
+is without reading the code around it.
+
+- Use whole words that name the thing: `scoreResult`, not `r`; `baseRef`, not `base`, when the value
+  is a git ref such as `origin/main`; `baseSha` when it is a commit hash.
+- No single-letter names, except `i`/`j` for a loop index and the conventional `_` for an unused
+  value. Name callback parameters too: `(rule) => rule.id`, not `(r) => r.id`.
+- Booleans read as a yes/no question: `isEmpty`, `hasBlockedPath`, `shouldComment`.
+- Functions start with a verb: `loadConfig`, `renderBrief`, `isIgnored`.
+- Rename only what your change touches: a variable you add, or one in a line you are already
+  changing. Don't rename across files you aren't otherwise changing; the code gets more readable
+  one PR at a time.
+
 ## Reporting a security problem
 
 Do not open a public issue for a way around the Action's approval rails. Use GitHub's private

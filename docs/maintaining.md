@@ -22,7 +22,9 @@ A short runbook for the maintainer.
 - Read every change to `src/action/`, `src/policy/` or `.github/workflows/` line by line. These are
   the approval rails. A bug there lets someone merge code without review in every repo that uses
   opendrs.
-- New functions and comments follow the [comment standard](https://github.com/error-path/opendrs/blob/main/CONTRIBUTING.md#code-comments).
+- New functions and comments follow the [comment standard](https://github.com/error-path/opendrs/blob/main/CONTRIBUTING.md#code-comments),
+  and new or changed names follow the [naming standard](https://github.com/error-path/opendrs/blob/main/CONTRIBUTING.md#naming).
+  Coding agents find both through `AGENTS.md` (and `CLAUDE.md`, which imports it).
 - Prefer squash merges, so `main` reads as one commit per change.
 
 ## Releasing
