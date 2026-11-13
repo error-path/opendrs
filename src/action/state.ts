@@ -64,13 +64,21 @@ const PLAIN_HTTPS_URL = /^https:\/\/[^\s()<>[\]]+$/;
  * @param score - The new risk score.
  * @param tier - The new tier.
  * @param decision - The new policy decision.
- * @param report - opendrs's main comment: its id, and its permalink as GitHub returned it.
- *   The notice links to it.
+ * @param mainComment - opendrs's main comment, which holds the updated report: its id, and the web
+ *   address that opens it on GitHub. The notice links to it.
  * @returns For example "opendrs: re-scored at abc1234 · 0.18 green · auto-approve · [see the updated report](…)".
- *   The link falls back to `#issuecomment-<id>` on the same page when the permalink is missing or
+ *   The link falls back to `#issuecomment-<id>` on the same page when the web address is missing or
  *   is not a plain https URL.
  */
-export function rescoreNotice(headSha: string, score: number, tier: Tier, decision: Decision, report: { commentId: number; permalink?: string | null }): string {
-  const reportLink = report.permalink && PLAIN_HTTPS_URL.test(report.permalink) ? report.permalink : `#issuecomment-${report.commentId}`;
-  return `opendrs: re-scored at ${headSha.slice(0, 7)} · ${score.toFixed(2)} ${tier} · ${decision} · [see the updated report](${reportLink})`;
+export function rescoreNotice(
+  headSha: string,
+  score: number,
+  tier: Tier,
+  decision: Decision,
+  mainComment: { commentId: number; linkToCommentOnGitHub?: string | null },
+): string {
+  const linkToCommentOnGitHub = mainComment.linkToCommentOnGitHub;
+  const linkToUpdatedReport =
+    linkToCommentOnGitHub && PLAIN_HTTPS_URL.test(linkToCommentOnGitHub) ? linkToCommentOnGitHub : `#issuecomment-${mainComment.commentId}`;
+  return `opendrs: re-scored at ${headSha.slice(0, 7)} · ${score.toFixed(2)} ${tier} · ${decision} · [see the updated report](${linkToUpdatedReport})`;
 }

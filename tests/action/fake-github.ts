@@ -11,7 +11,7 @@ export interface FakeComment {
   id: number;
   body: string;
   user: FakeUser;
-  /** The comment's permalink, as REST returns it. */
+  /** The web address that opens the comment on GitHub, under the field name GitHub's REST API uses. */
   html_url?: string;
 }
 export interface FakeReview {
