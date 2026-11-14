@@ -1,5 +1,6 @@
 # Dogfood: score this repository's own PRs and approve the low-risk ones (.opendrs.yml), and
-# auto-merge only those that are also a captain "quick confirm", once the required checks pass.
+# auto-merge only those that are also a captain "quick confirm" and come from a trusted author,
+# once the required checks pass.
 # Runs the RELEASED action (@v0), never the PR's own copy: a PR must not be able to edit the
 # code that decides whether to approve it.
 name: OpenDRS
@@ -51,16 +52,39 @@ jobs:
         run: echo "score=$SCORE tier=$TIER decision=$DECISION captain=$CAPTAIN"
       # The decision and captain come from this run, never from labels: anyone with triage access
       # can add a label. auto-approve already means green with every safety rule passed.
-      - name: Auto-merge a green, quick-confirm PR once the required checks pass
-        if: steps.app-token.outputs.token != '' && steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick'
+      # Only trusted authors auto-merge: the repository owner, plus the GitHub logins listed
+      # (comma-separated) in the OPENDRS_AUTOMERGE_AUTHORS repository variable. Any other
+      # collaborator's green PR is still approved, but waits for a person to merge it.
+      - name: Decide whether this PR may auto-merge
+        id: may-merge
+        if: ${{ !cancelled() }}
+        env:
+          HAS_TOKEN: ${{ steps.app-token.outputs.token != '' }}
+          DECISION: ${{ steps.opendrs.outputs.decision }}
+          CAPTAIN: ${{ steps.opendrs.outputs.captain }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          OWNER: ${{ github.repository_owner }}
+          TRUSTED: ${{ vars.OPENDRS_AUTOMERGE_AUTHORS }}
+        run: |
+          allowed=",$OWNER,$(printf '%s' "$TRUSTED" | tr -d ' '),"
+          merge=false
+          if [ -n "$AUTHOR" ] && [ "$HAS_TOKEN" = "true" ] && [ "$DECISION" = "auto-approve" ] && [ "$CAPTAIN" = "quick" ]; then
+            case "$allowed" in
+              *",$AUTHOR,"*) merge=true ;;
+              *) echo "$AUTHOR is not a trusted author: approved, but not auto-merged." ;;
+            esac
+          fi
+          echo "merge=$merge" >> "$GITHUB_OUTPUT"
+      - name: Auto-merge a green, quick-confirm PR from a trusted author once the required checks pass
+        if: steps.may-merge.outputs.merge == 'true'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           PR: ${{ github.event.pull_request.number }}
         run: gh pr merge "$PR" --auto --squash --repo "$GITHUB_REPOSITORY"
-      # Turn it off in every other case, including a failed opendrs step, so a later push that is no
-      # longer quick-confirm cannot merge on auto-merge set by an earlier run.
+      # Turn it off in every other case, including a failed opendrs step or an author who is no
+      # longer trusted, so a later push cannot merge on auto-merge set by an earlier run.
       - name: Otherwise turn auto-merge off
-        if: ${{ !cancelled() && !(steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick') }}
+        if: ${{ !cancelled() && steps.may-merge.outputs.merge != 'true' }}
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
           PR: ${{ github.event.pull_request.number }}
