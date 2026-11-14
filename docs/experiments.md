@@ -30,7 +30,7 @@ commits in the riskiest X % of commits. How to read the metrics is in
 | 2026-10-18 | Do the missing Kamei features (ent, age, nuc, sexp) close the gap? | No. AUC 0.819 → 0.817 | Rejected (archived as a patch) | [details](#kamei-features) |
 | 2026-10-16 | Do structured outputs fix the judge's malformed replies? | Judge failures 36 → 0 of 1,600 | Merged | [details](#structured-outputs-for-the-llm-judge) |
 | 2026-10-16 | Does a prompted LLM judge improve ranking, and is its `requireSafe` gate useful? | Ranking +0.015 to +0.022 AUC (within noise). Gate passes 28.5 % of commits at 5.3 % buggy (base rate 25.5 %) | Merged (opt-in) | [details](#structured-llm-judge-on-sampled-apachejit) |
-| 2026-10-16 | How do default and calibrated opendrs compare with the classic JIT metrics on a public benchmark? | Calibrated 0.819 vs Kamei 0.821 vs DRS-OSS 0.895 (published, other split) | Merged | [details](#apachejit-benchmark-baseline) |
+| 2026-10-16 | How do default and calibrated opendrs compare with the classic JIT metrics on a public benchmark? | Calibrated 0.819 (0.823 after the refit) vs Kamei 0.821 vs DRS-OSS 0.895 (published, other split) | Merged | [details](#apachejit-benchmark-baseline) |
 | 2026-10-15 and 2026-10-16 | Does the score rank later-fixed commits on real open-source repositories, untuned and calibrated? | Better than chance almost everywhere. Calibration helped in 9 of 9, then in 11 of 18 | Kept as evidence | [details](#public-repository-backtests) |
 
 ## Outcome labels on active public repos
@@ -1489,8 +1489,8 @@ classic Kamei JIT metrics, on a public benchmark with someone else's labels and 
 - Every labelled commit was replayed with opendrs's signals, computed from git alone.
 - Models: default priors, `calibrate`'s fit on the training years, and a Kamei LR on the
   dataset's metrics.
-- DRS-OSS is quoted from [its paper](https://arxiv.org/abs/2511.21964): a fine-tuned LLM on a
-  different split.
+- DRS-OSS is quoted from [its paper](https://arxiv.org/abs/2511.21964): a fine-tuned LLM on its
+  own 80/10/10 chronological split of all ApacheJIT commits, not the official year split.
 
 **Result.**
 

@@ -105,8 +105,10 @@ benchmark of 106,674 commits from 15 Apache Java projects, labelled by SZZ with 
 replayed its commits with opendrs's own signals, fitted `calibrate`'s model on the official
 training years (2003–2016), and scored the held-out years (2017–2019). The Kamei row is a logistic
 regression on the dataset's classic JIT metrics for the same commits. The DRS-OSS row is quoted
-from [its paper](https://arxiv.org/abs/2511.21964), which used a fine-tuned LLM on a different
-split, so read it as a reference point, not a like-for-like comparison.
+from [its paper](https://arxiv.org/abs/2511.21964), which used a fine-tuned LLM on its own 80/10/10
+chronological split of all ApacheJIT commits, so read it as a reference point, not a like-for-like
+comparison. The DRS-OSS paper also names possible pretraining contamination (the base model may
+have seen Apache code) as a threat to validity.
 
 Held-out commits, excluding `apache/hadoop` (it has no positive labels): 24,686 commits, 5,818
 labelled positive.
@@ -222,7 +224,8 @@ npx @error-path/opendrs backtest --brief
 
 The output adds one line: the hit rate, and the average share of each commit's changed lines that
 fell inside its focus hunks (the same shape as Meta's reported 53.85 % hit rate / 26.28 % share for
-their top-2 hunks — see the approved spec for the comparison).
+their top-2 hunks in Liu et al., [A Preliminary Study on Explaining Risk of Code Changes using
+LLM-Based Prediction Models](https://arxiv.org/abs/2607.02782), 2026).
 
 ## Choosing thresholds
 

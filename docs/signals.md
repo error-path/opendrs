@@ -25,7 +25,7 @@ Meta's baseline is a logistic regression over about a dozen features, chosen fro
 | Language indicators | `lang.*` | one indicator per language family present |
 | Author created the file | `expertise.owner_ratio` | share of changed files the author created or mostly wrote |
 | Author's landed diffs | `expertise.author_commits` | `log1p` of the author's prior commits; negative weight |
-| Test plan | `tests.missing` | 1 when source changed and no test lines were added; otherwise `max(0, 1 − addedTestLines / (0.3 · sourceLines))` (a proxy). Deleted test lines never count |
+| (not in Meta's list; Meta feeds the test plan to its LLMs, not the logistic regression) | `tests.missing` | 1 when source changed and no test lines were added; otherwise `max(0, 1 − addedTestLines / (0.3 · sourceLines))` (a proxy). Deleted test lines never count |
 | (not in Meta's list) | `tests.deleted` | 1 when a test file is deleted (or renamed out of `paths.tests`), or 10 or more test lines more are deleted than added. Also a policy rule: such a PR always goes to a human |
 | LLM risk model (iDiffLlama) | `llm.semantic` | `max(0, logit(p) − logit(0.2))` from an optional prompted LLM judge: it can only raise risk |
 | (RADAR's LLM reviewer) | `llm.risk.*` | 1 when the judge puts any hunk in that risk category (`logic_bug`, `security`, `performance`, `structural`, `complex`); weights are never negative |
