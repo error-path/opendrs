@@ -206,7 +206,7 @@ The full comparison, with how each tool scores and where it runs, is at
   (Engineering at Meta, 2025) and Abreu et al., [Moving Faster and Reducing Risk: Using LLMs in
   Release Deployment](https://arxiv.org/abs/2410.06351) (2024). The feature set, the tiered gates and
   the capture-at-X %-gated metric come from this work. opendrs is not affiliated with Meta.
-- **Meta's RADAR.** Adams et al., [Automating Low-Risk Code Review at Meta](https://arxiv.org/abs/2605.30208)
+- **Meta's RADAR.** Adams et al., [Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency](https://arxiv.org/abs/2605.30208)
   (2026): the structured LLM reviewer with safe and risk categories, per-source policy (daily caps,
   track record), deferred review, the landing delay and the content blocklist follow this paper.
   Related Meta work behind `hotspots` and reviewer assignment: Mockus et al., "Metrics Driven

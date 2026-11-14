@@ -54,7 +54,8 @@ what it measures, read [what PR blast radius is](blast-radius.md); to set it up,
   new import edge, a broken contract, a file that usually changes with one this PR didn't — instead
   of a label alone. It is also open source, with no service to host or account to create.
 - **You want the single highest accuracy number, and can host a model:** DRS-OSS reports AUC 0.895
-  on ApacheJIT's official split; opendrs's calibrated model reports AUC 0.823 on the same benchmark
-  (a different split; see [Calibration and backtesting](calibration.md)). That gap is the
+  on ApacheJIT with its own 80/10/10 chronological split of all commits; opendrs's calibrated model
+  reports AUC 0.823 on the dataset's 2017–2019 test years. The splits differ, so this is a reference
+  point, not a head-to-head result (see [Calibration and backtesting](calibration.md)). That gap is the
   trade-off: DRS-OSS needs a fine-tuned Llama 3.1 8B classifier running behind a REST API you host
   and keep up; opendrs runs as a CLI, GitHub Action or MCP server with no model service to deploy.
