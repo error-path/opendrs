@@ -50,6 +50,32 @@ export interface ScoreOptions {
    * firstHead/firstRun feed the drift detector (spec §6.4; Action only).
    */
   brief?: { maxTokens?: number; llm?: boolean; firstHead?: string; firstRun?: number; onError?: (message: string) => void };
+  /**
+   * A diff built outside git, used instead of running `git diff base head`. For a caller that has
+   * the change as data but must not fetch the head commit (the Action's fork scoring reads it from
+   * the GitHub API). `diff.base` must be a commit in `repoDir`; `diff.head` need not be. The caller
+   * sets `binary` and `ignored` on each file. Absent: the diff is loaded from git, as always.
+   */
+  diff?: DiffInfo;
+  /**
+   * Reads a file at the head commit, used instead of `git cat-file` when the head commit is not in
+   * `repoDir`. Returns undefined for a file it cannot provide. Absent: read from git, as always.
+   */
+  readHead?: (path: string) => Promise<string | undefined>;
+  /**
+   * The PR's own commits, newest first, used instead of `git log base..head` when the head commit
+   * is not in `repoDir`. An empty list means they are not known: the source is then classified from
+   * `account` alone. Absent: read from git, as always.
+   */
+  prCommits?: PrCommit[];
+}
+
+/** One of the PR's own commits, as `classifyPr` reads it. */
+export interface PrCommit {
+  sha: string;
+  authorName: string;
+  authorEmail: string;
+  message: string;
 }
 
 /** Load the calibrated model if config.model exists in the repo; else the default priors. */
@@ -108,7 +134,7 @@ export function makeContext(
 
 export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
   const { repoDir, config } = opts;
-  const diff = await loadDiff(repoDir, opts.base, opts.head, config);
+  const diff = opts.diff ?? (await loadDiff(repoDir, opts.base, opts.head, config));
   if (opts.title !== undefined) diff.title = opts.title;
   if (opts.description !== undefined) diff.description = opts.description;
 
@@ -126,6 +152,7 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
     authorVerified: opts.authorVerified ?? true,
     historyComplete: !shallow,
   });
+  if (opts.readHead) ctx.readHead = opts.readHead;
 
   let llm: LlmProvider | undefined;
   try {
@@ -148,7 +175,7 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
   }
 
   const signals = await computeSignals(ctx);
-  const commits = await prCommits(repoDir, diff.base, diff.head, config.history.maxCommits);
+  const commits = opts.prCommits ?? (await prCommits(repoDir, diff.base, diff.head, config.history.maxCommits));
   // Landed commits include everything on the base branch, not only what is below the merge-base.
   const countsLanded = Object.values(config.sources).some((s) => s.dailyCap !== undefined || s.trackRecord !== undefined);
   const baseHistory = opts.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, opts.base, config) : history);
