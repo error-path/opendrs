@@ -13,6 +13,20 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
   with many commits gets one line. Set `notify-changes: on-change` for the old behaviour, or
   `false` for no line.
 
+- An opt-in workflow comments the score on pull requests from forks, where the normal workflow's
+  token is read-only and the comment fails with 403. It is a second workflow, triggered by
+  `workflow_run` when your `pull_request` workflow completes, with two jobs that use the new `mode`
+  input: `score-only` reads the PR's diff through the GitHub API with a read-only token, without
+  checking out, fetching or running the fork's code; `fork-comment` validates that job's `result`
+  as untrusted input, then upserts one comment from a fixed template and sets a `risk:*` label. It
+  has no code path that approves or merges. Nothing the fork's own run produced is trusted: the PR
+  is found again from the repository's open pull requests. It does not use `pull_request_target`.
+  The default `mode: full` is unchanged. See "Fork pull requests" in `docs/github-action.md` for
+  the workflow, why it is safe, and what can still go wrong.
+- `scoreDiff` accepts a diff built outside git (`diff`, `readHead`, `prCommits` in its options),
+  for a caller that has a change as data but must not fetch the head commit. Without them it
+  behaves as before.
+
 ### Fixed
 
 - A diff with no changed files is no longer rated green and auto-approved: its score only reflected
