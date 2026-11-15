@@ -103,12 +103,22 @@ export class GitHubClient {
 
   constructor(private readonly opts: GitHubClientOptions) {}
 
-  private async send(method: string, url: string, body?: unknown): Promise<Response> {
+  /**
+   * Sends one request to GitHub with the token.
+   *
+   * @param method - The HTTP method.
+   * @param url - The full URL.
+   * @param body - A value to send as JSON, if any.
+   * @param acceptedMediaType - The `accept` header; GitHub's JSON unless a caller needs raw bytes.
+   * @returns The response, when its status is 2xx.
+   * @throws {@link GitHubError} On any other status, with GitHub's message.
+   */
+  private async send(method: string, url: string, body?: unknown, acceptedMediaType = "application/vnd.github+json"): Promise<Response> {
     const res = await fetch(url, {
       method,
       headers: {
         authorization: `Bearer ${this.opts.token}`,
-        accept: "application/vnd.github+json",
+        accept: acceptedMediaType,
         "x-github-api-version": "2022-11-28",
         "user-agent": "opendrs-action",
         ...(body === undefined ? {} : { "content-type": "application/json" }),
@@ -217,6 +227,88 @@ export class GitHubClient {
   /** The PR's current head sha. */
   async pullHeadSha(pr: number): Promise<string> {
     return (await this.rest<{ head: { sha: string } }>("GET", `${this.repoPath}/pulls/${pr}`)).head.sha;
+  }
+
+  /**
+   * Lists the open pull requests whose head is one branch of one account.
+   *
+   * @param headOwner - The login that owns the head repository.
+   * @param headBranch - The head branch name. A fork chooses it, so it is only ever sent URL-encoded.
+   * @returns The pull requests as GitHub returns them, unchecked: the caller validates each.
+   */
+  listOpenPullsByHead(headOwner: string, headBranch: string): Promise<unknown[]> {
+    const head = encodeURIComponent(`${headOwner}:${headBranch}`);
+    return this.paginate<unknown>(`${this.repoPath}/pulls?state=open&head=${head}`);
+  }
+
+  /**
+   * Reads one pull request.
+   *
+   * @param pullNumber - The pull request number.
+   * @returns The pull request as GitHub returns it, unchecked: the caller validates it.
+   */
+  readPull(pullNumber: number): Promise<unknown> {
+    return this.rest<unknown>("GET", `${this.repoPath}/pulls/${pullNumber}`);
+  }
+
+  /**
+   * Compares two commits to find where the head's history left the base's.
+   *
+   * @param baseSha - The base commit hash.
+   * @param headSha - The head commit hash.
+   * @returns The comparison as GitHub returns it (`merge_base_commit` among it), unchecked.
+   */
+  compareCommits(baseSha: string, headSha: string): Promise<unknown> {
+    return this.rest<unknown>("GET", `${this.repoPath}/compare/${baseSha}...${headSha}?per_page=1`);
+  }
+
+  /**
+   * Lists the files a pull request changes, with each file's patch, stopping early on a huge one.
+   *
+   * @param pullNumber - The pull request number.
+   * @param maxFiles - Stop asking for more pages once more than this many files have arrived.
+   * @returns The files as GitHub returns them, unchecked. More than `maxFiles` entries means the list is incomplete.
+   */
+  async listPullFiles(pullNumber: number, maxFiles: number): Promise<unknown[]> {
+    const files: unknown[] = [];
+    let url: string | undefined = `${this.opts.apiUrl}${this.repoPath}/pulls/${pullNumber}/files?per_page=100`;
+    while (url && files.length <= maxFiles) {
+      const response = await this.send("GET", url);
+      files.push(...((await response.json()) as unknown[]));
+      url = response.headers.get("link")?.match(/<([^>]+)>;\s*rel="next"/)?.[1];
+    }
+    return files;
+  }
+
+  /**
+   * Downloads a git blob's bytes, giving up on one that is too big.
+   *
+   * @param blobSha - The blob's hash. The caller has checked that it is a hash.
+   * @param maxBytes - The largest blob to download.
+   * @returns The bytes, or undefined when the blob is larger than `maxBytes`.
+   */
+  async readBlob(blobSha: string, maxBytes: number): Promise<Buffer | undefined> {
+    const response = await this.send("GET", `${this.opts.apiUrl}${this.repoPath}/git/blobs/${blobSha}`, undefined, "application/vnd.github.raw+json");
+    const reader = response.body?.getReader();
+    if (!reader) return undefined;
+    if (Number(response.headers.get("content-length") ?? 0) > maxBytes) {
+      await reader.cancel();
+      return undefined;
+    }
+    const chunks: Uint8Array[] = [];
+    let receivedBytes = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      receivedBytes += value.length;
+      // The size header can be missing, so the stream is cut off at the cap as well.
+      if (receivedBytes > maxBytes) {
+        await reader.cancel();
+        return undefined;
+      }
+      chunks.push(value);
+    }
+    return Buffer.concat(chunks);
   }
 
   /** The PR's commits, oldest first (GitHub lists at most 250). */

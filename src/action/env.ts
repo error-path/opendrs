@@ -1,5 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { OpendrsError } from "../domain/types.js";
+import { restrictToForkComment, runForkComment } from "./fork-comment.js";
+import { restrictToForkScore, runScoreOnly } from "./fork-score.js";
 import { GitHubClient } from "./github.js";
 import { runAction, type ActionInputs, type NotifyChanges } from "./run.js";
 import { runSweep, SWEEP_EVENTS } from "./sweep.js";
@@ -44,10 +46,31 @@ function readNotifyChanges(value: string): NotifyChanges {
   throw new OpendrsError(`Input 'notify-changes' must be every-push, on-change, true or false, got '${value}'`, "usage");
 }
 
+/**
+ * What the Action does in this step: `full` scores, comments, labels and reconciles the approval on
+ * a `pull_request` event; `score-only` and `fork-comment` are the two halves of the fork workflow.
+ */
+export type ActionMode = "full" | "score-only" | "fork-comment";
+
+/**
+ * Reads the `mode` input.
+ *
+ * @param env - The step's environment, which holds the inputs as `INPUT_<NAME>`.
+ * @returns `full` when the input is not set, or the mode as given.
+ * @throws {@link OpendrsError} If the value is not one of the three modes.
+ */
+export function readMode(env: NodeJS.ProcessEnv): ActionMode {
+  const value = (env.INPUT_MODE ?? "").trim().toLowerCase();
+  if (value === "" || value === "full") return "full";
+  if (value === "score-only" || value === "fork-comment") return value;
+  throw new OpendrsError("Input 'mode' must be full, score-only or fork-comment", "usage");
+}
+
 /** Wire the real environment into runAction, or into the sweep on a schedule / workflow_dispatch event. Returns the process exit code. */
 export async function runFromEnv(env: NodeJS.ProcessEnv, write?: (s: string) => void): Promise<number> {
   const io = createWorkflowIO(env, write);
   try {
+    const mode = readMode(env);
     const inputs = readInputs(env);
     if (!env.GITHUB_EVENT_PATH) throw new OpendrsError("GITHUB_EVENT_PATH is not set: run opendrs as a GitHub Action step", "usage");
     const event: unknown = JSON.parse(await readFile(env.GITHUB_EVENT_PATH, "utf8"));
@@ -55,7 +78,25 @@ export async function runFromEnv(env: NodeJS.ProcessEnv, write?: (s: string) => 
     if (!owner || !repo) throw new OpendrsError("GITHUB_REPOSITORY is not set", "usage");
     const apiUrl = env.GITHUB_API_URL ?? "https://api.github.com";
     const client = new GitHubClient({ token: inputs.token, apiUrl, graphqlUrl: env.GITHUB_GRAPHQL_URL ?? `${apiUrl}/graphql`, owner, repo });
-    const deps = { repoDir: env.GITHUB_WORKSPACE ?? process.cwd(), event, inputs, client, io, env };
+    const repoDir = env.GITHUB_WORKSPACE ?? process.cwd();
+    if (mode === "score-only") {
+      await runScoreOnly({ repoDir, event, repository: `${owner}/${repo}`, client: restrictToForkScore(client), io });
+      return 0;
+    }
+    if (mode === "fork-comment") {
+      await runForkComment({
+        event,
+        repository: `${owner}/${repo}`,
+        // Not trimmed or otherwise touched: the mode validates the text exactly as the scoring job wrote it.
+        result: env.INPUT_RESULT ?? "",
+        shouldComment: inputs.comment,
+        shouldLabel: inputs.labels,
+        client: restrictToForkComment(client),
+        io,
+      });
+      return 0;
+    }
+    const deps = { repoDir, event, inputs, client, io, env };
     if (SWEEP_EVENTS.includes(env.GITHUB_EVENT_NAME ?? "")) await runSweep({ ...deps, owner, repo });
     else await runAction(deps);
     return 0;

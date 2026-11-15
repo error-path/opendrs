@@ -12,7 +12,25 @@ vi.mock("../../src/report/markdown.js", async (importOriginal) => ({
 }));
 
 const { scoreDiff } = await import("../../src/engine.js");
-const { readInputs, runFromEnv } = await import("../../src/action/env.js");
+const { readInputs, readMode, runFromEnv } = await import("../../src/action/env.js");
+
+describe("readMode", () => {
+  it("defaults to full, so a workflow without the input behaves as before", () => {
+    expect(readMode({})).toBe("full");
+    expect(readMode({ INPUT_MODE: "" })).toBe("full");
+    expect(readMode({ INPUT_MODE: " Full " })).toBe("full");
+  });
+
+  it("reads the two fork modes", () => {
+    expect(readMode({ INPUT_MODE: "score-only" })).toBe("score-only");
+    expect(readMode({ INPUT_MODE: "fork-comment" })).toBe("fork-comment");
+  });
+
+  it("rejects anything else without repeating it", () => {
+    expect(() => readMode({ INPUT_MODE: "approve <img>" })).toThrow(/mode.*full, score-only or fork-comment/);
+    expect(() => readMode({ INPUT_MODE: "approve <img>" })).not.toThrow(/img/);
+  });
+});
 
 describe("readInputs", () => {
   it("applies the defaults", () => {
@@ -117,6 +135,20 @@ describe("runFromEnv", () => {
     expect(await runFromEnv(t.env, t.write)).toBe(1);
     expect(t.out()).toContain("::error::git diff failed");
     expect(t.out()).not.toContain("    at ");
+  });
+
+  it("runs the full flow when mode is not set or is full, and fails on an unknown mode before any GitHub call", async () => {
+    for (const mode of [undefined, "full"]) {
+      const fullRun = setup();
+      vi.mocked(scoreDiff).mockResolvedValue(fakeResult(0.2, "green", "human-review"));
+      expect(await runFromEnv({ ...fullRun.env, ...(mode === undefined ? {} : { INPUT_MODE: mode }) }, fullRun.write)).toBe(0);
+      expect(fullRun.out()).toContain("::group::Score");
+      repo?.cleanup();
+    }
+    const unknownModeRun = setup();
+    expect(await runFromEnv({ ...unknownModeRun.env, INPUT_MODE: "everything" }, unknownModeRun.write)).toBe(1);
+    expect(unknownModeRun.out()).toMatch(/::error::Input 'mode' must be/);
+    expect(vi.mocked(fetch)).not.toHaveBeenCalled();
   });
 
   it("returns 1 when the event payload is missing", async () => {
