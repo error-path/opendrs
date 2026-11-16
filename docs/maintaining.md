@@ -53,6 +53,10 @@ A short runbook for the maintainer.
    `plugin/.claude-plugin/plugin.json`, `plugin/commands/opendrs-review.md` and
    `plugin/skills/opendrs/SKILL.md`. The directory follows `main`, so a pin merged before you
    approve the staged version would point at a version that does not exist yet.
+8. Refresh the directory listings that are not driven by the registry: on
+   [Glama](https://glama.ai/mcp/servers) (configured by `glama.json`) and on
+   [mcp.so](https://mcp.so/servers/opendrs), sign in as a maintainer and check that the listing
+   shows the new version; update it by hand if it does not.
 
 Users pin `@v0`, so moving `v0` ships the release to them. Never move `v0` to a version with a
 breaking change; release `v1` instead.
