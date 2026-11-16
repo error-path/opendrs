@@ -1,0 +1,631 @@
+{
+  "score": 0.838585938961176,
+  "tier": "red",
+  "signals": [
+    {
+      "id": "size.churn",
+      "value": 2.995732273553991,
+      "status": "observed",
+      "summary": "19 lines changed across 4 files (1 new)",
+      "evidence": [
+        {
+          "file": "src/billing/discount.ts",
+          "detail": "+9 -0"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "+4 -2"
+        },
+        {
+          "file": "README.md",
+          "detail": "+2 -0"
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "+0 -2"
+        }
+      ]
+    },
+    {
+      "id": "size.relative",
+      "value": 0.9555114450274365,
+      "status": "derived",
+      "summary": "8 changed lines vs 5 base lines in 2 modified files (160.0%)",
+      "evidence": [
+        {
+          "file": "README.md",
+          "detail": "2 of 1 lines changed"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "6 of 4 lines changed"
+        }
+      ]
+    },
+    {
+      "id": "size.new_files_only",
+      "value": 0,
+      "status": "observed",
+      "summary": "1 of 4 changed files are new",
+      "evidence": []
+    },
+    {
+      "id": "size.comment_only",
+      "value": 0,
+      "status": "observed",
+      "summary": "code lines changed",
+      "evidence": []
+    },
+    {
+      "id": "diffusion.files",
+      "value": 1.6094379124341003,
+      "status": "observed",
+      "summary": "4 files changed",
+      "evidence": []
+    },
+    {
+      "id": "diffusion.dirs",
+      "value": 1.3862943611198906,
+      "status": "observed",
+      "summary": "3 directories touched: ., src/billing, tests/billing",
+      "evidence": []
+    },
+    {
+      "id": "diffusion.authors",
+      "value": 0.6931471805599453,
+      "status": "derived",
+      "summary": "1 distinct author have touched these files",
+      "evidence": [
+        {
+          "file": "README.md",
+          "detail": "1 author in history"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "1 author in history"
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "1 author in history"
+        }
+      ]
+    },
+    {
+      "id": "history.prior_fixes",
+      "value": 0.6931471805599453,
+      "status": "derived",
+      "summary": "1 fix or revert commit touched these files in the last 365 days",
+      "evidence": [
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "b6d10e8 fix: empty invoice crash"
+        }
+      ]
+    },
+    {
+      "id": "history.incident",
+      "value": 0,
+      "status": "derived",
+      "summary": "no recorded incident or revert touched these files",
+      "evidence": []
+    },
+    {
+      "id": "history.churn",
+      "value": 1.0986122886681096,
+      "status": "derived",
+      "summary": "2 commits touched these files in the last 365 days",
+      "evidence": [
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "2 commits in the last 365 days"
+        },
+        {
+          "file": "README.md",
+          "detail": "1 commit in the last 365 days"
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "1 commit in the last 365 days"
+        }
+      ]
+    },
+    {
+      "id": "expertise.author_commits",
+      "value": 1.0986122886681096,
+      "status": "derived",
+      "summary": "bob@example.com has 2 prior commits in this repo",
+      "evidence": []
+    },
+    {
+      "id": "expertise.owner_ratio",
+      "value": 0,
+      "status": "derived",
+      "summary": "author created or mostly wrote 0 of 3 pre-existing changed files",
+      "evidence": []
+    },
+    {
+      "id": "complexity.touched",
+      "value": 1.6094379124341003,
+      "status": "derived",
+      "summary": "4 branch keywords in 3 changed code files",
+      "evidence": [
+        {
+          "file": "src/billing/discount.ts",
+          "detail": "2 branch keywords"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "2 branch keywords"
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "0 branch keywords"
+        }
+      ]
+    },
+    {
+      "id": "lang.docs",
+      "value": 1,
+      "status": "derived",
+      "summary": "1 docs file changed",
+      "evidence": [
+        {
+          "file": "README.md",
+          "detail": "docs file"
+        }
+      ]
+    },
+    {
+      "id": "lang.ts",
+      "value": 1,
+      "status": "derived",
+      "summary": "3 ts files changed",
+      "evidence": [
+        {
+          "file": "src/billing/discount.ts",
+          "detail": "ts file"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "ts file"
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "ts file"
+        }
+      ]
+    },
+    {
+      "id": "blast.dependents",
+      "value": 0,
+      "status": "derived",
+      "summary": "0 file(s) transitively depend on the changed files (depth ≤ 3)",
+      "evidence": [
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "1 direct, 1 transitive dependents"
+        }
+      ]
+    },
+    {
+      "id": "blast.public_surface",
+      "value": 1,
+      "status": "derived",
+      "summary": "Exported/public declarations changed in 1 file(s) that have dependents",
+      "evidence": [
+        {
+          "file": "src/billing/invoice.ts",
+          "line": 1,
+          "detail": "export function total(lines: number[]) {"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "line": 2,
+          "detail": "export function total(lines: number[], withTax = false) {"
+        }
+      ]
+    },
+    {
+      "id": "paths.critical",
+      "value": 1,
+      "status": "observed",
+      "summary": "3 changed file(s) in critical paths",
+      "evidence": [
+        {
+          "file": "src/billing/discount.ts",
+          "detail": "matches critical glob \"**/billing/**\""
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "matches critical glob \"**/billing/**\""
+        },
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "matches critical glob \"**/billing/**\""
+        }
+      ]
+    },
+    {
+      "id": "paths.blocked",
+      "value": 0,
+      "status": "observed",
+      "summary": "No changed file in blocked paths",
+      "evidence": []
+    },
+    {
+      "id": "tests.missing",
+      "value": 1,
+      "status": "derived",
+      "summary": "2 source files changed with no test lines added",
+      "evidence": [
+        {
+          "file": "src/billing/discount.ts",
+          "detail": "source without added test lines"
+        },
+        {
+          "file": "src/billing/invoice.ts",
+          "detail": "source without added test lines"
+        }
+      ]
+    },
+    {
+      "id": "tests.deleted",
+      "value": 1,
+      "status": "observed",
+      "summary": "1 test file deleted",
+      "evidence": [
+        {
+          "file": "tests/billing/invoice.test.ts",
+          "detail": "test file deleted"
+        }
+      ]
+    }
+  ],
+  "contributions": [
+    {
+      "id": "paths.critical",
+      "value": 1,
+      "weight": 1.2,
+      "contribution": 1.2
+    },
+    {
+      "id": "tests.deleted",
+      "value": 1,
+      "weight": 1,
+      "contribution": 1
+    },
+    {
+      "id": "size.churn",
+      "value": 2.995732273553991,
+      "weight": 0.25,
+      "contribution": 0.7489330683884977
+    },
+    {
+      "id": "tests.missing",
+      "value": 1,
+      "weight": 0.7,
+      "contribution": 0.7
+    },
+    {
+      "id": "blast.public_surface",
+      "value": 1,
+      "weight": 0.4,
+      "contribution": 0.4
+    },
+    {
+      "id": "lang.docs",
+      "value": 1,
+      "weight": -0.4,
+      "contribution": -0.4
+    },
+    {
+      "id": "expertise.author_commits",
+      "value": 1.0986122886681096,
+      "weight": -0.3,
+      "contribution": -0.32958368660043286
+    },
+    {
+      "id": "diffusion.files",
+      "value": 1.6094379124341003,
+      "weight": 0.2,
+      "contribution": 0.3218875824868201
+    },
+    {
+      "id": "size.relative",
+      "value": 0.9555114450274365,
+      "weight": 0.3,
+      "contribution": 0.2866534335082309
+    },
+    {
+      "id": "history.prior_fixes",
+      "value": 0.6931471805599453,
+      "weight": 0.3,
+      "contribution": 0.2079441541679836
+    },
+    {
+      "id": "diffusion.dirs",
+      "value": 1.3862943611198906,
+      "weight": 0.1,
+      "contribution": 0.13862943611198905
+    },
+    {
+      "id": "diffusion.authors",
+      "value": 0.6931471805599453,
+      "weight": 0.15,
+      "contribution": 0.1039720770839918
+    },
+    {
+      "id": "complexity.touched",
+      "value": 1.6094379124341003,
+      "weight": 0.04,
+      "contribution": 0.064377516497364
+    },
+    {
+      "id": "history.churn",
+      "value": 1.0986122886681096,
+      "weight": 0.05,
+      "contribution": 0.05493061443340548
+    },
+    {
+      "id": "blast.dependents",
+      "value": 0,
+      "weight": 0.2,
+      "contribution": 0
+    },
+    {
+      "id": "expertise.owner_ratio",
+      "value": 0,
+      "weight": -0.3,
+      "contribution": 0
+    },
+    {
+      "id": "history.incident",
+      "value": 0,
+      "weight": 0.8,
+      "contribution": 0
+    },
+    {
+      "id": "paths.blocked",
+      "value": 0,
+      "weight": 0.5,
+      "contribution": 0
+    },
+    {
+      "id": "size.comment_only",
+      "value": 0,
+      "weight": -2,
+      "contribution": 0
+    },
+    {
+      "id": "size.new_files_only",
+      "value": 0,
+      "weight": -0.5,
+      "contribution": 0
+    }
+  ],
+  "unknowns": [],
+  "policy": {
+    "tier": "red",
+    "decision": "human-review",
+    "reasons": [
+      "test deletion: 1 test file deleted",
+      "tier red: score 0.84 ≥ green threshold 0.30"
+    ],
+    "rules": [
+      {
+        "rule": "tests.deleted",
+        "reason": "test deletion: 1 test file deleted"
+      },
+      {
+        "rule": "tier",
+        "reason": "tier red: score 0.84 ≥ green threshold 0.30"
+      }
+    ],
+    "hardBlocked": false,
+    "sampled": false,
+    "mergeMethod": "none",
+    "suggestedReviewers": [
+      "alice@example.com"
+    ],
+    "landingDelayMinutes": 0
+  },
+  "source": {
+    "kind": "agent",
+    "name": "Claude Code",
+    "evidence": [
+      "commit 4065b95: trailer \"Co-Authored-By: Claude <noreply@anthropic.com>\""
+    ],
+    "verified": false,
+    "floor": "human"
+  },
+  "diff": {
+    "base": "<sha>",
+    "head": "<sha>",
+    "files": 4,
+    "added": 15,
+    "deleted": 4
+  },
+  "model": "default",
+  "version": "0.5.2",
+  "brief": {
+    "version": 1,
+    "verdict": {
+      "tier": "red",
+      "score": 0.838585938961176,
+      "decision": "human-review",
+      "why": "3 changed file(s) in critical paths"
+    },
+    "reviewFirstScope": "code",
+    "reviewFirst": [
+      {
+        "file": "src/billing/invoice.ts",
+        "reasons": [
+          {
+            "kind": "fix-history",
+            "text": "1 fix or revert commit in this file; latest `b6d10e8` «fix: empty invoice crash»",
+            "quote": "fix: empty invoice crash",
+            "sha": "<sha>"
+          },
+          {
+            "kind": "dependents",
+            "text": "1 file depends on it"
+          },
+          {
+            "kind": "critical",
+            "text": "on a critical path"
+          },
+          {
+            "kind": "new-author",
+            "text": "the author has not changed this file before"
+          }
+        ],
+        "hunks": [
+          {
+            "id": 2,
+            "oldStart": 1,
+            "newStart": 1,
+            "newLines": 6,
+            "score": 6.477722109735615,
+            "reasons": [
+              {
+                "kind": "exports",
+                "text": "exports changed: `export function total(lines: number[])`"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file": "src/billing/discount.ts",
+        "reasons": [
+          {
+            "kind": "critical",
+            "text": "on a critical path"
+          },
+          {
+            "kind": "new-author",
+            "text": "the author has not changed this file before"
+          }
+        ],
+        "hunks": [
+          {
+            "id": 1,
+            "oldStart": 0,
+            "newStart": 1,
+            "newLines": 9,
+            "score": 2.9259456186640502,
+            "reasons": [
+              {
+                "kind": "changed-lines",
+                "text": "9 changed lines, changes exported `export function discount(amount: number, code?: string)`"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file": "tests/billing/invoice.test.ts",
+        "reasons": [
+          {
+            "kind": "critical",
+            "text": "on a critical path"
+          },
+          {
+            "kind": "new-author",
+            "text": "the author has not changed this file before"
+          }
+        ],
+        "hunks": [
+          {
+            "id": 4,
+            "oldStart": 1,
+            "newStart": 0,
+            "newLines": 0,
+            "score": 2.742453324894,
+            "reasons": [
+              {
+                "kind": "changed-lines",
+                "text": "2 changed lines"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "file": "src/billing/invoice.ts",
+        "question": "exports changed: `export function total(lines: number[])`; 1 file import `src/billing/invoice.ts` (`tests/billing/invoice.test.ts`). Are all callers compatible (arguments, return values, thrown errors)?",
+        "quotes": [],
+        "evidence": [
+          "tests/billing/invoice.test.ts"
+        ]
+      },
+      {
+        "file": "src/billing/invoice.ts",
+        "question": "`src/billing/invoice.ts` is on a critical path. What happens on the failure path (authorisation denied, payment declined, timeout)?",
+        "quotes": [],
+        "evidence": []
+      },
+      {
+        "file": "src/billing/discount.ts",
+        "question": "`src/billing/discount.ts` is on a critical path. What happens on the failure path (authorisation denied, payment declined, timeout)?",
+        "quotes": [],
+        "evidence": []
+      },
+      {
+        "file": "tests/billing/invoice.test.ts",
+        "question": "`tests/billing/invoice.test.ts` is on a critical path. What happens on the failure path (authorisation denied, payment declined, timeout)?",
+        "quotes": [],
+        "evidence": []
+      }
+    ],
+    "skim": [
+      {
+        "file": "README.md",
+        "category": "docs"
+      }
+    ],
+    "human": [
+      {
+        "rule": "tests.deleted",
+        "reason": "test deletion: 1 test file deleted"
+      }
+    ],
+    "notRanked": {
+      "hunks": 0,
+      "files": 0
+    },
+    "budget": {
+      "maxTokens": 2500,
+      "estimatedTokens": 563,
+      "truncated": false,
+      "omitted": {
+        "files": 0,
+        "hunks": 0,
+        "checks": 0,
+        "notes": 0
+      }
+    },
+    "notes": [],
+    "captain": {
+      "priority": "careful",
+      "why": [
+        "Removes or changes 1 exported declaration in `src/billing/invoice.ts` (`total`), imported by 1 file"
+      ],
+      "facts": [
+        {
+          "id": "contract.api",
+          "weight": "strong",
+          "file": "src/billing/invoice.ts",
+          "line": 1,
+          "text": "Removes or changes 1 exported declaration in `src/billing/invoice.ts` (`total`), imported by 1 file."
+        }
+      ],
+      "notes": [
+        "modules: no package.json found; falling back to moduleDepth: 2",
+        "drift: not tracked here"
+      ]
+    }
+  }
+}
