@@ -9,6 +9,5 @@ Read these before you change code in this repository, and follow them in every c
 - [`docs/maintaining.md`](docs/maintaining.md): how changes are merged and released, and which
   areas (`src/action/`, `src/policy/`, `.github/workflows/`) are read line by line.
 
-Checks before you commit: `npx tsc --noEmit`, `npm test` and `npm run test:slow`. On Windows, run
-`npx vitest run` and `npx vitest run --config vitest.slow.config.ts` directly, and rebuild the
-Action bundle with the `esbuild` command in `package.json`'s `build:action` script.
+Checks before you commit: `npm run check` (typecheck, `npm test` and `npm run test:slow`), and
+`npm run build:action` when `src/` changes. These work on Windows too.
