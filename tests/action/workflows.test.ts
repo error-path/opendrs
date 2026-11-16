@@ -94,15 +94,19 @@ describe("the opt-in fork workflow in the docs", () => {
     expect(workflow.on.workflow_run!.workflows).toEqual([parse(WORKFLOW_TEMPLATE).name]);
   });
 
-  it("grants nothing at the top level and has exactly the two jobs", () => {
+  it("grants nothing at the top level and has exactly the three jobs", () => {
     expect(workflow.permissions).toEqual({});
-    expect(Object.keys(workflow.jobs)).toEqual(["score", "comment"]);
+    expect(Object.keys(workflow.jobs)).toEqual(["score", "comment", "failure"]);
   });
+
+  /** The gate that skips a run GitHub recorded as completed without running it, such as one waiting for approval (`action_required`). */
+  const FINISHED_RUN = "(github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure')";
 
   it("scores only for a pull_request run from a fork, with a read-only token and a timeout", () => {
     const score = workflow.jobs.score!;
     expect(score.if).toContain("github.event.workflow_run.event == 'pull_request'");
     expect(score.if).toContain("github.event.workflow_run.head_repository.full_name != github.repository");
+    expect(score.if).toContain(FINISHED_RUN);
     expect(score.permissions).toEqual({ contents: "read", "pull-requests": "read" });
     expect(score["timeout-minutes"]).toBeGreaterThan(0);
     expect(score.outputs).toEqual({ result: "${{ steps.opendrs.outputs.result }}" });
@@ -127,18 +131,29 @@ describe("the opt-in fork workflow in the docs", () => {
     expect(comment.steps[0]!.with).toEqual({ mode: "fork-comment", result: "${{ needs.score.outputs.result }}" });
   });
 
+  it("reports a failed score with fixed text only, under the same conclusion gate, with the comment job's permissions", () => {
+    const failure = workflow.jobs.failure!;
+    expect(failure.needs).toBe("score");
+    expect(failure.if).toBe(`always() && needs.score.result == 'failure' && ${FINISHED_RUN}`);
+    expect(failure.permissions).toEqual({ "pull-requests": "write", issues: "write" });
+    expect(failure["timeout-minutes"]).toBeGreaterThan(0);
+    expect(failure.steps).toHaveLength(1);
+    expect(failure.steps[0]!.uses).toMatch(/^error-path\/opendrs@/);
+    expect(failure.steps[0]!.with).toEqual({ mode: "fork-failure" });
+  });
+
   it("has no run step, secret, cache, artifact, LLM key or unsafe checkout anywhere", () => {
     for (const job of Object.values(workflow.jobs)) for (const step of job.steps) expect(step.run).toBeUndefined();
     expect(text).not.toMatch(/secrets\.|actions\/cache|download-artifact|upload-artifact|llm-api-key|allow-unsafe-pr-checkout|pull_request_target|refs\/pull/);
     // The only expressions are the trigger filter, the concurrency group and the result hand-over.
     for (const expression of text.matchAll(/\$\{\{([^}]*)\}\}/g)) {
-      expect(expression[1]!.trim()).toMatch(/^(github\.event\.workflow_run\.head_repository\.full_name|github\.event\.workflow_run\.head_branch|steps\.opendrs\.outputs\.result|needs\.score\.outputs\.result)$/);
+      expect(expression[1]!.trim()).toMatch(/^(github\.event\.workflow_run\.head_repository\.full_name|github\.event\.workflow_run\.head_branch|github\.event\.workflow_run\.head_sha|steps\.opendrs\.outputs\.result|needs\.score\.outputs\.result)$/);
     }
   });
 
   it("pins every action to a full commit SHA; opendrs carries a placeholder to replace with a release commit", () => {
     const uses = Object.values(workflow.jobs).flatMap((job) => job.steps.flatMap((step) => (step.uses ? [step.uses] : [])));
-    expect(uses).toHaveLength(3);
+    expect(uses).toHaveLength(4);
     for (const reference of uses) {
       if (reference.startsWith("error-path/opendrs@")) expect(reference).toBe("error-path/opendrs@REPLACE_WITH_RELEASE_COMMIT_SHA");
       else expect(reference).toMatch(/^[\w.-]+\/[\w.-]+@[0-9a-f]{40}$/);
@@ -148,9 +163,10 @@ describe("the opt-in fork workflow in the docs", () => {
     expect(text).not.toMatch(/@v\d|@main|@master/);
   });
 
-  it("cancels the older run for the same fork branch", () => {
+  it("cancels an older run only for the same fork branch and head commit", () => {
     expect(workflow.concurrency["cancel-in-progress"]).toBe(true);
     expect(workflow.concurrency.group).toContain("github.event.workflow_run.head_branch");
+    expect(workflow.concurrency.group).toMatch(/-\$\{\{ github\.event\.workflow_run\.head_sha \}\}$/);
   });
 
   it("action.yml declares the mode and result inputs and the result output", () => {

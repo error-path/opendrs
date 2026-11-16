@@ -18,8 +18,16 @@ fail with 403 and nobody sees the score. The two obvious fixes are unsafe:
 ## 2. Design
 
 A second, opt-in workflow triggered by `workflow_run` (`types: [completed]`) on the user's
-`pull_request` workflow. It runs the default branch's workflow file. Two jobs, both running the
-Action with the new `mode` input.
+`pull_request` workflow. It runs the default branch's workflow file. Three jobs, each running the
+Action with the new `mode` input: `score`, `comment`, and `failure`, which runs only when `score`
+failed (`always() && needs.score.result == 'failure'`).
+
+Approval does not hold this workflow back. A fork's `pull_request` run that waits for a
+maintainer's approval is recorded as completed with the conclusion `action_required`, and
+`workflow_run` starts at once. So the `score` and `failure` jobs require
+`workflow_run.conclusion` to be `success` or `failure`, and `findForkPullRequest` checks it again.
+The concurrency group includes `workflow_run.head_sha`, so a run a fork starts for another commit
+cannot cancel this one.
 
 | | `score-only` | `fork-comment` |
 |---|---|---|
@@ -29,10 +37,18 @@ Action with the new `mode` input.
 | Writes | the `result` output | its own marker comment, `risk:*` labels |
 | GitHub calls it can make | `FORK_SCORE_CLIENT_METHODS` (five reads) | `FORK_COMMENT_CLIENT_METHODS` (list PRs, comment, label) |
 
+`fork-failure` has the token and client of `fork-comment`, reads no result, and replaces the
+marker comment with a fixed "not scored: the scoring job failed for `<short sha>`" text and removes
+the `risk:*` labels (`runForkFailure`). In both writing modes a refused or failed write (403, 429,
+5xx) fails the job with GitHub's message; only a 404 on removing a label is ignored. They read at
+most `MAX_COMMENT_PAGES` (10) pages of comments, and fail rather than add a second comment when
+theirs is not among them. When the token's login is unknown, only `github-actions[bot]`'s marker
+comments count as theirs.
+
 Rules that hold in both modes:
 
-1. **Nothing from the triggering run is trusted.** Only `workflow_run.event`, `head_sha`,
-   `head_branch` and `head_repository` are read from the payload; GitHub writes them. The PR is
+1. **Nothing from the triggering run is trusted.** Only `workflow_run.event`, `conclusion`,
+   `head_sha`, `head_branch` and `head_repository` are read from the payload; GitHub writes them. The PR is
    found by listing the base repository's open PRs for `head=<owner>:<branch>` and accepting
    exactly one whose `head.sha`, `head.repo.full_name` and `base.repo.full_name` match
    (`findForkPullRequest`). No match, or more than one: stop without writing. Each job does this
@@ -53,8 +69,11 @@ Rules that hold in both modes:
    `run.ts`, `sweep.ts`, the engine and the gate, and the client object it receives has no
    approve, dismiss, auto-merge, merge-queue or GraphQL method. Tests assert all three.
 
-The files endpoint lists the PR's current head, not a named commit, so after listing the score job
-reads the PR again and stops if its head is no longer the run's commit.
+The files endpoint lists the PR's current head, not a named commit, and the compare endpoint, which
+takes commits, returns at most 300 files. So the score job reads the PR before and after listing
+its files, and uses the listing only when both reads show the run's head commit and the same
+`updated_at`. A moved head stops the job without a result; a changed `updated_at` alone lists again,
+at most `maxListingAttempts` (3) times, then fails.
 
 ## 3. Size limits
 
@@ -63,19 +82,27 @@ One place: `FORK_SCORE_LIMITS` in `src/action/fork-limits.ts`.
 | Limit | Value | Over it |
 |---|---|---|
 | `maxChangedFiles` | 2000 (GitHub's files endpoint stops at 3000) | "too large to score" (`files`) |
-| listed files ≠ the PR's `changed_files`, or an entry that is not a file | — | "too large to score" (`incomplete`) |
+| listed files ≠ the PR's `changed_files` | — | "too large to score" (`incomplete`) |
+| an entry of the listing that is not a file as GitHub documents it | — | "too large to score" (`unreadable`), and a warning naming the fields |
 | `maxPatchBytes` | 20 MB | "too large to score" (`bytes`) |
 | `maxCommits` | 1000 | "too large to score" (`commits`) |
 | a git command over the base history times out | existing `history.gitTimeoutMs` and git timeouts | "too large to score" (`time`) |
-| `maxHeadFiles`, `maxHeadFileBytes`, `maxHeadTotalBytes` | 50 files, 1 MB each, 8 MB in total | `complexity.touched` is unknown |
+| `maxHeadFiles`, `maxHeadFileBytes`, `maxHeadTotalBytes` | 30 files, 1 MB each, 8 MB in total | `complexity.touched` is unknown |
 
 A too-large PR gets a comment that says so and no risk label. When any wanted head file cannot be
 read, the head reader returns nothing for every file, so `complexity.touched` reports unknown
 rather than a count that silently leaves files out.
 
-A file with no `patch`, a patch that does not parse as exactly one file's hunks, a patch holding a
-NUL or U+FFFD, or head contents that are not UTF-8 text is marked binary with no line counts, as
-`loadDiff` marks a binary file.
+A file with no `patch` and no changed lines, a patch holding a NUL, or head contents that are not
+UTF-8 text is marked binary with no line counts, as `loadDiff` marks a binary file. U+FFFD alone
+does not make a patch binary. A file with changed lines but no `patch` (GitHub leaves out the patch
+of a large file), or a patch that does not parse as exactly one file's hunks, keeps GitHub's line
+counts and is marked `hasUnreadablePatch`; `complexity.touched`, `tests.missing` and
+`tests.deleted` then report unknown, `size.comment_only` is 0, and the gate's `unread-files` rule
+fires.
+
+A head file that cannot be read is logged: a warning for a failed download, a hash mismatch or a
+listing entry without a blob hash, an info line for a cap. The log names blob hashes, never paths.
 
 ## 4. Interface change: `ScoreOptions`
 
@@ -94,7 +121,15 @@ interface ScoreOptions {
 }
 ```
 
-The signals, the model and the gate are unchanged: they already read only `ScoringContext`. The
+`ScoreOptions.modelKind` says how a passed `model` is reported (default `calibrated`). Score-only
+passes the base commit's model, or `DEFAULT_WEIGHTS` with `modelKind: "default"`, so the engine
+never falls back to a model file in the checkout's working tree. A supplied `diff` is copied, so
+`scoreDiff` leaves the caller's object unchanged.
+
+`ChangedFile` gains `hasUnreadablePatch?: true` (see section 3); `loadDiff` never sets it. Apart
+from reading that flag, the signals, the model and the gate are unchanged: they already read only
+`ScoringContext`. `tests/engine-golden.test.ts` compares a full-mode result with one generated by
+the engine before this change. The
 alternatives were to rebuild the tail of `scoreDiff` in the Action (scoring logic in an adapter,
 which the layering rule forbids) or a `DiffSource` interface through `loadDiff`, the blob reader
 and the commit log (about twenty times the change, for one caller).

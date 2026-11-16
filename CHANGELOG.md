@@ -15,11 +15,13 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 - An opt-in workflow comments the score on pull requests from forks, where the normal workflow's
   token is read-only and the comment fails with 403. It is a second workflow, triggered by
-  `workflow_run` when your `pull_request` workflow completes, with two jobs that use the new `mode`
-  input: `score-only` reads the PR's diff through the GitHub API with a read-only token, without
-  checking out, fetching or running the fork's code; `fork-comment` validates that job's `result`
-  as untrusted input, then upserts one comment from a fixed template and sets a `risk:*` label. It
-  has no code path that approves or merges. Nothing the fork's own run produced is trusted: the PR
+  `workflow_run` when your `pull_request` workflow completes and finished with `success` or
+  `failure`, with three jobs that use the new `mode` input: `score-only` reads the PR's diff
+  through the GitHub API with a read-only token, without checking out, fetching or running the
+  fork's code; `fork-comment` validates that job's `result` as untrusted input, then upserts one
+  comment from a fixed template and sets a `risk:*` label; `fork-failure`, when the score job
+  failed, replaces that comment with a fixed "not scored" text and removes the label. None has a
+  code path that approves or merges. Nothing the fork's own run produced is trusted: the PR
   is found again from the repository's open pull requests. It does not use `pull_request_target`.
   The default `mode: full` is unchanged. See "Fork pull requests" in `docs/github-action.md` for
   the workflow, why it is safe, and what can still go wrong.
