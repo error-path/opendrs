@@ -677,7 +677,7 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     expect(run.log).toMatch(/no readable patch for 2 changed file/);
   });
 
-  it("reads a patch with GitHub's replacement character as text; only a NUL makes it binary", async () => {
+  it("reads a patch with GitHub's replacement character as text, and keeps the lines of a patch with a NUL as unreadable", async () => {
     const fixture = await forkPullRequest({}, changeOneFile);
     const file = fixture.api.files[0]!;
     const textPatch = file.patch!;
@@ -686,7 +686,12 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     expect(withReplacement).toMatchObject({ status: "scored", counts: { files: 1, added: 3, deleted: 1 } });
     file.patch = textPatch.replace("console.log(a)", "console.log('\u0000')");
     fixture.api.requests.length = 0;
-    expect(expectSafeResult(await runScoreJob(fixture), fixture)).toMatchObject({ status: "scored", counts: { files: 1, added: 0, deleted: 0 } });
+    const withNul = expectSafeResult(await runScoreJob(fixture), fixture);
+    if (withReplacement.status !== "scored" || withNul.status !== "scored") throw new Error("expected scores");
+    expect(withNul.counts).toMatchObject({ files: 1, added: 3, deleted: 1 });
+    // complexity.touched, tests.missing and tests.deleted count as unknown.
+    expect(withNul.counts.unknowns).toBeGreaterThanOrEqual(withReplacement.counts.unknowns + 3);
+    expect(withNul.signals.map((signal) => signal.id)).not.toContain("complexity.touched");
   });
 
   it("keeps a file's lines when its head contents are not UTF-8 but GitHub sends a text patch, and leaves complexity.touched unknown", async () => {

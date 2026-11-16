@@ -68,10 +68,11 @@ export function countPatchBytes(pullFiles: readonly PullFile[]): number {
  * Turns one API entry into a changed file.
  *
  * - A readable patch gives the file its hunks and line counts.
- * - No patch and no changed lines (a binary file, or a rename without changes), or a patch with a
- *   NUL: the file is binary with no line counts, as the git path marks one.
- * - No patch although GitHub counts changed lines (it omits the patch of a large diff), or a patch
- *   that does not parse as exactly one file's hunks: the file keeps GitHub's line counts, so its
+ * - No patch and no changed lines (a binary file, or a rename without changes): the file is binary
+ *   with no line counts, as the git path marks one.
+ * - No patch although GitHub counts changed lines (it omits the patch of a large diff), a patch
+ *   with a NUL, or a patch that does not parse as exactly one file's hunks: the file keeps GitHub's
+ *   line counts, so its
  *   size still counts in full, and is marked `hasUnreadablePatch`, so the signals that read
  *   changed lines report unknown.
  *
@@ -95,9 +96,10 @@ function toChangedFile(pullFile: PullFile, ignorePatterns: readonly string[]): C
   const markUnreadable = (): ChangedFile => ({ ...changedFile, binary: false, added: pullFile.additions, deleted: pullFile.deletions, hasUnreadablePatch: true });
   const patch = pullFile.patch;
   if (patch === undefined) return pullFile.additions + pullFile.deletions > 0 ? markUnreadable() : changedFile;
-  // Only a NUL makes a patch binary. GitHub replaces bytes that are not UTF-8 with U+FFFD, which
-  // real text holds too, so that character alone does not hide a file's lines.
-  if (patch.includes("\u0000")) return changedFile;
+  // A patch with a NUL cannot be read as text, but GitHub counted its lines, so they still count.
+  // GitHub replaces bytes that are not UTF-8 with U+FFFD, which real text holds too, so that
+  // character alone does not make a patch unreadable.
+  if (patch.includes("\u0000")) return markUnreadable();
 
   const parsedFiles = parseUnifiedDiff(`${PARSER_HEADER}${patch}\n`);
   const parsedFile = parsedFiles[0];

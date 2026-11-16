@@ -93,13 +93,13 @@ A too-large PR gets a comment that says so and no risk label. When any wanted he
 read, the head reader returns nothing for every file, so `complexity.touched` reports unknown
 rather than a count that silently leaves files out.
 
-A file with no `patch` and no changed lines, or a patch holding a NUL, is marked binary with no
-line counts, as `loadDiff` marks a binary file. U+FFFD alone does not make a patch binary. Head
+A file with no `patch` and no changed lines is marked binary with no line counts, as `loadDiff`
+marks a binary file. U+FFFD alone does not make a patch unreadable. Head
 contents never change a file that has a text patch: when they hold a NUL or are not valid UTF-8,
 the file keeps its line counts, the head reader returns nothing, `complexity.touched` is unknown,
 and a warning is logged. A file with changed lines but no `patch` (GitHub leaves out the patch
-of a large file), or a patch that does not parse as exactly one file's hunks, keeps GitHub's line
-counts and is marked `hasUnreadablePatch`; `complexity.touched`, `tests.missing` and
+of a large file), a patch holding a NUL, or a patch that does not parse as exactly one file's
+hunks, keeps GitHub's line counts and is marked `hasUnreadablePatch`; `complexity.touched`, `tests.missing` and
 `tests.deleted` then report unknown, as does `blast.public_surface` when such a file has
 dependents; `size.comment_only` is 0, and the gate's `unread-files` rule fires.
 

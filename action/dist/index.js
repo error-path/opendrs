@@ -33305,7 +33305,7 @@ function toChangedFile(pullFile, ignorePatterns) {
   const markUnreadable = () => ({ ...changedFile, binary: false, added: pullFile.additions, deleted: pullFile.deletions, hasUnreadablePatch: true });
   const patch = pullFile.patch;
   if (patch === void 0) return pullFile.additions + pullFile.deletions > 0 ? markUnreadable() : changedFile;
-  if (patch.includes("\0")) return changedFile;
+  if (patch.includes("\0")) return markUnreadable();
   const parsedFiles = parseUnifiedDiff(`${PARSER_HEADER}${patch}
 `);
   const parsedFile = parsedFiles[0];
