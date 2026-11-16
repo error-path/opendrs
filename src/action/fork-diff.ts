@@ -153,7 +153,8 @@ export interface HeadContentsGap {
  *
  * Only files the complexity signal reads are fetched: changed, not deleted, not ignored, text, and
  * in a code language. Each is fetched by its blob hash from the listing and checked against that
- * hash. A file that turns out not to be text is marked binary on `changedFiles`.
+ * hash. A file that holds a NUL is marked binary on `changedFiles`; a file that is not valid UTF-8
+ * keeps its line counts, and the reader then returns undefined for every file.
  *
  * If any wanted file cannot be had (more files than the cap, a file or the total over its byte
  * cap, a failed or mismatched download, a listing entry without a blob hash), the reader returns
@@ -196,8 +197,8 @@ export async function readHeadContents(
     if (!isBlobContent(content, sha)) return unavailable("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
     totalBytes += content.length;
     if (totalBytes > limits.maxHeadTotalBytes) return unavailable("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
-    if (content.includes(0) || !isUtf8(content)) {
-      // GitHub showed a text patch, but the file is not text: treat it as binary, as the git path does.
+    if (content.includes(0)) {
+      // GitHub showed a text patch, but the file holds a NUL: treat it as binary, as the git path does.
       changedFile.binary = true;
       changedFile.hunks = [];
       changedFile.added = 0;
@@ -205,6 +206,9 @@ export async function readHeadContents(
       delete changedFile.hasUnreadablePatch;
       continue;
     }
+    // Text with a byte that is not UTF-8 is still text to git: its lines keep counting, and only its
+    // branch keywords cannot be counted reliably, so the head contents as a whole are left unread.
+    if (!isUtf8(content)) return unavailable("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
     textByPath.set(changedFile.path, content.toString("utf8"));
   }
   return { readHead: async (path) => textByPath.get(path) };

@@ -79,8 +79,30 @@ export const blastSignals: SignalProvider = async (ctx) => {
   if (coverage) notes.push(`graph covers ${coverage.files} of ${coverage.total} files`);
   const suffix = notes.length ? ` (${notes.join("; ")})` : "";
 
-  const surface = files.filter((f) => graph.dependentsOf(basePath(f)).length > 0).flatMap(publicDeclarations);
+  const filesWithDependents = files.filter((f) => graph.dependentsOf(basePath(f)).length > 0);
+  const surface = filesWithDependents.flatMap(publicDeclarations);
   const surfaceFiles = new Set(surface.map((e) => e.file)).size;
+  // A file with dependents whose changed lines could not be read may change any declaration.
+  const unreadable = filesWithDependents.filter((f) => f.hasUnreadablePatch).map((f) => f.path);
+  const publicSurface: Signal =
+    surface.length === 0 && unreadable.length > 0
+      ? {
+          id: "blast.public_surface",
+          value: 0,
+          status: "unknown",
+          summary: `Blast radius unknown: the changed lines of ${listPaths(unreadable)}, which have dependents, could not be read${suffix}`,
+          evidence: [],
+        }
+      : {
+          id: "blast.public_surface",
+          value: surface.length > 0 ? 1 : 0,
+          status: "derived",
+          summary:
+            (surface.length > 0
+              ? `Exported/public declarations changed in ${surfaceFiles} file(s) that have dependents`
+              : "No exported/public declaration changed in a file with dependents") + suffix,
+          evidence: surface.slice(0, MAX_EVIDENCE),
+        };
 
   return [
     {
@@ -90,15 +112,6 @@ export const blastSignals: SignalProvider = async (ctx) => {
       summary: `${dependents.size} file(s) transitively depend on the changed files (depth ≤ ${maxDepth})${suffix}`,
       evidence: top.map((x) => ({ file: x.path, detail: `${x.direct} direct, ${x.transitive} transitive dependents` })),
     },
-    {
-      id: "blast.public_surface",
-      value: surface.length > 0 ? 1 : 0,
-      status: "derived",
-      summary:
-        (surface.length > 0
-          ? `Exported/public declarations changed in ${surfaceFiles} file(s) that have dependents`
-          : "No exported/public declaration changed in a file with dependents") + suffix,
-      evidence: surface.slice(0, MAX_EVIDENCE),
-    },
+    publicSurface,
   ];
 };

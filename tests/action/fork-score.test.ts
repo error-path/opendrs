@@ -689,6 +689,24 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     expect(expectSafeResult(await runScoreJob(fixture), fixture)).toMatchObject({ status: "scored", counts: { files: 1, added: 0, deleted: 0 } });
   });
 
+  it("keeps a file's lines when its head contents are not UTF-8 but GitHub sends a text patch, and leaves complexity.touched unknown", async () => {
+    const fixture = await forkPullRequest({}, changeOneFile);
+    const honest = expectSafeResult(await runScoreJob(fixture), fixture);
+    // One invalid byte in a comment: GitHub still renders a text patch, git would too (no NUL).
+    const file = fixture.api.files[0]!;
+    const invalidUtf8 = Buffer.concat([Buffer.from("export const a = 2; // "), Buffer.from([0xff]), Buffer.from("\nif (a && b) console.log(a);\n")]);
+    file.sha = execFileSync("git", ["hash-object", "--stdin"], { input: invalidUtf8, encoding: "utf8" }).trim();
+    fixture.api.readBlob = () => invalidUtf8;
+    fixture.api.requests.length = 0;
+    const run = await runScoreJob(fixture);
+    const result = expectSafeResult(run, fixture);
+    if (honest.status !== "scored" || result.status !== "scored") throw new Error("expected scores");
+    expect(result.counts).toMatchObject({ files: 1, added: 3, deleted: 1 });
+    expect(result.counts.unknowns).toBe(honest.counts.unknowns + 1);
+    expect(result.signals.map((signal) => signal.id)).not.toContain("complexity.touched");
+    expect(run.log).toMatch(/not valid UTF-8/);
+  });
+
   it("verifies a SHA-1 blob name and accepts a SHA-256 one unchecked, as GitHub hosts no SHA-256 repository", () => {
     const content = Buffer.from("export const a = 1;\n");
     const sha1 = execFileSync("git", ["hash-object", "--stdin"], { input: content, encoding: "utf8" }).trim();
