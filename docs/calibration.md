@@ -22,7 +22,8 @@ base commit. Because `.opendrs/**` is a blocked path, a PR that updates the mode
 human review.
 
 The model file is checked before it is used: the intercept and every weight must be a number
-between -20 and 20, every signal id must be one opendrs knows, `llm.*` weights must be 0 or more
+between -20 and 20 (and so must every prior, the value used for a signal that could not be
+measured), every signal id must be one opendrs knows, `llm.*` weights must be 0 or more
 (the judge can only add risk), and the percentile scores must be between 0 and 1 and rise with the
 percentile. A file that fails any check is ignored with a warning that names the field, and the
 default weights are used, reported as `model: default`.

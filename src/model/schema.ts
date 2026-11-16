@@ -14,8 +14,11 @@ import { DEFAULT_WEIGHTS } from "./defaults.js";
  */
 export const MAX_MODEL_COEFFICIENT = 20;
 
-/** The largest absolute value a prior (the stand-in for an unknown signal's value) may have. */
-export const MAX_MODEL_PRIOR = 1000;
+/**
+ * The largest a prior may be, plus or minus. A prior is the value used for a signal that could not
+ * be measured. Real signal values are 0/1 flags or log-scaled counts, so they stay well under 20.
+ */
+export const MAX_MODEL_PRIOR = 20;
 
 /** The most entries `weights` or `priors` may have: every signal id that exists, with room to spare. */
 const MAX_MODEL_ENTRIES = 200;

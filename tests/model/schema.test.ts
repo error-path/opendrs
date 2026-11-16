@@ -41,6 +41,7 @@ describe("parseModelWeights", () => {
     ["a huge weight", JSON.stringify({ ...validModel(), weights: { "size.churn": 1e6 } }), "weights"],
     ["a huge intercept", JSON.stringify({ ...validModel(), intercept: -1e6 }), "intercept"],
     ["an unknown signal id", JSON.stringify({ ...validModel(), weights: { "size.made_up": 1 } }), "weights"],
+    ["a prior past the bound", JSON.stringify({ ...validModel(), priors: { "blast.dependents": 21 } }), "priors"],
     ["an unknown signal id in priors", JSON.stringify({ ...validModel(), priors: { "size.made_up": 1 } }), "priors"],
     ["a negative llm.* weight", JSON.stringify({ ...validModel(), weights: { "llm.risk.security": -3 } }), "weights"],
     ["a percentile score above 1", JSON.stringify({ ...validModel(), percentiles: { "50": 0.1, "90": 1.5 } }), "percentiles"],

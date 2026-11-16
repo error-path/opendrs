@@ -31946,7 +31946,7 @@ function featureValues(signals, priors) {
 
 // src/model/schema.ts
 var MAX_MODEL_COEFFICIENT = 20;
-var MAX_MODEL_PRIOR = 1e3;
+var MAX_MODEL_PRIOR = 20;
 var MAX_MODEL_ENTRIES = 200;
 var MODEL_SIGNAL_IDS = /* @__PURE__ */ new Set([...Object.keys(DEFAULT_WEIGHTS.weights), ...LANGUAGE_FAMILIES.map((family) => `lang.${family}`)]);
 var coefficientSchema = external_exports.number().finite().min(-MAX_MODEL_COEFFICIENT).max(MAX_MODEL_COEFFICIENT);
