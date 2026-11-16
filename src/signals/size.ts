@@ -33,10 +33,13 @@ export const sizeSignals: SignalProvider = async (ctx) => {
   };
 
   // Meta: "a comment only change to a file on a risky path has no risk". A rename is never
-  // comment-only (it can break importers), nor is a diff with no changed text lines.
+  // comment-only (it can break importers), nor is a diff with no changed text lines, nor one with
+  // lines that could not be read.
   const changed = files.flatMap((f) => f.hunks.flatMap((h) => h.lines.filter((l) => l[0] === "+" || l[0] === "-").map((l) => ({ f, text: l.slice(1) }))));
   const commentOnly =
-    changed.length > 0 && files.every((f) => !f.binary && f.status !== "renamed") && changed.every(({ f, text }) => inert(text, languageFamily(f.path)));
+    changed.length > 0 &&
+    files.every((f) => !f.binary && !f.hasUnreadablePatch && f.status !== "renamed") &&
+    changed.every(({ f, text }) => inert(text, languageFamily(f.path)));
   const commentOnlySignal: Signal = {
     id: "size.comment_only",
     value: commentOnly ? 1 : 0,

@@ -44,6 +44,27 @@ describe("scoreDiff with a supplied diff", () => {
     expect(fromGit.source.kind).toBe("agent");
   });
 
+  it("leaves the caller's diff as it was, even when it sets a title and description", async () => {
+    const diff = await loadDiff(repo.dir, "main", "feature", options.config);
+    const before = structuredClone(diff);
+    await scoreDiff({ ...options, brief: undefined, diff, title: "a title", description: "a description", prCommits: [] });
+    expect(diff).toStrictEqual(before);
+    expect(diff.title).not.toBe("a title");
+  });
+
+  it("reports the signals that read changed lines as unknown, never as derived 0, when code files have no readable patch", async () => {
+    const diff = await loadDiff(repo.dir, "main", "feature", options.config);
+    // As the fork scoring builds a file whose patch GitHub left out: its counts, no hunks.
+    const unreadable = { ...diff, files: diff.files.map((file) => (file.path.endsWith(".ts") ? { ...file, hunks: [], hasUnreadablePatch: true as const } : file)) };
+    const result = await scoreDiff({ ...options, brief: undefined, diff: unreadable, prCommits: [] });
+    for (const id of ["complexity.touched", "tests.missing", "tests.deleted"]) {
+      expect(result.signals.find((signal) => signal.id === id)?.status).toBe("unknown");
+    }
+    expect(result.signals.find((signal) => signal.id === "size.comment_only")?.value).toBe(0);
+    expect(result.diff.added).toBe(diff.files.reduce((total, file) => total + file.added, 0));
+    expect(result.policy.reasons.some((reason) => /could not be read/.test(reason))).toBe(true);
+  });
+
   it("uses the supplied diff, head reader and commits instead of git", async () => {
     const diff = await loadDiff(repo.dir, "main", "feature", options.config);
     const readPaths: string[] = [];

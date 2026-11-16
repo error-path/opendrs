@@ -25,6 +25,11 @@ export interface ScoreOptions {
   config: OpendrsConfig;
   /** Override the model; otherwise config.model is loaded when present, else DEFAULT_WEIGHTS. */
   model?: ModelWeights;
+  /**
+   * What `model` is reported as in the result. Default "calibrated". A caller that passes
+   * DEFAULT_WEIGHTS on purpose, so that no model file is read from the working tree, sets "default".
+   */
+  modelKind?: "default" | "calibrated";
   /** Reuse across many scorings (calibrate/backtest). */
   history?: HistoryIndex;
   /**
@@ -134,7 +139,8 @@ export function makeContext(
 
 export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
   const { repoDir, config } = opts;
-  const diff = opts.diff ?? (await loadDiff(repoDir, opts.base, opts.head, config));
+  // A supplied diff is copied, so setting the title and description below leaves the caller's object as it was.
+  const diff = opts.diff ? { ...opts.diff } : await loadDiff(repoDir, opts.base, opts.head, config);
   if (opts.title !== undefined) diff.title = opts.title;
   if (opts.description !== undefined) diff.description = opts.description;
 
@@ -180,7 +186,7 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
   const countsLanded = Object.values(config.sources).some((s) => s.dailyCap !== undefined || s.trackRecord !== undefined);
   const baseHistory = opts.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, opts.base, config) : history);
   const source = classifyPr(commits, opts.account, agentPatterns(config));
-  const { model, kind } = opts.model ? { model: opts.model, kind: "calibrated" as const } : await loadModel(repoDir, config);
+  const { model, kind } = opts.model ? { model: opts.model, kind: opts.modelKind ?? ("calibrated" as const) } : await loadModel(repoDir, config);
   const { score, logit, contributions } = scoreSignals(signals, model);
   const policy = decide({
     score,

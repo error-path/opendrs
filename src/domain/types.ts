@@ -46,6 +46,12 @@ export interface ChangedFile {
   ignored: boolean;
   /** Set when either side is a gitlink (mode 160000): the change moves a submodule pointer. */
   submodule?: true;
+  /**
+   * Set when lines changed but their text could not be read (a diff built from GitHub's API, which
+   * omits the patch of a large file): `added` and `deleted` hold the counts, `hunks` is empty. The
+   * signals that read changed lines report `unknown` instead of counting the file as unchanged.
+   */
+  hasUnreadablePatch?: true;
 }
 
 export interface DiffInfo {
