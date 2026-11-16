@@ -5,7 +5,7 @@ import type { ForkResult, ForkScoredResult } from "../../src/report/fork-result.
 const HEAD_SHA = "abc1234".padEnd(40, "0");
 
 const scored = (): ForkScoredResult => ({
-  v: 1,
+  schemaVersion: 1,
   status: "scored",
   head: HEAD_SHA,
   opendrs: "0.5.2",
@@ -79,7 +79,7 @@ describe("renderForkComment", () => {
   });
 
   it("renders a too-large result as not scored, with the limit it hit", () => {
-    const tooLarge: ForkResult = { v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 };
+    const tooLarge: ForkResult = { schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 };
     const markdown = renderForkComment(tooLarge);
     expect(markdown.startsWith(`${FORK_COMMENT_MARKER}\n`)).toBe(true);
     expect(markdown).toMatch(/too large to score/);
@@ -95,11 +95,11 @@ describe("renderForkComment", () => {
     ["incomplete", 0, "complete list of changed files"],
     ["unreadable", 0, "has an entry opendrs cannot read"],
   ] as const)("names the %s limit", (reason, limit, text) => {
-    expect(renderForkComment({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason, limit })).toContain(text);
+    expect(renderForkComment({ schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason, limit })).toContain(text);
   });
 
   it("renders a too-large result with a hostile head and version inertly", () => {
-    const hostile = { v: 1, status: "too-large", head: HOSTILE, opendrs: HOSTILE, reason: "files", limit: 2000 } as unknown as ForkResult;
+    const hostile = { schemaVersion: 1, status: "too-large", head: HOSTILE, opendrs: HOSTILE, reason: "files", limit: 2000 } as unknown as ForkResult;
     expectInert(renderForkComment(hostile));
   });
 
@@ -162,7 +162,7 @@ describe("renderForkComment", () => {
         signals: [{ id: "size.churn", value: Number.NaN, contribution: Number.NEGATIVE_INFINITY }],
       } as unknown as ForkScoredResult);
       expect(markdown).not.toMatch(/NaN|Infinity|purple/);
-      const tooLarge = renderForkComment({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: HOSTILE, limit: Number.NaN } as unknown as ForkResult);
+      const tooLarge = renderForkComment({ schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: HOSTILE, limit: Number.NaN } as unknown as ForkResult);
       expectInert(tooLarge);
       expect(tooLarge).not.toMatch(/NaN/);
     });

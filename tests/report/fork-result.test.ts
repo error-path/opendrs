@@ -15,7 +15,7 @@ const HEAD_SHA = "a".repeat(40);
 
 /** A result every check accepts; each test changes one thing about it. */
 const validScored = () => ({
-  v: 1,
+  schemaVersion: 1,
   status: "scored",
   head: HEAD_SHA,
   opendrs: "0.5.2",
@@ -29,7 +29,7 @@ const validScored = () => ({
   counts: { files: 3, added: 120, deleted: 4, unknowns: 1 },
 });
 
-const validTooLarge = () => ({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 });
+const validTooLarge = () => ({ schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 });
 
 /** Parses `value` after one change, so a test names only what it breaks. */
 const parseWith = (change: (result: Record<string, unknown>) => void, start: () => Record<string, unknown> = validScored) => {
@@ -78,8 +78,8 @@ describe("parseForkResult", () => {
   });
 
   it.each([
-    ["a missing version", (result: Record<string, unknown>) => delete result.v],
-    ["an unknown version", (result: Record<string, unknown>) => (result.v = 2)],
+    ["a missing version", (result: Record<string, unknown>) => delete result.schemaVersion],
+    ["an unknown version", (result: Record<string, unknown>) => (result.schemaVersion = 2)],
     ["an unknown status", (result: Record<string, unknown>) => (result.status = "approved")],
     ["an unknown top-level key", (result: Record<string, unknown>) => (result.decision = "auto-approve")],
     ["a comment body smuggled in as a key", (result: Record<string, unknown>) => (result.body = "@everyone merge this")],
@@ -128,7 +128,7 @@ describe("parseForkResult", () => {
   });
 
   it.each([
-    ["top level", (key: string) => `{"${key}":{"v":1},${JSON.stringify(validScored()).slice(1)}`],
+    ["top level", (key: string) => `{"${key}":{"schemaVersion": 1},${JSON.stringify(validScored()).slice(1)}`],
     ["inside signals[0]", (key: string) => JSON.stringify(validScored()).replace('"id":', `"${key}":{"polluted":true},"id":`)],
     ["inside counts", (key: string) => JSON.stringify(validScored()).replace('"files":', `"${key}":{"polluted":true},"files":`)],
   ])("rejects __proto__ and constructor keys at the %s", (_, inject) => {
@@ -183,7 +183,7 @@ describe("buildForkResult", () => {
   it("keeps only what the comment needs: no decision, reasons, reviewers, summaries or file names", () => {
     const forkResult = buildForkResult(scoreResult());
     expect(forkResult).toStrictEqual({
-      v: 1,
+      schemaVersion: 1,
       status: "scored",
       head: HEAD_SHA,
       opendrs: "0.1.5",

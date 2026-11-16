@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { OpendrsError } from "../domain/types.js";
 import { commitShaSchema, describeSchemaIssues } from "../domain/untrusted.js";
-import { MAX_PULL_LISTING_PAGES } from "./fork-limits.js";
+import { MAX_PULL_REQUEST_LISTING_PAGES } from "./fork-limits.js";
 
 // The fork modes run on a `workflow_run` event: the default branch's workflow, started when a pull
 // request's workflow run completes. Nothing the fork's run produced is read. The pull request is
@@ -24,7 +24,7 @@ const workflowRunEventSchema = z.object({
 });
 
 /** An open pull request as `GET /pulls` lists it; only the fields used to match and to comment. */
-const openPullSchema = z.object({
+const openPullRequestSchema = z.object({
   number: z.number().int().positive().max(Number.MAX_SAFE_INTEGER),
   labels: z.array(z.object({ name: z.string() })).default([]),
   user: z.object({ login: z.string(), type: z.string().optional() }).nullish(),
@@ -65,12 +65,12 @@ export interface ForkPullRequest {
 }
 
 /** The part of the GitHub client that finding the pull request needs. */
-export interface PullLister {
-  listOpenPullsByHead(headOwner: string, headBranch: string, maxPages: number): Promise<{ entries: unknown[]; isComplete: boolean }>;
+export interface OpenPullRequestLister {
+  listOpenPullRequestsByHeadBranch(headOwner: string, headBranch: string, maxPages: number): Promise<{ entries: unknown[]; isComplete: boolean }>;
 }
 
 /** Compares two `owner/name` repository names as GitHub does: without regard to case. */
-const isSameRepository = (left: string, right: string) => left.toLowerCase() === right.toLowerCase();
+const isSameRepository = (firstRepository: string, secondRepository: string) => firstRepository.toLowerCase() === secondRepository.toLowerCase();
 
 /**
  * Reads the completed workflow run from a `workflow_run` event payload.
@@ -119,7 +119,7 @@ export function readCompletedWorkflowRun(event: unknown, repository: string): Co
  * @returns The pull request, or a fixed reason why there is none to act on.
  */
 export async function findForkPullRequest(
-  client: PullLister,
+  client: OpenPullRequestLister,
   completedRun: CompletedWorkflowRun,
   warn: (message: string) => void,
 ): Promise<ForkPullRequest | { skipReason: string }> {
@@ -131,40 +131,40 @@ export async function findForkPullRequest(
     return { skipReason: "the pull request is not from a fork; the pull_request workflow comments on it itself" };
   }
 
-  const listing = await client.listOpenPullsByHead(completedRun.headOwner, completedRun.headBranch, MAX_PULL_LISTING_PAGES);
+  const listing = await client.listOpenPullRequestsByHeadBranch(completedRun.headOwner, completedRun.headBranch, MAX_PULL_REQUEST_LISTING_PAGES);
   let rejectedEntries = 0;
-  const matchingPulls = listing.entries.flatMap((listedPull) => {
-    const parsed = openPullSchema.safeParse(listedPull);
+  const matchingPullRequests = listing.entries.flatMap((listedPull) => {
+    const parsed = openPullRequestSchema.safeParse(listedPull);
     if (!parsed.success) {
       rejectedEntries++;
       warn(`GitHub listed an entry that is not a usable pull request (${describeSchemaIssues(parsed.error.issues)}); it is ignored.`);
       return [];
     }
-    const pull = parsed.data;
-    const isTheRunsPull =
-      pull.head.sha === completedRun.headSha &&
-      pull.head.repo !== null &&
-      isSameRepository(pull.head.repo.full_name, completedRun.headRepository) &&
-      isSameRepository(pull.base.repo.full_name, completedRun.baseRepository);
-    return isTheRunsPull ? [pull] : [];
+    const openPullRequest = parsed.data;
+    const isTheRunsPullRequest =
+      openPullRequest.head.sha === completedRun.headSha &&
+      openPullRequest.head.repo !== null &&
+      isSameRepository(openPullRequest.head.repo.full_name, completedRun.headRepository) &&
+      isSameRepository(openPullRequest.base.repo.full_name, completedRun.baseRepository);
+    return isTheRunsPullRequest ? [openPullRequest] : [];
   });
 
-  if (matchingPulls.length > 1) return { skipReason: "more than one open pull request has the run's head commit and branch, so none is chosen" };
-  const pull = matchingPulls[0];
-  if (pull === undefined) {
-    const listed = listing.entries.length;
-    if (!listing.isComplete) return { skipReason: `none of the first ${listed} open pull requests GitHub listed for the run's branch matches, and the list goes on` };
-    if (listed === 0) return { skipReason: "GitHub lists no open pull request for the run's head owner and branch (it was closed or merged)" };
-    if (rejectedEntries === listed) return { skipReason: `GitHub listed ${listed} entries for the run's branch, and none is a usable pull request (see the warnings above)` };
+  if (matchingPullRequests.length > 1) return { skipReason: "more than one open pull request has the run's head commit and branch, so none is chosen" };
+  const openPullRequest = matchingPullRequests[0];
+  if (openPullRequest === undefined) {
+    const listedCount = listing.entries.length;
+    if (!listing.isComplete) return { skipReason: `none of the first ${listedCount} open pull requests GitHub listed for the run's branch matches, and the list goes on` };
+    if (listedCount === 0) return { skipReason: "GitHub lists no open pull request for the run's head owner and branch (it was closed or merged)" };
+    if (rejectedEntries === listedCount) return { skipReason: `GitHub listed ${listedCount} entries for the run's branch, and none is a usable pull request (see the warnings above)` };
     return {
-      skipReason: `no open pull request among the ${listed} listed for the run's branch has the run's head commit and head repository (its head moved, so a newer run handles it)`,
+      skipReason: `no open pull request among the ${listedCount} listed for the run's branch has the run's head commit and head repository (its head moved, so a newer run handles it)`,
     };
   }
   return {
-    number: pull.number,
-    headSha: pull.head.sha,
-    baseSha: pull.base.sha,
-    labels: pull.labels.map((label) => label.name),
-    author: pull.user ? { login: pull.user.login, type: pull.user.type } : undefined,
+    number: openPullRequest.number,
+    headSha: openPullRequest.head.sha,
+    baseSha: openPullRequest.base.sha,
+    labels: openPullRequest.labels.map((label) => label.name),
+    author: openPullRequest.user ? { login: openPullRequest.user.login, type: openPullRequest.user.type } : undefined,
   };
 }

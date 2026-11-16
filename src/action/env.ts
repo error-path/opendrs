@@ -101,9 +101,9 @@ export async function runFromEnv(env: NodeJS.ProcessEnv, write?: (s: string) => 
       await runForkFailure({ event, repository: `${owner}/${repo}`, shouldComment: inputs.comment, shouldLabel: inputs.labels, client: restrictToForkComment(client), io });
       return 0;
     }
-    const deps = { repoDir, event, inputs, client, io, env };
-    if (SWEEP_EVENTS.includes(env.GITHUB_EVENT_NAME ?? "")) await runSweep({ ...deps, owner, repo });
-    else await runAction(deps);
+    const dependencies = { repoDir, event, inputs, client, io, env };
+    if (SWEEP_EVENTS.includes(env.GITHUB_EVENT_NAME ?? "")) await runSweep({ ...dependencies, owner, repo });
+    else await runAction(dependencies);
     return 0;
   } catch (e) {
     const err = e instanceof Error ? e : new Error(String(e));

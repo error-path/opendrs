@@ -21,7 +21,7 @@ const FORBIDDEN_OPERATIONS: Op[] = ["createReview", "dismissReview", "enableAuto
 
 const scoredResult = (overrides: Record<string, unknown> = {}) =>
   JSON.stringify({
-    v: 1,
+    schemaVersion: 1,
     status: "scored",
     head: HEAD_SHA,
     opendrs: "0.5.2",
@@ -152,7 +152,7 @@ describe("runForkComment", () => {
 
   it("comments that a too-large PR was not scored and sets no risk label, removing a stale one", async () => {
     const scenario = setup({
-      result: JSON.stringify({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 }),
+      result: JSON.stringify({ schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "files", limit: 2000 }),
       gh: { labels: ["risk:green"], pulls: [openPull({ labels: [{ name: "risk:green" }] })] },
     });
     await scenario.run();
@@ -383,7 +383,7 @@ describe("fork-comment mode can never approve, review or merge", () => {
     const results = [
       scoredResult(),
       scoredResult({ score: 0, tier: "green", signals: [] }),
-      JSON.stringify({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "time", limit: 0 }),
+      JSON.stringify({ schemaVersion: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason: "time", limit: 0 }),
     ];
     for (const result of results) {
       const scenario = setup({
@@ -403,8 +403,8 @@ describe("fork-comment mode can never approve, review or merge", () => {
   it("the client it is handed has no method that approves, reviews, merges or queues", () => {
     const client = restrictToForkComment(new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" }));
     expect(Object.keys(client).sort()).toEqual([...FORK_COMMENT_CLIENT_METHODS].sort());
-    expect([...FORK_COMMENT_CLIENT_METHODS].sort()).toEqual(["addLabels", "createComment", "listCommentsUpTo", "listOpenPullsByHead", "removeLabel", "updateComment", "viewerLogin"]);
-    for (const method of ["approve", "dismissReview", "enableAutoMerge", "disableAutoMerge", "enqueue", "dequeue", "requestReviewers", "graphql", "listReviews", "mergeSettings", "readBlob", "listPullFiles"]) {
+    expect([...FORK_COMMENT_CLIENT_METHODS].sort()).toEqual(["addLabels", "createComment", "listOpenPullRequestsByHeadBranch", "listPullRequestComments", "removeLabel", "updateComment", "viewerLogin"]);
+    for (const method of ["approve", "dismissReview", "enableAutoMerge", "disableAutoMerge", "enqueue", "dequeue", "requestReviewers", "graphql", "listReviews", "mergeSettings", "readBlobContent", "listPullRequestFiles"]) {
       expect(client).not.toHaveProperty(method);
     }
     expect(Object.isFrozen(client)).toBe(true);

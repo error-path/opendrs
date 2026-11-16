@@ -42,9 +42,9 @@ const ADVISORY = "Advisory only: opendrs never approves or merges a fork pull re
  * @param maxLength - The most characters to keep.
  * @returns The inert text inside backticks.
  */
-function inertCode(text: unknown, disallowedCharacters: RegExp, maxLength = MAX_TEXT_LENGTH): string {
-  const kept = typeof text === "string" ? text.replace(disallowedCharacters, "").slice(0, maxLength) : "";
-  return `\`${kept === "" ? NOT_A_NUMBER : kept}\``;
+function formatInertCode(text: unknown, disallowedCharacters: RegExp, maxLength = MAX_TEXT_LENGTH): string {
+  const printableText = typeof text === "string" ? text.replace(disallowedCharacters, "").slice(0, maxLength) : "";
+  return `\`${printableText === "" ? NOT_A_NUMBER : printableText}\``;
 }
 
 const NOT_HEX = /[^0-9a-f]/g;
@@ -101,7 +101,7 @@ function formatMegabytes(bytes: unknown): string {
  * @returns Its first seven hex characters inside backticks, or `` `?` `` when it holds none.
  */
 function formatShortCommit(commitSha: unknown): string {
-  return inertCode(commitSha, NOT_HEX, SHORT_COMMIT_LENGTH);
+  return formatInertCode(commitSha, NOT_HEX, SHORT_COMMIT_LENGTH);
 }
 
 /**
@@ -112,7 +112,7 @@ function formatShortCommit(commitSha: unknown): string {
  * @returns Two lines of small text.
  */
 function renderFooter(opendrsVersion: unknown, modelText: string | undefined): string[] {
-  const version = opendrsVersion === undefined ? undefined : `opendrs ${inertCode(opendrsVersion, NOT_VERSION, MAX_VERSION_LENGTH)}`;
+  const version = opendrsVersion === undefined ? undefined : `opendrs ${formatInertCode(opendrsVersion, NOT_VERSION, MAX_VERSION_LENGTH)}`;
   return [
     `<sub>${ADVISORY} [How fork pull requests are scored](${FORK_DOCS_URL}).</sub>`,
     `<sub>${[version, modelText, `[${PROJECT_URL.replace("https://", "")}](${PROJECT_URL})`].filter(Boolean).join(" · ")}</sub>`,
@@ -128,7 +128,7 @@ function renderFooter(opendrsVersion: unknown, modelText: string | undefined): s
 function renderScored(result: ForkScoredResult): string[] {
   const heading = (TIER_TEXT.get(result.tier) ?? "Diff risk {score} · tier unknown").replace("{score}", formatFixed(result.score));
   const counts: Partial<ForkScoredResult["counts"]> = result.counts ?? {};
-  const unknowns = formatWholeNumber(counts.unknowns);
+  const unknownCount = formatWholeNumber(counts.unknowns);
   const lines = [
     `### ${heading}`,
     `<sub>Scored for a fork pull request at ${formatShortCommit(result.head)} · ${formatWholeNumber(counts.files)} files · +${formatWholeNumber(counts.added)} −${formatWholeNumber(counts.deleted)}</sub>`,
@@ -137,11 +137,11 @@ function renderScored(result: ForkScoredResult): string[] {
   const signals = Array.isArray(result.signals) ? result.signals.slice(0, MAX_SIGNAL_ROWS) : [];
   if (signals.length > 0) {
     lines.push("| Signal | Value | Push |", "|---|--:|--:|");
-    for (const signal of signals) lines.push(`| ${inertCode(signal?.id, NOT_SIGNAL_ID)} | ${formatFixed(signal?.value)} | ${formatSigned(signal?.contribution)} |`);
+    for (const signal of signals) lines.push(`| ${formatInertCode(signal?.id, NOT_SIGNAL_ID)} | ${formatFixed(signal?.value)} | ${formatSigned(signal?.contribution)} |`);
     lines.push("", `<sub>[What each signal means](${SIGNALS_URL}). Push is the signal's effect on the score: + raises the risk, − lowers it.</sub>`, "");
   }
-  if (unknowns !== "0") {
-    lines.push(`${unknowns} ${unknowns === "1" ? "signal" : "signals"} unknown, counted as risk and not as zero.`, "");
+  if (unknownCount !== "0") {
+    lines.push(`${unknownCount} ${unknownCount === "1" ? "signal" : "signals"} unknown, counted as risk and not as zero.`, "");
   }
   lines.push(
     "This score comes from the diff and this repository's history. It was computed without the LLM judge and without checking who wrote the commits, so it can differ from the score a pull request from a branch of this repository would get.",
@@ -168,13 +168,13 @@ const TOO_LARGE_TEXT = new Map<string, (limit: unknown) => string>([
  * @returns The comment's lines, without the marker.
  */
 function renderTooLarge(result: ForkTooLargeResult): string[] {
-  const describe = TOO_LARGE_TEXT.get(result.reason);
-  const why = describe ? describe(result.limit) : "it is over a size limit";
+  const describeReason = TOO_LARGE_TEXT.get(result.reason);
+  const reasonText = describeReason ? describeReason(result.limit) : "it is over a size limit";
   return [
     "### ⚪ Diff risk not scored · too large to score",
     `<sub>Fork pull request at ${formatShortCommit(result.head)}</sub>`,
     "",
-    `opendrs did not score this pull request: ${why}. That is not a low score. Review it as you would any large change, or split it.`,
+    `opendrs did not score this pull request: ${reasonText}. That is not a low score. Review it as you would any large change, or split it.`,
     "",
     ...renderFooter(result.opendrs ?? NOT_A_NUMBER, undefined),
   ];

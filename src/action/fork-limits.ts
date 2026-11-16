@@ -35,7 +35,7 @@ export const FORK_SCORE_LIMITS: ForkScoreLimits = {
  * The most pages (100 pull requests each) read when looking for the completed run's pull request.
  * GitHub filters the listing by head owner and branch, so one page is the normal case.
  */
-export const MAX_PULL_LISTING_PAGES = 3;
+export const MAX_PULL_REQUEST_LISTING_PAGES = 3;
 
 /**
  * The most pages (100 comments each) read when looking for opendrs's own fork comment. GitHub lists

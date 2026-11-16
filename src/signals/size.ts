@@ -38,7 +38,7 @@ export const sizeSignals: SignalProvider = async (ctx) => {
   const changed = files.flatMap((f) => f.hunks.flatMap((h) => h.lines.filter((l) => l[0] === "+" || l[0] === "-").map((l) => ({ f, text: l.slice(1) }))));
   const commentOnly =
     changed.length > 0 &&
-    files.every((f) => !f.binary && !f.hasUnreadablePatch && f.status !== "renamed") &&
+    files.every((file) => !file.binary && !file.hasUnreadablePatch && file.status !== "renamed") &&
     changed.every(({ f, text }) => inert(text, languageFamily(f.path)));
   const commentOnlySignal: Signal = {
     id: "size.comment_only",

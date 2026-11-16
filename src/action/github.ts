@@ -250,12 +250,12 @@ export class GitHubClient {
   /**
    * Lists a pull request's comments, oldest first, up to a page limit.
    *
-   * @param pr - The pull request number.
+   * @param pullNumber - The pull request number.
    * @param maxPages - The most pages (100 comments each) to request.
    * @returns The comments read, and whether that was all of them.
    */
-  async listCommentsUpTo(pr: number, maxPages: number): Promise<{ comments: IssueComment[]; isComplete: boolean }> {
-    const { entries, isComplete } = await this.paginateUpTo<IssueCommentFromGitHub>(`${this.repoPath}/issues/${pr}/comments`, maxPages);
+  async listPullRequestComments(pullNumber: number, maxPages: number): Promise<{ comments: IssueComment[]; isComplete: boolean }> {
+    const { entries, isComplete } = await this.paginateUpTo<IssueCommentFromGitHub>(`${this.repoPath}/issues/${pullNumber}/comments`, maxPages);
     return { comments: entries.map(({ html_url: comment_page_url, ...commentFields }) => ({ ...commentFields, comment_page_url })), isComplete };
   }
 
@@ -267,9 +267,9 @@ export class GitHubClient {
    * @param maxPages - The most pages (100 pull requests each) to request.
    * @returns The pull requests as GitHub returns them, unchecked, and whether that was the whole list.
    */
-  listOpenPullsByHead(headOwner: string, headBranch: string, maxPages: number): Promise<{ entries: unknown[]; isComplete: boolean }> {
-    const head = encodeURIComponent(`${headOwner}:${headBranch}`);
-    return this.paginateUpTo<unknown>(`${this.repoPath}/pulls?state=open&head=${head}`, maxPages);
+  listOpenPullRequestsByHeadBranch(headOwner: string, headBranch: string, maxPages: number): Promise<{ entries: unknown[]; isComplete: boolean }> {
+    const headFilter = encodeURIComponent(`${headOwner}:${headBranch}`);
+    return this.paginateUpTo<unknown>(`${this.repoPath}/pulls?state=open&head=${headFilter}`, maxPages);
   }
 
   /**
@@ -278,7 +278,7 @@ export class GitHubClient {
    * @param pullNumber - The pull request number.
    * @returns The pull request as GitHub returns it, unchecked: the caller validates it.
    */
-  readPull(pullNumber: number): Promise<unknown> {
+  readPullRequest(pullNumber: number): Promise<unknown> {
     return this.rest<unknown>("GET", `${this.repoPath}/pulls/${pullNumber}`);
   }
 
@@ -289,7 +289,7 @@ export class GitHubClient {
    * @param headSha - The head commit hash.
    * @returns The comparison as GitHub returns it (`merge_base_commit` among it), unchecked.
    */
-  compareCommits(baseSha: string, headSha: string): Promise<unknown> {
+  compareBaseAndHeadCommits(baseSha: string, headSha: string): Promise<unknown> {
     return this.rest<unknown>("GET", `${this.repoPath}/compare/${baseSha}...${headSha}?per_page=1`);
   }
 
@@ -300,7 +300,7 @@ export class GitHubClient {
    * @param maxFiles - Stop asking for more pages once more than this many files have arrived.
    * @returns The files as GitHub returns them, unchecked. More than `maxFiles` entries means the list is incomplete.
    */
-  async listPullFiles(pullNumber: number, maxFiles: number): Promise<unknown[]> {
+  async listPullRequestFiles(pullNumber: number, maxFiles: number): Promise<unknown[]> {
     const files: unknown[] = [];
     let url: string | undefined = `${this.opts.apiUrl}${this.repoPath}/pulls/${pullNumber}/files?per_page=100`;
     while (url && files.length <= maxFiles) {
@@ -318,23 +318,23 @@ export class GitHubClient {
    * @param maxBytes - The largest blob to download.
    * @returns The bytes, or undefined when the blob is larger than `maxBytes`.
    */
-  async readBlob(blobSha: string, maxBytes: number): Promise<Buffer | undefined> {
+  async readBlobContent(blobSha: string, maxBytes: number): Promise<Buffer | undefined> {
     const response = await this.send("GET", `${this.opts.apiUrl}${this.repoPath}/git/blobs/${blobSha}`, undefined, "application/vnd.github.raw+json");
-    const reader = response.body?.getReader();
-    if (!reader) return undefined;
+    const bodyReader = response.body?.getReader();
+    if (!bodyReader) return undefined;
     if (Number(response.headers.get("content-length") ?? 0) > maxBytes) {
-      await reader.cancel();
+      await bodyReader.cancel();
       return undefined;
     }
     const chunks: Uint8Array[] = [];
     let receivedBytes = 0;
     for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
+      const { done: isDone, value } = await bodyReader.read();
+      if (isDone) break;
       receivedBytes += value.length;
       // The size header can be missing, so the stream is cut off at the cap as well.
       if (receivedBytes > maxBytes) {
-        await reader.cancel();
+        await bodyReader.cancel();
         return undefined;
       }
       chunks.push(value);

@@ -137,7 +137,7 @@ export function decide(input: GateInput): PolicyOutcome {
   if (unread.length > 0) {
     fire("human-review", `ignored or binary files are never auto-approved: ${list(unread)}`, "unread-files");
   }
-  const unreadPatches = diff.files.filter((f) => f.hasUnreadablePatch && !f.ignored && !f.binary).map((f) => f.path);
+  const unreadPatches = diff.files.filter((file) => file.hasUnreadablePatch && !file.ignored && !file.binary).map((file) => file.path);
   if (unreadPatches.length > 0) {
     fire("human-review", `files whose changed lines could not be read are never auto-approved: ${list(unreadPatches)}`, "unread-files");
   }

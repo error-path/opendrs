@@ -28,7 +28,7 @@ const MAX_COUNT = 1e12;
 const DECIMALS = 4;
 
 const opendrsVersion = z.string().max(32).regex(/^\d{1,5}\.\d{1,5}\.\d{1,5}(?:-[0-9A-Za-z.]{1,16})?$/);
-const count = z.number().int().min(0).max(MAX_COUNT);
+const countSchema = z.number().int().min(0).max(MAX_COUNT);
 const signalId = z
   .string()
   .max(48)
@@ -36,7 +36,7 @@ const signalId = z
   .refine((id) => KNOWN_SIGNAL_IDS.has(id));
 
 const scoredSchema = z.strictObject({
-  v: z.literal(1),
+  schemaVersion: z.literal(1),
   status: z.literal("scored"),
   head: commitShaSchema,
   opendrs: opendrsVersion,
@@ -52,16 +52,16 @@ const scoredSchema = z.strictObject({
       }),
     )
     .max(FORK_RESULT_MAX_SIGNALS),
-  counts: z.strictObject({ files: count, added: count, deleted: count, unknowns: count }),
+  counts: z.strictObject({ files: countSchema, added: countSchema, deleted: countSchema, unknowns: countSchema }),
 });
 
 const tooLargeSchema = z.strictObject({
-  v: z.literal(1),
+  schemaVersion: z.literal(1),
   status: z.literal("too-large"),
   head: commitShaSchema,
   opendrs: opendrsVersion,
   reason: z.enum(TOO_LARGE_REASONS),
-  limit: count,
+  limit: countSchema,
 });
 
 const forkResultSchema = z.discriminatedUnion("status", [scoredSchema, tooLargeSchema]);
@@ -114,7 +114,7 @@ export function buildForkResult(scoreResult: ScoreResult): ForkScoredResult {
       contribution: boundNumber(contribution.contribution, MAX_CONTRIBUTION),
     }));
   return {
-    v: 1,
+    schemaVersion: 1,
     status: "scored",
     head: scoreResult.diff.head,
     opendrs: scoreResult.version,
@@ -141,7 +141,7 @@ export function buildForkResult(scoreResult: ScoreResult): ForkScoredResult {
  * @returns A result that {@link parseForkResult} accepts.
  */
 export function buildTooLargeResult(headSha: string, reason: TooLargeReason, limit: number, opendrsVersion: string): ForkTooLargeResult {
-  return { v: 1, status: "too-large", head: headSha, opendrs: opendrsVersion, reason, limit: boundCount(limit) };
+  return { schemaVersion: 1, status: "too-large", head: headSha, opendrs: opendrsVersion, reason, limit: boundCount(limit) };
 }
 
 /**

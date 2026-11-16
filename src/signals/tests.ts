@@ -23,7 +23,7 @@ const NET_TEST_DELETION = 10;
  */
 export const testsSignals: SignalProvider = async (ctx) => {
   const files = countedFiles(ctx);
-  const unreadableFiles = files.filter((f) => f.hasUnreadablePatch && isCodeFamily(languageFamily(f.path)));
+  const unreadableFiles = files.filter((file) => file.hasUnreadablePatch && isCodeFamily(languageFamily(file.path)));
   if (unreadableFiles.length > 0) {
     const reason = `the changed lines of ${plural(unreadableFiles.length, "code file")} could not be read`;
     return [unknown("tests.missing", reason), unknown("tests.deleted", reason)];

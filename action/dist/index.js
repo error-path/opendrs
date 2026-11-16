@@ -607,8 +607,8 @@ var require_Node = __commonJS({
         };
         const res = toJS.toJS(this, "", ctx);
         if (typeof onAnchor === "function")
-          for (const { count: count2, res: res2 } of ctx.anchors.values())
-            onAnchor(res2, count2);
+          for (const { count, res: res2 } of ctx.anchors.values())
+            onAnchor(res2, count);
         return typeof reviver === "function" ? applyReviver.applyReviver(reviver, { "": res }, "", res) : res;
       }
     };
@@ -716,13 +716,13 @@ var require_Alias = __commonJS({
         const anchor2 = anchors2 && source && anchors2.get(source);
         return anchor2 ? anchor2.count * anchor2.aliasCount : 0;
       } else if (identity.isCollection(node2)) {
-        let count2 = 0;
+        let count = 0;
         for (const item of node2.items) {
           const c = getAliasCount(doc, item, anchors2);
-          if (c > count2)
-            count2 = c;
+          if (c > count)
+            count = c;
         }
-        return count2;
+        return count;
       } else if (identity.isPair(node2)) {
         const kc = getAliasCount(doc, node2.key, anchors2);
         const vc = getAliasCount(doc, node2.value, anchors2);
@@ -3675,8 +3675,8 @@ var require_Document = __commonJS({
         };
         const res = toJS.toJS(this.contents, jsonArg ?? "", ctx);
         if (typeof onAnchor === "function")
-          for (const { count: count2, res: res2 } of ctx.anchors.values())
-            onAnchor(res2, count2);
+          for (const { count, res: res2 } of ctx.anchors.values())
+            onAnchor(res2, count);
         return typeof reviver === "function" ? applyReviver.applyReviver(reviver, { "": res }, "", res) : res;
       }
       /**
@@ -3753,12 +3753,12 @@ var require_errors = __commonJS({
         lineStr = prev + lineStr;
       }
       if (/[^ ]/.test(lineStr)) {
-        let count2 = 1;
+        let count = 1;
         const end = error62.linePos[1];
         if (end?.line === line2 && end.col > col) {
-          count2 = Math.max(1, Math.min(end.col - col, 80 - ci));
+          count = Math.max(1, Math.min(end.col - col, 80 - ci));
         }
-        const pointer = " ".repeat(ci) + "^".repeat(count2);
+        const pointer = " ".repeat(ci) + "^".repeat(count);
         error62.message += `:
 
 ${lineStr}
@@ -7405,9 +7405,9 @@ var MODEL_TEXT = /* @__PURE__ */ new Map([
   ["calibrated", "calibrated model"]
 ]);
 var ADVISORY = "Advisory only: opendrs never approves or merges a fork pull request, and this comment is not a review.";
-function inertCode(text, disallowedCharacters, maxLength = MAX_TEXT_LENGTH) {
-  const kept = typeof text === "string" ? text.replace(disallowedCharacters, "").slice(0, maxLength) : "";
-  return `\`${kept === "" ? NOT_A_NUMBER : kept}\``;
+function formatInertCode(text, disallowedCharacters, maxLength = MAX_TEXT_LENGTH) {
+  const printableText = typeof text === "string" ? text.replace(disallowedCharacters, "").slice(0, maxLength) : "";
+  return `\`${printableText === "" ? NOT_A_NUMBER : printableText}\``;
 }
 var NOT_HEX = /[^0-9a-f]/g;
 var NOT_SIGNAL_ID = /[^a-z0-9_.]/g;
@@ -7428,10 +7428,10 @@ function formatMegabytes(bytes) {
   return typeof bytes === "number" && Number.isFinite(bytes) && bytes >= 0 ? formatWholeNumber(Math.round(bytes / 1e6)) : NOT_A_NUMBER;
 }
 function formatShortCommit(commitSha) {
-  return inertCode(commitSha, NOT_HEX, SHORT_COMMIT_LENGTH);
+  return formatInertCode(commitSha, NOT_HEX, SHORT_COMMIT_LENGTH);
 }
 function renderFooter(opendrsVersion2, modelText) {
-  const version2 = opendrsVersion2 === void 0 ? void 0 : `opendrs ${inertCode(opendrsVersion2, NOT_VERSION, MAX_VERSION_LENGTH)}`;
+  const version2 = opendrsVersion2 === void 0 ? void 0 : `opendrs ${formatInertCode(opendrsVersion2, NOT_VERSION, MAX_VERSION_LENGTH)}`;
   return [
     `<sub>${ADVISORY} [How fork pull requests are scored](${FORK_DOCS_URL}).</sub>`,
     `<sub>${[version2, modelText, `[${PROJECT_URL.replace("https://", "")}](${PROJECT_URL})`].filter(Boolean).join(" \xB7 ")}</sub>`
@@ -7440,7 +7440,7 @@ function renderFooter(opendrsVersion2, modelText) {
 function renderScored(result) {
   const heading = (TIER_TEXT.get(result.tier) ?? "Diff risk {score} \xB7 tier unknown").replace("{score}", formatFixed(result.score));
   const counts = result.counts ?? {};
-  const unknowns = formatWholeNumber(counts.unknowns);
+  const unknownCount = formatWholeNumber(counts.unknowns);
   const lines = [
     `### ${heading}`,
     `<sub>Scored for a fork pull request at ${formatShortCommit(result.head)} \xB7 ${formatWholeNumber(counts.files)} files \xB7 +${formatWholeNumber(counts.added)} \u2212${formatWholeNumber(counts.deleted)}</sub>`,
@@ -7449,11 +7449,11 @@ function renderScored(result) {
   const signals = Array.isArray(result.signals) ? result.signals.slice(0, MAX_SIGNAL_ROWS) : [];
   if (signals.length > 0) {
     lines.push("| Signal | Value | Push |", "|---|--:|--:|");
-    for (const signal2 of signals) lines.push(`| ${inertCode(signal2?.id, NOT_SIGNAL_ID)} | ${formatFixed(signal2?.value)} | ${formatSigned(signal2?.contribution)} |`);
+    for (const signal2 of signals) lines.push(`| ${formatInertCode(signal2?.id, NOT_SIGNAL_ID)} | ${formatFixed(signal2?.value)} | ${formatSigned(signal2?.contribution)} |`);
     lines.push("", `<sub>[What each signal means](${SIGNALS_URL}). Push is the signal's effect on the score: + raises the risk, \u2212 lowers it.</sub>`, "");
   }
-  if (unknowns !== "0") {
-    lines.push(`${unknowns} ${unknowns === "1" ? "signal" : "signals"} unknown, counted as risk and not as zero.`, "");
+  if (unknownCount !== "0") {
+    lines.push(`${unknownCount} ${unknownCount === "1" ? "signal" : "signals"} unknown, counted as risk and not as zero.`, "");
   }
   lines.push(
     "This score comes from the diff and this repository's history. It was computed without the LLM judge and without checking who wrote the commits, so it can differ from the score a pull request from a branch of this repository would get.",
@@ -7471,13 +7471,13 @@ var TOO_LARGE_TEXT = /* @__PURE__ */ new Map([
   ["unreadable", () => "GitHub's list of its changed files has an entry opendrs cannot read"]
 ]);
 function renderTooLarge(result) {
-  const describe3 = TOO_LARGE_TEXT.get(result.reason);
-  const why = describe3 ? describe3(result.limit) : "it is over a size limit";
+  const describeReason = TOO_LARGE_TEXT.get(result.reason);
+  const reasonText2 = describeReason ? describeReason(result.limit) : "it is over a size limit";
   return [
     "### \u26AA Diff risk not scored \xB7 too large to score",
     `<sub>Fork pull request at ${formatShortCommit(result.head)}</sub>`,
     "",
-    `opendrs did not score this pull request: ${why}. That is not a low score. Review it as you would any large change, or split it.`,
+    `opendrs did not score this pull request: ${reasonText2}. That is not a low score. Review it as you would any large change, or split it.`,
     "",
     ...renderFooter(result.opendrs ?? NOT_A_NUMBER, void 0)
   ];
@@ -8726,14 +8726,14 @@ function codePointLength(str) {
   const units = str.length;
   if (!highSurrogate.test(str))
     return units;
-  let count2 = units;
+  let count = units;
   for (let i = 0; i < units - 1; i++) {
     if ((str.charCodeAt(i) & 64512) === 55296 && (str.charCodeAt(i + 1) & 64512) === 56320) {
-      count2--;
+      count--;
       i++;
     }
   }
-  return count2;
+  return count;
 }
 function getLengthableOrigin(input2) {
   if (Array.isArray(input2))
@@ -13116,8 +13116,8 @@ function az_default() {
 }
 
 // node_modules/zod/v4/locales/be.js
-function getBelarusianPlural(count2, one, few, many) {
-  const absCount = Math.abs(count2);
+function getBelarusianPlural(count, one, few, many) {
+  const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
   const lastTwoDigits = absCount % 100;
   if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
@@ -15764,8 +15764,8 @@ function hu_default() {
 }
 
 // node_modules/zod/v4/locales/hy.js
-function getArmenianPlural(count2, one, many) {
-  return Math.abs(count2) === 1 ? one : many;
+function getArmenianPlural(count, one, many) {
+  return Math.abs(count) === 1 ? one : many;
 }
 function withDefiniteArticle(word) {
   if (!word)
@@ -18503,8 +18503,8 @@ function ro_default() {
 }
 
 // node_modules/zod/v4/locales/ru.js
-function getRussianPlural(count2, one, few, many) {
-  const absCount = Math.abs(count2);
+function getRussianPlural(count, one, few, many) {
+  const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
   const lastTwoDigits = absCount % 100;
   if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
@@ -27279,10 +27279,10 @@ var MAX_CONTRIBUTION = 1e4;
 var MAX_COUNT = 1e12;
 var DECIMALS = 4;
 var opendrsVersion = external_exports.string().max(32).regex(/^\d{1,5}\.\d{1,5}\.\d{1,5}(?:-[0-9A-Za-z.]{1,16})?$/);
-var count = external_exports.number().int().min(0).max(MAX_COUNT);
+var countSchema = external_exports.number().int().min(0).max(MAX_COUNT);
 var signalId = external_exports.string().max(48).regex(/^[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*){1,3}$/).refine((id) => KNOWN_SIGNAL_IDS.has(id));
 var scoredSchema = external_exports.strictObject({
-  v: external_exports.literal(1),
+  schemaVersion: external_exports.literal(1),
   status: external_exports.literal("scored"),
   head: commitShaSchema,
   opendrs: opendrsVersion,
@@ -27296,15 +27296,15 @@ var scoredSchema = external_exports.strictObject({
       contribution: external_exports.number().min(-MAX_CONTRIBUTION).max(MAX_CONTRIBUTION)
     })
   ).max(FORK_RESULT_MAX_SIGNALS),
-  counts: external_exports.strictObject({ files: count, added: count, deleted: count, unknowns: count })
+  counts: external_exports.strictObject({ files: countSchema, added: countSchema, deleted: countSchema, unknowns: countSchema })
 });
 var tooLargeSchema = external_exports.strictObject({
-  v: external_exports.literal(1),
+  schemaVersion: external_exports.literal(1),
   status: external_exports.literal("too-large"),
   head: commitShaSchema,
   opendrs: opendrsVersion,
   reason: external_exports.enum(TOO_LARGE_REASONS),
-  limit: count
+  limit: countSchema
 });
 var forkResultSchema = external_exports.discriminatedUnion("status", [scoredSchema, tooLargeSchema]);
 function boundNumber(value, bound) {
@@ -27322,7 +27322,7 @@ function buildForkResult(scoreResult) {
     contribution: boundNumber(contribution.contribution, MAX_CONTRIBUTION)
   }));
   return {
-    v: 1,
+    schemaVersion: 1,
     status: "scored",
     head: scoreResult.diff.head,
     opendrs: scoreResult.version,
@@ -27339,7 +27339,7 @@ function buildForkResult(scoreResult) {
   };
 }
 function buildTooLargeResult(headSha, reason, limit, opendrsVersion2) {
-  return { v: 1, status: "too-large", head: headSha, opendrs: opendrsVersion2, reason, limit: boundCount(limit) };
+  return { schemaVersion: 1, status: "too-large", head: headSha, opendrs: opendrsVersion2, reason, limit: boundCount(limit) };
 }
 function serializeForkResult(result) {
   const text = JSON.stringify(result);
@@ -27376,11 +27376,11 @@ function parseForkResult(text) {
 
 // src/action/fork-client.ts
 function restrictClient(client, methodNames) {
-  const restricted = {};
+  const restrictedClient = {};
   for (const methodName of methodNames) {
-    restricted[methodName] = client[methodName].bind(client);
+    restrictedClient[methodName] = client[methodName].bind(client);
   }
-  return Object.freeze(restricted);
+  return Object.freeze(restrictedClient);
 }
 
 // src/action/fork-limits.ts
@@ -27393,7 +27393,7 @@ var FORK_SCORE_LIMITS = {
   maxHeadTotalBytes: 8e6,
   maxListingAttempts: 3
 };
-var MAX_PULL_LISTING_PAGES = 3;
+var MAX_PULL_REQUEST_LISTING_PAGES = 3;
 var MAX_COMMENT_PAGES = 10;
 
 // src/action/fork-event.ts
@@ -27409,7 +27409,7 @@ var workflowRunEventSchema = external_exports.object({
   }),
   repository: external_exports.object({ full_name: repositoryName })
 });
-var openPullSchema = external_exports.object({
+var openPullRequestSchema = external_exports.object({
   number: external_exports.number().int().positive().max(Number.MAX_SAFE_INTEGER),
   labels: external_exports.array(external_exports.object({ name: external_exports.string() })).default([]),
   user: external_exports.object({ login: external_exports.string(), type: external_exports.string().optional() }).nullish(),
@@ -27417,7 +27417,7 @@ var openPullSchema = external_exports.object({
   head: external_exports.object({ sha: commitShaSchema, repo: external_exports.object({ full_name: repositoryName }).nullable() })
 });
 var FINISHED_CONCLUSIONS = /* @__PURE__ */ new Set(["success", "failure"]);
-var isSameRepository = (left, right) => left.toLowerCase() === right.toLowerCase();
+var isSameRepository = (firstRepository, secondRepository) => firstRepository.toLowerCase() === secondRepository.toLowerCase();
 function readCompletedWorkflowRun(event, repository) {
   const parsed = workflowRunEventSchema.safeParse(event);
   if (!parsed.success) {
@@ -27448,36 +27448,36 @@ async function findForkPullRequest(client, completedRun, warn) {
   if (isSameRepository(completedRun.headRepository, completedRun.baseRepository)) {
     return { skipReason: "the pull request is not from a fork; the pull_request workflow comments on it itself" };
   }
-  const listing = await client.listOpenPullsByHead(completedRun.headOwner, completedRun.headBranch, MAX_PULL_LISTING_PAGES);
+  const listing = await client.listOpenPullRequestsByHeadBranch(completedRun.headOwner, completedRun.headBranch, MAX_PULL_REQUEST_LISTING_PAGES);
   let rejectedEntries = 0;
-  const matchingPulls = listing.entries.flatMap((listedPull) => {
-    const parsed = openPullSchema.safeParse(listedPull);
+  const matchingPullRequests = listing.entries.flatMap((listedPull) => {
+    const parsed = openPullRequestSchema.safeParse(listedPull);
     if (!parsed.success) {
       rejectedEntries++;
       warn(`GitHub listed an entry that is not a usable pull request (${describeSchemaIssues(parsed.error.issues)}); it is ignored.`);
       return [];
     }
-    const pull2 = parsed.data;
-    const isTheRunsPull = pull2.head.sha === completedRun.headSha && pull2.head.repo !== null && isSameRepository(pull2.head.repo.full_name, completedRun.headRepository) && isSameRepository(pull2.base.repo.full_name, completedRun.baseRepository);
-    return isTheRunsPull ? [pull2] : [];
+    const openPullRequest2 = parsed.data;
+    const isTheRunsPullRequest = openPullRequest2.head.sha === completedRun.headSha && openPullRequest2.head.repo !== null && isSameRepository(openPullRequest2.head.repo.full_name, completedRun.headRepository) && isSameRepository(openPullRequest2.base.repo.full_name, completedRun.baseRepository);
+    return isTheRunsPullRequest ? [openPullRequest2] : [];
   });
-  if (matchingPulls.length > 1) return { skipReason: "more than one open pull request has the run's head commit and branch, so none is chosen" };
-  const pull = matchingPulls[0];
-  if (pull === void 0) {
-    const listed = listing.entries.length;
-    if (!listing.isComplete) return { skipReason: `none of the first ${listed} open pull requests GitHub listed for the run's branch matches, and the list goes on` };
-    if (listed === 0) return { skipReason: "GitHub lists no open pull request for the run's head owner and branch (it was closed or merged)" };
-    if (rejectedEntries === listed) return { skipReason: `GitHub listed ${listed} entries for the run's branch, and none is a usable pull request (see the warnings above)` };
+  if (matchingPullRequests.length > 1) return { skipReason: "more than one open pull request has the run's head commit and branch, so none is chosen" };
+  const openPullRequest = matchingPullRequests[0];
+  if (openPullRequest === void 0) {
+    const listedCount = listing.entries.length;
+    if (!listing.isComplete) return { skipReason: `none of the first ${listedCount} open pull requests GitHub listed for the run's branch matches, and the list goes on` };
+    if (listedCount === 0) return { skipReason: "GitHub lists no open pull request for the run's head owner and branch (it was closed or merged)" };
+    if (rejectedEntries === listedCount) return { skipReason: `GitHub listed ${listedCount} entries for the run's branch, and none is a usable pull request (see the warnings above)` };
     return {
-      skipReason: `no open pull request among the ${listed} listed for the run's branch has the run's head commit and head repository (its head moved, so a newer run handles it)`
+      skipReason: `no open pull request among the ${listedCount} listed for the run's branch has the run's head commit and head repository (its head moved, so a newer run handles it)`
     };
   }
   return {
-    number: pull.number,
-    headSha: pull.head.sha,
-    baseSha: pull.base.sha,
-    labels: pull.labels.map((label) => label.name),
-    author: pull.user ? { login: pull.user.login, type: pull.user.type } : void 0
+    number: openPullRequest.number,
+    headSha: openPullRequest.head.sha,
+    baseSha: openPullRequest.base.sha,
+    labels: openPullRequest.labels.map((label) => label.name),
+    author: openPullRequest.user ? { login: openPullRequest.user.login, type: openPullRequest.user.type } : void 0
   };
 }
 
@@ -27662,12 +27662,12 @@ var GitHubClient = class {
   /**
    * Lists a pull request's comments, oldest first, up to a page limit.
    *
-   * @param pr - The pull request number.
+   * @param pullNumber - The pull request number.
    * @param maxPages - The most pages (100 comments each) to request.
    * @returns The comments read, and whether that was all of them.
    */
-  async listCommentsUpTo(pr, maxPages) {
-    const { entries, isComplete } = await this.paginateUpTo(`${this.repoPath}/issues/${pr}/comments`, maxPages);
+  async listPullRequestComments(pullNumber, maxPages) {
+    const { entries, isComplete } = await this.paginateUpTo(`${this.repoPath}/issues/${pullNumber}/comments`, maxPages);
     return { comments: entries.map(({ html_url: comment_page_url, ...commentFields }) => ({ ...commentFields, comment_page_url })), isComplete };
   }
   /**
@@ -27678,9 +27678,9 @@ var GitHubClient = class {
    * @param maxPages - The most pages (100 pull requests each) to request.
    * @returns The pull requests as GitHub returns them, unchecked, and whether that was the whole list.
    */
-  listOpenPullsByHead(headOwner, headBranch, maxPages) {
-    const head = encodeURIComponent(`${headOwner}:${headBranch}`);
-    return this.paginateUpTo(`${this.repoPath}/pulls?state=open&head=${head}`, maxPages);
+  listOpenPullRequestsByHeadBranch(headOwner, headBranch, maxPages) {
+    const headFilter = encodeURIComponent(`${headOwner}:${headBranch}`);
+    return this.paginateUpTo(`${this.repoPath}/pulls?state=open&head=${headFilter}`, maxPages);
   }
   /**
    * Reads one pull request.
@@ -27688,7 +27688,7 @@ var GitHubClient = class {
    * @param pullNumber - The pull request number.
    * @returns The pull request as GitHub returns it, unchecked: the caller validates it.
    */
-  readPull(pullNumber) {
+  readPullRequest(pullNumber) {
     return this.rest("GET", `${this.repoPath}/pulls/${pullNumber}`);
   }
   /**
@@ -27698,7 +27698,7 @@ var GitHubClient = class {
    * @param headSha - The head commit hash.
    * @returns The comparison as GitHub returns it (`merge_base_commit` among it), unchecked.
    */
-  compareCommits(baseSha, headSha) {
+  compareBaseAndHeadCommits(baseSha, headSha) {
     return this.rest("GET", `${this.repoPath}/compare/${baseSha}...${headSha}?per_page=1`);
   }
   /**
@@ -27708,7 +27708,7 @@ var GitHubClient = class {
    * @param maxFiles - Stop asking for more pages once more than this many files have arrived.
    * @returns The files as GitHub returns them, unchecked. More than `maxFiles` entries means the list is incomplete.
    */
-  async listPullFiles(pullNumber, maxFiles) {
+  async listPullRequestFiles(pullNumber, maxFiles) {
     const files = [];
     let url2 = `${this.opts.apiUrl}${this.repoPath}/pulls/${pullNumber}/files?per_page=100`;
     while (url2 && files.length <= maxFiles) {
@@ -27725,22 +27725,22 @@ var GitHubClient = class {
    * @param maxBytes - The largest blob to download.
    * @returns The bytes, or undefined when the blob is larger than `maxBytes`.
    */
-  async readBlob(blobSha, maxBytes) {
+  async readBlobContent(blobSha, maxBytes) {
     const response = await this.send("GET", `${this.opts.apiUrl}${this.repoPath}/git/blobs/${blobSha}`, void 0, "application/vnd.github.raw+json");
-    const reader = response.body?.getReader();
-    if (!reader) return void 0;
+    const bodyReader = response.body?.getReader();
+    if (!bodyReader) return void 0;
     if (Number(response.headers.get("content-length") ?? 0) > maxBytes) {
-      await reader.cancel();
+      await bodyReader.cancel();
       return void 0;
     }
     const chunks = [];
     let receivedBytes = 0;
     for (; ; ) {
-      const { done, value } = await reader.read();
-      if (done) break;
+      const { done: isDone, value } = await bodyReader.read();
+      if (isDone) break;
       receivedBytes += value.length;
       if (receivedBytes > maxBytes) {
-        await reader.cancel();
+        await bodyReader.cancel();
         return void 0;
       }
       chunks.push(value);
@@ -27835,7 +27835,7 @@ var GitHubClient = class {
 };
 
 // src/action/fork-comment.ts
-var FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullsByHead", "listCommentsUpTo", "createComment", "updateComment", "addLabels", "removeLabel"];
+var FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullRequestsByHeadBranch", "listPullRequestComments", "createComment", "updateComment", "addLabels", "removeLabel"];
 var RISK_LABELS = ["risk:green", "risk:yellow", "risk:red"];
 var GITHUB_ACTIONS_BOT = "github-actions[bot]";
 var COMMENT_PERMISSION_HINT = "The commenting job needs `pull-requests: write`.";
@@ -27851,15 +27851,15 @@ async function writeOrFail(write, permissionHint) {
     throw error62;
   }
 }
-function isOwnForkComment(comment, viewer) {
+function isOwnForkComment(comment, viewerLogin) {
   if (!(comment.body ?? "").startsWith(FORK_COMMENT_MARKER) || comment.user === null) return false;
-  return viewer === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewer);
+  return viewerLogin === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewerLogin);
 }
 async function upsertForkComment(client, pullNumber, body) {
   await writeOrFail(async () => {
-    const viewer = await client.viewerLogin();
-    const { comments, isComplete } = await client.listCommentsUpTo(pullNumber, MAX_COMMENT_PAGES);
-    const ownComment = comments.filter((comment) => isOwnForkComment(comment, viewer)).at(-1);
+    const viewerLogin = await client.viewerLogin();
+    const { comments, isComplete } = await client.listPullRequestComments(pullNumber, MAX_COMMENT_PAGES);
+    const ownComment = comments.filter((comment) => isOwnForkComment(comment, viewerLogin)).at(-1);
     if (ownComment) return void await client.updateComment(ownComment.id, body);
     if (!isComplete) {
       throw new OpendrsError(
@@ -27878,10 +27878,10 @@ async function reconcileRiskLabels(client, pullRequest, wantedLabel) {
     if (wantedLabel !== void 0 && !pullRequest.labels.includes(wantedLabel)) await client.addLabels(pullRequest.number, [wantedLabel]);
   }, LABEL_PERMISSION_HINT);
 }
-async function runForkComment(deps) {
-  const { client, io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
-  const result = parseForkResult(deps.result);
+async function runForkComment(dependencies) {
+  const { client, io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
+  const result = parseForkResult(dependencies.result);
   if (result.head !== completedRun.headSha) {
     throw new OpendrsError("The result was scored for a different commit than the workflow run's head commit: refusing to comment", "usage");
   }
@@ -27891,8 +27891,8 @@ async function runForkComment(deps) {
     return;
   }
   const body = renderForkComment(result);
-  if (deps.shouldComment) await upsertForkComment(client, pullRequest.number, body);
-  if (deps.shouldLabel) {
+  if (dependencies.shouldComment) await upsertForkComment(client, pullRequest.number, body);
+  if (dependencies.shouldLabel) {
     const scoredLabel = result.status === "scored" ? `risk:${result.tier}` : void 0;
     await reconcileRiskLabels(client, pullRequest, scoredLabel !== void 0 && RISK_LABELS.includes(scoredLabel) ? scoredLabel : void 0);
   }
@@ -27900,17 +27900,17 @@ async function runForkComment(deps) {
   io.setOutput("tier", result.status === "scored" ? result.tier : "");
   io.summary(body);
 }
-async function runForkFailure(deps) {
-  const { client, io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
+async function runForkFailure(dependencies) {
+  const { client, io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
   const pullRequest = await findForkPullRequest(client, completedRun, (message) => io.warning(message));
   if ("skipReason" in pullRequest) {
     io.notice(`opendrs did not comment: ${pullRequest.skipReason}.`);
     return;
   }
   const body = renderForkFailureComment(completedRun.headSha);
-  if (deps.shouldComment) await upsertForkComment(client, pullRequest.number, body);
-  if (deps.shouldLabel) await reconcileRiskLabels(client, pullRequest, void 0);
+  if (dependencies.shouldComment) await upsertForkComment(client, pullRequest.number, body);
+  if (dependencies.shouldLabel) await reconcileRiskLabels(client, pullRequest, void 0);
   io.summary(body);
 }
 
@@ -28695,7 +28695,7 @@ var EXPECTED_TEST_SHARE = 0.3;
 var NET_TEST_DELETION = 10;
 var testsSignals = async (ctx) => {
   const files = countedFiles(ctx);
-  const unreadableFiles = files.filter((f) => f.hasUnreadablePatch && isCodeFamily(languageFamily(f.path)));
+  const unreadableFiles = files.filter((file2) => file2.hasUnreadablePatch && isCodeFamily(languageFamily(file2.path)));
   if (unreadableFiles.length > 0) {
     const reason = `the changed lines of ${plural2(unreadableFiles.length, "code file")} could not be read`;
     return [unknown2("tests.missing", reason), unknown2("tests.deleted", reason)];
@@ -29346,8 +29346,8 @@ function ecosystemOf(path) {
 function plural3(n, s) {
   return `${n} ${s}${n === 1 ? "" : "s"}`;
 }
-function rootsLine(count2, what, from, fallbackDepth) {
-  return count2 > 0 ? `modules: auto-detected ${plural3(count2, what)} from ${from}` : `modules: no ${from} found; falling back to moduleDepth: ${fallbackDepth}`;
+function rootsLine(count, what, from, fallbackDepth) {
+  return count > 0 ? `modules: auto-detected ${plural3(count, what)} from ${from}` : `modules: no ${from} found; falling back to moduleDepth: ${fallbackDepth}`;
 }
 function buildNotes(files, roots, fallbackDepth) {
   const present = new Set(files.map(ecosystemOf).filter((e) => e !== void 0));
@@ -30837,7 +30837,7 @@ var sizeSignals = async (ctx) => {
     evidence: []
   };
   const changed = files.flatMap((f) => f.hunks.flatMap((h) => h.lines.filter((l) => l[0] === "+" || l[0] === "-").map((l) => ({ f, text: l.slice(1) }))));
-  const commentOnly2 = changed.length > 0 && files.every((f) => !f.binary && !f.hasUnreadablePatch && f.status !== "renamed") && changed.every(({ f, text }) => inert(text, languageFamily(f.path)));
+  const commentOnly2 = changed.length > 0 && files.every((file2) => !file2.binary && !file2.hasUnreadablePatch && file2.status !== "renamed") && changed.every(({ f, text }) => inert(text, languageFamily(f.path)));
   const commentOnlySignal = {
     id: "size.comment_only",
     value: commentOnly2 ? 1 : 0,
@@ -30880,14 +30880,14 @@ function fileCountedLines(f, config2) {
   return f.hunks.reduce((n, h) => n + hunkCountedLines(h, family), 0);
 }
 function hunkCountedLines(h, family) {
-  let count2 = 0;
+  let count = 0;
   let allInert = true;
   for (const { kind, text } of changedLines(h)) {
     if (kind !== "+" && kind !== "-") continue;
-    count2++;
+    count++;
     if (!inert(text, family)) allInert = false;
   }
-  return allInert ? 0 : count2;
+  return allInert ? 0 : count;
 }
 async function relativeSize(ctx, files) {
   const id = "size.relative";
@@ -32470,7 +32470,7 @@ function decide(input2) {
   if (unread.length > 0) {
     fire("human-review", `ignored or binary files are never auto-approved: ${list(unread)}`, "unread-files");
   }
-  const unreadPatches = diff.files.filter((f) => f.hasUnreadablePatch && !f.ignored && !f.binary).map((f) => f.path);
+  const unreadPatches = diff.files.filter((file2) => file2.hasUnreadablePatch && !file2.ignored && !file2.binary).map((file2) => file2.path);
   if (unreadPatches.length > 0) {
     fire("human-review", `files whose changed lines could not be read are never auto-approved: ${list(unreadPatches)}`, "unread-files");
   }
@@ -32760,15 +32760,15 @@ var blastSignals = async (ctx) => {
   const coverage = partialCoverage(graph);
   if (coverage) notes.push(`graph covers ${coverage.files} of ${coverage.total} files`);
   const suffix = notes.length ? ` (${notes.join("; ")})` : "";
-  const filesWithDependents = files.filter((f) => graph.dependentsOf(basePath(f)).length > 0);
+  const filesWithDependents = files.filter((file2) => graph.dependentsOf(basePath(file2)).length > 0);
   const surface = filesWithDependents.flatMap(publicDeclarations);
   const surfaceFiles = new Set(surface.map((e) => e.file)).size;
-  const unreadable = filesWithDependents.filter((f) => f.hasUnreadablePatch).map((f) => f.path);
-  const publicSurface = surface.length === 0 && unreadable.length > 0 ? {
+  const unreadablePaths = filesWithDependents.filter((file2) => file2.hasUnreadablePatch).map((file2) => file2.path);
+  const publicSurface = surface.length === 0 && unreadablePaths.length > 0 ? {
     id: "blast.public_surface",
     value: 0,
     status: "unknown",
-    summary: `Blast radius unknown: the changed lines of ${listPaths(unreadable)}, which have dependents, could not be read${suffix}`,
+    summary: `Blast radius unknown: the changed lines of ${listPaths(unreadablePaths)}, which have dependents, could not be read${suffix}`,
     evidence: []
   } : {
     id: "blast.public_surface",
@@ -32794,7 +32794,7 @@ var BRANCH2 = /\b(if|elif|elsif|for|foreach|while|until|unless|case|when|catch|e
 var complexitySignals = async (ctx) => {
   const id = "complexity.touched";
   const files = countedFiles(ctx).filter((f) => !f.binary && isCodeFamily(languageFamily(f.path)));
-  const unreadableFiles = files.filter((f) => f.hasUnreadablePatch);
+  const unreadableFiles = files.filter((file2) => file2.hasUnreadablePatch);
   if (unreadableFiles.length > 0) return [unknown2(id, `the changed lines of ${plural2(unreadableFiles.length, "code file")} could not be read`)];
   if (files.length === 0) return [{ id, value: 0, status: "derived", summary: "no code files changed", evidence: [] }];
   const texts = await Promise.all(files.map((f) => f.status === "deleted" ? ctx.readBase(historyPath(f)) : ctx.readHead(f.path)));
@@ -33121,8 +33121,8 @@ async function prCommits(repoDir, base, head, maxCommits) {
     return SHA.test(sha) ? [{ sha, authorName, authorEmail, message: message.join(FIELD2) }] : [];
   });
 }
-async function computeSignals(ctx) {
-  const batches = await Promise.all(SIGNAL_PROVIDERS.map((p) => p(ctx)));
+async function computeSignals(scoringContext) {
+  const batches = await Promise.all(SIGNAL_PROVIDERS.map((provider) => provider(scoringContext)));
   return batches.flat();
 }
 function makeContext(repoDir, diff, config2, history, graph, asOf, trust = { authorVerified: true, historyComplete: true }) {
@@ -33139,24 +33139,24 @@ function makeContext(repoDir, diff, config2, history, graph, asOf, trust = { aut
     readHead: (path) => read(diff.head, path)
   };
 }
-async function scoreDiff(opts) {
-  const { repoDir, config: config2 } = opts;
-  const diff = opts.diff ? { ...opts.diff } : await loadDiff(repoDir, opts.base, opts.head, config2);
-  if (opts.title !== void 0) diff.title = opts.title;
-  if (opts.description !== void 0) diff.description = opts.description;
+async function scoreDiff(options) {
+  const { repoDir, config: config2 } = options;
+  const diff = options.diff ? { ...options.diff } : await loadDiff(repoDir, options.base, options.head, config2);
+  if (options.title !== void 0) diff.title = options.title;
+  if (options.description !== void 0) diff.description = options.description;
   const [history, graph] = await Promise.all([
-    opts.history ?? buildHistoryIndex(repoDir, diff.base, config2),
-    opts.graph !== void 0 ? Promise.resolve(opts.graph ?? void 0) : config2.graph.enabled ? buildDependencyGraph(repoDir, diff.base, config2).catch(() => void 0) : Promise.resolve(void 0)
+    options.history ?? buildHistoryIndex(repoDir, diff.base, config2),
+    options.graph !== void 0 ? Promise.resolve(options.graph ?? void 0) : config2.graph.enabled ? buildDependencyGraph(repoDir, diff.base, config2).catch(() => void 0) : Promise.resolve(void 0)
   ]);
   const shallow = (await git(repoDir, ["rev-parse", "--is-shallow-repository"])).trim() === "true";
-  const ctx = makeContext(repoDir, diff, config2, history, graph, opts.asOf, {
-    authorVerified: opts.authorVerified ?? true,
+  const scoringContext = makeContext(repoDir, diff, config2, history, graph, options.asOf, {
+    authorVerified: options.authorVerified ?? true,
     historyComplete: !shallow
   });
-  if (opts.readHead) ctx.readHead = opts.readHead;
+  if (options.readHead) scoringContext.readHead = options.readHead;
   let llm;
   try {
-    llm = opts.llm === null ? void 0 : opts.llm ?? createLlmProvider(config2);
+    llm = options.llm === null ? void 0 : options.llm ?? createLlmProvider(config2);
     if (llm) {
       const { text, hunks, truncated } = buildDiffText(diff, config2.llm.maxDiffChars);
       const judgement = await llm.judge({
@@ -33167,17 +33167,17 @@ async function scoreDiff(opts) {
         hunks,
         truncated
       });
-      ctx.llm = { judgement };
+      scoringContext.llm = { judgement };
     }
   } catch (e) {
-    ctx.llm = { error: e instanceof OpendrsError ? e.message : `LLM judge failed: ${e.message}` };
+    scoringContext.llm = { error: e instanceof OpendrsError ? e.message : `LLM judge failed: ${e.message}` };
   }
-  const signals = await computeSignals(ctx);
-  const commits = opts.prCommits ?? await prCommits(repoDir, diff.base, diff.head, config2.history.maxCommits);
+  const signals = await computeSignals(scoringContext);
+  const pullRequestCommits = options.pullRequestCommits ?? await prCommits(repoDir, diff.base, diff.head, config2.history.maxCommits);
   const countsLanded = Object.values(config2.sources).some((s) => s.dailyCap !== void 0 || s.trackRecord !== void 0);
-  const baseHistory = opts.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, opts.base, config2) : history);
-  const source = classifyPr(commits, opts.account, agentPatterns(config2));
-  const { model, kind } = opts.model ? { model: opts.model, kind: opts.modelKind ?? "calibrated" } : await loadModel(repoDir, config2);
+  const baseHistory = options.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, options.base, config2) : history);
+  const source = classifyPr(pullRequestCommits, options.account, agentPatterns(config2));
+  const { model, kind: modelKind } = options.model ? { model: options.model, kind: options.modelKind ?? "calibrated" } : await loadModel(repoDir, config2);
   const { score, logit: logit2, contributions } = scoreSignals(signals, model);
   const policy = decide({
     score,
@@ -33188,12 +33188,12 @@ async function scoreDiff(opts) {
     config: config2,
     model,
     history: baseHistory,
-    pr: opts.pr,
-    llmFailed: Boolean(ctx.llm?.error),
-    llm: ctx.llm?.judgement,
-    now: opts.now,
+    pr: options.pr,
+    llmFailed: Boolean(scoringContext.llm?.error),
+    llm: scoringContext.llm?.judgement,
+    now: options.now,
     source,
-    prCommits: commits.map((c) => c.sha)
+    prCommits: pullRequestCommits.map((commit) => commit.sha)
   });
   const counted = diff.files.filter((f) => !f.ignored);
   const result = {
@@ -33203,7 +33203,7 @@ async function scoreDiff(opts) {
     contributions,
     unknowns: signals.filter((s) => s.status === "unknown").map((s) => s.id),
     policy,
-    llm: ctx.llm?.judgement,
+    llm: scoringContext.llm?.judgement,
     source,
     diff: {
       base: diff.base,
@@ -33212,22 +33212,22 @@ async function scoreDiff(opts) {
       added: counted.reduce((n, f) => n + f.added, 0),
       deleted: counted.reduce((n, f) => n + f.deleted, 0)
     },
-    model: kind,
+    model: modelKind,
     version: VERSION
   };
-  if (opts.brief) {
+  if (options.brief) {
     try {
-      result.brief = await buildBrief(result, ctx, {
-        maxTokens: opts.brief.maxTokens ?? config2.brief.maxTokens,
-        llm: opts.brief.llm,
-        firstHead: opts.brief.firstHead,
-        firstRun: opts.brief.firstRun,
-        // The same provider as the judge; --no-llm (opts.llm === null) disables both.
+      result.brief = await buildBrief(result, scoringContext, {
+        maxTokens: options.brief.maxTokens ?? config2.brief.maxTokens,
+        llm: options.brief.llm,
+        firstHead: options.brief.firstHead,
+        firstRun: options.brief.firstRun,
+        // The same provider as the judge; --no-llm (options.llm === null) disables both.
         verifier: config2.llm.verify.enabled ? llm : void 0
       });
     } catch (e) {
-      if (!opts.brief.onError) throw e;
-      opts.brief.onError(`could not build the review brief: ${e instanceof Error ? e.message : String(e)}`);
+      if (!options.brief.onError) throw e;
+      options.brief.onError(`could not build the review brief: ${e instanceof Error ? e.message : String(e)}`);
     }
   }
   return result;
@@ -33264,7 +33264,7 @@ async function readBaseModel(repoDir, baseSha, config2, io) {
 // src/action/fork-diff.ts
 import { isUtf8 as isUtf82 } from "node:buffer";
 import { createHash as createHash5 } from "node:crypto";
-var pullFileSchema = external_exports.object({
+var pullRequestFileSchema = external_exports.object({
   filename: external_exports.string().min(1).max(4096),
   previous_filename: external_exports.string().min(1).max(4096).optional(),
   status: external_exports.string().max(32),
@@ -33283,12 +33283,12 @@ var STATUS_BY_API_STATUS = /* @__PURE__ */ new Map([
   ["renamed", "renamed"]
 ]);
 var PARSER_HEADER = "diff --git a/file b/file\n--- a/file\n+++ b/file\n";
-function parsePullFiles(listedFiles) {
-  const parsed = external_exports.array(pullFileSchema).safeParse(listedFiles);
+function parsePullRequestFiles(listedFiles) {
+  const parsed = external_exports.array(pullRequestFileSchema).safeParse(listedFiles);
   return parsed.success ? { files: parsed.data } : { issues: describeSchemaIssues(parsed.error.issues) };
 }
-function countPatchBytes(pullFiles) {
-  return pullFiles.reduce((total, pullFile) => total + Buffer.byteLength(pullFile.patch ?? "", "utf8"), 0);
+function countPatchBytes(pullRequestFiles) {
+  return pullRequestFiles.reduce((total, pullFile) => total + Buffer.byteLength(pullFile.patch ?? "", "utf8"), 0);
 }
 function toChangedFile(pullFile, ignorePatterns) {
   const status = STATUS_BY_API_STATUS.get(pullFile.status) ?? "modified";
@@ -33317,49 +33317,49 @@ function toChangedFile(pullFile, ignorePatterns) {
   if (parsedFile.submodule) changedFile.submodule = true;
   return changedFile;
 }
-function buildChangedFiles(pullFiles, ignorePatterns) {
-  return pullFiles.map((pullFile) => toChangedFile(pullFile, ignorePatterns));
+function buildChangedFiles(pullRequestFiles, ignorePatterns) {
+  return pullRequestFiles.map((pullFile) => toChangedFile(pullFile, ignorePatterns));
 }
 function isBlobContent(content, expectedSha) {
   if (expectedSha.length !== 40) return true;
   return createHash5("sha1").update(`blob ${content.length}\0`).update(content).digest("hex") === expectedSha;
 }
-async function readHeadContents(changedFiles2, pullFiles, readBlob, limits) {
-  const unavailable = (kind, detail) => ({ readHead: async () => void 0, gap: { kind, detail } });
+async function readHeadContents(changedFiles2, pullRequestFiles, readBlobContent, limits) {
+  const withoutHeadContents = (kind, detail) => ({ readHead: async () => void 0, gap: { kind, detail } });
   const wantedFiles = changedFiles2.flatMap((changedFile, index) => {
     const isWanted = changedFile.status !== "deleted" && !changedFile.binary && !changedFile.ignored && isCodeFamily(languageFamily(changedFile.path));
-    return isWanted ? [{ changedFile, sha: pullFiles[index]?.sha ?? void 0 }] : [];
+    return isWanted ? [{ changedFile, sha: pullRequestFiles[index]?.sha ?? void 0 }] : [];
   });
   if (wantedFiles.length > limits.maxHeadFiles) {
-    return unavailable("cap", `${wantedFiles.length} changed code files, more than the ${limits.maxHeadFiles} that are read`);
+    return withoutHeadContents("cap", `${wantedFiles.length} changed code files, more than the ${limits.maxHeadFiles} that are read`);
   }
   const textByPath = /* @__PURE__ */ new Map();
   let totalBytes = 0;
   for (const { changedFile, sha } of wantedFiles) {
-    if (sha === void 0) return unavailable("failure", "GitHub listed a changed code file without a blob hash");
+    if (sha === void 0) return withoutHeadContents("failure", "GitHub listed a changed code file without a blob hash");
     let content;
     try {
-      content = await readBlob(sha, limits.maxHeadFileBytes);
+      content = await readBlobContent(sha, limits.maxHeadFileBytes);
     } catch (error62) {
-      return unavailable("failure", `downloading blob ${sha} failed: ${error62 instanceof Error ? error62.message : String(error62)}`);
+      return withoutHeadContents("failure", `downloading blob ${sha} failed: ${error62 instanceof Error ? error62.message : String(error62)}`);
     }
-    if (content === void 0) return unavailable("cap", `a changed code file is larger than ${limits.maxHeadFileBytes} bytes`);
-    if (!isBlobContent(content, sha)) return unavailable("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
+    if (content === void 0) return withoutHeadContents("cap", `a changed code file is larger than ${limits.maxHeadFileBytes} bytes`);
+    if (!isBlobContent(content, sha)) return withoutHeadContents("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
     totalBytes += content.length;
-    if (totalBytes > limits.maxHeadTotalBytes) return unavailable("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
-    if (content.includes(0)) return unavailable("failure", `the content of blob ${sha} at the head commit holds a NUL`);
-    if (!isUtf82(content)) return unavailable("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
+    if (totalBytes > limits.maxHeadTotalBytes) return withoutHeadContents("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
+    if (content.includes(0)) return withoutHeadContents("failure", `the content of blob ${sha} at the head commit holds a NUL`);
+    if (!isUtf82(content)) return withoutHeadContents("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
     textByPath.set(changedFile.path, content.toString("utf8"));
   }
   return { readHead: async (path) => textByPath.get(path) };
 }
 
 // src/action/fork-score.ts
-var FORK_SCORE_CLIENT_METHODS = ["listOpenPullsByHead", "readPull", "compareCommits", "listPullFiles", "readBlob"];
+var FORK_SCORE_CLIENT_METHODS = ["listOpenPullRequestsByHeadBranch", "readPullRequest", "compareBaseAndHeadCommits", "listPullRequestFiles", "readBlobContent"];
 function restrictToForkScore(client) {
   return restrictClient(client, FORK_SCORE_CLIENT_METHODS);
 }
-var pullSummarySchema = external_exports.object({
+var pullRequestSummarySchema = external_exports.object({
   head: external_exports.object({ sha: commitShaSchema }),
   changed_files: external_exports.number().int().min(0),
   commits: external_exports.number().int().min(0),
@@ -33368,8 +33368,8 @@ var pullSummarySchema = external_exports.object({
   updated_at: external_exports.string().min(1).max(64)
 });
 var comparisonSchema = external_exports.object({ merge_base_commit: external_exports.object({ sha: commitShaSchema }) });
-async function readPullSummary(client, pullNumber) {
-  const summary = pullSummarySchema.safeParse(await client.readPull(pullNumber));
+async function readPullRequestSummary(client, pullNumber) {
+  const summary = pullRequestSummarySchema.safeParse(await client.readPullRequest(pullNumber));
   if (!summary.success) {
     throw new OpendrsError(`GitHub returned a pull request without a usable head.sha, changed_files, commits or updated_at (${describeSchemaIssues(summary.error.issues)})`, "io");
   }
@@ -33377,13 +33377,13 @@ async function readPullSummary(client, pullNumber) {
 }
 async function listFilesAtHead(client, pullRequest, limits, io) {
   for (let attempt2 = 1; attempt2 <= limits.maxListingAttempts; attempt2++) {
-    const before = await readPullSummary(client, pullRequest.number);
-    if (before.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
-    if (before.changed_files > limits.maxChangedFiles) return { kind: "too-large", reason: "files", limit: limits.maxChangedFiles };
-    const listedFiles = await client.listPullFiles(pullRequest.number, limits.maxChangedFiles);
-    const after = await readPullSummary(client, pullRequest.number);
-    if (after.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
-    if (after.updated_at === before.updated_at) return { kind: "listed", listedFiles, summary: after };
+    const summaryBeforeListing = await readPullRequestSummary(client, pullRequest.number);
+    if (summaryBeforeListing.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
+    if (summaryBeforeListing.changed_files > limits.maxChangedFiles) return { kind: "too-large", reason: "files", limit: limits.maxChangedFiles };
+    const listedFiles = await client.listPullRequestFiles(pullRequest.number, limits.maxChangedFiles);
+    const summaryAfterListing = await readPullRequestSummary(client, pullRequest.number);
+    if (summaryAfterListing.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
+    if (summaryAfterListing.updated_at === summaryBeforeListing.updated_at) return { kind: "listed", listedFiles, summary: summaryAfterListing };
     io.info("The pull request changed while opendrs listed its files: listing them again.");
   }
   throw new OpendrsError(
@@ -33391,8 +33391,8 @@ async function listFilesAtHead(client, pullRequest, limits, io) {
     "io"
   );
 }
-async function scoreForkPullRequest(deps, pullRequest, limits) {
-  const { client, io, repoDir } = deps;
+async function scoreForkPullRequest(dependencies, pullRequest, limits) {
+  const { client, io, repoDir } = dependencies;
   const tooLarge = (reason, limit) => buildTooLargeResult(pullRequest.headSha, reason, limit, VERSION);
   const listing = await listFilesAtHead(client, pullRequest, limits, io);
   if (listing.kind === "head-moved") {
@@ -33402,33 +33402,33 @@ async function scoreForkPullRequest(deps, pullRequest, limits) {
   if (listing.kind === "too-large") return tooLarge(listing.reason, listing.limit);
   const { listedFiles, summary } = listing;
   if (listedFiles.length > limits.maxChangedFiles) return tooLarge("files", limits.maxChangedFiles);
-  const parsedListing = parsePullFiles(listedFiles);
+  const parsedListing = parsePullRequestFiles(listedFiles);
   if ("issues" in parsedListing) {
     io.warning(`GitHub listed a changed file that opendrs cannot read (${parsedListing.issues}): the pull request is not scored.`);
     return tooLarge("unreadable", 0);
   }
-  const pullFiles = parsedListing.files;
-  if (summary.changed_files !== pullFiles.length) return tooLarge("incomplete", 0);
+  const pullRequestFiles = parsedListing.files;
+  if (summary.changed_files !== pullRequestFiles.length) return tooLarge("incomplete", 0);
   if (summary.commits > limits.maxCommits) return tooLarge("commits", limits.maxCommits);
-  if (countPatchBytes(pullFiles) > limits.maxPatchBytes) return tooLarge("bytes", limits.maxPatchBytes);
+  if (countPatchBytes(pullRequestFiles) > limits.maxPatchBytes) return tooLarge("bytes", limits.maxPatchBytes);
   await requireCommit(repoDir, pullRequest.baseSha, "Base");
   const { config: config2, model } = await io.group("Configuration", async () => {
     const { config: baseConfig, hasConfigFile } = await readBaseConfig(repoDir, pullRequest.baseSha);
     logBaseConfigSource(io, pullRequest.baseSha, hasConfigFile);
     return { config: baseConfig, model: await readBaseModel(repoDir, pullRequest.baseSha, baseConfig, io) };
   });
-  const comparison = comparisonSchema.safeParse(await client.compareCommits(pullRequest.baseSha, pullRequest.headSha));
+  const comparison = comparisonSchema.safeParse(await client.compareBaseAndHeadCommits(pullRequest.baseSha, pullRequest.headSha));
   if (!comparison.success) {
     throw new OpendrsError(`GitHub's comparison of the base and head commits has no usable merge_base_commit (${describeSchemaIssues(comparison.error.issues)})`, "io");
   }
   const mergeBaseSha = comparison.data.merge_base_commit.sha;
   await requireCommit(repoDir, mergeBaseSha, "Merge-base");
-  const changedFiles2 = buildChangedFiles(pullFiles, config2.paths.ignore);
+  const changedFiles2 = buildChangedFiles(pullRequestFiles, config2.paths.ignore);
   const unreadableFileCount = changedFiles2.filter((changedFile) => changedFile.hasUnreadablePatch && !changedFile.ignored).length;
   if (unreadableFileCount > 0) {
     io.info(`GitHub sent no readable patch for ${unreadableFileCount} changed file(s): their lines count by GitHub's numbers, and the signals that read changed lines count as unknown.`);
   }
-  const headContents = await readHeadContents(changedFiles2, pullFiles, client.readBlob, limits);
+  const headContents = await readHeadContents(changedFiles2, pullRequestFiles, client.readBlobContent, limits);
   if (headContents.gap?.kind === "failure") io.warning(`Changed code files could not be read at the head commit (${headContents.gap.detail}): complexity.touched counts as unknown.`);
   if (headContents.gap?.kind === "cap") io.info(`Changed code files were not read at the head commit (${headContents.gap.detail}): complexity.touched counts as unknown.`);
   try {
@@ -33444,7 +33444,7 @@ async function scoreForkPullRequest(deps, pullRequest, limits) {
       diff: { base: mergeBaseSha, head: pullRequest.headSha, files: changedFiles2 },
       readHead: headContents.readHead,
       // The commits are not fetched, so the source is classified from the account type alone.
-      prCommits: [],
+      pullRequestCommits: [],
       // No LLM judge and no brief: this job holds no secret and sends the fork's code nowhere.
       llm: null,
       // Nothing here ties the commits' author to the account, so expertise counts as unknown.
@@ -33457,15 +33457,15 @@ async function scoreForkPullRequest(deps, pullRequest, limits) {
     throw error62;
   }
 }
-async function runScoreOnly(deps, limits = FORK_SCORE_LIMITS) {
-  const { io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
-  const pullRequest = await findForkPullRequest(deps.client, completedRun, (message) => io.warning(message));
+async function runScoreOnly(dependencies, limits = FORK_SCORE_LIMITS) {
+  const { io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
+  const pullRequest = await findForkPullRequest(dependencies.client, completedRun, (message) => io.warning(message));
   if ("skipReason" in pullRequest) {
     io.notice(`opendrs did not score anything: ${pullRequest.skipReason}.`);
     return void 0;
   }
-  const result = await io.group("Score", () => scoreForkPullRequest(deps, pullRequest, limits));
+  const result = await io.group("Score", () => scoreForkPullRequest(dependencies, pullRequest, limits));
   if (result === void 0) return void 0;
   io.info(result.status === "scored" ? `score ${result.score.toFixed(3)}, tier ${result.tier}` : `not scored: ${result.reason}`);
   io.setOutput("result", serializeForkResult(result));
@@ -34272,9 +34272,9 @@ async function runFromEnv(env, write) {
       await runForkFailure({ event, repository: `${owner}/${repo}`, shouldComment: inputs.comment, shouldLabel: inputs.labels, client: restrictToForkComment(client), io });
       return 0;
     }
-    const deps = { repoDir, event, inputs, client, io, env };
-    if (SWEEP_EVENTS.includes(env.GITHUB_EVENT_NAME ?? "")) await runSweep({ ...deps, owner, repo });
-    else await runAction(deps);
+    const dependencies = { repoDir, event, inputs, client, io, env };
+    if (SWEEP_EVENTS.includes(env.GITHUB_EVENT_NAME ?? "")) await runSweep({ ...dependencies, owner, repo });
+    else await runAction(dependencies);
     return 0;
   } catch (e) {
     const err = e instanceof Error ? e : new Error(String(e));

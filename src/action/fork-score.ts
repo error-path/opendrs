@@ -8,7 +8,7 @@ import { buildForkResult, buildTooLargeResult, serializeForkResult, type ForkRes
 import { VERSION } from "../version.js";
 import { logBaseConfigSource, readBaseConfig, readBaseModel, requireCommit } from "./base-settings.js";
 import { restrictClient } from "./fork-client.js";
-import { buildChangedFiles, countPatchBytes, parsePullFiles, readHeadContents } from "./fork-diff.js";
+import { buildChangedFiles, countPatchBytes, parsePullRequestFiles, readHeadContents } from "./fork-diff.js";
 import { findForkPullRequest, readCompletedWorkflowRun, type ForkPullRequest } from "./fork-event.js";
 import { FORK_SCORE_LIMITS, type ForkScoreLimits } from "./fork-limits.js";
 import type { GitHubClient } from "./github.js";
@@ -17,7 +17,7 @@ import type { WorkflowIO } from "./workflow.js";
 export { FORK_SCORE_LIMITS } from "./fork-limits.js";
 
 /** The only GitHub calls score-only mode can make. All of them read. */
-export const FORK_SCORE_CLIENT_METHODS = ["listOpenPullsByHead", "readPull", "compareCommits", "listPullFiles", "readBlob"] as const;
+export const FORK_SCORE_CLIENT_METHODS = ["listOpenPullRequestsByHeadBranch", "readPullRequest", "compareBaseAndHeadCommits", "listPullRequestFiles", "readBlobContent"] as const;
 
 /** A GitHub client that can only read what score-only mode needs. */
 export type ForkScoreClient = Readonly<Pick<GitHubClient, (typeof FORK_SCORE_CLIENT_METHODS)[number]>>;
@@ -33,7 +33,7 @@ export function restrictToForkScore(client: GitHubClient): ForkScoreClient {
 }
 
 /** What score-only mode needs from the Action's environment. */
-export interface ScoreOnlyDeps {
+export interface ScoreOnlyDependencies {
   /** The checkout of the base repository. The fork's commits are never in it. */
   repoDir: string;
   /** The parsed `workflow_run` event payload. */
@@ -45,7 +45,7 @@ export interface ScoreOnlyDeps {
 }
 
 /** The fields of `GET /pulls/{number}` read around the file listing. */
-const pullSummarySchema = z.object({
+const pullRequestSummarySchema = z.object({
   head: z.object({ sha: commitShaSchema }),
   changed_files: z.number().int().min(0),
   commits: z.number().int().min(0),
@@ -53,7 +53,7 @@ const pullSummarySchema = z.object({
   // means the listing is of one state of the pull request.
   updated_at: z.string().min(1).max(64),
 });
-type PullSummary = z.infer<typeof pullSummarySchema>;
+type PullRequestSummary = z.infer<typeof pullRequestSummarySchema>;
 
 const comparisonSchema = z.object({ merge_base_commit: z.object({ sha: commitShaSchema }) });
 
@@ -65,8 +65,8 @@ const comparisonSchema = z.object({ merge_base_commit: z.object({ sha: commitSha
  * @returns The validated fields.
  * @throws {@link OpendrsError} If GitHub's answer lacks any of them. The message names fields only.
  */
-async function readPullSummary(client: ForkScoreClient, pullNumber: number): Promise<PullSummary> {
-  const summary = pullSummarySchema.safeParse(await client.readPull(pullNumber));
+async function readPullRequestSummary(client: ForkScoreClient, pullNumber: number): Promise<PullRequestSummary> {
+  const summary = pullRequestSummarySchema.safeParse(await client.readPullRequest(pullNumber));
   if (!summary.success) {
     throw new OpendrsError(`GitHub returned a pull request without a usable head.sha, changed_files, commits or updated_at (${describeSchemaIssues(summary.error.issues)})`, "io");
   }
@@ -75,7 +75,7 @@ async function readPullSummary(client: ForkScoreClient, pullNumber: number): Pro
 
 /** The outcome of listing a pull request's files at one state of it. */
 type FileListing =
-  | { kind: "listed"; listedFiles: unknown[]; summary: PullSummary }
+  | { kind: "listed"; listedFiles: unknown[]; summary: PullRequestSummary }
   | { kind: "head-moved" }
   | { kind: "too-large"; reason: TooLargeReason; limit: number };
 
@@ -97,13 +97,13 @@ type FileListing =
  */
 async function listFilesAtHead(client: ForkScoreClient, pullRequest: ForkPullRequest, limits: ForkScoreLimits, io: WorkflowIO): Promise<FileListing> {
   for (let attempt = 1; attempt <= limits.maxListingAttempts; attempt++) {
-    const before = await readPullSummary(client, pullRequest.number);
-    if (before.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
-    if (before.changed_files > limits.maxChangedFiles) return { kind: "too-large", reason: "files", limit: limits.maxChangedFiles };
-    const listedFiles = await client.listPullFiles(pullRequest.number, limits.maxChangedFiles);
-    const after = await readPullSummary(client, pullRequest.number);
-    if (after.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
-    if (after.updated_at === before.updated_at) return { kind: "listed", listedFiles, summary: after };
+    const summaryBeforeListing = await readPullRequestSummary(client, pullRequest.number);
+    if (summaryBeforeListing.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
+    if (summaryBeforeListing.changed_files > limits.maxChangedFiles) return { kind: "too-large", reason: "files", limit: limits.maxChangedFiles };
+    const listedFiles = await client.listPullRequestFiles(pullRequest.number, limits.maxChangedFiles);
+    const summaryAfterListing = await readPullRequestSummary(client, pullRequest.number);
+    if (summaryAfterListing.head.sha !== pullRequest.headSha) return { kind: "head-moved" };
+    if (summaryAfterListing.updated_at === summaryBeforeListing.updated_at) return { kind: "listed", listedFiles, summary: summaryAfterListing };
     io.info("The pull request changed while opendrs listed its files: listing them again.");
   }
   throw new OpendrsError(
@@ -115,13 +115,13 @@ async function listFilesAtHead(client: ForkScoreClient, pullRequest: ForkPullReq
 /**
  * Scores one fork pull request from API data, or reports which limit it is over.
  *
- * @param deps - The checkout, client and log.
+ * @param dependencies - The checkout, client and log.
  * @param pullRequest - The pull request found for the completed run.
  * @param limits - The caps on what is read.
  * @returns The result, or undefined when the pull request's head moved while it was being read.
  */
-async function scoreForkPullRequest(deps: ScoreOnlyDeps, pullRequest: ForkPullRequest, limits: ForkScoreLimits): Promise<ForkResult | undefined> {
-  const { client, io, repoDir } = deps;
+async function scoreForkPullRequest(dependencies: ScoreOnlyDependencies, pullRequest: ForkPullRequest, limits: ForkScoreLimits): Promise<ForkResult | undefined> {
+  const { client, io, repoDir } = dependencies;
   const tooLarge = (reason: TooLargeReason, limit: number) => buildTooLargeResult(pullRequest.headSha, reason, limit, VERSION);
 
   const listing = await listFilesAtHead(client, pullRequest, limits, io);
@@ -132,15 +132,15 @@ async function scoreForkPullRequest(deps: ScoreOnlyDeps, pullRequest: ForkPullRe
   if (listing.kind === "too-large") return tooLarge(listing.reason, listing.limit);
   const { listedFiles, summary } = listing;
   if (listedFiles.length > limits.maxChangedFiles) return tooLarge("files", limits.maxChangedFiles);
-  const parsedListing = parsePullFiles(listedFiles);
+  const parsedListing = parsePullRequestFiles(listedFiles);
   if ("issues" in parsedListing) {
     io.warning(`GitHub listed a changed file that opendrs cannot read (${parsedListing.issues}): the pull request is not scored.`);
     return tooLarge("unreadable", 0);
   }
-  const pullFiles = parsedListing.files;
-  if (summary.changed_files !== pullFiles.length) return tooLarge("incomplete", 0);
+  const pullRequestFiles = parsedListing.files;
+  if (summary.changed_files !== pullRequestFiles.length) return tooLarge("incomplete", 0);
   if (summary.commits > limits.maxCommits) return tooLarge("commits", limits.maxCommits);
-  if (countPatchBytes(pullFiles) > limits.maxPatchBytes) return tooLarge("bytes", limits.maxPatchBytes);
+  if (countPatchBytes(pullRequestFiles) > limits.maxPatchBytes) return tooLarge("bytes", limits.maxPatchBytes);
 
   await requireCommit(repoDir, pullRequest.baseSha, "Base");
   const { config, model } = await io.group("Configuration", async () => {
@@ -148,19 +148,19 @@ async function scoreForkPullRequest(deps: ScoreOnlyDeps, pullRequest: ForkPullRe
     logBaseConfigSource(io, pullRequest.baseSha, hasConfigFile);
     return { config: baseConfig, model: await readBaseModel(repoDir, pullRequest.baseSha, baseConfig, io) };
   });
-  const comparison = comparisonSchema.safeParse(await client.compareCommits(pullRequest.baseSha, pullRequest.headSha));
+  const comparison = comparisonSchema.safeParse(await client.compareBaseAndHeadCommits(pullRequest.baseSha, pullRequest.headSha));
   if (!comparison.success) {
     throw new OpendrsError(`GitHub's comparison of the base and head commits has no usable merge_base_commit (${describeSchemaIssues(comparison.error.issues)})`, "io");
   }
   const mergeBaseSha = comparison.data.merge_base_commit.sha;
   await requireCommit(repoDir, mergeBaseSha, "Merge-base");
 
-  const changedFiles = buildChangedFiles(pullFiles, config.paths.ignore);
+  const changedFiles = buildChangedFiles(pullRequestFiles, config.paths.ignore);
   const unreadableFileCount = changedFiles.filter((changedFile) => changedFile.hasUnreadablePatch && !changedFile.ignored).length;
   if (unreadableFileCount > 0) {
     io.info(`GitHub sent no readable patch for ${unreadableFileCount} changed file(s): their lines count by GitHub's numbers, and the signals that read changed lines count as unknown.`);
   }
-  const headContents = await readHeadContents(changedFiles, pullFiles, client.readBlob, limits);
+  const headContents = await readHeadContents(changedFiles, pullRequestFiles, client.readBlobContent, limits);
   if (headContents.gap?.kind === "failure") io.warning(`Changed code files could not be read at the head commit (${headContents.gap.detail}): complexity.touched counts as unknown.`);
   if (headContents.gap?.kind === "cap") io.info(`Changed code files were not read at the head commit (${headContents.gap.detail}): complexity.touched counts as unknown.`);
 
@@ -177,7 +177,7 @@ async function scoreForkPullRequest(deps: ScoreOnlyDeps, pullRequest: ForkPullRe
       diff: { base: mergeBaseSha, head: pullRequest.headSha, files: changedFiles },
       readHead: headContents.readHead,
       // The commits are not fetched, so the source is classified from the account type alone.
-      prCommits: [],
+      pullRequestCommits: [],
       // No LLM judge and no brief: this job holds no secret and sends the fork's code nowhere.
       llm: null,
       // Nothing here ties the commits' author to the account, so expertise counts as unknown.
@@ -201,20 +201,20 @@ async function scoreForkPullRequest(deps: ScoreOnlyDeps, pullRequest: ForkPullRe
  * `result` output to a compact JSON result for the commenting job, and leaves it unset when there
  * is no fork pull request to score.
  *
- * @param deps - The base checkout, event payload, read-only client and log.
+ * @param dependencies - The base checkout, event payload, read-only client and log.
  * @param limits - The caps on what is read; the defaults unless a test passes its own.
  * @returns The result that was written to the `result` output, or undefined when there was nothing to score.
  * @throws {@link OpendrsError} If the event is not a `workflow_run`, the base history needed is not in the checkout, or GitHub's answers are not usable.
  */
-export async function runScoreOnly(deps: ScoreOnlyDeps, limits: ForkScoreLimits = FORK_SCORE_LIMITS): Promise<ForkResult | undefined> {
-  const { io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
-  const pullRequest = await findForkPullRequest(deps.client, completedRun, (message) => io.warning(message));
+export async function runScoreOnly(dependencies: ScoreOnlyDependencies, limits: ForkScoreLimits = FORK_SCORE_LIMITS): Promise<ForkResult | undefined> {
+  const { io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
+  const pullRequest = await findForkPullRequest(dependencies.client, completedRun, (message) => io.warning(message));
   if ("skipReason" in pullRequest) {
     io.notice(`opendrs did not score anything: ${pullRequest.skipReason}.`);
     return undefined;
   }
-  const result = await io.group("Score", () => scoreForkPullRequest(deps, pullRequest, limits));
+  const result = await io.group("Score", () => scoreForkPullRequest(dependencies, pullRequest, limits));
   if (result === undefined) return undefined;
 
   io.info(result.status === "scored" ? `score ${result.score.toFixed(3)}, tier ${result.tier}` : `not scored: ${result.reason}`);

@@ -21,7 +21,7 @@ describe("scoreDiff with a supplied diff", () => {
 
   it("is byte-identical without the new options: absent, or explicitly undefined", async () => {
     const withoutOptions = JSON.stringify(await scoreDiff(options));
-    const withUndefinedOptions = JSON.stringify(await scoreDiff({ ...options, diff: undefined, readHead: undefined, prCommits: undefined }));
+    const withUndefinedOptions = JSON.stringify(await scoreDiff({ ...options, diff: undefined, readHead: undefined, pullRequestCommits: undefined }));
     expect(withUndefinedOptions).toBe(withoutOptions);
     expect(JSON.stringify(await scoreDiff(options))).toBe(withoutOptions);
   });
@@ -29,8 +29,8 @@ describe("scoreDiff with a supplied diff", () => {
   it("gives a byte-identical result when handed exactly what it would have loaded from git itself", async () => {
     const fromGit = await scoreDiff(options);
     const diff = await loadDiff(repo.dir, "main", "feature", options.config);
-    const readBlob = createBlobReader(repo.dir);
-    const prCommits = repo
+    const readBlobContent = createBlobReader(repo.dir);
+    const pullRequestCommits = repo
       .git("log", "--no-merges", "--format=%H", "main..feature")
       .split("\n")
       .map((sha) => ({
@@ -39,7 +39,7 @@ describe("scoreDiff with a supplied diff", () => {
         authorEmail: repo.git("log", "-1", "--format=%ae", sha),
         message: `${repo.git("log", "-1", "--format=%B", sha)}\n`,
       }));
-    const supplied = await scoreDiff({ ...options, diff, readHead: (path) => readBlob(diff.head, path), prCommits });
+    const supplied = await scoreDiff({ ...options, diff, readHead: (path) => readBlobContent(diff.head, path), pullRequestCommits });
     expect(JSON.stringify(supplied)).toBe(JSON.stringify(fromGit));
     expect(fromGit.source.kind).toBe("agent");
   });
@@ -47,7 +47,7 @@ describe("scoreDiff with a supplied diff", () => {
   it("leaves the caller's diff as it was, even when it sets a title and description", async () => {
     const diff = await loadDiff(repo.dir, "main", "feature", options.config);
     const before = structuredClone(diff);
-    await scoreDiff({ ...options, brief: undefined, diff, title: "a title", description: "a description", prCommits: [] });
+    await scoreDiff({ ...options, brief: undefined, diff, title: "a title", description: "a description", pullRequestCommits: [] });
     expect(diff).toStrictEqual(before);
     expect(diff.title).not.toBe("a title");
   });
@@ -56,7 +56,7 @@ describe("scoreDiff with a supplied diff", () => {
     const diff = await loadDiff(repo.dir, "main", "feature", options.config);
     // As the fork scoring builds a file whose patch GitHub left out: its counts, no hunks.
     const unreadable = { ...diff, files: diff.files.map((file) => (file.path.endsWith(".ts") ? { ...file, hunks: [], hasUnreadablePatch: true as const } : file)) };
-    const result = await scoreDiff({ ...options, brief: undefined, diff: unreadable, prCommits: [] });
+    const result = await scoreDiff({ ...options, brief: undefined, diff: unreadable, pullRequestCommits: [] });
     for (const id of ["complexity.touched", "tests.missing", "tests.deleted"]) {
       expect(result.signals.find((signal) => signal.id === id)?.status).toBe("unknown");
     }
@@ -78,7 +78,7 @@ describe("scoreDiff with a supplied diff", () => {
         readPaths.push(path);
         return undefined;
       },
-      prCommits: [],
+      pullRequestCommits: [],
     });
     expect(result.diff.head).toBe("0".repeat(40));
     expect(readPaths.sort()).toEqual(["src/a.ts", "src/b.ts"]);

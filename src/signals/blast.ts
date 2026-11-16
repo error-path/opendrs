@@ -79,18 +79,18 @@ export const blastSignals: SignalProvider = async (ctx) => {
   if (coverage) notes.push(`graph covers ${coverage.files} of ${coverage.total} files`);
   const suffix = notes.length ? ` (${notes.join("; ")})` : "";
 
-  const filesWithDependents = files.filter((f) => graph.dependentsOf(basePath(f)).length > 0);
+  const filesWithDependents = files.filter((file) => graph.dependentsOf(basePath(file)).length > 0);
   const surface = filesWithDependents.flatMap(publicDeclarations);
   const surfaceFiles = new Set(surface.map((e) => e.file)).size;
   // A file with dependents whose changed lines could not be read may change any declaration.
-  const unreadable = filesWithDependents.filter((f) => f.hasUnreadablePatch).map((f) => f.path);
+  const unreadablePaths = filesWithDependents.filter((file) => file.hasUnreadablePatch).map((file) => file.path);
   const publicSurface: Signal =
-    surface.length === 0 && unreadable.length > 0
+    surface.length === 0 && unreadablePaths.length > 0
       ? {
           id: "blast.public_surface",
           value: 0,
           status: "unknown",
-          summary: `Blast radius unknown: the changed lines of ${listPaths(unreadable)}, which have dependents, could not be read${suffix}`,
+          summary: `Blast radius unknown: the changed lines of ${listPaths(unreadablePaths)}, which have dependents, could not be read${suffix}`,
           evidence: [],
         }
       : {

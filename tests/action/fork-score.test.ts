@@ -8,7 +8,7 @@ import { stringify } from "yaml";
 import { runFromEnv } from "../../src/action/env.js";
 import { isBlobContent } from "../../src/action/fork-diff.js";
 import { FORK_SCORE_CLIENT_METHODS, FORK_SCORE_LIMITS, restrictToForkScore, runScoreOnly } from "../../src/action/fork-score.js";
-import { MAX_COMMENT_PAGES, MAX_PULL_LISTING_PAGES, type ForkScoreLimits } from "../../src/action/fork-limits.js";
+import { MAX_COMMENT_PAGES, MAX_PULL_REQUEST_LISTING_PAGES, type ForkScoreLimits } from "../../src/action/fork-limits.js";
 import { OpendrsError } from "../../src/domain/types.js";
 import { FORK_COMMENT_MARKER } from "../../src/report/fork-comment.js";
 import { installFakeGitHub } from "./fake-github.js";
@@ -56,7 +56,7 @@ interface ForkApi {
   /** `GET /compare/base...head`. */
   comparison: unknown;
   /** `GET /git/blobs/{sha}`: the bytes, or undefined for 404. */
-  readBlob: (sha: string) => Buffer | undefined;
+  readBlobContent: (sha: string) => Buffer | undefined;
   /** Every request made, in order. */
   requests: Array<{ method: string; url: string }>;
   /** An HTTP error status to answer a request with instead, or undefined to serve it. */
@@ -148,7 +148,7 @@ function installForkApi(api: ForkApi): void {
     }
     if (route.startsWith(`GET ${API}/repos/o/r/compare/`)) return json(api.comparison);
     if ((match = route.match(/^GET https:\/\/api\.github\.com\/repos\/o\/r\/git\/blobs\/([0-9a-f]+)$/))) {
-      const content = api.readBlob(match[1]!);
+      const content = api.readBlobContent(match[1]!);
       if (content === undefined) return new Response(JSON.stringify({ message: "Not Found" }), { status: 404 });
       return new Response(new Uint8Array(content), { status: 200, headers: { "content-length": String(content.length) } });
     }
@@ -192,7 +192,7 @@ async function forkPullRequest(baseFiles: Record<string, string>, buildFork: (or
     summaryQueue: [],
     files,
     comparison: { merge_base_commit: { sha: baseSha } },
-    readBlob: (sha) => execFileSync("git", ["cat-file", "blob", sha], { cwd: origin.dir }),
+    readBlobContent: (sha) => execFileSync("git", ["cat-file", "blob", sha], { cwd: origin.dir }),
     requests: [],
   };
   installForkApi(api);
@@ -287,7 +287,7 @@ describe("score-only mode", () => {
     expect(result.score).toBeGreaterThan(0);
     expect(result.score).toBeLessThan(1);
     expect(result.counts).toMatchObject({ files: 1, added: 3, deleted: 1 });
-    expect(Object.keys(result).sort()).toEqual(["counts", "head", "model", "opendrs", "score", "signals", "status", "tier", "v"]);
+    expect(Object.keys(result).sort()).toEqual(["counts", "head", "model", "opendrs", "schemaVersion", "score", "signals", "status", "tier"]);
     expect(run.summary).toContain("fork pull request");
     // The branch name a fork chose goes to GitHub URL-encoded, and nowhere else.
     expect(fixture.api.requests[0]!.url).toBe(`${API}/repos/o/r/pulls?state=open&head=${encodeURIComponent(`mallory:${HOSTILE_BRANCH}`)}&per_page=100`);
@@ -302,7 +302,7 @@ describe("score-only mode", () => {
     );
     const fromApi = expectSafeResult(await runScoreJob(fixture), fixture);
     const fromGit = buildForkResult(
-      await scoreDiff({ repoDir: fixture.origin.dir, base: fixture.baseSha, head: fixture.headSha, config: defaultConfig(), llm: null, authorVerified: false, prCommits: [], account: { login: "mallory", type: "User" } }),
+      await scoreDiff({ repoDir: fixture.origin.dir, base: fixture.baseSha, head: fixture.headSha, config: defaultConfig(), llm: null, authorVerified: false, pullRequestCommits: [], account: { login: "mallory", type: "User" } }),
     );
     expect(fromApi).toStrictEqual(fromGit);
   });
@@ -333,7 +333,7 @@ describe("score-only mode", () => {
   it("can only read: its client has no method that writes, and the Action hands it nothing else", () => {
     const client = restrictToForkScore(new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" }));
     expect(Object.keys(client).sort()).toEqual([...FORK_SCORE_CLIENT_METHODS].sort());
-    expect([...FORK_SCORE_CLIENT_METHODS].sort()).toEqual(["compareCommits", "listOpenPullsByHead", "listPullFiles", "readBlob", "readPull"]);
+    expect([...FORK_SCORE_CLIENT_METHODS].sort()).toEqual(["compareBaseAndHeadCommits", "listOpenPullRequestsByHeadBranch", "listPullRequestFiles", "readBlobContent", "readPullRequest"]);
     for (const method of ["approve", "createComment", "updateComment", "addLabels", "removeLabel", "graphql", "enableAutoMerge", "enqueue", "dismissReview"]) {
       expect(client).not.toHaveProperty(method);
     }
@@ -411,7 +411,7 @@ describe("score-only mode limits", () => {
       maxHeadTotalBytes: 8_000_000,
       maxListingAttempts: 3,
     });
-    expect(MAX_PULL_LISTING_PAGES).toBe(3);
+    expect(MAX_PULL_REQUEST_LISTING_PAGES).toBe(3);
     expect(MAX_COMMENT_PAGES).toBe(10);
     // GitHub's files endpoint stops at 3000 files; the cap has to be below it to notice.
     expect(FORK_SCORE_LIMITS.maxChangedFiles).toBeLessThan(3000);
@@ -516,10 +516,10 @@ describe("score-only mode limits", () => {
     it("leaves complexity.touched unknown when a download fails or does not match its hash", async () => {
       const fixture = await forkPullRequest({}, threeCodeFiles);
       const complete = await scoreWithLimits(fixture);
-      const readRealBlob = fixture.api.readBlob;
-      fixture.api.readBlob = () => undefined;
+      const readRealBlob = fixture.api.readBlobContent;
+      fixture.api.readBlobContent = () => undefined;
       expect(unknownCount(await scoreWithLimits(fixture))).toBe(unknownCount(complete) + 1);
-      fixture.api.readBlob = (sha) => Buffer.concat([readRealBlob(sha)!, Buffer.from("\nif (injected) {}\n")]);
+      fixture.api.readBlobContent = (sha) => Buffer.concat([readRealBlob(sha)!, Buffer.from("\nif (injected) {}\n")]);
       expect(unknownCount(await scoreWithLimits(fixture))).toBe(unknownCount(complete) + 1);
     });
 
@@ -535,7 +535,7 @@ describe("score-only mode limits", () => {
         });
         return new Response(endless, { status: 200 });
       });
-      expect(await client.readBlob("1".repeat(40), 5000)).toBeUndefined();
+      expect(await client.readBlobContent("1".repeat(40), 5000)).toBeUndefined();
       expect(pulledChunks).toBeLessThan(20);
     });
   });
@@ -566,7 +566,7 @@ describe("score-only mode against hostile pull requests", () => {
     const result = expectSafeResult(await runScoreJob(fixture), fixture);
     // Counted as a changed file with no readable lines, exactly as the git path counts a binary.
     expect(result).toMatchObject({ status: "scored", counts: { files: 1, added: 0, deleted: 0 } });
-    const fromGit = await scoreDiff({ repoDir: fixture.origin.dir, base: fixture.baseSha, head: fixture.headSha, config: defaultConfig(), llm: null, authorVerified: false, prCommits: [], account: { login: "mallory", type: "User" } });
+    const fromGit = await scoreDiff({ repoDir: fixture.origin.dir, base: fixture.baseSha, head: fixture.headSha, config: defaultConfig(), llm: null, authorVerified: false, pullRequestCommits: [], account: { login: "mallory", type: "User" } });
     expect(result).toStrictEqual(buildForkResult(fromGit));
     expect(fixture.api.requests.filter((request) => request.url.includes("/git/blobs/"))).toEqual([]);
   });
@@ -701,7 +701,7 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     const file = fixture.api.files[0]!;
     const invalidUtf8 = Buffer.concat([Buffer.from("export const a = 2; // "), Buffer.from([0xff]), Buffer.from("\nif (a && b) console.log(a);\n")]);
     file.sha = execFileSync("git", ["hash-object", "--stdin"], { input: invalidUtf8, encoding: "utf8" }).trim();
-    fixture.api.readBlob = () => invalidUtf8;
+    fixture.api.readBlobContent = () => invalidUtf8;
     fixture.api.requests.length = 0;
     const run = await runScoreJob(fixture);
     const result = expectSafeResult(run, fixture);
@@ -719,7 +719,7 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     const file = fixture.api.files[0]!;
     const withLateNul = Buffer.concat([Buffer.from(`export const a = 2;\n${"// padding\n".repeat(900)}`), Buffer.from([0]), Buffer.from("\n")]);
     file.sha = execFileSync("git", ["hash-object", "--stdin"], { input: withLateNul, encoding: "utf8" }).trim();
-    fixture.api.readBlob = () => withLateNul;
+    fixture.api.readBlobContent = () => withLateNul;
     fixture.api.requests.length = 0;
     const run = await runScoreJob(fixture);
     const result = expectSafeResult(run, fixture);
@@ -798,16 +798,16 @@ describe("score-only mode ties the file listing to the run's head commit", () =>
 describe("score-only mode logs why head contents are missing", () => {
   it("warns when a download fails, its hash does not match, or GitHub lists no blob hash", async () => {
     const fixture = await forkPullRequest({}, changeOneFile);
-    const readRealBlob = fixture.api.readBlob;
-    fixture.api.readBlob = () => undefined;
+    const readRealBlob = fixture.api.readBlobContent;
+    fixture.api.readBlobContent = () => undefined;
     const failed = await runScoreJob(fixture);
     expect(failed.exitCode).toBe(0);
     expect(failed.log).toMatch(/::warning::Changed code files could not be read at the head commit \(downloading blob [0-9a-f]{40} failed: GitHub GET \/repos\/o\/r\/git\/blobs\/[0-9a-f]{40} failed: 404/);
 
-    fixture.api.readBlob = (sha) => Buffer.concat([readRealBlob(sha)!, Buffer.from("\n")]);
+    fixture.api.readBlobContent = (sha) => Buffer.concat([readRealBlob(sha)!, Buffer.from("\n")]);
     expect((await runScoreJob(fixture)).log).toMatch(/::warning::.*does not match that hash/);
 
-    fixture.api.readBlob = readRealBlob;
+    fixture.api.readBlobContent = readRealBlob;
     const complete = parseForkResult((await runScoreJob(fixture)).resultText);
     fixture.api.files[0]!.sha = null;
     const withoutSha = await runScoreJob(fixture);

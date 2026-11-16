@@ -9,7 +9,7 @@ const BRANCH = /\b(if|elif|elsif|for|foreach|while|until|unless|case|when|catch|
 export const complexitySignals: SignalProvider = async (ctx) => {
   const id = "complexity.touched";
   const files = countedFiles(ctx).filter((f) => !f.binary && isCodeFamily(languageFamily(f.path)));
-  const unreadableFiles = files.filter((f) => f.hasUnreadablePatch);
+  const unreadableFiles = files.filter((file) => file.hasUnreadablePatch);
   if (unreadableFiles.length > 0) return [unknown(id, `the changed lines of ${plural(unreadableFiles.length, "code file")} could not be read`)];
   if (files.length === 0) return [{ id, value: 0, status: "derived", summary: "no code files changed", evidence: [] }];
 

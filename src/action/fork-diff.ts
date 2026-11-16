@@ -16,7 +16,7 @@ import type { ForkScoreLimits } from "./fork-limits.js";
 // smaller. It is counted as binary, or it stops the scoring, or it leaves a signal unknown.
 
 /** One entry of `GET /pulls/{number}/files`; only the fields the diff needs. */
-const pullFileSchema = z.object({
+const pullRequestFileSchema = z.object({
   filename: z.string().min(1).max(4096),
   previous_filename: z.string().min(1).max(4096).optional(),
   status: z.string().max(32),
@@ -28,7 +28,7 @@ const pullFileSchema = z.object({
 });
 
 /** A changed file as GitHub's API lists it. */
-export type PullFile = z.infer<typeof pullFileSchema>;
+export type PullRequestFile = z.infer<typeof pullRequestFileSchema>;
 
 /** How GitHub's file statuses map to opendrs's; `copied` is a new file, `changed` a modified one. */
 const STATUS_BY_API_STATUS = new Map<string, FileStatus>([
@@ -49,19 +49,19 @@ const PARSER_HEADER = "diff --git a/file b/file\n--- a/file\n+++ b/file\n";
  * @param listedFiles - The entries of `GET /pulls/{number}/files`, as received.
  * @returns The files, or a description of what is wrong with the listing (field names and codes only) when any entry is not what GitHub documents.
  */
-export function parsePullFiles(listedFiles: readonly unknown[]): { files: PullFile[] } | { issues: string } {
-  const parsed = z.array(pullFileSchema).safeParse(listedFiles);
+export function parsePullRequestFiles(listedFiles: readonly unknown[]): { files: PullRequestFile[] } | { issues: string } {
+  const parsed = z.array(pullRequestFileSchema).safeParse(listedFiles);
   return parsed.success ? { files: parsed.data } : { issues: describeSchemaIssues(parsed.error.issues) };
 }
 
 /**
  * Adds up the size of every patch in a listing.
  *
- * @param pullFiles - The changed files.
+ * @param pullRequestFiles - The changed files.
  * @returns The total patch text, in UTF-8 bytes.
  */
-export function countPatchBytes(pullFiles: readonly PullFile[]): number {
-  return pullFiles.reduce((total, pullFile) => total + Buffer.byteLength(pullFile.patch ?? "", "utf8"), 0);
+export function countPatchBytes(pullRequestFiles: readonly PullRequestFile[]): number {
+  return pullRequestFiles.reduce((total, pullFile) => total + Buffer.byteLength(pullFile.patch ?? "", "utf8"), 0);
 }
 
 /**
@@ -80,7 +80,7 @@ export function countPatchBytes(pullFiles: readonly PullFile[]): number {
  * @param ignorePatterns - The base config's `paths.ignore` globs.
  * @returns The changed file, with its hunks when the patch is readable text.
  */
-function toChangedFile(pullFile: PullFile, ignorePatterns: readonly string[]): ChangedFile {
+function toChangedFile(pullFile: PullRequestFile, ignorePatterns: readonly string[]): ChangedFile {
   const status = STATUS_BY_API_STATUS.get(pullFile.status) ?? "modified";
   const changedFile: ChangedFile = {
     path: pullFile.filename,
@@ -115,12 +115,12 @@ function toChangedFile(pullFile: PullFile, ignorePatterns: readonly string[]): C
 /**
  * Builds the changed-file list of a pull request from GitHub's files listing.
  *
- * @param pullFiles - The validated listing.
+ * @param pullRequestFiles - The validated listing.
  * @param ignorePatterns - The base config's `paths.ignore` globs.
  * @returns One changed file per entry, in the listing's order.
  */
-export function buildChangedFiles(pullFiles: readonly PullFile[], ignorePatterns: readonly string[]): ChangedFile[] {
-  return pullFiles.map((pullFile) => toChangedFile(pullFile, ignorePatterns));
+export function buildChangedFiles(pullRequestFiles: readonly PullRequestFile[], ignorePatterns: readonly string[]): ChangedFile[] {
+  return pullRequestFiles.map((pullFile) => toChangedFile(pullFile, ignorePatterns));
 }
 
 /**
@@ -165,46 +165,46 @@ export interface HeadContentsGap {
  * count that silently leaves files out.
  *
  * @param changedFiles - The changed files, read only.
- * @param pullFiles - The listing the changed files were built from, in the same order.
- * @param readBlob - Downloads a blob, or returns undefined when it is over the byte cap.
+ * @param pullRequestFiles - The listing the changed files were built from, in the same order.
+ * @param readBlobContent - Downloads a blob, or returns undefined when it is over the byte cap.
  * @param limits - The caps on files and bytes.
  * @returns A reader for head contents, and the reason when not every wanted file was read.
  */
 export async function readHeadContents(
   changedFiles: readonly ChangedFile[],
-  pullFiles: readonly PullFile[],
-  readBlob: (blobSha: string, maxBytes: number) => Promise<Buffer | undefined>,
+  pullRequestFiles: readonly PullRequestFile[],
+  readBlobContent: (blobSha: string, maxBytes: number) => Promise<Buffer | undefined>,
   limits: ForkScoreLimits,
 ): Promise<{ readHead: HeadReader; gap?: HeadContentsGap }> {
-  const unavailable = (kind: HeadContentsGap["kind"], detail: string) => ({ readHead: async () => undefined, gap: { kind, detail } });
+  const withoutHeadContents = (kind: HeadContentsGap["kind"], detail: string) => ({ readHead: async () => undefined, gap: { kind, detail } });
   const wantedFiles = changedFiles.flatMap((changedFile, index) => {
     const isWanted = changedFile.status !== "deleted" && !changedFile.binary && !changedFile.ignored && isCodeFamily(languageFamily(changedFile.path));
-    return isWanted ? [{ changedFile, sha: pullFiles[index]?.sha ?? undefined }] : [];
+    return isWanted ? [{ changedFile, sha: pullRequestFiles[index]?.sha ?? undefined }] : [];
   });
   if (wantedFiles.length > limits.maxHeadFiles) {
-    return unavailable("cap", `${wantedFiles.length} changed code files, more than the ${limits.maxHeadFiles} that are read`);
+    return withoutHeadContents("cap", `${wantedFiles.length} changed code files, more than the ${limits.maxHeadFiles} that are read`);
   }
 
   const textByPath = new Map<string, string>();
   let totalBytes = 0;
   for (const { changedFile, sha } of wantedFiles) {
     // The details name blob hashes, never paths: a fork chooses its file names, and these go to the log.
-    if (sha === undefined) return unavailable("failure", "GitHub listed a changed code file without a blob hash");
+    if (sha === undefined) return withoutHeadContents("failure", "GitHub listed a changed code file without a blob hash");
     let content: Buffer | undefined;
     try {
-      content = await readBlob(sha, limits.maxHeadFileBytes);
+      content = await readBlobContent(sha, limits.maxHeadFileBytes);
     } catch (error) {
-      return unavailable("failure", `downloading blob ${sha} failed: ${error instanceof Error ? error.message : String(error)}`);
+      return withoutHeadContents("failure", `downloading blob ${sha} failed: ${error instanceof Error ? error.message : String(error)}`);
     }
-    if (content === undefined) return unavailable("cap", `a changed code file is larger than ${limits.maxHeadFileBytes} bytes`);
-    if (!isBlobContent(content, sha)) return unavailable("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
+    if (content === undefined) return withoutHeadContents("cap", `a changed code file is larger than ${limits.maxHeadFileBytes} bytes`);
+    if (!isBlobContent(content, sha)) return withoutHeadContents("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
     totalBytes += content.length;
-    if (totalBytes > limits.maxHeadTotalBytes) return unavailable("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
+    if (totalBytes > limits.maxHeadTotalBytes) return withoutHeadContents("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
     // GitHub sent this file as text, so its line counts stand whatever the head contents hold: a
     // fork can place a NUL or an invalid byte far from its changed lines. Only the branch keywords
     // cannot be counted reliably then, so the head contents as a whole are left unread.
-    if (content.includes(0)) return unavailable("failure", `the content of blob ${sha} at the head commit holds a NUL`);
-    if (!isUtf8(content)) return unavailable("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
+    if (content.includes(0)) return withoutHeadContents("failure", `the content of blob ${sha} at the head commit holds a NUL`);
+    if (!isUtf8(content)) return withoutHeadContents("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
     textByPath.set(changedFile.path, content.toString("utf8"));
   }
   return { readHead: async (path) => textByPath.get(path) };

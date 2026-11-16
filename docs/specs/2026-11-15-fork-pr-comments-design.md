@@ -119,7 +119,7 @@ interface ScoreOptions {
   /** Reads a file at the head commit, used instead of `git cat-file`. Undefined for a file it cannot provide. */
   readHead?: (path: string) => Promise<string | undefined>;
   /** The PR's own commits, used instead of `git log base..head`. Empty: classify the source from `account` alone. */
-  prCommits?: PrCommit[];
+  prCommits?: PullRequestCommit[];
 }
 ```
 

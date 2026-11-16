@@ -15,7 +15,7 @@ import type { WorkflowIO } from "./workflow.js";
 // nothing that approves, reviews or merges.
 
 /** The only GitHub calls the fork-comment and fork-failure modes can make: find the pull request, comment, label. */
-export const FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullsByHead", "listCommentsUpTo", "createComment", "updateComment", "addLabels", "removeLabel"] as const;
+export const FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullRequestsByHeadBranch", "listPullRequestComments", "createComment", "updateComment", "addLabels", "removeLabel"] as const;
 
 /** A GitHub client that can only comment and label. */
 export type ForkCommentClient = Readonly<Pick<GitHubClient, (typeof FORK_COMMENT_CLIENT_METHODS)[number]>>;
@@ -40,7 +40,7 @@ export function restrictToForkComment(client: GitHubClient): ForkCommentClient {
 }
 
 /** What fork-comment mode needs from the Action's environment. */
-export interface ForkCommentDeps {
+export interface ForkCommentDependencies {
   /** The parsed `workflow_run` event payload. */
   event: unknown;
   /** The repository the job runs in, as `owner/name`. */
@@ -54,7 +54,7 @@ export interface ForkCommentDeps {
 }
 
 /** What fork-failure mode needs from the Action's environment: no result, as the scoring job wrote none. */
-export type ForkFailureDeps = Omit<ForkCommentDeps, "result">;
+export type ForkFailureDependencies = Omit<ForkCommentDependencies, "result">;
 
 /**
  * Runs one write to GitHub, and fails with GitHub's own message when it is refused.
@@ -83,12 +83,12 @@ async function writeOrFail(write: () => Promise<void>, permissionHint: string): 
  * copy of the marker is never edited.
  *
  * @param comment - A comment on the pull request.
- * @param viewer - The token's login, or undefined when GitHub did not say.
+ * @param viewerLogin - The token's login, or undefined when GitHub did not say.
  * @returns True for a comment this mode may update.
  */
-function isOwnForkComment(comment: IssueComment, viewer: string | undefined): boolean {
+function isOwnForkComment(comment: IssueComment, viewerLogin: string | undefined): boolean {
   if (!(comment.body ?? "").startsWith(FORK_COMMENT_MARKER) || comment.user === null) return false;
-  return viewer === undefined ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewer);
+  return viewerLogin === undefined ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewerLogin);
 }
 
 /**
@@ -104,10 +104,10 @@ function isOwnForkComment(comment: IssueComment, viewer: string | undefined): bo
  */
 async function upsertForkComment(client: ForkCommentClient, pullNumber: number, body: string): Promise<void> {
   await writeOrFail(async () => {
-    const viewer = await client.viewerLogin();
-    const { comments, isComplete } = await client.listCommentsUpTo(pullNumber, MAX_COMMENT_PAGES);
+    const viewerLogin = await client.viewerLogin();
+    const { comments, isComplete } = await client.listPullRequestComments(pullNumber, MAX_COMMENT_PAGES);
     // GitHub lists oldest first, so the last match is the newest.
-    const ownComment = comments.filter((comment) => isOwnForkComment(comment, viewer)).at(-1);
+    const ownComment = comments.filter((comment) => isOwnForkComment(comment, viewerLogin)).at(-1);
     if (ownComment) return void (await client.updateComment(ownComment.id, body));
     if (!isComplete) {
       throw new OpendrsError(
@@ -146,13 +146,13 @@ async function reconcileRiskLabels(client: ForkCommentClient, pullRequest: ForkP
  * from this job's own lookup, never from the result. The comment is rendered from a fixed template
  * and the validated fields only.
  *
- * @param deps - The event payload, the result text, the restricted client and the log.
+ * @param dependencies - The event payload, the result text, the restricted client and the log.
  * @throws {@link OpendrsError} If the event is not a `workflow_run`, the result is invalid or for another commit, or GitHub refuses the comment or a label.
  */
-export async function runForkComment(deps: ForkCommentDeps): Promise<void> {
-  const { client, io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
-  const result = parseForkResult(deps.result);
+export async function runForkComment(dependencies: ForkCommentDependencies): Promise<void> {
+  const { client, io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
+  const result = parseForkResult(dependencies.result);
   if (result.head !== completedRun.headSha) {
     throw new OpendrsError("The result was scored for a different commit than the workflow run's head commit: refusing to comment", "usage");
   }
@@ -164,8 +164,8 @@ export async function runForkComment(deps: ForkCommentDeps): Promise<void> {
   }
 
   const body = renderForkComment(result);
-  if (deps.shouldComment) await upsertForkComment(client, pullRequest.number, body);
-  if (deps.shouldLabel) {
+  if (dependencies.shouldComment) await upsertForkComment(client, pullRequest.number, body);
+  if (dependencies.shouldLabel) {
     // A pull request that was not scored gets no risk label, and loses a stale one.
     const scoredLabel = result.status === "scored" ? `risk:${result.tier}` : undefined;
     await reconcileRiskLabels(client, pullRequest, scoredLabel !== undefined && RISK_LABELS.includes(scoredLabel) ? scoredLabel : undefined);
@@ -183,19 +183,19 @@ export async function runForkComment(deps: ForkCommentDeps): Promise<void> {
  * fixed "not scored" text for the run's head commit, and removes every `risk:*` label, so an older
  * score never stays on the pull request looking current. It reads no output of the scoring job.
  *
- * @param deps - The event payload, the restricted client and the log.
+ * @param dependencies - The event payload, the restricted client and the log.
  * @throws {@link OpendrsError} If the event is not a `workflow_run`, or GitHub refuses the comment or a label.
  */
-export async function runForkFailure(deps: ForkFailureDeps): Promise<void> {
-  const { client, io } = deps;
-  const completedRun = readCompletedWorkflowRun(deps.event, deps.repository);
+export async function runForkFailure(dependencies: ForkFailureDependencies): Promise<void> {
+  const { client, io } = dependencies;
+  const completedRun = readCompletedWorkflowRun(dependencies.event, dependencies.repository);
   const pullRequest = await findForkPullRequest(client, completedRun, (message) => io.warning(message));
   if ("skipReason" in pullRequest) {
     io.notice(`opendrs did not comment: ${pullRequest.skipReason}.`);
     return;
   }
   const body = renderForkFailureComment(completedRun.headSha);
-  if (deps.shouldComment) await upsertForkComment(client, pullRequest.number, body);
-  if (deps.shouldLabel) await reconcileRiskLabels(client, pullRequest, undefined);
+  if (dependencies.shouldComment) await upsertForkComment(client, pullRequest.number, body);
+  if (dependencies.shouldLabel) await reconcileRiskLabels(client, pullRequest, undefined);
   io.summary(body);
 }

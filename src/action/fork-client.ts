@@ -12,9 +12,9 @@ import type { GitHubClient } from "./github.js";
  * @returns A frozen object with only those methods, each bound to `client`.
  */
 export function restrictClient<MethodName extends keyof GitHubClient>(client: GitHubClient, methodNames: readonly MethodName[]): Readonly<Pick<GitHubClient, MethodName>> {
-  const restricted: Partial<Record<MethodName, unknown>> = {};
+  const restrictedClient: Partial<Record<MethodName, unknown>> = {};
   for (const methodName of methodNames) {
-    restricted[methodName] = (client[methodName] as (...args: never[]) => unknown).bind(client);
+    restrictedClient[methodName] = (client[methodName] as (...args: never[]) => unknown).bind(client);
   }
-  return Object.freeze(restricted) as Readonly<Pick<GitHubClient, MethodName>>;
+  return Object.freeze(restrictedClient) as Readonly<Pick<GitHubClient, MethodName>>;
 }
