@@ -73,7 +73,7 @@ either.
 | `labels` | `true` | Set the risk label, and (when `captain.enabled`) one of `captain:careful`, `captain:standard` or `captain:quick`, and remove stale ones. opendrs creates its labels (`risk:*`, `captain:*`, `opendrs:landing`, `opendrs:hold`, `opendrs:review-after-merge`) with their own colours and descriptions, and recolours one GitHub auto-created in default grey; a colour you chose is kept. |
 | `sample-salt` | empty | **Set it when auto-approval is on**, to a secret such as {% raw %}`${{ secrets.OPENDRS_SAMPLE_SALT }}`{% endraw %}. Without it, sampling is predictable: see [Set sample-salt](#set-sample-salt). The drift sample (`autoApprove.sampleRate`) is keyed by repository, PR number and this salt, so pushing another commit does not re-roll it. |
 | `brief` | `true` | Build the review brief and fold it into the PR comment (a **Review focus** summary plus a collapsed "Review brief for AI reviewers" section), the `brief`/`brief-file` outputs, and the job summary. `false` restores today's comment layout byte for byte, leaves `brief`/`brief-file` empty, and omits the hidden state marker, the re-score line and the change notice: see [Re-scoring on new commits](#re-scoring-on-new-commits). |
-| `mode` | `full` | `full` is everything on this page: score, comment, label and reconcile the approval on a `pull_request` event. `score-only`, `fork-comment` and `fork-failure` are the jobs of the opt-in [fork workflow](#opt-in-comment-the-score-on-fork-prs) and run on a `workflow_run` event only; none can approve or merge. |
+| `mode` | `full` | `full` is everything on this page: score, comment, label and reconcile the approval on a `pull_request` event. `fork-comment` and `fork-failure` are the jobs of the opt-in [fork workflow](#opt-in-comment-the-score-on-fork-prs) and run on a `workflow_run` event only; none can approve or merge. `score-only` is internal: the first job of that workflow, which only feeds `fork-comment`. Set it only as the example workflow does, never on its own. |
 | `result` | empty | `fork-comment` mode only: the `result` output of the `score-only` job. It is validated as untrusted input before anything is written. |
 | `notify-changes` | `every-push` | After each push, post a one-line comment with the new score at that commit and a link to the updated report. `on-change` posts it only when the tier or the decision changed (the earlier behaviour). `false` keeps the re-score line in the main comment but skips the extra comment; `true` means `every-push`. Needs `brief` and `comment` to both be true. |
 
@@ -495,7 +495,7 @@ jobs:
       - uses: error-path/opendrs@REPLACE_WITH_RELEASE_COMMIT_SHA
         id: opendrs
         with:
-          mode: score-only
+          mode: score-only   # internal mode: only feeds the comment job below
   comment:
     name: Comment the score
     needs: score
