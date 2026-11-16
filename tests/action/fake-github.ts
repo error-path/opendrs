@@ -41,6 +41,7 @@ export type Op =
   | "viewer"
   | "user"
   | "getPull"
+  | "listPulls"
   | "listCommits"
   | "disableAutoMerge"
   | "dequeue"
@@ -70,6 +71,8 @@ export interface FakeGitHub {
   self: FakeUser;
   /** PR #7's current head sha, as GET /pulls/7 reports it. */
   headSha: string;
+  /** GET /pulls: the open pull requests, returned whatever the `head` filter asks for. */
+  pulls: unknown[];
   /** GET /pulls/7/commits, oldest first. */
   commits: FakeCommit[];
   /** Message of the GraphQL error that disable/dequeue return; undefined = success. */
@@ -108,6 +111,7 @@ export function installFakeGitHub(init: Partial<FakeGitHub> = {}): FakeGitHub {
     viewer: "github-actions",
     self: BOT,
     headSha: "",
+    pulls: [],
     commits: [],
     comments: [],
     labels: [],
@@ -182,8 +186,16 @@ export function installFakeGitHub(init: Partial<FakeGitHub> = {}): FakeGitHub {
       // Installation tokens such as GITHUB_TOKEN cannot read /user.
       if (route === "GET /user") return handle("user", path, undefined, () => json(403, { message: "Resource not accessible by integration" }));
       if (route === `GET ${pr}/pulls/7`) return handle("getPull", path, undefined, () => json(200, { number: 7, head: { sha: gh.headSha } }));
+      // The query is kept in the log so a test can check which head the caller asked for.
+      if (route === `GET ${pr}/pulls`) return handle("listPulls", `${path}${url.search}`, undefined, () => json(200, gh.pulls));
       if (route === `GET ${pr}/pulls/7/commits`) return handle("listCommits", path, undefined, () => json(200, gh.commits));
-      if (route === `GET ${pr}/issues/7/comments`) return handle("listComments", path, undefined, () => json(200, gh.comments));
+      if (route === `GET ${pr}/issues/7/comments`)
+        return handle("listComments", path, undefined, () => {
+          // Served 100 per page, oldest first, with a `next` link while more remain, as GitHub does.
+          const page = Number(url.searchParams.get("page") ?? "1");
+          const next = `<${API}${path}?per_page=100&page=${page + 1}>; rel="next"`;
+          return json(200, gh.comments.slice((page - 1) * 100, page * 100), page * 100 < gh.comments.length ? { link: next } : {});
+        });
       if (route === `POST ${pr}/issues/7/comments`)
         return handle("createComment", path, body, () => {
           const id = nextId++;

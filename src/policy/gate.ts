@@ -137,6 +137,10 @@ export function decide(input: GateInput): PolicyOutcome {
   if (unread.length > 0) {
     fire("human-review", `ignored or binary files are never auto-approved: ${list(unread)}`, "unread-files");
   }
+  const unreadPatches = diff.files.filter((file) => file.hasUnreadablePatch && !file.ignored && !file.binary).map((file) => file.path);
+  if (unreadPatches.length > 0) {
+    fire("human-review", `files whose changed lines could not be read are never auto-approved: ${list(unreadPatches)}`, "unread-files");
+  }
   // Control characters in a path are never legitimate and are how log and glob tricks start.
   const oddPaths = diff.files.flatMap((f) => [f.path, f.oldPath ?? ""]).filter((p) => /[\u0000-\u001f\u007f]/.test(p));
   if (oddPaths.length > 0) {

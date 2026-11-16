@@ -58,7 +58,9 @@ base branch's workflow with a write token and the repository's secrets, even for
 opendrs checks out and reads the PR's code. opendrs scores on events that carry a
 `pull_request` payload, and sweeps delayed PRs on `schedule` and `workflow_dispatch` (see
 [Deferred review and landing delay](#deferred-review-and-landing-delay)); do not add
-`merge_group` or `push` triggers to this workflow.
+`merge_group` or `push` triggers to this workflow. To comment on fork PRs, add the separate
+opt-in workflow in [Fork pull requests](#fork-pull-requests); it does not use `pull_request_target`
+either.
 
 ## Inputs and outputs
 
@@ -71,6 +73,8 @@ opendrs checks out and reads the PR's code. opendrs scores on events that carry 
 | `labels` | `true` | Set the risk label, and (when `captain.enabled`) one of `captain:careful`, `captain:standard` or `captain:quick`, and remove stale ones. opendrs creates its labels (`risk:*`, `captain:*`, `opendrs:landing`, `opendrs:hold`, `opendrs:review-after-merge`) with their own colours and descriptions, and recolours one GitHub auto-created in default grey; a colour you chose is kept. |
 | `sample-salt` | empty | **Set it when auto-approval is on**, to a secret such as {% raw %}`${{ secrets.OPENDRS_SAMPLE_SALT }}`{% endraw %}. Without it, sampling is predictable: see [Set sample-salt](#set-sample-salt). The drift sample (`autoApprove.sampleRate`) is keyed by repository, PR number and this salt, so pushing another commit does not re-roll it. |
 | `brief` | `true` | Build the review brief and fold it into the PR comment (a **Review focus** summary plus a collapsed "Review brief for AI reviewers" section), the `brief`/`brief-file` outputs, and the job summary. `false` restores today's comment layout byte for byte, leaves `brief`/`brief-file` empty, and omits the hidden state marker, the re-score line and the change notice: see [Re-scoring on new commits](#re-scoring-on-new-commits). |
+| `mode` | `full` | `full` is everything on this page: score, comment, label and reconcile the approval on a `pull_request` event. `fork-comment` and `fork-failure` are the jobs of the opt-in [fork workflow](#opt-in-comment-the-score-on-fork-prs) and run on a `workflow_run` event only; none can approve or merge. `score-only` is internal: the first job of that workflow, which only feeds `fork-comment`. Set it only as the example workflow does, never on its own. |
+| `result` | empty | `fork-comment` mode only: the `result` output of the `score-only` job. It is validated as untrusted input before anything is written. |
 | `notify-changes` | `every-push` | After each push, post a one-line comment with the new score at that commit and a link to the updated report. `on-change` posts it only when the tier or the decision changed (the earlier behaviour). `false` keeps the re-score line in the main comment but skips the extra comment; `true` means `every-push`. Needs `brief` and `comment` to both be true. |
 
 | Output | Values |
@@ -81,6 +85,10 @@ opendrs checks out and reads the PR's code. opendrs scores on events that carry 
 | `captain` | `careful`, `standard` or `quick`: how much attention the captain brief says this PR needs. Empty when `captain.enabled` is false or `brief: false`. See [the captain brief](captain.md). |
 | `brief` | The review brief as Markdown (empty when `brief: false`) |
 | `brief-file` | Path to the review brief as JSON, under `$RUNNER_TEMP` (empty when `brief: false`) |
+| `result` | `score-only` mode only: the fork PR's score as one line of JSON for the `fork-comment` job. Not set when there is no fork PR to score. |
+
+In `score-only` and `fork-comment` mode only `score`, `tier` and (for `score-only`) `result` are
+set.
 
 Use the outputs in later steps, for example to request a reviewer on red PRs:
 
@@ -445,6 +453,219 @@ the PR and writes the job summary; the comment and labels fail with 403 and are 
 warnings. Fork PRs are never approved, whatever the token can do. Do not switch to
 `pull_request_target` to get a write token for forks.
 
+So by default the score of a fork PR is only in the job summary, where the contributor and most
+maintainers never look. To show it on the PR, add the second workflow below. It is opt-in.
+
+### Opt-in: comment the score on fork PRs
+
+Add this as a separate file, for example `.github/workflows/opendrs-fork.yml`, on your default
+branch. Leave your normal `pull_request` workflow as it is.
+
+{% raw %}
+```yaml
+name: opendrs fork comments
+on:
+  workflow_run:
+    workflows: [opendrs]   # the `name:` of your pull_request workflow that runs opendrs
+    types: [completed]
+permissions: {}
+concurrency:
+  group: opendrs-fork-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: true
+jobs:
+  score:
+    name: Score the fork pull request
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name != github.repository &&
+      (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      result: ${{ steps.opendrs.outputs.result }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      # TODO: replace REPLACE_WITH_RELEASE_COMMIT_SHA with the full commit SHA of the opendrs release you use.
+      - uses: error-path/opendrs@REPLACE_WITH_RELEASE_COMMIT_SHA
+        id: opendrs
+        with:
+          mode: score-only   # internal mode: only feeds the comment job below
+  comment:
+    name: Comment the score
+    needs: score
+    if: needs.score.outputs.result != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      # TODO: the same commit SHA as in the score job.
+      - uses: error-path/opendrs@REPLACE_WITH_RELEASE_COMMIT_SHA
+        with:
+          mode: fork-comment
+          result: ${{ needs.score.outputs.result }}
+  failure:
+    name: Report a failed score
+    needs: score
+    if: >-
+      always() && needs.score.result == 'failure' &&
+      (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      # TODO: the same commit SHA as in the score job.
+      - uses: error-path/opendrs@REPLACE_WITH_RELEASE_COMMIT_SHA
+        with:
+          mode: fork-failure
+```
+{% endraw %}
+
+Before you commit it:
+
+- **Set `workflows:`** to the `name:` of the workflow that runs opendrs on `pull_request`. The
+  workflow from `opendrs init` and the minimal workflow above are both named `opendrs`.
+- **Pin opendrs to a commit.** Replace `REPLACE_WITH_RELEASE_COMMIT_SHA` (three times) with the full
+  commit SHA of an opendrs release that has the `mode` input, and note the version in a comment.
+  The workflow does not run until you do. A tag such as `@v0` can be moved; this workflow holds a
+  write token, so pin it. `actions/checkout` is already pinned to the commit of v7.0.1.
+- **Keep `fetch-depth: 0`.** The score job needs the base branch's history and the commit where
+  the PR branched off. Without them it fails with "Merge-base commit ... is not in the checkout".
+- **Do not add steps** to any of the jobs: no cache, no `npm install`, no artifact download, no
+  secret.
+
+What it posts: one comment that starts with `<!-- opendrs-fork -->`, updated in place on later
+pushes, and one `risk:green`, `risk:yellow` or `risk:red` label. The comment has the score, the
+tier, the top signals with their values, the size of the diff and the commit scored. It says it is
+advisory and shows no policy decision. `comment: false` or `labels: false` on the comment job turns
+one of them off.
+
+A PR over a size limit gets a comment that says it was too large to score, and no risk label. The
+limits are 2000 changed files, 20 MB of patch text and 1000 commits. The same comment, with the
+reason, goes on a PR whose list of changed files GitHub did not return in full or returned with an
+entry opendrs cannot read.
+
+When the score job fails, the `failure` job replaces the comment with "not scored: the scoring job
+failed for" the short commit hash, and removes the `risk:*` label, so an older score never stays on
+the PR looking current. It writes nothing else; the job log says why the score failed. When the
+comment or label job cannot write (a missing permission, an error from GitHub), it fails with
+GitHub's message instead of passing quietly.
+
+The score can differ from the one a branch of your own repository would get, because the score job
+works from less:
+
+- no LLM judge and no review brief, even when `llm.enabled` is true;
+- the PR's commits are not read, so author expertise counts as unknown and the source (human, bot
+  or agent) comes from the account type alone;
+- a file for which GitHub sends no patch and no changed lines (binary, or a rename without changes)
+  counts as binary;
+- a file with changed lines but no readable patch (GitHub leaves out the patch of a very large
+  file) counts with GitHub's line numbers, and `complexity.touched`, `tests.missing` and
+  `tests.deleted` count as unknown, not as zero;
+- `complexity.touched` reads at most 30 changed code files of at most 1 MB each (8 MB in total);
+  past any of those it counts as unknown, not as zero.
+
+`.opendrs.yml` and the calibrated model come from the PR's base commit. When the base commit has
+no valid model, the score uses the built-in weights and says "default model", even if the checkout
+holds a model file.
+
+### How it stays safe
+
+`workflow_run` starts when your `pull_request` workflow finishes, and it runs the workflow file
+from your default branch with a token of its own. A fork cannot change that file. Everything the
+fork does control is treated as follows.
+
+- **Nothing from the fork's run is used.** In a `pull_request` run the fork controls the workflow
+  file, so its outputs, artifacts, conclusion and logs can say anything. This workflow downloads no
+  artifact and reads no output of that run. It takes facts that GitHub records about the run (head
+  commit, head repository, head branch, and whether it finished) and finds the PR itself: it lists your repository's
+  open PRs for that owner and branch, and continues only when exactly one has that head commit,
+  that head repository, and your repository as its base. Otherwise it stops without commenting.
+  GitHub leaves the run's own `pull_requests` list empty for forks, so it is not used either.
+- **The fork's code is never checked out, fetched or run.** The score job checks out your
+  repository only. It reads the PR's diff and the changed code files through GitHub's REST API as
+  data, and reads history from your checkout. It runs no install, build, test or script.
+  `actions/checkout` v7 refuses to check out a fork PR's commits under `workflow_run`; fetching
+  them with `git fetch` in a `run:` step would only step around that guard, so the workflow does
+  not.
+- **The score job cannot write.** Its token has `contents: read` and `pull-requests: read`, and in
+  `score-only` mode the Action can only make five read calls. It gets no secret and makes no LLM
+  call.
+- **The comment job never sees the fork's data.** It does not check anything out. It receives one
+  small JSON result from the score job and treats it as hostile: at most 4 KB, a fixed set of
+  keys, a score between 0 and 1, a tier of green, yellow or red, signal ids from opendrs's own
+  list, bounded numbers, and nothing else. A result with any other key, or for another commit than
+  the run's head commit, fails the job. It then finds the PR again by itself, as above.
+- **The comment is a fixed template.** It is filled with those validated numbers and names. No PR
+  title, body, branch name, file name, commit message or author reaches it, so it cannot mention
+  people, link anywhere or carry HTML.
+- **The comment job cannot approve or merge.** Its token has `pull-requests: write` and
+  `issues: write` (to create a missing label). In `fork-comment` mode the Action is handed a client
+  that can list PRs, write its own comment and set `risk:*` labels, and nothing else: the calls
+  that approve, dismiss, enable auto-merge or use the merge queue are not on it. The `failure` job
+  runs in `fork-failure` mode with the same client and reads no result at all.
+- **A run that did not finish is not acted on.** The score job runs only when the `pull_request`
+  run ended with `success` or `failure`, and the Action checks the same again. A fork's run that
+  waits for a maintainer's approval does not hold this workflow back: GitHub records it as
+  completed with the conclusion `action_required` and starts `workflow_run` at once. The conclusion
+  check is what keeps an unapproved run from being scored.
+
+A fork can make this workflow run: any PR starts your `pull_request` workflow, and a fork could
+also add a workflow of its own with the same `name:`. That gains nothing. The run only says "a
+workflow finished for this commit"; the PR, the diff and the score are worked out again from your
+repository and GitHub's API.
+
+Why not `pull_request_target`: it runs for every fork PR at once, with your secrets in reach, and
+GitHub's approval setting for first-time contributors does not hold it back ("workflows triggered
+by these events will always run, regardless of approval settings", GitHub's settings page).
+From 2 December 2026 GitHub blocks `pull_request_target` in public repositories unless an Actions
+event policy allows it. `workflow_run` starts when the `pull_request` run completes. When your
+repository requires approval for the contributor, that run completes as `action_required` without
+running, and this workflow's conclusion check skips it; after approval, the `pull_request` run
+completes again with `success` or `failure`, and the PR is scored then.
+
+If you scan your workflows with [zizmor](https://docs.zizmor.sh/audits/#dangerous-triggers), its
+`dangerous-triggers` audit reports `workflow_run`, as it does `pull_request_target`. The finding is
+about workflows that go on to run or trust what the triggering run produced. This one does
+neither, for the reasons above; suppress the finding for this file with a comment that says so.
+
+### What can still go wrong
+
+| Risk | Worst case | Why not worse |
+|---|---|---|
+| A bug in how opendrs parses the diff or a file, reached by a crafted PR | A wrong score, or a failed score job | The score job has a read-only token and no secret. Its only output is the JSON result, which the comment job validates. |
+| The score job is compromised and sends a false result | A wrong score and tier in the comment, a wrong `risk:*` label | The result has no free text, and the PR and commit come from the comment job's own lookup. |
+| Many pushes or many fork PRs | Many runs; one comment per PR, updated in place | `concurrency` cancels an older run for the same head commit, and a run for an older commit stops when it finds the PR's head moved; every job has a timeout. The group includes the commit so that a run a fork starts for another commit cannot cancel this one. |
+| The score job fails | A "not scored: the scoring job failed" comment and no risk label | The `failure` job writes fixed text only; the log says why. |
+| A huge PR | A "too large to score" comment | The size limits end the job early. |
+| A push while the workflow runs | No comment from this run | Each job stops when the PR's head is no longer the run's commit; the run for the new head comments. |
+| A compromised action pinned in the workflow | Whatever that job's token allows: reading the repository, or writing comments and labels | Both actions are pinned to commits; no job holds `contents: write` or a secret. |
+
+In no case can a fork PR push to your repository, read a secret, approve, or merge through this
+workflow. The risk labels it sets are advice; if your own automation acts on `risk:green`, treat a
+fork PR's label as you would any label a bot can set.
+
+For defence in depth you can add an egress filter such as
+[step-security/harden-runner](https://github.com/step-security/harden-runner) as the first step of
+every job, pinned to a commit (v2.22.4 is `1d88384fd173af6ecb012dfd0264a306b711241a`), allowing
+only `api.github.com` and `github.com`. opendrs does not need it.
+
+Limits of the opt-in workflow:
+
+- When two open PRs have the same fork branch and head commit (one branch opened against two base
+  branches), opendrs comments on neither.
+- It is built for public repositories and has not been tested on a private repository with
+  private forks.
+
 ## Troubleshooting
 
 | Message | Fix |
@@ -452,7 +673,10 @@ warnings. Fork PRs are never approved, whatever the token can do. Do not switch 
 | `Base commit ... is not in the checkout` | Set `fetch-depth: 0` on `actions/checkout`. |
 | `GitHub refused the approval (403)` | Enable *Allow GitHub Actions to create and approve pull requests*, and grant `pull-requests: write`. |
 | `Could not read check runs (403)` | Add `checks: read`. Until then, required AI-review checks count as missing. |
-| `Could not write the PR comment (403)` | Add `pull-requests: write`. Expected on fork PRs. |
+| `Could not write the PR comment (403)` | Add `pull-requests: write`. Expected on fork PRs; to comment on them, see [Fork pull requests](#fork-pull-requests). |
+| `need a workflow_run event` | `mode: score-only` and `mode: fork-comment` run only in the [fork workflow](#opt-in-comment-the-score-on-fork-prs), which is triggered by `workflow_run`. |
+| `Merge-base commit ... is not in the checkout` | In the fork workflow's score job, check out your repository with `fetch-depth: 0`. If the base branch moved after the checkout, re-run the job. |
+| `The result input is not a valid opendrs fork result` | Pass the score job's `result` output to the comment job unchanged, and pin every job to the same opendrs commit. |
 | `sampling is predictable; set sample-salt to a secret` | Pass a secret as `sample-salt`; see [Set sample-salt](#set-sample-salt). |
 | `could not confirm that ... dismisses it when new commits are pushed` | Add the branch ruleset from [Required: dismiss stale approvals on push](#required-dismiss-stale-approvals-on-push). |
 | `enabling auto-merge failed` | Enable *Allow auto-merge*, grant `contents: write`, or check the branch's merge queue. |

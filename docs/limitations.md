@@ -43,6 +43,10 @@ estimate is weaker than it looks, grouped by the model, the [signals](signals.md
 
 - **Required checks are matched by name.** opendrs does not verify which app produced a check run,
   so protect the names you list (see the [GitHub Action guide](github-action.md)).
+- **Fork pull requests get a narrower score.** The opt-in fork workflow scores from GitHub's API
+  without the fork's commits: no LLM judge, author expertise unknown, and files GitHub sends no
+  patch for count as binary, or, when GitHub counts changed lines, leave the signals that read
+  those lines unknown. See [Fork pull requests](github-action.md#fork-pull-requests).
 - **GitHub only.** The core is host-agnostic, but only a GitHub Action exists today. The Action
   needs full history (`fetch-depth: 0`). In a shallow clone, `diffusion.authors` and `history.*`
   are reported as `unknown` ("shallow clone: history incomplete"), keeping what they saw as a lower

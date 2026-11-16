@@ -7,7 +7,7 @@ branding:
 
 inputs:
   github-token:
-    description: Token for the GitHub API. Needs pull-requests write (comment, labels, approval) and checks read.
+    description: Token for the GitHub API. Needs pull-requests write (comment, labels, approval) and checks read. In mode score-only it needs only contents read and pull-requests read; in modes fork-comment and fork-failure only pull-requests write and issues write.
     required: false
     default: ${{ github.token }}
   base-config:
@@ -34,6 +34,14 @@ inputs:
     description: Build the review brief (ranked hunks, check questions, safe-to-skim, hard-rule reasons) and add it to the PR comment, the job summary and the brief/brief-file outputs. Set to false to keep today's comment layout byte for byte.
     required: false
     default: "true"
+  mode:
+    description: What this step does. full (default) scores, comments, labels and reconciles the approval on a pull_request event. fork-comment and fork-failure are the jobs of the opt-in workflow that comments on fork pull requests, and run on a workflow_run event only. score-only is internal. It is the first job of that workflow and only feeds fork-comment, so set it only as the documented workflow does, never on its own. score-only reads the fork PR's diff through the GitHub API with a read-only token, never checks out or fetches the fork's code, never calls the LLM judge, and sets the result output. fork-comment validates that result as untrusted input, then only upserts its own comment and sets a risk label; it has no code path that approves or merges. fork-failure, for a failed score-only job, replaces that comment with a fixed "not scored" text and removes the risk label. See docs/github-action.md, "Fork pull requests".
+    required: false
+    default: "full"
+  result:
+    description: For mode fork-comment only. The result output of the score-only job, passed unchanged. It is parsed against a strict schema (size cap, fixed keys, bounded numbers, known signal ids) and rejected if it was scored for another commit than the workflow run's head commit.
+    required: false
+    default: ""
   notify-changes:
     description: When to post a one-line comment with the new score and a link to the updated report. every-push (default) posts after each push, and after a re-run that changes the tier or the decision; on-change posts only when the tier or the decision changed; false never posts. true means every-push. Needs brief and comment to both be true; otherwise nothing is posted.
     required: false
@@ -52,6 +60,8 @@ outputs:
     description: The review brief as Markdown (the same text shown in the PR comment's collapsed "Review brief for AI reviewers" section). Empty when the brief input is false.
   brief-file:
     description: Path to the review brief as JSON, written under $RUNNER_TEMP. Empty when the brief input is false.
+  result:
+    description: Set in mode score-only. The fork pull request's score as one line of JSON (score, tier, top signal ids with their values, diff counts, opendrs version, and the commit scored), for the result input of the fork-comment job. Not set when there is no fork pull request to score.
 
 runs:
   using: node24

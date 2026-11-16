@@ -58,6 +58,15 @@ describe("blast signals", () => {
   });
   afterAll(() => repo.cleanup());
 
+  it("reports public_surface unknown, not derived 0, when a file with dependents has no readable patch", async () => {
+    const signals = await blastSignals(ctxFor([changed("hub.ts", { added: 40, deleted: 3, hasUnreadablePatch: true })], graph));
+    expect(byId(signals, "blast.public_surface")).toMatchObject({ status: "unknown", value: 0 });
+    expect(byId(signals, "blast.dependents").status).toBe("derived");
+    // A file without dependents cannot widen the surface, so its unread lines change nothing.
+    const leafOnly = await blastSignals(ctxFor([changed("leaf.ts", { hasUnreadablePatch: true })], graph));
+    expect(byId(leafOnly, "blast.public_surface")).toMatchObject({ status: "derived", value: 0 });
+  });
+
   it("counts the union of transitive dependents, excluding the changed files", async () => {
     const signals = await blastSignals(ctxFor([changed("hub.ts"), changed("a.ts")], graph));
     const s = byId(signals, "blast.dependents");

@@ -25,6 +25,11 @@ export interface ScoreOptions {
   config: OpendrsConfig;
   /** Override the model; otherwise config.model is loaded when present, else DEFAULT_WEIGHTS. */
   model?: ModelWeights;
+  /**
+   * What `model` is reported as in the result. Default "calibrated". A caller that passes
+   * DEFAULT_WEIGHTS on purpose, so that no model file is read from the working tree, sets "default".
+   */
+  modelKind?: "default" | "calibrated";
   /** Reuse across many scorings (calibrate/backtest). */
   history?: HistoryIndex;
   /**
@@ -50,6 +55,32 @@ export interface ScoreOptions {
    * firstHead/firstRun feed the drift detector (spec §6.4; Action only).
    */
   brief?: { maxTokens?: number; llm?: boolean; firstHead?: string; firstRun?: number; onError?: (message: string) => void };
+  /**
+   * A diff built outside git, used instead of running `git diff base head`. For a caller that has
+   * the change as data but must not fetch the head commit (the Action's fork scoring reads it from
+   * the GitHub API). `diff.base` must be a commit in `repoDir`; `diff.head` need not be. The caller
+   * sets `binary` and `ignored` on each file. Absent: the diff is loaded from git, as always.
+   */
+  diff?: DiffInfo;
+  /**
+   * Reads a file at the head commit, used instead of `git cat-file` when the head commit is not in
+   * `repoDir`. Returns undefined for a file it cannot provide. Absent: read from git, as always.
+   */
+  readHead?: (path: string) => Promise<string | undefined>;
+  /**
+   * The PR's own commits, newest first, used instead of `git log base..head` when the head commit
+   * is not in `repoDir`. An empty list means they are not known: the source is then classified from
+   * `account` alone. Absent: read from git, as always.
+   */
+  pullRequestCommits?: PullRequestCommit[];
+}
+
+/** One of the PR's own commits, as `classifyPr` reads it. */
+export interface PullRequestCommit {
+  sha: string;
+  authorName: string;
+  authorEmail: string;
+  message: string;
 }
 
 /** Load the calibrated model if config.model exists in the repo; else the default priors. */
@@ -78,8 +109,8 @@ async function prCommits(repoDir: string, base: string, head: string, maxCommits
 }
 
 /** Compute every signal for a diff. Exported for calibrate/backtest, which fit weights on these. */
-export async function computeSignals(ctx: ScoringContext): Promise<Signal[]> {
-  const batches = await Promise.all(SIGNAL_PROVIDERS.map((p) => p(ctx)));
+export async function computeSignals(scoringContext: ScoringContext): Promise<Signal[]> {
+  const batches = await Promise.all(SIGNAL_PROVIDERS.map((provider) => provider(scoringContext)));
   return batches.flat();
 }
 
@@ -106,31 +137,33 @@ export function makeContext(
   };
 }
 
-export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
-  const { repoDir, config } = opts;
-  const diff = await loadDiff(repoDir, opts.base, opts.head, config);
-  if (opts.title !== undefined) diff.title = opts.title;
-  if (opts.description !== undefined) diff.description = opts.description;
+export async function scoreDiff(options: ScoreOptions): Promise<ScoreResult> {
+  const { repoDir, config } = options;
+  // A supplied diff is copied, so setting the title and description below leaves the caller's object as it was.
+  const diff = options.diff ? { ...options.diff } : await loadDiff(repoDir, options.base, options.head, config);
+  if (options.title !== undefined) diff.title = options.title;
+  if (options.description !== undefined) diff.description = options.description;
 
   const [history, graph] = await Promise.all([
-    opts.history ?? buildHistoryIndex(repoDir, diff.base, config),
-    opts.graph !== undefined
-      ? Promise.resolve(opts.graph ?? undefined)
+    options.history ?? buildHistoryIndex(repoDir, diff.base, config),
+    options.graph !== undefined
+      ? Promise.resolve(options.graph ?? undefined)
       : config.graph.enabled
         ? buildDependencyGraph(repoDir, diff.base, config).catch(() => undefined)
         : Promise.resolve(undefined),
   ]);
 
   const shallow = (await git(repoDir, ["rev-parse", "--is-shallow-repository"])).trim() === "true";
-  const ctx = makeContext(repoDir, diff, config, history, graph, opts.asOf, {
-    authorVerified: opts.authorVerified ?? true,
+  const scoringContext = makeContext(repoDir, diff, config, history, graph, options.asOf, {
+    authorVerified: options.authorVerified ?? true,
     historyComplete: !shallow,
   });
+  if (options.readHead) scoringContext.readHead = options.readHead;
 
   let llm: LlmProvider | undefined;
   try {
     // A misconfigured judge (e.g. missing key) becomes an unknown signal, which routes to a human.
-    llm = opts.llm === null ? undefined : (opts.llm ?? createLlmProvider(config));
+    llm = options.llm === null ? undefined : (options.llm ?? createLlmProvider(config));
     if (llm) {
       const { text, hunks, truncated } = buildDiffText(diff, config.llm.maxDiffChars);
       const judgement = await llm.judge({
@@ -141,19 +174,19 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
         hunks,
         truncated,
       });
-      ctx.llm = { judgement };
+      scoringContext.llm = { judgement };
     }
   } catch (e) {
-    ctx.llm = { error: e instanceof OpendrsError ? e.message : `LLM judge failed: ${(e as Error).message}` };
+    scoringContext.llm = { error: e instanceof OpendrsError ? e.message : `LLM judge failed: ${(e as Error).message}` };
   }
 
-  const signals = await computeSignals(ctx);
-  const commits = await prCommits(repoDir, diff.base, diff.head, config.history.maxCommits);
+  const signals = await computeSignals(scoringContext);
+  const pullRequestCommits = options.pullRequestCommits ?? (await prCommits(repoDir, diff.base, diff.head, config.history.maxCommits));
   // Landed commits include everything on the base branch, not only what is below the merge-base.
   const countsLanded = Object.values(config.sources).some((s) => s.dailyCap !== undefined || s.trackRecord !== undefined);
-  const baseHistory = opts.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, opts.base, config) : history);
-  const source = classifyPr(commits, opts.account, agentPatterns(config));
-  const { model, kind } = opts.model ? { model: opts.model, kind: "calibrated" as const } : await loadModel(repoDir, config);
+  const baseHistory = options.baseHistory ?? (countsLanded ? await buildHistoryIndex(repoDir, options.base, config) : history);
+  const source = classifyPr(pullRequestCommits, options.account, agentPatterns(config));
+  const { model, kind: modelKind } = options.model ? { model: options.model, kind: options.modelKind ?? ("calibrated" as const) } : await loadModel(repoDir, config);
   const { score, logit, contributions } = scoreSignals(signals, model);
   const policy = decide({
     score,
@@ -164,12 +197,12 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
     config,
     model,
     history: baseHistory,
-    pr: opts.pr,
-    llmFailed: Boolean(ctx.llm?.error),
-    llm: ctx.llm?.judgement,
-    now: opts.now,
+    pr: options.pr,
+    llmFailed: Boolean(scoringContext.llm?.error),
+    llm: scoringContext.llm?.judgement,
+    now: options.now,
     source,
-    prCommits: commits.map((c) => c.sha),
+    prCommits: pullRequestCommits.map((commit) => commit.sha),
   });
 
   const counted = diff.files.filter((f) => !f.ignored);
@@ -180,7 +213,7 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
     contributions,
     unknowns: signals.filter((s) => s.status === "unknown").map((s) => s.id),
     policy,
-    llm: ctx.llm?.judgement,
+    llm: scoringContext.llm?.judgement,
     source,
     diff: {
       base: diff.base,
@@ -189,23 +222,23 @@ export async function scoreDiff(opts: ScoreOptions): Promise<ScoreResult> {
       added: counted.reduce((n, f) => n + f.added, 0),
       deleted: counted.reduce((n, f) => n + f.deleted, 0),
     },
-    model: kind,
+    model: modelKind,
     version: VERSION,
   };
-  if (opts.brief) {
+  if (options.brief) {
     try {
-      result.brief = await buildBrief(result, ctx, {
-        maxTokens: opts.brief.maxTokens ?? config.brief.maxTokens,
-        llm: opts.brief.llm,
-        firstHead: opts.brief.firstHead,
-        firstRun: opts.brief.firstRun,
-        // The same provider as the judge; --no-llm (opts.llm === null) disables both.
+      result.brief = await buildBrief(result, scoringContext, {
+        maxTokens: options.brief.maxTokens ?? config.brief.maxTokens,
+        llm: options.brief.llm,
+        firstHead: options.brief.firstHead,
+        firstRun: options.brief.firstRun,
+        // The same provider as the judge; --no-llm (options.llm === null) disables both.
         verifier: config.llm.verify.enabled ? llm : undefined,
       });
     } catch (e) {
       // The brief is an add-on to the score: the Action keeps the decision and posts without it.
-      if (!opts.brief.onError) throw e;
-      opts.brief.onError(`could not build the review brief: ${e instanceof Error ? e.message : String(e)}`);
+      if (!options.brief.onError) throw e;
+      options.brief.onError(`could not build the review brief: ${e instanceof Error ? e.message : String(e)}`);
     }
   }
   return result;

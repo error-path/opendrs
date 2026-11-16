@@ -39,6 +39,7 @@ export const SLOW_TEST_FILES = [
   "tests/brief/selfcheck-gate.test.ts",
   "tests/cli/init-mcp.test.ts",
   "tests/explain.test.ts",
+  "tests/action/fork-score.test.ts",
 ];
 
 // Default vitest runs up to `cpus - 1` workers at once. Each forked file here spawns its own real
