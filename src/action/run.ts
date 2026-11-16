@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { renderBriefMarkdown } from "../brief/render.js";
 import { selfCheckItems } from "../brief/selfcheck.js";
-import { CONFIG_FILE, defaultConfig, loadConfig, parseConfigText, type OpendrsConfig } from "../domain/config.js";
+import { CONFIG_FILE, loadConfig, type OpendrsConfig } from "../domain/config.js";
 import type { Decision, ModelWeights, Tier } from "../domain/types.js";
 import { OpendrsError } from "../domain/types.js";
 import { scoreDiff } from "../engine.js";
@@ -14,6 +14,7 @@ import { TRUST_REPO_LLM_ENV } from "../llm/provider.js";
 import { assignReviewer, suggestReviewers } from "../policy/reviewers.js";
 import { cell } from "../report/escape.js";
 import { renderMarkdown } from "../report/markdown.js";
+import { logBaseConfigSource, readBaseConfig, readBaseModel, requireCommit } from "./base-settings.js";
 import { HOLD_LABEL, changesRequested, eligibleMarker, noreplyLogin, ownApprovals, readEligibleSince, reconcileApproval, stopMerge, withdraw } from "./approval.js";
 import { GitHubError, type IssueComment, isSelf, sameLogin, unlessForbidden, type GitHubClient } from "./github.js";
 import { parseSelfCheck, renderSelfCheckLine } from "./selfcheck.js";
@@ -93,15 +94,15 @@ function readPullRequest(event: unknown): PullRequest {
   return pr;
 }
 
-async function requireCommit(repoDir: string, sha: string, which: string): Promise<void> {
-  if ((await gitMaybe(repoDir, ["cat-file", "-e", `${sha}^{commit}`])) === undefined) {
-    throw new OpendrsError(`${which} commit ${sha} is not in the checkout. Use actions/checkout with fetch-depth: 0.`, "git");
-  }
-}
-
+/**
+ * Loads the config and the calibrated model for a run.
+ *
+ * @param d - The run's dependencies; `inputs.baseConfig` chooses where the config is read from.
+ * @param base - The pull request's base commit.
+ * @returns The config, and the model when the base commit has a valid one and `base-config` is true.
+ */
 async function loadSettings(d: ActionDeps, base: string): Promise<{ config: OpendrsConfig; model?: ModelWeights }> {
-  const text = await gitMaybe(d.repoDir, ["show", `${base}:${CONFIG_FILE}`]);
-  const baseConfig = text === undefined ? defaultConfig() : parseConfigText(text);
+  const { config: baseConfig, hasConfigFile } = await readBaseConfig(d.repoDir, base);
   if (!d.inputs.baseConfig) {
     d.io.warning(
       `base-config is false: ${CONFIG_FILE} is read from the PR checkout, so a PR can change its own gate. ` +
@@ -110,22 +111,10 @@ async function loadSettings(d: ActionDeps, base: string): Promise<{ config: Open
     // Never let a PR choose where the LLM key is sent (llm.baseUrl) or which secret is exported (llm.apiKeyEnv).
     return { config: { ...(await loadConfig(d.repoDir)), llm: baseConfig.llm, model: baseConfig.model } };
   }
-  d.io.info(text === undefined ? `No ${CONFIG_FILE} on base commit ${base}: using defaults.` : `Using ${CONFIG_FILE} from base commit ${base}.`);
+  logBaseConfigSource(d.io, base, hasConfigFile);
   const config = baseConfig;
-
-  const raw = await gitMaybe(d.repoDir, ["show", `${base}:${config.model}`]);
-  if (raw === undefined) return { config };
-  try {
-    const model = JSON.parse(raw) as ModelWeights;
-    if (model.version === 1 && typeof model.intercept === "number") {
-      d.io.info(`Using calibrated model ${config.model} from the base commit.`);
-      return { config, model };
-    }
-  } catch {
-    // fall through to the warning
-  }
-  d.io.warning(`${config.model} on the base commit is not a valid model; it is ignored.`);
-  return { config };
+  const model = await readBaseModel(d.repoDir, base, config, d.io);
+  return model === undefined ? { config } : { config, model };
 }
 
 const llmKeyEnv = (config: OpendrsConfig) =>
