@@ -28622,6 +28622,25 @@ var plural2 = (n, word, many = `${word}s`) => `${n} ${n === 1 ? word : many}`;
 var topEvidence = (items) => items.slice(0, MAX_EVIDENCE);
 
 // src/signals/language.ts
+var LANGUAGE_FAMILIES = [
+  "ts",
+  "js",
+  "py",
+  "go",
+  "java",
+  "kotlin",
+  "rust",
+  "ruby",
+  "c_cpp",
+  "csharp",
+  "php",
+  "swift",
+  "sql",
+  "shell",
+  "config",
+  "docs",
+  "other"
+];
 var EXTENSIONS2 = {
   ts: "ts",
   tsx: "ts",
@@ -31925,6 +31944,35 @@ function featureValues(signals, priors) {
   return new Map(signals.map((s) => [s.id, s.status === "unknown" ? priors?.[s.id] ?? s.value : s.value]));
 }
 
+// src/model/schema.ts
+var MAX_MODEL_COEFFICIENT = 20;
+var MAX_MODEL_PRIOR = 1e3;
+var MAX_MODEL_ENTRIES = 200;
+var MODEL_SIGNAL_IDS = /* @__PURE__ */ new Set([...Object.keys(DEFAULT_WEIGHTS.weights), ...LANGUAGE_FAMILIES.map((family) => `lang.${family}`)]);
+var coefficientSchema = external_exports.number().finite().min(-MAX_MODEL_COEFFICIENT).max(MAX_MODEL_COEFFICIENT);
+var signalIdSchema = external_exports.string().refine((id) => MODEL_SIGNAL_IDS.has(id), { message: "unknown signal id" });
+function isOrderedPercentileTable(table) {
+  const scores = Object.entries(table).map(([percentile, score]) => [Number(percentile), score]).sort((left, right) => left[0] - right[0]).map(([, score]) => score);
+  return scores.every((score, index) => index === 0 || score >= scores[index - 1]);
+}
+var modelWeightsSchema = external_exports.looseObject({
+  version: external_exports.literal(1),
+  intercept: coefficientSchema,
+  weights: external_exports.record(signalIdSchema, coefficientSchema).refine((weights) => Object.keys(weights).length <= MAX_MODEL_ENTRIES, { message: "too many weights" }).refine((weights) => Object.entries(weights).every(([id, weight]) => !id.startsWith("llm.") || weight >= 0), { message: "an llm.* weight is negative" }),
+  priors: external_exports.record(signalIdSchema, external_exports.number().finite().min(-MAX_MODEL_PRIOR).max(MAX_MODEL_PRIOR)).refine((priors) => Object.keys(priors).length <= MAX_MODEL_ENTRIES, { message: "too many priors" }).optional(),
+  percentiles: external_exports.record(external_exports.string().regex(/^(100|[1-9]?[0-9])$/), external_exports.number().finite().min(0).max(1)).refine(isOrderedPercentileTable, { message: "percentile scores are not in order" }).optional()
+});
+function parseModelWeights(text) {
+  let value;
+  try {
+    value = JSON.parse(text);
+  } catch {
+    return { problem: "not valid JSON" };
+  }
+  const parsed = modelWeightsSchema.safeParse(value);
+  return parsed.success ? { model: parsed.data } : { problem: describeSchemaIssues(parsed.error.issues) };
+}
+
 // src/policy/gate.ts
 import { createHash as createHash4 } from "node:crypto";
 
@@ -33104,12 +33152,15 @@ var VERSION = "0.5.2";
 
 // src/engine.ts
 async function loadModel(repoDir, config2) {
+  let modelText;
   try {
-    const parsed = JSON.parse(await readFile4(join4(repoDir, config2.model), "utf8"));
-    if (parsed.version === 1 && typeof parsed.intercept === "number") return { model: parsed, kind: "calibrated" };
+    modelText = await readFile4(join4(repoDir, config2.model), "utf8");
   } catch {
+    return { model: DEFAULT_WEIGHTS, kind: "default" };
   }
-  return { model: DEFAULT_WEIGHTS, kind: "default" };
+  const parsedModel = parseModelWeights(modelText);
+  if ("problem" in parsedModel) return { model: DEFAULT_WEIGHTS, kind: "default", problem: `${config2.model} is not a valid model (${parsedModel.problem}); it is ignored` };
+  return { model: parsedModel.model, kind: "calibrated" };
 }
 var FIELD2 = "";
 var SHA = /^([0-9a-f]{40}|[0-9a-f]{64})$/;
@@ -33249,16 +33300,13 @@ function logBaseConfigSource(io, baseSha, hasConfigFile) {
 async function readBaseModel(repoDir, baseSha, config2, io) {
   const modelText = await gitMaybe(repoDir, ["show", `${baseSha}:${config2.model}`]);
   if (modelText === void 0) return void 0;
-  try {
-    const model = JSON.parse(modelText);
-    if (model.version === 1 && typeof model.intercept === "number") {
-      io.info(`Using calibrated model ${config2.model} from the base commit.`);
-      return model;
-    }
-  } catch {
+  const parsedModel = parseModelWeights(modelText);
+  if ("problem" in parsedModel) {
+    io.warning(`${config2.model} on the base commit is not a valid model (${parsedModel.problem}); it is ignored.`);
+    return void 0;
   }
-  io.warning(`${config2.model} on the base commit is not a valid model; it is ignored.`);
-  return void 0;
+  io.info(`Using calibrated model ${config2.model} from the base commit.`);
+  return parsedModel.model;
 }
 
 // src/action/fork-diff.ts

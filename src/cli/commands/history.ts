@@ -118,7 +118,8 @@ ${HISTORY_OPTIONS}
 
   async run(args, io) {
     const { opts, json, brief } = await historyRun(args, io, "backtest");
-    const { model, kind } = await loadModel(opts.repoDir, opts.config);
+    const { model, kind, problem } = await loadModel(opts.repoDir, opts.config);
+    if (problem) io.err(`opendrs: warning: ${problem}`);
     const report = await backtest({ ...opts, model: kind === "calibrated" ? model : undefined, brief });
     io.progress("");
     if (json) {
