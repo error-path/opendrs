@@ -93,8 +93,28 @@ describe("renderForkComment", () => {
     ["commits", 1000, "more than 1000 commits"],
     ["time", 0, "took too long"],
     ["incomplete", 0, "complete list of changed files"],
+    ["unreadable", 0, "has an entry opendrs cannot read"],
   ] as const)("names the %s limit", (reason, limit, text) => {
     expect(renderForkComment({ v: 1, status: "too-large", head: HEAD_SHA, opendrs: "0.5.2", reason, limit })).toContain(text);
+  });
+
+  it("renders a too-large result with a hostile head and version inertly", () => {
+    const hostile = { v: 1, status: "too-large", head: HOSTILE, opendrs: HOSTILE, reason: "files", limit: 2000 } as unknown as ForkResult;
+    expectInert(renderForkComment(hostile));
+  });
+
+  it("prints the short commit as exactly 7 hex characters and caps the version at 32 characters", () => {
+    const markdown = renderForkComment({ ...scored(), opendrs: "9".repeat(40) });
+    expect(markdown).toContain("`abc1234`");
+    expect(markdown).not.toMatch(/abc12340/);
+    expect(markdown).toContain(`opendrs \`${"9".repeat(32)}\``);
+    expect(markdown).not.toContain("9".repeat(33));
+  });
+
+  it("caps a signal id at 48 characters", () => {
+    const markdown = renderForkComment({ ...scored(), signals: [{ id: "a".repeat(60), value: 1, contribution: 1 }] });
+    expect(markdown).toContain(`\`${"a".repeat(48)}\``);
+    expect(markdown).not.toContain("a".repeat(49));
   });
 
   describe("given fields that skipped validation", () => {
@@ -130,7 +150,7 @@ describe("renderForkComment", () => {
     it("caps the number of signal rows", () => {
       const many = Array.from({ length: 500 }, () => ({ id: "size.churn", value: 1, contribution: 1 }));
       const rows = renderForkComment({ ...scored(), signals: many }).split("\n").filter((line) => line.startsWith("| `"));
-      expect(rows.length).toBeLessThanOrEqual(6);
+      expect(rows).toHaveLength(6);
     });
 
     it("prints a placeholder for numbers that are not finite and for an unknown tier or reason", () => {

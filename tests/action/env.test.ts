@@ -21,13 +21,14 @@ describe("readMode", () => {
     expect(readMode({ INPUT_MODE: " Full " })).toBe("full");
   });
 
-  it("reads the two fork modes", () => {
+  it("reads the three fork modes", () => {
     expect(readMode({ INPUT_MODE: "score-only" })).toBe("score-only");
     expect(readMode({ INPUT_MODE: "fork-comment" })).toBe("fork-comment");
+    expect(readMode({ INPUT_MODE: "fork-failure" })).toBe("fork-failure");
   });
 
   it("rejects anything else without repeating it", () => {
-    expect(() => readMode({ INPUT_MODE: "approve <img>" })).toThrow(/mode.*full, score-only or fork-comment/);
+    expect(() => readMode({ INPUT_MODE: "approve <img>" })).toThrow(/mode.*full, score-only, fork-comment or fork-failure/);
     expect(() => readMode({ INPUT_MODE: "approve <img>" })).not.toThrow(/img/);
   });
 });

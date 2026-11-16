@@ -7,7 +7,7 @@ branding:
 
 inputs:
   github-token:
-    description: Token for the GitHub API. Needs pull-requests write (comment, labels, approval) and checks read. In mode score-only it needs only contents read and pull-requests read; in mode fork-comment only pull-requests write and issues write.
+    description: Token for the GitHub API. Needs pull-requests write (comment, labels, approval) and checks read. In mode score-only it needs only contents read and pull-requests read; in modes fork-comment and fork-failure only pull-requests write and issues write.
     required: false
     default: ${{ github.token }}
   base-config:
@@ -35,7 +35,7 @@ inputs:
     required: false
     default: "true"
   mode:
-    description: What this step does. full (default) scores, comments, labels and reconciles the approval on a pull_request event. score-only and fork-comment are the two jobs of the opt-in workflow that comments on fork pull requests, and run on a workflow_run event only. score-only reads the fork PR's diff through the GitHub API with a read-only token, never checks out or fetches the fork's code, never calls the LLM judge, and sets the result output. fork-comment validates that result as untrusted input, then only upserts its own comment and sets a risk label; it has no code path that approves or merges. See docs/github-action.md, "Fork pull requests".
+    description: What this step does. full (default) scores, comments, labels and reconciles the approval on a pull_request event. score-only, fork-comment and fork-failure are the jobs of the opt-in workflow that comments on fork pull requests, and run on a workflow_run event only. score-only reads the fork PR's diff through the GitHub API with a read-only token, never checks out or fetches the fork's code, never calls the LLM judge, and sets the result output. fork-comment validates that result as untrusted input, then only upserts its own comment and sets a risk label; it has no code path that approves or merges. fork-failure, for a failed score-only job, replaces that comment with a fixed "not scored" text and removes the risk label. See docs/github-action.md, "Fork pull requests".
     required: false
     default: "full"
   result:

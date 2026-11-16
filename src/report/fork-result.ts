@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { ScoreResult } from "../domain/types.js";
 import { OpendrsError } from "../domain/types.js";
+import { commitShaSchema, describeSchemaIssues } from "../domain/untrusted.js";
 import { DEFAULT_WEIGHTS } from "../model/defaults.js";
 
 // The compact result that the fork workflow's scoring job hands to its commenting job. The scoring
@@ -14,17 +15,18 @@ export const FORK_RESULT_MAX_SIGNALS = 6;
 /** The signal ids a result may name: the ones the built-in model weighs. */
 export const KNOWN_SIGNAL_IDS: ReadonlySet<string> = new Set(Object.keys(DEFAULT_WEIGHTS.weights));
 /**
- * Which limit stopped a pull request from being scored: changed files, patch bytes, commits, time
- * spent, or `incomplete` when GitHub did not return the whole list of changed files.
+ * Why a pull request was not scored. Four are size limits: changed `files`, patch `bytes`,
+ * `commits`, and `time` spent. Two mean the list of changed files could not be read in full, so a
+ * score would understate the change: `incomplete` (GitHub listed fewer files than the pull request
+ * changes) and `unreadable` (an entry of the listing is not a file as GitHub documents it).
  */
-export const TOO_LARGE_REASONS = ["files", "bytes", "commits", "time", "incomplete"] as const;
+export const TOO_LARGE_REASONS = ["files", "bytes", "commits", "time", "incomplete", "unreadable"] as const;
 
 const MAX_SIGNAL_VALUE = 1e9;
 const MAX_CONTRIBUTION = 1e4;
 const MAX_COUNT = 1e12;
 const DECIMALS = 4;
 
-const commitSha = z.string().regex(/^(?:[0-9a-f]{40}|[0-9a-f]{64})$/);
 const opendrsVersion = z.string().max(32).regex(/^\d{1,5}\.\d{1,5}\.\d{1,5}(?:-[0-9A-Za-z.]{1,16})?$/);
 const count = z.number().int().min(0).max(MAX_COUNT);
 const signalId = z
@@ -36,7 +38,7 @@ const signalId = z
 const scoredSchema = z.strictObject({
   v: z.literal(1),
   status: z.literal("scored"),
-  head: commitSha,
+  head: commitShaSchema,
   opendrs: opendrsVersion,
   score: z.number().min(0).max(1),
   tier: z.enum(["green", "yellow", "red"]),
@@ -56,7 +58,7 @@ const scoredSchema = z.strictObject({
 const tooLargeSchema = z.strictObject({
   v: z.literal(1),
   status: z.literal("too-large"),
-  head: commitSha,
+  head: commitShaSchema,
   opendrs: opendrsVersion,
   reason: z.enum(TOO_LARGE_REASONS),
   limit: count,
@@ -73,7 +75,13 @@ export type ForkResult = ForkScoredResult | ForkTooLargeResult;
 /** Which limit a too-large pull request went over. */
 export type TooLargeReason = (typeof TOO_LARGE_REASONS)[number];
 
-/** Rounds to four decimals and keeps the value inside `[-bound, bound]`; a value that is not a number becomes 0. */
+/**
+ * Rounds a signal's number to four decimals and keeps it inside the range the parser accepts.
+ *
+ * @param value - The number to bound.
+ * @param bound - The largest absolute value allowed.
+ * @returns The rounded value within `[-bound, bound]`; an infinite value becomes the bound, and NaN becomes 0.
+ */
 function boundNumber(value: number, bound: number): number {
   if (!Number.isFinite(value)) return Number.isNaN(value) ? 0 : Math.sign(value) * bound;
   return Number(Math.min(bound, Math.max(-bound, value)).toFixed(DECIMALS));
@@ -91,8 +99,12 @@ const boundCount = (value: number) => (Number.isFinite(value) ? Math.min(MAX_COU
  *
  * @param scoreResult - The result of scoring the pull request.
  * @returns A result that {@link parseForkResult} accepts.
+ * @throws {@link OpendrsError} If the score is not a finite number: a broken score is reported, never turned into 0.
  */
 export function buildForkResult(scoreResult: ScoreResult): ForkScoredResult {
+  if (!Number.isFinite(scoreResult.score)) {
+    throw new OpendrsError("The score is not a finite number, so there is no result to report; this is a bug in opendrs or an invalid model", "io");
+  }
   const signals = scoreResult.contributions
     .filter((contribution) => contribution.contribution !== 0 && KNOWN_SIGNAL_IDS.has(contribution.id))
     .slice(0, FORK_RESULT_MAX_SIGNALS)
@@ -124,7 +136,7 @@ export function buildForkResult(scoreResult: ScoreResult): ForkScoredResult {
  *
  * @param headSha - The head commit that was measured.
  * @param reason - Which limit it went over.
- * @param limit - That limit's value: files, bytes or commits; 0 for `time` and `incomplete`.
+ * @param limit - That limit's value: files, bytes or commits; 0 for the other reasons.
  * @param opendrsVersion - The opendrs version that measured it.
  * @returns A result that {@link parseForkResult} accepts.
  */
@@ -147,14 +159,19 @@ export function serializeForkResult(result: ForkResult): string {
   return text;
 }
 
-/** Describes a failed check without repeating any of the rejected input: only schema field names and fixed codes. */
-function describeIssues(issues: readonly z.core.$ZodIssue[]): string {
-  const knownFields = /^(?:v|status|head|opendrs|score|tier|model|signals|counts|id|value|contribution|files|added|deleted|unknowns|reason|limit)$/;
-  const described = issues.slice(0, 3).map((issue) => {
-    const field = issue.path.map((part) => (typeof part === "number" ? String(part) : knownFields.test(String(part)) ? String(part) : "?")).join(".");
-    return `${field || "result"}: ${issue.code}`;
-  });
-  return described.join("; ");
+/** Keys that could reach an object's prototype. No result has them, so any is rejected by name. */
+const PROTOTYPE_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+
+/**
+ * Looks for a key that could reach an object's prototype, at any depth.
+ *
+ * @param value - The parsed JSON value.
+ * @returns True when an object anywhere in `value` has one of {@link PROTOTYPE_KEYS} as its own key.
+ */
+function hasPrototypeKey(value: unknown): boolean {
+  if (Array.isArray(value)) return value.some(hasPrototypeKey);
+  if (typeof value !== "object" || value === null) return false;
+  return Object.getOwnPropertyNames(value).some((key) => PROTOTYPE_KEYS.has(key) || hasPrototypeKey((value as Record<string, unknown>)[key]));
 }
 
 /**
@@ -178,9 +195,12 @@ export function parseForkResult(text: string): ForkResult {
   } catch {
     throw new OpendrsError("The result input is not a valid opendrs fork result: it is not JSON", "usage");
   }
+  if (hasPrototypeKey(value)) {
+    throw new OpendrsError("The result input is not a valid opendrs fork result: it has a key no result has", "usage");
+  }
   const parsed = forkResultSchema.safeParse(value);
   if (!parsed.success) {
-    throw new OpendrsError(`The result input is not a valid opendrs fork result (${describeIssues(parsed.error.issues)})`, "usage");
+    throw new OpendrsError(`The result input is not a valid opendrs fork result (${describeSchemaIssues(parsed.error.issues)})`, "usage");
   }
   return parsed.data;
 }

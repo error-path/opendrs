@@ -230,15 +230,46 @@ export class GitHubClient {
   }
 
   /**
-   * Lists the open pull requests whose head is one branch of one account.
+   * Reads a list endpoint page by page, stopping at a page limit.
+   *
+   * @param path - The endpoint's path, with any query.
+   * @param maxPages - The most pages (100 entries each) to request.
+   * @returns The entries read, and whether that was the whole list.
+   */
+  private async paginateUpTo<Entry>(path: string, maxPages: number): Promise<{ entries: Entry[]; isComplete: boolean }> {
+    const entries: Entry[] = [];
+    let url: string | undefined = `${this.opts.apiUrl}${path}${path.includes("?") ? "&" : "?"}per_page=100`;
+    for (let page = 0; url && page < maxPages; page++) {
+      const response = await this.send("GET", url);
+      entries.push(...((await response.json()) as Entry[]));
+      url = response.headers.get("link")?.match(/<([^>]+)>;\s*rel="next"/)?.[1];
+    }
+    return { entries, isComplete: url === undefined };
+  }
+
+  /**
+   * Lists a pull request's comments, oldest first, up to a page limit.
+   *
+   * @param pr - The pull request number.
+   * @param maxPages - The most pages (100 comments each) to request.
+   * @returns The comments read, and whether that was all of them.
+   */
+  async listCommentsUpTo(pr: number, maxPages: number): Promise<{ comments: IssueComment[]; isComplete: boolean }> {
+    const { entries, isComplete } = await this.paginateUpTo<IssueCommentFromGitHub>(`${this.repoPath}/issues/${pr}/comments`, maxPages);
+    return { comments: entries.map(({ html_url: comment_page_url, ...commentFields }) => ({ ...commentFields, comment_page_url })), isComplete };
+  }
+
+  /**
+   * Lists the open pull requests whose head is one branch of one account, up to a page limit.
    *
    * @param headOwner - The login that owns the head repository.
    * @param headBranch - The head branch name. A fork chooses it, so it is only ever sent URL-encoded.
-   * @returns The pull requests as GitHub returns them, unchecked: the caller validates each.
+   * @param maxPages - The most pages (100 pull requests each) to request.
+   * @returns The pull requests as GitHub returns them, unchecked, and whether that was the whole list.
    */
-  listOpenPullsByHead(headOwner: string, headBranch: string): Promise<unknown[]> {
+  listOpenPullsByHead(headOwner: string, headBranch: string, maxPages: number): Promise<{ entries: unknown[]; isComplete: boolean }> {
     const head = encodeURIComponent(`${headOwner}:${headBranch}`);
-    return this.paginate<unknown>(`${this.repoPath}/pulls?state=open&head=${head}`);
+    return this.paginateUpTo<unknown>(`${this.repoPath}/pulls?state=open&head=${head}`, maxPages);
   }
 
   /**

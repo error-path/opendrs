@@ -127,6 +127,25 @@ describe("parseForkResult", () => {
     expect(parseWith(change, validTooLarge)).toThrow(/not a valid opendrs fork result/);
   });
 
+  it.each([
+    ["top level", (key: string) => `{"${key}":{"v":1},${JSON.stringify(validScored()).slice(1)}`],
+    ["inside signals[0]", (key: string) => JSON.stringify(validScored()).replace('"id":', `"${key}":{"polluted":true},"id":`)],
+    ["inside counts", (key: string) => JSON.stringify(validScored()).replace('"files":', `"${key}":{"polluted":true},"files":`)],
+  ])("rejects __proto__ and constructor keys at the %s", (_, inject) => {
+    for (const key of ["__proto__", "constructor"]) {
+      expect(() => parseForkResult(inject(key))).toThrow(/not a valid opendrs fork result: it has a key no result has/);
+    }
+    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
+  });
+
+  it("checks lengths exactly: only a full commit hash as head, and a version of at most 32 characters", () => {
+    expect(parseWith((result) => (result.head = "a".repeat(7)))).toThrow(/head/);
+    expect(parseWith((result) => (result.head = "a".repeat(41)))).toThrow(/head/);
+    expect(parseWith((result) => (result.opendrs = `1.2.3-${"a".repeat(16)}`))).not.toThrow();
+    expect(parseWith((result) => (result.opendrs = `1.2.3-${"a".repeat(17)}`))).toThrow(/opendrs/);
+    expect(parseWith((result) => (result.opendrs = `${"1".repeat(5)}.${"1".repeat(5)}.${"1".repeat(5)}-${"a".repeat(16)}`))).toThrow(/opendrs/);
+  });
+
   it("never repeats the rejected text in its error, so hostile input cannot reach the log or a comment", () => {
     const hostile = "@everyone <script>alert(1)</script> ::error::pwned";
     for (const change of [
@@ -202,6 +221,14 @@ describe("buildForkResult", () => {
     result.diff.added = 1e15;
     const forkResult = buildForkResult(result);
     expect(() => parseForkResult(serializeForkResult(forkResult))).not.toThrow();
+  });
+
+  it("throws on a score that is not a finite number, instead of reporting it as 0 or 1", () => {
+    for (const score of [Number.NaN, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]) {
+      const result = scoreResult();
+      result.score = score;
+      expect(() => buildForkResult(result)).toThrow(/not a finite number/);
+    }
   });
 
   it("builds a too-large result that parses", () => {

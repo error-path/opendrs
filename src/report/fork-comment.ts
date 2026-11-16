@@ -13,6 +13,8 @@ const SIGNALS_URL = "https://error-path.github.io/opendrs/signals.html";
 const FORK_DOCS_URL = "https://error-path.github.io/opendrs/github-action.html#fork-pull-requests";
 const MAX_SIGNAL_ROWS = 6;
 const MAX_TEXT_LENGTH = 48;
+const MAX_VERSION_LENGTH = 32;
+const SHORT_COMMIT_LENGTH = 7;
 const MAX_PRINTED_NUMBER = 1e12;
 const NOT_A_NUMBER = "?";
 
@@ -29,18 +31,19 @@ const MODEL_TEXT = new Map([
 const ADVISORY = "Advisory only: opendrs never approves or merges a fork pull request, and this comment is not a review.";
 
 /**
- * Makes a string safe to print: keeps only characters from `allowed`, caps the length, and wraps it in a code span.
+ * Makes a string safe to print: drops every character `disallowedCharacters` matches, caps the length, and wraps it in a code span.
  *
  * Nothing that survives can start a mention, a link, an image, HTML or a table cell, or end the
- * code span: the allowed sets hold no `@`, brackets, `<`, `|`, backtick, whitespace or invisible character.
+ * code span: each disallowed set matches `@`, brackets, `<`, `|`, backticks, whitespace and
+ * invisible characters, since it matches everything outside a few plain characters.
  *
  * @param text - The value to print. Anything that is not a string prints as `?`.
- * @param allowed - A character class of the characters to drop, written as a negated set.
+ * @param disallowedCharacters - A global regular expression, written as a negated character set, that matches each character to drop.
  * @param maxLength - The most characters to keep.
  * @returns The inert text inside backticks.
  */
-function inertCode(text: unknown, allowed: RegExp, maxLength = MAX_TEXT_LENGTH): string {
-  const kept = typeof text === "string" ? text.replace(allowed, "").slice(0, maxLength) : "";
+function inertCode(text: unknown, disallowedCharacters: RegExp, maxLength = MAX_TEXT_LENGTH): string {
+  const kept = typeof text === "string" ? text.replace(disallowedCharacters, "").slice(0, maxLength) : "";
   return `\`${kept === "" ? NOT_A_NUMBER : kept}\``;
 }
 
@@ -48,45 +51,93 @@ const NOT_HEX = /[^0-9a-f]/g;
 const NOT_SIGNAL_ID = /[^a-z0-9_.]/g;
 const NOT_VERSION = /[^0-9A-Za-z.-]/g;
 
-/** Formats a number with two decimals, or `?` when it is not a finite number of a printable size. */
-function fixed(value: unknown, minus = "−"): string {
+/**
+ * Formats a number with two decimals and a real minus sign.
+ *
+ * @param value - The value to print.
+ * @returns The number, such as `0.71` or `−1.05`, or `?` when it is not a finite number of a printable size.
+ */
+function formatFixed(value: unknown): string {
   if (typeof value !== "number" || !Number.isFinite(value) || Math.abs(value) > MAX_PRINTED_NUMBER) return NOT_A_NUMBER;
-  return `${value < 0 ? minus : ""}${Math.abs(value).toFixed(2)}`;
+  return `${value < 0 ? "−" : ""}${Math.abs(value).toFixed(2)}`;
 }
 
-/** Formats a signal's push on the score with its sign, as the main comment does. */
-const signed = (value: unknown) => (fixed(value) === NOT_A_NUMBER ? NOT_A_NUMBER : `${(value as number) < 0 ? "−" : "+"}${Math.abs(value as number).toFixed(2)}`);
+/**
+ * Formats a signal's push on the score with its sign, as the main comment does.
+ *
+ * @param value - The signal's contribution.
+ * @returns The number with `+` or `−` in front, such as `+1.05`, or `?` when {@link formatFixed} prints `?`.
+ */
+function formatSigned(value: unknown): string {
+  const text = formatFixed(value);
+  if (text === NOT_A_NUMBER || text.startsWith("−")) return text;
+  return `+${text}`;
+}
 
-/** Formats a whole, non-negative count, or `?`. */
-const wholeNumber = (value: unknown) =>
-  typeof value === "number" && Number.isSafeInteger(value) && value >= 0 && value <= MAX_PRINTED_NUMBER ? String(value) : NOT_A_NUMBER;
+/**
+ * Formats a whole, non-negative count.
+ *
+ * @param value - The count.
+ * @returns The count in digits, or `?` when it is not a safe whole number from 0 to 10^12.
+ */
+function formatWholeNumber(value: unknown): string {
+  return typeof value === "number" && Number.isSafeInteger(value) && value >= 0 && value <= MAX_PRINTED_NUMBER ? String(value) : NOT_A_NUMBER;
+}
 
-/** The lines every fork comment ends with: what kind of score this is, and which opendrs wrote it. */
-function footer(result: ForkResult, modelText: string | undefined): string[] {
-  const version = `opendrs ${inertCode(result.opendrs, NOT_VERSION, 32)}`;
+/**
+ * Formats a byte count as whole megabytes.
+ *
+ * @param bytes - The byte count.
+ * @returns The rounded number of megabytes, or `?` when `bytes` is not a finite, non-negative number.
+ */
+function formatMegabytes(bytes: unknown): string {
+  return typeof bytes === "number" && Number.isFinite(bytes) && bytes >= 0 ? formatWholeNumber(Math.round(bytes / 1_000_000)) : NOT_A_NUMBER;
+}
+
+/**
+ * Formats the commit a comment is about as a short hash in a code span.
+ *
+ * @param commitSha - The full commit hash.
+ * @returns Its first seven hex characters inside backticks, or `` `?` `` when it holds none.
+ */
+function formatShortCommit(commitSha: unknown): string {
+  return inertCode(commitSha, NOT_HEX, SHORT_COMMIT_LENGTH);
+}
+
+/**
+ * Renders the lines every fork comment ends with: the advisory note, the opendrs version and, for a score, the model.
+ *
+ * @param opendrsVersion - The opendrs version that wrote the result, or undefined when the comment has none.
+ * @param modelText - The model's name in words, or undefined to leave it out.
+ * @returns Two lines of small text.
+ */
+function renderFooter(opendrsVersion: unknown, modelText: string | undefined): string[] {
+  const version = opendrsVersion === undefined ? undefined : `opendrs ${inertCode(opendrsVersion, NOT_VERSION, MAX_VERSION_LENGTH)}`;
   return [
     `<sub>${ADVISORY} [How fork pull requests are scored](${FORK_DOCS_URL}).</sub>`,
     `<sub>${[version, modelText, `[${PROJECT_URL.replace("https://", "")}](${PROJECT_URL})`].filter(Boolean).join(" · ")}</sub>`,
   ];
 }
 
-/** The commit the comment is about, as a short hash in a code span. */
-const shortCommit = (result: ForkResult) => inertCode(result.head, NOT_HEX, 7);
-
-/** Renders the comment for a pull request that was scored. */
+/**
+ * Renders the comment for a pull request that was scored.
+ *
+ * @param result - The validated result.
+ * @returns The comment's lines, without the marker.
+ */
 function renderScored(result: ForkScoredResult): string[] {
-  const heading = (TIER_TEXT.get(result.tier) ?? "Diff risk {score} · tier unknown").replace("{score}", fixed(result.score));
+  const heading = (TIER_TEXT.get(result.tier) ?? "Diff risk {score} · tier unknown").replace("{score}", formatFixed(result.score));
   const counts: Partial<ForkScoredResult["counts"]> = result.counts ?? {};
-  const unknowns = wholeNumber(counts.unknowns);
+  const unknowns = formatWholeNumber(counts.unknowns);
   const lines = [
     `### ${heading}`,
-    `<sub>Scored for a fork pull request at ${shortCommit(result)} · ${wholeNumber(counts.files)} files · +${wholeNumber(counts.added)} −${wholeNumber(counts.deleted)}</sub>`,
+    `<sub>Scored for a fork pull request at ${formatShortCommit(result.head)} · ${formatWholeNumber(counts.files)} files · +${formatWholeNumber(counts.added)} −${formatWholeNumber(counts.deleted)}</sub>`,
     "",
   ];
   const signals = Array.isArray(result.signals) ? result.signals.slice(0, MAX_SIGNAL_ROWS) : [];
   if (signals.length > 0) {
     lines.push("| Signal | Value | Push |", "|---|--:|--:|");
-    for (const signal of signals) lines.push(`| ${inertCode(signal?.id, NOT_SIGNAL_ID)} | ${fixed(signal?.value)} | ${signed(signal?.contribution)} |`);
+    for (const signal of signals) lines.push(`| ${inertCode(signal?.id, NOT_SIGNAL_ID)} | ${formatFixed(signal?.value)} | ${formatSigned(signal?.contribution)} |`);
     lines.push("", `<sub>[What each signal means](${SIGNALS_URL}). Push is the signal's effect on the score: + raises the risk, − lowers it.</sub>`, "");
   }
   if (unknowns !== "0") {
@@ -95,34 +146,37 @@ function renderScored(result: ForkScoredResult): string[] {
   lines.push(
     "This score comes from the diff and this repository's history. It was computed without the LLM judge and without checking who wrote the commits, so it can differ from the score a pull request from a branch of this repository would get.",
     "",
-    ...footer(result, MODEL_TEXT.get(result.model)),
+    ...renderFooter(result.opendrs ?? NOT_A_NUMBER, MODEL_TEXT.get(result.model)),
   );
   return lines;
 }
 
-/** Formats a byte count as whole megabytes, or `?`. */
-const megabytes = (bytes: unknown) => (typeof bytes === "number" && Number.isFinite(bytes) && bytes >= 0 ? wholeNumber(Math.round(bytes / 1_000_000)) : NOT_A_NUMBER);
-
 /** Why a pull request was not scored, by reason; `limit` is the cap it went over. */
 const TOO_LARGE_TEXT = new Map<string, (limit: unknown) => string>([
-  ["files", (limit) => `it changes more than ${wholeNumber(limit)} files`],
-  ["bytes", (limit) => `its diff is more than ${megabytes(limit)} MB`],
-  ["commits", (limit) => `it has more than ${wholeNumber(limit)} commits`],
+  ["files", (limit) => `it changes more than ${formatWholeNumber(limit)} files`],
+  ["bytes", (limit) => `its diff is more than ${formatMegabytes(limit)} MB`],
+  ["commits", (limit) => `it has more than ${formatWholeNumber(limit)} commits`],
   ["time", () => "reading its diff and history took too long"],
   ["incomplete", () => "GitHub did not return its complete list of changed files"],
+  ["unreadable", () => "GitHub's list of its changed files has an entry opendrs cannot read"],
 ]);
 
-/** Renders the comment for a pull request that is over a limit and was not scored. */
+/**
+ * Renders the comment for a pull request that is over a limit and was not scored.
+ *
+ * @param result - The validated result.
+ * @returns The comment's lines, without the marker.
+ */
 function renderTooLarge(result: ForkTooLargeResult): string[] {
   const describe = TOO_LARGE_TEXT.get(result.reason);
   const why = describe ? describe(result.limit) : "it is over a size limit";
   return [
     "### ⚪ Diff risk not scored · too large to score",
-    `<sub>Fork pull request at ${shortCommit(result)}</sub>`,
+    `<sub>Fork pull request at ${formatShortCommit(result.head)}</sub>`,
     "",
     `opendrs did not score this pull request: ${why}. That is not a low score. Review it as you would any large change, or split it.`,
     "",
-    ...footer(result, undefined),
+    ...renderFooter(result.opendrs ?? NOT_A_NUMBER, undefined),
   ];
 }
 
@@ -138,5 +192,25 @@ function renderTooLarge(result: ForkTooLargeResult): string[] {
  */
 export function renderForkComment(result: ForkResult): string {
   const lines = result.status === "too-large" ? renderTooLarge(result) : renderScored(result);
+  return `${[FORK_COMMENT_MARKER, ...lines].join("\n")}\n`;
+}
+
+/**
+ * Renders the comment that replaces the fork comment when the scoring job failed.
+ *
+ * The text is fixed apart from the short commit hash, so an earlier score never stays on the pull
+ * request looking current.
+ *
+ * @param headSha - The head commit of the completed workflow run, as GitHub recorded it.
+ * @returns The comment body, starting with {@link FORK_COMMENT_MARKER}.
+ */
+export function renderForkFailureComment(headSha: string): string {
+  const lines = [
+    "### ⚪ Diff risk not scored",
+    "",
+    `Not scored: the scoring job failed for ${formatShortCommit(headSha)}. That is not a low score. The workflow run's log says why; re-run it, or review this pull request without a score.`,
+    "",
+    ...renderFooter(undefined, undefined),
+  ];
   return `${[FORK_COMMENT_MARKER, ...lines].join("\n")}\n`;
 }

@@ -189,7 +189,13 @@ export function installFakeGitHub(init: Partial<FakeGitHub> = {}): FakeGitHub {
       // The query is kept in the log so a test can check which head the caller asked for.
       if (route === `GET ${pr}/pulls`) return handle("listPulls", `${path}${url.search}`, undefined, () => json(200, gh.pulls));
       if (route === `GET ${pr}/pulls/7/commits`) return handle("listCommits", path, undefined, () => json(200, gh.commits));
-      if (route === `GET ${pr}/issues/7/comments`) return handle("listComments", path, undefined, () => json(200, gh.comments));
+      if (route === `GET ${pr}/issues/7/comments`)
+        return handle("listComments", path, undefined, () => {
+          // Served 100 per page, oldest first, with a `next` link while more remain, as GitHub does.
+          const page = Number(url.searchParams.get("page") ?? "1");
+          const next = `<${API}${path}?per_page=100&page=${page + 1}>; rel="next"`;
+          return json(200, gh.comments.slice((page - 1) * 100, page * 100), page * 100 < gh.comments.length ? { link: next } : {});
+        });
       if (route === `POST ${pr}/issues/7/comments`)
         return handle("createComment", path, body, () => {
           const id = nextId++;

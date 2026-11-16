@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runFromEnv } from "../../src/action/env.js";
-import { FORK_COMMENT_CLIENT_METHODS, restrictToForkComment, runForkComment } from "../../src/action/fork-comment.js";
+import { FORK_COMMENT_CLIENT_METHODS, restrictToForkComment, runForkComment, runForkFailure } from "../../src/action/fork-comment.js";
 import { GitHubClient } from "../../src/action/github.js";
 import { createWorkflowIO } from "../../src/action/workflow.js";
 import { FORK_COMMENT_MARKER } from "../../src/report/fork-comment.js";
@@ -161,11 +161,106 @@ describe("runForkComment", () => {
     expect(gh.ops("addLabels")).toHaveLength(0);
   });
 
-  it("warns and carries on when the token cannot comment or label", async () => {
-    const scenario = setup({ gh: { forbid: new Set<Op>(["createComment", "addLabels"]) } });
-    await expect(scenario.run()).resolves.toBeUndefined();
-    expect(scenario.log()).toMatch(/::warning::.*comment.*403/);
-    expect(scenario.log()).toMatch(/::warning::.*label.*403/);
+  describe("fails visibly when GitHub refuses a write, so a stale score is never left looking current", () => {
+    it("a comment the token may not write (403): GitHub's message and the permission it needs", async () => {
+      const scenario = setup({ gh: { forbid: new Set<Op>(["createComment"]) } });
+      await expect(scenario.run()).rejects.toThrow(/403 Resource not accessible by integration.*pull-requests: write/);
+      expect(scenario.log()).not.toMatch(/::warning::/);
+    });
+
+    it("an update of its own comment the token may not write (403)", async () => {
+      const scenario = setup({ gh: { forbid: new Set<Op>(["updateComment"]), comments: [{ id: 5, body: `${FORK_COMMENT_MARKER}\nold`, user: BOT }] } });
+      await expect(scenario.run()).rejects.toThrow(/403/);
+    });
+
+    it("a label the token may not add or remove (403), after the comment was written", async () => {
+      const addRefused = setup({ gh: { forbid: new Set<Op>(["addLabels"]) } });
+      await expect(addRefused.run()).rejects.toThrow(/403 Resource not accessible by integration.*issues: write/);
+      expect(gh.ops("createComment")).toHaveLength(1);
+      vi.unstubAllGlobals();
+      const removeRefused = setup({ gh: { forbid: new Set<Op>(["removeLabel"]), labels: ["risk:green"], pulls: [openPull({ labels: [{ name: "risk:green" }] })] } });
+      await expect(removeRefused.run()).rejects.toThrow(/403/);
+    });
+
+    it("a server error (500) on the comment or a label is not swallowed", async () => {
+      for (const failing of ["listComments", "createComment", "addLabels"] as Op[]) {
+        const scenario = setup({ gh: { fail: new Set<Op>([failing]) } });
+        await expect(scenario.run()).rejects.toThrow(/500 Server Error/);
+        vi.unstubAllGlobals();
+      }
+    });
+
+    it("through the Action: exit code 1 and GitHub's message as the error", async () => {
+      setup({ gh: { forbid: new Set<Op>(["createComment"]) } });
+      const directory = mkdtempSync(join(tmpdir(), "opendrs-fork-comment-"));
+      try {
+        writeFileSync(join(directory, "event.json"), JSON.stringify(forkEvent()));
+        let log = "";
+        const env = { "INPUT_GITHUB-TOKEN": "t", INPUT_MODE: "fork-comment", INPUT_RESULT: scoredResult(), GITHUB_EVENT_PATH: join(directory, "event.json"), GITHUB_REPOSITORY: "o/r", GITHUB_WORKSPACE: directory };
+        expect(await runFromEnv(env, (text) => void (log += text))).toBe(1);
+        expect(log).toMatch(/::error::GitHub POST \/repos\/o\/r\/issues\/7\/comments failed: 403 Resource not accessible by integration/);
+      } finally {
+        rmSync(directory, { recursive: true, force: true });
+      }
+    });
+  });
+
+  describe("finds its own comment", () => {
+    it("updates the newest of two of its marker comments", async () => {
+      const scenario = setup({ gh: { comments: [{ id: 5, body: `${FORK_COMMENT_MARKER}\nolder`, user: BOT }, { id: 6, body: `${FORK_COMMENT_MARKER}\nnewer`, user: BOT }] } });
+      await scenario.run();
+      expect(gh.ops("updateComment").map((entry) => entry.path)).toEqual(["/repos/o/r/issues/comments/6"]);
+      expect(gh.ops("createComment")).toHaveLength(0);
+    });
+
+    it("when the token's account is unknown, counts only github-actions[bot]'s marker comments as its own", async () => {
+      const otherBot = { login: "other-app[bot]", type: "Bot" as const };
+      // GraphQL and GET /user both refuse, so the token's login is unknown.
+      const onlyOtherBot = setup({ gh: { forbid: new Set<Op>(["viewer"]), comments: [{ id: 5, body: `${FORK_COMMENT_MARKER}\nforged`, user: otherBot }] } });
+      await onlyOtherBot.run();
+      expect(gh.ops("updateComment")).toHaveLength(0);
+      expect(gh.ops("createComment")).toHaveLength(1);
+      vi.unstubAllGlobals();
+      const both = setup({ gh: { forbid: new Set<Op>(["viewer"]), comments: [{ id: 5, body: `${FORK_COMMENT_MARKER}\nours`, user: BOT }, { id: 6, body: `${FORK_COMMENT_MARKER}\nforged`, user: otherBot }] } });
+      await both.run();
+      expect(gh.ops("updateComment").map((entry) => entry.path)).toEqual(["/repos/o/r/issues/comments/5"]);
+    });
+
+    it("reads at most 10 pages of comments, and fails rather than add a second comment past them", async () => {
+      const chatter = Array.from({ length: 1001 }, (_, index) => ({ id: index + 1, body: "+1", user: { login: "mallory", type: "User" as const } }));
+      const scenario = setup({ gh: { comments: chatter } });
+      await expect(scenario.run()).rejects.toThrow(/more than 1000 comments/);
+      expect(gh.ops("listComments")).toHaveLength(10);
+      expect(gh.ops("createComment")).toHaveLength(0);
+      vi.unstubAllGlobals();
+      const withOwn = chatter.map((comment) => (comment.id === 950 ? { ...comment, body: `${FORK_COMMENT_MARKER}\nold`, user: BOT } : comment));
+      const found = setup({ gh: { comments: withOwn } });
+      await found.run();
+      expect(gh.ops("updateComment").map((entry) => entry.path)).toEqual(["/repos/o/r/issues/comments/950"]);
+    });
+  });
+
+  describe("changes risk labels only when needed", () => {
+    it("makes no label call when the pull request already has exactly the right one, even listed twice", async () => {
+      const scenario = setup({ gh: { labels: ["risk:red"], pulls: [openPull({ labels: [{ name: "risk:red" }, { name: "risk:red" }] })] } });
+      await scenario.run();
+      expect(gh.ops("addLabels")).toHaveLength(0);
+      expect(gh.ops("removeLabel")).toHaveLength(0);
+    });
+
+    it("removes both stale risk labels and adds the right one", async () => {
+      const scenario = setup({ gh: { labels: ["risk:green", "risk:yellow"], pulls: [openPull({ labels: [{ name: "risk:green" }, { name: "risk:yellow" }] })] } });
+      await scenario.run();
+      expect(gh.ops("removeLabel").map((entry) => decodeURIComponent(entry.path))).toEqual(["/repos/o/r/issues/7/labels/risk:green", "/repos/o/r/issues/7/labels/risk:yellow"]);
+      expect(gh.labels).toEqual(["risk:red"]);
+    });
+
+    it("passes when a stale label is already gone (404 on removal)", async () => {
+      const scenario = setup({ gh: { labels: [], pulls: [openPull({ labels: [{ name: "risk:green" }] })] } });
+      await expect(scenario.run()).resolves.toBeUndefined();
+      expect(gh.ops("removeLabel")).toHaveLength(1);
+      expect(gh.labels).toEqual(["risk:red"]);
+    });
   });
 
   describe("rejects", () => {
@@ -308,7 +403,7 @@ describe("fork-comment mode can never approve, review or merge", () => {
   it("the client it is handed has no method that approves, reviews, merges or queues", () => {
     const client = restrictToForkComment(new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" }));
     expect(Object.keys(client).sort()).toEqual([...FORK_COMMENT_CLIENT_METHODS].sort());
-    expect([...FORK_COMMENT_CLIENT_METHODS].sort()).toEqual(["addLabels", "createComment", "listComments", "listOpenPullsByHead", "removeLabel", "updateComment", "viewerLogin"]);
+    expect([...FORK_COMMENT_CLIENT_METHODS].sort()).toEqual(["addLabels", "createComment", "listCommentsUpTo", "listOpenPullsByHead", "removeLabel", "updateComment", "viewerLogin"]);
     for (const method of ["approve", "dismissReview", "enableAutoMerge", "disableAutoMerge", "enqueue", "dequeue", "requestReviewers", "graphql", "listReviews", "mergeSettings", "readBlob", "listPullFiles"]) {
       expect(client).not.toHaveProperty(method);
     }
@@ -397,5 +492,87 @@ describe("runFromEnv with mode: fork-comment", () => {
     const scenario = environment({ GITHUB_EVENT_NAME: "schedule" }, { schedule: "*/15 * * * *" });
     expect(await runFromEnv(scenario.env, scenario.write)).toBe(1);
     expect(gh.log).toEqual([]);
+  });
+});
+
+describe("runFromEnv with approval and auto-merge switched on everywhere it could be", () => {
+  it("fork-comment with a green result still performs only comment and label operations", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "opendrs-fork-comment-"));
+    try {
+      // A workspace config that would approve and auto-merge a green PR in full mode. This mode never reads it.
+      writeFileSync(join(directory, ".opendrs.yml"), "autoApprove:\n  enabled: true\n");
+      writeFileSync(join(directory, "event.json"), JSON.stringify(forkEvent()));
+      gh = installFakeGitHub({ headSha: HEAD_SHA, pulls: [openPull()], checkRuns: [{ name: "ai-review", conclusion: "success" }], mergeQueue: true });
+      const env: NodeJS.ProcessEnv = {
+        "INPUT_GITHUB-TOKEN": "t",
+        INPUT_MODE: "fork-comment",
+        INPUT_RESULT: scoredResult({ score: 0.02, tier: "green", signals: [] }),
+        "INPUT_BASE-CONFIG": "false",
+        "INPUT_SAMPLE-SALT": "salt",
+        INPUT_BRIEF: "true",
+        GITHUB_EVENT_PATH: join(directory, "event.json"),
+        GITHUB_EVENT_NAME: "workflow_run",
+        GITHUB_REPOSITORY: "o/r",
+        GITHUB_WORKSPACE: directory,
+      };
+      expect(await runFromEnv(env, () => {})).toBe(0);
+      expect(gh.labels).toEqual(["risk:green"]);
+      for (const operation of performedOperations()) expect(ALLOWED_OPERATIONS).toContain(operation);
+      expect(gh.reviews).toEqual([]);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("fork-failure mode", () => {
+  const ourComment = { id: 5, body: `${FORK_COMMENT_MARKER}\n### 🟢 Diff risk 0.05 · green`, user: BOT };
+
+  function failureSetup(init: Partial<FakeGitHub> = {}, event: unknown = forkEvent()) {
+    gh = installFakeGitHub({ headSha: HEAD_SHA, pulls: [openPull({ labels: [{ name: "risk:green" }, { name: "bug" }] })], labels: ["risk:green", "bug"], comments: [{ ...ourComment }], ...init });
+    let log = "";
+    const io = createWorkflowIO({}, (text) => void (log += text));
+    const client = restrictToForkComment(new GitHubClient({ token: "t", apiUrl: API, graphqlUrl: `${API}/graphql`, owner: "o", repo: "r" }));
+    return { run: () => runForkFailure({ event, repository: "o/r", shouldComment: true, shouldLabel: true, client, io }), log: () => log };
+  }
+
+  it("replaces its comment with a fixed 'not scored' text for the run's commit and removes the risk label", async () => {
+    await failureSetup().run();
+    expect(gh.ops("updateComment").map((entry) => entry.path)).toEqual(["/repos/o/r/issues/comments/5"]);
+    expect(gh.comments[0]!.body).toBe(
+      `${FORK_COMMENT_MARKER}\n### ⚪ Diff risk not scored\n\nNot scored: the scoring job failed for \`aaaaaaa\`. That is not a low score. The workflow run's log says why; re-run it, or review this pull request without a score.\n\n` +
+        "<sub>Advisory only: opendrs never approves or merges a fork pull request, and this comment is not a review. [How fork pull requests are scored](https://error-path.github.io/opendrs/github-action.html#fork-pull-requests).</sub>\n" +
+        "<sub>[github.com/error-path/opendrs](https://github.com/error-path/opendrs)</sub>\n",
+    );
+    expect(gh.labels).toEqual(["bug"]);
+    for (const operation of performedOperations()) expect(ALLOWED_OPERATIONS).toContain(operation);
+  });
+
+  it("adds the comment when there is none yet, and writes nothing from the pull request", async () => {
+    await failureSetup({ comments: [] }).run();
+    expect(gh.ops("createComment")).toHaveLength(1);
+    expect(gh.comments[0]!.body).not.toMatch(/everyone|evil|img|mallory|patch-1/);
+  });
+
+  it("does nothing for a run that did not finish, or a pull request it cannot find", async () => {
+    await failureSetup({}, forkEvent({ conclusion: "action_required" })).run();
+    expect(gh.log).toEqual([]);
+    vi.unstubAllGlobals();
+    await failureSetup({ pulls: [] }).run();
+    expect(performedOperations()).toEqual(["listPulls"]);
+  });
+
+  it("runs through the Action as mode fork-failure, without a result input", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "opendrs-fork-failure-"));
+    try {
+      writeFileSync(join(directory, "event.json"), JSON.stringify(forkEvent({ conclusion: "failure" })));
+      failureSetup();
+      const env = { "INPUT_GITHUB-TOKEN": "t", INPUT_MODE: "fork-failure", GITHUB_EVENT_PATH: join(directory, "event.json"), GITHUB_REPOSITORY: "o/r", GITHUB_WORKSPACE: directory };
+      expect(await runFromEnv(env, () => {})).toBe(0);
+      expect(gh.comments[0]!.body).toMatch(/the scoring job failed for `aaaaaaa`/);
+      expect(gh.labels).toEqual(["bug"]);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
   });
 });
