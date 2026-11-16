@@ -153,22 +153,23 @@ export interface HeadContentsGap {
  *
  * Only files the complexity signal reads are fetched: changed, not deleted, not ignored, text, and
  * in a code language. Each is fetched by its blob hash from the listing and checked against that
- * hash. A file that holds a NUL is marked binary on `changedFiles`; a file that is not valid UTF-8
- * keeps its line counts, and the reader then returns undefined for every file.
+ * hash. The changed files are never changed here: a file whose head contents hold a NUL or are not
+ * valid UTF-8 keeps the line counts of its text patch.
  *
  * If any wanted file cannot be had (more files than the cap, a file or the total over its byte
- * cap, a failed or mismatched download, a listing entry without a blob hash), the reader returns
+ * cap, a failed or mismatched download, a listing entry without a blob hash, contents that are
+ * not text), the reader returns
  * undefined for every file. The signal then reports unknown, which counts as risk, instead of a
  * count that silently leaves files out.
  *
- * @param changedFiles - The changed files; a file found to be binary is updated in place.
+ * @param changedFiles - The changed files, read only.
  * @param pullFiles - The listing the changed files were built from, in the same order.
  * @param readBlob - Downloads a blob, or returns undefined when it is over the byte cap.
  * @param limits - The caps on files and bytes.
  * @returns A reader for head contents, and the reason when not every wanted file was read.
  */
 export async function readHeadContents(
-  changedFiles: ChangedFile[],
+  changedFiles: readonly ChangedFile[],
   pullFiles: readonly PullFile[],
   readBlob: (blobSha: string, maxBytes: number) => Promise<Buffer | undefined>,
   limits: ForkScoreLimits,
@@ -197,17 +198,10 @@ export async function readHeadContents(
     if (!isBlobContent(content, sha)) return unavailable("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
     totalBytes += content.length;
     if (totalBytes > limits.maxHeadTotalBytes) return unavailable("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
-    if (content.includes(0)) {
-      // GitHub showed a text patch, but the file holds a NUL: treat it as binary, as the git path does.
-      changedFile.binary = true;
-      changedFile.hunks = [];
-      changedFile.added = 0;
-      changedFile.deleted = 0;
-      delete changedFile.hasUnreadablePatch;
-      continue;
-    }
-    // Text with a byte that is not UTF-8 is still text to git: its lines keep counting, and only its
-    // branch keywords cannot be counted reliably, so the head contents as a whole are left unread.
+    // GitHub sent this file as text, so its line counts stand whatever the head contents hold: a
+    // fork can place a NUL or an invalid byte far from its changed lines. Only the branch keywords
+    // cannot be counted reliably then, so the head contents as a whole are left unread.
+    if (content.includes(0)) return unavailable("failure", `the content of blob ${sha} at the head commit holds a NUL`);
     if (!isUtf8(content)) return unavailable("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
     textByPath.set(changedFile.path, content.toString("utf8"));
   }

@@ -707,6 +707,24 @@ describe("score-only mode never makes a change look smaller than it is", () => {
     expect(run.log).toMatch(/not valid UTF-8/);
   });
 
+  it("keeps a file's lines when its head contents hold a NUL far from the changed lines, and leaves complexity.touched unknown", async () => {
+    const fixture = await forkPullRequest({}, changeOneFile);
+    const honest = expectSafeResult(await runScoreJob(fixture), fixture);
+    // GitHub decides from the start of the file and still sends a text patch; the NUL is past byte 8000.
+    const file = fixture.api.files[0]!;
+    const withLateNul = Buffer.concat([Buffer.from(`export const a = 2;\n${"// padding\n".repeat(900)}`), Buffer.from([0]), Buffer.from("\n")]);
+    file.sha = execFileSync("git", ["hash-object", "--stdin"], { input: withLateNul, encoding: "utf8" }).trim();
+    fixture.api.readBlob = () => withLateNul;
+    fixture.api.requests.length = 0;
+    const run = await runScoreJob(fixture);
+    const result = expectSafeResult(run, fixture);
+    if (honest.status !== "scored" || result.status !== "scored") throw new Error("expected scores");
+    expect(result.counts).toMatchObject({ files: 1, added: 3, deleted: 1 });
+    expect(result.counts.unknowns).toBe(honest.counts.unknowns + 1);
+    expect(result.signals.map((signal) => signal.id)).not.toContain("complexity.touched");
+    expect(run.log).toMatch(/::warning::.*holds a NUL/);
+  });
+
   it("verifies a SHA-1 blob name and accepts a SHA-256 one unchecked, as GitHub hosts no SHA-256 repository", () => {
     const content = Buffer.from("export const a = 1;\n");
     const sha1 = execFileSync("git", ["hash-object", "--stdin"], { input: content, encoding: "utf8" }).trim();

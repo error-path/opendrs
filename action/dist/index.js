@@ -33347,14 +33347,7 @@ async function readHeadContents(changedFiles2, pullFiles, readBlob, limits) {
     if (!isBlobContent(content, sha)) return unavailable("failure", `the content GitHub returned for blob ${sha} does not match that hash`);
     totalBytes += content.length;
     if (totalBytes > limits.maxHeadTotalBytes) return unavailable("cap", `the changed code files are larger than ${limits.maxHeadTotalBytes} bytes in total`);
-    if (content.includes(0)) {
-      changedFile.binary = true;
-      changedFile.hunks = [];
-      changedFile.added = 0;
-      changedFile.deleted = 0;
-      delete changedFile.hasUnreadablePatch;
-      continue;
-    }
+    if (content.includes(0)) return unavailable("failure", `the content of blob ${sha} at the head commit holds a NUL`);
     if (!isUtf82(content)) return unavailable("failure", `the content of blob ${sha} at the head commit is not valid UTF-8`);
     textByPath.set(changedFile.path, content.toString("utf8"));
   }
