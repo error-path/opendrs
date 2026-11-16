@@ -7,7 +7,12 @@ import { defineConfig } from "vitest/config";
 // "Dev loop metrics" and docs/research/2026-10-22-dev-loop-time-sinks.md for how this list was chosen
 // (every file that took >= 20s in a full `vitest run --reporter=json` measurement).
 export const SLOW_TEST_FILES = [
-  "tests/action/run.test.ts",
+  // tests/action/run.test.ts, split in five so it no longer holds one worker for ~150s alone.
+  "tests/action/run-scoring.test.ts",
+  "tests/action/run-authors-config.test.ts",
+  "tests/action/run-comment-rescore.test.ts",
+  "tests/action/run-approval.test.ts",
+  "tests/action/run-dismiss-landing.test.ts",
   "tests/signals/size.test.ts",
   "tests/architecture/contracts.test.ts",
   "tests/model/calibrate.test.ts",
