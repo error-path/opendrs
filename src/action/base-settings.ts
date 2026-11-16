@@ -2,6 +2,7 @@ import { CONFIG_FILE, defaultConfig, parseConfigText, type OpendrsConfig } from 
 import type { ModelWeights } from "../domain/types.js";
 import { OpendrsError } from "../domain/types.js";
 import { gitMaybe } from "../git/exec.js";
+import { parseModelWeights } from "../model/schema.js";
 import type { WorkflowIO } from "./workflow.js";
 
 // What the Action reads from the pull request's base commit, so a pull request cannot change its
@@ -57,15 +58,11 @@ export function logBaseConfigSource(io: WorkflowIO, baseSha: string, hasConfigFi
 export async function readBaseModel(repoDir: string, baseSha: string, config: OpendrsConfig, io: WorkflowIO): Promise<ModelWeights | undefined> {
   const modelText = await gitMaybe(repoDir, ["show", `${baseSha}:${config.model}`]);
   if (modelText === undefined) return undefined;
-  try {
-    const model = JSON.parse(modelText) as ModelWeights;
-    if (model.version === 1 && typeof model.intercept === "number") {
-      io.info(`Using calibrated model ${config.model} from the base commit.`);
-      return model;
-    }
-  } catch {
-    // fall through to the warning
+  const parsedModel = parseModelWeights(modelText);
+  if ("problem" in parsedModel) {
+    io.warning(`${config.model} on the base commit is not a valid model (${parsedModel.problem}); it is ignored.`);
+    return undefined;
   }
-  io.warning(`${config.model} on the base commit is not a valid model; it is ignored.`);
-  return undefined;
+  io.info(`Using calibrated model ${config.model} from the base commit.`);
+  return parsedModel.model;
 }

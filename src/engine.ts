@@ -13,6 +13,7 @@ import { buildDiffText } from "./llm/prompt.js";
 import { createLlmProvider } from "./llm/provider.js";
 import { DEFAULT_WEIGHTS } from "./model/defaults.js";
 import { scoreSignals } from "./model/logistic.js";
+import { parseModelWeights } from "./model/schema.js";
 import { decide, type GateInput } from "./policy/gate.js";
 import { agentPatterns, classifyPr } from "./policy/source.js";
 import { SIGNAL_PROVIDERS } from "./signals/index.js";
@@ -83,15 +84,23 @@ export interface PullRequestCommit {
   message: string;
 }
 
-/** Load the calibrated model if config.model exists in the repo; else the default priors. */
-export async function loadModel(repoDir: string, config: OpendrsConfig): Promise<{ model: ModelWeights; kind: "default" | "calibrated" }> {
+/**
+ * Loads the calibrated model (`config.model`) from the working tree, or the default priors.
+ * @param repoDir - The repository.
+ * @param config - The config that names the model file.
+ * @returns The model and which kind it is. `problem` says why a model file that exists was not used: it is not a valid model (see {@link parseModelWeights}).
+ */
+export async function loadModel(repoDir: string, config: OpendrsConfig): Promise<{ model: ModelWeights; kind: "default" | "calibrated"; problem?: string }> {
+  let modelText: string;
   try {
-    const parsed = JSON.parse(await readFile(join(repoDir, config.model), "utf8")) as ModelWeights;
-    if (parsed.version === 1 && typeof parsed.intercept === "number") return { model: parsed, kind: "calibrated" };
+    modelText = await readFile(join(repoDir, config.model), "utf8");
   } catch {
-    // missing or unreadable model file: fall back to priors
+    // No model file, or it cannot be read: the default priors, as before calibration.
+    return { model: DEFAULT_WEIGHTS, kind: "default" };
   }
-  return { model: DEFAULT_WEIGHTS, kind: "default" };
+  const parsedModel = parseModelWeights(modelText);
+  if ("problem" in parsedModel) return { model: DEFAULT_WEIGHTS, kind: "default", problem: `${config.model} is not a valid model (${parsedModel.problem}); it is ignored` };
+  return { model: parsedModel.model, kind: "calibrated" };
 }
 
 const FIELD = "\x1f";

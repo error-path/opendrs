@@ -31,6 +31,13 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 ### Fixed
 
+- A calibrated model file is now checked strictly before it is used (#84). Before, any file with
+  `version: 1` and a numeric `intercept` was used, so missing, non-numeric or huge weights could
+  push every PR to green or to red. Now the intercept, weights and priors must be finite and within ±20,
+  signal ids must be known, `llm.*` weights must not be negative, and percentiles must be in
+  0..1 and in order. A model that fails is ignored with a warning naming the field, and the
+  default weights are used.
+
 - A diff with no changed files is no longer rated green and auto-approved: its score only reflected
   the author. The new `empty-diff` rule sends it to a human, and `opendrs score`, `opendrs brief`
   and the `review_brief` MCP tool print "nothing to score" instead of a verdict. Before, running
