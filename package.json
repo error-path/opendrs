@@ -58,7 +58,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node scripts/record-run.mjs test -- vitest run",
     "test:slow": "node scripts/record-run.mjs test:slow -- vitest run --config vitest.slow.config.ts",
-    "check": "node scripts/record-run.mjs check -- node scripts/run-check.mjs"
+    "check": "node scripts/record-run.mjs check -- node scripts/run-check.mjs",
+    "release:prepare": "node scripts/release.mjs prepare"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",

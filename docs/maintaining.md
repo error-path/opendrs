@@ -29,8 +29,10 @@ A short runbook for the maintainer.
 
 ## Releasing
 
-1. Update `version` in `package.json`, `package-lock.json`, `src/version.ts` and both fields of
-   `server.json`, add a section to `CHANGELOG.md`, and rebuild `action/dist`.
+1. On a branch from `main`, run `npm run release:prepare -- 0.7.0`. It sets the version in
+   `package.json`, `package-lock.json`, `src/version.ts`, both fields of `server.json` and the
+   golden score fixture, renames `## Unreleased` in `CHANGELOG.md` to the dated release, and
+   rebuilds `action/dist`. Read the changelog section, run `npm run check`, and open the PR.
 2. Merge that PR.
 3. Tag the release and move the major tag (from a network that allows pushes):
 
@@ -45,14 +47,21 @@ A short runbook for the maintainer.
 5. When that run passes, approve the staged version on npmjs.com, in the package's
    **Staged Packages** tab, with your 2FA code. Then check that
    `npm view @error-path/opendrs version` shows the release.
-6. Update the MCP registry entry: run `mcp-publisher login github` and `mcp-publisher publish` from
-   the tag. The registry checks that the npm package's `mcpName` matches `server.json`'s `name`,
-   so publish to npm first.
-7. Only after npm has the new version, open a PR that updates the plugin: set `version` in
-   `plugin/.claude-plugin/plugin.json` and every pinned `@error-path/opendrs@<version>` in
-   `plugin/.claude-plugin/plugin.json`, `plugin/commands/opendrs-review.md` and
-   `plugin/skills/opendrs/SKILL.md`. The directory follows `main`, so a pin merged before you
-   approve the staged version would point at a version that does not exist yet.
+6. Under **Actions**, open **Finish a release**, choose **Run workflow** and give the tag, such as
+   `v0.7.0` (`release-finish.yml`; only the repository owner can run it). It checks that npm
+   serves the version, publishes `server.json` to the MCP registry with the run's OIDC token, and
+   pushes a `chore/plugin-pin-<version>` branch made by `node scripts/release.mjs pin-plugin`. The
+   registry checks that the npm package's `mcpName` matches `server.json`'s `name`, so it must run
+   after npm has the version. A re-run skips a version the registry already lists.
+7. Open the plugin pin PR from the link in the run's summary, and merge it when CI passes. You open
+   it, not the workflow, because a PR opened with the workflow's token would not start CI. The
+   plugin directory follows `main`, so a pin merged before npm has the version would point at a
+   version that does not exist yet.
+
+   If the workflow cannot run, do steps 6 and 7 by hand: `mcp-publisher login github` and
+   `mcp-publisher publish` from the tag, then `node scripts/release.mjs pin-plugin 0.7.0` on a
+   branch and open the PR. To move to a newer mcp-publisher, update `PUBLISHER_VERSION` and
+   `PUBLISHER_SHA256` (the release's `mcp-publisher_linux_amd64.tar.gz` digest) together.
 8. Refresh the directory listings that are not driven by the registry: on
    [Glama](https://glama.ai/mcp/servers) (configured by `glama.json`) and on
    [mcp.so](https://mcp.so/servers/opendrs), sign in as a maintainer and check that the listing

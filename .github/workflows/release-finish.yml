@@ -1,0 +1,147 @@
+name: Finish a release
+
+# Run by hand after you approve a staged npm version: publishes server.json to the MCP registry,
+# then pushes a branch that pins the Claude Code plugin to the version, for you to open as a PR
+# (a PR opened by this workflow's token would not start CI). Only the repository owner can run it,
+# and it signs in to the registry with the run's OIDC token, so no secret is stored. See
+# docs/maintaining.md, "Releasing".
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag that npm already serves, such as v0.6.0"
+        required: true
+
+permissions: {}
+
+# Never cancel a publish halfway; a second run waits.
+concurrency:
+  group: release-finish
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check the release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      TAG: ${{ inputs.tag }}
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check who started the run
+        env:
+          TRIGGERING_ACTOR: ${{ github.triggering_actor }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          # GitHub lets anyone with write access run a workflow; this one publishes, so only the owner.
+          test "$TRIGGERING_ACTOR" = "$OWNER" \
+            || { echo "::error::Only $OWNER can finish a release, not $TRIGGERING_ACTOR"; exit 1; }
+      - name: Check the tag name
+        run: |
+          # [[ =~ ]] matches the whole value; grep would pass a value with one good line.
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::'$TAG' is not a release tag like v1.2.3"
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/tags/${{ env.TAG }}
+          fetch-depth: 0 # the next step needs main's history
+          persist-credentials: false
+      - name: Check that the tag is on main and matches package.json and server.json
+        id: version
+        run: |
+          git merge-base --is-ancestor HEAD origin/main \
+            || { echo "::error::$TAG is not on main"; exit 1; }
+          VERSION=$(node -p 'require("./package.json").version')
+          test "v$VERSION" = "$TAG" \
+            || { echo "::error::$TAG does not match package.json version $VERSION"; exit 1; }
+          test "$(node -p 'require("./server.json").version')" = "$VERSION" \
+            || { echo "::error::server.json's version is not $VERSION"; exit 1; }
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Check that npm serves the version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          # The registry refuses a version npm does not have, and the plugin pin would install nothing.
+          npm view "@error-path/opendrs@$VERSION" version 2>/dev/null | grep -qx "$VERSION" \
+            || { echo "::error::npm does not serve $VERSION yet: approve the staged version first"; exit 1; }
+
+  registry:
+    name: Publish to the MCP registry
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # the OIDC token the registry checks for the io.github.error-path namespace
+    env:
+      TAG: ${{ inputs.tag }}
+      VERSION: ${{ needs.check.outputs.version }}
+      # Update both together, from the release's mcp-publisher_linux_amd64.tar.gz digest.
+      PUBLISHER_VERSION: "1.8.9"
+      PUBLISHER_SHA256: 4d527ca8f1ced0394c962dc925c2a4a4addef441cbefd62501c875e9481823a8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/tags/${{ env.TAG }}
+          persist-credentials: false
+      - name: Skip a version the registry already has
+        id: listed
+        run: |
+          NAME=$(node -p 'encodeURIComponent(require("./server.json").name)')
+          STATUS=$(curl -sS -o /dev/null -w '%{http_code}' "https://registry.modelcontextprotocol.io/v0/servers/$NAME/versions/$VERSION")
+          case "$STATUS" in
+            200) echo "The registry already lists $VERSION; nothing to publish." | tee -a "$GITHUB_STEP_SUMMARY"
+                 echo "skip=true" >> "$GITHUB_OUTPUT" ;;
+            404) ;;
+            *) echo "::error::The registry answered $STATUS"; exit 1 ;;
+          esac
+      - name: Install mcp-publisher
+        if: steps.listed.outputs.skip != 'true'
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/mcp-publisher.tar.gz" \
+            "https://github.com/modelcontextprotocol/registry/releases/download/v$PUBLISHER_VERSION/mcp-publisher_linux_amd64.tar.gz"
+          echo "$PUBLISHER_SHA256  $RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP" mcp-publisher
+      - name: Publish
+        if: steps.listed.outputs.skip != 'true'
+        run: |
+          "$RUNNER_TEMP/mcp-publisher" login github-oidc
+          "$RUNNER_TEMP/mcp-publisher" publish
+          echo "### Published $VERSION to the MCP registry" >> "$GITHUB_STEP_SUMMARY"
+
+  plugin-pin:
+    name: Push the plugin pin branch
+    needs: [check, registry]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to push the branch; the PR is opened by the owner, so CI runs on it
+    env:
+      VERSION: ${{ needs.check.outputs.version }}
+      BRANCH: chore/plugin-pin-${{ needs.check.outputs.version }}
+      REPOSITORY: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Pin the plugin and push the branch
+        run: |
+          node scripts/release.mjs pin-plugin "$VERSION"
+          if git diff --quiet; then
+            echo "main already pins $VERSION; no branch to push." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git switch -c "$BRANCH"
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -am "chore(plugin): pin @error-path/opendrs $VERSION"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          {
+            echo "### Plugin pin branch pushed"
+            echo
+            echo "Open the PR: https://github.com/$REPOSITORY/compare/main...$BRANCH?expand=1"
+          } >> "$GITHUB_STEP_SUMMARY"
