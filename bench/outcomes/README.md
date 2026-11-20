@@ -65,6 +65,9 @@ resumes; delete a file to redo that one thing.
 
 `timings.json` under the cache root holds each step's last duration; `results.md` prints them.
 
+[`size-cuts.md`](size-cuts.md) checks whether big PRs are fixed more often per line or only because
+they write more lines (written by hand, not by `run.ts`).
+
 ## Corpus rule (spec §3, mechanical)
 
 The six repos are public, multi-reviewer projects, one per supported language.
