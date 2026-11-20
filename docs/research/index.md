@@ -7,7 +7,8 @@ description: "Dated research notes behind opendrs: field tests on real repositor
 
 Dated notes from building opendrs: what was tested, on which repositories, and what changed as a
 result. Each note lists its sources. The [experiment log](../experiments.md)
-has the benchmark runs behind them.
+has the benchmark runs behind them. [Ideas not yet tested](ideas.md) lists changes a result
+points to that no experiment has checked yet.
 
 {% assign notes = site.pages | where_exp: "p", "p.dir == '/research/'" | where_exp: "p", "p.date" | where_exp: "p", "p.sitemap != false" | sort: "date" | reverse %}
 {% for note in notes %}
