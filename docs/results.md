@@ -91,6 +91,30 @@ without any configuration. "Caught" is the share of later-fixed commits that fal
 - Held-out AUCs near 0.45–0.50 (tokio, terraform, eslint) come from the newest commits, whose
   bugs mostly haven't been found and fixed yet. Expect labels there to be incomplete.
 
+## opendrs on its own pull requests
+
+opendrs scores every pull request to this repository with the released action
+([workflow](https://github.com/error-path/opendrs/blob/main/.github/workflows/opendrs.yml),
+[`.opendrs.yml`](https://github.com/error-path/opendrs/blob/main/.opendrs.yml)). As of 2026-11-20,
+taken from the opendrs comment on each PR (public GitHub API), for PRs #25–#90, opened 2026-10-18
+to 2026-11-17. Earlier PRs used an older comment format and a comment-only configuration, and
+Dependabot PRs get no opendrs comment, so both are left out.
+
+| Tier | PRs | Auto-approved |
+| --- | ---: | ---: |
+| Green | 31 | 11 |
+| Yellow | 21 | 0 |
+| Red | 2 | 0 |
+| **Total** | **54** | **11** |
+
+- Each of the 11 approvals is an `APPROVED` review on the PR. Of the 20 green PRs not approved,
+  14 hit the self-modification guard (they change the workflow, `.opendrs.yml` or `action/dist`).
+- The two red PRs, [#64](https://github.com/error-path/opendrs/pull/64) (where an LLM API key is
+  sent) and [#83](https://github.com/error-path/opendrs/pull/83) (comments on fork PRs), both
+  change security-sensitive action code.
+- This is a small, single-maintainer sample with no incident labels, so it shows how the gate
+  behaves, not how well the score predicts bugs.
+
 ## Reproduce a row
 
 Reproduce a row: `git clone <repo> && cd <repo> && npx @error-path/opendrs calibrate --max-commits 4000 && npx @error-path/opendrs backtest --max-commits 4000`.

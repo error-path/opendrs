@@ -141,6 +141,7 @@ Every setting lives in `.opendrs.yml`, read from the base branch so a PR cannot 
 | ApacheJIT (15 Apache Java projects, official 2017–2019 test years, `apache/hadoop` left out because it has no positive labels) | Calibrated opendrs: AUC 0.823; catches 67 % of buggy commits in its riskiest 30 %, on par with a regression on the classic JIT metrics (0.821, 66 %) | [Results on ApacheJIT](docs/calibration.md#results-on-apachejit) |
 | ApacheJIT with the LLM judge (Claude Sonnet 5, 800 sampled test commits) | At confidence 8, the commits the judge calls all-safe are buggy at 5.3 %, against a 25.5 % base rate | [With the structured LLM judge](docs/calibration.md#with-the-structured-llm-judge) |
 | 27 public repositories (calibrate, then backtest) | Calibration beat the default priors on held-out commits in all nine repositories of the first run | [Benchmark results](docs/results.md) |
+| This repository's own pull requests (#25–#90, as of 2026-11-20) | 54 PRs scored: 31 green, 21 yellow, 2 red; 11 green PRs auto-approved | [opendrs on its own pull requests](docs/results.md#opendrs-on-its-own-pull-requests) |
 
 ## CLI and MCP
 
