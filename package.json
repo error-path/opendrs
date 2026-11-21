@@ -2,7 +2,7 @@
   "name": "@error-path/opendrs",
   "version": "0.6.0",
   "mcpName": "io.github.error-path/opendrs",
-  "description": "Open Diff Risk Score: a calibrated 0-1 risk score for every pull request, for risk-based auto-approval.",
+  "description": "PR blast radius analyzer and pull request risk score (Open Diff Risk Score): a calibrated 0-1 score from git history and the import graph, to auto-approve low-risk PRs. CLI, GitHub Action and MCP server.",
   "type": "module",
   "license": "MIT",
   "author": "error-path",
@@ -29,7 +29,12 @@
     "merge-queue",
     "ai-code-review",
     "pr-risk",
-    "claude-code"
+    "claude-code",
+    "diff-risk-score",
+    "pull-request-risk",
+    "risk-score",
+    "mcp-server",
+    "pr-review"
   ],
   "engines": {
     "node": ">=22"

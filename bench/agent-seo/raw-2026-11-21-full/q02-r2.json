@@ -1,0 +1,126 @@
+{
+ "searches": [
+  {
+   "query": "ai that auto-approves low-risk pull requests?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "# When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"
+    },
+    {
+     "rank": 2,
+     "title": "Engineering Blog",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 3,
+     "title": "# 58% of PRs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"
+    },
+    {
+     "rank": 4,
+     "title": "58 percent of prs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"
+    },
+    {
+     "rank": 5,
+     "title": "# PR Routing & Approval",
+     "url": "https://cursor.com/docs/approval-agents.md"
+    },
+    {
+     "rank": 6,
+     "title": "approval agents",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 7,
+     "title": "How we taught AI to approve pull requests (not just review them)",
+     "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"
+    },
+    {
+     "rank": 8,
+     "title": "Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 9,
+     "title": "Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/cn/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 10,
+     "title": "Benjamin StarkBenjamin Stark",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 11,
+     "title": "auto approve prs",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 12,
+     "title": "Featured image for “Risk-Gated AI Pull Request Approval with Copilot”",
+     "url": "https://keyholesoftware.com/?p=161172"
+    },
+    {
+     "rank": 13,
+     "title": "auto approval",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval"
+    },
+    {
+     "rank": 14,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval.md"
+    },
+    {
+     "rank": 15,
+     "title": "Miguel Chumillas نشر ذلك",
+     "url": "https://es.linkedin.com/in/kredpilot"
+    },
+    {
+     "rank": 16,
+     "title": "> ## Documentation Index",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs.md"
+    },
+    {
+     "rank": 17,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 18,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe"
+    },
+    {
+     "rank": 19,
+     "title": "AI Code Review",
+     "url": "https://codeant.ai/blogs/policy-aware-pr-approval-agents"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.greptile.com/docs/code-review/auto-approve-prs",
+  "https://docs.cubic.dev/ai-review/auto-approval",
+  "https://cursor.com/docs/approval-agents"
+ ],
+ "recommendations": [
+  {
+   "name": "Greptile auto-approve",
+   "url": "https://www.greptile.com/docs/code-review/auto-approve-prs",
+   "description": "Approves PRs that get a clean 5/5 review and a risk level at or below a cap you set, with filters for authors, paths and labels; it works on GitHub, GitLab, Bitbucket Cloud and Gitea, but it is in beta."
+  },
+  {
+   "name": "cubic auto-approval",
+   "url": "https://docs.cubic.dev/ai-review/auto-approval",
+   "description": "Per-repo GitHub approvals with a low-risk-only policy, never-approve path rules, and a shadow mode that lets you trial it before it submits real approvals."
+  },
+  {
+   "name": "Cursor PR Routing & Approval",
+   "url": "https://cursor.com/docs/approval-agents",
+   "description": "A Cursor automation that approves low-risk PRs using a risk-score cap, approval policy files and Bugbot findings, for GitHub repos only."
+  }
+ ]
+}

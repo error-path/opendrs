@@ -1,0 +1,215 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "# 58% of PRs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"
+    },
+    {
+     "rank": 2,
+     "title": "# When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"
+    },
+    {
+     "rank": 3,
+     "title": "ai agents pull request approval guardrails",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 4,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe"
+    },
+    {
+     "rank": 5,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://www.intercom.com/blog/?p=31947"
+    },
+    {
+     "rank": 6,
+     "title": "58 percent of prs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"
+    },
+    {
+     "rank": 7,
+     "title": "Last updated:",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"
+    },
+    {
+     "rank": 8,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 10,
+     "title": "Engineering Blog",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 11,
+     "title": "In this article",
+     "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies"
+    },
+    {
+     "rank": 12,
+     "title": "How we taught AI to approve pull requests (not just review them)",
+     "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"
+    },
+    {
+     "rank": 13,
+     "title": "Miguel Chumillas نشر ذلك",
+     "url": "https://es.linkedin.com/in/kredpilot"
+    },
+    {
+     "rank": 14,
+     "title": "DEV Community",
+     "url": "https://dev.to/mergeshield/claude-code-can-now-auto-merge-your-prs-heres-why-thats-not-enough-4987"
+    },
+    {
+     "rank": 15,
+     "title": "DEV Community",
+     "url": "https://dev.to/human0ai_dev/we-let-an-ai-reviewer-approve-and-merge-its-own-prs-heres-the-open-source-gate-that-makes-it-safe-5cf2"
+    },
+    {
+     "rank": 16,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/darkplane-automerge"
+    },
+    {
+     "rank": 17,
+     "title": "llm pull requests mergify yml",
+     "url": "https://mergify.com/blog/llm-pull-requests-mergify-yml"
+    },
+    {
+     "rank": 18,
+     "title": "DEV Community",
+     "url": "https://dev.to/danmercede/vet-the-ai-pr-fleet-2684"
+    },
+    {
+     "rank": 19,
+     "title": "DEV Community",
+     "url": "https://dev.to/ryantsuji/human-on-the-loop-ai-reviewing-ai-prs-at-cortex-769-prsmonth-while-raising-the-quality-bar-4lh5"
+    }
+   ]
+  },
+  {
+   "query": "GitHub auto-merge branch protection required status checks merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.17/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 2,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.20/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 3,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.19/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 4,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.15/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 5,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.16/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "About merge queues",
+     "url": "https://www.Github.com/apps/github-merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.14/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 8,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.18/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 9,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.15/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 10,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.20/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "about protected branches",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+    },
+    {
+     "rank": 12,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-cloud@latest/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 13,
+     "title": "about protected branches",
+     "url": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+    },
+    {
+     "rank": 14,
+     "title": "troubleshooting required status checks",
+     "url": "https://docs.github.com/en/enterprise-server@3.18/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks"
+    },
+    {
+     "rank": 15,
+     "title": "troubleshooting required status checks",
+     "url": "https://docs.github.com/en/enterprise-cloud@latest/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks"
+    },
+    {
+     "rank": 16,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.20/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 17,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/ko/enterprise-server@3.15/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+  "https://mergify.com/blog/llm-pull-requests-mergify-yml"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub native auto-merge with branch protection and a merge queue",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+   "description": "Require status checks and the AI reviewer's check on the protected branch, turn on auto-merge and a merge queue, and give no bypass to the agent, so GitHub itself enforces the gate."
+  },
+  {
+   "name": "WorkOS merge policy guidance for AI agents (pin to reviewed SHA, review-only credentials, dismiss stale reviews)",
+   "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+   "description": "Use a read-plus-comment token for the reviewer, pin the merge to the reviewed head commit so any new push forces re-review, and apply stricter conditions to risky paths like auth and billing."
+  },
+  {
+   "name": "Dash0 AutoMerge (dry-run first, fail-closed AI approval)",
+   "url": "https://www.dash0.com/docs/dash0/darkplane/automerge",
+   "description": "A tool that approves PRs only when its evaluators pass and holds by default on failure, so you can start in comment-only dry-run mode and switch to auto-approve once its decisions match your human reviewers."
+  }
+ ]
+}

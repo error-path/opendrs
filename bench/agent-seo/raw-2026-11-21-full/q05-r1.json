@@ -1,0 +1,126 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Action that scores pull requests by structural risk",
+     "url": "https://pypi.org/project/pr-risk-scorer/"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v1"
+    },
+    {
+     "rank": 3,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 6,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v2"
+    },
+    {
+     "rank": 7,
+     "title": "s10664 024 10600 2",
+     "url": "https://link.springer.com/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 8,
+     "title": "pr risk assessment helper",
+     "url": "https://addons.mozilla.org/sv-SE/firefox/addon/pr-risk-assessment-helper"
+    },
+    {
+     "rank": 9,
+     "title": "dev.to",
+     "url": "https://dev.to/koalrapp"
+    },
+    {
+     "rank": 10,
+     "title": "Deterministic pull request risk checks for busy maintainers",
+     "url": "https://pypi.org/project/pr-sheriff/"
+    },
+    {
+     "rank": 11,
+     "title": "DEV Community",
+     "url": "https://dev.to/vladarbatov/pullguard-a-github-action-that-scores-pr-review-risk-for-oss-maintainers-2jcf"
+    },
+    {
+     "rank": 12,
+     "title": "DEV Community",
+     "url": "https://dev.to/koalrapp/we-scored-28-famous-open-source-prs-for-deploy-risk-55bj"
+    },
+    {
+     "rank": 13,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.qodo.ai/code-review/assess-risk-with-blast-radius.md"
+    },
+    {
+     "rank": 14,
+     "title": "Risk Triage",
+     "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/"
+    },
+    {
+     "rank": 15,
+     "title": "Risk Analyzer",
+     "url": "https://docs.augmentcode.com/cosmos/experts-risk-analyzer"
+    },
+    {
+     "rank": 16,
+     "title": "getunblocked.com",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/index.md"
+    },
+    {
+     "rank": 17,
+     "title": "merge risk",
+     "url": "https://docs.coderabbit.ai/pr-reviews/merge-risk"
+    },
+    {
+     "rank": 18,
+     "title": "All Articles",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/"
+    },
+    {
+     "rank": 19,
+     "title": "# How does Typo calculates PR health?",
+     "url": "https://typo.gitbook.io/typo-help-docs/faqs/metrics/how-does-typo-calculates-pr-health"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.coderabbit.ai/pr-reviews/merge-risk",
+  "https://pypi.org/project/pr-risk-scorer/",
+  "https://pypi.org/project/pr-sheriff/"
+ ],
+ "recommendations": [
+  {
+   "name": "CodeRabbit Merge Risk",
+   "url": "https://docs.coderabbit.ai/pr-reviews/merge-risk",
+   "description": "A commercial reviewer that rates every PR Minimal to Critical in its summary comment, lets you add custom risk guidance in .coderabbit.yaml, and can cap what it auto-approves."
+  },
+  {
+   "name": "pr-risk-scorer",
+   "url": "https://pypi.org/project/pr-risk-scorer/",
+   "description": "A GitHub Action that scores each PR on structural risk across five weighted dimensions and posts the result as a PR comment; I could not load its page, so check the details before adopting."
+  },
+  {
+   "name": "PR Sheriff",
+   "url": "https://pypi.org/project/pr-sheriff/",
+   "description": "A deterministic, advisory-first checker that flags oversized changes, missing tests and edits to sensitive files; I could not load its page, so verify setup before adopting."
+  }
+ ]
+}

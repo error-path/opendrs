@@ -1,0 +1,271 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Ecosyste.ms: Issues",
+     "url": "https://issues.ecosyste.ms/hosts/GitHub/repositories/radon-h2020%2Fradon-defect-prediction-plugin/issues"
+    },
+    {
+     "rank": 2,
+     "title": "etd.aau.edu.et",
+     "url": "https://etd.aau.edu.et/bitstreams/23397857-effe-4b34-b6cb-617637afd28a/download"
+    },
+    {
+     "rank": 3,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/1606.00521"
+    },
+    {
+     "rank": 4,
+     "title": "SZZ Unleashed: An Open Implementation of the SZZ Algorithm -- Featuring Example Usage in a Study of Just-in-Time Bug Prediction for the Jenkins Project",
+     "url": "https://arxiv.org/pdf/1903.01742"
+    },
+    {
+     "rank": 5,
+     "title": "Report on Evaluation Experiments Using Different",
+     "url": "https://www.csd.uwo.ca/~kkontogi/publications/conferences/Error-Prone-Prediction.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://arxiv.org/pdf/2206.09967"
+    },
+    {
+     "rank": 7,
+     "title": "Wang Song",
+     "url": "https://uwspace.uwaterloo.ca/bitstream/10012/14334/5/Wang_Song.pdf"
+    },
+    {
+     "rank": 8,
+     "title": "Continuous Defect Prediction: The Idea and a Related Dataset",
+     "url": "https://arxiv.org/pdf/1703.04142"
+    },
+    {
+     "rank": 9,
+     "title": "Feature Sets in Just-in-Time Defect Prediction: An Empirical Evaluation",
+     "url": "https://arxiv.org/pdf/2209.13978"
+    },
+    {
+     "rank": 10,
+     "title": "System and method for predicting defects in a computer program",
+     "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11144308"
+    }
+   ]
+  },
+  {
+   "query": "just-in-time defect prediction github repository commit risk tool JIT-SDP",
+   "results": [
+    {
+     "rank": 1,
+     "title": "IRJIT: A Simple, Online, Information Retrieval Approach for Just-In-Time Software Defect Prediction",
+     "url": "https://arxiv.org/pdf/2210.02435"
+    },
+    {
+     "rank": 2,
+     "title": "supplement fse23 final",
+     "url": "https://zenodo.org/records/8278648/files/supplement-fse23-final.pdf"
+    },
+    {
+     "rank": 3,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2210.02435v3"
+    },
+    {
+     "rank": 4,
+     "title": "This repository contains the Python and Matlab codes used for the paper:",
+     "url": "https://github.com/sunnysong14/jit-sdp-retrospective-pf-validity"
+    },
+    {
+     "rank": 5,
+     "title": "11institutetext: Hareem Sahar 22institutetext: Department of Computing Science",
+     "url": "https://arxiv.org/html/2210.02435v3"
+    },
+    {
+     "rank": 6,
+     "title": "KG-Commit: A Dynamic Knowledge Graph for Online Just-in-Time Software Defect Prediction",
+     "url": "https://arxiv.org/pdf/2609.06272"
+    },
+    {
+     "rank": 7,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 8,
+     "title": "Just-In-Time Software Defect Prediction via Bi-modal Change Representation Learning",
+     "url": "https://arxiv.org/pdf/2410.12107"
+    },
+    {
+     "rank": 9,
+     "title": "jit sdp",
+     "url": "https://github.com/topics/jit-sdp"
+    },
+    {
+     "rank": 10,
+     "title": "ReDef: Do Code Language Models Truly Understand Code Changes for Just-in-Time Software Defect Prediction?",
+     "url": "https://arxiv.org/pdf/2509.09192"
+    }
+   ]
+  },
+  {
+   "query": "JITLine github just-in-time defect prediction line-level",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 3,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/2103.07068"
+    },
+    {
+     "rank": 4,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068v1"
+    },
+    {
+     "rank": 5,
+     "title": "We gratefully acknowledge support from",
+     "url": "https://export.arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 6,
+     "title": "jitline a simpler better faster finer grained just in time defect",
+     "url": "https://research.monash.edu/en/publications/jitline-a-simpler-better-faster-finer-grained-just-in-time-defect/"
+    },
+    {
+     "rank": 7,
+     "title": "Published January 12, 2021",
+     "url": "https://zenodo.org/record/4434149"
+    },
+    {
+     "rank": 8,
+     "title": "gitee.com",
+     "url": "https://gitee.com/ecust-dp/jitline"
+    },
+    {
+     "rank": 9,
+     "title": "JITLine: A Simpler, Better, Faster, Finer-grained Just-In-Time Defect Prediction",
+     "url": "https://deepai.org/publication/jitline-a-simpler-better-faster-finer-grained-just-in-time-defect-prediction"
+    },
+    {
+     "rank": 10,
+     "title": "chanathip pornprasit dK5kwd",
+     "url": "https://scite.ai/authors/chanathip-pornprasit-dK5kwd"
+    }
+   ]
+  },
+  {
+   "query": "Commit Guru open source commit risk analytics github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "p966 rosen",
+     "url": "https://cs.unibg.it/esecfse_proceedings/fse15/p966-rosen.pdf"
+    },
+    {
+     "rank": 2,
+     "title": "skip to main content",
+     "url": "https://unpaywall.org/10.1145%2F3236024.3264599"
+    },
+    {
+     "rank": 3,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2508.02487v1.pdf"
+    },
+    {
+     "rank": 4,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/html/2508.02487v1"
+    },
+    {
+     "rank": 5,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v2"
+    },
+    {
+     "rank": 6,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 7,
+     "title": "Predict code bug risk with git metadata",
+     "url": "https://github.com/hinnefe2/gitrisky"
+    },
+    {
+     "rank": 8,
+     "title": "From Commits to Confidence:",
+     "url": "https://arxiv.org/html/2508.02487v2"
+    },
+    {
+     "rank": 9,
+     "title": "conferences.computer.org",
+     "url": "https://conferences.computer.org/ase/pdfs/ASE2020-4sGQAuWfliLhpf5VK4ZM4u/676800b336/676800b336.pdf"
+    },
+    {
+     "rank": 10,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 11,
+     "title": "close this message",
+     "url": "https://arxiv.org/abs/2508.02487v1"
+    },
+    {
+     "rank": 12,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v1"
+    },
+    {
+     "rank": 13,
+     "title": "Anomalicious: Automated Detection of Anomalous and Potentially Malicious Commits on GitHub",
+     "url": "https://www.microsoft.com/en-us/research/?p=750325"
+    },
+    {
+     "rank": 14,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2508.02487v2"
+    },
+    {
+     "rank": 15,
+     "title": "close this message",
+     "url": "https://arxiv.org/abs/2508.02487v2"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/topics/jit-sdp",
+  "https://github.com/hinnefe2/gitrisky",
+  "https://arxiv.org/html/2511.21964v2"
+ ],
+ "recommendations": [
+  {
+   "name": "gitrisky",
+   "url": "https://github.com/hinnefe2/gitrisky",
+   "description": "MIT-licensed Python CLI that trains a bug-risk model on your repo's git history and scores any commit, so it is the quickest thing to try on your own repo."
+  },
+  {
+   "name": "DRS-OSS (drs-llm)",
+   "url": "https://github.com/Ali-Sayed-Salehi/drs-llm",
+   "description": "Open-source LLM-based diff risk scorer with a GitHub App that comments a risky/safe label and confidence on each commit in a pull request; license not confirmed."
+  },
+  {
+   "name": "JITLine",
+   "url": "https://zenodo.org/record/4434149",
+   "description": "Research replication package (notebooks) for commit-level and line-level just-in-time defect prediction; it is a research artifact, not a turnkey tool."
+  }
+ ]
+}

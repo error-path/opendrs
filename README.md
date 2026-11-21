@@ -196,6 +196,7 @@ The full list: [known limitations](docs/limitations.md).
 | A risk gate that approves or merges low-risk PRs, measured on your own history, with no service to host | opendrs |
 | An LLM's judgment of each PR as the gate | PR-Agent's auto-approval, Merge Steward or MergeShield Risk Check; opendrs's optional LLM judge can only raise the score |
 | Approval inside Cursor's cloud on a team plan | Cursor approval agents |
+| Approval from the hosted AI reviewer you already use | Greptile, cubic or CodeRabbit (approve); Gitar or Dash0 AutoMerge (approve and merge) |
 | Review comments on the code | An AI reviewer (Claude Code, CodeRabbit, PR-Agent), with opendrs running after it |
 
 The full comparison, with how each tool scores and where it runs, is at
