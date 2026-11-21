@@ -120,12 +120,12 @@ Checking the baseline the same way matched the agents' notes on every search res
 | q08 | Meta diff risk score open source | no / no / no | no / no / **yes** |
 | q09 | MCP server for pull request risk | no / no / no | no / no / no |
 | q10 | reduce code review bottleneck for AI generated PRs | no / no / no | no / no / no |
-| q11 | defect prediction for pull requests open source tool | no / no / (run 3 not finished) | no / no |
+| q11 | defect prediction for pull requests open source tool | no / no / no | no / no / no |
 | q12 | risk based auto merge merge queue | no / no / no | no / no / no |
 | q13 | safely auto-merge AI-reviewed pull requests | no / no / no | no / no / no |
 | q14 | claude code plugin pull request risk score | no / no / no | no / no / no |
 
-**Totals (44 of 45 runs):** opendrs appeared in search results in 3 runs, always the
+**Totals (45 runs):** opendrs appeared in search results in 3 runs, always the
 skillsdirectory page at rank 13-14. It was recommended once (q08 run 3): that agent reached
 `github.com/error-path/opendrs` from pages about DRS-OSS it had fetched, not from a search result,
 and described it correctly. 67 searches, 145 fetches.
