@@ -1,0 +1,29 @@
+{"searches": [{"query": "blast radius github", "results": [
+{"rank": 1, "title": "blast-radius 0.2.1", "url": "https://docs.rs/crate/blast-radius/0.2.1/source/README.md"},
+{"rank": 2, "title": "blast-radius 0.7.2", "url": "https://docs.rs/crate/blast-radius/0.7.2/source/README.md"},
+{"rank": 3, "title": "pypi.org", "url": "https://pypi.org/project/impact-radius/1.0.0/"},
+{"rank": 4, "title": "blast radius", "url": "https://github.com/nishubharti/blast-radius"},
+{"rank": 5, "title": "blast radius", "url": "https://github.com/obourdon/blast-radius"},
+{"rank": 6, "title": "> ## Documentation Index", "url": "https://docs.qodo.ai/code-review/blast-radius.md"},
+{"rank": 7, "title": "pkg.go.dev", "url": "https://pkg.go.dev/github.com/supermodeltools/cli@v0.6.3/internal/blastradius"},
+{"rank": 8, "title": "pkg.go.dev", "url": "https://pkg.go.dev/github.com/supermodeltools/cli@v0.4.0/internal/blastradius"},
+{"rank": 9, "title": "pypi.org", "url": "https://pypi.org/project/impact-radius/1.0.1/"},
+{"rank": 10, "title": "DEV Community", "url": "https://dev.to/danielwe/blast-radius-in-software-engineering-what-it-is-how-to-measure-it-how-to-contain-it-5gcd"},
+{"rank": 11, "title": "> ## Documentation Index", "url": "https://docs.qodo.ai/code-review/assess-risk-with-blast-radius.md"},
+{"rank": 12, "title": "github.com%2Fpfrederiksen%2Fblast radius", "url": "https://awesome.ecosyste.ms/api/v1/projects/github.com%2Fpfrederiksen%2Fblast-radius"},
+{"rank": 13, "title": "blast radius", "url": "https://rsionnach.github.io/nthlayer/commands/blast-radius"},
+{"rank": 14, "title": "trendshift.io", "url": "https://trendshift.io/repositories/76951"},
+{"rank": 15, "title": "DEV Community", "url": "https://dev.to/danielwe/how-to-add-a-blast-radius-gate-to-your-merge-pipeline-4jm2"},
+{"rank": 16, "title": "> ## Documentation Index", "url": "https://docs.coderabbit.ai/security/blast-radius.md"},
+{"rank": 17, "title": "blast radius", "url": "https://www.skills.sh/jetbrains/context/blast-radius"},
+{"rank": 18, "title": "AWS Builder Center", "url": "https://builder.aws.com/content/3FmOnBhFijzJ42sv45F5qHCFeTa/stop-taking-down-production-systems-use-blast-radius-to-help-you"},
+{"rank": 19, "title": "blast radius", "url": "https://zeropath.com/docs/sca/blast-radius"},
+{"rank": 20, "title": "github.com%2Fperseus computing llc%2Fblast radius agent", "url": "https://awesome.ecosyste.ms/projects/github.com%2Fperseus-computing-llc%2Fblast-radius-agent"},
+{"rank": 21, "title": "blast radius", "url": "https://www.skills.sh/cursor/plugins/blast-radius"}
+]}],
+"fetches": ["https://docs.qodo.ai/code-review/blast-radius.md", "https://docs.coderabbit.ai/security/blast-radius.md", "https://docs.rs/crate/blast-radius/0.7.2/source/README.md"],
+"recommendations": [
+{"name": "blast-radius (CLI + GitHub Action)", "url": "https://docs.rs/crate/blast-radius/0.7.2/source/README.md", "description": "Open-source CLI with a GitHub Action that posts a sticky PR comment listing every file that directly or transitively depends on your changes, with a risk verdict and optional merge gating, aimed at JS/TS repos."},
+{"name": "CodeRabbit Security Blast Radius", "url": "https://docs.coderabbit.ai/security/blast-radius.md", "description": "Builds a graph of a pull request's changed components, upstream dependencies, downstream consumers and related tests, but it needs CodeRabbit's Advanced or Enterprise plan."},
+{"name": "Qodo Merge Risk (blast radius factor)", "url": "https://docs.qodo.ai/code-review/blast-radius.md", "description": "Qodo's PR review scores how broadly a change could fail as part of its Merge Risk rating and can label the PR, though the standalone blast radius feature was replaced by Merge Risk in v3.3."}
+]}

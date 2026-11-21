@@ -1,0 +1,23 @@
+{"searches": [{"query": "risk based auto merge merge queue", "results": [
+{"rank": 1, "title": "Risk Triage", "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/"},
+{"rank": 2, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.20/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 3, "title": "About merge queues", "url": "https://www.Github.com/apps/github-merge-queue"},
+{"rank": 4, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.19/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 5, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.17/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 6, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.15/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 7, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.16/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 8, "title": "managing a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.14/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"},
+{"rank": 9, "title": "merge queue", "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue"},
+{"rank": 10, "title": "merge queue", "url": "https://developer.harness.io/code-repository/use-harness-code/pull-requests/merge-queue"},
+{"rank": 11, "title": "merge queue", "url": "https://github.blog/changelog/label/merge-queue"},
+{"rank": 12, "title": "View as Markdown", "url": "https://docs.mergify.com/merge-protections/auto-merge"},
+{"rank": 13, "title": "merging a pull request with a merge queue", "url": "https://docs.github.com/en/enterprise-server@3.15/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"},
+{"rank": 14, "title": "ai pull request auto merge enterprise guide 2026", "url": "https://articles.firstaimovers.com/articles/ai-pull-request-auto-merge-enterprise-guide-2026/"},
+{"rank": 15, "title": "merging a pull request with a merge queue", "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue"}
+]}],
+"fetches": ["https://docs.mergify.com/merge-protections/auto-merge", "https://www.sonarsource.com/products/gitar/features/risk-triage/", "https://articles.firstaimovers.com/articles/ai-pull-request-auto-merge-enterprise-guide-2026/"],
+"recommendations": [
+{"name": "Mergify auto_merge_conditions", "url": "https://docs.mergify.com/merge-protections/auto-merge", "description": "Rule-based: list conditions (label, author) under auto_merge_conditions so only matching PRs enter the merge queue while everything else waits for a human; it is deterministic, but file-path conditions are not confirmed on that page."},
+{"name": "Gitar Risk Triage (Sonar)", "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/", "description": "AI rates each PR Low/Medium/High from the diff using your own definition and can auto-merge Low only, failing safe to High when unsure, but auto-merge needs a Pro or Enterprise plan."},
+{"name": "Low-risk lane pattern with GitHub merge queue", "url": "https://articles.firstaimovers.com/articles/ai-pull-request-auto-merge-enterprise-guide-2026/", "description": "A design guide for classifying PRs into risk categories and sending only docs, typo and dependency-patch PRs to auto-merge plus a merge queue (CI must run on merge_group), which you can build natively on GitHub with your own labeling workflow."}
+]}

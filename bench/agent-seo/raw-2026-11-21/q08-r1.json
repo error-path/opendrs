@@ -1,0 +1,41 @@
+{"searches": [
+{"query": "Meta diff risk score open source", "results": [
+{"rank": 1, "title": "arxiv.org", "url": "https://arxiv.org/pdf/2410.06351v1"},
+{"rank": 2, "title": "arxiv.org", "url": "https://arxiv.org/pdf/2511.21964v2"},
+{"rank": 3, "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency", "url": "https://arxiv.org/pdf/2605.30208"},
+{"rank": 4, "title": "The state of the research", "url": "https://engineering.fb.com/?p=22791"},
+{"rank": 5, "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs", "url": "https://arxiv.org/html/2511.21964v2"},
+{"rank": 6, "title": "The state of the research", "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"},
+{"rank": 7, "title": "Moving Faster and Reducing Risk:", "url": "https://ar5iv.labs.arxiv.org/html/2410.06351"},
+{"rank": 8, "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction", "url": "https://arxiv.org/html/2511.21964v1"},
+{"rank": 9, "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows", "url": "https://arxiv.org/pdf/2511.21964"},
+{"rank": 10, "title": "arxiv.org", "url": "https://arxiv.org/abs/2511.21964v2"}]},
+{"query": "open source just-in-time defect prediction GitHub tool pull request risk score", "results": [
+{"rank": 1, "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs", "url": "https://arxiv.org/html/2511.21964v2"},
+{"rank": 2, "title": "arxiv.org", "url": "https://arxiv.org/pdf/2511.21964v2"},
+{"rank": 3, "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction", "url": "https://arxiv.org/html/2511.21964v1"},
+{"rank": 4, "title": "Feature Sets in Just-in-Time Defect Prediction:", "url": "https://ar5iv.arxiv.org/html/2209.13978"},
+{"rank": 5, "title": "arxiv.org", "url": "https://arxiv.org/abs/2511.21964v1"},
+{"rank": 6, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10101485"},
+{"rank": 7, "title": "arxiv.org", "url": "https://arxiv.org/abs/2110.05371v1"},
+{"rank": 8, "title": "conferences.computer.org", "url": "https://conferences.computer.org/ase/pdfs/ASE2020-4sGQAuWfliLhpf5VK4ZM4u/676800b336/676800b336.pdf"},
+{"rank": 9, "title": "Graph-based machine learning improves just-in-time defect prediction", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10101485/"},
+{"rank": 10, "title": "Feature Sets in Just-in-Time Defect Prediction: An Empirical Evaluation", "url": "https://arxiv.org/pdf/2209.13978"}]},
+{"query": "JITLine just-in-time defect prediction GitHub repository awsm-research", "results": [
+{"rank": 1, "title": "arxiv.org", "url": "https://arxiv.org/pdf/2103.07068v1"},
+{"rank": 2, "title": "arxiv.org", "url": "https://arxiv.org/abs/2103.07068v1"},
+{"rank": 3, "title": "arxiv.org", "url": "https://arxiv.org/abs/2103.07068"},
+{"rank": 4, "title": "www.arxiv.org", "url": "https://www.arxiv.org/pdf/2103.07068"},
+{"rank": 5, "title": "jitline a simpler better faster finer grained just in time defect", "url": "https://research.monash.edu/en/publications/jitline-a-simpler-better-faster-finer-grained-just-in-time-defect/"},
+{"rank": 6, "title": "We gratefully acknowledge support from", "url": "https://export.arxiv.org/abs/2103.07068"},
+{"rank": 7, "title": "Published January 12, 2021", "url": "https://zenodo.org/record/4434149"},
+{"rank": 8, "title": "Published March 11, 2021 | Version v3", "url": "https://zenodo.org/records/4596503"},
+{"rank": 9, "title": "gitee.com", "url": "https://gitee.com/ecust-dp/jitline"},
+{"rank": 10, "title": "api.crossref.org", "url": "https://api.crossref.org/works/10.1145%2F3643727"}]}
+],
+"fetches": ["https://arxiv.org/abs/2511.21964v2", "https://arxiv.org/html/2511.21964v2"],
+"recommendations": [
+{"name": "DRS-OSS (drs-llm)", "url": "https://github.com/Ali-Sayed-Salehi/drs-llm", "description": "The closest open-source match to Meta's DRS: a fine-tuned Llama 3.1 8B diff risk classifier with an API, web UI and GitHub App that labels pull requests with a risk score."},
+{"name": "DRS-OSS replication package (jit-dp-llm)", "url": "https://github.com/Ali-Sayed-Salehi/jit-dp-llm", "description": "The fine-tuning scripts and deployment artifacts behind DRS-OSS, useful if you want to train or tune the model on your own repository's history."},
+{"name": "JITLine", "url": "https://zenodo.org/records/4596503", "description": "A lightweight, fast just-in-time defect predictor that flags risky commits and lines, available as a Zenodo replication package (I did not find an official GitHub repo and did not check its maintenance)."}
+]}

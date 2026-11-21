@@ -1,0 +1,27 @@
+{"searches": [{"query": "safely auto-merge AI-reviewed pull requests", "results": [
+{"rank": 1, "title": "# 58% of PRs in our largest monorepo merge without human review", "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"},
+{"rank": 2, "title": "# When should AI be allowed to approve a pull request?", "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"},
+{"rank": 3, "title": "ai agents pull request approval guardrails", "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"},
+{"rank": 4, "title": "AI is approving our pull requests: Here's how we made it safe", "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe"},
+{"rank": 5, "title": "AI is approving our pull requests: Here's how we made it safe", "url": "https://www.intercom.com/blog/?p=31947"},
+{"rank": 6, "title": "58 percent of prs in our largest monorepo merge without human review", "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"},
+{"rank": 7, "title": "Last updated:", "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"},
+{"rank": 8, "title": "Dash0 acquires Polar Signals", "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"},
+{"rank": 9, "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)", "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"},
+{"rank": 10, "title": "Engineering Blog", "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"},
+{"rank": 11, "title": "In this article", "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies"},
+{"rank": 12, "title": "How we taught AI to approve pull requests (not just review them)", "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"},
+{"rank": 13, "title": "Miguel Chumillas نشر ذلك", "url": "https://es.linkedin.com/in/kredpilot"},
+{"rank": 14, "title": "DEV Community", "url": "https://dev.to/mergeshield/claude-code-can-now-auto-merge-your-prs-heres-why-thats-not-enough-4987"},
+{"rank": 15, "title": "DEV Community", "url": "https://dev.to/human0ai_dev/we-let-an-ai-reviewer-approve-and-merge-its-own-prs-heres-the-open-source-gate-that-makes-it-safe-5cf2"},
+{"rank": 16, "title": "Dash0 acquires Polar Signals", "url": "https://www.dash0.com/darkplane-automerge"},
+{"rank": 17, "title": "llm pull requests mergify yml", "url": "https://mergify.com/blog/llm-pull-requests-mergify-yml"},
+{"rank": 18, "title": "DEV Community", "url": "https://dev.to/danmercede/vet-the-ai-pr-fleet-2684"},
+{"rank": 19, "title": "DEV Community", "url": "https://dev.to/ryantsuji/human-on-the-loop-ai-reviewing-ai-prs-at-cortex-769-prsmonth-while-raising-the-quality-bar-4lh5"}
+]}],
+"fetches": ["https://workos.com/blog/ai-coding-agent-github-merge-policies", "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe", "https://mergify.com/blog/llm-pull-requests-mergify-yml"],
+"recommendations": [
+{"name": "GitHub native auto-merge with branch protection and SHA-pinned merges", "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies", "description": "Keep required checks and reviews on with no bypass for the bot, dismiss stale reviews, use a review-only token, and pin the merge to the reviewed head SHA so any later push blocks the merge."},
+{"name": "Gate with a risk-tiered, size-limited AI approver (Intercom pattern)", "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe", "description": "Only auto-approve small, low-risk PRs, send large or sensitive ones to a human, label and log every AI approval, and pilot on about 100 PRs before scaling."},
+{"name": "Dash0 AutoMerge (dry-run first)", "url": "https://www.dash0.com/docs/dash0/darkplane/automerge", "description": "A ready-made tool that starts in dry-run mode where it only comments its decision, never approves a PR with failing CI, and does not let a PR rewrite its own rules."}
+]}

@@ -63,6 +63,19 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --destination _site
+      # One-file copy of the user docs for agents (the llms-full.txt convention). The experiment
+      # log, research notes and maintainer runbook stay out to keep it fetchable; llms.txt links them.
+      - name: Write llms-full.txt
+        run: |
+          {
+            cat README.md
+            for page in auto-approve alternatives blast-radius policy configuration signals llm-judge \
+                llm-reviewers captain verification github-action cli-and-mcp calibration results \
+                limitations about; do
+              printf '\n\n---\n\nSource: %s%s.html\n\n' "$SITE" "$page"
+              cat "docs/$page.md"
+            done
+          } > docs/_site/llms-full.txt
       - name: Check the site
         run: node scripts/check-site.mjs docs/_site "$SITE"
       - name: List pages for IndexNow
