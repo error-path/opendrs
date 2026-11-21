@@ -1,0 +1,125 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Is Breaking Code Review: How Engineering Teams Survive the PR Bottleneck",
+     "url": "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck"
+    },
+    {
+     "rank": 2,
+     "title": "DEV Community",
+     "url": "https://dev.to/isuvo/mitigating-the-code-review-backlog-how-ai-generated-prs-are-straining-engineering-organizations-13f3"
+    },
+    {
+     "rank": 3,
+     "title": "engineering.salesforce.com",
+     "url": "https://engineering.salesforce.com/?p=8068"
+    },
+    {
+     "rank": 4,
+     "title": "scaling code reviews adapting to a surge in ai generated code",
+     "url": "https://engineering.salesforce.com/scaling-code-reviews-adapting-to-a-surge-in-ai-generated-code/"
+    },
+    {
+     "rank": 5,
+     "title": "ai coding made code review bottleneck now what",
+     "url": "https://www.scrum.org/resources/blog/ai-coding-made-code-review-bottleneck-now-what"
+    },
+    {
+     "rank": 6,
+     "title": "ai code review burnout",
+     "url": "https://thenewstack.io/ai-code-review-burnout/"
+    },
+    {
+     "rank": 7,
+     "title": "thenewstack.io",
+     "url": "https://thenewstack.io/?p=22837223"
+    },
+    {
+     "rank": 8,
+     "title": "the human bottleneck",
+     "url": "https://blog.scottlogic.com/2026/05/14/the-human-bottleneck.html"
+    },
+    {
+     "rank": 9,
+     "title": "coding agents moved the bottleneck from writing to reviewing prs",
+     "url": "https://devops.com/coding-agents-moved-the-bottleneck-from-writing-to-reviewing-prs"
+    },
+    {
+     "rank": 10,
+     "title": "DEV Community",
+     "url": "https://dev.to/beyondit/ai-agent-backpressure-how-we-fixed-our-code-review-bottleneck-a1c"
+    },
+    {
+     "rank": 11,
+     "title": "DEV Community",
+     "url": "https://dev.to/code-board/the-pr-review-bottleneck-why-faster-code-generation-slows-teams-down-1peb"
+    },
+    {
+     "rank": 12,
+     "title": "DEV Community",
+     "url": "https://dev.to/alexcloudstar/ai-code-review-is-the-new-bottleneck-why-faster-code-is-not-reaching-production-faster-416a"
+    },
+    {
+     "rank": 13,
+     "title": "Stop being the code review bottleneck",
+     "url": "https://newsletter.posthog.com/p/code-review-tips"
+    },
+    {
+     "rank": 14,
+     "title": "# Stop being the code review bottleneck",
+     "url": "https://posthog.com/newsletter/code-review-tips.md"
+    },
+    {
+     "rank": 15,
+     "title": "Stop being the code review bottleneck",
+     "url": "https://posthog.com/newsletter/code-review-tips"
+    },
+    {
+     "rank": 16,
+     "title": "DEV Community",
+     "url": "https://dev.to/code-board/the-review-bottleneck-why-faster-code-generation-broke-your-pr-process-31gi"
+    },
+    {
+     "rank": 17,
+     "title": "DEV Community",
+     "url": "https://dev.to/code-board/the-review-bottleneck-why-faster-code-generation-demands-better-pr-oversight-l2e"
+    },
+    {
+     "rank": 18,
+     "title": "thenewstack.io",
+     "url": "https://thenewstack.io/?p=22818896"
+    },
+    {
+     "rank": 19,
+     "title": "Background gradient",
+     "url": "https://graphite.dev/blog/how-ai-code-review-reduces-review-cycles"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://engineering.salesforce.com/scaling-code-reviews-adapting-to-a-surge-in-ai-generated-code/",
+  "https://dev.to/beyondit/ai-agent-backpressure-how-we-fixed-our-code-review-bottleneck-a1c"
+ ],
+ "recommendations": [
+  {
+   "name": "Risk-based triage with volume throttling",
+   "url": "https://dev.to/beyondit/ai-agent-backpressure-how-we-fixed-our-code-review-bottleneck-a1c",
+   "description": "Sort PRs by size and sensitivity so small low-risk changes get a quick peer check while auth, payments and infrastructure changes get senior or pair review, and throttle agent output when pending reviews pass about five per reviewer; the evidence is small and observational, and it was dropped on a three-person team."
+  },
+  {
+   "name": "AI-assisted first-pass review that surfaces high-risk areas",
+   "url": "https://engineering.salesforce.com/scaling-code-reviews-adapting-to-a-surge-in-ai-generated-code/",
+   "description": "Run automated analysis when each PR opens that groups related changes, flags security and architecture issues with severity and reasoning, and puts a summary in the PR so humans review intent and the riskiest parts first; Salesforce keeps humans in the loop rather than merging unreviewed."
+  },
+  {
+   "name": "Automated quality, security and policy gates before human review",
+   "url": "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck",
+   "description": "Require checks to pass before a human looks, treat AI output as untrusted input, and keep PRs small, so reviewers spend their time on architecture and correctness (this one is a vendor blog, which I only read as a search summary and did not fetch)."
+  }
+ ]
+}

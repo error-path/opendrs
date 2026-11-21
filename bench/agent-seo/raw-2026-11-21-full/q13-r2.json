@@ -1,0 +1,211 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "# 58% of PRs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"
+    },
+    {
+     "rank": 2,
+     "title": "# When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"
+    },
+    {
+     "rank": 3,
+     "title": "ai agents pull request approval guardrails",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 4,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe"
+    },
+    {
+     "rank": 5,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://www.intercom.com/blog/?p=31947"
+    },
+    {
+     "rank": 6,
+     "title": "58 percent of prs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"
+    },
+    {
+     "rank": 7,
+     "title": "Last updated:",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"
+    },
+    {
+     "rank": 8,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 10,
+     "title": "Engineering Blog",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 11,
+     "title": "In this article",
+     "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies"
+    },
+    {
+     "rank": 12,
+     "title": "How we taught AI to approve pull requests (not just review them)",
+     "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"
+    },
+    {
+     "rank": 13,
+     "title": "Miguel Chumillas نشر ذلك",
+     "url": "https://es.linkedin.com/in/kredpilot"
+    },
+    {
+     "rank": 14,
+     "title": "DEV Community",
+     "url": "https://dev.to/mergeshield/claude-code-can-now-auto-merge-your-prs-heres-why-thats-not-enough-4987"
+    },
+    {
+     "rank": 15,
+     "title": "DEV Community",
+     "url": "https://dev.to/human0ai_dev/we-let-an-ai-reviewer-approve-and-merge-its-own-prs-heres-the-open-source-gate-that-makes-it-safe-5cf2"
+    },
+    {
+     "rank": 16,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/darkplane-automerge"
+    },
+    {
+     "rank": 17,
+     "title": "llm pull requests mergify yml",
+     "url": "https://mergify.com/blog/llm-pull-requests-mergify-yml"
+    },
+    {
+     "rank": 18,
+     "title": "DEV Community",
+     "url": "https://dev.to/danmercede/vet-the-ai-pr-fleet-2684"
+    },
+    {
+     "rank": 19,
+     "title": "DEV Community",
+     "url": "https://dev.to/ryantsuji/human-on-the-loop-ai-reviewing-ai-prs-at-cortex-769-prsmonth-while-raising-the-quality-bar-4lh5"
+    }
+   ]
+  },
+  {
+   "query": "Mergify auto-merge CodeRabbit approval condition merge queue docs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "View as Markdown",
+     "url": "https://docs.mergify.com/merge-protections/auto-merge"
+    },
+    {
+     "rank": 2,
+     "title": "auto merge",
+     "url": "https://docs.mergify.com/merge-protections/auto-merge.md"
+    },
+    {
+     "rank": 3,
+     "title": "docs.mergify.com",
+     "url": "https://docs.mergify.com/llms.txt"
+    },
+    {
+     "rank": 4,
+     "title": "github auto merge when native is enough",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Protections",
+     "url": "https://docs.mergify.com/changelog/2026-05-06-restrict-auto-merge-to-specific-pull-requests-with-auto-merge-conditions/"
+    },
+    {
+     "rank": 6,
+     "title": "View as Markdown",
+     "url": "https://docs.mergify.com/configuration/"
+    },
+    {
+     "rank": 7,
+     "title": "Setting Up Automatic Merges",
+     "url": "https://docs.mergify.com/workflow/automerge"
+    },
+    {
+     "rank": 8,
+     "title": "View as Markdown",
+     "url": "https://docs.mergify.com/merge-queue/github-rulesets"
+    },
+    {
+     "rank": 9,
+     "title": "2026 04 21 auto merge setting in merge protections",
+     "url": "https://docs.mergify.com/changelog/2026-04-21-auto-merge-setting-in-merge-protections.md"
+    },
+    {
+     "rank": 10,
+     "title": "2026 05 06 restrict auto merge to specific pull requests with auto merge conditions",
+     "url": "https://docs.mergify.com/changelog/2026-05-06-restrict-auto-merge-to-specific-pull-requests-with-auto-merge-conditions.md"
+    },
+    {
+     "rank": 11,
+     "title": "approval policies",
+     "url": "https://docs.coderabbit.ai/pr-reviews/approval-policies"
+    },
+    {
+     "rank": 12,
+     "title": "docs.mergify.com",
+     "url": "https://docs.mergify.com/actions/merge/"
+    },
+    {
+     "rank": 13,
+     "title": "Merge Protections",
+     "url": "https://docs.mergify.com/changelog/2026-06-02-honor-github-ruleset-required-reviewers/"
+    },
+    {
+     "rank": 14,
+     "title": "View as Markdown",
+     "url": "https://docs.mergify.com/changelog/2026-04-21-auto-merge-setting-in-merge-protections/"
+    },
+    {
+     "rank": 15,
+     "title": "docs.mergify.com",
+     "url": "https://docs.mergify.com/configuration/conditions.md"
+    },
+    {
+     "rank": 16,
+     "title": "www.github.com",
+     "url": "https://www.github.com/fedora-infra/noggin/blob/dev/.mergify.yml"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+  "https://mergify.com/blog/llm-pull-requests-mergify-yml",
+  "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub native auto-merge with branch protection and CodeRabbit approval",
+   "url": "https://docs.coderabbit.ai/pr-reviews/approval-policies",
+   "description": "Require one approval and passing status checks in GitHub, enable CodeRabbit's automatic approvals, and turn on auto-merge so the PR merges only once the AI approval and CI both pass, with stale-review dismissal on and no bypass."
+  },
+  {
+   "name": "Mergify auto-merge conditions and merge queue",
+   "url": "https://docs.mergify.com/merge-protections/auto-merge",
+   "description": "Use auto_merge_conditions to limit auto-merge to PRs matching your rules (approvals, CI, labels, scope), optionally through a merge queue that re-tests before merging."
+  },
+  {
+   "name": "SHA-pinned merge with scoped credentials and human sign-off for sensitive areas",
+   "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+   "description": "Pass the reviewed head commit SHA when merging so changed code fails with 409, give the agent only read and PR-write permissions, and require code-owner sign-off for auth, billing and migrations."
+  }
+ ]
+}

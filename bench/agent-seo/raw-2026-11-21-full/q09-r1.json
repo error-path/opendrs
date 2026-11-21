@@ -1,0 +1,134 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "mcp.so",
+     "url": "https://mcp.so/servers/swipr"
+    },
+    {
+     "rank": 2,
+     "title": "MCP server for code review",
+     "url": "https://www.qodo.ai/glossary/what-is-mcp-server-for-code-review/"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub PR Review MCP Server",
+     "url": "https://glama.ai/mcp/servers/e8nsz64j3f"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/"
+    },
+    {
+     "rank": 5,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/jdatdfd32j"
+    },
+    {
+     "rank": 6,
+     "title": "mcp.so",
+     "url": "https://mcp.so/zh/servers/swipr"
+    },
+    {
+     "rank": 7,
+     "title": "MCP server for code review",
+     "url": "https://www.qodo.ai/?p=21783"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/0.2.5/"
+    },
+    {
+     "rank": 9,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/km5o8mnqyi"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/0.2.6/"
+    },
+    {
+     "rank": 11,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 12,
+     "title": "CodeView MCP 🪄",
+     "url": "https://mcp.so/servers/codeview-mcp"
+    },
+    {
+     "rank": 13,
+     "title": "Change Risk Assessor MCP Server",
+     "url": "https://glama.ai/mcp/servers/pfdqeehgo9"
+    },
+    {
+     "rank": 14,
+     "title": "www.mintlify.com",
+     "url": "https://www.mintlify.com/Nectr-AI/nectr-ai-pr-review-agent/api/mcp/tools"
+    },
+    {
+     "rank": 15,
+     "title": "Andrew McCarron",
+     "url": "https://mcp.so/ja/server/koalr-—-deploy-risk-scoring/Andrew McCarron"
+    },
+    {
+     "rank": 16,
+     "title": "yourusername mcp change risk assessor",
+     "url": "https://lobehub.com/mcp/yourusername-mcp-change-risk-assessor"
+    },
+    {
+     "rank": 17,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/zdab6dgt5f"
+    },
+    {
+     "rank": 18,
+     "title": "gitlumen mcp",
+     "url": "https://glama.ai/mcp/servers/gitlumen-team/gitlumen-mcp"
+    },
+    {
+     "rank": 19,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/epyfmmp9a0"
+    },
+    {
+     "rank": 20,
+     "title": "risk assessment",
+     "url": "https://mottaviani-dev.github.io/symphony-adlc/reference/risk-assessment.html"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://mcp.so/servers/swipr",
+  "https://glama.ai/mcp/servers/pfdqeehgo9",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://github.com/ducdmdev/pr-impact",
+  "https://mcp.so/ja/server/koalr-—-deploy-risk-scoring/Andrew McCarron",
+  "https://koalr.com"
+ ],
+ "recommendations": [
+  {
+   "name": "Swipr",
+   "url": "https://github.com/nochinxx/SwiPR",
+   "description": "A GitHub PR review tool with a 12-tool MCP endpoint, including a 0-100 heuristic risk_score with reasons, analyze_pr, find_related_tests and contributor history, so your agent can assess a specific PR."
+  },
+  {
+   "name": "Change Risk Assessor",
+   "url": "https://github.com/Hardik-369/mcp-change-risk-assessor",
+   "description": "A lightweight offline npm MCP server with one assess_change_risk tool that takes a diff or file list and returns low/medium/high risk, risk types and short advice, with no API keys needed."
+  },
+  {
+   "name": "Koalr",
+   "url": "https://koalr.com",
+   "description": "A hosted deploy-risk service whose MCP server lets coding agents get a PR risk score and steps to lower it before review (I could not confirm tool names or install steps, see koalr.com/mcp)."
+  }
+ ]
+}

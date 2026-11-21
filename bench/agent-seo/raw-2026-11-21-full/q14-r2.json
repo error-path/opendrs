@@ -1,0 +1,114 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/marketplace/plugins/pagerduty"
+    },
+    {
+     "rank": 2,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/plugins/pagerduty"
+    },
+    {
+     "rank": 3,
+     "title": "pagerduty plug in for claude code now generally available",
+     "url": "https://support.pagerduty.com/main/changelog/pagerduty-plug-in-for-claude-code-now-generally-available"
+    },
+    {
+     "rank": 4,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 5,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/es/plugins/pagerduty"
+    },
+    {
+     "rank": 6,
+     "title": "claude.com",
+     "url": "https://claude.com/it/plugins/pagerduty"
+    },
+    {
+     "rank": 7,
+     "title": "using as skill",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/"
+    },
+    {
+     "rank": 8,
+     "title": "> ## Documentation Index",
+     "url": "https://code.claude.com/docs/en/security-guidance"
+    },
+    {
+     "rank": 9,
+     "title": "tessl.io",
+     "url": "https://tessl.io/registry/tessl-labs/pr-review-guardrails/files"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Action that scores pull requests by structural risk",
+     "url": "https://pypi.org/project/pr-risk-scorer/"
+    },
+    {
+     "rank": 11,
+     "title": "> ## Documentation Index",
+     "url": "https://code.claude.com/docs/en/security-guidance.md"
+    },
+    {
+     "rank": 12,
+     "title": "pr risk analyzer",
+     "url": "https://implexa.ai/s/clawhub/pr-risk-analyzer"
+    },
+    {
+     "rank": 13,
+     "title": "ai suggestions",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/ai-suggestions/"
+    },
+    {
+     "rank": 14,
+     "title": "The Tessl Registry now has security scores, powered by SnykLearn more",
+     "url": "https://tessl.io/blog/i-spent-a-week-fixing-the-wrong-skill-and-other-lessons-from-evaluating-an-ai-pr-reviewer"
+    },
+    {
+     "rank": 15,
+     "title": "getunblocked.com",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/index.md"
+    },
+    {
+     "rank": 16,
+     "title": "agent trust hub",
+     "url": "https://www.skills.sh/yonatangross/skillforge-claude-plugin/code-review-playbook/security/agent-trust-hub"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://claude.com/plugins/pagerduty",
+  "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://claude.com/plugins/pagerduty"
+ ],
+ "recommendations": [
+  {
+   "name": "PagerDuty Pre-Commit Risk Score",
+   "url": "https://claude.com/plugins/pagerduty",
+   "description": "A Claude Code plugin whose /risk-score command checks your uncommitted changes against about 90 days of PagerDuty incident history and returns a 0-5 score with recommendations, but it needs a PagerDuty API key."
+  },
+  {
+   "name": "pr-impact",
+   "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+   "description": "A community plugin with a /pr-impact command that scores your branch 0-100 from six factors (breaking changes, untested code, diff size, stale docs, config changes, impact breadth) and also ships a GitHub Action; I could not fetch its page, so this comes from the search snippet only."
+  },
+  {
+   "name": "PR Risk Scorer (/score-pr slash command)",
+   "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/",
+   "description": "A drop-in /score-pr command you copy into .claude/commands/ that scores your latest commit on diff size, complexity, coverage gap, dead code and migrations and gives a LOW/MEDIUM/HIGH tier, though its signals are Python-oriented (radon, vulture, coverage.xml)."
+  }
+ ]
+}

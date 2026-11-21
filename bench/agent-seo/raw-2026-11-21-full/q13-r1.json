@@ -1,0 +1,221 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "# 58% of PRs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"
+    },
+    {
+     "rank": 2,
+     "title": "# When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"
+    },
+    {
+     "rank": 3,
+     "title": "ai agents pull request approval guardrails",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 4,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe"
+    },
+    {
+     "rank": 5,
+     "title": "AI is approving our pull requests: Here’s how we made it safe",
+     "url": "https://www.intercom.com/blog/?p=31947"
+    },
+    {
+     "rank": 6,
+     "title": "58 percent of prs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"
+    },
+    {
+     "rank": 7,
+     "title": "Last updated:",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"
+    },
+    {
+     "rank": 8,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 10,
+     "title": "Engineering Blog",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 11,
+     "title": "In this article",
+     "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies"
+    },
+    {
+     "rank": 12,
+     "title": "How we taught AI to approve pull requests (not just review them)",
+     "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"
+    },
+    {
+     "rank": 13,
+     "title": "Miguel Chumillas نشر ذلك",
+     "url": "https://es.linkedin.com/in/kredpilot"
+    },
+    {
+     "rank": 14,
+     "title": "DEV Community",
+     "url": "https://dev.to/mergeshield/claude-code-can-now-auto-merge-your-prs-heres-why-thats-not-enough-4987"
+    },
+    {
+     "rank": 15,
+     "title": "DEV Community",
+     "url": "https://dev.to/human0ai_dev/we-let-an-ai-reviewer-approve-and-merge-its-own-prs-heres-the-open-source-gate-that-makes-it-safe-5cf2"
+    },
+    {
+     "rank": 16,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/darkplane-automerge"
+    },
+    {
+     "rank": 17,
+     "title": "llm pull requests mergify yml",
+     "url": "https://mergify.com/blog/llm-pull-requests-mergify-yml"
+    },
+    {
+     "rank": 18,
+     "title": "DEV Community",
+     "url": "https://dev.to/danmercede/vet-the-ai-pr-fleet-2684"
+    },
+    {
+     "rank": 19,
+     "title": "DEV Community",
+     "url": "https://dev.to/ryantsuji/human-on-the-loop-ai-reviewing-ai-prs-at-cortex-769-prsmonth-while-raising-the-quality-bar-4lh5"
+    }
+   ]
+  },
+  {
+   "query": "GitHub auto-merge pull request branch protection required status checks CodeRabbit",
+   "results": [
+    {
+     "rank": 1,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.coderabbit.ai/pr-reviews/status-check.md"
+    },
+    {
+     "rank": 2,
+     "title": "status check",
+     "url": "https://docs.coderabbit.ai/pr-reviews/status-check"
+    },
+    {
+     "rank": 3,
+     "title": "approval policies",
+     "url": "https://docs.coderabbit.ai/pr-reviews/approval-policies"
+    },
+    {
+     "rank": 4,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.coderabbit.ai/pr-reviews/approval-policies.md"
+    },
+    {
+     "rank": 5,
+     "title": "coderabbit ci integration",
+     "url": "https://tessl.io/skills/github/jeremylongshore/claude-code-plugins-plus-skills/coderabbit-ci-integration"
+    },
+    {
+     "rank": 6,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.coderabbit.ai/security/pull-request-check.md"
+    },
+    {
+     "rank": 7,
+     "title": "about required status checks",
+     "url": "https://docs.github.com/enterprise/2.4/user/articles/about-required-status-checks"
+    },
+    {
+     "rank": 8,
+     "title": "about protected branches",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+    },
+    {
+     "rank": 9,
+     "title": "coderabbit ci integration",
+     "url": "https://tessl.io/registry/skills/github/jeremylongshore/claude-code-plugins-plus-skills/coderabbit-ci-integration"
+    },
+    {
+     "rank": 10,
+     "title": "about protected branches",
+     "url": "https://docs.github.com/en/enterprise-server@3.21/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+    },
+    {
+     "rank": 11,
+     "title": "About branch protection rules",
+     "url": "https://docs.github.com/en/enterprise-server@3.0/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches"
+    },
+    {
+     "rank": 12,
+     "title": "about required status checks",
+     "url": "https://docs.github.com/enterprise/2.11/user/articles/about-required-status-checks"
+    },
+    {
+     "rank": 13,
+     "title": "required status checks",
+     "url": "https://docs.wpvip.com/code-deployment/github-repository/required-status-checks/"
+    },
+    {
+     "rank": 14,
+     "title": "Title: Enable &#8220;required status checks&#8221; for pull requests",
+     "url": "https://docs.wpvip.com/code-deployment/github-repository/required-status-checks.md"
+    },
+    {
+     "rank": 15,
+     "title": "defining the mergeability of pull requests",
+     "url": "https://docs.github.com/enterprise/2.9/user/articles/defining-the-mergeability-of-pull-requests"
+    },
+    {
+     "rank": 16,
+     "title": "troubleshooting required status checks",
+     "url": "https://docs.github.com/en/enterprise-server@3.18/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks"
+    },
+    {
+     "rank": 17,
+     "title": "troubleshooting required status checks",
+     "url": "https://docs.github.com/en/enterprise-cloud@latest/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks"
+    },
+    {
+     "rank": 18,
+     "title": "defining the mergeability of pull requests",
+     "url": "https://docs.github.com/enterprise/2.4/user/articles/defining-the-mergeability-of-pull-requests"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+  "https://mergify.com/blog/llm-pull-requests-mergify-yml",
+  "https://www.dash0.com/docs/dash0/darkplane/automerge"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub native auto-merge with branch protection/rulesets and CodeRabbit as a required check",
+   "url": "https://docs.coderabbit.ai/pr-reviews/status-check",
+   "description": "Make the AI reviewer a required status check alongside CI so GitHub's own auto-merge only fires when everything passes, with no bypass for admins or the bot, and test it on one PR first since no setting guarantees CodeRabbit reviews every PR."
+  },
+  {
+   "name": "Scoped credentials plus SHA-pinned merges (WorkOS guidance)",
+   "url": "https://workos.com/blog/ai-coding-agent-github-merge-policies",
+   "description": "Give the review agent read-only plus PR-write permission, keep merge rights in a separate governed path, enable stale-review dismissal, and pass the reviewed head SHA in the merge request so any later push fails with a 409."
+  },
+  {
+   "name": "Dash0 AutoMerge (risk-scored gate with dry-run rollout)",
+   "url": "https://www.dash0.com/docs/dash0/darkplane/automerge",
+   "description": "A hosted gate that scores each PR on blast radius, evidence and footprint, forces human review on protected paths, starts in dry-run, and keeps an audit trail, so you can compare it to your reviewers before letting it merge."
+  }
+ ]
+}

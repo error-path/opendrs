@@ -98,3 +98,61 @@ Run it no sooner than two weeks after the docs changes are deployed. Next schedu
 4. Compare with `baseline-2026-11-21.jsonl` per query: found (yes/no), rank, recommended, and what
    was recommended instead. Add a dated section with the table to this README, including runs that
    got worse.
+
+## Full test, 21 Nov 2026 (second run, same day)
+
+Run after Search Console became readable ([`search-console-2026-11-21.md`](search-console-2026-11-21.md)).
+Changes from the baseline: `"auto approve"` from Search Console added (q15); three runs per query
+(Sonnet); results scored from each agent's real WebSearch results, rebuilt from its Claude Code
+transcript by [`extract-transcripts.mjs`](extract-transcripts.mjs), instead of the agent's own notes.
+Checking the baseline the same way matched the agents' notes on every search result.
+
+| Query | Query text | Found (r1 / r2 / r3) | Recommended |
+|---|---|---|---|
+| q01 | autoapprove alternatives | no / no / no | no / no / no |
+| q02 | ai that auto-approves low-risk pull requests? | no / no / no | no / no / no |
+| q03 | which observability platforms provide an approval agent or automerge feature for low-risk prs? | no / no / no | no / no / no |
+| q04 | blast radius github | no / no / no | no / no / no |
+| q15 | "auto approve" | no / no / no | no / no / no |
+| q05 | tool to score pull request risk | no / no / no | no / no / no |
+| q06 | auto approve low risk PRs github action | no / no / no | no / no / no |
+| q07 | PR blast radius analyzer | rank 14 / rank 14 / rank 13 | no / no / no |
+| q08 | Meta diff risk score open source | no / no / no | no / no / **yes** |
+| q09 | MCP server for pull request risk | no / no / no | no / no / no |
+| q10 | reduce code review bottleneck for AI generated PRs | no / no / no | no / no / no |
+| q11 | defect prediction for pull requests open source tool | no / no / (run 3 not finished) | no / no |
+| q12 | risk based auto merge merge queue | no / no / no | no / no / no |
+| q13 | safely auto-merge AI-reviewed pull requests | no / no / no | no / no / no |
+| q14 | claude code plugin pull request risk score | no / no / no | no / no / no |
+
+**Totals (44 of 45 runs):** opendrs appeared in search results in 3 runs, always the
+skillsdirectory page at rank 13-14. It was recommended once (q08 run 3): that agent reached
+`github.com/error-path/opendrs` from pages about DRS-OSS it had fetched, not from a search result,
+and described it correctly. 67 searches, 145 fetches.
+
+### Google, checked directly in Chrome
+
+Search Console says Google shows opendrs at an average position of 3.4 for "autoapprove
+alternatives" and about 7 for both question-shaped queries, with 21 impressions in Google's AI
+features (14 on the alternatives page). A direct check of the top 20 Google results (`gl=us`,
+`pws=0`, signed in) got through three queries before Google showed a CAPTCHA, and the check was
+stopped there:
+
+- q01 "autoapprove alternatives": not in the top 20. Google reads it as auto-loan refinancing
+  ("Auto Approve" is a lender). The Search Console impressions likely come from other countries
+  or days.
+- q02 and q03: not in the top 20 in the US.
+- An earlier pass whose output was partly mixed up showed error-path.github.io in the US top 5 for
+  q06 "auto approve low risk PRs github action" (#2) and q08 "Meta diff risk score open source"
+  (#5). It was not repeated cleanly before the CAPTCHA, so treat it as unconfirmed.
+
+Countries other than the US were not checked.
+
+### What this adds to the baseline
+
+1. **Google and the agents' search backend disagree.** Google indexes 4 pages and ranks them for
+   some real queries; the backend Claude's WebSearch uses returns neither the site nor the repo,
+   even for "opendrs". Agent visibility needs the site in more indexes, not only Google.
+2. **Google has found only 4 of about 25 pages** (Page indexing: 4 indexed, 0 not indexed).
+3. **Links from related projects work.** The one recommendation came through DRS-OSS material
+   that links to opendrs, which is the kind of third-party link that reaches agents.

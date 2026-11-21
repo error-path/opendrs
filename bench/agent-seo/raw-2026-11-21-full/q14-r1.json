@@ -1,0 +1,192 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/marketplace/plugins/pagerduty"
+    },
+    {
+     "rank": 2,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/plugins/pagerduty"
+    },
+    {
+     "rank": 3,
+     "title": "pagerduty plug in for claude code now generally available",
+     "url": "https://support.pagerduty.com/main/changelog/pagerduty-plug-in-for-claude-code-now-generally-available"
+    },
+    {
+     "rank": 4,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/es/plugins/pagerduty"
+    },
+    {
+     "rank": 5,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 6,
+     "title": "claude.com",
+     "url": "https://claude.com/it/plugins/pagerduty"
+    },
+    {
+     "rank": 7,
+     "title": "using as skill",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/"
+    },
+    {
+     "rank": 8,
+     "title": "> ## Documentation Index",
+     "url": "https://code.claude.com/docs/en/security-guidance"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Action that scores pull requests by structural risk",
+     "url": "https://pypi.org/project/pr-risk-scorer/"
+    },
+    {
+     "rank": 10,
+     "title": "pr review guardrails",
+     "url": "https://tessl.io/registry/tessl-labs/pr-review-guardrails"
+    },
+    {
+     "rank": 11,
+     "title": "> ## Documentation Index",
+     "url": "https://code.claude.com/docs/en/security-guidance.md"
+    },
+    {
+     "rank": 12,
+     "title": "pr risk analyzer",
+     "url": "https://implexa.ai/s/clawhub/pr-risk-analyzer"
+    },
+    {
+     "rank": 13,
+     "title": "ai suggestions",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/ai-suggestions/"
+    },
+    {
+     "rank": 14,
+     "title": "The Tessl Registry now has security scores, powered by SnykLearn more",
+     "url": "https://tessl.io/blog/i-spent-a-week-fixing-the-wrong-skill-and-other-lessons-from-evaluating-an-ai-pr-reviewer"
+    },
+    {
+     "rank": 15,
+     "title": "agent trust hub",
+     "url": "https://www.skills.sh/yonatangross/skillforge-claude-plugin/code-review-playbook/security/agent-trust-hub"
+    },
+    {
+     "rank": 16,
+     "title": "mondoo.com",
+     "url": "https://mondoo.com/ai-agent-security/skills/github/coderabbitai/claude-plugin/code-review/2d194b823b84"
+    },
+    {
+     "rank": 17,
+     "title": "From code-review-graph",
+     "url": "https://claudepluginhub.com/skills/guo-astro-code-review-graph/review-pr"
+    }
+   ]
+  },
+  {
+   "query": "pr-impact ducdmdev Claude Code plugin PR risk score github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 2,
+     "title": "pagerduty plug in for claude code now generally available",
+     "url": "https://support.pagerduty.com/main/changelog/pagerduty-plug-in-for-claude-code-now-generally-available"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Action that scores pull requests by structural risk",
+     "url": "https://pypi.org/project/pr-risk-scorer/"
+    },
+    {
+     "rank": 4,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/marketplace/plugins/pagerduty"
+    },
+    {
+     "rank": 5,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/plugins/pagerduty"
+    },
+    {
+     "rank": 6,
+     "title": "PagerDuty Pre-Commit Risk Score",
+     "url": "https://claude.com/es/plugins/pagerduty"
+    },
+    {
+     "rank": 7,
+     "title": "using as skill",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/"
+    },
+    {
+     "rank": 8,
+     "title": "claude code plugin",
+     "url": "https://github.com/kwiggen/claude-code-plugin"
+    },
+    {
+     "rank": 9,
+     "title": "prism review",
+     "url": "https://github.com/jpdlr/prism-review"
+    },
+    {
+     "rank": 10,
+     "title": "claude.com",
+     "url": "https://claude.com/it/plugins/pagerduty"
+    },
+    {
+     "rank": 11,
+     "title": "🎩 You're Invited:Meet the Socket team at Black Hat in Las Vegas, August 3-6.RSVP",
+     "url": "https://socket.dev/npm/package/@vk0/code-impact-mcp"
+    },
+    {
+     "rank": 12,
+     "title": "From code-review-graph",
+     "url": "https://claudepluginhub.com/skills/guo-astro-code-review-graph/review-pr"
+    },
+    {
+     "rank": 13,
+     "title": "DEV Community",
+     "url": "https://dev.to/vladarbatov/pullguard-a-github-action-that-scores-pr-review-risk-for-oss-maintainers-2jcf"
+    },
+    {
+     "rank": 14,
+     "title": "www.pkgstats.com",
+     "url": "https://www.pkgstats.com/pkg:prscore"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/",
+  "https://claude.com/plugins/pagerduty",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://github.com/ducdmdev/pr-impact"
+ ],
+ "recommendations": [
+  {
+   "name": "PagerDuty Pre-Commit Risk Score",
+   "url": "https://claude.com/plugins/pagerduty",
+   "description": "Run /risk-score before committing to get a 0-5 risk score by checking your diff against 90 days of PagerDuty incident history, but it needs a PagerDuty API key."
+  },
+  {
+   "name": "pr-impact",
+   "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+   "description": "A Claude Code plugin (plus GitHub Action and MCP server) that scores a branch's risk from breaking changes, untested code and diff size; install via the ducdmdev/pr-impact marketplace and run /pr-impact main feature-branch."
+  },
+  {
+   "name": "PR Risk Scorer (/score-pr)",
+   "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/",
+   "description": "A drop-in /score-pr slash command that scores your last commit on five weighted signals (diff size, complexity, coverage gap, dead code, migrations) into a LOW/MEDIUM/HIGH tier, though it is aimed at Python projects."
+  }
+ ]
+}

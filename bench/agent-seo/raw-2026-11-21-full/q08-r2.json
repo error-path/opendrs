@@ -1,0 +1,135 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2410.06351v1"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency",
+     "url": "https://arxiv.org/pdf/2605.30208"
+    },
+    {
+     "rank": 4,
+     "title": "The state of the research",
+     "url": "https://engineering.fb.com/?p=22791"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 6,
+     "title": "The state of the research",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 7,
+     "title": "Moving Faster and Reducing Risk:",
+     "url": "https://ar5iv.labs.arxiv.org/html/2410.06351"
+    },
+    {
+     "rank": 8,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 9,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 10,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v2"
+    }
+   ]
+  },
+  {
+   "query": "open source just-in-time defect prediction tool GitHub PR risk score commit risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 4,
+     "title": "conferences.computer.org",
+     "url": "https://conferences.computer.org/ase/pdfs/ASE2020-4sGQAuWfliLhpf5VK4ZM4u/676800b336/676800b336.pdf"
+    },
+    {
+     "rank": 5,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/1903.01742.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "VulGuard: An Unified Tool for Evaluating Just-In-Time Vulnerability Prediction Models",
+     "url": "https://arxiv.org/pdf/2507.16685"
+    },
+    {
+     "rank": 7,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 8,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/2103.07068"
+    },
+    {
+     "rank": 9,
+     "title": "VulGuard: An Unified Tool for Evaluating Just-In-Time Vulnerability Prediction Models",
+     "url": "https://arxiv.org/html/2507.16685v1"
+    },
+    {
+     "rank": 10,
+     "title": "jitbot an explainable just in time defect prediction bot",
+     "url": "https://research.monash.edu/en/publications/jitbot-an-explainable-just-in-time-defect-prediction-bot/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2511.21964v2",
+  "https://research.monash.edu/en/publications/jitbot-an-explainable-just-in-time-defect-prediction-bot/"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS (drs-llm)",
+   "url": "https://github.com/Ali-Sayed-Salehi/drs-llm",
+   "description": "The closest open-source analogue to Meta's DRS: a Docker-deployable, fine-tuned Llama 3.1 8B PR risk scorer with an API, web dashboard and GitHub App, though it is an independent reimplementation (not Meta's code), needs a large GPU, and I could not confirm its license."
+  },
+  {
+   "name": "jit-dp-llm (DRS-OSS replication package)",
+   "url": "https://github.com/Ali-Sayed-Salehi/jit-dp-llm",
+   "description": "The fine-tuning scripts behind DRS-OSS, useful if you want to train the risk model on your own repository's history instead of using the pretrained one."
+  },
+  {
+   "name": "JITBot",
+   "url": "https://jitbot-tool.github.io/",
+   "description": "A GitHub application for CI/CD that flags risky commits, explains why, and suggests mitigations, but I only found a demo page (no repo link), so its availability and license are unverified."
+  }
+ ]
+}

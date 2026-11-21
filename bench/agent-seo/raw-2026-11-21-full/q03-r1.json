@@ -1,0 +1,122 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "eBPF Continuous Profiling released",
+     "url": "https://dash0.com/blog/moving-fast-with-ai-without-losing-control"
+    },
+    {
+     "rank": 2,
+     "title": "AutoMerge is generally available",
+     "url": "https://www.dash0.com/changelog/automerge-is-generally-available"
+    },
+    {
+     "rank": 3,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/darkplane-automerge"
+    },
+    {
+     "rank": 4,
+     "title": "Dash0 acquires Polar Signals",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 5,
+     "title": "58 percent of prs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review"
+    },
+    {
+     "rank": 6,
+     "title": "approval agents",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 7,
+     "title": "# PR Routing & Approval",
+     "url": "https://cursor.com/docs/approval-agents.md"
+    },
+    {
+     "rank": 8,
+     "title": "Benjamin StarkBenjamin Stark",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 9,
+     "title": "# 58% of PRs in our largest monorepo merge without human review",
+     "url": "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review.md"
+    },
+    {
+     "rank": 10,
+     "title": "# When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request.md"
+    },
+    {
+     "rank": 11,
+     "title": "Engineering Blog",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 12,
+     "title": "Back to overview",
+     "url": "https://kurtextrem.de/posts/cursor-automated-pr-approval-framer"
+    },
+    {
+     "rank": 13,
+     "title": "Review Agent-Written Code Against Your Team's StandardsLearn More",
+     "url": "https://tessl.io/podcast/125"
+    },
+    {
+     "rank": 14,
+     "title": "Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 15,
+     "title": "Autonomous PR Generation from Observability Data",
+     "url": "https://www.zenml.io/llmops-database/autonomous-pr-generation-from-observability-data"
+    },
+    {
+     "rank": 16,
+     "title": "Background Agents Virtual Summit, May 6",
+     "url": "https://ona.com/newsletter/16-apr-2026"
+    },
+    {
+     "rank": 17,
+     "title": "How we taught AI to approve pull requests (not just review them)",
+     "url": "https://customer.io/learn/how-we-work/how-we-taught-ai-to-approve-pull-requests"
+    },
+    {
+     "rank": 18,
+     "title": "incident response automation human approval gate",
+     "url": "https://www.elastic.co/observability-labs/blog/incident-response-automation-human-approval-gate"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.dash0.com/changelog/automerge-is-generally-available",
+  "https://cursor.com/docs/approval-agents",
+  "https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review",
+  "https://ona.com/stories/auto-approving-low-risk-prs"
+ ],
+ "recommendations": [
+  {
+   "name": "Dash0 AutoMerge",
+   "url": "https://www.dash0.com/changelog/automerge-is-generally-available",
+   "description": "An observability platform whose generally available approval agent scores each GitHub or GitLab pull request against weighted criteria and protected paths, then auto-approves or auto-merges the low-risk ones, with a dry-run mode to try it first."
+  },
+  {
+   "name": "Cursor PR Routing & Approval",
+   "url": "https://cursor.com/docs/approval-agents",
+   "description": "Not an observability tool, but its approval agent can automatically approve low-risk PRs using a risk score, APPROVAL_POLICY.md files and Bugbot findings, and it won't approve above your threshold."
+  },
+  {
+   "name": "Ona auto-approval pattern",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "Not an observability tool or a built-in feature, but a documented way to build auto-approval of low-risk PRs on Ona's code review automation using objective criteria, with a human still clicking merge."
+  }
+ ]
+}

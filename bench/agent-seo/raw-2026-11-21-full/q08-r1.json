@@ -1,0 +1,186 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2410.06351v1"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency",
+     "url": "https://arxiv.org/pdf/2605.30208"
+    },
+    {
+     "rank": 4,
+     "title": "The state of the research",
+     "url": "https://engineering.fb.com/?p=22791"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 6,
+     "title": "The state of the research",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 7,
+     "title": "Moving Faster and Reducing Risk:",
+     "url": "https://ar5iv.labs.arxiv.org/html/2410.06351"
+    },
+    {
+     "rank": 8,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 9,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 10,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v2"
+    }
+   ]
+  },
+  {
+   "query": "open source just-in-time defect prediction tool GitHub PR risk score commit",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 4,
+     "title": "conferences.computer.org",
+     "url": "https://conferences.computer.org/ase/pdfs/ASE2020-4sGQAuWfliLhpf5VK4ZM4u/676800b336/676800b336.pdf"
+    },
+    {
+     "rank": 5,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v1"
+    },
+    {
+     "rank": 6,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2511.21964v2"
+    },
+    {
+     "rank": 7,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/1903.01742.pdf"
+    },
+    {
+     "rank": 8,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/2103.07068"
+    },
+    {
+     "rank": 9,
+     "title": "pmc.ncbi.nlm.nih.gov",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10101485"
+    },
+    {
+     "rank": 10,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 11,
+     "title": "jitbot an explainable just in time defect prediction bot",
+     "url": "https://research.monash.edu/en/publications/jitbot-an-explainable-just-in-time-defect-prediction-bot/"
+    },
+    {
+     "rank": 12,
+     "title": "VulGuard: An Unified Tool for Evaluating Just-In-Time Vulnerability Prediction Models",
+     "url": "https://arxiv.org/html/2507.16685v1"
+    },
+    {
+     "rank": 13,
+     "title": "Feature Sets in Just-in-Time Defect Prediction:",
+     "url": "https://ar5iv.arxiv.org/html/2209.13978"
+    },
+    {
+     "rank": 14,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2110.05371v3"
+    },
+    {
+     "rank": 15,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2210.02435v3"
+    },
+    {
+     "rank": 16,
+     "title": "File 86702f12 434b 4c1e b397 cabb4d9160ae",
+     "url": "https://repository.tudelft.nl/file/File_86702f12-434b-4c1e-b397-cabb4d9160ae"
+    },
+    {
+     "rank": 17,
+     "title": "Publication: JITBot: An Explainable Just-In-Time Defect Prediction Bot",
+     "url": "https://repository.li.mahidol.ac.th/handle/123456789/60916"
+    },
+    {
+     "rank": 18,
+     "title": "graph based machine learning improves just time defect prediction",
+     "url": "https://www.ornl.gov/publication/graph-based-machine-learning-improves-just-time-defect-prediction"
+    },
+    {
+     "rank": 19,
+     "title": "close this message",
+     "url": "https://arxiv.org/abs/2110.05371v3"
+    },
+    {
+     "rank": 20,
+     "title": "Predict code bug risk with git metadata",
+     "url": "https://github.com/hinnefe2/gitrisky"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/abs/2511.21964v2",
+  "https://github.com/hinnefe2/gitrisky",
+  "https://arxiv.org/html/2511.21964v2"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS (drs-llm)",
+   "url": "https://github.com/Ali-Sayed-Salehi/drs-llm",
+   "description": "The closest open-source analogue to Meta's DRS: a fine-tuned Llama 3.1 8B diff risk classifier with a FastAPI gateway, web dashboard and optional GitHub App, though it needs a GPU (the paper targets a 32 GB V100 with 4-bit quantization)."
+  },
+  {
+   "name": "DRS-OSS replication package (jit-dp-llm)",
+   "url": "https://github.com/Ali-Sayed-Salehi/jit-dp-llm",
+   "description": "The fine-tuning scripts from the same authors, which you can use to train the risk model on your own repository's history instead of relying on the pretrained one."
+  },
+  {
+   "name": "gitrisky",
+   "url": "https://github.com/hinnefe2/gitrisky",
+   "description": "A lightweight MIT-licensed Python CLI that trains on your repo's commit history and gives each commit a 0 to 1 bug-risk score from git metadata, a far simpler non-LLM option, though I could not confirm how recently it was maintained."
+  }
+ ]
+}

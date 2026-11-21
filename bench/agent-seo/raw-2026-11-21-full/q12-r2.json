@@ -1,0 +1,106 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Risk Triage",
+     "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/"
+    },
+    {
+     "rank": 2,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.20/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 3,
+     "title": "About merge queues",
+     "url": "https://www.Github.com/apps/github-merge-queue"
+    },
+    {
+     "rank": 4,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.19/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 5,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.17/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.15/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.16/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 8,
+     "title": "managing a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.14/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 9,
+     "title": "merge queue",
+     "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue"
+    },
+    {
+     "rank": 10,
+     "title": "merge queue",
+     "url": "https://developer.harness.io/code-repository/use-harness-code/pull-requests/merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "merge queue",
+     "url": "https://github.blog/changelog/label/merge-queue"
+    },
+    {
+     "rank": 12,
+     "title": "View as Markdown",
+     "url": "https://docs.mergify.com/merge-protections/auto-merge"
+    },
+    {
+     "rank": 13,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/enterprise-server@3.15/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 14,
+     "title": "ai pull request auto merge enterprise guide 2026",
+     "url": "https://articles.firstaimovers.com/articles/ai-pull-request-auto-merge-enterprise-guide-2026/"
+    },
+    {
+     "rank": 15,
+     "title": "merging a pull request with a merge queue",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.mergify.com/merge-protections/auto-merge",
+  "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue"
+ ],
+ "recommendations": [
+  {
+   "name": "Gitar Risk Triage",
+   "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+   "description": "Rates every PR Low, Medium or High from your own risk definition and can auto-merge only Low-risk PRs, though auto-merge needs a Pro or Enterprise plan."
+  },
+  {
+   "name": "Mergify conditional auto-merge",
+   "url": "https://docs.mergify.com/merge-protections/auto-merge",
+   "description": "Set auto_merge_conditions so only PRs matching your rules (author, label, changed files) enter the merge queue while everything else waits for a human."
+  },
+  {
+   "name": "GitHub merge queue with your own workflow",
+   "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue",
+   "description": "GitHub has no native risk scoring, so you would write a workflow that classifies each PR and calls gh pr merge or the enqueuePullRequest mutation only for low-risk ones."
+  }
+ ]
+}

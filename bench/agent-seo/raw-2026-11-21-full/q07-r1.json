@@ -1,0 +1,111 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DEV Community",
+     "url": "https://dev.to/danielwe/can-ai-check-the-blast-radius-of-a-pr-before-you-merge-50k0"
+    },
+    {
+     "rank": 2,
+     "title": "blast-radius 0.7.1",
+     "url": "https://docs.rs/crate/blast-radius/0.7.1/source/action.yml"
+    },
+    {
+     "rank": 3,
+     "title": "Research PreviewGitHubGitLabAzure DevOps",
+     "url": "https://docs.qodo.ai/code-review/blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "blast-radius 0.7.0",
+     "url": "https://docs.rs/crate/blast-radius/0.7.0/source/action.yml"
+    },
+    {
+     "rank": 5,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.qodo.ai/code-review/blast-radius.md"
+    },
+    {
+     "rank": 6,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.qodo.ai/code-review/assess-risk-with-blast-radius.md"
+    },
+    {
+     "rank": 7,
+     "title": "get pr impact",
+     "url": "https://alperhankendi.github.io/Ctxo/docs/mcp-tools/get-pr-impact"
+    },
+    {
+     "rank": 8,
+     "title": "DEV Community",
+     "url": "https://dev.to/n3mo-dev/automatically-answering-what-does-this-pr-break-building-blast-radius-analysis-into-github-308g"
+    },
+    {
+     "rank": 9,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 10,
+     "title": "impact radius",
+     "url": "https://pypi.org/project/impact-radius/"
+    },
+    {
+     "rank": 11,
+     "title": "blast-radius 0.2.1",
+     "url": "https://docs.rs/crate/blast-radius/0.2.1/source/README.md"
+    },
+    {
+     "rank": 12,
+     "title": "blast-radius 0.1.1",
+     "url": "https://docs.rs/crate/blast-radius/0.1.1/source/src/graph.rs"
+    },
+    {
+     "rank": 13,
+     "title": "blast-radius 0.3.0",
+     "url": "https://docs.rs/crate/blast-radius/0.3.0/source/README.md"
+    },
+    {
+     "rank": 14,
+     "title": "error path opendrs",
+     "url": "https://www.skillsdirectory.com/skills/error-path-opendrs"
+    },
+    {
+     "rank": 15,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.coderabbit.ai/security-agent/blast-radius.md"
+    },
+    {
+     "rank": 16,
+     "title": "blast-radius 0.3.0",
+     "url": "https://docs.rs/crate/blast-radius/0.3.0"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://pypi.org/project/impact-radius/",
+  "https://docs.rs/crate/blast-radius/0.3.0",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+ ],
+ "recommendations": [
+  {
+   "name": "blast-radius (CLI and GitHub Action)",
+   "url": "https://docs.rs/crate/blast-radius/0.3.0",
+   "description": "A CLI for JS/TS (plus beta Python and Rust) that lists direct and transitive dependent files of a changed file, with a risk verdict and a --fail-threshold on downstream file count, so it answers your how-many-files question directly and can gate CI."
+  },
+  {
+   "name": "impact-radius",
+   "url": "https://pypi.org/project/impact-radius/",
+   "description": "A Python package that builds an import graph, reports affected files, and can post a Mermaid blast-radius diagram on PRs via a GitHub Action (I could not load the page itself, so this rests on the search summary)."
+  },
+  {
+   "name": "Qodo blast radius",
+   "url": "https://docs.qodo.ai/code-review/blast-radius",
+   "description": "Qodo's code review product labels each PR as large, medium or small blast radius on GitHub, GitLab and Azure DevOps; it is a research preview and I did not fetch the page, so check whether it gives a file count."
+  }
+ ]
+}
