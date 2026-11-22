@@ -302,5 +302,5 @@ read before recommending, so they are the best outreach targets. Counts are top-
 Also frequent and often recommended by the model: `ona.com/stories/auto-approving-low-risk-prs`
 (an article on the same idea; a natural place for a comment or a note to the author) and
 `mcpmarket.com/server/opendrs` (the MCP directory listing, recommended 6 times on Bing).
-Vendor-owned lists (deepsource, cubic, sourcegraph, gitkraken) are less likely to add an outside
-tool; independent ones (mastra, warpway) are the better first asks.
+Lists by companies that sell a code review product (deepsource, cubic, sourcegraph, gitkraken) are
+less likely to add an outside tool; mastra and warpway do not, so they are the better first asks.
