@@ -89,3 +89,11 @@ Denmark, France, Israel, Japan, South Korea, Netherlands, Poland, Romania, Swede
 
 Search Performance (last 30 days): 0 clicks, 0 impressions, no keywords.
 AI Performance (Copilot and partners, last 30 days): 0 citations, no grounding queries.
+
+## Update, 22 Nov 2026
+
+- Sitemap resubmitted as `https://error-path.github.io/opendrs/sitemap.xml`; still "Couldn't fetch",
+  0 discovered. URL Inspection "Test live URL" on the sitemap: "URL is available to Google", no
+  errors. So the file is fine; Google has not processed it yet.
+- URL Inspection on 8 key pages (auto-approve, alternatives, blast-radius, signals, github-action,
+  cli-and-mcp, results, calibration): all "URL is on Google". The Page indexing count (4) lags.
