@@ -11,14 +11,14 @@ AI agents now write and review code faster than people can read it, so human rev
 the bottleneck. Most pull requests are low risk, and a few cause most incidents. opendrs measures
 each PR's **blast radius** and risk: what the change touches, how many files depend on it, the
 history of the files it changes, author experience, missing tests and critical paths. It turns
-that into a 0-1 score with a logistic model over signals from your own git history; no LLM or API key is
+that into a 0-1 PR risk score with a logistic model over signals from your own git history; no LLM or API key is
 needed. A team then sets a policy.
 For example, a PR that scores below 0.3 and has passed an AI review (Claude, CodeRabbit, Copilot
 or any check run) is approved and sent to the merge queue or auto-merge. Riskier PRs still wait
 for a human. The approach follows Meta's Diff Risk Score (DRS); opendrs is an independent,
 open-source implementation that runs in any git repository, with no service to host.
 
-**Contents:** [Install](#install) · [Quick start](#quick-start) · [How it works](#how-it-works) ·
+**Docs:** [error-path.github.io/opendrs](https://error-path.github.io/opendrs/) · **Contents:** [Install](#install) · [Quick start](#quick-start) · [How it works](#how-it-works) ·
 [Features](#features) · [Results](#results) · [CLI and MCP](#cli-and-mcp) ·
 [Documentation](#documentation) · [Limitations](#limitations) ·
 [Compared with other tools](#compared-with-other-tools) · [Prior art](#prior-art-and-credits)
