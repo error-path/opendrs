@@ -201,6 +201,13 @@ To set up a queue: add a branch ruleset for the default branch with *Require mer
 `merge_group` to the triggers of the workflows that run your required checks (your CI, not the
 opendrs workflow). Give the opendrs job `contents: write`.
 
+GitHub's docs say the built-in `GITHUB_TOKEN` cannot add pull requests to a merge queue
+([GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions)).
+To enqueue, pass a GitHub App token or a personal access token with merge permission as the
+`github-token` input, as opendrs's own workflow does with a GitHub App
+([`opendrs.yml`](https://github.com/error-path/opendrs/blob/main/.github/workflows/opendrs.yml)).
+With the default token, the approval stays and the Action logs a warning when enqueueing fails.
+
 If enabling auto-merge or enqueueing fails (for example "Pull request is in clean status", or
 auto-merge is not allowed), the approval stays and the Action logs a warning.
 
