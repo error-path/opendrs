@@ -1,0 +1,132 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "mcp.so",
+     "url": "https://mcp.so/servers/swipr"
+    },
+    {
+     "rank": 2,
+     "title": "MCP server for code review",
+     "url": "https://www.qodo.ai/glossary/what-is-mcp-server-for-code-review/"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub PR Review MCP Server",
+     "url": "https://glama.ai/mcp/servers/e8nsz64j3f"
+    },
+    {
+     "rank": 5,
+     "title": "mcp.so",
+     "url": "https://mcp.so/zh/servers/swipr"
+    },
+    {
+     "rank": 6,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/jdatdfd32j"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/0.2.5/"
+    },
+    {
+     "rank": 8,
+     "title": "MCP server for code review",
+     "url": "https://www.qodo.ai/?p=21783"
+    },
+    {
+     "rank": 9,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/km5o8mnqyi"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub PR Review Context MCP Server",
+     "url": "https://pypi.org/project/github-pr-context-mcp/0.2.6/"
+    },
+    {
+     "rank": 11,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 12,
+     "title": "CodeView MCP 🪄",
+     "url": "https://mcp.so/servers/codeview-mcp"
+    },
+    {
+     "rank": 13,
+     "title": "www.mintlify.com",
+     "url": "https://www.mintlify.com/Nectr-AI/nectr-ai-pr-review-agent/api/mcp/tools"
+    },
+    {
+     "rank": 14,
+     "title": "Change Risk Assessor MCP Server",
+     "url": "https://glama.ai/mcp/servers/pfdqeehgo9"
+    },
+    {
+     "rank": 15,
+     "title": "Andrew McCarron",
+     "url": "https://mcp.so/ja/server/koalr-—-deploy-risk-scoring/Andrew McCarron"
+    },
+    {
+     "rank": 16,
+     "title": "yourusername mcp change risk assessor",
+     "url": "https://lobehub.com/mcp/yourusername-mcp-change-risk-assessor"
+    },
+    {
+     "rank": 17,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/zdab6dgt5f"
+    },
+    {
+     "rank": 18,
+     "title": "gitlumen mcp",
+     "url": "https://glama.ai/mcp/servers/gitlumen-team/gitlumen-mcp"
+    },
+    {
+     "rank": 19,
+     "title": "risk assessment",
+     "url": "https://mottaviani-dev.github.io/symphony-adlc/reference/risk-assessment.html"
+    },
+    {
+     "rank": 20,
+     "title": "glama.ai",
+     "url": "https://glama.ai/mcp/servers/epyfmmp9a0"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://mcp.so/servers/swipr",
+  "https://glama.ai/mcp/servers/pfdqeehgo9",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://github.com/ducdmdev/pr-impact"
+ ],
+ "recommendations": [
+  {
+   "name": "Swipr",
+   "url": "https://mcp.so/servers/swipr",
+   "description": "A hosted, read-only MCP server with 12 tools for GitHub PRs, including a 0-100 heuristic risk_score with reasons, related-test lookup and caller search, so it fits an agent that needs to judge a PR."
+  },
+  {
+   "name": "Change Risk Assessor MCP",
+   "url": "https://glama.ai/mcp/servers/pfdqeehgo9",
+   "description": "An offline npm server (mcp-change-risk-assessor) whose assess_change_risk tool takes a diff and returns low/medium/high risk with risk types, needing no API keys, though it is listed as inactive and your agent's own LLM does the actual analysis."
+  },
+  {
+   "name": "Koalr (deploy risk scoring)",
+   "url": "https://mcp.so/ja/server/koalr-—-deploy-risk-scoring/Andrew McCarron",
+   "description": "Scores a pull request 0-100 from 36 signals and also covers deploy risk and DORA metrics, with a free tier, though I only saw it in search snippets and did not verify it."
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "PR Routing & Approval | Cursor Docs",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 3,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% - Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 4,
+     "title": "elvis on X: \"Auto-Approving PRs for Coding Agents\" / X",
+     "url": "https://x.com/omarsar0/status/2123054854100652258"
+    },
+    {
+     "rank": 5,
+     "title": "15 AI Agent Observability Tools: AgentOps & Langfuse",
+     "url": "https://aimultiple.com/agentic-monitoring"
+    },
+    {
+     "rank": 6,
+     "title": "Agent observability: The complete guide for 2026 - Articles - Braintrust",
+     "url": "https://www.braintrust.dev/articles/agent-observability-complete-guide-2026"
+    },
+    {
+     "rank": 7,
+     "title": "AI Observability Tools: Features & Selection Guide | Arize AI",
+     "url": "https://arize.com/resources/ai-observability-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% - Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 9,
+     "title": "AI agent observability: what enterprises need to know",
+     "url": "https://www.datarobot.com/blog/ai-agent-observability-leading-platforms/"
+    },
+    {
+     "rank": 10,
+     "title": "Observability for Generative AI and agentic AI systems",
+     "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/observability-ai-systems"
+    },
+    {
+     "rank": 11,
+     "title": "15 AI Agent Observability Tools: AgentOps & Langfuse",
+     "url": "https://aimultiple.com/agentic-monitoring"
+    }
+   ]
+  },
+  {
+   "query": "Comparative analysis of auto-approve and auto-merge tools for low-risk PRs based on user reviews and real-world implementation",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "LGTM! Characteristics of Auto-Merged LLM-based Agentic PRs",
+     "url": "https://dl.acm.org/doi/full/10.1145/3793302.3793621"
+    },
+    {
+     "rank": 3,
+     "title": "How Auto-Approving Low-Risk PRs Lifted Throughput 2.4×",
+     "url": "https://www.assembled.com/blog/code-review-bottlenecks-how-we-hill-climbed-our-way-to-higher-pr-throughput"
+    },
+    {
+     "rank": 4,
+     "title": "LGTM! Auto-Merged Agentic PRs - MSR 2026 | Catarina Gamboa",
+     "url": "https://catarinagamboa.github.io/papers/lgtm/"
+    },
+    {
+     "rank": 5,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% - Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 6,
+     "title": "We now auto-approve and merge 15% of PRs | Swizec Teller",
+     "url": "https://swizec.com/blog/we-now-auto-approve-and-merge-15p-of-prs"
+    },
+    {
+     "rank": 7,
+     "title": "Best AI PR Automation Tools for Engineering Teams 2026",
+     "url": "https://www.augmentcode.com/tools/best-ai-pr-automation-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Meet LiveReview: Auto Approve 30-50% of Your Low-Risk PRs, Safely",
+     "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g"
+    },
+    {
+     "rank": 9,
+     "title": "Artifact for \"LGTM! Characteristics of Auto-Merged LLM-based …",
+     "url": "https://zenodo.org/records/18341679"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your Code ...",
+     "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/"
+    },
+    {
+     "rank": 11,
+     "title": "LGTM! Characteristics of Auto-Merged LLM-based Agentic PRs",
+     "url": "https://dl.acm.org/doi/epdf/10.1145/3793302.3793621"
+    },
+    {
+     "rank": 12,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 13,
+     "title": "Letting AI Approve Low-Risk PRs: What Worked in Production",
+     "url": "/videos/riverview/relatedvideo?q=Comparative+analysis+of+auto-approve+and+auto-merge+tools+for+low-risk+PRs+based+on+user+reviews+and+real-world+implementation&cc=us&setlang=en&first=11&rdr=1&rdrig=044D4B6EA6414850938BFFA1C89FE10E&ru=%2fsearch%3fq%3dComparative%2520analysis%2520of%2520auto-approve%2520and%2520auto-merge%2520tools%2520for%2520low-risk%2520PRs%2520based%2520on%2520user%2520reviews%2520and%2520real-world%2520implementation%26cc%3dus%26setlang%3den%26first%3d11%26rdr%3d1%26rdrig%3d044D4B6EA6414850938BFFA1C89FE10E&mmscn=vwrc&mid=30FEBFC4C9243ACBBFCE30FEBFC4C9243ACBBFCE&FORM=WRVORC&ntb=1&msockid=f2011649e64711f187211e2cb550b67b"
+    },
+    {
+     "rank": 14,
+     "title": "How to automatically merge trusted Pull Requests on GitHub",
+     "url": "https://jhale.dev/posts/auto-merging-prs/"
+    },
+    {
+     "rank": 15,
+     "title": "How do we auto-approve and merge 60% of PRs? - daily.dev",
+     "url": "https://daily.dev/posts/how-do-we-auto-approve-and-merge-60-of-prs--nl1etekhs"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "https://cursor.com/docs/approval-agents",
+  "https://ona.com/stories/auto-approving-low-risk-prs",
+  "https://dl.acm.org/doi/full/10.1145/3793302.3793621",
+  "https://www.assembled.com/blog/code-review-bottlenecks-how-we-hill-climbed-our-way-to-higher-pr-throughput"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto-approve alternatives for low-risk pull requests",
+   "url": "https://error-path.github.io/opendrs/alternatives.html",
+   "description": "A risk-scoring tool that estimates the risk of each change and approves only low-risk ones."
+  },
+  {
+   "name": "PR Routing & Approval",
+   "url": "https://cursor.com/docs/approval-agents",
+   "description": "A tool that routes pull requests to the right reviewers and can approve low-risk changes based on risk scoring and policy files."
+  },
+  {
+   "name": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "A case study on how a company implemented an AI agent to automatically approve low-risk pull requests, significantly reducing lead time and improving deployment frequency."
+  }
+ ]
+}

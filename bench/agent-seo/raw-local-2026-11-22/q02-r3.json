@@ -1,0 +1,183 @@
+{
+ "searches": [
+  {
+   "query": "ai that auto-approves low-risk pull requests?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "Risk-Gated AI Pull Request Approval with Copilot",
+     "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/"
+    },
+    {
+     "rank": 3,
+     "title": "What Is Approvability? AI Auto-Approve Pull Requests",
+     "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "AI Code Review That Auto-Approves Safe PRs | Macroscope",
+     "url": "https://macroscope.com/approvability"
+    },
+    {
+     "rank": 5,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 6,
+     "title": "How We Use AI Agents to Auto Approve Github PRs - Medium",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 7,
+     "title": "Using AI-Approved Pull Requests Safely with GitHub Copilot",
+     "url": "https://www.c-sharpcorner.com/article/using-ai-approved-pull-requests-safely-with-github-copilot"
+    },
+    {
+     "rank": 8,
+     "title": "AI Pull Request Reviews: Automate Code QA 2026 | LOW/CODE",
+     "url": "https://www.lowcode.agency/blog/ai-pull-request-review-automation"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-Triage AI Pull Requests with GPT-4o + GitHub Actions",
+     "url": "https://aitoolrecipes.com/blog/how-to-screen-ai-generated-pull-requests-with-github-actions"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI-Powered Pull Request Review Tools in 2026",
+     "url": "https://www.code-quality.io/best-ai-pull-request-review-tools-in-2026/"
+    },
+    {
+     "rank": 11,
+     "title": "AI-Assisted Pull Requests - emergentmind.com",
+     "url": "https://www.emergentmind.com/topics/ai-assisted-pull-requests-prs"
+    },
+    {
+     "rank": 12,
+     "title": "AI Code Review and Pull Request Automation for Dev Teams",
+     "url": "https://veduis.com/blog/ai-code-review-pull-request-automation-teams/"
+    },
+    {
+     "rank": 13,
+     "title": "Enhancing Code Quality at Scale with AI-Powered Code Reviews",
+     "url": "https://devblogs.microsoft.com/engineering-at-microsoft/enhancing-code-quality-at-scale-with-ai-powered-code-reviews/"
+    }
+   ]
+  },
+  {
+   "query": "AI-powered tools for automating pull request approval based on risk assessment and code quality metrics",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Risk-Gated AI Pull Request Approval with Copilot - Keyhole Software",
+     "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/"
+    },
+    {
+     "rank": 2,
+     "title": "AI-Powered Code Review: Automate Pull Request Analysis with …",
+     "url": "https://dev.to/paul_robertson_e844997d2b/ai-powered-code-review-automate-pull-request-analysis-with-github-actions-j90"
+    },
+    {
+     "rank": 3,
+     "title": "AI Pull Request Analysis - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/ai-pull-request-analysis"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Enhancing Code Quality at Scale with AI-Powered Code Reviews",
+     "url": "https://devblogs.microsoft.com/engineering-at-microsoft/enhancing-code-quality-at-scale-with-ai-powered-code-reviews/"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI-Powered Code Review Tools for PR Automation (2026)",
+     "url": "https://www.qodo.ai/blog/pull-request-automation-tools/"
+    },
+    {
+     "rank": 7,
+     "title": "How to Build an AI-Powered Pull Request Review [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/ai-pull-request-review/"
+    },
+    {
+     "rank": 8,
+     "title": "This is How I Automated My GitHub PRs with AI Agents & Agentic ...",
+     "url": "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6"
+    },
+    {
+     "rank": 9,
+     "title": "Top 7 Pull Request Automation Tools for Large Teams in 2026",
+     "url": "https://codeant.ai/blogs/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review Tools 2026: Automated PR Reviews",
+     "url": "https://toolradar.com/guides/best-ai-code-review-tools"
+    },
+    {
+     "rank": 11,
+     "title": "13 Best AI Code Review Tools in 2026 | DevToolLab Blog",
+     "url": "https://devtoollab.com/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "9 Best GitHub AI Code Review Tools in 2026 for Faster PRs",
+     "url": "https://codeant.ai/blogs/best-github-ai-code-review-tools-2026"
+    },
+    {
+     "rank": 13,
+     "title": "AI Pull Request Reviews: Automate Code QA 2026 | LOW/CODE",
+     "url": "https://www.lowcode.agency/blog/ai-pull-request-review-automation"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI Code Review Tools for Pull Requests in 2026 | ACR",
+     "url": "https://aicodereview.cc/blog/best-ai-pr-review-tools/"
+    },
+    {
+     "rank": 15,
+     "title": "5 AI-Powered GitHub Code Review Tools [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/github-ai-code-review/"
+    },
+    {
+     "rank": 16,
+     "title": "How to Automate Code Review With AI Tools: A Practical Guide",
+     "url": "https://dev.to/_d7eb1c1703182e3ce1782/how-to-automate-code-review-with-ai-tools-a-practical-guide-4k43"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "https://keyholesoftware.com/ai-pull-request-approval-copilot/",
+  "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests",
+  "https://dev.to/paul_robertson_e844997d2b/ai-powered-code-review-automate-pull-request-analysis-with-github-actions-j90",
+  "https://github.com/marketplace/actions/ai-pull-request-analysis"
+ ],
+ "recommendations": [
+  {
+   "name": "Risk-Gated AI Pull Request Approval with Copilot",
+   "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/",
+   "description": "Keyhole Software's Copilot offers an AI-driven solution for risk-gated pull request approval, ensuring only low-risk changes are auto-approved."
+  },
+  {
+   "name": "Macroscope Approvability",
+   "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests",
+   "description": "Macroscope's Approvability automatically approves low-risk pull requests on GitHub, reducing manual review and improving efficiency."
+  },
+  {
+   "name": "AI-Powered Code Review with GitHub Actions",
+   "url": "https://dev.to/paul_robertson_e844997d2b/ai-powered-code-review-automate-pull-request-analysis-with-github-actions-j90",
+   "description": "This tutorial shows how to set up an AI-powered code review system using GitHub Actions and the OpenAI API to analyze and comment on pull requests."
+  }
+ ]
+}

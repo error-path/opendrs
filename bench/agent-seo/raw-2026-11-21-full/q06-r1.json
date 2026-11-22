@@ -1,0 +1,115 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "auto approve",
+     "url": "https://github.com/marketplace/actions/auto-approve"
+    },
+    {
+     "rank": 2,
+     "title": "auto approve prs",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 3,
+     "title": "privileged requester",
+     "url": "https://github.com/github/privileged-requester"
+    },
+    {
+     "rank": 4,
+     "title": "> ## Documentation Index",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs.md"
+    },
+    {
+     "rank": 5,
+     "title": "# PR Routing & Approval",
+     "url": "https://cursor.com/docs/approval-agents.md"
+    },
+    {
+     "rank": 6,
+     "title": "Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 7,
+     "title": "Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/cn/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 8,
+     "title": "approval agents",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 9,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval.md"
+    },
+    {
+     "rank": 10,
+     "title": "auto approval",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval"
+    },
+    {
+     "rank": 11,
+     "title": "automate dependabot with actions",
+     "url": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions"
+    },
+    {
+     "rank": 12,
+     "title": "codeball action",
+     "url": "https://github.com/sturdy-dev/codeball-action"
+    },
+    {
+     "rank": 13,
+     "title": "merge me action",
+     "url": "https://www.github.com/ifit/merge-me-action"
+    },
+    {
+     "rank": 14,
+     "title": "auto approver",
+     "url": "https://www.npmjs.com/package/auto-approver"
+    },
+    {
+     "rank": 15,
+     "title": "auto approve pr",
+     "url": "https://redirect.github.com/vitessio/vitess/blob/main/.github/workflows/auto_approve_pr.yml"
+    },
+    {
+     "rank": 16,
+     "title": "auto approve workflow action 3m98",
+     "url": "https://dev.to/mheap/auto-approve-workflow-action-3m98"
+    },
+    {
+     "rank": 17,
+     "title": "automating dependabot with github actions",
+     "url": "https://docs.github.com/enterprise-server@3.12/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/github/privileged-requester",
+  "https://github.com/marketplace/actions/auto-approve"
+ ],
+ "recommendations": [
+  {
+   "name": "hmarr/auto-approve-action",
+   "url": "https://github.com/marketplace/actions/auto-approve",
+   "description": "The simplest option: a GitHub Action (v4) that approves a PR, and you restrict it to low-risk cases such as Dependabot with an `if` on github.actor and `pull-requests: write` permission."
+  },
+  {
+   "name": "github/privileged-requester",
+   "url": "https://github.com/github/privileged-requester",
+   "description": "Approves PRs from requesters and labels listed in a config file, and by default only when the diff contains removals, but the repo was archived in November 2025 so it is read-only and unmaintained."
+  },
+  {
+   "name": "Greptile auto-approve",
+   "url": "https://www.greptile.com/docs/code-review/auto-approve-prs",
+   "description": "A beta AI-review feature that approves only PRs with a clean 5/5 review under a maximum risk level you set (start at Low for docs, tests and small changes), but it is a paid product rather than a plain Action."
+  }
+ ]
+}

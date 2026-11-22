@@ -1,0 +1,258 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "defect-prediction · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/defect-prediction"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - vuphongle/oss-pr-reviewer: AI-powered CLI for reviewing …",
+     "url": "https://github.com/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/pdf/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "An Open-Source Software Metric Tool for Defect Prediction ... - Springer",
+     "url": "https://link.springer.com/chapter/10.1007/978-3-030-14687-0_7"
+    },
+    {
+     "rank": 6,
+     "title": "Top 8 Open Source Defect Tracking Tools for QA Engineers",
+     "url": "https://ones.com/blog/top-8-open-source-defect-tracking-tools-for-qa-engineers/"
+    },
+    {
+     "rank": 7,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/abstract/document/9045809"
+    },
+    {
+     "rank": 8,
+     "title": "AI-Powered Defect Prediction & Root Cause Analysis System",
+     "url": "https://github.com/SravanthiNC/AI-Powered-Defect-Prediction-Root-Cause-Analysis-System-"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 11,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request-Level ...",
+     "url": "https://link.springer.com/chapter/10.1007/978-3-031-27506-7_2"
+    },
+    {
+     "rank": 12,
+     "title": "AI Scan for pull requests generally available - GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/"
+    },
+    {
+     "rank": 13,
+     "title": "15 Best GitHub Code Review Tools [Free & Paid] - DEV Community",
+     "url": "https://dev.to/trulyfurqan/15-best-github-code-review-tools-free-paid-3kfm"
+    },
+    {
+     "rank": 14,
+     "title": "Top 8 Open Source Defect Tracking Tools for QA Engineers",
+     "url": "https://ones.com/blog/top-8-open-source-defect-tracking-tools-for-qa-engineers/"
+    },
+    {
+     "rank": 15,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request …",
+     "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-27506-7_2.pdf"
+    },
+    {
+     "rank": 17,
+     "title": "10 AI Code Review Tools That Find Bugs & Flaws in 2025",
+     "url": "https://www.digitalocean.com/resources/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 18,
+     "title": "15 Open Source AI Code Review Tools (2026) | ACR",
+     "url": "https://aicodereview.cc/blog/open-source-ai-code-review-tools/"
+    },
+    {
+     "rank": 19,
+     "title": "Defect Management Tools List for 2025 (Free, Paid, & Open Source)",
+     "url": "https://dev.to/sarahthomasdev/defect-management-tools-list-for-2025-free-paid-open-source-74m"
+    },
+    {
+     "rank": 20,
+     "title": "17 Excellent Open Source Bug Tracking Tools in 2026",
+     "url": "https://usersnap.com/blog/open-source-bug-tracking/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub - vuphongle/oss-pr-reviewer: AI-powered CLI for reviewing GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - vuphongle/oss-pr-reviewer: AI-powered CLI for reviewing …",
+     "url": "https://github.com/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - vuphongle/oss-pr-reviewer: AI-powered CLI for reviewing …",
+     "url": "https://github.com/vuphongle/oss-pr-reviewer/tree/main"
+    },
+    {
+     "rank": 3,
+     "title": "oss-pr-reviewer - FOSSY - Curated FOSS Directory for Community …",
+     "url": "https://fossy.dev/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 4,
+     "title": "oss-pr-reviewer/src/ai at main · vuphongle/oss-pr-reviewer · GitHub",
+     "url": "https://github.com/vuphongle/oss-pr-reviewer/tree/main/src/ai"
+    },
+    {
+     "rank": 5,
+     "title": "oss-pr-reviewer Tutorial: Automate Code Reviews — AI Tutorial",
+     "url": "https://aiindigo.com/tutorials/getting-started-with-oss-pr-reviewer-automate-bug-detection-in-open-source-prs"
+    },
+    {
+     "rank": 6,
+     "title": "#oss-pr-reviewer - AI-powered CLI for reviewing GitHub pull requests ...",
+     "url": "https://www.youtube.com/watch?v=gTySMtvFj-w"
+    },
+    {
+     "rank": 7,
+     "title": "vuphongle/oss-pr-reviewer — GitHub trending stats & insights",
+     "url": "https://trendshift.io/repositories/147078"
+    },
+    {
+     "rank": 8,
+     "title": "oss-pr-reviewer Review, Pricing & Alternatives 2026 | AI Indigo",
+     "url": "https://aiindigo.com/tool/gh-oss-pr-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "oss-pr-reviewer: an AI pull request reviewer for maintainers",
+     "url": "https://www.youtube.com/watch?v=Xv2Q3SQCiUQ"
+    },
+    {
+     "rank": 10,
+     "title": "vuphongle/oss-pr-reviewer - Star, Watcher & Commit History ...",
+     "url": "https://repositorystats.com/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 11,
+     "title": "#oss-pr-reviewer - AI-powered CLI for reviewing GitHub pull requests ...",
+     "url": "https://www.youtube.com/watch?v=gTySMtvFj-w"
+    },
+    {
+     "rank": 12,
+     "title": "Using GitHub Copilot code review",
+     "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review"
+    },
+    {
+     "rank": 13,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 14,
+     "title": "#oss-pr-reviewer - AI-powered CLI for reviewing GitHub pull requests ...",
+     "url": "https://www.youtube.com/watch?v=_vbiFGgmK3c"
+    },
+    {
+     "rank": 15,
+     "title": "#oss-pr-reviewer - AI-powered CLI for reviewing GitHub pull requests ...",
+     "url": "https://www.youtube.com/watch?v=dBI_DAa2p4M"
+    },
+    {
+     "rank": 16,
+     "title": "oss-pr-reviewer - FOSSY - Curated FOSS Directory for Community …",
+     "url": "https://fossy.dev/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 17,
+     "title": "#oss-pr-reviewer - AI-powered CLI for reviewing GitHub pull requests ...",
+     "url": "https://www.youtube.com/watch?v=kYJ6iqI9YSk"
+    },
+    {
+     "rank": 18,
+     "title": "AI Code Review in GitHub Actions: Build a PR Review Agent",
+     "url": "https://logicspark.io/build-your-ai-powered-pr-review-agent-with-github-actions-a-step-by-step-guide-2025-edition/"
+    },
+    {
+     "rank": 19,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Copilot code review",
+     "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review"
+    },
+    {
+     "rank": 21,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 22,
+     "title": "GitHub PR Review - Cline",
+     "url": "https://docs.cline.bot/cli/samples/github-pr-review"
+    },
+    {
+     "rank": 23,
+     "title": "How to Use GitHub Copilot Code Review in Pull Requests",
+     "url": "https://realpython.com/github-copilot-code-review/"
+    },
+    {
+     "rank": 24,
+     "title": "GitHub PR Review: Best Practices and Tools (2026)",
+     "url": "https://dev.to/rahulxsingh/github-pr-review-best-practices-and-tools-2026-1p90"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/topics/defect-prediction",
+  "https://github.com/vuphongle/oss-pr-reviewer",
+  "https://arxiv.org/html/2511.21964v1",
+  "https://github.com/vuphongle/oss-pr-reviewer/tree/main",
+  "https://fossy.dev/vuphongle/oss-pr-reviewer"
+ ],
+ "recommendations": [
+  {
+   "name": "vuphongle/oss-pr-reviewer",
+   "url": "https://github.com/vuphongle/oss-pr-reviewer",
+   "description": "AI-powered CLI for reviewing GitHub pull requests, detecting potential bugs, security risks, regressions, and missing tests."
+  },
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/html/2511.21964v1",
+   "description": "LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction, helping estimate defect likelihood and prioritize reviews."
+  },
+  {
+   "name": "AI-Powered Defect Prediction & Root Cause Analysis System",
+   "url": "https://github.com/SravanthiNC/AI-Powered-Defect-Prediction-Root-Cause-Analysis-System-",
+   "description": "AI-driven system to predict defects and analyze their root causes in code changes."
+  }
+ ]
+}

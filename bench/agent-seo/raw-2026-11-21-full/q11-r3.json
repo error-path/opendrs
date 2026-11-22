@@ -1,0 +1,256 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Ecosyste.ms: Issues",
+     "url": "https://issues.ecosyste.ms/hosts/GitHub/repositories/radon-h2020%2Fradon-defect-prediction-plugin/issues"
+    },
+    {
+     "rank": 2,
+     "title": "etd.aau.edu.et",
+     "url": "https://etd.aau.edu.et/bitstreams/23397857-effe-4b34-b6cb-617637afd28a/download"
+    },
+    {
+     "rank": 3,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/1606.00521"
+    },
+    {
+     "rank": 4,
+     "title": "SZZ Unleashed: An Open Implementation of the SZZ Algorithm -- Featuring Example Usage in a Study of Just-in-Time Bug Prediction for the Jenkins Project",
+     "url": "https://arxiv.org/pdf/1903.01742"
+    },
+    {
+     "rank": 5,
+     "title": "Report on Evaluation Experiments Using Different",
+     "url": "https://www.csd.uwo.ca/~kkontogi/publications/conferences/Error-Prone-Prediction.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://arxiv.org/pdf/2206.09967"
+    },
+    {
+     "rank": 7,
+     "title": "Wang Song",
+     "url": "https://uwspace.uwaterloo.ca/bitstream/10012/14334/5/Wang_Song.pdf"
+    },
+    {
+     "rank": 8,
+     "title": "Continuous Defect Prediction: The Idea and a Related Dataset",
+     "url": "https://arxiv.org/pdf/1703.04142"
+    },
+    {
+     "rank": 9,
+     "title": "Feature Sets in Just-in-Time Defect Prediction: An Empirical Evaluation",
+     "url": "https://arxiv.org/pdf/2209.13978"
+    },
+    {
+     "rank": 10,
+     "title": "System and method for predicting defects in a computer program",
+     "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11144308"
+    }
+   ]
+  },
+  {
+   "query": "just-in-time defect prediction github repository commit risk tool (JITLine OR DeepJIT OR CC2Vec OR commit-guru)",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 2,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/2103.07068"
+    },
+    {
+     "rank": 3,
+     "title": "File b5b13bcd 4a09 407a b4a4 5acc9d7dc107",
+     "url": "https://repository.tudelft.nl/file/File_b5b13bcd-4a09-407a-b4a4-5acc9d7dc107"
+    },
+    {
+     "rank": 4,
+     "title": "par.nsf.gov",
+     "url": "https://par.nsf.gov/servlets/purl/10273272"
+    },
+    {
+     "rank": 5,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068v1"
+    },
+    {
+     "rank": 6,
+     "title": "We gratefully acknowledge support from",
+     "url": "https://export.arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 7,
+     "title": "skip to main content",
+     "url": "https://par.nsf.gov/biblio/10273272"
+    },
+    {
+     "rank": 8,
+     "title": "A study on the impact of pre-trained model on Just-In-Time defect prediction",
+     "url": "https://arxiv.org/pdf/2309.02317"
+    },
+    {
+     "rank": 9,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 10,
+     "title": "Bridging Expert Knowledge with Deep Learning Techniques for Just-In-Time Defect Prediction",
+     "url": "https://arxiv.org/pdf/2403.11079"
+    }
+   ]
+  },
+  {
+   "query": "github just-in-time defect prediction JITLine awsm-research",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2103.07068v1"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068v1"
+    },
+    {
+     "rank": 3,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 4,
+     "title": "www.arxiv.org",
+     "url": "https://www.arxiv.org/pdf/2103.07068"
+    },
+    {
+     "rank": 5,
+     "title": "jitline a simpler better faster finer grained just in time defect",
+     "url": "https://research.monash.edu/en/publications/jitline-a-simpler-better-faster-finer-grained-just-in-time-defect/"
+    },
+    {
+     "rank": 6,
+     "title": "We gratefully acknowledge support from",
+     "url": "https://export.arxiv.org/abs/2103.07068"
+    },
+    {
+     "rank": 7,
+     "title": "Published January 12, 2021",
+     "url": "https://zenodo.org/record/4434149"
+    },
+    {
+     "rank": 8,
+     "title": "Published March 11, 2021 | Version v3",
+     "url": "https://zenodo.org/records/4596503"
+    },
+    {
+     "rank": 9,
+     "title": "gitee.com",
+     "url": "https://gitee.com/ecust-dp/jitline"
+    },
+    {
+     "rank": 10,
+     "title": "api.crossref.org",
+     "url": "https://api.crossref.org/works/10.1145%2F3643727"
+    }
+   ]
+  },
+  {
+   "query": "github DeepJIT CC2Vec repository just-in-time defect prediction code",
+   "results": [
+    {
+     "rank": 1,
+     "title": "par.nsf.gov",
+     "url": "https://par.nsf.gov/servlets/purl/10273272"
+    },
+    {
+     "rank": 2,
+     "title": "arxiv.org",
+     "url": "https://arxiv.org/pdf/2003.05620.pdf"
+    },
+    {
+     "rank": 3,
+     "title": "CC2Vec: Distributed Representations of Code Changes",
+     "url": "https://arxiv.org/pdf/2003.05620"
+    },
+    {
+     "rank": 4,
+     "title": "A study on the impact of pre-trained model on Just-In-Time defect prediction",
+     "url": "https://arxiv.org/pdf/2309.02317"
+    },
+    {
+     "rank": 5,
+     "title": "CC2Vec: Distributed Representations of Code Changes [pdf]",
+     "url": "https://github.com/SamantaDey/CC2Vec"
+    },
+    {
+     "rank": 6,
+     "title": "zhangyuqun.github.io",
+     "url": "https://zhangyuqun.github.io/publications/issta2021.pdf"
+    },
+    {
+     "rank": 7,
+     "title": "Bridging Expert Knowledge with Deep Learning Techniques for Just-In-Time Defect Prediction",
+     "url": "https://arxiv.org/pdf/2403.11079"
+    },
+    {
+     "rank": 8,
+     "title": "CCRep: Learning Code Change Representations via Pre-Trained Code Model and Query Back",
+     "url": "https://arxiv.org/pdf/2302.03924"
+    },
+    {
+     "rank": 9,
+     "title": "CC2Vec: Distributed Representations of Code Changes",
+     "url": "https://ar5iv.labs.arxiv.org/html/2003.05620"
+    },
+    {
+     "rank": 10,
+     "title": "Just-In-Time Software Defect Prediction via Bi-modal Change Representation Learning",
+     "url": "https://arxiv.org/pdf/2410.12107"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/awsm-research/JITLine",
+  "https://github.com/ISSTA2018/DeepJIT",
+  "https://github.com/baolingfeng/DeepJIT",
+  "https://github.com/awsm-research/JITLine",
+  "https://github.com/ISSTA2018/DeepJIT",
+  "https://github.com/baolingfeng/DeepJIT",
+  "https://zenodo.org/records/4596503",
+  "https://github.com/SamantaDey/CC2Vec",
+  "https://github.com/studentbrad/SZZUnleashed",
+  "https://github.com/awsm-research/JITLine-replication-package",
+  "https://github.com/CC2Vec/CC2Vec",
+  "https://github.com/ZeoVan/DeepJIT_updated",
+  "https://github.com/wogscpar/SZZUnleashed"
+ ],
+ "recommendations": [
+  {
+   "name": "JITLine",
+   "url": "https://github.com/awsm-research/JITLine-replication-package",
+   "description": "Research code that predicts defect-introducing commits and ranks the risky lines within them, reported as faster and more accurate than the deep-learning alternatives, but it ships as notebooks with no stated license, so it is a starting point rather than a drop-in tool."
+  },
+  {
+   "name": "SZZ Unleashed",
+   "url": "https://github.com/wogscpar/SZZUnleashed",
+   "description": "MIT-licensed implementation of the SZZ algorithm that finds bug-introducing commits from git history, with example scripts that extract commit features and train a random forest for just-in-time bug prediction."
+  },
+  {
+   "name": "CC2Vec",
+   "url": "https://github.com/CC2Vec/CC2Vec",
+   "description": "Deep-learning code-change representations (used together with DeepJIT) for just-in-time defect prediction on commits, but it is old (Python 3.6, torch 1.2) with no stated license and a study found it does not consistently beat simpler models."
+  }
+ ]
+}

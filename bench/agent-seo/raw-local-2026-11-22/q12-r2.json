@@ -1,0 +1,253 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Managing a merge queue - GitHub Docs",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub auto-merge vs merge queue: when do you need each?",
+     "url": "https://www.mergeramp.com/guides/auto-merge-vs-merge-queue"
+    },
+    {
+     "rank": 3,
+     "title": "Merging a pull request with a merge queue - GitHub Docs",
+     "url": "https://docs.github.com/en/enterprise-server@3.17/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 4,
+     "title": "Merge queue guides for GitHub teams | MergeRamp",
+     "url": "https://www.mergeramp.com/guides"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Queues vs Auto-Merge: Which Is Right for Your Team",
+     "url": "https://mesrai.com/blog/merge-queues-vs-auto-merge"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 7,
+     "title": "Should you turn on auto-merge for dependency update pull",
+     "url": "https://safeguard.sh/resources/blog/should-i-turn-on-dependabot-auto-merge-for-dependency-updates"
+    },
+    {
+     "rank": 8,
+     "title": "Merge, Don’t Queue | Base Power",
+     "url": "https://inside.basepowercompany.com/merge-dont-queue"
+    },
+    {
+     "rank": 9,
+     "title": "Merge queue for AI agents: how it works, free | Hexdiv",
+     "url": "https://hexdiv.com/guides/merge-queue-for-ai-agents"
+    },
+    {
+     "rank": 10,
+     "title": "Best practices for managing a merge queue effectively",
+     "url": "https://staging-graphite-splash.vercel.app/guides/best-practices-managing-merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "Merge, Don’t Queue - Base Power",
+     "url": "https://inside.basepowercompany.com/merge-dont-queue?base_vid=4063fb13-6eaa-4011-b266-d5015f1af78a"
+    },
+    {
+     "rank": 12,
+     "title": "Merging a pull request with a merge queue - GitHub Docs",
+     "url": "https://docs.github.com/en/enterprise-server@3.17/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue"
+    },
+    {
+     "rank": 13,
+     "title": "What Is Merge Queue? Definition & Examples - nhimg.org",
+     "url": "https://nhimg.org/glossary/merge-queue/"
+    },
+    {
+     "rank": 14,
+     "title": "What Is a Merge Queue? | Mergify",
+     "url": "https://mergify.com/learn/merge-queue"
+    },
+    {
+     "rank": 15,
+     "title": "GitLab Merge Queue for Self-Hosted CE | Auto Merge",
+     "url": "https://auto-merge.dev/"
+    },
+    {
+     "rank": 16,
+     "title": "Auto-merge no longer adds PRs to the merge queue once ... - GitHub",
+     "url": "https://github.com/orgs/community/discussions/209345"
+    },
+    {
+     "rank": 17,
+     "title": "AI Coding Agent Merge Queue: Ship Parallel Changes Without Hidden ...",
+     "url": "https://dev.to/jackm-singularity/ai-coding-agent-merge-queue-ship-parallel-changes-without-hidden-conflicts-46c1"
+    },
+    {
+     "rank": 18,
+     "title": "Merge Queues vs Auto-Merge: Which Is Right for Your Team",
+     "url": "https://mesrai.com/blog/merge-queues-vs-auto-merge"
+    },
+    {
+     "rank": 19,
+     "title": "Auto-merge no longer adds PRs to the merge queue once ... - GitHub",
+     "url": "https://github.com/orgs/community/discussions/209348"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Merge Queues: Safe, Scalable Merging Without Branch …",
+     "url": "https://steve-kaschimer.github.io/posts/2026-09-11-github-merge-queues/"
+    },
+    {
+     "rank": 21,
+     "title": "GitHub Merge Queue: Setup, Workflows and Pitfalls",
+     "url": "https://compiler.dev/guides/github-merge-queue"
+    }
+   ]
+  },
+  {
+   "query": "GitHub integrations for risk-based auto-merge and pull request management",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - usebrindle/brindle: Risk-based merge gating for pull requests ...",
+     "url": "https://github.com/usebrindle/brindle"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub - opendatahub-io/auto-merge-agent: A Python GitHub App that ...",
+     "url": "https://github.com/opendatahub-io/auto-merge-agent"
+    },
+    {
+     "rank": 4,
+     "title": "Agent Merge watches and fixes pull requests in the cloud",
+     "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud/"
+    },
+    {
+     "rank": 5,
+     "title": "Risk-based code review for AI-written pull requests: a 5-step setup on ...",
+     "url": "https://dev.to/gauravsharmagg/risk-based-code-review-for-ai-written-pull-requests-a-5-step-setup-on-github-4ej8"
+    },
+    {
+     "rank": 6,
+     "title": "Configuring pull request merges - GitHub Docs",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges"
+    },
+    {
+     "rank": 7,
+     "title": "This is How I Automated My GitHub PRs with AI Agents & Agentic ...",
+     "url": "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6"
+    },
+    {
+     "rank": 8,
+     "title": "TriagePilot — Self-hosted, risk-based pull-request routing for GitHub",
+     "url": "https://triage-pilot.com/"
+    },
+    {
+     "rank": 9,
+     "title": "Risk-Gated AI Pull Request Approval with Copilot",
+     "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/"
+    },
+    {
+     "rank": 10,
+     "title": "Should you turn on auto-merge for dependency update pull",
+     "url": "https://safeguard.sh/resources/blog/should-i-turn-on-dependabot-auto-merge-for-dependency-updates"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub - ridedott/merge-me-action: Automatically merges Pull Requests ...",
+     "url": "https://github.com/ridedott/merge-me-action"
+    },
+    {
+     "rank": 12,
+     "title": "GitHub - squalrus/merge-bot: A GitHub action that manages pull request ...",
+     "url": "https://github.com/squalrus/merge-bot"
+    },
+    {
+     "rank": 13,
+     "title": "Agent Merge watches and fixes pull requests in the cloud",
+     "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud/"
+    },
+    {
+     "rank": 14,
+     "title": "GitHub - bobvanderlinden/probot-auto-merge: A GitHub App built with ...",
+     "url": "https://github.com/bobvanderlinden/probot-auto-merge"
+    },
+    {
+     "rank": 15,
+     "title": "How to automatically merge trusted Pull Requests on GitHub",
+     "url": "https://jhale.dev/posts/auto-merging-prs/"
+    },
+    {
+     "rank": 16,
+     "title": "How do I enable auto-merge on a github pull request via the Rest API",
+     "url": "https://stackoverflow.com/questions/69916356/how-do-i-enable-auto-merge-on-a-github-pull-request-via-the-rest-api"
+    },
+    {
+     "rank": 17,
+     "title": "Pull request auto-merge is now generally available - GitHub Changelog",
+     "url": "https://github.blog/changelog/2021-02-04-pull-request-auto-merge-is-now-generally-available/"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub Integration with Emergent",
+     "url": "https://emergent.sh/integrations/github"
+    },
+    {
+     "rank": 19,
+     "title": "Merging pull requests using GitHub Actions",
+     "url": "https://staging-graphite-splash.vercel.app/guides/merge-pull-request-github-actions"
+    },
+    {
+     "rank": 20,
+     "title": "How to auto merge pull request on github? - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/29015464/how-to-auto-merge-pull-request-on-github"
+    },
+    {
+     "rank": 21,
+     "title": "GitHub Integrations [2026]: How to Build and Automate Workflows",
+     "url": "https://www.getint.io/blog/github-integrations-automate-workflows-2026"
+    },
+    {
+     "rank": 22,
+     "title": "The benefits of auto-merging GitHub and GitLab repositories",
+     "url": "https://developers.redhat.com/articles/2025/07/03/benefits-auto-merging-github-and-gitlab-repositories"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+  "https://www.mergeramp.com/guides/auto-merge-vs-merge-queue",
+  "https://docs.github.com/en/enterprise-server@3.17/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue",
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+  "https://github.com/usebrindle/brindle"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub - usebrindle/brindle",
+   "url": "https://github.com/usebrindle/brindle",
+   "description": "A GitHub App that scores pull requests to determine which are safe to auto-merge and which require human review."
+  },
+  {
+   "name": "GitHub - opendatahub-io/auto-merge-agent",
+   "url": "https://github.com/opendatahub-io/auto-merge-agent",
+   "description": "A Python GitHub App designed for risk-based merge gating, helping to automate the merging of pull requests."
+  },
+  {
+   "name": "GitHub - ridedott/merge-me-action",
+   "url": "https://github.com/ridedott/merge-me-action",
+   "description": "A GitHub Action that automatically merges pull requests, with built-in support for risk assessment and human review."
+  }
+ ]
+}

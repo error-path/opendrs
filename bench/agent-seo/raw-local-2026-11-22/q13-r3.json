@@ -1,0 +1,233 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "How to Know If an AI Pull Request Is Safe to Merge",
+     "url": "https://dev.to/alichherawalla/how-to-know-if-an-ai-pull-request-is-safe-to-merge-57nj"
+    },
+    {
+     "rank": 3,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests?",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Review Your Merge / Pull Request By AI - Medium",
+     "url": "https://medium.com/@dev.neerajsingh/auto-review-your-merge-pull-request-by-ai-967036eb0270"
+    },
+    {
+     "rank": 5,
+     "title": "Cogny Auto-Merge — AI Coding Agent PRs That Merge Themselves, …",
+     "url": "https://cogny.com/blog/auto-merge-coding-agent-pull-requests"
+    },
+    {
+     "rank": 6,
+     "title": "How do I safely let AI merge pull requests? — bRRAIn Blog",
+     "url": "https://brrain.io/blog/how-do-i-safely-let-ai-merge-pull-requests"
+    },
+    {
+     "rank": 7,
+     "title": "What Is Approvability? AI Auto-Approve Pull Requests",
+     "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests"
+    },
+    {
+     "rank": 8,
+     "title": "How we let AI approve pull requests (safely) - rewind.com",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 9,
+     "title": "Can AI Agents Safely Approve Pull Requests? Guardrails for …",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 10,
+     "title": "Should AI-written fix PRs ever auto-merge? - safeguard.sh",
+     "url": "https://safeguard.sh/resources/blog/should-ai-written-fix-prs-ever-auto-merge"
+    },
+    {
+     "rank": 11,
+     "title": "Managing auto-merge for pull requests in your repository",
+     "url": "https://docs.github.com/github/administering-a-repository/managing-auto-merge-for-pull-requests-in-your-repository"
+    },
+    {
+     "rank": 12,
+     "title": "How to Review AI-Generated Pull Requests Safely in 2026",
+     "url": "https://rejoicehub.com/blogs/how-to-review-ai-generated-pull-requests"
+    },
+    {
+     "rank": 13,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/github/collaborating-with-issues-and-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 14,
+     "title": "GitHub - reitermarkus/automerge: Automatically merge approved pull ...",
+     "url": "https://github.com/reitermarkus/automerge"
+    },
+    {
+     "rank": 15,
+     "title": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your Code ...",
+     "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/"
+    },
+    {
+     "rank": 16,
+     "title": "Getting started with MergeSafe AI code review on GitHub",
+     "url": "https://mergesafe.ai/docs/getting-started.html"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions workflows for automating the merge process based on AI review status",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to Set Up AI Code Review in GitHub Actions - Complete Guide",
+     "url": "https://dev.to/rahulxsingh/how-to-set-up-ai-code-review-in-github-actions-complete-guide-3fim"
+    },
+    {
+     "rank": 2,
+     "title": "This is How I Automated My GitHub PRs with AI Agents & Agentic ...",
+     "url": "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6"
+    },
+    {
+     "rank": 3,
+     "title": "AI Code Review in GitHub Actions: CI/CD Setup Guide",
+     "url": "https://www.kunalganglani.com/blog/ai-code-review-github-actions"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Agentic Workflows",
+     "url": "https://github.github.com/gh-aw/"
+    },
+    {
+     "rank": 5,
+     "title": "Code Review Automation Workflow (GitHub Actions)",
+     "url": "https://computerbin.com/workflows/code-review-automation-workflow/"
+    },
+    {
+     "rank": 6,
+     "title": "Automating DevOps with AI-Powered GitHub Actions: Code Review",
+     "url": "https://medium.com/@kaifmohd2014/automating-devops-with-ai-powered-github-actions-code-review-deployment-and-changelog-generation-5dfeff4d92aa"
+    },
+    {
+     "rank": 7,
+     "title": "Automate repository tasks with GitHub Agentic Workflows",
+     "url": "https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/"
+    },
+    {
+     "rank": 8,
+     "title": "Automating Code Review with GitHub Actions - Hugging Face",
+     "url": "https://huggingface.co/docs/inference-providers/main/en/guides/github-actions-code-review"
+    },
+    {
+     "rank": 9,
+     "title": "Code Review Github Action",
+     "url": "https://github.com/marketplace/actions/code-review-github-action"
+    },
+    {
+     "rank": 10,
+     "title": "Automate your project with GitHub Models in Actions",
+     "url": "https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/"
+    },
+    {
+     "rank": 11,
+     "title": "Events that trigger workflows - GitHub Docs",
+     "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows"
+    },
+    {
+     "rank": 12,
+     "title": "GitHub Agentic Workflows: Automating DevOps with AI-Powered GitHub Actions",
+     "url": "https://betterstack.com/community/guides/ai/github-agentic-workflows/"
+    },
+    {
+     "rank": 13,
+     "title": "Automating Projects using Actions - GitHub Docs",
+     "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/automating-projects-using-actions"
+    },
+    {
+     "rank": 14,
+     "title": "GitHub - skills/ai-in-actions: Integrate AI models directly into your ...",
+     "url": "https://github.com/skills/ai-in-actions"
+    },
+    {
+     "rank": 15,
+     "title": "AI Code Review in GitHub Actions: CI/CD Setup Guide",
+     "url": "https://www.kunalganglani.com/blog/ai-code-review-github-actions"
+    },
+    {
+     "rank": 16,
+     "title": "Develop agentic workflows in GitHub Actions",
+     "url": "https://docs.github.com/en/actions/tutorials/develop-agentic-workflows-in-github-actions"
+    },
+    {
+     "rank": 17,
+     "title": "Code Review Github Action",
+     "url": "https://github.com/marketplace/actions/code-review-github-action"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub Agentic Workflows",
+     "url": "https://github.github.com/gh-aw/"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub Agentic Workflows Quickstart",
+     "url": "https://github.github.com/gh-aw/setup/quick-start/"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub - github/gh-aw: GitHub Agentic Workflows · GitHub",
+     "url": "https://github.com/github/gh-aw"
+    },
+    {
+     "rank": 21,
+     "title": "Agentic Workflows Developer Guide | GitHub Copilot",
+     "url": "https://copilot-academy.github.io/workshops/copilot-customization/agentic_workflows"
+    },
+    {
+     "rank": 22,
+     "title": "How to Set Up Auto-Merge in GitHub Actions - oneuptime.com",
+     "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view"
+    },
+    {
+     "rank": 23,
+     "title": "Simple Auto Merge · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/simple-auto-merge"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+  "https://dev.to/alichherawalla/how-to-know-if-an-ai-pull-request-is-safe-to-merge-57nj",
+  "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/",
+  "https://dev.to/rahulxsingh/how-to-set-up-ai-code-review-in-github-actions-complete-guide-3fim",
+  "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6"
+ ],
+ "recommendations": [
+  {
+   "name": "Automatically merge a pull request - GitHub Docs",
+   "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+   "description": "Learn how to enable and configure auto-merge for pull requests in GitHub repositories."
+  },
+  {
+   "name": "How to Set Up AI Code Review in GitHub Actions - Complete Guide",
+   "url": "https://dev.to/rahulxsingh/how-to-set-up-ai-code-review-in-github-actions-complete-guide-3fim",
+   "description": "Guide to integrating AI code review tools with GitHub Actions for automated and efficient PR reviews."
+  },
+  {
+   "name": "This is How I Automated My GitHub PRs with AI Agents Agentic Workflows!",
+   "url": "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6",
+   "description": "Learn about automating GitHub PRs using AI agents and agentic workflows to provide context and reduce uncertainty."
+  }
+ ]
+}

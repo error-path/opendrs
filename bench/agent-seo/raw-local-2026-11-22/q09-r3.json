@@ -1,0 +1,213 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Know MCP risks before you deploy! | Microsoft Community Hub",
+     "url": "https://techcommunity.microsoft.com/discussions/microsoft-security/know-mcp-risks-before-you-deploy/4470989"
+    },
+    {
+     "rank": 2,
+     "title": "MCP Server Security Hub — Risk Scores for 80,000+ MCP Servers ...",
+     "url": "https://mcp.backslash.security/"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security: OWASP MCP Top 10 Risks and Defenses | Cycode",
+     "url": "https://cycode.com/blog/owasp-mcp-top-10/"
+    },
+    {
+     "rank": 4,
+     "title": "MCP Security - OWASP Cheat Sheet Series",
+     "url": "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html"
+    },
+    {
+     "rank": 5,
+     "title": "Best MCP Servers for Third-Party Risk Management (2026)",
+     "url": "https://www.bitsight.com/guides/best-mcp-servers-third-party-risk-management"
+    },
+    {
+     "rank": 6,
+     "title": "MCP Vulnerabilities and Security Risks (2026) | PipeLab",
+     "url": "https://pipelab.org/learn/mcp-vulnerabilities/"
+    },
+    {
+     "rank": 7,
+     "title": "MCP Server Security: 7 Risks and How to Address Them",
+     "url": "https://witness.ai/blog/mcp-server-security/"
+    },
+    {
+     "rank": 8,
+     "title": "MCP Security Best Practices: A Practical Guide for 2026",
+     "url": "https://blog.mcpservers.org/posts/mcp-security-best-practices"
+    },
+    {
+     "rank": 9,
+     "title": "MCP Server Security: Risks, CVEs, and Defenses",
+     "url": "https://safeguard.sh/resources/blog/securing-model-context-protocol-mcp-servers"
+    },
+    {
+     "rank": 10,
+     "title": "1. Rug-Pull Attack (Agent / MCP Server) | Microsoft Learn",
+     "url": "https://learn.microsoft.com/en-us/security/zero-trust/catalog-ai-attack-techniques/rug-pull-attack"
+    },
+    {
+     "rank": 11,
+     "title": "MCP Server Security: Attack Vectors and Best Practices",
+     "url": "https://arnav.au/2026/05/14/mcp-server-security/"
+    },
+    {
+     "rank": 12,
+     "title": "MCP Risk - should you connect that MCP server?",
+     "url": "https://mcprisk.org/"
+    },
+    {
+     "rank": 13,
+     "title": "Enable AI assistance with Azure DevOps MCP Server",
+     "url": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview?view=azure-devops"
+    },
+    {
+     "rank": 14,
+     "title": "Interacting with Bitbucket via MCP - Atlassian Support",
+     "url": "https://support.atlassian.com/bitbucket-cloud/docs/interacting-with-bitbucket-via-mcp/"
+    },
+    {
+     "rank": 15,
+     "title": "Atlassian MCP Server: Setup, Permissions, and Security for Jira and ...",
+     "url": "https://www.getmaxim.ai/articles/atlassian-mcp-server/"
+    },
+    {
+     "rank": 16,
+     "title": "MCP Security: OWASP MCP Top 10 Risks and Defenses | Cycode",
+     "url": "https://cycode.com/blog/owasp-mcp-top-10/"
+    },
+    {
+     "rank": 17,
+     "title": "MCP server security risks explained with real-world examples",
+     "url": "https://www.doppler.com/guides/mcp-server-security-risks-attack-scenarios"
+    },
+    {
+     "rank": 18,
+     "title": "MCP server security: Risks, best practices & deployment guide",
+     "url": "https://agentkit.best/blog/mcp-integrations/mcp-server-security-risks-best-practices-deployment-guide"
+    },
+    {
+     "rank": 19,
+     "title": "Pull requests · microsoft/azure-devops-mcp · GitHub",
+     "url": "https://github.com/microsoft/azure-devops-mcp/pulls"
+    },
+    {
+     "rank": 20,
+     "title": "MCP Server Security: The Critical 2026 Risk Guide | XHack",
+     "url": "https://xhack.io/blog/mcp-server-security-guide"
+    },
+    {
+     "rank": 21,
+     "title": "Azure DevOps Remote MCP Server | Awesome MCP Servers",
+     "url": "https://mcpservers.org/servers/learn-microsoft-com-en-us-azure-devops-mcp-server-mcp-server-overview"
+    },
+    {
+     "rank": 22,
+     "title": "MCP Vulnerabilities and Security Risks (2026) | PipeLab",
+     "url": "https://pipelab.org/learn/mcp-vulnerabilities/"
+    },
+    {
+     "rank": 23,
+     "title": "MCP Clients: Understanding the potential security risks",
+     "url": "https://www.atlassian.com/blog/company-news/mcp-risk-awareness"
+    }
+   ]
+  },
+  {
+   "query": "MCP server risk assessment tools and services 2023",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP Server Registry — Risk Lookup for Any Server | PolicyLayer",
+     "url": "https://policylayer.com/registry"
+    },
+    {
+     "rank": 2,
+     "title": "Know MCP risks before you deploy! | Microsoft Community Hub",
+     "url": "https://techcommunity.microsoft.com/discussions/microsoft-security/know-mcp-risks-before-you-deploy/4470989"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Server tools - ServiceNow",
+     "url": "https://www.servicenow.com/docs/r/it-service-management/itsm-mcp-server-tools-reference.html"
+    },
+    {
+     "rank": 4,
+     "title": "Assess MCP Server Security & Risk | PointGuard AI",
+     "url": "https://www.pointguardai.com/use-cases/assess-mcp-server-risk"
+    },
+    {
+     "rank": 5,
+     "title": "10 Tools for Securing MCP Servers - Nordic APIs",
+     "url": "https://nordicapis.com/10-tools-for-securing-mcp-servers/"
+    },
+    {
+     "rank": 6,
+     "title": "MCP Server Security Hub — Risk Scores for 80,000+ MCP Servers ...",
+     "url": "https://mcp.backslash.security/"
+    },
+    {
+     "rank": 7,
+     "title": "MCP Server Registry — Risk Lookup for Any Server | PolicyLayer",
+     "url": "https://policylayer.com/registry"
+    },
+    {
+     "rank": 8,
+     "title": "Best MCP Security Tools for Enterprises in 2026 - akto.io",
+     "url": "https://www.akto.io/blog/mcp-security-tools"
+    },
+    {
+     "rank": 9,
+     "title": "MCP server security risks explained with real-world examples",
+     "url": "https://www.doppler.com/guides/mcp-server-security-risks-attack-scenarios"
+    },
+    {
+     "rank": 10,
+     "title": "MCP Server Security: The Complete Guide for 2026",
+     "url": "https://openclaw.nasseroumer.com/blog/mcp-server-security-complete-guide-2026/"
+    },
+    {
+     "rank": 11,
+     "title": "MCP Server Security Best Practices to Prevent Risk",
+     "url": "https://www.descope.com/blog/post/mcp-server-security-best-practices"
+    },
+    {
+     "rank": 12,
+     "title": "MCP Server Security: Threat Model and Controls for the Agent Tool ...",
+     "url": "https://generalanalysis.com/guides/mcp-server-security"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://techcommunity.microsoft.com/discussions/microsoft-security/know-mcp-risks-before-you-deploy/4470989",
+  "https://mcp.backslash.security/",
+  "https://cycode.com/blog/owasp-mcp-top-10/",
+  "https://policylayer.com/registry",
+  "https://www.servicenow.com/docs/r/it-service-management/itsm-mcp-server-tools-reference.html"
+ ],
+ "recommendations": [
+  {
+   "name": "MCP Server Security Hub",
+   "url": "https://mcp.backslash.security/",
+   "description": "A free tool for vetting MCP servers based on 80,000+ assessments, providing risk scores and detailed findings."
+  },
+  {
+   "name": "Backslash Security",
+   "url": "https://policylayer.com/registry",
+   "description": "An MCP server registry offering detailed risk assessments and policy recommendations for over 44,600 servers."
+  },
+  {
+   "name": "PointGuard AI",
+   "url": "https://www.pointguardai.com/use-cases/assess-mcp-server-risk",
+   "description": "A risk assessment tool that evaluates MCP servers for security vulnerabilities and provides actionable insights."
+  }
+ ]
+}

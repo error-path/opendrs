@@ -1,0 +1,193 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Apps - Pull Request Risk Scorer · GitHub",
+     "url": "https://github.com/apps/pull-request-risk-scorer"
+    },
+    {
+     "rank": 2,
+     "title": "How to Score Pull Requests for Security… | Re-entry.ai",
+     "url": "https://www.re-entry.ai/blog/pr-risk-scoring-ai-code-framework"
+    },
+    {
+     "rank": 3,
+     "title": "Risk-scoring pull requests for smarter review triage",
+     "url": "https://goatfied.com/blog/risk-scoring-pull-requests-for-smarter-review-triage"
+    },
+    {
+     "rank": 4,
+     "title": "pr-risk-scorer · PyPI",
+     "url": "https://pypi.org/project/pr-risk-scorer/"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI-Powered Code Review Tools for PR Automation …",
+     "url": "https://www.qodo.ai/blog/pull-request-automation-tools/"
+    },
+    {
+     "rank": 6,
+     "title": "MergePilot — AI-Powered Pull Request & Code Review Tool",
+     "url": "https://www.mergepilot.app/"
+    },
+    {
+     "rank": 7,
+     "title": "FMEA for AI Pull Requests: How to Score Risk… | Re-entry.ai",
+     "url": "https://www.re-entry.ai/blog/fmea-ai-pull-request-risk-scoring"
+    },
+    {
+     "rank": 8,
+     "title": "Risk scoring on pull requests shows you where to look. Make",
+     "url": "https://www.linkedin.com/pulse/risk-scoring-pull-requests-shows-you-where-look-agents-waselnuk-glo6c"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of GitHub Apps for Pull Request Risk Scoring: Features and Benefits",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Apps - Pull Request Risk Scorer · GitHub",
+     "url": "https://github.com/apps/pull-request-risk-scorer"
+    },
+    {
+     "rank": 2,
+     "title": "AI Pull Request Risk Triage Tools: What to Choose Before Review",
+     "url": "https://www.cubic.dev/info/blog/recommended/which-platforms-use-ai-to-triage-incoming-pull-requests-by-risk-level-before-a-human-reviewer-opens--5b8df3"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 6,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs - arXiv.org",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 7,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Top AI Code Review Tools for GitHub Pull Requests in 2026",
+     "url": "https://codeant.ai/blogs/ai-code-review-tools-github-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "5 AI-Powered GitHub Code Review Tools [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/github-ai-code-review/"
+    },
+    {
+     "rank": 10,
+     "title": "Best Pull Request Security Automation Tools (2026)",
+     "url": "https://safeguard.sh/resources/blog/best-pull-request-and-code-review-security-automation-tools"
+    },
+    {
+     "rank": 11,
+     "title": "Top AI Code Review Tools for GitHub Pull Requests in 2026",
+     "url": "https://codeant.ai/blogs/ai-code-review-tools-github-pull-requests"
+    },
+    {
+     "rank": 12,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 13,
+     "title": "AI Scan for pull requests generally available - GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/"
+    },
+    {
+     "rank": 14,
+     "title": "Agent pull requests are everywhere. Here's how to review them.",
+     "url": "https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them/"
+    },
+    {
+     "rank": 15,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 16,
+     "title": "Pull Request Analytics - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/pull-request-analytics"
+    },
+    {
+     "rank": 17,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 18,
+     "title": "AI Scan for pull requests - GitHub Docs",
+     "url": "https://docs.github.com/en/code-security/concepts/code-scanning/ai-powered-security-detections"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub Apps - PR Copilot · GitHub",
+     "url": "https://github.com/apps/pr-copilot"
+    },
+    {
+     "rank": 20,
+     "title": "7 Best AI Code Review Tools for GitHub Teams (2026 …",
+     "url": "https://www.greptile.com/content-library/best-code-review-github"
+    },
+    {
+     "rank": 21,
+     "title": "Managing issues and pull requests with the GitHub Copilot app",
+     "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+     "rank": 22,
+     "title": "GitHub Apps - Review Scope · GitHub",
+     "url": "https://github.com/apps/review-scope"
+    },
+    {
+     "rank": 23,
+     "title": "GitHub PR Review: Best Practices and Tools (2026)",
+     "url": "https://dev.to/rahulxsingh/github-pr-review-best-practices-and-tools-2026-1p90"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/apps/pull-request-risk-scorer",
+  "https://www.re-entry.ai/blog/pr-risk-scoring-ai-code-framework",
+  "https://goatfied.com/blog/risk-scoring-pull-requests-for-smarter-review-triage",
+  "https://www.cubic.dev/info/blog/recommended/which-platforms-use-ai-to-triage-incoming-pull-requests-by-risk-level-before-a-human-reviewer-opens--5b8df3",
+  "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub Apps - Pull Request Risk Scorer",
+   "url": "https://github.com/apps/pull-request-risk-scorer",
+   "description": "An automated GitHub app that assigns risk scores to pull requests based on various criteria."
+  },
+  {
+   "name": "MergePilot — AI-Powered Pull Request & Code Review Tool",
+   "url": "https://www.mergepilot.app/",
+   "description": "An AI-driven tool that helps teams review and manage pull requests more efficiently."
+  },
+  {
+   "name": "PR Copilot",
+   "url": "https://github.com/apps/pr-copilot",
+   "description": "A GitHub app that suggests changes and provides insights to help with pull request reviews."
+  }
+ ]
+}

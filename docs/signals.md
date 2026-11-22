@@ -1,6 +1,6 @@
 ---
 title: "Risk signals: what opendrs measures"
-description: "Every signal in the opendrs PR risk score, mapped to the features of Meta's Diff Risk Score: size, diffusion, file history, critical paths, complexity, author expertise, tests, blast radius and the optional LLM judge, with how each one is computed from git."
+description: "Every signal in the opendrs PR risk score, a just-in-time defect prediction model for pull requests, mapped to the features of Meta's Diff Risk Score: size, diffusion, file history, critical paths, complexity, author expertise, tests, blast radius and the optional LLM judge, with how each one is computed from git."
 ---
 
 # Risk signals: what opendrs measures

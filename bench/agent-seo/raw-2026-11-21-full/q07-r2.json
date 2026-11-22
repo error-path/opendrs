@@ -1,0 +1,115 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DEV Community",
+     "url": "https://dev.to/danielwe/can-ai-check-the-blast-radius-of-a-pr-before-you-merge-50k0"
+    },
+    {
+     "rank": 2,
+     "title": "blast-radius 0.7.1",
+     "url": "https://docs.rs/crate/blast-radius/0.7.1/source/action.yml"
+    },
+    {
+     "rank": 3,
+     "title": "Research PreviewGitHubGitLabAzure DevOps",
+     "url": "https://docs.qodo.ai/code-review/blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "blast-radius 0.7.0",
+     "url": "https://docs.rs/crate/blast-radius/0.7.0/source/action.yml"
+    },
+    {
+     "rank": 5,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.qodo.ai/code-review/blast-radius.md"
+    },
+    {
+     "rank": 6,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.qodo.ai/code-review/assess-risk-with-blast-radius.md"
+    },
+    {
+     "rank": 7,
+     "title": "get pr impact",
+     "url": "https://alperhankendi.github.io/Ctxo/docs/mcp-tools/get-pr-impact"
+    },
+    {
+     "rank": 8,
+     "title": "DEV Community",
+     "url": "https://dev.to/n3mo-dev/automatically-answering-what-does-this-pr-break-building-blast-radius-analysis-into-github-308g"
+    },
+    {
+     "rank": 9,
+     "title": "github.com%2Fducdmdev%2Fpr impact",
+     "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact"
+    },
+    {
+     "rank": 10,
+     "title": "impact radius",
+     "url": "https://pypi.org/project/impact-radius/"
+    },
+    {
+     "rank": 11,
+     "title": "blast-radius 0.2.1",
+     "url": "https://docs.rs/crate/blast-radius/0.2.1/source/README.md"
+    },
+    {
+     "rank": 12,
+     "title": "blast-radius 0.1.1",
+     "url": "https://docs.rs/crate/blast-radius/0.1.1/source/src/graph.rs"
+    },
+    {
+     "rank": 13,
+     "title": "blast-radius 0.3.0",
+     "url": "https://docs.rs/crate/blast-radius/0.3.0/source/README.md"
+    },
+    {
+     "rank": 14,
+     "title": "error path opendrs",
+     "url": "https://www.skillsdirectory.com/skills/error-path-opendrs"
+    },
+    {
+     "rank": 15,
+     "title": "> ## Documentation Index",
+     "url": "https://docs.coderabbit.ai/security-agent/blast-radius.md"
+    },
+    {
+     "rank": 16,
+     "title": "blast-radius 0.3.0",
+     "url": "https://docs.rs/crate/blast-radius/0.3.0"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.rs/crate/blast-radius/0.3.0",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://docs.qodo.ai/code-review/blast-radius",
+  "https://docs.rs/crate/blast-radius/0.3.0",
+  "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+  "https://docs.qodo.ai/code-review/blast-radius",
+  "https://pypi.org/project/impact-radius/"
+ ],
+ "recommendations": [
+  {
+   "name": "blast-radius (CLI and GitHub Action)",
+   "url": "https://docs.rs/crate/blast-radius/0.3.0",
+   "description": "Closest match to your ask: it traces every file that depends directly or transitively on the code you changed, reports direct and indirect counts, comments on the PR, and can fail a check by risk threshold, though JS/TS is the solid language support while Python and Rust are beta."
+  },
+  {
+   "name": "Qodo blast radius",
+   "url": "https://docs.qodo.ai/code-review/blast-radius",
+   "description": "A hosted option for GitHub, GitLab and Azure DevOps that labels each PR with a small, medium or large blast radius, but its docs don't say it gives you an explicit dependent-file count."
+  },
+  {
+   "name": "pr-impact",
+   "url": "https://awesome.ecosyste.ms/projects/github.com%2Fducdmdev%2Fpr-impact",
+   "description": "An AI-powered tool, available as a Claude Code plugin, MCP server and GitHub Action, that detects breaking changes, maps blast radius and scores risk; I couldn't open its page (403), so this is based on the search summary only."
+  }
+ ]
+}

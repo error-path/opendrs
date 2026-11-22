@@ -1,0 +1,41 @@
+{"searches": [
+{"query": "autoapprove alternatives", "results": [
+{"rank": 1, "title": "Alternatives to Auto Approve Comments", "url": "https://pluginsdb.com/alternatives-to/auto-approve-comments"},
+{"rank": 2, "title": "auto approving actions", "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"},
+{"rank": 3, "title": "# Top 10 Magento 2 Order Approval Rules Alternatives &amp; Competitors", "url": "https://www.g2.com/products/magento-2-order-approval-rules/competitors/alternatives"},
+{"rank": 4, "title": "atlassian.com", "url": "https://community.atlassian.com/t5/Jira-Service-Management/Multiple-Approvers-with-some-auto-approve/qaq-p/2729251"},
+{"rank": 5, "title": "# Top 10 Magento 2 Order Approval Rules Alternatives &amp; Competitors", "url": "https://www.g2.com/products/magento-2-order-approval-rules/competitors/alternatives/enterprise"},
+{"rank": 6, "title": "Security News", "url": "https://socket.dev/npm/package/auto-approver"},
+{"rank": 7, "title": "auto approver", "url": "https://www.npmjs.com/package/auto-approver"},
+{"rank": 8, "title": "4681816 how to automatically accept applicants", "url": "https://intercom.help/buzzbassador/en/articles/4681816-how-to-automatically-accept-applicants"},
+{"rank": 9, "title": "# Access Request Auto Approvals and Multi Approvals", "url": "https://developer.sailpoint.com/discuss/t/access-request-auto-approvals-and-multi-approvals/10639.md"},
+{"rank": 10, "title": "Security News", "url": "https://socket.dev/npm/package/auto-approver/overview/1.8.2"},
+{"rank": 11, "title": "auto approve prs", "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"},
+{"rank": 12, "title": "Approval Donkey alternatives in 2025", "url": "https://jotform.com/blog/approval-donkey-alternative"},
+{"rank": 13, "title": "Credits to Github Giphy", "url": "https://github.com/niklasstoffers/gitlab-auto-approve"},
+{"rank": 14, "title": "Auto-Approve (Optional)", "url": "https://docs.delinea.com/online-help/integrations/webex/config/webex-auto-approve.htm"}
+]},
+{"query": "automatically approve pull requests GitHub action bot tools", "results": [
+{"rank": 1, "title": "auto approve", "url": "https://github.com/marketplace/actions/auto-approve"},
+{"rank": 2, "title": "privileged requester", "url": "https://github.com/github/privileged-requester"},
+{"rank": 3, "title": "Github action to automate pull requests", "url": "https://www.github.com/amaroteam/automatic-pull-request-review"},
+{"rank": 4, "title": "automating dependabot with github actions", "url": "https://docs.github.com/enterprise-server@3.12/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions"},
+{"rank": 5, "title": "automate dependabot with actions", "url": "https://docs.github.com/en/enterprise-server@3.18/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions"},
+{"rank": 6, "title": "automate dependabot with actions", "url": "https://docs.github.com/en/enterprise-server@3.20/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions"},
+{"rank": 7, "title": "automate dependabot with actions", "url": "https://docs.github.com/en/enterprise-server@3.16/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions"},
+{"rank": 8, "title": "GitHub Action to automate pull request reviews", "url": "https://fr.github.com/flex-development/flautoreview"},
+{"rank": 9, "title": "automating dependabot with github actions", "url": "https://docs.github.com/de/enterprise-server@3.6/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions"},
+{"rank": 10, "title": "automate dependabot with actions", "url": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions"},
+{"rank": 11, "title": "automating dependabot with github actions", "url": "https://docs.github.com/en/enterprise-server@3.18/code-security/tutorials/secure-your-dependencies/automating-dependabot-with-github-actions"},
+{"rank": 12, "title": "merge me action", "url": "https://www.github.com/ifit/merge-me-action"},
+{"rank": 13, "title": "pr bot cli", "url": "https://beta.pkg.go.dev/github.com/marqeta/pr-bot-cli"},
+{"rank": 14, "title": "auto approve pr", "url": "https://redirect.github.com/vitessio/vitess/blob/main/.github/workflows/auto_approve_pr.yml"},
+{"rank": 15, "title": "auto approver", "url": "https://www.npmjs.com/package/auto-approver"}
+]}
+],
+"fetches": ["https://www.greptile.com/docs/code-review/auto-approve-prs"],
+"recommendations": [
+{"name": "hmarr/auto-approve-action", "url": "https://github.com/marketplace/actions/auto-approve", "description": "A GitHub Action that approves pull requests automatically, and you can restrict it with an `if` condition such as only Dependabot PRs."},
+{"name": "github/privileged-requester", "url": "https://github.com/github/privileged-requester", "description": "GitHub's own tool that approves PRs matching criteria you set in the repo, such as PRs from Dependabot or your team's automation."},
+{"name": "Greptile auto-approve", "url": "https://www.greptile.com/docs/code-review/auto-approve-prs", "description": "An AI code reviewer that approves a PR only after a clean 5/5 review and within a risk ceiling you set, so approval depends on the review rather than on who opened the PR."}
+]}

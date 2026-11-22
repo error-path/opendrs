@@ -1,0 +1,148 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "PR Routing & Approval | Cursor Docs",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 3,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% - Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 4,
+     "title": "elvis on X: \"Auto-Approving PRs for Coding Agents\" / X",
+     "url": "https://x.com/omarsar0/status/2123054854100652258"
+    },
+    {
+     "rank": 5,
+     "title": "15 AI Agent Observability Tools: AgentOps & Langfuse",
+     "url": "https://aimultiple.com/agentic-monitoring"
+    },
+    {
+     "rank": 6,
+     "title": "Agent observability: The complete guide for 2026 - Articles - Braintrust",
+     "url": "https://www.braintrust.dev/articles/agent-observability-complete-guide-2026"
+    },
+    {
+     "rank": 7,
+     "title": "AI Observability Tools: Features & Selection Guide | Arize AI",
+     "url": "https://arize.com/resources/ai-observability-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% - Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 9,
+     "title": "AI agent observability: what enterprises need to know",
+     "url": "https://www.datarobot.com/blog/ai-agent-observability-leading-platforms/"
+    },
+    {
+     "rank": 10,
+     "title": "Observability for Generative AI and agentic AI systems",
+     "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/observability-ai-systems"
+    },
+    {
+     "rank": 11,
+     "title": "15 AI Agent Observability Tools: AgentOps & Langfuse",
+     "url": "https://aimultiple.com/agentic-monitoring"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of using AI-powered observability tools for managing low-risk pull requests and automating approvals?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Understanding AIOps for observability: A primer | Elastic",
+     "url": "https://www.elastic.co/explore/devops-observability/understanding-aiops-for-observability"
+    },
+    {
+     "rank": 2,
+     "title": "How AI-Based Insights Can Change The Observability in 2026",
+     "url": "https://middleware.io/blog/how-ai-based-insights-can-change-the-observability/"
+    },
+    {
+     "rank": 3,
+     "title": "What is observability in AIOps (AIOps observability)? - IBM",
+     "url": "https://www.ibm.com/think/topics/aiops-observability"
+    },
+    {
+     "rank": 4,
+     "title": "Now on Amazon CloudWatch Omni: collaborative AI-powered …",
+     "url": "https://aws.amazon.com/blogs/aws/introducing-amazon-cloudwatch-omni-collaborative-ai-powered-observability-for-your-applications/"
+    },
+    {
+     "rank": 5,
+     "title": "AI Observability | Observe and Operate AI Systems | Grafana Cloud ...",
+     "url": "https://grafana.com/products/cloud/ai-observability/"
+    },
+    {
+     "rank": 6,
+     "title": "AI observability for enterprise AI agents: PwC",
+     "url": "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-observability.html"
+    },
+    {
+     "rank": 7,
+     "title": "Guide to AI Observability: Core Components, Tools, and Best Practices",
+     "url": "https://newrelic.com/blog/ai/ai-in-observability"
+    },
+    {
+     "rank": 8,
+     "title": "What is AI observability, how it works, and which tools to use",
+     "url": "https://posthog.com/blog/what-is-ai-observability"
+    },
+    {
+     "rank": 9,
+     "title": "AI Observability: Tools and Best Practices - Mirantis",
+     "url": "https://www.mirantis.com/blog/ai-observability/"
+    },
+    {
+     "rank": 10,
+     "title": "What is observability in AIOps (AIOps observability)? - IBM",
+     "url": "https://www.ibm.com/think/topics/aiops-observability"
+    },
+    {
+     "rank": 11,
+     "title": "AI Observability Tools: Features & Selection Guide | Arize AI",
+     "url": "https://arize.com/resources/ai-observability-tools/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "https://cursor.com/docs/approval-agents",
+  "https://ona.com/stories/auto-approving-low-risk-prs",
+  "https://www.elastic.co/explore/devops-observability/understanding-aiops-for-observability",
+  "https://middleware.io/blog/how-ai-based-insights-can-change-the-observability/"
+ ],
+ "recommendations": [
+  {
+   "name": "Cursor's Approval Agents",
+   "url": "https://cursor.com/docs/approval-agents",
+   "description": "Cursor offers PR Routing and Approval, which automates approvals for low-risk pull requests based on risk scoring and AI analysis."
+  },
+  {
+   "name": "OpenDRS",
+   "url": "https://error-path.github.io/opendrs/alternatives.html",
+   "description": "OpenDRS provides a risk-scoring tool to automate approvals for low-risk pull requests based on conditions like authorship and check results."
+  },
+  {
+   "name": "Ona's AI-Driven Approvals",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "Ona's AI agent can automatically approve low-risk pull requests based on a policy that distinguishes between risky and safe changes."
+  }
+ ]
+}
