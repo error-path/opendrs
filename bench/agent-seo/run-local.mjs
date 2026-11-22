@@ -38,15 +38,30 @@ const pageCharacters = 2500;
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 /**
- * Decodes Bing's click-tracking link back to the result URL.
+ * Decodes Bing's click-tracking link back to the result URL, without Bing's browser IDs.
  *
  * @param href - The `href` of a Bing result link.
- * @returns The destination URL, or the input when it is not a tracking link.
+ * @returns The destination URL, or the input when it is not a tracking link, with the `msockid`
+ *   and `rdrig` parameters removed (they identify the browser that searched).
  */
 function decodeBingLink(href) {
   const encoded = href.replace(/&amp;/g, '&').match(/[?&]u=a1([^&]+)/)?.[1];
-  if (!encoded) return href;
-  return Buffer.from(encoded.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8');
+  const url = encoded ? Buffer.from(encoded.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8') : href;
+  return stripBrowserIds(url);
+}
+
+/**
+ * Removes Bing's browser-identifying query parameters (`msockid`, `rdrig`) from a URL.
+ *
+ * @param url - A result URL.
+ * @returns The URL without those parameters.
+ */
+function stripBrowserIds(url) {
+  if (!URL.canParse(url)) return url;
+  const parsed = new URL(url);
+  parsed.searchParams.delete('msockid');
+  parsed.searchParams.delete('rdrig');
+  return parsed.toString();
 }
 
 /**
