@@ -231,11 +231,11 @@ PR description:
 
 ### sdras/awesome-actions
 
-PR title: `Add opendrs Diff Risk Score to Pull Requests` (one PR for this single suggestion).
+PR title: `Add opendrs PR Risk Score and Blast Radius to Pull Requests` (one PR for this single suggestion).
 
 Entry (end of the "Pull Requests" category, Title Case, one line):
 
-    - [opendrs Diff Risk Score](https://github.com/marketplace/actions/opendrs-diff-risk-score) - Comments a 0-1 risk score on each pull request and can approve and auto-merge low-risk ones.
+    - [opendrs PR Risk Score and Blast Radius](https://github.com/marketplace/actions/opendrs-diff-risk-score) - Comments a 0-1 risk score on each pull request and can approve and auto-merge low-risk ones.
 
 PR description:
 
