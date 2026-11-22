@@ -283,3 +283,24 @@ Form fields (adapt to the live form):
    something to link). Skip vendor roundups unless there is time.
 4. r/devops last, once the disclosure and numbers have survived comment scrutiny elsewhere.
 5. Change one thing at a time and re-run the agent-visibility benchmark before the next step.
+
+## List articles that the search services return most (measured 22 Nov 2026)
+
+From the benchmark's raw runs (Bing, Tavily, Exa, Google in six countries): "best tools" articles
+that appear in the top 5 results across many queries and services. These are the pages AI agents
+read before recommending, so they are the best outreach targets. Counts are top-5 appearances.
+
+| Article | Appearances | Services |
+|---|---|---|
+| mastra.ai/articles/ai-code-review-tools | 39 | 8 |
+| gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026 | 16 | several |
+| deepsource.com/resources/ai-code-review-tools | 12 | several |
+| warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests | 11 | several |
+| cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage | 10 | several |
+| sourcegraph.com/blog/automated-code-review-tools | 9 | several |
+
+Also frequent and often recommended by the model: `ona.com/stories/auto-approving-low-risk-prs`
+(an article on the same idea; a natural place for a comment or a note to the author) and
+`mcpmarket.com/server/opendrs` (the MCP directory listing, recommended 6 times on Bing).
+Vendor-owned lists (deepsource, cubic, sourcegraph, gitkraken) are less likely to add an outside
+tool; independent ones (mastra, warpway) are the better first asks.
