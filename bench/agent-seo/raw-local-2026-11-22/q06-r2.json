@@ -1,0 +1,272 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-Approve GitHub Action",
+     "url": "https://github.com/lekman/auto-approve-action"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Pull Requests - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 4,
+     "title": "How We Use AI Agents to Auto Approve Github PRs - Medium",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approve PRs - Greptile",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate …",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 7,
+     "title": "How do I automatically approve \"low risk\" Github Copilot commands …",
+     "url": "https://stackoverflow.com/questions/80001736/how-do-i-automatically-approve-low-risk-github-copilot-commands-in-vs-code"
+    },
+    {
+     "rank": 8,
+     "title": "Meet LiveReview: Auto Approve 30-50% of Your Low-Risk PRs, Safely",
+     "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g"
+    },
+    {
+     "rank": 9,
+     "title": "This is How I Automated My GitHub PRs with AI Agents & Agentic ...",
+     "url": "https://dev.to/pavanbelagatti/this-is-how-i-automated-my-github-prs-with-ai-agents-agentic-workflows-11c6"
+    },
+    {
+     "rank": 10,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 11,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a …",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 12,
+     "title": "We now auto-approve and merge 15% of PRs - daily.dev",
+     "url": "https://daily.dev/posts/we-now-auto-approve-and-merge-15-of-prs-8bygwtyr3"
+    },
+    {
+     "rank": 13,
+     "title": "How do I automatically approve \"low risk\" Github Copilot commands …",
+     "url": "https://stackoverflow.com/questions/80001736/how-do-i-automatically-approve-low-risk-github-copilot-commands-in-vs-code"
+    },
+    {
+     "rank": 14,
+     "title": "Auto-approve PRs - Greptile",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 15,
+     "title": "How to Configure GitHub Actions for Pull Requests",
+     "url": "https://oneuptime.com/blog/post/2026-02-02-github-actions-pull-requests/view"
+    },
+    {
+     "rank": 16,
+     "title": "How to Set Up Auto-Merge in GitHub Actions - oneuptime.com",
+     "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view"
+    },
+    {
+     "rank": 17,
+     "title": "PR blast radius analyzer: a 0-1 risk score so low-risk PRs can auto-approve",
+     "url": "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13"
+    },
+    {
+     "rank": 18,
+     "title": "Let Copilot Automate the Review and Approval of PRs: Permissions ...",
+     "url": "https://en.aistacknav.com/copilot-auto-review-approve-pr-branch-protection/"
+    },
+    {
+     "rank": 19,
+     "title": "What Is Approvability? AI Auto-Approve Pull Requests",
+     "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests"
+    },
+    {
+     "rank": 20,
+     "title": "Auto approve and merge pull requests by Dependabot using Github …",
+     "url": "https://medium.com/@dileepkumarjami/auto-approve-and-merge-pull-requests-by-dependabot-using-github-actions-468557967fa4"
+    },
+    {
+     "rank": 21,
+     "title": "Trigger a GitHub action on pull request approval and path",
+     "url": "https://stackoverflow.com/questions/70438914/trigger-a-github-action-on-pull-request-approval-and-path"
+    },
+    {
+     "rank": 22,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 23,
+     "title": "How to automatically merge trusted Pull Requests on GitHub",
+     "url": "https://jhale.dev/posts/auto-merging-prs/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for auto-approving low-risk PRs based on risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "PR blast radius analyzer: a 0-1 risk score so low-risk PRs can auto ...",
+     "url": "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Approve Pull Requests - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub - connectors-testing-pplx/llm-diff-risk-review: GitHub Action ...",
+     "url": "https://github.com/connectors-testing-pplx/llm-diff-risk-review"
+    },
+    {
+     "rank": 5,
+     "title": "How We Use AI Agents to Auto Approve Github PRs - Medium",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 6,
+     "title": "Meet LiveReview: Auto Approve 30-50% of Your Low-Risk PRs, Safely",
+     "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g"
+    },
+    {
+     "rank": 7,
+     "title": "OpenDRS – PR Blast Radius Analyzer & Safe Auto-Approval",
+     "url": "https://mcpmarket.com/server/opendrs"
+    },
+    {
+     "rank": 8,
+     "title": "PR Routing & Approval | Cursor Docs",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub PR Risk Assessment Agent | Devpost",
+     "url": "https://devpost.com/software/auto-approval-agent"
+    },
+    {
+     "rank": 10,
+     "title": "I built a GitHub Action that auto-reviews PRs with LLM — risk ...",
+     "url": "https://gcentral.dev/blog/posts/ext-8fae465def607822"
+    },
+    {
+     "rank": 11,
+     "title": "Can you use GitHub Action account to approve PRs?",
+     "url": "https://github.com/orgs/community/discussions/27090"
+    },
+    {
+     "rank": 12,
+     "title": "PR Automation · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/pr-automation"
+    },
+    {
+     "rank": 13,
+     "title": "Auto Approve PR · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/auto-approve-pr"
+    },
+    {
+     "rank": 14,
+     "title": "Automate Code Reviews with GitHub Actions | Alex Rusin Blog",
+     "url": "https://blog.alexrusin.com/automate-code-reviews-with-github-actions/"
+    },
+    {
+     "rank": 15,
+     "title": "Reviewing deployments - GitHub Docs",
+     "url": "https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/review-deployments"
+    },
+    {
+     "rank": 16,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a …",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 17,
+     "title": "Deployments and environments - GitHub Docs",
+     "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments"
+    },
+    {
+     "rank": 18,
+     "title": "How to Set Up Auto-Merge in GitHub Actions - oneuptime.com",
+     "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view"
+    },
+    {
+     "rank": 19,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 20,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 21,
+     "title": "Create Pull Request With GitHub Actions - Baeldung on Ops",
+     "url": "https://www.baeldung.com/ops/github-actions-create-pr"
+    },
+    {
+     "rank": 22,
+     "title": "Approving workflow runs from forks - GitHub Docs",
+     "url": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/approve-runs-from-forks"
+    },
+    {
+     "rank": 23,
+     "title": "How to Implement a Manual Approval Process in GitHub Actions",
+     "url": "https://cloudcuddler.com/how-to-implement-a-manual-approval-process-in-github-actions/"
+    },
+    {
+     "rank": 24,
+     "title": "Trigger a GitHub action on pull request approval and path",
+     "url": "https://stackoverflow.com/questions/70438914/trigger-a-github-action-on-pull-request-approval-and-path"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/lekman/auto-approve-action",
+  "https://github.com/marketplace/actions/auto-approve-pull-requests",
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto-Approve GitHub Action",
+   "url": "https://github.com/lekman/auto-approve-action",
+   "description": "A composite action that provides automated pull request approval based on specified conditions."
+  },
+  {
+   "name": "Auto Approve Pull Requests",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "An action that automatically approves pull requests based on an allow list, labels, and status check verification."
+  },
+  {
+   "name": "PR blast radius analyzer",
+   "url": "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13",
+   "description": "A GitHub Action that calculates a risk score for pull requests and auto-approves those with a low score."
+  }
+ ]
+}

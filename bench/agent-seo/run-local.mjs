@@ -78,6 +78,7 @@ async function searchUncached(query) {
     return results;
   }
   if (backend === 'chrome') return searchInChrome(query);
+  if (backend === 'relay') return searchViaRelay(query);
   if (backend === 'google') {
     const results = [];
     for (const start of [1, 11]) {
@@ -105,6 +106,51 @@ async function searchUncached(query) {
   assertRelevant(query, results);
   return results;
 }
+
+/** Queries waiting for the browser, and the callbacks that resolve each search. */
+const relayQueue = [];
+const relayWaiting = new Map();
+let relayServer = null;
+
+/**
+ * Searches through the person's own Chrome: a loop in a bing.com tab (see RELAY_PAGE_SCRIPT in the
+ * README) polls this local server for queries, loads each search in a hidden same-site frame, which
+ * Bing answers with real results, and posts the organic results back.
+ *
+ * @param query - The search text.
+ * @returns The organic results of the first two result pages, in order.
+ * @throws If the results are unrelated to the query.
+ */
+async function searchViaRelay(query) {
+  if (!relayServer) {
+    const { createServer } = await import('node:http');
+    relayServer = createServer((request, response) => {
+      response.setHeader('Access-Control-Allow-Origin', '*');
+      response.setHeader('Access-Control-Allow-Headers', 'content-type');
+      response.setHeader('Access-Control-Allow-Private-Network', 'true');
+      if (request.method === 'OPTIONS') return response.end();
+      if (request.url === '/next') return response.end(JSON.stringify(relayQueue.shift() ?? { done: relayFinished }));
+      let body = '';
+      request.on('data', (chunk) => { body += chunk; });
+      request.on('end', () => {
+        try {
+          const { query: answered, results } = JSON.parse(body);
+          relayWaiting.get(answered)?.(results);
+          relayWaiting.delete(answered);
+        } catch { /* a malformed post is ignored; the search waits for the next one */ }
+        response.end('ok');
+      });
+    }).listen(8765, '127.0.0.1');
+    console.log('relay listening on http://127.0.0.1:8765; start the page loop in a bing.com tab');
+  }
+  const links = await new Promise((resolve) => { relayWaiting.set(query, resolve); relayQueue.push({ query }); });
+  const results = links.map((link, index) => ({ rank: index + 1, title: link.title, url: decodeBingLink(link.url) }));
+  assertRelevant(query, results);
+  return results;
+}
+
+/** Set when every run is done, so the page loop stops. */
+let relayFinished = false;
 
 /** The real-Chrome page used by the chrome backend, opened on first use. */
 let chromePage = null;
@@ -249,3 +295,5 @@ runLoop: for (const entry of queries) {
   }
 }
 if (chromePage) await chromePage.context().close();
+relayFinished = true;
+if (relayServer) setTimeout(() => relayServer.close(), 15000);

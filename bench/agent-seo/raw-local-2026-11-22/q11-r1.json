@@ -1,0 +1,253 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "defect-prediction · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/defect-prediction"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - vuphongle/oss-pr-reviewer: AI-powered CLI for reviewing …",
+     "url": "https://github.com/vuphongle/oss-pr-reviewer"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/pdf/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "An Open-Source Software Metric Tool for Defect Prediction ... - Springer",
+     "url": "https://link.springer.com/chapter/10.1007/978-3-030-14687-0_7"
+    },
+    {
+     "rank": 6,
+     "title": "Top 8 Open Source Defect Tracking Tools for QA Engineers",
+     "url": "https://ones.com/blog/top-8-open-source-defect-tracking-tools-for-qa-engineers/"
+    },
+    {
+     "rank": 7,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/abstract/document/9045809"
+    },
+    {
+     "rank": 8,
+     "title": "AI-Powered Defect Prediction & Root Cause Analysis System",
+     "url": "https://github.com/SravanthiNC/AI-Powered-Defect-Prediction-Root-Cause-Analysis-System-"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 11,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request-Level ...",
+     "url": "https://link.springer.com/chapter/10.1007/978-3-031-27506-7_2"
+    },
+    {
+     "rank": 12,
+     "title": "AI Scan for pull requests generally available - GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/"
+    },
+    {
+     "rank": 13,
+     "title": "15 Best GitHub Code Review Tools [Free & Paid] - DEV Community",
+     "url": "https://dev.to/trulyfurqan/15-best-github-code-review-tools-free-paid-3kfm"
+    },
+    {
+     "rank": 14,
+     "title": "Top 8 Open Source Defect Tracking Tools for QA Engineers",
+     "url": "https://ones.com/blog/top-8-open-source-defect-tracking-tools-for-qa-engineers/"
+    },
+    {
+     "rank": 15,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request …",
+     "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-27506-7_2.pdf"
+    },
+    {
+     "rank": 17,
+     "title": "10 AI Code Review Tools That Find Bugs & Flaws in 2025",
+     "url": "https://www.digitalocean.com/resources/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 18,
+     "title": "15 Open Source AI Code Review Tools (2026) | ACR",
+     "url": "https://aicodereview.cc/blog/open-source-ai-code-review-tools/"
+    },
+    {
+     "rank": 19,
+     "title": "Defect Management Tools List for 2025 (Free, Paid, & Open Source)",
+     "url": "https://dev.to/sarahthomasdev/defect-management-tools-list-for-2025-free-paid-open-source-74m"
+    },
+    {
+     "rank": 20,
+     "title": "17 Excellent Open Source Bug Tracking Tools in 2026",
+     "url": "https://usersnap.com/blog/open-source-bug-tracking/"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for AI-powered pull request review and defect prediction based on user ratings and community feedback",
+   "results": [
+    {
+     "rank": 1,
+     "title": "10 Open-Source AI Code Review Tools, 450K Lines Tested",
+     "url": "https://aitoolsrecap.com/Blog/best-open-source-ai-code-review-tools-2026"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - kodustech/awesome-ai-code-review: Awesome list of AI …",
+     "url": "https://github.com/kodustech/awesome-ai-code-review"
+    },
+    {
+     "rank": 3,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI powered code review tools in 2026 | Composio",
+     "url": "https://composio.dev/content/best-ai-powered-code-review-tools-in-2026"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://dev.to/rahulxsingh/best-ai-code-review-tools-for-pull-requests-in-2026-2n4p"
+    },
+    {
+     "rank": 7,
+     "title": "AI Code Review: Best Tools, Features, Pricing & Comparison Guide …",
+     "url": "https://saigontechnology.com/blog/ai-code-review/"
+    },
+    {
+     "rank": 8,
+     "title": "10 Open Source AI Code Review Tools Tested on a 450K-File …",
+     "url": "https://www.augmentcode.com/tools/open-source-ai-code-review-tools-worth-trying"
+    },
+    {
+     "rank": 9,
+     "title": "Best AI Code Review Tools 2026: Automated PR Reviews",
+     "url": "https://toolradar.com/guides/best-ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared/"
+    },
+    {
+     "rank": 11,
+     "title": "Best AI Code Review Tools 2026: Automated PR Reviews",
+     "url": "https://toolradar.com/guides/best-ai-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "AI Pull Request Analysis - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/ai-pull-request-analysis"
+    },
+    {
+     "rank": 13,
+     "title": "15 Open Source AI Code Review Tools (2026) - DEV Community",
+     "url": "https://dev.to/rahulxsingh/15-open-source-ai-code-review-tools-2026-605"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI Code Review Tools for Pull Requests in 2026 | ACR",
+     "url": "https://aicodereview.cc/blog/best-ai-pr-review-tools/"
+    },
+    {
+     "rank": 15,
+     "title": "How to Build an AI-Powered Pull Request Review [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/ai-pull-request-review/"
+    },
+    {
+     "rank": 16,
+     "title": "Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://dev.to/rahulxsingh/best-ai-code-review-tools-for-pull-requests-in-2026-2n4p"
+    },
+    {
+     "rank": 17,
+     "title": "Best Code Review Tools 2026: 8 AI Code Review Tools …",
+     "url": "https://www.greptile.com/content-library/best-ai-code-review-tools"
+    },
+    {
+     "rank": 18,
+     "title": "Best Code Review Tools 2026 | Beyond GitHub Pull Requests",
+     "url": "https://toolradar.com/guides/best-code-review-tools"
+    },
+    {
+     "rank": 19,
+     "title": "Best Open-Source AI Tools (November 2026) - findarepo",
+     "url": "https://findarepo.com/best-open-source-ai-tools/"
+    },
+    {
+     "rank": 20,
+     "title": "Top 5 AI Code Review Tools for Developers - KDnuggets",
+     "url": "https://www.kdnuggets.com/top-5-ai-code-review-tools-for-developers"
+    },
+    {
+     "rank": 21,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 22,
+     "title": "10 Open Source AI Code Review Tools Tested on a 450K-File …",
+     "url": "https://www.augmentcode.com/tools/open-source-ai-code-review-tools-worth-trying"
+    },
+    {
+     "rank": 23,
+     "title": "Top AI Code Review Tools for GitHub Pull Requests in 2026",
+     "url": "https://codeant.ai/blogs/ai-code-review-tools-github-pull-requests"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/topics/defect-prediction",
+  "https://github.com/vuphongle/oss-pr-reviewer",
+  "https://arxiv.org/html/2511.21964v1",
+  "https://aitoolsrecap.com/Blog/best-open-source-ai-code-review-tools-2026",
+  "https://github.com/kodustech/awesome-ai-code-review"
+ ],
+ "recommendations": [
+  {
+   "name": "vuphongle/oss-pr-reviewer",
+   "url": "https://github.com/vuphongle/oss-pr-reviewer",
+   "description": "An AI-powered CLI for reviewing GitHub pull requests, detecting potential bugs, security risks, regressions, and missing tests, with structured Markdown reports for open-source maintainers."
+  },
+  {
+   "name": "PR-Agent",
+   "url": "https://www.qodo.ai/blog/ai-pull-request-review/",
+   "description": "A self-hostable AI-powered PR review tool with over 10,000 GitHub stars, supporting GitHub, GitLab, Bitbucket, and Azure DevOps."
+  },
+  {
+   "name": "SonarQube Community",
+   "url": "https://github.com/SonarSource/sonarqube",
+   "description": "A widely-used tool for static code analysis with over 10,300 GitHub stars, supporting multiple programming languages and offering a free community edition."
+  }
+ ]
+}

@@ -1,0 +1,248 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Is Breaking Code Review: How Engineering Teams Fix the PR …",
+     "url": "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck"
+    },
+    {
+     "rank": 2,
+     "title": "AI Code Review Bottleneck: Fix PR Congestion From AI Tools",
+     "url": "https://www.metacto.com/blogs/code-review-bottleneck-ai-development"
+    },
+    {
+     "rank": 3,
+     "title": "The Human Review Bottleneck: Practical Code Review Strategies for …",
+     "url": "https://codex.danielvaughan.com/2026/05/24/human-review-bottleneck-code-review-strategies-agent-output/"
+    },
+    {
+     "rank": 4,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 5,
+     "title": "AI Coding Creates a PR Review Bottleneck: How to Fix 91% Longer …",
+     "url": "https://baeseokjae.github.io/posts/ai-coding-pr-review-bottleneck-2026/"
+    },
+    {
+     "rank": 6,
+     "title": "Enhancing Code Quality at Scale with AI-Powered Code Reviews",
+     "url": "https://devblogs.microsoft.com/engineering-at-microsoft/enhancing-code-quality-at-scale-with-ai-powered-code-reviews/"
+    },
+    {
+     "rank": 7,
+     "title": "AI Coding Made Code Review the Bottleneck. Now What?",
+     "url": "https://www.scrum.org/resources/blog/ai-coding-made-code-review-bottleneck-now-what"
+    },
+    {
+     "rank": 8,
+     "title": "How to Code Review AI-Generated Pull Requests Without Burnout",
+     "url": "https://docs.bswen.com/blog/2026-03-30-reviewing-ai-generated-pull-requests/"
+    },
+    {
+     "rank": 9,
+     "title": "AI PR Review Time: How to Fix the 5.3x Bottleneck in 2026",
+     "url": "https://baeseokjae.github.io/posts/ai-pr-review-time-optimization-2026/"
+    },
+    {
+     "rank": 10,
+     "title": "AI Code Review Crisis: How Teams Handle the Bottleneck",
+     "url": "https://www.sourcetrail.com/software/the-great-ai-code-review-bottleneck-engineering-teams-rethink-workflows-as-machine-generated-code-floods-repos/"
+    },
+    {
+     "rank": 11,
+     "title": "AI Code Review Bottleneck: Why PRs Slow Down - Mobifilia",
+     "url": "https://www.mobifilia.com/ai-code-review-bottleneck/"
+    },
+    {
+     "rank": 12,
+     "title": "The AI Code Review Bottleneck: Measure and Fix the Queue",
+     "url": "https://axiomstudio.ai/blog/ai-code-review-bottleneck"
+    },
+    {
+     "rank": 13,
+     "title": "AI Code Reviews Hit 91% Slowdown: The Hidden Bottleneck",
+     "url": "https://byteiota.com/ai-code-reviews-hit-91-slowdown-the-hidden-bottleneck/"
+    },
+    {
+     "rank": 14,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 15,
+     "title": "How to Build an AI-Powered Pull Request Review [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/ai-pull-request-review/"
+    },
+    {
+     "rank": 16,
+     "title": "The AI Code Review Bottleneck: Managing Quality When AI Tools …",
+     "url": "https://letsbuildsolutions.com/blog/engineering-management/the-ai-code-review-bottleneck-managing-quality-when-ai-tools-double-your-teams-pr-output/"
+    },
+    {
+     "rank": 17,
+     "title": "Your Next Bottleneck Is Code Review – TechEmpower",
+     "url": "https://www.techempower.com/blog/2026/11/10/your-next-bottleneck-is-code-review/"
+    },
+    {
+     "rank": 18,
+     "title": "How to review AI generated PRs - thoughtbot.com",
+     "url": "https://thoughtbot.com/blog/how-to-review-ai-generated-prs"
+    }
+   ]
+  },
+  {
+   "query": "Best AI code review tools for GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "9 Best GitHub AI Code Review Tools in 2026 for Faster PRs",
+     "url": "https://codeant.ai/blogs/best-github-ai-code-review-tools-2026"
+    },
+    {
+     "rank": 2,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.qodo.ai/academy/best-ai-code-review-tools-for-github/"
+    },
+    {
+     "rank": 3,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "10 Best AI Code Review Tools in 2026 - thectoclub.com",
+     "url": "https://thectoclub.com/tools/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 5,
+     "title": "7 Best AI Code Review Tools for GitHub Teams (2026 …",
+     "url": "https://www.greptile.com/content-library/best-code-review-github"
+    },
+    {
+     "rank": 6,
+     "title": "9 Best AI Code Review Tools 2026: Ranked & Compared",
+     "url": "https://getoptimal.ai/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "13 Best AI Code Review Tools in 2026 | DevToolLab Blog",
+     "url": "https://devtoollab.com/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools in 2026: 7 Options Tested and Compared",
+     "url": "https://awesomeagents.ai/tools/best-ai-code-review-tools-2026/"
+    },
+    {
+     "rank": 9,
+     "title": "Best Code Review Tools 2026: 8 AI Code Review Tools Compared",
+     "url": "https://www.greptile.com/content-library/best-ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review Tools in 2026: Top 8 Compared",
+     "url": "https://www.qodo.ai/blog/ai-code-review-tools/"
+    },
+    {
+     "rank": 11,
+     "title": "Review AI-generated code - GitHub Docs",
+     "url": "https://docs.github.com/en/copilot/tutorials/review-ai-generated-code"
+    },
+    {
+     "rank": 12,
+     "title": "Best AI Code Review Tools in 2026: Top 8 Compared",
+     "url": "https://www.qodo.ai/blog/ai-code-review-tools/"
+    },
+    {
+     "rank": 13,
+     "title": "Best AI Coding Tools 2026: Claude Code, Cursor, GitHub Copilot and …",
+     "url": "https://diyai.io/ai-tools/code-generation/best-ai-coding-tools/"
+    },
+    {
+     "rank": 14,
+     "title": "10 Best AI Code Review Tools in 2026 - thectoclub.com",
+     "url": "https://thectoclub.com/tools/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 15,
+     "title": "10 Best Code Review Tools in 2026 (AI-Powered",
+     "url": "https://toolradar.com/blog/best-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "AI Code Review in 2026: How It Works + 5 Best Tools",
+     "url": "https://www.qodo.ai/blog/ai-code-review/"
+    },
+    {
+     "rank": 17,
+     "title": "5 AI-Powered GitHub Code Review Tools [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/github-ai-code-review/"
+    },
+    {
+     "rank": 18,
+     "title": "Best AI Code Review Tools 2026: Pricing and Features",
+     "url": "https://aitoolranked.com/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 19,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 20,
+     "title": "Best AI Code Review Tools 2026: Automated PR Reviews",
+     "url": "https://toolradar.com/guides/best-ai-code-review-tools"
+    },
+    {
+     "rank": 21,
+     "title": "Best AI Code Review Tools for GitHub in 2026 - DEV Community",
+     "url": "https://dev.to/dev_kiran/best-ai-code-review-tools-for-github-in-2026-4pjk"
+    },
+    {
+     "rank": 22,
+     "title": "Best AI Code Review Tools in 2026: 7 Options Tested and Compared",
+     "url": "https://awesomeagents.ai/tools/best-ai-code-review-tools-2026/"
+    },
+    {
+     "rank": 23,
+     "title": "GitHub - kodustech/awesome-ai-code-review: Awesome list of AI Code ...",
+     "url": "https://github.com/kodustech/awesome-ai-code-review"
+    },
+    {
+     "rank": 24,
+     "title": "AI-powered code review tool. - GitHub",
+     "url": "https://github.com/Nikita-Filonov/ai-review"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck",
+  "https://www.metacto.com/blogs/code-review-bottleneck-ai-development",
+  "https://codex.danielvaughan.com/2026/05/24/human-review-bottleneck-code-review-strategies-agent-output/",
+  "https://codeant.ai/blogs/best-github-ai-code-review-tools-2026",
+  "https://www.qodo.ai/academy/best-ai-code-review-tools-for-github/"
+ ],
+ "recommendations": [
+  {
+   "name": "AI Code Review Bottleneck: Fix PR Congestion From AI Tools",
+   "url": "https://www.metacto.com/blogs/code-review-bottleneck-ai-development",
+   "description": "This blog post discusses how AI coding tools have shifted the bottleneck from code generation to verification, leading to longer pull request review times and a need for efficient strategies to manage the PR queue."
+  },
+  {
+   "name": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+   "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review",
+   "description": "This article explores how AI can be used to automate some aspects of the PR review process, reducing the bottleneck by handling routine checks and freeing human reviewers for more complex tasks."
+  },
+  {
+   "name": "AI Code Review Crisis: How Teams Handle the Bottleneck",
+   "url": "https://www.sourcetrail.com/software/the-great-ai-code-review-bottleneck-engineering-teams-rethink-workflows-as-machine-generated-code-floods-repos/",
+   "description": "This resource provides insights into how engineering teams are应对AI代码审查瓶颈, including strategies for managing the influx of AI-generated PRs and maintaining code quality."
+  }
+ ]
+}

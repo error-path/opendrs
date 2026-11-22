@@ -1,0 +1,223 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs - arXiv.org",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "OpenDRS – PR Blast Radius Analyzer & Safe Auto-Approval",
+     "url": "https://mcpmarket.com/server/opendrs"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub - travisjeffery/radar: Go implementation of RADAR (Risk Aware ...",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 5,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 6,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 7,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://www.sota2.com/research/paper/692d20f9d6b0dd3342931535"
+    },
+    {
+     "rank": 8,
+     "title": "Diff Risk Score: AI-driven risk-aware software development at Meta",
+     "url": "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub - open-risk/openRiskScore: A python framework for risk scoring",
+     "url": "https://github.com/open-risk/openRiskScore"
+    },
+    {
+     "rank": 10,
+     "title": "[PDF] DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration ...",
+     "url": "https://www.semanticscholar.org/paper/DRS-OSS%3A-A-Diff-Risk-Scoring-Tool-for-Continuous-Sayedsalehi-Rigby/72ac074073c50cdacef08c4cb9b2d0eeed197490"
+    },
+    {
+     "rank": 11,
+     "title": "[2605.30208] Automating Low-Risk Code Review at Meta: RADAR, Risk ...",
+     "url": "https://arxiv.org/abs/2605.30208"
+    },
+    {
+     "rank": 12,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 13,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/abs/2410.06351"
+    },
+    {
+     "rank": 14,
+     "title": "Diff Risk Score Model – Ian’s Blog",
+     "url": "https://ianbarber.blog/2024/12/17/diff-risk-score-model/"
+    },
+    {
+     "rank": 15,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://techreport.ngo/ai-ml/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 16,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964v3"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories for open-source Diff Risk Score tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - open-risk/openRiskScore: A python framework for risk scoring",
+     "url": "https://github.com/open-risk/openRiskScore"
+    },
+    {
+     "rank": 2,
+     "title": "diff-tool · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/diff-tool"
+    },
+    {
+     "rank": 3,
+     "title": "4 Best Automated Risk Scanning GitHub Repos (2026)",
+     "url": "https://awesome-repositories.com/f/software-engineering-architecture/automated-risk-scanning"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs - arXiv.org",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "difftriage · PyPI",
+     "url": "https://pypi.org/project/difftriage/"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 8,
+     "title": "diff-risk-dashboard · PyPI",
+     "url": "https://pypi.org/project/diff-risk-dashboard/"
+    },
+    {
+     "rank": 9,
+     "title": "11 Best Risk Management GitHub Repos (2026) - awesome …",
+     "url": "https://awesome-repositories.com/f/awesome-lists/data/risk-management"
+    },
+    {
+     "rank": 10,
+     "title": "Best Open Source Project Risk Scoring Tools in 2026",
+     "url": "https://safeguard.sh/resources/blog/best-open-source-project-risk-scoring-tools"
+    },
+    {
+     "rank": 11,
+     "title": "GitScore | Check Your GitHub Score & Developer Impact",
+     "url": "https://gitscore.live/"
+    },
+    {
+     "rank": 12,
+     "title": "[2511.21964v3] DRS-OSS: A Diff-Risk Scoring Tool for Continuous ...",
+     "url": "https://arxiv.org/abs/2511.21964v3"
+    },
+    {
+     "rank": 13,
+     "title": "Diff Analyze: Git Risk & Reviewer Claude Code Skill",
+     "url": "https://mcpmarket.com/tools/skills/diff-analyzer-risk-scorer"
+    },
+    {
+     "rank": 14,
+     "title": "risk-score · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/risk-score"
+    },
+    {
+     "rank": 15,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/abs/2511.21964v1"
+    },
+    {
+     "rank": 16,
+     "title": "30 Best Security Tools on GitHub (November 2026): Scanners, …",
+     "url": "https://findarepo.com/categories/security/"
+    },
+    {
+     "rank": 17,
+     "title": "Assess security risks in your open source project with Scorecard",
+     "url": "https://opensource.com/article/23/3/open-source-security-scorecard"
+    },
+    {
+     "rank": 18,
+     "title": "OpenSSF Scorecard – Open Source Security Foundation",
+     "url": "https://openssf.org/projects/scorecard/"
+    },
+    {
+     "rank": 19,
+     "title": "GitCompare",
+     "url": "https://gitcompare.com/"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub - CodeQL",
+     "url": "https://codeql.github.com/"
+    },
+    {
+     "rank": 21,
+     "title": "OpenSSF Scorecard",
+     "url": "https://scorecard.dev/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/pdf/2511.21964",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://mcpmarket.com/server/opendrs",
+  "https://github.com/open-risk/openRiskScore",
+  "https://github.com/topics/diff-tool"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+   "url": "https://arxiv.org/pdf/2511.21964",
+   "description": "A deployable, LLM-based DRS system for open-source projects built around a fine-tuned Llama 3.1 8B sequence classifier."
+  },
+  {
+   "name": "OpenDRS – PR Blast Radius Analyzer & Safe Auto-Approval",
+   "url": "https://mcpmarket.com/server/opendrs",
+   "description": "An open-source implementation of Meta's Diff Risk Score (DRS) methodology, computing a calibrated 0-1 risk score for pull requests."
+  },
+  {
+   "name": "GitHub - open-risk/openRiskScore: A python framework for risk scoring",
+   "url": "https://github.com/open-risk/openRiskScore",
+   "description": "A Python framework for risk scoring with various tools and resources."
+  }
+ ]
+}

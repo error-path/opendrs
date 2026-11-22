@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs - arXiv.org",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "OpenDRS – PR Blast Radius Analyzer & Safe Auto-Approval",
+     "url": "https://mcpmarket.com/server/opendrs"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub - travisjeffery/radar: Go implementation of RADAR (Risk Aware ...",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 5,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 6,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 7,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://www.sota2.com/research/paper/692d20f9d6b0dd3342931535"
+    },
+    {
+     "rank": 8,
+     "title": "Diff Risk Score: AI-driven risk-aware software development at Meta",
+     "url": "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub - open-risk/openRiskScore: A python framework for risk scoring",
+     "url": "https://github.com/open-risk/openRiskScore"
+    },
+    {
+     "rank": 10,
+     "title": "[PDF] DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration ...",
+     "url": "https://www.semanticscholar.org/paper/DRS-OSS%3A-A-Diff-Risk-Scoring-Tool-for-Continuous-Sayedsalehi-Rigby/72ac074073c50cdacef08c4cb9b2d0eeed197490"
+    },
+    {
+     "rank": 11,
+     "title": "[2605.30208] Automating Low-Risk Code Review at Meta: RADAR, Risk ...",
+     "url": "https://arxiv.org/abs/2605.30208"
+    },
+    {
+     "rank": 12,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 13,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/abs/2410.06351"
+    },
+    {
+     "rank": 14,
+     "title": "Diff Risk Score Model – Ian’s Blog",
+     "url": "https://ianbarber.blog/2024/12/17/diff-risk-score-model/"
+    },
+    {
+     "rank": 15,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://techreport.ngo/ai-ml/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 16,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration …",
+     "url": "https://arxiv.org/pdf/2511.21964v3"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of DRS-OSS tools: LLM-based vs. traditional methods for diff risk scoring in CI/CD",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs - arXiv.org",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://scixplorer.org/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 4,
+     "title": "Long-Context Diff Risk Scoring with Customizable Tooling for CI ...",
+     "url": "https://conf.researchr.org/details/cascon-2026/cascontechnical-papers2026/5/Long-Context-Diff-Risk-Scoring-with-Customizable-Tooling-for-CI-Workflows"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs · Research",
+     "url": "https://pubdb.com/paper/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "A Preliminary Study on Explaining Risk of Code Changes using LLM …",
+     "url": "https://dl.acm.org/doi/10.1145/3805760.3814916"
+    },
+    {
+     "rank": 7,
+     "title": "[PDF] DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration ...",
+     "url": "https://www.semanticscholar.org/paper/DRS-OSS%3A-A-Diff-Risk-Scoring-Tool-for-Continuous-Sayedsalehi-Rigby/72ac074073c50cdacef08c4cb9b2d0eeed197490"
+    },
+    {
+     "rank": 8,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 9,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://www.researchgate.net/publication/384770928_Moving_Faster_and_Reducing_Risk_Using_LLMs_in_Release_Deployment"
+    },
+    {
+     "rank": 10,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.gg/abs/2511.21964"
+    },
+    {
+     "rank": 11,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://www.emergentmind.com/papers/2511.21964"
+    },
+    {
+     "rank": 12,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 13,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://www.alphaxiv.org/abs/2511.21964"
+    },
+    {
+     "rank": 14,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://www.alphaxiv.org/overview/2511.21964"
+    },
+    {
+     "rank": 15,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 16,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://scixplorer.org/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 17,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://www.sciencestack.ai/paper/2511.21964"
+    },
+    {
+     "rank": 18,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction ...",
+     "url": "https://papers.cool/arxiv/2511.21964"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://www.sciencestack.ai/paper/2511.21964v1"
+    },
+    {
+     "rank": 20,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxivlens.com/paperview/details/drs-oss-llm-driven-diff-risk-scoring-tool-for-pr-risk-prediction-7073-1cc5d156"
+    },
+    {
+     "rank": 21,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction ...",
+     "url": "https://papers.cool/arxiv/2511.21964v2"
+    },
+    {
+     "rank": 22,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs · Research",
+     "url": "https://pubdb.com/paper/2511.21964"
+    },
+    {
+     "rank": 23,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.gg/abs/2511.21964"
+    },
+    {
+     "rank": 24,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://summarxiv.com/en/paper/2511.21964"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/pdf/2511.21964",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://mcpmarket.com/server/opendrs",
+  "https://arxiv.org/html/2511.21964v1",
+  "https://scixplorer.org/abs/2025arXiv251121964S/abstract"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/pdf/2511.21964",
+   "description": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows"
+  },
+  {
+   "name": "OpenDRS",
+   "url": "https://mcpmarket.com/server/opendrs",
+   "description": "OpenDRS – PR Blast Radius Analyzer Safe Auto-Approval"
+  },
+  {
+   "name": "GitHub - travisjeffery/radar",
+   "url": "https://github.com/travisjeffery/radar",
+   "description": "Go implementation of RADAR (Risk Aware Developer Review) for GitHub pull requests"
+  }
+ ]
+}

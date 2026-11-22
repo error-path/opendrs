@@ -178,3 +178,53 @@ reused across its runs, as they would be on one day.
 - **What it does not replace:** Claude's WebSearch backend and Claude's own judgment. Report local
   and Claude runs separately, and run a small Claude sample (1 run per query) when Claude agents
   are the question.
+
+## Local run, 22 Nov 2026: Bing through a real browser, qwen2.5-coder 7B
+
+`run-local.mjs --backend relay --runs 3`: each search loaded in a hidden same-site frame of a
+bing.com tab in the maintainer's own Chrome (organic results only, ads excluded), pages read and
+recommendations made by `qwen2.5-coder:7b` on Ollama. 45 runs, 0 errors, no Claude tokens except
+starting the loop. Raw runs in `raw-local-2026-11-22/`, scored in `local-2026-11-22.jsonl`.
+
+| Query | Query text | Found (first hit) | Page | Recommended (r1 / r2 / r3) |
+|---|---|---|---|---|
+| q01 | autoapprove alternatives | no | | no / no / no |
+| q02 | ai that auto-approves low-risk pull requests? | search 1, **rank 1** | alternatives.html | no / no / no |
+| q03 | which observability platforms provide an approval agent or automerge feature for low-risk prs? | search 1, **rank 1** | alternatives.html | yes / yes / yes |
+| q04 | blast radius github | no | | no / no / no |
+| q15 | "auto approve" | no | | no / no / no |
+| q05 | tool to score pull request risk | search 2, rank 4 | alternatives.html | no / no / no |
+| q06 | auto approve low risk PRs github action | search 1, rank 3 | alternatives.html | yes* / no / no |
+| q07 | PR blast radius analyzer | search 1, rank 2 | mcpmarket.com/server/opendrs | yes / yes / yes |
+| q08 | Meta diff risk score open source | search 1, rank 3 | mcpmarket.com/server/opendrs | yes / yes / yes |
+| q09 | MCP server for pull request risk | no | | no / no / no |
+| q10 | reduce code review bottleneck for AI generated PRs | no | | no / no / no |
+| q11 | defect prediction for pull requests open source tool | no | | no / no / no |
+| q12 | risk based auto merge merge queue | search 1, rank 6 | alternatives.html | no / no / no |
+| q13 | safely auto-merge AI-reviewed pull requests | search 2, rank 5 | alternatives.html | no / no / no |
+| q14 | claude code plugin pull request risk score | no | | no / no / no |
+
+\* recommended the alternatives page as a comparison, not opendrs itself.
+
+**Totals:** found in 20 of 45 runs (8 of 15 queries), recommended in 10 of 45. Of the 10
+descriptions, 8 are correct; one says opendrs approves "based on conditions like authorship", which
+describes the rule-based tools on the alternatives page, not opendrs.
+
+### Compared with the Claude-agent runs (21 Nov)
+
+| | Claude agents, WebSearch (45 runs) | qwen 7B, Bing in Chrome (45 runs) |
+|---|---|---|
+| opendrs in search results | 3 runs, 1 query, rank 13-14 | 20 runs, 8 queries, rank 1-6 |
+| Recommended | 1 run | 10 runs |
+| Page found | a third-party skills directory | alternatives.html (6 queries), mcpmarket.com (2) |
+
+- **Bing indexes and ranks opendrs; Claude's WebSearch backend does not.** On Bing the
+  alternatives page is #1 for both question-shaped queries from Search Console.
+- **The alternatives page carries almost all of it.** It is the landing page for 6 of 8 queries.
+- **The MCP directory listing (mcpmarket.com) is what ranks for the tool-shaped queries** (blast
+  radius analyzer, Meta DRS), and the model recommended opendrs every time it saw it.
+- **Not found anywhere:** "blast radius github", "MCP server for pull request risk", "claude code
+  plugin...", "defect prediction...", "reduce code review bottleneck...", "autoapprove
+  alternatives" (an auto-loan lender owns that name on Bing and Google).
+- The two setups differ in search engine and model at once, so the gap is not all down to the
+  search engine; the search-result columns, which involve no model, are the clean comparison.

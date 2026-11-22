@@ -1,0 +1,273 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - 28mm/blast-radius: Interactive visualizations of Terraform ...",
+     "url": "https://github.com/28mm/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "claude-code-playground/claude-code/mods/blast-radius at main",
+     "url": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/blast-radius"
+    },
+    {
+     "rank": 3,
+     "title": "Blast Radius - GitHub Pages",
+     "url": "https://28mm.github.io/blast-radius-docs/"
+    },
+    {
+     "rank": 4,
+     "title": "What Is Blast Radius? How to Reduce It Strategically",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 5,
+     "title": "Blast Radius | Impact analysis for code changes",
+     "url": "https://blast-radius.dev/"
+    },
+    {
+     "rank": 6,
+     "title": "BLAST RADIUS",
+     "url": "https://www.blastradius.fail/"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub - epeer1/blast-radius: AI-powered code change impact …",
+     "url": "https://github.com/epeer1/blast-radius"
+    },
+    {
+     "rank": 8,
+     "title": "blast-radius — gitbobobo/bstack",
+     "url": "https://www.skills.sh/gitbobobo/bstack/blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "blast-radius – Claude Code Mod | ccmods.app",
+     "url": "https://ccmods.app/mods/blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "blast-radius — command-line utility in Rust // Lib.rs",
+     "url": "https://lib.rs/crates/blast-radius"
+    },
+    {
+     "rank": 11,
+     "title": "RWX - Blast Radius · Builders Buildathon",
+     "url": "https://www.joinbuilders.org/buildathon/tracks/blast-radius"
+    },
+    {
+     "rank": 12,
+     "title": "What Is Blast Radius? How to Reduce It Strategically",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 13,
+     "title": "gh-blast-radius · PyPI",
+     "url": "https://pypi.org/project/gh-blast-radius/"
+    },
+    {
+     "rank": 14,
+     "title": "Radly — Research Blast Radius & Impact Analyzer",
+     "url": "https://radlyy.vercel.app/"
+    },
+    {
+     "rank": 15,
+     "title": "BLAST RADIUS",
+     "url": "https://www.blastradius.fail/"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering/"
+    },
+    {
+     "rank": 17,
+     "title": "BlastRadius - PyPI",
+     "url": "https://pypi.org/project/BlastRadius/"
+    },
+    {
+     "rank": 18,
+     "title": "blast-radius: Anthropic's Claude Code mod for risky commands",
+     "url": "https://claude-mods.com/blast-radius/"
+    },
+    {
+     "rank": 19,
+     "title": "blastradius-cli · PyPI",
+     "url": "https://pypi.org/project/blastradius-cli/"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius: What a Leaked Secret Breaks | GitGuardian",
+     "url": "https://blog.gitguardian.com/blog-blast-radius-leaked-secrets/"
+    },
+    {
+     "rank": 21,
+     "title": "How I Built Aveyx: An Offline Babel AST Compactor, Blast-Radius ...",
+     "url": "https://dev.to/shaikhamanulla/how-i-built-aveyx-an-offline-babel-ast-compactor-blast-radius-analyzer-security-mcp-server-l6h"
+    },
+    {
+     "rank": 22,
+     "title": "pyblastradius · PyPI",
+     "url": "https://pypi.org/project/pyblastradius/"
+    },
+    {
+     "rank": 23,
+     "title": "Blast Radius | Devpost",
+     "url": "https://devpost.com/software/blast-radius-5xlicy"
+    },
+    {
+     "rank": 24,
+     "title": "GitHub Token Scope Analyzer — Blast Radius & Least Privilege",
+     "url": "https://playciso.com/tools/github-token-scope-analyzer"
+    }
+   ]
+  },
+  {
+   "query": "GitHub pull request impact analysis tools comparison",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/GitHub"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub Docs",
+     "url": "https://docs.github.com/en"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Japan",
+     "url": "https://github.co.jp/"
+    },
+    {
+     "rank": 4,
+     "title": "Home - The GitHub Blog",
+     "url": "https://github.blog/"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub Education",
+     "url": "https://education.github.com/"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub",
+     "url": "https://api.github.com/"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Status",
+     "url": "https://www.githubstatus.com/"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub CLI | Take GitHub to the command line",
+     "url": "https://cli.github.com/"
+    },
+    {
+     "rank": 9,
+     "title": "Discover gists · GitHub",
+     "url": "https://gist.github.com/"
+    },
+    {
+     "rank": 10,
+     "title": "Enhanced code reviews using pull request based change impact analysis ...",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 11,
+     "title": "Pull requests documentation - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests"
+    },
+    {
+     "rank": 12,
+     "title": "Octoverse: A new developer joins GitHub every second as AI leads ...",
+     "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/"
+    },
+    {
+     "rank": 13,
+     "title": "Branches - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/reference/branches"
+    },
+    {
+     "rank": 14,
+     "title": "GitHub Copilot Developer Productivity: 10.6% More PRs",
+     "url": "https://www.harness.io/blog/the-impact-of-github-copilot-on-developer-productivity-a-case-study"
+    },
+    {
+     "rank": 15,
+     "title": "Token Engineering Platform for AI ROI | Faros",
+     "url": "https://www.faros.ai/"
+    },
+    {
+     "rank": 16,
+     "title": "GitHub - The-PR-Agent/pr-agent: PR Agent: The Original Open …",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 17,
+     "title": "GitHub Copilot Impact Analysis: Prove ROI That Survives",
+     "url": "https://blog.exceeds.ai/github-copilot-impact-analysis/"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub Actions: The Impact on the Pull Request Process | Empirical ...",
+     "url": "https://link.springer.com/article/10.1007/s10664-023-10369-w"
+    },
+    {
+     "rank": 19,
+     "title": "ChatGPT use cases",
+     "url": "https://learn.chatgpt.com/use-cases"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Copilot Statistics 2026: Users, Adoption, Revenue",
+     "url": "https://www.secondtalent.com/resources/github-copilot-statistics/"
+    },
+    {
+     "rank": 21,
+     "title": "Research: Quantifying GitHub Copilot’s impact in the enterprise with ...",
+     "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/"
+    },
+    {
+     "rank": 22,
+     "title": "The economic impact of the AI-powered developer ... - The GitHub Blog",
+     "url": "https://github.blog/news-insights/research/the-economic-impact-of-the-ai-powered-developer-lifecycle-and-lessons-from-github-copilot/"
+    },
+    {
+     "rank": 23,
+     "title": "GitHub Analysis — Free GitHub Profile Analyzer & Developer …",
+     "url": "https://gitiq.vercel.app/github-analysis"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/28mm/blast-radius",
+  "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/blast-radius",
+  "https://28mm.github.io/blast-radius-docs/",
+  "https://en.wikipedia.org/wiki/GitHub",
+  "https://docs.github.com/en"
+ ],
+ "recommendations": [
+  {
+   "name": "Blast Radius",
+   "url": "https://github.com/28mm/blast-radius",
+   "description": "A tool for reasoning about Terraform dependency graphs through interactive visualizations."
+  },
+  {
+   "name": "Blast Radius - Impact analysis for code changes",
+   "url": "https://blast-radius.dev/",
+   "description": "An online platform for analyzing the impact of code changes."
+  },
+  {
+   "name": "GitHub Token Scope Analyzer",
+   "url": "https://playciso.com/tools/github-token-scope-analyzer",
+   "description": "A tool for analyzing the scope of GitHub tokens and their potential blast radius."
+  }
+ ]
+}
