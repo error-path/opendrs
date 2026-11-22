@@ -1,6 +1,6 @@
 ---
-title: "What is the blast radius of a pull request?"
-description: "PR blast radius is how much can break if a change is wrong: how many files depend on it and which public symbols changed, scored 0-1 by opendrs."
+title: "Blast radius of a GitHub pull request: what it is and how to measure it"
+description: "PR blast radius is how much can break if a change is wrong: how many files depend on it and which public symbols changed. opendrs measures it for GitHub pull requests and scores it 0-1."
 ---
 
 # What is the blast radius of a pull request?

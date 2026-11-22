@@ -1,6 +1,6 @@
 ---
-title: "CLI, MCP server, Claude Code plugin and agent skill"
-description: "Every opendrs command and flag, the MCP server that lets coding agents score a diff before they open a PR, the Claude Code plugin and the agent skill."
+title: "CLI, MCP server for pull request risk, Claude Code plugin and agent skill"
+description: "Every opendrs command and flag; the MCP server coding agents call to score a change's risk before they open a pull request; the Claude Code plugin that does the same inside Claude Code; and the agent skill."
 ---
 
 # CLI, MCP server, Claude Code plugin and agent skill
