@@ -23,9 +23,26 @@ PulseMCP ingest from it), `SoftwareApplication` JSON-LD, GitHub topics, npm keyw
 ## Hype or no measured effect
 
 - **llms.txt / llms-full.txt**: ~97% of files never requested ([Ahrefs](https://ahrefs.com/blog/llmstxt-study/));
-  Google says it has no effect. Cheap to keep; expect nothing (Context7 can use it).
+  Google says it has no effect. Cheap to keep; expect nothing.
 - **FAQ schema for AI citations**: no lift in a before/after study ([Ahrefs, May 2026](https://ahrefs.com/blog/schema-ai-citations/));
   Google stopped FAQ rich results on 7 May 2026. Harmless to keep.
 - **AI-specific rewriting or "chunking"**: Google lists it as no advantage.
 - **Star counts** as a recommendation signal; **listing on many MCP directories** as a strategy: no evidence.
 - **Paid, guest-post or directory links; mass AI-generated pages**: against Google's spam policies.
+
+## Independent review (same day, separate Opus pass)
+
+- **Internal linking is not the indexing problem.** The live homepage already links all top-level
+  pages (nav, "More" menu, footer); the sitemap is live with real `lastmod`. The likelier causes are
+  the site's age (first commit 15 Oct 2026) on a `github.io` subpath, or a sitemap Google has not
+  processed: "4 indexed, 0 not indexed" means the other URLs are not even "discovered". First step:
+  check Search Console > Sitemaps for `/opendrs/sitemap.xml` ("Success", ~20 URLs), then URL
+  Inspection on two unindexed pages.
+- **Context7 / DeepWiki help adoption, not discovery**: an agent uses them once it knows the name.
+- **Statistics: only real numbers from the repo's benchmarks**; one-question pages: a few, not many
+  (Google's scaled-content spam policy).
+- **Order:** (1) maintainer checks the sitemap in Search Console; (2) maintainer posts one or two
+  disclosed write-ups (Show HN, dev.to follow-up) and awesome-list PRs; (3) docs: contextual links
+  between related pages and a short real-numbers summary on the homepage and alternatives page;
+  (4) Context7, DeepWiki badge, plugin submission; (5) change one thing at a time and re-run the
+  benchmark before the next.
