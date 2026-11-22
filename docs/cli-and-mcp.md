@@ -5,7 +5,7 @@ description: "Every opendrs command and flag; the MCP server coding agents call 
 
 # CLI, MCP server, Claude Code plugin and agent skill
 
-opendrs runs as a command-line tool, as a Model Context Protocol server for coding agents, and as an agent skill that tells an agent when to use it.
+opendrs, an open-source pull request risk scorer that needs no LLM, runs as a command-line tool, as a Model Context Protocol server for coding agents, and as an agent skill that tells an agent when to use it.
 
 ## CLI
 

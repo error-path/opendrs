@@ -112,3 +112,52 @@ Prompted by the benchmark: Tavily found opendrs for 2 of 15 queries, Exa for 13 
 
 Adds to the maintainer list: one email to You.com asking YouBot to index the docs (a message sent
 on the maintainer's behalf, so not sent by the agent).
+
+## Round 4: six-angle audit (same day, after PRs #95-#97)
+
+Six parallel passes: a technical crawl of the live site, off-site directories, search demand,
+platform pages (GitHub, npm, Marketplace, MCP registry), where competitors get cited, and what an
+agent reads in each page's first screenful (checked with the local 7B model).
+
+**Technical crawl: the site is clean.** All 27 sitemap pages return 200 with no redirects; sitemap
+URLs match canonicals exactly; unique titles and descriptions; valid JSON-LD; no noindex; a real
+404. Nothing on the site explains Search Console's "Couldn't fetch". One broken internal link
+(experiments.md to bench/verify) is fixed.
+Known, accepted gap: the github.io root `robots.txt` is a 404, so its `Sitemap:` line is not read;
+the sitemap is submitted directly in Search Console and Bing, and IndexNow runs on every deploy.
+
+**First screenful.** The local model merged opendrs with the LLM-based tools on the alternatives
+page and read the bottleneck page as "opendrs automates review". The first mention of opendrs on
+seven pages now says what it is and that it needs no LLM.
+
+**Search demand.** Autocomplete phrasings are about the mechanism ("auto approve pull request
+github", "dependabot auto approve", "github auto merge not working"), not "risk score". Gaps:
+why a bot approval does not count as a required review, auditing auto-approved PRs, and
+Dependabot/Renovate behind a risk gate. Circuit Breaker (MSR 2026, review-effort triage for agent
+PRs) is now in the alternatives table.
+
+**Platforms.** The Marketplace title, npm keywords and MCP registry text only refresh at a release,
+so one release (0.7.0) fixes all three. The Action description now leads with "PR risk score and
+blast radius". GitHub repo search is star-driven: opendrs is not in the top 30 for "blast radius"
+or "pr risk score". npm: #1 for "diff risk score", #2 for "pr risk score".
+
+**Directories.** Listed: official MCP registry, punkpeye and TensorBlock awesome-mcp-servers,
+glama.ai, mcpmarket.com, mcp.so, skillsdirectory.com (text cut off). Not listed: Anthropic plugin
+directory, Cline marketplace, mcpservers.org, AlternativeTo, Smithery (needs an .mcpb bundle),
+PulseMCP (submissions paused; ingests the official registry).
+
+**Where competitors get cited.** Mostly their own "best tools" lists and launches (cubic: YC
+page, Launch HN). The most honest channel for opendrs is research: a DRS-OSS preprint ranks on
+three engines; arxiv.org is the third-largest host in our raw results. Venues: an arXiv cs.SE
+tool report, the FSE 2027 tool-demo track (due 26 Jan 2027), Changelog News, Console.dev (takes
+pre-1.0 tools; already contacted on 12 Nov), one Show HN.
+
+### Recommendations from round 4 (maintainer decisions; none done by the agent)
+
+| Recommendation | Effort | Expected effect |
+|---|---|---|
+| Cut release 0.7.0 | 1 hour (release runbook) | Marketplace title and description, npm keywords and MCP registry text go live at once |
+| GitHub repo topics: swap `ci-cd`, `devops`, `developer-tools` for `mcp-server`, `risk-assessment`, `pr-risk-score`; retitle the floating `v0` release | 10 min | Topic pages and release titles carry the searched terms |
+| Submit to the Anthropic plugin directory, Cline marketplace, mcpservers.org (free), AlternativeTo; awesome-claude-code once it reopens | 15-30 min each | Listings where agents and developers look; no measured effect yet |
+| Changelog News note (draft in outreach-drafts.md), then one Show HN | 15 min; 1 day answering comments | Third-party pages that agents cite; HN threads rank |
+| Short arXiv cs.SE tool report on the Diff Risk Score reproduction, reused for the FSE 2027 tool-demo track (due 26 Jan 2027) | 2-4 days | Research pages rank on several engines (DRS-OSS precedent) |

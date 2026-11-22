@@ -1,5 +1,5 @@
 name: opendrs PR Risk Score and Blast Radius
-description: Diff Risk Score for pull requests. Comments a calibrated 0-1 risk score, labels the PR, and can approve low-risk PRs.
+description: PR risk score and blast radius for pull requests. Comments a calibrated 0-1 score, labels the PR, and can auto-approve low-risk PRs.
 author: error-path
 branding:
   icon: shield

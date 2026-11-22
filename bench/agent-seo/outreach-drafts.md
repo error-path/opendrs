@@ -333,3 +333,11 @@ product. Contact routes are only those published on the page or site; no persona
 > is the step it covers. On the public ApacheJIT benchmark it reaches AUC 0.823, on par with a
 > classic regression (0.821): https://github.com/error-path/opendrs/blob/main/docs/results.md
 > No pressure either way.
+
+## Newsletter notes (drafts, 22 Nov 2026; not sent)
+
+Console.dev: not needed; the maintainer emailed hello@console.dev on 12 Nov.
+
+**Changelog News** (changelog.com/news/submit; own work welcome, no commercial products):
+title "opendrs: an open reproduction of Meta's Diff Risk Score for pull requests", with a
+two-sentence summary like the one above and a link to docs/results.md.

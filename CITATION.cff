@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use opendrs in research, please cite it as below."
+title: "opendrs: PR risk score and blast radius for pull requests"
+type: software
+authors:
+  - name: "error-path"
+repository-code: "https://github.com/error-path/opendrs"
+url: "https://error-path.github.io/opendrs/"
+license: MIT
+abstract: >-
+  opendrs gives each pull request a calibrated 0-1 risk score from git history, the import graph,
+  size and tests, so low-risk pull requests can be approved without a person. It is an independent,
+  open-source implementation of the approach behind Meta's Diff Risk Score, and runs as a CLI, a
+  GitHub Action and an MCP server.
+keywords:
+  - pull request risk
+  - blast radius
+  - just-in-time defect prediction
+  - diff risk score
+  - code review

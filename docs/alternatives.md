@@ -7,9 +7,10 @@ description: "Tools that auto-approve or auto-merge low-risk pull requests compa
 
 There are two kinds of tools for approving pull requests without a person. **Rule-based** tools
 approve or merge when conditions you write are met: the author is a bot, the checks passed, a label
-is set. **Risk-scoring** tools estimate how risky each change is, from an LLM reading the diff or
-from measurements of git history and the dependency graph, and approve only the low-risk ones.
-opendrs is a risk-scoring tool. This page compares both kinds and says when each is the better
+is set. **Risk-scoring** tools estimate how risky each change is and approve only the low-risk
+ones. Most of them have an LLM read the diff. opendrs, the open-source tool these docs are for, is a
+risk-scoring tool that needs no LLM: it measures git history and the dependency graph, in your CI.
+This page compares both kinds and says when each is the better
 choice, including when opendrs is not.
 
 It was written by the opendrs maintainers from each project's public documentation in October and
@@ -63,7 +64,8 @@ conditions you write.
 | [MergeShield Risk Check](https://github.com/mergeshield/risk-check) | Claude reads the change and scores six dimensions, 0-100 | No: passes or fails a check against a threshold | Calls the MergeShield API; needs an account and API key |
 | [Merge Steward](https://github.com/performer220/merge-steward-pr-review) | Gemini scores six dimensions 0-3, including blast radius | Yes: approves low-risk changes and can request auto-merge | GitHub Action; needs a Gemini API key |
 | [Blast-Radius](https://github.com/bipu-biz/Blast-Radius) | Dependency graph from the TypeScript AST plus an AI summary | No: analysis for reviewers | Hosted web app |
-| [GitHub Copilot code review](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review) | An LLM reviews the diff and leaves comments | Optional: leaves a "Comment" review by default; approvals are off by default and, once turned on, count toward required approvals | GitHub; Copilot plan |
+| [GitHub Copilot code review](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review) | An LLM reviews the diff and leaves comments | Optional: leaves a "Comment" review by default; approvals can be turned on, but they do not count toward required reviews | GitHub; Copilot plan |
+| [Circuit Breaker](https://arxiv.org/abs/2601.00753) (MSR 2026 paper) | A model over simple cues known when the PR is opened (file types, patch size) predicts which agent-authored PRs will need heavy review; reports AUC 0.96 on 33,707 agent PRs | No: triage for reviewers; it predicts review effort, not defects | Research paper; no code linked from the arXiv page |
 | [DRS-OSS](https://arxiv.org/abs/2511.21964) | Fine-tuned Llama 3.1 8B classifier over the diff and commit message | Flags risky diffs in CI | Self-hosted model service with a REST API |
 | Meta's Diff Risk Score | Models trained on Meta's own incidents | Gates code at Meta | Internal to Meta; described in [papers](https://arxiv.org/abs/2410.06351), not released |
 

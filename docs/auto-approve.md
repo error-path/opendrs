@@ -12,7 +12,8 @@ up a gate that approves the low-risk ones on its own and sends everything else t
 > A PR whose risk score is below 0.3, that changes nothing on a blocked path, and whose AI review
 > passed is approved and goes to the merge queue. Everything else waits for a reviewer.
 
-The score comes from [opendrs](./), which measures each PR's [blast radius](blast-radius.md),
+The score comes from [opendrs](./), a free, open-source risk scorer that runs in your CI and needs
+no LLM (the AI review is a separate check you can require). It measures each PR's [blast radius](blast-radius.md),
 file history, author experience, size and tests. Auto-approval is one of several ways to
 [reduce the review bottleneck for AI-generated PRs](ai-pr-review-bottleneck.md); that page compares
 them.
@@ -137,3 +138,74 @@ Whatever the score:
 
 The full rule order and every option are in the [GitHub Action guide](github-action.md), and what
 each rail guards against is in [Policy and safety rails](policy.md).
+
+If the approval shows up but GitHub still says a review is required, or auto-merge never fires,
+see [Why a bot approval does not count as a required review](bot-approval-required-reviews.md).
+
+## Audit what the gate approved
+
+A backtest tells you how the score did on past commits. Once the gate runs, check what it actually
+let through, on a fixed schedule, for example monthly.
+
+1. **List the PRs opendrs approved.** Every opendrs approval is a review whose body starts with
+   `<!-- opendrs-approval -->`, and it stays on the PR after merge:
+
+   ```sh
+   gh pr list --state merged --limit 200 --json number,title,reviews --jq \
+     '.[] | select(any(.reviews[]; .state == "APPROVED" and (.body | contains("opendrs-approval")))) | "\(.number) \(.title)"'
+   ```
+
+2. **Look for what went wrong after merge:** a revert of the PR, a fix to the same files soon
+   after, or an incident traced to it. Record each one with
+   `opendrs feedback --pr <number> --was-incident` (see
+   [Recording incidents](calibration.md#recording-incidents-with-opendrs-feedback)). That labels
+   the PR's commits as incident-linked for `calibrate` and `backtest`.
+3. **Read the sampled PRs.** `sampleRate` sends a share of the PRs the gate would have approved to
+   a person. What reviewers find there is what the gate passes unseen on the rest. Keep
+   `sampleRate` above zero for this reason.
+4. **Re-run `opendrs backtest`.** It leaves out the newest `history.labelHorizonDays` (60 by
+   default), because their bugs may not be found yet, so it trails the live list above.
+5. **Tighten or stop.** Lower `thresholds.green` or `maxChangedLines`, add paths to
+   `paths.block`, tighten one source with `sources.<human|bot|agent>` (a `trackRecord` stops approvals
+   for a source whose landed commits were reverted too often), or set
+   `enabled: false`; opendrs then withdraws its approvals on the next run.
+
+## Dependabot and Renovate PRs
+
+With the default config, opendrs never auto-approves a typical dependency update. The lockfile is
+in `paths.ignore`, the manifest (`package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`,
+`requirements*.txt` and others) is in `paths.block`, an update to GitHub Actions changes
+`.github/**`, and Renovate's own config files are blocked. A version bump brings in code that the
+diff does not show, so opendrs's score cannot measure it. opendrs still scores and comments these
+PRs and labels their source `bot`.
+
+To merge dependency updates without a person, use Renovate automerge, or GitHub's
+[Dependabot recipe](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions)
+with `dependabot/fetch-metadata`, which reports the semver `update-type`. To make the opendrs tier
+one more condition, approve only when both agree, in the same job after the opendrs step:
+
+{% raw %}
+```yaml
+      - uses: error-path/opendrs@v0
+        id: opendrs
+        with:
+          sample-salt: ${{ secrets.OPENDRS_SAMPLE_SALT }}
+      - if: github.event.pull_request.user.login == 'dependabot[bot]'
+        id: metadata
+        uses: dependabot/fetch-metadata@v2   # pin to a commit, as GitHub's example does
+      - if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.opendrs.outputs.tier == 'green'
+        env: { GH_TOKEN: "${{ github.token }}", PR_URL: "${{ github.event.pull_request.html_url }}" }
+        run: gh pr review --approve "$PR_URL"
+```
+{% endraw %}
+
+The `tier` output comes from the score alone, so blocked paths do not change it, and ignored files are left out of it. For
+a version bump it reflects the manifest's history, the size and the author, not the new
+dependency's code. Use `tier`, never the `risk:green` label, which anyone with triage access can
+add.
+
+Runs that Dependabot starts get a read-only `GITHUB_TOKEN` unless the workflow sets
+`permissions:`, and see only Dependabot secrets
+([GitHub](https://docs.github.com/en/code-security/dependabot/troubleshooting-dependabot/troubleshooting-dependabot-on-github-actions)).
+The opendrs workflow above sets `permissions:`; add `OPENDRS_SAMPLE_SALT` (and an LLM key, if
+you use one) as Dependabot secrets as well.

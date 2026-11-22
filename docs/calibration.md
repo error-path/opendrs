@@ -5,7 +5,8 @@ description: "Measure how well a PR risk score ranks your own past commits with 
 
 # Calibration and backtesting
 
-opendrs ships with hand-set prior weights. They rank obvious cases sensibly (a typo fix scores
+opendrs, an open-source PR risk scorer that uses only your git history and code (no LLM), ships
+with hand-set prior weights. They rank obvious cases sensibly (a typo fix scores
 low, a large untested change to a widely imported file scores high), but they have never seen your
 repository. `opendrs backtest` tells you how well a model ranks your past commits, and
 `opendrs calibrate` fits the weights to them.

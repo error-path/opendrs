@@ -69,7 +69,7 @@ jobs:
         run: |
           {
             cat README.md
-            for page in auto-approve ai-pr-review-bottleneck alternatives blast-radius policy configuration signals llm-judge \
+            for page in auto-approve ai-pr-review-bottleneck bot-approval-required-reviews alternatives blast-radius policy configuration signals llm-judge \
                 llm-reviewers captain verification github-action cli-and-mcp calibration results \
                 limitations about; do
               printf '\n\n---\n\nSource: %s%s.html\n\n' "$SITE" "$page"
