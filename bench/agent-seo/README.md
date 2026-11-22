@@ -194,7 +194,7 @@ starting the loop. Raw runs in `raw-local-2026-11-22/`, scored in `local-2026-11
 | q04 | blast radius github | no | | no / no / no |
 | q15 | "auto approve" | no | | no / no / no |
 | q05 | tool to score pull request risk | search 2, rank 4 | alternatives.html | no / no / no |
-| q06 | auto approve low risk PRs github action | search 1, rank 3 | alternatives.html | yes* / no / no |
+| q06 | auto approve low risk PRs github action | search 1, rank 3 | alternatives.html | yes* / yes† / yes† |
 | q07 | PR blast radius analyzer | search 1, rank 2 | mcpmarket.com/server/opendrs | yes / yes / yes |
 | q08 | Meta diff risk score open source | search 1, rank 3 | mcpmarket.com/server/opendrs | yes / yes / yes |
 | q09 | MCP server for pull request risk | no | | no / no / no |
@@ -204,9 +204,11 @@ starting the loop. Raw runs in `raw-local-2026-11-22/`, scored in `local-2026-11
 | q13 | safely auto-merge AI-reviewed pull requests | search 2, rank 5 | alternatives.html | no / no / no |
 | q14 | claude code plugin pull request risk score | no | | no / no / no |
 
-\* recommended the alternatives page as a comparison, not opendrs itself.
+\* recommended the alternatives page as a comparison, not opendrs itself. † recommended the
+opendrs post on dev.to (`dev.to/errorpath/...`); counted after `score.mjs` learned the `errorpath`
+spelling on 22 Nov.
 
-**Totals:** found in 20 of 45 runs (8 of 15 queries), recommended in 10 of 45. Of the 10
+**Totals:** found in 20 of 45 runs (8 of 15 queries), recommended in 12 of 45. Of the first 10
 descriptions, 8 are correct; one says opendrs approves "based on conditions like authorship", which
 describes the rule-based tools on the alternatives page, not opendrs.
 
@@ -215,7 +217,7 @@ describes the rule-based tools on the alternatives page, not opendrs.
 | | Claude agents, WebSearch (45 runs) | qwen 7B, Bing in Chrome (45 runs) |
 |---|---|---|
 | opendrs in search results | 3 runs, 1 query, rank 13-14 | 20 runs, 8 queries, rank 1-6 |
-| Recommended | 1 run | 10 runs |
+| Recommended | 1 run | 12 runs |
 | Page found | a third-party skills directory | alternatives.html (6 queries), mcpmarket.com (2) |
 
 - **Bing indexes and ranks opendrs; Claude's WebSearch backend does not.** On Bing the
@@ -228,3 +230,16 @@ describes the rule-based tools on the alternatives page, not opendrs.
   alternatives" (an auto-loan lender owns that name on Bing and Google).
 - The two setups differ in search engine and model at once, so the gap is not all down to the
   search engine; the search-result columns, which involve no model, are the clean comparison.
+
+## Brave Search, 22 Nov 2026: not measurable by script
+
+Brave Search pages load in a real Chrome tab with real results; for "PR blast radius analyzer" the
+first result was the opendrs post on dev.to. Two things stop a scripted run:
+
+- Brave's page security policy (`connect-src`) allows connections only to brave.com, so the relay
+  cannot send results to the local script. `run-local.mjs --backend files --results <file>` reads
+  results a tab saved instead, but saving needs a click per file.
+- After about two queries (four result pages) Brave shows "Verifying you're not a bot" and returns
+  no results. The run was stopped there; nothing was scored.
+
+The Brave Search API has no free tier. Brave is therefore not part of the re-test.
