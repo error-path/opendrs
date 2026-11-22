@@ -303,4 +303,4 @@ Also frequent and often recommended by the model: `ona.com/stories/auto-approvin
 (an article on the same idea; a natural place for a comment or a note to the author) and
 `mcpmarket.com/server/opendrs` (the MCP directory listing, recommended 6 times on Bing).
 Lists by companies that sell a code review product (deepsource, cubic, sourcegraph, gitkraken) are
-less likely to add an outside tool; mastra and warpway do not, so they are the better first asks.
+less likely to add an outside tool; mastra and warpway appear not to (unchecked), so they are likely better first asks.
