@@ -12,6 +12,8 @@
 // both searches, then ask the model for 3 recommendations. The model never sees the word
 // "opendrs" unless a search result or page contains it.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { homedir } from 'node:os';
 import { join } from 'node:path';
 
 const argv = process.argv.slice(2);
@@ -21,7 +23,7 @@ const today = new Date().toISOString().slice(0, 10);
 const outDir = new URL(option('out', `raw-local-${today}`) + '/', import.meta.url);
 const runCount = Number(option('runs', '3'));
 const model = option('model', 'qwen2.5-coder:7b');
-const backend = option('backend', process.env.BRAVE_API_KEY ? 'brave' : process.env.GOOGLE_CX ? 'google' : 'bing');
+const backend = option('backend', process.env.BRAVE_API_KEY ? 'brave' : process.env.GOOGLE_CX ? 'google' : 'chrome');
 const country = option('country', 'us');
 const onlyIds = option('only', '')?.split(',').filter(Boolean) ?? [];
 const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36';
@@ -75,6 +77,7 @@ async function searchUncached(query) {
     assertRelevant(query, results);
     return results;
   }
+  if (backend === 'chrome') return searchInChrome(query);
   if (backend === 'google') {
     const results = [];
     for (const start of [1, 11]) {
@@ -101,6 +104,47 @@ async function searchUncached(query) {
   }
   assertRelevant(query, results);
   return results;
+}
+
+/** The real-Chrome page used by the chrome backend, opened on first use. */
+let chromePage = null;
+
+/**
+ * Searches Bing in a real Chrome window driven by playwright-core, which Bing answers with real
+ * results where scripted requests get unrelated ones. playwright-core is loaded from
+ * OPENDRS_BENCH_TOOLS (default ~/.opendrs-bench-tools) so the repository gains no dependency.
+ *
+ * @param query - The search text.
+ * @returns The first 20 results in order.
+ * @throws If results are still unrelated after one retry.
+ */
+async function searchInChrome(query) {
+  if (!chromePage) {
+    const toolsDir = process.env.OPENDRS_BENCH_TOOLS ?? join(homedir(), '.opendrs-bench-tools');
+    const { chromium } = createRequire(join(toolsDir, 'package.json'))('playwright-core');
+    const context = await chromium.launchPersistentContext(join(toolsDir, 'chrome-profile'),
+      { channel: 'chrome', headless: false, args: ['--disable-blink-features=AutomationControlled'] });
+    chromePage = await context.newPage();
+    await chromePage.goto('https://www.bing.com/?cc=us&setlang=en');
+    await sleep(5000);
+  }
+  for (let attempt = 1; ; attempt += 1) {
+    const results = [];
+    for (const first of [1, 11]) {
+      await chromePage.goto(`https://www.bing.com/search?q=${encodeURIComponent(query)}&cc=us&setlang=en&first=${first}`);
+      await sleep(3000);
+      const links = await chromePage.$$eval('li.b_algo h2 a', (anchors) => anchors.map((anchor) => ({ title: anchor.textContent, href: anchor.href })));
+      for (const link of links) results.push({ rank: results.length + 1, title: link.title.trim(), url: decodeBingLink(link.href) });
+      await sleep(8000);
+    }
+    try {
+      assertRelevant(query, results);
+      return results;
+    } catch (error) {
+      if (attempt >= 2) throw error;
+      await sleep(20000);
+    }
+  }
 }
 
 /**
@@ -184,16 +228,25 @@ async function runOnce(entry, seed) {
 const queries = JSON.parse(readFileSync(new URL('./queries.json', import.meta.url), 'utf8'))
   .filter((entry) => onlyIds.length === 0 || onlyIds.includes(entry.id));
 mkdirSync(outDir, { recursive: true });
-for (const entry of queries) {
+// Stop after 3 failed runs in a row: the network or the search engine is down, and waiting it out
+// in a loop only produces errors.
+let failuresInARow = 0;
+runLoop: for (const entry of queries) {
   for (let run = 1; run <= runCount; run += 1) {
     const runId = `${entry.id}-r${run}`;
     try {
       const record = await runOnce(entry, run);
+      failuresInARow = 0;
       writeFileSync(join(outDir.pathname.replace(/^\/([A-Za-z]:)/, '$1'), `${runId}.json`), JSON.stringify(record, null, 1));
       const hit = record.searches.flatMap((item) => item.results).find((result) => /opendrs|error-path/i.test(result.url + result.title));
       console.log(`${runId} searches=${record.searches.length} found=${hit ? hit.rank : '-'} recommended=${record.recommendations.some((item) => /opendrs|error-path/i.test(`${item.name} ${item.url}`))}`);
     } catch (error) {
-      console.log(`${runId} ERROR ${error.message}`);
+      console.log(`${runId} ERROR ${error.message.split('
+')[0]}`);
+      failuresInARow += 1;
+      if (failuresInARow >= 3) { console.log('stopping: 3 failed runs in a row'); break runLoop; }
+      continue;
     }
   }
 }
+if (chromePage) await chromePage.context().close();
