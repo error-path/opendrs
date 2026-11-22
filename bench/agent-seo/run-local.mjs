@@ -2,8 +2,12 @@
 // by a local Ollama model. Output files match the Claude runs, so score.mjs reads both.
 //
 // Usage: node run-local.mjs [--out raw-local-<date>] [--runs 3] [--model qwen2.5-coder:7b]
-//                           [--only q01,q07] [--backend brave|google|bing] [--country us]
-// Needs Ollama on localhost:11434. Backends: brave needs BRAVE_API_KEY (free tier 2,000/month);
+//                           [--only q01,q07] [--backend tavily|exa|serper|relay|files|brave|chrome|bing]
+//                           [--country us]
+// Needs Ollama on localhost:11434. Free-tier APIs (no card, Nov 2026): tavily (TAVILY_API_KEY,
+// 1,000/month), exa (EXA_API_KEY, free credits), serper (SERPER_API_KEY, 2,500 Google searches,
+// --country for per-country Google). Keys go in ~/.opendrs-bench.env: node --env-file=... run-local.mjs
+// Backends: brave needs BRAVE_API_KEY (free tier 2,000/month);
 // google needs GOOGLE_API_KEY and GOOGLE_CX (Programmable Search, 100 free/day, real Google
 // results per country); bing scrapes bing.com and degrades after a few requests, so it is only a
 // fallback and the run stops when results turn unrelated.
@@ -57,6 +61,32 @@ async function search(query) {
   return searchCache.get(query);
 }
 
+/** Request settings for the search APIs with free tiers: Tavily and Exa (used by AI agents), Serper (Google). */
+const agentApis = {
+  tavily: { url: 'https://api.tavily.com/search', key: 'TAVILY_API_KEY', header: (key) => ({ Authorization: `Bearer ${key}` }),
+    body: (query) => ({ query, max_results: 20 }), list: (body) => body.results ?? [], link: (item) => item.url },
+  exa: { url: 'https://api.exa.ai/search', key: 'EXA_API_KEY', header: (key) => ({ 'x-api-key': key }),
+    body: (query) => ({ query, numResults: 20 }), list: (body) => body.results ?? [], link: (item) => item.url },
+  serper: { url: 'https://google.serper.dev/search', key: 'SERPER_API_KEY', header: (key) => ({ 'X-API-KEY': key }),
+    body: (query) => ({ q: query, gl: country, hl: 'en', num: 20 }), list: (body) => body.organic ?? [], link: (item) => item.link },
+};
+
+/**
+ * Searches with Tavily, Exa or Serper; each needs its API key in the environment (see agentApis).
+ *
+ * @param query - The search text.
+ * @returns Up to 20 ranked results.
+ * @throws If the key is missing or the API answers with an error.
+ */
+async function searchAgentApi(query) {
+  const api = agentApis[backend];
+  const key = process.env[api.key];
+  if (!key) throw new Error(`set ${api.key} (for example in ~/.opendrs-bench.env and run node --env-file)`);
+  const response = await fetch(api.url, { method: 'POST', headers: { 'content-type': 'application/json', ...api.header(key) }, body: JSON.stringify(api.body(query)) });
+  if (!response.ok) throw new Error(`${backend} HTTP ${response.status}`);
+  return api.list(await response.json()).map((item, index) => ({ rank: index + 1, title: item.title ?? '', url: api.link(item) }));
+}
+
 /** Results per query for this invocation: repeated runs on one day see the same results. */
 const searchCache = new Map();
 
@@ -74,6 +104,11 @@ async function searchUncached(query) {
     if (!response.ok) throw new Error(`Brave HTTP ${response.status}`);
     const body = await response.json();
     const results = (body.web?.results ?? []).map((result, index) => ({ rank: index + 1, title: result.title, url: result.url }));
+    assertRelevant(query, results);
+    return results;
+  }
+  if (backend === 'tavily' || backend === 'exa' || backend === 'serper') {
+    const results = await searchAgentApi(query);
     assertRelevant(query, results);
     return results;
   }
@@ -196,7 +231,7 @@ async function searchInChrome(query) {
     const toolsDir = process.env.OPENDRS_BENCH_TOOLS ?? join(homedir(), '.opendrs-bench-tools');
     const { chromium } = createRequire(join(toolsDir, 'package.json'))('playwright-core');
     const context = await chromium.launchPersistentContext(join(toolsDir, 'chrome-profile'),
-      { channel: 'chrome', headless: false, args: ['--disable-blink-features=AutomationControlled'] });
+      { channel: 'chrome', headless: false });
     chromePage = await context.newPage();
     await chromePage.goto('https://www.bing.com/?cc=us&setlang=en');
     await sleep(5000);
