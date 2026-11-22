@@ -336,16 +336,7 @@ product. Contact routes are only those published on the page or site; no persona
 
 ## Newsletter notes (drafts, 22 Nov 2026; not sent)
 
-**Console.dev** (hello@console.dev; they cover pre-1.0 developer tools):
-
-> Subject: opendrs, an open-source PR risk score (0.6, MIT)
->
-> Hi, I maintain opendrs, an MIT tool that gives each pull request a calibrated 0-1 risk score
-> from git history and the import graph, with no LLM or API key. Teams use it to auto-approve
-> low-risk PRs after an AI review passes, and to tell reviewers where to look on the rest. It
-> runs as a CLI, a GitHub Action and an MCP server. On the public ApacheJIT benchmark the
-> calibrated score reaches AUC 0.823. Docs: https://error-path.github.io/opendrs/ Thanks for
-> considering it.
+Console.dev: not needed; the maintainer emailed hello@console.dev on 12 Nov.
 
 **Changelog News** (changelog.com/news/submit; own work welcome, no commercial products):
 title "opendrs: an open reproduction of Meta's Diff Risk Score for pull requests", with a

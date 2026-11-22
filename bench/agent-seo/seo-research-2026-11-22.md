@@ -122,9 +122,9 @@ agent reads in each page's first screenful (checked with the local 7B model).
 **Technical crawl: the site is clean.** All 27 sitemap pages return 200 with no redirects; sitemap
 URLs match canonicals exactly; unique titles and descriptions; valid JSON-LD; no noindex; a real
 404. Nothing on the site explains Search Console's "Couldn't fetch". One broken internal link
-(experiments.md to bench/verify) is fixed. The github.io root `robots.txt` is a 404 (there is no
-`error-path.github.io` repository), so the `Sitemap:` line in `/opendrs/robots.txt` is never read;
-creating that repository with a one-line robots.txt fixes it.
+(experiments.md to bench/verify) is fixed.
+Known, accepted gap: the github.io root `robots.txt` is a 404, so its `Sitemap:` line is not read;
+the sitemap is submitted directly in Search Console and Bing, and IndexNow runs on every deploy.
 
 **First screenful.** The local model merged opendrs with the LLM-based tools on the alternatives
 page and read the bottleneck page as "opendrs automates review". The first mention of opendrs on
@@ -150,17 +150,14 @@ PulseMCP (submissions paused; ingests the official registry).
 page, Launch HN). The most honest channel for opendrs is research: a DRS-OSS preprint ranks on
 three engines; arxiv.org is the third-largest host in our raw results. Venues: an arXiv cs.SE
 tool report, the FSE 2027 tool-demo track (due 26 Jan 2027), Changelog News, Console.dev (takes
-pre-1.0 tools, so opendrs qualifies now), one Show HN.
+pre-1.0 tools; already contacted on 12 Nov), one Show HN.
 
-### Maintainer actions from round 4 (none done by the agent)
+### Recommendations from round 4 (maintainer decisions; none done by the agent)
 
-1. Cut release 0.7.0 (Marketplace title and description, npm keywords, MCP registry text).
-2. Create the `error-path.github.io` repository with `robots.txt` containing
-   `Sitemap: https://error-path.github.io/opendrs/sitemap.xml`.
-3. GitHub repo topics: swap `ci-cd`, `devops`, `developer-tools` for `mcp-server`,
-   `risk-assessment`, `pr-risk-score` (at the 20-topic cap). Retitle the floating `v0` release.
-4. Submit: Anthropic plugin directory, Cline marketplace issue, mcpservers.org (free tier),
-   AlternativeTo, awesome-claude-code (issue form, once it reopens).
-5. Outreach: Console.dev and Changelog News (drafts in outreach-drafts.md), then one Show HN.
-6. Longer: a short arXiv cs.SE tool report on the Diff Risk Score reproduction, reused for the
-   FSE 2027 tool-demo track.
+| Recommendation | Effort | Expected effect |
+|---|---|---|
+| Cut release 0.7.0 | 1 hour (release runbook) | Marketplace title and description, npm keywords and MCP registry text go live at once |
+| GitHub repo topics: swap `ci-cd`, `devops`, `developer-tools` for `mcp-server`, `risk-assessment`, `pr-risk-score`; retitle the floating `v0` release | 10 min | Topic pages and release titles carry the searched terms |
+| Submit to the Anthropic plugin directory, Cline marketplace, mcpservers.org (free), AlternativeTo; awesome-claude-code once it reopens | 15-30 min each | Listings where agents and developers look; no measured effect yet |
+| Changelog News note (draft in outreach-drafts.md), then one Show HN | 15 min; 1 day answering comments | Third-party pages that agents cite; HN threads rank |
+| Short arXiv cs.SE tool report on the Diff Risk Score reproduction, reused for the FSE 2027 tool-demo track (due 26 Jan 2027) | 2-4 days | Research pages rank on several engines (DRS-OSS precedent) |
