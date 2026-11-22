@@ -156,3 +156,25 @@ Countries other than the US were not checked.
 2. **Google has found only 4 of about 25 pages** (Page indexing: 4 indexed, 0 not indexed).
 3. **Links from related projects work.** The one recommendation came through DRS-OSS material
    that links to opendrs, which is the kind of third-party link that reaches agents.
+
+## Running it with almost no Claude tokens
+
+The 45 Claude-agent runs above used about 3 million subagent tokens. [`run-local.mjs`](run-local.mjs)
+runs the same loop with a local Ollama model and a search API instead:
+
+```sh
+node bench/agent-seo/run-local.mjs --out bench/agent-seo/raw-local-<date> --runs 3
+node bench/agent-seo/score.mjs bench/agent-seo/raw-local-<date> <date> > bench/agent-seo/local-<date>.jsonl
+```
+
+Per run it searches the query, lets the model (default `qwen2.5-coder:7b`) choose one follow-up
+search, reads the top 5 pages and asks the model for 3 recommendations. Results of a query are
+reused across its runs, as they would be on one day.
+
+- **Search backend:** set `BRAVE_API_KEY` (Brave Search API, free tier) or `GOOGLE_API_KEY` and
+  `GOOGLE_CX` (Google Programmable Search, 100 free queries a day, `--country` for per-country
+  Google results). Without a key it scrapes Bing, which degrades to unrelated results after a few
+  requests; the script then stops with an error instead of scoring them.
+- **What it does not replace:** Claude's WebSearch backend and Claude's own judgment. Report local
+  and Claude runs separately, and run a small Claude sample (1 run per query) when Claude agents
+  are the question.
