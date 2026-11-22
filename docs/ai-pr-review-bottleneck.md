@@ -79,7 +79,7 @@ approval, not the review itself.
 
 opendrs is the risk-triage option. It gives every PR a 0-1 risk score from its
 [blast radius](blast-radius.md), file history, author experience, size and tests, with a statistical
-model, not an LLM. When a PR is green, changes no blocked path and your AI review check has passed,
+model; no LLM is needed (an optional [LLM judge](llm-judge.md) can only raise it). When a PR is green, changes no blocked path and your AI review check has passed,
 it approves the PR and can hand it to auto-merge or the merge queue. Everything else waits for a
 person, with a [captain brief](captain.md) that says how much attention it needs. A random share of
 eligible PRs still goes to a human, so you keep measuring what the gate lets through. Setup is in
@@ -97,7 +97,7 @@ The labels in these runs come from reverts and bug-fix commits, not production i
 
 ## Where opendrs does not fit
 
-- **Dependency updates.** opendrs never auto-approves a PR that changes a lockfile. Use Renovate or
+- **Dependency updates.** By default, opendrs never auto-approves a PR that changes a lockfile. Use Renovate or
   Dependabot automation for those.
 - **Required code owner review.** opendrs's approval cannot satisfy it, because the bot is not a
   code owner.

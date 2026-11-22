@@ -277,8 +277,8 @@ and `exa-2026-11-22.jsonl`. 90 runs, 0 errors.
 | Queries where opendrs is in the results | 8 of 15 | 2 of 15 | 13 of 15 |
 | Runs that recommended it | 12 of 45 | 3 of 45 | 15 of 45 |
 
-- **Exa finds opendrs almost everywhere** (13 of 15 queries), including four that Bing misses
-  (MCP server, defect prediction, Claude Code plugin, autoapprove alternatives), and reaches more
+- **Exa finds opendrs almost everywhere** (13 of 15 queries), including five that Bing misses
+  (MCP server, defect prediction, Claude Code plugin, autoapprove alternatives, "auto approve"), and reaches more
   pages: auto-approve.html, github-action.html, the homepage and the GitHub repo, not only
   alternatives.html. Exa is a neural index, so it matches meaning rather than words.
 - **Tavily barely finds it** (2 of 15, both on the model's second search, both through third-party
@@ -286,7 +286,7 @@ and `exa-2026-11-22.jsonl`. 90 runs, 0 errors.
   Tavily is a common search tool in agent frameworks such as LangChain, so this is the
   weakest of the three for agent visibility.
 - **Found is not recommended.** On Exa opendrs is in the results for 13 queries but recommended for
-  6; when it ranks below about 5 the model's top-5 page fetch does not reach it. Ranking, not
+  6; mostly when it ranks below about 5 the model's top-5 page fetch does not reach it. Ranking, not
   presence, decides recommendations.
 - **Descriptions are mostly right, with one recurring error:** several say opendrs is "AI-driven"
   or "uses AI to score" PRs. The score is a logistic model over git history and the import graph;

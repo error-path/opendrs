@@ -2,7 +2,7 @@
 // by a local Ollama model. Output files match the Claude runs, so score.mjs reads both.
 //
 // Usage: node run-local.mjs [--out raw-local-<date>] [--runs 3] [--model qwen2.5-coder:7b]
-//                           [--only q01,q07] [--backend tavily|exa|serper|relay|files|brave|chrome|bing]
+//                           [--only q01,q07] [--backend tavily|exa|serper|google|relay|files|brave|chrome|bing]
 //                           [--country us]
 // Needs Ollama on localhost:11434. Free-tier APIs (no card, Nov 2026): tavily (TAVILY_API_KEY,
 // 1,000/month), exa (EXA_API_KEY, free credits), serper (SERPER_API_KEY, 2,500 Google searches,
