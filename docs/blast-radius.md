@@ -10,8 +10,8 @@ a file that nothing imports has a small blast radius. The same line in a utility
 import, or in an exported function other services call, has a large one.
 
 Blast radius alone does not make a change risky. A large, well-tested change by someone who knows
-the code is often safer than a small, untested change to fragile code. So opendrs reports blast
-radius as two signals and combines them with the others into one score.
+the code is often safer than a small, untested change to fragile code. So opendrs, an open-source
+PR risk scorer that runs in your CI with no LLM, reports blast radius as two signals and combines them with the others into one score.
 
 ## How opendrs measures it
 

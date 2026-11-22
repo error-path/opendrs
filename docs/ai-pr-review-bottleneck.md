@@ -8,7 +8,8 @@ description: "Ways to cut the human review queue when AI writes and reviews most
 When coding agents write most of the pull requests, the number of PRs grows faster than the number
 of people who can review them. The human review becomes the slowest step. There is no single fix.
 Teams usually combine a few of the options below, and each one helps with a different part of the
-queue.
+queue. opendrs, the tool these docs are for, is one of them: it scores each PR's risk from git
+history without an LLM and can approve the low-risk ones; it does not review code.
 
 ## The options
 

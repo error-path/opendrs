@@ -12,7 +12,8 @@ up a gate that approves the low-risk ones on its own and sends everything else t
 > A PR whose risk score is below 0.3, that changes nothing on a blocked path, and whose AI review
 > passed is approved and goes to the merge queue. Everything else waits for a reviewer.
 
-The score comes from [opendrs](./), which measures each PR's [blast radius](blast-radius.md),
+The score comes from [opendrs](./), a free, open-source risk scorer that runs in your CI and needs
+no LLM (the AI review is a separate check you can require). It measures each PR's [blast radius](blast-radius.md),
 file history, author experience, size and tests. Auto-approval is one of several ways to
 [reduce the review bottleneck for AI-generated PRs](ai-pr-review-bottleneck.md); that page compares
 them.

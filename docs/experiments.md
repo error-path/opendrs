@@ -458,7 +458,7 @@ first, precision second — precision is not checked until recall clears.**
 or prompt fix before the pass ships** (spec implication 15) — not optional, not a re-run.
 
 **Where.** `bench/verify/run.ts`, `bench/verify/labels.json`, `bench/verify/README.md`; results
-are written to [`bench/verify/results.md`](../bench/verify/results.md) (recall, the 18-fire
+are written to [`bench/verify/results.md`](https://github.com/error-path/opendrs/blob/main/bench/verify/results.md) (recall, the 18-fire
 `coupling.missing` precision breakdown by detector class vs. verifier, the 2 WRONG fires, cost per
 PR and total, model + `promptHash`, and this decision rule applied as written).
 
