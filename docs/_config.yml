@@ -49,6 +49,10 @@ nav:
       url: /ai-reviewing-ai.html
     - title: Bot approvals
       url: /bot-approval-required-reviews.html
+    - title: Agent dependencies
+      url: /agent-added-dependencies.html
+    - title: Audit evidence
+      url: /auto-approval-audit-evidence.html
     - title: Research
       url: /research/
     - title: Policy
