@@ -92,3 +92,23 @@ duplicate packages or Actions.
 - **Marketplace categories:** Code review and Continuous integration.
 - **GitHub repo About text:** start with "PR blast radius analyzer and risk score ...".
 - **Custom domain:** buy one (for example opendrs.dev) and point GitHub Pages at it (see Round 2).
+
+## Round 3: how agent search APIs build their index (same day)
+
+Prompted by the benchmark: Tavily found opendrs for 2 of 15 queries, Exa for 13 (see README).
+
+- **Tavily** crawls with no distinct user agent, cannot reach what Googlebot cannot, and has no
+  submit path ([Tavily docs](https://docs.tavily.com/documentation/search-crawler)). Whether it
+  also fans out to other engines is reported by one analyst, not confirmed. Nothing is
+  Tavily-specific to configure: Google indexing is the lever.
+- **Perplexity** (`PerplexityBot`) and **You.com** (`YouBot`) run their own crawlers and respect
+  robots.txt ([Perplexity](https://docs.perplexity.ai/docs/resources/perplexity-crawlers.md),
+  [You.com](https://you.com/docs/youbot)). The github.io root `robots.txt` is a 404, so nothing is
+  blocked. You.com takes index requests at the address on its YouBot page.
+- **Linkup** crawls a seed set of hostnames and promotes new hosts by PageRank over its link graph
+  ([Linkup](https://www.linkup.so/blog/how-we-crawl-the-web-for-ai-search)): inbound links from
+  established hosts are the way in, and a custom domain would be its own host.
+- No study shows a tactic that improves ranking on these APIs specifically.
+
+Adds to the maintainer list: one email to You.com asking YouBot to index the docs (a message sent
+on the maintainer's behalf, so not sent by the agent).
