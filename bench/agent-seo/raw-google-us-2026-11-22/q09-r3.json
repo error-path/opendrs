@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What Is a Code Review MCP Server?",
+     "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/"
+    },
+    {
+     "rank": 2,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 4,
+     "title": "Using the GitHub and Jira MCP servers for engineering reporting",
+     "url": "https://www.swarmia.com/blog/github-jira-mcp-servers-engineering-reporting/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 6,
+     "title": "What Is GitHub MCP Server? Definition & Examples",
+     "url": "https://nhimg.org/glossary/github-mcp-server/"
+    },
+    {
+     "rank": 7,
+     "title": "A practical guide on how to use the GitHub MCP server",
+     "url": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/"
+    },
+    {
+     "rank": 8,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 9,
+     "title": "MCP Security Best Practices: 2026 Checklist for MCP Servers",
+     "url": "https://corgea.com/learn/mcp-security-best-practices"
+    },
+    {
+     "rank": 10,
+     "title": "MCP Security Exposed: What You Need to Know Now",
+     "url": "https://live.paloaltonetworks.com/t5/community-blogs/mcp-security-exposed-what-you-need-to-know-now/ba-p/1227143"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for pull request risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 3,
+     "title": "PR Agent: The Original Open-Source PR Reviewer. This project is not ...",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 4,
+     "title": "What do you think is the best automated code review integration for Github ...",
+     "url": "https://www.reddit.com/r/devops/comments/ebx9rw/what_do_you_think_is_the_best_automated_code/"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "7 Code Review Tools to Balance Quality and Speed",
+     "url": "https://www.atlassian.com/blog/loom/code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "I Switched To An Open Source Code Reviewer And I'm Not Looking Back",
+     "url": "https://www.youtube.com/watch?v=gEJ26rECifc"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 10,
+     "title": "Best Open Source Project Risk Scoring Tools in 2026 - Safeguard.sh",
+     "url": "https://safeguard.sh/resources/blog/best-open-source-project-risk-scoring-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+  "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+  "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools",
+  "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+ ],
+ "recommendations": [
+  {
+   "name": "SonarQube MCP Server",
+   "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+   "description": "A tool that automates the review and verification of pull requests, focusing on code quality and security."
+  },
+  {
+   "name": "PR Agent: The Original Open-Source PR Reviewer",
+   "url": "https://github.com/The-PR-Agent/pr-agent",
+   "description": "An open-source tool designed to automate the process of reviewing pull requests in GitHub repositories."
+  },
+  {
+   "name": "GitHub AI Code Review Tools",
+   "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source",
+   "description": "A collection of AI-driven tools that help automate and enhance the review of pull requests on GitHub."
+  }
+ ]
+}

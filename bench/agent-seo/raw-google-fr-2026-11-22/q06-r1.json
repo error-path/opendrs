@@ -1,0 +1,137 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 3,
+     "title": "How do I automatically approve \"low risk\" Github Copilot commands in VS Code?",
+     "url": "https://stackoverflow.com/questions/80001736/how-do-i-automatically-approve-low-risk-github-copilot-commands-in-vs-code"
+    },
+    {
+     "rank": 4,
+     "title": "SOC 2: auto-approve PRs or allow bypasses and review them monthly?",
+     "url": "https://www.reddit.com/r/soc2/comments/1wgvdli/soc_2_autoapprove_prs_or_allow_bypasses_and/"
+    },
+    {
+     "rank": 5,
+     "title": "I built a GitHub Action that automatically reviews PRs with AI",
+     "url": "https://www.reddit.com/r/git/comments/1sxevht/i_built_a_github_action_that_automatically/"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate ...",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 8,
+     "title": "Thinkmill/auto-approve-action: A GitHub action to automatically ...",
+     "url": "https://github.com/Thinkmill/auto-approve-action"
+    },
+    {
+     "rank": 9,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a specific user?",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 10,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide)",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Action for auto-approving low-risk PRs with customizable risk criteria",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approve PRs",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 4,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 5,
+     "title": "Teams auto-approve different kinds of PRs with separate policies and an ...",
+     "url": "https://github.com/kodustech/kodus-ai/issues/2400"
+    },
+    {
+     "rank": 6,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide)",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate ...",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 8,
+     "title": "public-github-actions/dependabot-auto-approve/README.md at main",
+     "url": "https://github.com/Cognigy/public-github-actions/blob/main/dependabot-auto-approve/README.md"
+    },
+    {
+     "rank": 9,
+     "title": "How do I automatically approve \"low risk\" Github Copilot commands in VS ...",
+     "url": "https://stackoverflow.com/questions/80001736/how-do-i-automatically-approve-low-risk-github-copilot-commands-in-vs-code"
+    },
+    {
+     "rank": 10,
+     "title": "How to Automate GitHub PR Reviews with Smart Workflows",
+     "url": "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/marketplace/actions/auto-approve-pull-requests",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+  "https://stackoverflow.com/questions/80001736/how-do-i-automatically-approve-low-risk-github-copilot-commands-in-vs-code",
+  "https://www.greptile.com/docs/code-review/auto-approve-prs"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve Pull Requests · Actions",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "A GitHub Marketplace action that auto-approves pull requests based on allow lists, label requirements, and status check verification."
+  },
+  {
+   "name": "Auto-approve PRs - Greptile Documentation",
+   "url": "https://www.greptile.com/docs/code-review/auto-approve-prs",
+   "description": "A feature in Greptile documentation that allows for auto-approving low-risk, bug-free pull requests after a clean review."
+  },
+  {
+   "name": "How to Automate GitHub PR Reviews with Smart Workflows",
+   "url": "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows",
+   "description": "A guide on automating GitHub PR reviews using smart workflows, which can include auto-approving low-risk changes."
+  }
+ ]
+}

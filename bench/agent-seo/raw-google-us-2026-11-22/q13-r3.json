@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Can AI Agents Safely Approve Pull Requests? Guardrails for ...",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 2,
+     "title": "How is your company handling merging code that doesn't have a ...",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1wo1hnh/how_is_your_company_handling_merging_code_that/"
+    },
+    {
+     "rank": 3,
+     "title": "The End of Pull Requests: How AI Is Rewriting Code Collaboration",
+     "url": "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b"
+    },
+    {
+     "rank": 4,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 5,
+     "title": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 8,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub PR Review Agent: AI Code Review Automation",
+     "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more"
+    }
+   ]
+  },
+  {
+   "query": "Best AI code review tools for enterprise environments in 2023",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Code Review | Greptile | Catch More Bugs",
+     "url": "https://www.greptile.com/"
+    },
+    {
+     "rank": 2,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Best AI Code Review Tools for Enterprise in 2026",
+     "url": "https://www.youtube.com/watch?v=bjKgCGeiQ_s"
+    },
+    {
+     "rank": 4,
+     "title": "Which is best AI code review tool that you've come across recently?",
+     "url": "https://www.reddit.com/r/codereview/comments/1ctxbw7/which_is_best_ai_code_review_tool_that_youve_come/"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI Code Review Tools 2025",
+     "url": "https://www.augmentcode.com/tools/best-ai-code-review-tools-2025"
+    },
+    {
+     "rank": 6,
+     "title": "Best Code Review Tools Reviews 2026 | Gartner Peer Insights",
+     "url": "https://www.gartner.com/reviews/market/code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Choosing AI Code Review Tools for Enterprises and Startups",
+     "url": "https://dev.to/yeahiasarker/choosing-ai-code-review-tools-for-enterprises-and-startups-180j"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools for Secure Code | by Yeahia Sarker",
+     "url": "https://medium.com/@yeahia.sarker/best-ai-code-review-tools-for-secure-code-0524be3dbd57"
+    },
+    {
+     "rank": 9,
+     "title": "5 Best AI Code Security Tools for Enterprise Teams to ...",
+     "url": "https://www.premai.io/blog/ai-code-security-tools-for-enterprise/"
+    },
+    {
+     "rank": 10,
+     "title": "Top 5 AI code review tools in 2026",
+     "url": "https://blog.logrocket.com/ai-code-review-tools-2026/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails",
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1wo1hnh/how_is_your_company_handling_merging_code_that/",
+  "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b",
+  "https://www.greptile.com/",
+  "https://sourcegraph.com/blog/automated-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+   "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+   "description": "A detailed guide on safely automating the merging of pull requests using AI, focusing on enterprise environments."
+  },
+  {
+   "name": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+   "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/",
+   "description": "A case study on how a team implemented AI to safely approve pull requests, addressing common challenges and considerations."
+  },
+  {
+   "name": "GitHub PR Review Agent: AI Code Review Automation",
+   "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more",
+   "description": "An example of building an AI-driven GitHub PR review agent that can automate the merge process after a successful review."
+  }
+ ]
+}

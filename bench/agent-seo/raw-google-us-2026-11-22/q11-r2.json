@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 2,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 3,
+     "title": "How To Predict Which Pull Requests Will Cause Incidents",
+     "url": "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "I tested whether specs reduces defects. It doesn't. (119 repos, 100K PRs)",
+     "url": "https://www.reddit.com/r/SpecDrivenDevelopment/comments/1sexm55/i_tested_whether_specs_reduces_defects_it_doesnt/"
+    },
+    {
+     "rank": 5,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809/"
+    },
+    {
+     "rank": 6,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Top 7 AI Bug-Finding Tools Compared: From Detection to Fixes | Early",
+     "url": "https://www.startearly.ai/post/ai-bug-finding-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "syedayazsa/Software-Defect-Analysis-Tool",
+     "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool"
+    },
+    {
+     "rank": 10,
+     "title": "DeepSource: The AI Code Review Platform",
+     "url": "https://deepsource.com/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for Automated Defect Prediction on Pull Requests - https://docs.github.com/en/actions/using-workflows/triggering-workflows-from-events#pull_request",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Events that trigger workflows",
+     "url": "https://docs.github.com/actions/using-workflows/events-that-trigger-workflows"
+    },
+    {
+     "rank": 2,
+     "title": "Triggering a workflow - GitHub Docs",
+     "url": "https://docs.github.com/actions/using-workflows/triggering-a-workflow"
+    },
+    {
+     "rank": 3,
+     "title": "Pull request created in a GitHub action does not trigger workflows with ...",
+     "url": "https://github.com/orgs/community/discussions/65321"
+    },
+    {
+     "rank": 4,
+     "title": "Running wWorkflows from Pull Requests in Organizational Repos ...",
+     "url": "https://www.youtube.com/watch?v=ygC3dnGm4hw"
+    },
+    {
+     "rank": 5,
+     "title": "Automate Your Code with GitHub Actions #2: Events and Triggers in ...",
+     "url": "https://www.git-tower.com/blog/github-actions-events-and-triggers"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Request Changes · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/auto-request-changes"
+    },
+    {
+     "rank": 7,
+     "title": "Automating your workflow with GitHub Actions",
+     "url": "https://dev.to/donnyc1/automating-your-workflow-with-github-actions-3o09"
+    },
+    {
+     "rank": 8,
+     "title": "Contexts reference",
+     "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts"
+    },
+    {
+     "rank": 9,
+     "title": "Trigger GitHub Workflow on Pull Request",
+     "url": "https://stackoverflow.com/questions/70964103/trigger-github-workflow-on-pull-request"
+    },
+    {
+     "rank": 10,
+     "title": "Exploring GitHub Actions Triggers",
+     "url": "https://earthly.dev/blog/github-action-triggers/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/feiwww/GHPR_dataset",
+  "https://arxiv.org/html/2206.09967v1",
+  "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests",
+  "https://docs.github.com/actions/using-workflows/events-that-trigger-workflows",
+  "https://docs.github.com/actions/using-workflows/triggering-a-workflow"
+ ],
+ "recommendations": [
+  {
+   "name": "GHPR Dataset",
+   "url": "https://github.com/feiwww/GHPR_dataset",
+   "description": "A dataset for software defect prediction using GitHub pull request data."
+  },
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "An algorithm for tracing defects in software repositories using pull request data."
+  },
+  {
+   "name": "syedayazsa/Software-Defect-Analysis-Tool",
+   "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool",
+   "description": "An open-source tool for analyzing software defects, which can be integrated with GitHub pull requests."
+  }
+ ]
+}

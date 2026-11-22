@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://uk.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 3,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 5,
+     "title": "Customer Portal",
+     "url": "https://my-dev.autoapprove.com/"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve & YOLO Mode",
+     "url": "https://docs.cline.bot/features/auto-approve"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve Compensation & Benefits 2026",
+     "url": "https://builtin.com/company/auto-approve/faq/compensation-benefits"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Auto Loans Review 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/reviews/auto-approve-auto-loans"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve - Crunchbase Company Profile & Funding",
+     "url": "https://www.crunchbase.com/organization/auto-approve"
+    },
+    {
+     "rank": 10,
+     "title": "Auto Approve Revolutionizes Auto Refinancing with Proprietary AI",
+     "url": "https://finance.yahoo.com/sectors/technology/articles/auto-approve-revolutionizes-auto-refinancing-120000711.html"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of auto approve tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 2,
+     "title": "Configuring code review by GitHub Copilot",
+     "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+    },
+    {
+     "rank": 3,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a specific user?",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Copilot PR Approvals: Keep Human Review Required",
+     "url": "https://generalanalysis.com/guides/github-copilot-pull-request-approvals"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approving Pull Requests",
+     "url": "https://projen.io/docs/integrations/github/auto-approve/"
+    },
+    {
+     "rank": 6,
+     "title": "Are there any auto-approve PR bots out there? : r/programming",
+     "url": "https://www.reddit.com/r/programming/comments/12cptoj/are_there_any_autoapprove_pr_bots_out_there/"
+    },
+    {
+     "rank": 7,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 10,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://autoapprove.com/",
+  "https://uk.trustpilot.com/review/autoapprove.com",
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+  "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve",
+   "url": "https://autoapprove.com/",
+   "description": "A platform that offers services for auto refinancing, including lower car payments and no SSN required, but lacks specific information about pull request auto-approval."
+  },
+  {
+   "name": "GitHub Copilot PR Approvals",
+   "url": "https://generalanalysis.com/guides/github-copilot-pull-request-approvals",
+   "description": "A guide on how to use GitHub Copilot for automating pull request approvals, focusing on AI agents and code review."
+  },
+  {
+   "name": "Auto Approve Pull Requests · Actions",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "A GitHub Actions integration for automatically approving pull requests, offering a direct solution for the specific need."
+  }
+ ]
+}

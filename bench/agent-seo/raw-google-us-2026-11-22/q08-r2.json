@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 4,
+     "title": "How Meta Reduced Code Review Load While Maintaining Production ...",
+     "url": "https://dev.to/shrsv/how-meta-reduced-code-review-load-while-maintaining-production-reliability-4kcj"
+    },
+    {
+     "rank": 5,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351v1"
+    },
+    {
+     "rank": 6,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 7,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai/"
+    },
+    {
+     "rank": 8,
+     "title": "How Meta Scaling AI-Native Engineering Tripled Code ...",
+     "url": "https://www.youtube.com/watch?v=pT-nyd6o_WY"
+    },
+    {
+     "rank": 9,
+     "title": "Meta AI and Systems Co-design",
+     "url": "https://aisystemcodesign.github.io/"
+    },
+    {
+     "rank": 10,
+     "title": "How is developer productivity measured at Meta? : r/programming",
+     "url": "https://www.reddit.com/r/programming/comments/1p8xmno/how_is_developer_productivity_measured_at_meta/"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for AI-driven code review and risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Looking for a Free/Open Source AI Code Review Tool – Suggestions?",
+     "url": "https://www.reddit.com/r/developersIndia/comments/1lrrsvl/looking_for_a_freeopen_source_ai_code_review_tool/"
+    },
+    {
+     "rank": 5,
+     "title": "kodustech/kodus-ai: Open source, self-hosted AI code review. Bring ...",
+     "url": "https://github.com/kodustech/kodus-ai"
+    },
+    {
+     "rank": 6,
+     "title": "10 Best AI Code Security Tools in 2026 (Tested & Compared)",
+     "url": "https://corgea.com/learn/best-ai-code-security-tools"
+    },
+    {
+     "rank": 7,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 8,
+     "title": "AI-Powered Code Review Tools Explained",
+     "url": "https://www.sonarsource.com/resources/library/what-is-ai-powered-code-review/"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best Security-Focused AI Code Review Tools",
+     "url": "https://www.greptile.com/content-library/best-security-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "What open source tools exists to help with code reviews?",
+     "url": "https://www.reddit.com/r/softwaredevelopment/comments/1s5e4bz/what_open_source_tools_exists_to_help_with_code/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://arxiv.org/html/2605.30208v1",
+  "https://deepsource.com/resources/ai-code-review-tools",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source tool for practical diff risk scoring using large language models."
+  },
+  {
+   "name": "kodustech/kodus-ai",
+   "url": "https://github.com/kodustech/kodus-ai",
+   "description": "An open-source, self-hosted AI code review tool that can be integrated with GitHub."
+  },
+  {
+   "name": "DeepSource",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A comprehensive guide to the best AI code review tools, including open-source options."
+  }
+ ]
+}

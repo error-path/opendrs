@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "Code Review for Claude Code | Claude by Anthropic",
+     "url": "https://claude.com/resources/articles/code-review"
+    },
+    {
+     "rank": 3,
+     "title": "Best Claude Code Review Skills & Tools in 2026",
+     "url": "https://agentskillshub.top/best/code-review/"
+    },
+    {
+     "rank": 4,
+     "title": "tag1consulting/claude-comprehensive-review",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 5,
+     "title": "How do you handle pull requests? : r/ClaudeCode",
+     "url": "https://www.reddit.com/r/ClaudeCode/comments/1vsc42t/how_do_you_handle_pull_requests/"
+    },
+    {
+     "rank": 6,
+     "title": "Review Pull Request (Grade A) - Claude Skill",
+     "url": "https://www.skillsdirectory.com/skills/jenkinsci-review-pull-request"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 8,
+     "title": "Claude Code Review Reaches General Availability - AI Catchup",
+     "url": "https://aicatchup.com/news/claude-code-review-general-availability"
+    },
+    {
+     "rank": 9,
+     "title": "Code Review - Claude Plugin Marketplace",
+     "url": "https://pluginmarketplace.ai/plugin/code-review"
+    },
+    {
+     "rank": 10,
+     "title": "Automate GitHub PR Reviews with AI (Node.js, Claude & GitHub Actions)",
+     "url": "https://www.youtube.com/watch?v=XgAZBRZ7yy0"
+    }
+   ]
+  },
+  {
+   "query": "Comparing AI-driven pull request risk assessment tools for software development teams",
+   "results": [
+    {
+     "rank": 1,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 2,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "AI Code Review Tools for 2026: A Buyer's Guide",
+     "url": "https://www.wiz.io/academy/application-security/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "9 Best AI Code Review Tools 2026: Ranked & Compared - Optimal AI",
+     "url": "https://getoptimal.ai/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "9 Best Pull Request Automation Tools [2026]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools in 2026",
+     "url": "https://manus.im/blog/best-ai-tools-for-code-review"
+    },
+    {
+     "rank": 9,
+     "title": "5 top AI Pull Request Review Tools for Development Teams",
+     "url": "https://biztechpulsehub.com/ai-pull-request-review-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI PR review tools for GitHub (2026) - MergeGuard",
+     "url": "https://www.mergeguard.ai/best-ai-pr-review-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://claude.com/resources/articles/code-review",
+  "https://agentskillshub.top/best/code-review/",
+  "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage",
+  "https://deepsource.com/resources/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A detailed article on using AI to automatically score the risk of pull requests."
+  },
+  {
+   "name": "4 Best Platforms to Triage Pull Request Risk Using AI",
+   "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage",
+   "description": "A comparison of four AI-driven platforms for triaging pull request risk."
+  },
+  {
+   "name": "7 Best AI Code Review Tools for 2026 — Compared Benchmarked",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A comprehensive benchmark of the top AI code review tools for 2026."
+  }
+ ]
+}

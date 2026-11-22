@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius - Series: Agentic Engineering Framework",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It - Riftmap",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub API for repository analysis",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub REST API documentation",
+     "url": "https://docs.github.com/en/rest"
+    },
+    {
+     "rank": 2,
+     "title": "public-apis/public-apis: A collective list of free APIs",
+     "url": "https://github.com/public-apis/public-apis"
+    },
+    {
+     "rank": 3,
+     "title": "Repository - GitHub API",
+     "url": "https://scrapecreators.com/github-repository-api"
+    },
+    {
+     "rank": 4,
+     "title": "REST API endpoints for repositories",
+     "url": "https://docs.github.com/en/rest/repos/repos"
+    },
+    {
+     "rank": 5,
+     "title": "repo-analyzer · GitHub Topics",
+     "url": "https://github.com/topics/repo-analyzer"
+    },
+    {
+     "rank": 6,
+     "title": "Extracting data from Github repositories using the Github API",
+     "url": "https://www.reddit.com/r/github/comments/14f9tof/extracting_data_from_github_repositories_using/"
+    },
+    {
+     "rank": 7,
+     "title": "github api to know work breakdown for repository",
+     "url": "https://stackoverflow.com/questions/75398196/github-api-to-know-work-breakdown-for-repository"
+    },
+    {
+     "rank": 8,
+     "title": "Is there any way to get repository insights via the GitHub Rest API v3",
+     "url": "https://stackoverflow.com/questions/46720047/is-there-any-way-to-get-repository-insights-via-the-github-rest-api-v3"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub: Getting Repository using REST API",
+     "url": "https://www.youtube.com/watch?v=BRLowzzpyCI"
+    },
+    {
+     "rank": 10,
+     "title": "Using GitHub repository as API",
+     "url": "https://softwareengineering.stackexchange.com/questions/444116/using-github-repository-as-api"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://docs.github.com/en/rest",
+  "https://github.com/public-apis/public-apis"
+ ],
+ "recommendations": [
+  {
+   "name": "Blast Radius Analyzer GitHub Repository",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions."
+  },
+  {
+   "name": "Port.io Blast Radius Calculation Guide",
+   "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+   "description": "Guide on how to use Port's AI to calculate blast radius for informed deployment decisions."
+  },
+  {
+   "name": "Tomosu AI Blog Post",
+   "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html",
+   "description": "Blog post providing a detailed guide on how to assess the blast radius of a code change."
+  }
+ ]
+}

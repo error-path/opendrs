@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://ca.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approve | Docs",
+     "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 5,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve & YOLO Mode",
+     "url": "https://docs.cline.bot/features/auto-approve"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-approve, new report gadget, & more",
+     "url": "https://confluence.atlassian.com/servicedeskcloud/blog/2017/02/auto-approve-new-report-gadget-more"
+    },
+    {
+     "rank": 8,
+     "title": "How do we auto-approve and merge 60% of PRs?",
+     "url": "https://swizec.com/blog/how-do-we-auto-approve-and-merge-60p-of-prs"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-approve return requests, with Mechanic.",
+     "url": "https://tasks.mechanic.dev/auto-approve-return-requests"
+    },
+    {
+     "rank": 10,
+     "title": "Turning on Auto Approve: How and Why",
+     "url": "https://help.conexiom.com/knowledge-base/turning-on-auto-approve-how-and-why"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for auto-approving pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/auto-approve"
+    },
+    {
+     "rank": 2,
+     "title": "Can you use GitHub Action account to approve PRs? #27090",
+     "url": "https://github.com/orgs/community/discussions/27090"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Approve Pull Requests",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "Dileep Kumar Jami",
+     "url": "https://medium.com/@dileepkumarjami/auto-approve-and-merge-pull-requests-by-dependabot-using-github-actions-468557967fa4"
+    },
+    {
+     "rank": 5,
+     "title": "Open in app",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 6,
+     "title": "1 Answer - 1",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Actions Auto Pull Request",
+     "url": "https://fluxcd.io/flux/use-cases/gh-actions-auto-pr/"
+    },
+    {
+     "rank": 8,
+     "title": "Automatic pull request review · Actions",
+     "url": "https://github.com/marketplace/actions/automatic-pull-request-review"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-approving Pull Requests",
+     "url": "https://projen.io/docs/integrations/github/auto-approve/"
+    },
+    {
+     "rank": 10,
+     "title": "How can I get a workflow to run automatically each time a PR is created or updated?",
+     "url": "https://www.reddit.com/r/github/comments/1c4smzd/how_can_i_get_a_workflow_to_run_automatically/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://ca.trustpilot.com/review/autoapprove.com",
+  "https://bob.ibm.com/docs/ide/features/auto-approving-actions",
+  "https://github.com/marketplace/actions/auto-approve",
+  "https://github.com/orgs/community/discussions/27090"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub Actions for auto-approving pull requests",
+   "url": "https://github.com/marketplace/actions/auto-approve",
+   "description": "GitHub Actions for auto-approving pull requests."
+  },
+  {
+   "name": "Auto Approve Pull Requests",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "Automatically approve pull requests using GitHub Actions."
+  },
+  {
+   "name": "Auto Approve · Actions · GitHub Marketplace",
+   "url": "https://github.com/marketplace/actions/auto-approve",
+   "description": "Automatically approve pull requests with this GitHub Action."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius - Series: Agentic Engineering Framework",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It - Riftmap",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering/"
+    }
+   ]
+  },
+  {
+   "query": "Code impact analysis tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "PR Agent: The Original Open-Source PR Reviewer. This project is not ...",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 3,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub Copilot code review",
+     "url": "https://docs.github.com/copilot/concepts/agents/code-review"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update)",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 7,
+     "title": "7 tools for code review engineers (GitHub edition)",
+     "url": "https://blog.codacy.com/7-tools-code-review-engineers-github"
+    },
+    {
+     "rank": 8,
+     "title": "kodustech/awesome-code-review-tools",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 10,
+     "title": "8 code review tools for achieving a clean and efficient workflow - Graphite",
+     "url": "https://graphite.com/guides/code-review-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://sourcegraph.com/blog/automated-code-review-tools",
+  "https://github.com/The-PR-Agent/pr-agent"
+ ],
+ "recommendations": [
+  {
+   "name": "amitgambhir/blast-radius-analyzer",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made."
+  },
+  {
+   "name": "Claude skill / plugin install guide",
+   "url": "https://claudecowork.im/resources/blast-radius-reviewer",
+   "description": "Blast Radius Reviewer is a Claude skill/plugin that helps in analyzing the impact of code changes."
+  },
+  {
+   "name": "GitHub Copilot code review",
+   "url": "https://docs.github.com/copilot/concepts/agents/code-review",
+   "description": "GitHub Copilot provides AI-powered code review for PRs, helping to identify potential issues and suggest fixes."
+  }
+ ]
+}

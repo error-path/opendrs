@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "What's a Merge Queue and Why Use it? : r/github",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You ...",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-merge failure for repositories with merge queues - Bug Reports",
+     "url": "https://forum.cursor.com/t/auto-merge-failure-for-repositories-with-merge-queues/163624"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Queue | Repositories",
+     "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Introducing the Merge Queue",
+     "url": "https://shopify.engineering/introducing-the-merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "Does \"Branch out of date with Base Branch\" cause issues with Merge ...",
+     "url": "https://stackoverflow.com/questions/77239986/does-branch-out-of-date-with-base-branch-cause-issues-with-merge-queues"
+    },
+    {
+     "rank": 8,
+     "title": "Auto-merge \"Changes must be made through the merge queue\" on ...",
+     "url": "https://github.com/renovatebot/renovate/discussions/25065"
+    },
+    {
+     "rank": 9,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Merge Queue Explained — Stop the PR “Up to Date” Merge Race ...",
+     "url": "https://www.youtube.com/watch?v=vDQ2IG5u1t8"
+    }
+   ]
+  },
+  {
+   "query": "GitHub integrations for risk-based auto-merge",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "Why do auto merge workflows become risky when they rely on Dependabot ...",
+     "url": "https://nhimg.org/faq/why-do-auto-merge-workflows-become-risky-when-they-rely-on-dependabot-identity-a/"
+    },
+    {
+     "rank": 3,
+     "title": "Mic92/auto-merge: A GitHub action that will automatically approve and ...",
+     "url": "https://github.com/Mic92/auto-merge"
+    },
+    {
+     "rank": 4,
+     "title": "v2-phase-12: Auto-merge gate and human escalation #39",
+     "url": "https://github.com/ruromero/la-fabriquilla/issues/39"
+    },
+    {
+     "rank": 5,
+     "title": "How to Set Up Auto-Merge in GitHub Actions",
+     "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view"
+    },
+    {
+     "rank": 6,
+     "title": "Automerge Dependabot PRs on GitHub",
+     "url": "https://rednafi.com/misc/automerge-dependabot-prs-on-github/"
+    },
+    {
+     "rank": 7,
+     "title": "[RFC] Enable GitHub \"auto-merge\" feature",
+     "url": "https://discourse.llvm.org/t/rfc-enable-github-auto-merge-feature/87547"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub Auto-Merge: A Critical Gap in Engineering Quality Metrics",
+     "url": "https://devactivity.com/insights/github-auto-merge-a-critical-gap-in-engineering-quality-metrics/"
+    },
+    {
+     "rank": 9,
+     "title": "Cascading Auto-Merge Action - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/cascading-auto-merge-action"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Auto Merge: Good Uses and the Stale Approval Trap - Pyor",
+     "url": "https://pyor.review/blog/github-auto-merge"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+  "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/",
+  "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+  "https://nhimg.org/faq/why-do-auto-merge-workflows-become-risky-when-they-rely-on-dependabot-identity-a/",
+  "https://github.com/Mic92/auto-merge"
+ ],
+ "recommendations": [
+  {
+   "name": "Mergify",
+   "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+   "description": "Mergify is a tool that allows you to configure risk-based auto-merge policies for your GitHub repositories, ensuring that low-risk pull requests are automatically merged while holding high-risk ones for human review."
+  },
+  {
+   "name": "GitHub Actions with a custom workflow",
+   "url": "https://github.com/Mic92/auto-merge",
+   "description": "You can create a custom GitHub Actions workflow that uses a combination of checks and rules to determine the risk level of a pull request and decide whether to automatically merge it or hold it for human review."
+  },
+  {
+   "name": "Merge Queue feature in GitHub",
+   "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+   "description": "GitHub's native Merge Queue feature allows you to enable auto-merge for pull requests, which will automatically merge them when all required reviews and status checks pass, helping to streamline your workflow."
+  }
+ ]
+}

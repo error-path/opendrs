@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius - Series: Agentic Engineering Framework",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius Claude Code Skill | Risk & Impact Analysis",
+     "url": "https://mcpmarket.com/tools/skills/blast-radius-analysis-1"
+    }
+   ]
+  },
+  {
+   "query": "Code review tools and their features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "What are the most important features for code review tools?",
+     "url": "https://about.gitlab.com/topics/version-control/what-are-best-code-review-tools-features/"
+    },
+    {
+     "rank": 4,
+     "title": "Best Code Review Tools Reviews 2026 | Gartner Peer Insights",
+     "url": "https://www.gartner.com/reviews/market/code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "7 Code Review Tools to Balance Quality and Speed",
+     "url": "https://www.atlassian.com/blog/loom/code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "The Best Code Review Tools of 2026",
+     "url": "https://www.aikido.dev/blog/best-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs"
+    },
+    {
+     "rank": 8,
+     "title": "What Is Code Review? | Types, Process, and Tools Guide",
+     "url": "https://www.sonarsource.com/resources/library/code-review/"
+    },
+    {
+     "rank": 9,
+     "title": "What Is AI Code Review? Tools, Benefits & Best Practices",
+     "url": "https://www.mend.io/blog/ai-code-review-technologies-challenges-best-practices/"
+    },
+    {
+     "rank": 10,
+     "title": "What tools are you using for Code Review? Any one used AI ...",
+     "url": "https://www.reddit.com/r/AskProgramming/comments/1fi3xld/what_tools_are_you_using_for_code_review_any_one/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://deepsource.com/resources/ai-code-review-tools",
+  "https://sourcegraph.com/blog/automated-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Blast Radius Analyzer by Amit Gambhir",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made."
+  },
+  {
+   "name": "Port's AI for Calculating Blast Radius",
+   "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+   "description": "A guide on how to use Port's AI to calculate blast radius for assessing risk, notifying teams, and planning rollbacks."
+  },
+  {
+   "name": "DeepSource AI Code Review Tools",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A list of 7 AI code review tools, compared based on detection accuracy, signal-to-noise ratio, platform scope, and total cost."
+  }
+ ]
+}

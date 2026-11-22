@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 7,
+     "title": "Open source maintainers are drowning in AI-generated pull ...",
+     "url": "https://thenewstack.io/ai-generated-code-crisis/"
+    },
+    {
+     "rank": 8,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects"
+    },
+    {
+     "rank": 9,
+     "title": "AI vs Human Code Generation Report",
+     "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+    },
+    {
+     "rank": 10,
+     "title": "Code Review Papers",
+     "url": "https://naist-se.github.io/code-review/publications/"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for predicting defects in pull requests from git history based on historical data analysis",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best Tools to Predict Bug-Prone Files (2026) - Repowise",
+     "url": "https://repowise.dev/blog/comparisons/best-bug-prone-file-prediction-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Git History Analyzer and Code Quality Predictor",
+     "url": "https://github.com/marketplace/actions/git-history-analyzer-and-code-quality-predictor"
+    },
+    {
+     "rank": 3,
+     "title": "Commitscape: open source git history analysis tool",
+     "url": "https://pixelactstudio.com/work/commitscape"
+    },
+    {
+     "rank": 4,
+     "title": "commit-prophet: I Built a Tool That Predicts Buggy Files Using Git History",
+     "url": "https://dev.to/lakshmisravyavedantham/commit-prophet-i-built-a-tool-that-predicts-buggy-files-using-git-history-35mk"
+    },
+    {
+     "rank": 5,
+     "title": "I Built Git-Statistic: A Lightweight Git Repo Analysis Tool Inspired by GitStats",
+     "url": "https://www.reddit.com/r/rust/comments/1g47gcy/i_built_gitstatistic_a_lightweight_git_repo/"
+    },
+    {
+     "rank": 6,
+     "title": "What statistical tools exist for analyzing a git repository?",
+     "url": "https://www.quora.com/What-statistical-tools-exist-for-analyzing-a-git-repository"
+    },
+    {
+     "rank": 7,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 10,
+     "title": "Git Metadata Analysis Tools: Mining Insights from Your Repository",
+     "url": "https://codepulsehq.com/guides/git-metadata-analysis-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2206.09967v1",
+  "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://repowise.dev/blog/comparisons/best-bug-prone-file-prediction-tools",
+  "https://github.com/marketplace/actions/git-history-analyzer-and-code-quality-predictor"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "PR-SZZ is an updated version of the SZZ algorithm that utilizes pull requests to support the tracing of defects in software repositories."
+  },
+  {
+   "name": "Git History Analyzer and Code Quality Predictor",
+   "url": "https://github.com/marketplace/actions/git-history-analyzer-and-code-quality-predictor",
+   "description": "This GitHub Action analyzes git history to predict code quality issues and suggest improvements using machine learning."
+  },
+  {
+   "name": "Commitscape",
+   "url": "https://pixelactstudio.com/work/commitscape",
+   "description": "Commitscape is an open-source git history analysis tool that helps in identifying bug-prone files and predicting potential issues."
+  }
+ ]
+}

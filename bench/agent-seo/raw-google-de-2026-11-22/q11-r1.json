@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 3,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects"
+    },
+    {
+     "rank": 4,
+     "title": "Open source was not ready for AI-speed contributions",
+     "url": "https://frenck.dev/open-source-was-not-ready-for-ai-speed-contributions/"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "Pull requests · Riteshgoenka/software-defect-prediction",
+     "url": "https://github.com/Riteshgoenka/software-defect-prediction/pulls"
+    },
+    {
+     "rank": 7,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 8,
+     "title": "Pull request risk prediction for bug-introducing changes",
+     "url": "https://patents.google.com/patent/US11645188B1/en"
+    },
+    {
+     "rank": 9,
+     "title": "AI vs Human Code Generation Report",
+     "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+    },
+    {
+     "rank": 10,
+     "title": "E-PRedictor: an approach for early prediction of pull request acceptance",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    }
+   ]
+  },
+  {
+   "query": "Evaluating the effectiveness of PR-SZZ and Pull request risk prediction for bug-introducing changes in open-source projects",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "(PDF) A Framework for Evaluating the Results of the SZZ Approach ...",
+     "url": "https://www.researchgate.net/publication/309021887_A_Framework_for_Evaluating_the_Results_of_the_SZZ_Approach_for_Identifying_Bug-Introducing_Changes"
+    },
+    {
+     "rank": 3,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories"
+    },
+    {
+     "rank": 4,
+     "title": "[PDF] A Framework for Evaluating the Results of the SZZ Approach for ...",
+     "url": "https://www.semanticscholar.org/paper/A-Framework-for-Evaluating-the-Results-of-the-SZZ-Costa-McIntosh/5e47e7c5ca3d1adb4f6283395630b01047de4d84"
+    },
+    {
+     "rank": 5,
+     "title": "Pull request risk prediction for bug-introducing changes",
+     "url": "https://patents.google.com/patent/US11645188B1/en"
+    },
+    {
+     "rank": 6,
+     "title": "A Framework for Evaluating the Results of the SZZ Approach ...",
+     "url": "https://www.computer.org/csdl/journal/ts/2017/07/07588121/13rRUyeCkc1"
+    },
+    {
+     "rank": 7,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/abs/2206.09967"
+    },
+    {
+     "rank": 8,
+     "title": "A Framework for Evaluating the Results of the SZZ Approach ...",
+     "url": "https://rebels.cs.uwaterloo.ca/journalpaper/2016/09/29/a-framework-for-evaluating-the-results-of-the-szz-approach-for-identifying-bug-introducing-changes.html"
+    },
+    {
+     "rank": 9,
+     "title": "A Framework for Evaluating the Results of the SZZ Approach ...",
+     "url": "https://danielcalencar.github.io/papers/TSE-Danieletal-2016.pdf"
+    },
+    {
+     "rank": 10,
+     "title": "(PDF) SZZ in the time of Pull Requests",
+     "url": "https://www.researchgate.net/publication/363363376_SZZ_in_the_time_of_Pull_Requests"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2206.09967v1",
+  "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84",
+  "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects",
+  "https://www.researchgate.net/publication/309021887_A_Framework_for_Evaluating_the_Results_of_the_SZZ_Approach_for_Identifying_Bug-Introducing_Changes",
+  "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "PR-SZZ is an open-source tool that uses pull requests to support the tracing of defects in software repositories."
+  },
+  {
+   "name": "Pull request risk prediction for bug-introducing changes",
+   "url": "https://patents.google.com/patent/US11645188B1/en",
+   "description": "This patent describes a method for predicting the risk of pull requests introducing bugs, which can be used as a defect prediction tool."
+  },
+  {
+   "name": "E-PRedictor",
+   "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4",
+   "description": "E-PRedictor is an open-source tool that uses machine learning to predict the acceptance of pull requests in open-source projects."
+  }
+ ]
+}

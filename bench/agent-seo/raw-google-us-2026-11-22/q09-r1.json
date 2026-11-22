@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What Is a Code Review MCP Server?",
+     "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/"
+    },
+    {
+     "rank": 2,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 4,
+     "title": "Using the GitHub and Jira MCP servers for engineering reporting",
+     "url": "https://www.swarmia.com/blog/github-jira-mcp-servers-engineering-reporting/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 6,
+     "title": "What Is GitHub MCP Server? Definition & Examples",
+     "url": "https://nhimg.org/glossary/github-mcp-server/"
+    },
+    {
+     "rank": 7,
+     "title": "A practical guide on how to use the GitHub MCP server",
+     "url": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/"
+    },
+    {
+     "rank": 8,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 9,
+     "title": "MCP Security Best Practices: 2026 Checklist for MCP Servers",
+     "url": "https://corgea.com/learn/mcp-security-best-practices"
+    },
+    {
+     "rank": 10,
+     "title": "MCP Security Exposed: What You Need to Know Now",
+     "url": "https://live.paloaltonetworks.com/t5/community-blogs/mcp-security-exposed-what-you-need-to-know-now/ba-p/1227143"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of using a MCP server for pull request risk assessment, and how do they compare to other tools in the market?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What is Model Context Protocol (MCP)? A guide",
+     "url": "https://cloud.google.com/discover/what-is-model-context-protocol"
+    },
+    {
+     "rank": 2,
+     "title": "11 Emerging AI Security Risks with MCP (Model Context Protocol)",
+     "url": "https://checkmarx.com/zero-post/11-emerging-ai-security-risks-with-mcp-model-context-protocol/"
+    },
+    {
+     "rank": 3,
+     "title": "MCP vs API Explained: Do You Really Need MCP?",
+     "url": "https://www.youtube.com/watch?v=kn6dxL53NkM"
+    },
+    {
+     "rank": 4,
+     "title": "Model Context Protocol: Security Risks & Mitigations",
+     "url": "https://socprime.com/blog/mcp-security-risks-and-mitigations/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Is Costing You 37% More Tokens Than Necessary : r/ClaudeAI",
+     "url": "https://www.reddit.com/r/ClaudeAI/comments/1rzz784/mcp_is_costing_you_37_more_tokens_than_necessary/"
+    },
+    {
+     "rank": 6,
+     "title": "MCP vs CLI Tools: Why Security Changes the Answer",
+     "url": "https://stacklok.com/blog/mcp-vs-cli-tools-why-security-changes-the-answer/"
+    },
+    {
+     "rank": 7,
+     "title": "9 examples of MCP servers that can power your AI agents",
+     "url": "https://www.merge.dev/blog/mcp-server-examples"
+    },
+    {
+     "rank": 8,
+     "title": "Learn What Is MCP and How It Works",
+     "url": "https://www.backslash.security/blog/what-is-mcp-model-context-protocol"
+    },
+    {
+     "rank": 9,
+     "title": "5 Essential MCP Servers Every Developer Should Know",
+     "url": "https://medium.com/@riccardo.tartaglia/5-essential-mcp-servers-every-developer-should-know-72e828cae18e"
+    },
+    {
+     "rank": 10,
+     "title": "MCP tool design: Practical approaches and tradeoffs",
+     "url": "https://aws.amazon.com/blogs/machine-learning/mcp-tool-design-practical-approaches-and-tradeoffs/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+  "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+  "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/",
+  "https://cloud.google.com/discover/what-is-model-context-protocol",
+  "https://checkmarx.com/zero-post/11-emerging-ai-security-risks-with-mcp-model-context-protocol/"
+ ],
+ "recommendations": [
+  {
+   "name": "SonarQube",
+   "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+   "description": "SonarQube is a platform that integrates code review and analysis into your development process, providing a comprehensive solution for assessing the risk of code changes and pull requests."
+  },
+  {
+   "name": "GitHub MCP Server",
+   "url": "https://www.swarmia.com/blog/github-jira-mcp-servers-engineering-reporting/",
+   "description": "GitHub MCP Server is a tool that helps in managing and reviewing code changes by providing a secure and efficient platform for collaboration and risk assessment."
+  },
+  {
+   "name": "MCP Security Project",
+   "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+   "description": "The MCP Security Project on GitHub provides a platform for developers and security experts to collaborate on enhancing the security of AI models and applications, including risk assessment for code changes."
+  }
+ ]
+}

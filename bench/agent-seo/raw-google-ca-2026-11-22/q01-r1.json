@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "autoapprove alternatives",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What are realistic auto refinance options with bad credit?",
+     "url": "https://www.reddit.com/r/BeforeyouPurchase/comments/1vzawdk/what_are_realistic_auto_refinance_options_with/"
+    },
+    {
+     "rank": 2,
+     "title": "Best Auto Loan Refinance Companies",
+     "url": "https://www.instagram.com/popular/best-auto-loan-refinance-companies/"
+    },
+    {
+     "rank": 3,
+     "title": "Best Auto Loan Refinance Companies [Refi Your Car] - SavingFreak.com",
+     "url": "https://www.savingfreak.com/car-loan-refinancing/best-companies/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve Vehicle Refinance Review",
+     "url": "https://www.banks.com/reviews/autoapprove-vehicle-refinance/"
+    },
+    {
+     "rank": 5,
+     "title": "Best Auto Loan Companies for 2026 - SuperMoney",
+     "url": "https://www.supermoney.com/auto-financing-companies"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve Vs Caribou",
+     "url": "https://www.instagram.com/popular/auto-approve-vs-caribou/"
+    },
+    {
+     "rank": 7,
+     "title": "Best Auto Refinance Companies Reddit",
+     "url": "https://www.facebook.com/fb-answers/best-auto-refinance-companies-reddit/"
+    },
+    {
+     "rank": 8,
+     "title": "Top Picks For Best Auto Refinance Companies This 2022",
+     "url": "https://www.youngupstarts.com/2022/04/01/top-picks-for-best-auto-refinance-companies-this-2022/"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve vs Carvana",
+     "url": "https://several.com/auto-loans/comparison/auto-approve-vs-carvana"
+    }
+   ]
+  },
+  {
+   "query": "Comparing Auto Approve Tools: User Reviews and Recommendations",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-review",
+     "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review"
+    },
+    {
+     "rank": 2,
+     "title": "AI Code Review Tools That Approve Pull Requests, Compared",
+     "url": "https://warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests"
+    },
+    {
+     "rank": 3,
+     "title": "Manage approvals and permissions",
+     "url": "https://code.visualstudio.com/docs/agents/run/approvals"
+    },
+    {
+     "rank": 4,
+     "title": "Cursor Auto-review in 2026: What It Does, How to Configure It, and Is ...",
+     "url": "https://www.totalum.app/blog/cursor-auto-review-totalum"
+    },
+    {
+     "rank": 5,
+     "title": "Auto Approve: Auto Loan Review",
+     "url": "https://www.bankrate.com/loans/auto-loans/reviews/auto-approve/"
+    },
+    {
+     "rank": 6,
+     "title": "Auto mode is now the default in Claude Code for Pro, Max, Ultra ...",
+     "url": "https://claude.com/resources/articles/auto-mode-default-in-claude-code"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-approve | Docs",
+     "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"
+    },
+    {
+     "rank": 8,
+     "title": "5 Social Media Approval Tools for Client Sign-Off (2026) | Sequence",
+     "url": "https://sequencesocial.com/resources/social-media-client-approval-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://ca.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 10,
+     "title": "Top 5 AI code review tools in 2026",
+     "url": "https://blog.logrocket.com/ai-code-review-tools-2026/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/BeforeyouPurchase/comments/1vzawdk/what_are_realistic_auto_refinance_options_with/",
+  "https://www.instagram.com/popular/best-auto-loan-refinance-companies/",
+  "https://www.savingfreak.com/car-loan-refinancing/best-companies/",
+  "https://learn.chatgpt.com/docs/sandboxing/auto-review",
+  "https://warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve",
+   "url": "https://www.bankrate.com/loans/auto-loans/reviews/auto-approve/",
+   "description": "A website offering auto loan refinancing with expert loan consultants and flexible payment options."
+  },
+  {
+   "name": "Auto mode is now the default in Claude Code for Pro, Max, Ultra ...",
+   "url": "https://claude.com/resources/articles/auto-mode-default-in-claude-code",
+   "description": "Claude Code's auto mode feature for automated code reviews and approvals."
+  },
+  {
+   "name": "Auto-approve | Docs",
+   "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions",
+   "description": "IBM's documentation on auto-approving actions in their integrated development environment."
+  }
+ ]
+}

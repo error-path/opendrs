@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+     "rank": 3,
+     "title": "How to get a Claude code review on every pull request with just your Pro/ ...",
+     "url": "https://www.reddit.com/r/ClaudeAI/comments/1xmop2l/how_to_get_a_claude_code_review_on_every_pull/"
+    },
+    {
+     "rank": 4,
+     "title": "tag1consulting/claude-comprehensive-review",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 5,
+     "title": "Best Claude Code Review Skills & Tools in 2026",
+     "url": "https://agentskillshub.top/best/code-review/"
+    },
+    {
+     "rank": 6,
+     "title": "Claude AI Code Review",
+     "url": "https://marketplace.visualstudio.com/items?itemName=TsezariMshvenieradzeTfsAIReviewTask.ai-pr-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Introducing Code Review, a new feature for Claude Code. : r/ClaudeAI",
+     "url": "https://www.reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/"
+    },
+    {
+     "rank": 8,
+     "title": "Claude Code Review: How It Works and Where Cosmos Wins",
+     "url": "https://www.augmentcode.com/guides/claude-code-review-how-it-works"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 10,
+     "title": "Claude Code Review Reaches General Availability - AI Catchup",
+     "url": "https://aicatchup.com/news/claude-code-review-general-availability"
+    }
+   ]
+  },
+  {
+   "query": "Best GitHub Actions for code review and risk scoring",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PrePr Risk Analysis · Actions",
+     "url": "https://github.com/marketplace/actions/prepr-risk-analysis"
+    },
+    {
+     "rank": 2,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Code Quality",
+     "url": "https://docs.github.com/en/code-security/concepts/code-quality/code-quality"
+    },
+    {
+     "rank": 4,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 5,
+     "title": "How to Automate Code Reviews Using GitHub Actions for Better Workflow",
+     "url": "https://github.com/orgs/community/discussions/178963"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools Tested on Real PRs (2026) - Morph",
+     "url": "https://www.morphllm.com/github-ai-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "5 Effective Third-Party GitHub Actions Governance Best Practices",
+     "url": "https://www.stepsecurity.io/blog/third-party-github-actions-governance-best-practices"
+    },
+    {
+     "rank": 8,
+     "title": "How to Add AI Code Reviews to GitHub Actions (OpenAI + CI/CD)",
+     "url": "https://www.youtube.com/watch?v=58avvC_IKW0"
+    },
+    {
+     "rank": 9,
+     "title": "Part 1: Attackers Love Your GitHub Actions Too",
+     "url": "https://orca.security/resources/blog/github-actions-security-risks/"
+    },
+    {
+     "rank": 10,
+     "title": "AI Code Review in GitHub Actions: Models and Reviewers",
+     "url": "https://starsling.dev/ai-code-review-github-actions"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://code.claude.com/docs/en/github-actions",
+  "https://www.reddit.com/r/ClaudeAI/comments/1xmop2l/how_to_get_a_claude_code_review_on_every_pull/",
+  "https://github.com/marketplace/actions/prepr-risk-analysis",
+  "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+ ],
+ "recommendations": [
+  {
+   "name": "PrePr Risk Analysis",
+   "url": "https://github.com/marketplace/actions/prepr-risk-analysis",
+   "description": "A GitHub Action that analyzes your git diff and predicts PR merge risk before code review begins."
+  },
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "An article explaining how to use AI to automatically score the risk of a pull request."
+  },
+  {
+   "name": "Claude Code GitHub Actions",
+   "url": "https://code.claude.com/docs/en/github-actions",
+   "description": "A Claude Code plugin that allows you to run Claude Code inside your repository's workflows."
+  }
+ ]
+}

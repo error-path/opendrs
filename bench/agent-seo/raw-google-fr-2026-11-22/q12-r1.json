@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You ...",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub merge queue: how it works and how to set it up",
+     "url": "https://www.cubic.dev/blog/github-merge-queue"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-merge no longer adds PRs to the merge queue once requirements are met (since ~ ...",
+     "url": "https://github.com/orgs/community/discussions/209345"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-merge failure for repositories with merge queues - Bug Reports",
+     "url": "https://forum.cursor.com/t/auto-merge-failure-for-repositories-with-merge-queues/163624"
+    },
+    {
+     "rank": 6,
+     "title": "A bypass actor can merge a PR without approval, but auto-merge and the merge queue never let it",
+     "url": "https://github.com/orgs/community/discussions/208718"
+    },
+    {
+     "rank": 7,
+     "title": "Should you turn on auto-merge for dependency update pull requests?",
+     "url": "https://safeguard.sh/resources/blog/should-i-turn-on-dependabot-auto-merge-for-dependency-updates"
+    },
+    {
+     "rank": 8,
+     "title": "Introducing the Merge Queue",
+     "url": "https://shopify.engineering/introducing-the-merge-queue"
+    },
+    {
+     "rank": 9,
+     "title": "What's a Merge Queue and Why Use it? : r/github",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Auto Merge: Good Uses and the Stale Approval Trap - Pyor",
+     "url": "https://pyor.review/blog/github-auto-merge"
+    }
+   ]
+  },
+  {
+   "query": "Best GitHub tools for risk-based auto merge and merge queue management",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Managing a merge queue",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 2,
+     "title": "What tools and practices do you recommend for automating merges with GitLab and Jenkins?",
+     "url": "https://www.reddit.com/r/git/comments/1de1u81/what_tools_and_practices_do_you_recommend_for/"
+    },
+    {
+     "rank": 3,
+     "title": "What's a Merge Queue and Why Use it?",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You ...",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 5,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub Merge Queue Explained — Stop the PR “Up to Date” Merge Race ...",
+     "url": "https://www.youtube.com/watch?v=vDQ2IG5u1t8"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Merge Queue support",
+     "url": "https://roadmap.codacy.com/c/189-github-merge-queue-support"
+    },
+    {
+     "rank": 8,
+     "title": "Github struggling under high PR throughput? : r/devops",
+     "url": "https://www.reddit.com/r/devops/comments/1wjtf3u/github_struggling_under_high_pr_throughput/"
+    },
+    {
+     "rank": 9,
+     "title": "Our GitHub merge workflow",
+     "url": "https://authzed.com/blog/our-github-merge-workflow"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Merge Queue Alternatives: Trunk, Mergify, Aviator | Pyor",
+     "url": "https://pyor.review/blog/github-merge-queue-alternatives"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+  "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+  "https://www.cubic.dev/blog/github-merge-queue",
+  "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+  "https://www.reddit.com/r/git/comments/1de1u81/what_tools_and_practices_do_you_recommend_for/"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub Merge Queue",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+   "description": "GitHub's built-in merge queue feature that automatically merges low-risk pull requests and holds risky ones for human review."
+  },
+  {
+   "name": "Mergify",
+   "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+   "description": "A third-party tool that extends GitHub's auto-merge feature with more advanced risk-based merge queue management."
+  },
+  {
+   "name": "Trunk",
+   "url": "https://pyor.review/blog/github-merge-queue-alternatives",
+   "description": "An alternative tool that provides a risk-based merge queue and auto-merge capabilities for GitHub repositories."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What Is a Code Review MCP Server?",
+     "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/"
+    },
+    {
+     "rank": 2,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 4,
+     "title": "Using the GitHub and Jira MCP servers for engineering reporting",
+     "url": "https://www.swarmia.com/blog/github-jira-mcp-servers-engineering-reporting/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 6,
+     "title": "What Is GitHub MCP Server? Definition & Examples",
+     "url": "https://nhimg.org/glossary/github-mcp-server/"
+    },
+    {
+     "rank": 7,
+     "title": "A practical guide on how to use the GitHub MCP server",
+     "url": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/"
+    },
+    {
+     "rank": 8,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 9,
+     "title": "MCP Security Best Practices: 2026 Checklist for MCP Servers",
+     "url": "https://corgea.com/learn/mcp-security-best-practices"
+    },
+    {
+     "rank": 10,
+     "title": "MCP Security Exposed: What You Need to Know Now",
+     "url": "https://live.paloaltonetworks.com/t5/community-blogs/mcp-security-exposed-what-you-need-to-know-now/ba-p/1227143"
+    }
+   ]
+  },
+  {
+   "query": "Best MCP server tools for code review and risk assessment in 2023",
+   "results": [
+    {
+     "rank": 1,
+     "title": "The 3 MUST Have MCP Servers for Any AI Coding (and How to Use Them)",
+     "url": "https://www.youtube.com/watch?v=MBaTuJfICP4"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Building an AI-Powered Code Reviewer with MCP (Part 1) : r/devops",
+     "url": "https://www.reddit.com/r/devops/comments/1n0nyhv/building_an_aipowered_code_reviewer_with_mcp_part/"
+    },
+    {
+     "rank": 4,
+     "title": "5 Essential MCP Servers Every Developer Should Know",
+     "url": "https://medium.com/@riccardo.tartaglia/5-essential-mcp-servers-every-developer-should-know-72e828cae18e"
+    },
+    {
+     "rank": 5,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "praneybehl/code-review-mcp: An MCP server for code reviews using ...",
+     "url": "https://github.com/praneybehl/code-review-mcp"
+    },
+    {
+     "rank": 7,
+     "title": "Best Code Review Tools Reviews 2026 | Gartner Peer Insights",
+     "url": "https://www.gartner.com/reviews/market/code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best Security-Focused AI Code Review Tools",
+     "url": "https://www.greptile.com/content-library/best-security-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Best MCP Servers: 15 Must-Have Tools for Developers",
+     "url": "https://obot.ai/blog/top-15-mcp-servers/"
+    },
+    {
+     "rank": 10,
+     "title": "Risk assessment framework for open-source MCP servers",
+     "url": "https://arxiv.org/html/2603.10194v1"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+  "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+  "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/",
+  "https://www.youtube.com/watch?v=MBaTuJfICP4",
+  "https://mastra.ai/articles/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "SonarQube",
+   "url": "https://www.sonarsource.com/resources/library/code-review-mcp-server/",
+   "description": "A comprehensive code review MCP server for assessing code quality and security, integrated with various CI/CD workflows."
+  },
+  {
+   "name": "GitHub MCP Server",
+   "url": "https://www.swarmia.com/blog/github-jira-mcp-servers-engineering-reporting/",
+   "description": "A server designed specifically for GitHub that facilitates code review and risk assessment within engineering reporting."
+  },
+  {
+   "name": "praneybehl/code-review-mcp",
+   "url": "https://github.com/praneybehl/code-review-mcp",
+   "description": "A GitHub repository featuring an MCP server for code reviews using machine learning and AI to enhance code quality and security."
+  }
+ ]
+}

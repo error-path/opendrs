@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius - Series: Agentic Engineering Framework",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius Claude Code Skill | Risk & Impact Analysis",
+     "url": "https://mcpmarket.com/tools/skills/blast-radius-analysis-1"
+    }
+   ]
+  },
+  {
+   "query": "Code analysis tools for identifying dependencies between files in a project",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Dependency Analyzer - Visualize dependencies, find required files, ...",
+     "url": "https://www.mathworks.com/help/matlab/ref/dependencyanalyzer-app.html"
+    },
+    {
+     "rank": 2,
+     "title": "Tools/software for visualizing code structure/dependencies of large C project.",
+     "url": "https://www.reddit.com/r/embedded/comments/1025qfk/toolssoftware_for_visualizing_code/"
+    },
+    {
+     "rank": 3,
+     "title": "Tools to visualize the dependency graph between files of a github repo?",
+     "url": "https://www.reddit.com/r/vuejs/comments/taj015/tools_to_visualize_the_dependency_graph_between/"
+    },
+    {
+     "rank": 4,
+     "title": "Check build dependency between source files in Visual Studio project",
+     "url": "https://stackoverflow.com/questions/71226153/check-build-dependency-between-source-files-in-visual-studio-project"
+    },
+    {
+     "rank": 5,
+     "title": "Top 10 Code Analysis Tools in 2026",
+     "url": "https://cycode.com/blog/top-10-code-analysis-tools/"
+    },
+    {
+     "rank": 6,
+     "title": "Dependency Management Tools: Features & 6 Tools for 2026",
+     "url": "https://www.mend.io/blog/dependency-management-tools/"
+    },
+    {
+     "rank": 7,
+     "title": "Simple module dependency analysis",
+     "url": "https://forum.qt.io/topic/70055/simple-module-dependency-analysis"
+    },
+    {
+     "rank": 8,
+     "title": "Static analysis tools for all programming languages · GitHub",
+     "url": "https://github.com/david-a-wheeler/awesome-static-analysis"
+    },
+    {
+     "rank": 9,
+     "title": "Dependency Analysis for Large Codebases",
+     "url": "https://scitools.com/dependency-analysis"
+    },
+    {
+     "rank": 10,
+     "title": "Map dependencies with code maps - Visual Studio",
+     "url": "https://learn.microsoft.com/en-us/visualstudio/modeling/map-dependencies-across-your-solutions?view=visualstudio"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://www.mathworks.com/help/matlab/ref/dependencyanalyzer-app.html",
+  "https://www.reddit.com/r/embedded/comments/1025qfk/toolssoftware_for_visualizing_code/"
+ ],
+ "recommendations": [
+  {
+   "name": "amitgambhir/blast-radius-analyzer",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "A free, open-source AI tool that maps the technical and organizational blast radius of engineering decisions."
+  },
+  {
+   "name": "Dependency Analyzer",
+   "url": "https://www.mathworks.com/help/matlab/ref/dependencyanalyzer-app.html",
+   "description": "A MATLAB app for visualizing and analyzing dependencies among files, which can help identify how changes affect the codebase."
+  },
+  {
+   "name": "Blast Radius Reviewer — Claude skill / plugin install guide",
+   "url": "https://claudecowork.im/resources/blast-radius-reviewer",
+   "description": "A Claude skill that can help assess the blast radius of code changes and provide risk and impact analysis."
+  }
+ ]
+}

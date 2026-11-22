@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 2,
+     "title": "Any auto code review on merge request tool?",
+     "url": "https://www.reddit.com/r/gitlab/comments/1j05deh/any_auto_code_review_on_merge_request_tool/"
+    },
+    {
+     "rank": 3,
+     "title": "How to use ChatGPT to automatically review your pull requests",
+     "url": "https://www.reddit.com/r/softwaredevelopment/comments/13nvy6t/how_to_use_chatgpt_to_automatically_review_your/"
+    },
+    {
+     "rank": 4,
+     "title": "The End of Pull Requests: How AI Is Rewriting Code Collaboration",
+     "url": "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "Should AI-written fix PRs ever auto-merge? - Safeguard.sh",
+     "url": "https://safeguard.sh/resources/blog/should-ai-written-fix-prs-ever-auto-merge"
+    },
+    {
+     "rank": 7,
+     "title": "AI Coding Agents That QA and Auto-Merge Pull Requests",
+     "url": "https://www.youtube.com/shorts/Rg1VJkkn8CE"
+    },
+    {
+     "rank": 8,
+     "title": "How to Review AI-Generated Pull Requests (2026)",
+     "url": "https://www.aibuilderclub.com/blog/reviewing-ai-generated-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    }
+   ]
+  },
+  {
+   "query": "How do I evaluate and select the best AI code review tools for my team's needs in 2026?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Best AI Code Review Tools for Enterprise in 2026",
+     "url": "https://www.youtube.com/watch?v=bjKgCGeiQ_s"
+    },
+    {
+     "rank": 4,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Top 5 AI code review tools in 2026",
+     "url": "https://blog.logrocket.com/ai-code-review-tools-2026/"
+    },
+    {
+     "rank": 6,
+     "title": "Top AI Code Review Tools That Actually Catch Hard Bugs in 2026",
+     "url": "https://medium.com/@trelvek/top-ai-code-review-tools-that-actually-catch-hard-bugs-in-2026-59bd0864b841"
+    },
+    {
+     "rank": 7,
+     "title": "How to Evaluate AI Coding Tools Without Wasting 3 Months",
+     "url": "https://dev.to/klement_gunndu/how-to-evaluate-ai-coding-tools-without-wasting-3-months-d1g"
+    },
+    {
+     "rank": 8,
+     "title": "AI Code Review Benchmark 2026: Which Models Catch the Most Real ...",
+     "url": "https://macroscope.com/content/ai-code-review-benchmark-best-models"
+    },
+    {
+     "rank": 9,
+     "title": "AI Code Review Tools 2026 | How to Choose the Best",
+     "url": "https://www.sonarsource.com/resources/library/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "AI Code Review: Tools, Costs & Best Practices",
+     "url": "https://developex.com/blog/developers-guide-to-ai-code-review/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+  "https://www.reddit.com/r/gitlab/comments/1j05deh/any_auto_code_review_on_merge_request_tool/",
+  "https://www.reddit.com/r/softwaredevelopment/comments/13nvy6t/how_to_use_chatgpt_to_automatically_review_your/",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://deepsource.com/resources/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+   "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+   "description": "A detailed guide on automating pull request merges with policy, CI, merge queues, and human gates, emphasizing the importance of not letting AI press the merge button."
+  },
+  {
+   "name": "6 Best AI Code Review Tools for Pull Requests in 2026",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "A comparison of six AI code review tools, highlighting their capabilities and control over the review process, making it easier to choose the right tool for your team's needs."
+  },
+  {
+   "name": "7 Best AI Code Review Tools for 2026 — Compared Benchmarked",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A comprehensive benchmark evaluation of seven AI code review tools based on detection accuracy, signal-to-noise ratio, platform scope, and total cost, providing insights into their effectiveness."
+  }
+ ]
+}

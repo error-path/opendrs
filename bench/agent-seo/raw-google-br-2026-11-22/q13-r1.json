@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 2,
+     "title": "Looking for a tool to make reviewing huge pull requests bearable",
+     "url": "https://www.reddit.com/r/dotnet/comments/1xl0v7t/looking_for_a_tool_to_make_reviewing_huge_pull/"
+    },
+    {
+     "rank": 3,
+     "title": "Automatically merge verified and tested GitHub Pull Requests",
+     "url": "https://stackoverflow.com/questions/40391344/automatically-merge-verified-and-tested-github-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "AI Can Speed Up Code Review — but Merge Decisions Still Need ...",
+     "url": "https://medium.com/@mvtavares/ai-can-speed-up-code-review-but-merge-decisions-still-need-deterministic-guardrails-c9d6ec9325e6"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-Merge Pull Request · Actions",
+     "url": "https://github.com/marketplace/actions/auto-merge-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "Should an AI coding agent ever be allowed to merge its own PR?",
+     "url": "https://www.reddit.com/r/AI_Agents/comments/1wmvq2p/should_an_ai_coding_agent_ever_be_allowed_to/"
+    },
+    {
+     "rank": 7,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your ...",
+     "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/"
+    },
+    {
+     "rank": 9,
+     "title": "The End of Pull Requests: How AI Is Rewriting Code Collaboration",
+     "url": "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b"
+    },
+    {
+     "rank": 10,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    }
+   ]
+  },
+  {
+   "query": "Best practices for integrating AI in code review and auto-merge workflows in GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Configuring code review by GitHub Copilot",
+     "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+    },
+    {
+     "rank": 2,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 3,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your ...",
+     "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/"
+    },
+    {
+     "rank": 5,
+     "title": "Code review in the age of AI: Why developers will always own ...",
+     "url": "https://github.blog/ai-and-ml/generative-ai/code-review-in-the-age-of-ai-why-developers-will-always-own-the-merge-button/"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub AI Code Review: 8 Copilot PR Automation Features",
+     "url": "https://www.augmentcode.com/tools/github-copilot-ai-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub PR Review Agent: AI Code Review Automation",
+     "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more"
+    },
+    {
+     "rank": 8,
+     "title": "How to Automate Code Reviews Using GitHub Actions for Better Workflow",
+     "url": "https://github.com/orgs/community/discussions/178963"
+    },
+    {
+     "rank": 9,
+     "title": "How to Use AI in Code Review: Tools, Workflow, and Best Practices",
+     "url": "https://www.sigmabrowser.com/blog/what-you-need-to-know-about-integrating-ai-into-code-review-for-better-results"
+    },
+    {
+     "rank": 10,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+  "https://www.reddit.com/r/dotnet/comments/1xl0v7t/looking_for_a_tool_to_make_reviewing_huge_pull/",
+  "https://stackoverflow.com/questions/40391344/automatically-merge-verified-and-tested-github-pull-requests",
+  "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+ ],
+ "recommendations": [
+  {
+   "name": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+   "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+   "description": "A detailed guide on automating pull request merges with AI in enterprise settings, focusing on policy, CI, merge queues, and human oversight."
+  },
+  {
+   "name": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your ...",
+   "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/",
+   "description": "A guide on how to integrate GitHub Copilot for AI reviews and ensure safe auto-merge by blocking automatic merges unless all requirements are met."
+  },
+  {
+   "name": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+   "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow",
+   "description": "A step-by-step guide on setting up automated pull request reviews and safe auto-merge workflows using GitHub Actions and other tools."
+  }
+ ]
+}

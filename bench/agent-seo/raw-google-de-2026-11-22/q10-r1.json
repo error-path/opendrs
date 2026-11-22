@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Bottleneck Calculator for CPU & GPU | PC Gaming",
+     "url": "https://pc-builds.com/bottleneck-calculator/"
+    },
+    {
+     "rank": 2,
+     "title": "Bottleneck Rechner für CPU & GPU Leistungsprüfung",
+     "url": "https://www.iobit.com/de/bottleneck-rechner.php"
+    },
+    {
+     "rank": 3,
+     "title": "Bottleneck",
+     "url": "https://en.wikipedia.org/wiki/Bottleneck"
+    },
+    {
+     "rank": 4,
+     "title": "The Final Bottleneck",
+     "url": "https://lucumr.pocoo.org/2026/2/13/the-final-bottleneck/"
+    },
+    {
+     "rank": 5,
+     "title": "Understanding is the new bottleneck",
+     "url": "https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html"
+    },
+    {
+     "rank": 6,
+     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
+     "url": "https://www.youtube.com/watch?v=LlgiOCmFG_w"
+    },
+    {
+     "rank": 7,
+     "title": "Late-game players, what is your bottleneck for upgrading characters?",
+     "url": "https://www.reddit.com/r/WH40KTacticus/comments/1ix4by1/lategame_players_what_is_your_bottleneck_for/"
+    },
+    {
+     "rank": 8,
+     "title": "Buffer or Bottleneck? Employment Exposure to Generative AI and the ...",
+     "url": "https://www.ilo.org/publications/buffer-or-bottleneck-employment-exposure-generative-ai-and-digital-divide"
+    },
+    {
+     "rank": 9,
+     "title": "Bottleneck Music (@bottleneckmusic)",
+     "url": "https://www.facebook.com/bottleneckmusic/"
+    },
+    {
+     "rank": 10,
+     "title": "Writing code isn't the bottleneck anymore, reading is",
+     "url": "https://threedots.tech/post/understanding-code-is-bottleneck/"
+    }
+   ]
+  },
+  {
+   "query": "code review tools for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    },
+    {
+     "rank": 3,
+     "title": "AI Code Review | Greptile | Catch More Bugs",
+     "url": "https://www.greptile.com/"
+    },
+    {
+     "rank": 4,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "How I Review PRs with AI — Without Losing My Own Judgment",
+     "url": "https://medium.com/@rajkundalia/how-i-review-prs-with-ai-without-losing-my-own-judgment-f930ad30dc60"
+    },
+    {
+     "rank": 6,
+     "title": "AI Code Review for Pull Requests With Gitar",
+     "url": "https://www.sonarsource.com/solutions/code-review/ai/"
+    },
+    {
+     "rank": 7,
+     "title": "How to review AI generated PRs",
+     "url": "https://thoughtbot.com/blog/how-to-review-ai-generated-prs"
+    },
+    {
+     "rank": 8,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs"
+    },
+    {
+     "rank": 10,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://pc-builds.com/bottleneck-calculator/",
+  "https://www.iobit.com/de/bottleneck-rechner.php",
+  "https://en.wikipedia.org/wiki/Bottleneck",
+  "https://deepsource.com/resources/ai-code-review-tools",
+  "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+ ],
+ "recommendations": [
+  {
+   "name": "DeepSource",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A hybrid static analysis + AI review engine for teams that want both accuracy and intelligence in their code review process."
+  },
+  {
+   "name": "CodeRabbit",
+   "url": "https://www.deepsource.com/resources/ai-code-review-tools",
+   "description": "An AI-driven code review tool that helps teams to review code faster and more accurately."
+  },
+  {
+   "name": "Greptile",
+   "url": "https://www.greptile.com/",
+   "description": "An AI-powered code review tool that helps developers find and fix issues in their code with minimal effort."
+  }
+ ]
+}

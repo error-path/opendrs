@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "autoapprove alternatives",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Refinance Your Car | Lower Your Payments | Auto Refinance",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto refinancing options and how to decide : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1sbhewe/auto_refinancing_options_and_how_to_decide/"
+    },
+    {
+     "rank": 3,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    },
+    {
+     "rank": 4,
+     "title": "5 Best Auto Refinance Companies of November 2026 | Money",
+     "url": "https://money.com/best-auto-refinance/"
+    },
+    {
+     "rank": 5,
+     "title": "Best Auto Refinance Loans & Rates of 2026",
+     "url": "https://www.cars.com/auto-loans/money/best-auto-loans/"
+    },
+    {
+     "rank": 6,
+     "title": "Best Auto Refinance Companies of 2026",
+     "url": "https://www.youtube.com/watch?v=ef2KWyEfcE0"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    },
+    {
+     "rank": 9,
+     "title": "Best Auto Refinance Loans and Rates of 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/best/refinance-car-loan"
+    },
+    {
+     "rank": 10,
+     "title": "The BEST Auto Refinance Options (LendingTree, RefiJet, myAutoloan)",
+     "url": "https://www.youtube.com/watch?v=PTlFFM7COyE"
+    }
+   ]
+  },
+  {
+   "query": "Best auto refinance tools for individuals",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best Auto Refinance Loans and Rates of 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/best/refinance-car-loan"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Refinancing Resources",
+     "url": "https://www.lendingtree.com/auto/refinance/resources/"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Refinance Calculator",
+     "url": "https://www.navyfederal.org/makingcents/tools/auto-refinance-calculator.html"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Refinance Calculator",
+     "url": "https://www.bankrate.com/loans/auto-loans/refinance-calculator/"
+    },
+    {
+     "rank": 5,
+     "title": "What companies would you recommend to refinance my car loan with?",
+     "url": "https://www.reddit.com/r/debtfree/comments/1tthedg/what_companies_would_you_recommend_to_refinance/"
+    },
+    {
+     "rank": 6,
+     "title": "What's the best way to refinance an auto loan? Are the online brokers reputable?",
+     "url": "https://www.reddit.com/r/personalfinance/comments/l3zh5x/whats_the_best_way_to_refinance_an_auto_loan_are/"
+    },
+    {
+     "rank": 7,
+     "title": "Which are some good companies for refinancing an auto loan?",
+     "url": "https://www.quora.com/Which-are-some-good-companies-for-refinancing-an-auto-loan"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Loan Refinance Calculator",
+     "url": "https://landmarkcu.com/calculators/auto-personal-loan/auto-refinance/"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Refinance Calculator",
+     "url": "https://www.scucu.com/auto-refinance-calculator.html"
+    },
+    {
+     "rank": 10,
+     "title": "Best Auto Refinance Loans",
+     "url": "https://www.creditkarma.com/auto/i/best-auto-refinance-loans"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://autoapprove.com/",
+  "https://www.reddit.com/r/personalfinance/comments/1sbhewe/auto_refinancing_options_and_how_to_decide/",
+  "https://www.lendingtree.com/auto/reviews/auto-approve/",
+  "https://www.nerdwallet.com/auto-loans/best/refinance-car-loan",
+  "https://www.lendingtree.com/auto/refinance/resources/"
+ ],
+ "recommendations": [
+  {
+   "name": "AutoRefinancing.com",
+   "url": "https://autorefinancing.com/",
+   "description": "A platform offering auto refinancing options and personalized advice for individuals."
+  },
+  {
+   "name": "AutoRefinancing.net",
+   "url": "https://autorefinancing.net/",
+   "description": "Provides a comprehensive guide on how to refinance your auto loan, including rates and options."
+  },
+  {
+   "name": "AutoRefinancing.org",
+   "url": "https://autorefinancing.org/",
+   "description": "An online resource with tips and reviews for auto refinancing, helping individuals make informed decisions."
+  }
+ ]
+}

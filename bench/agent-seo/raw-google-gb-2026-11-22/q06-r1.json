@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "SOC 2: auto-approve PRs or allow bypasses and review them monthly?",
+     "url": "https://www.reddit.com/r/soc2/comments/1wgvdli/soc_2_autoapprove_prs_or_allow_bypasses_and/"
+    },
+    {
+     "rank": 3,
+     "title": "Has anyone found a solution to auto approving workflows in PRs?",
+     "url": "https://www.reddit.com/r/GithubCopilot/comments/1nbgyp9/has_anyone_found_a_solution_to_auto_approving/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto approval for environment in GitHub actions workflow does not work",
+     "url": "https://stackoverflow.com/questions/78085593/auto-approval-for-environment-in-github-actions-workflow-does-not-work"
+    },
+    {
+     "rank": 5,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate ...",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 8,
+     "title": "Thinkmill/auto-approve-action: A GitHub action to automatically ...",
+     "url": "https://github.com/Thinkmill/auto-approve-action"
+    },
+    {
+     "rank": 9,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a specific user?",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 10,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide)",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Action for auto-approving low-risk PRs with customizable criteria and security features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 3,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide)",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 4,
+     "title": "public-github-actions/dependabot-auto-approve/README.md at main",
+     "url": "https://github.com/Cognigy/public-github-actions/blob/main/dependabot-auto-approve/README.md"
+    },
+    {
+     "rank": 5,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate ...",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 7,
+     "title": "How to Automate GitHub PR Reviews with Smart Workflows",
+     "url": "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows"
+    },
+    {
+     "rank": 8,
+     "title": "Conditionally approve the PR if all commits are made by trusted ...",
+     "url": "https://github.com/marketplace/actions/conditionally-approve-the-pr-if-all-commits-are-made-by-trusted-committers"
+    },
+    {
+     "rank": 9,
+     "title": "Why can't I approve my own PR in GitHub, even when I have disabled ...",
+     "url": "https://stackoverflow.com/questions/74332878/why-cant-i-approve-my-own-pr-in-github-even-when-i-have-disabled-the-setting-f"
+    },
+    {
+     "rank": 10,
+     "title": "Evaluate how auto approve and merge can be replaced with Github actions ...",
+     "url": "https://github.com/kyma-project/test-infra/issues/12709"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/marketplace/actions/auto-approve-pull-requests",
+  "https://www.reddit.com/r/soc2/comments/1wgvdli/soc_2_autoapprove_prs_or_allow_bypasses_and/",
+  "https://www.reddit.com/r/GithubCopilot/comments/1nbgyp9/has_anyone_found_a_solution_to_auto_approving/",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+  "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve Pull Requests · Actions",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "A GitHub Marketplace action that allows you to auto-approve pull requests based on customizable criteria such as allow lists, label requirements, and status check verification."
+  },
+  {
+   "name": "How We Use AI Agents to Auto Approve Github PRs",
+   "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+   "description": "An article discussing how an AI agent was used to auto-approve Github pull requests, highlighting the benefits of using AI for this purpose."
+  },
+  {
+   "name": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate PRs",
+   "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d",
+   "description": "A blog post describing a GitHub Actions workflow that automatically approves and merges pull requests for updates from the Renovate bot, demonstrating a practical use case for automated PR approval."
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve - There's one number quietly holding your...",
+     "url": "https://www.facebook.com/autoapproverefi/photos/1798292658398592/"
+    },
+    {
+     "rank": 2,
+     "title": "Has anyone tried Auto Approve llc to refinance a car loan? : r/debtfree",
+     "url": "https://www.reddit.com/r/debtfree/comments/158xten/has_anyone_tried_auto_approve_llc_to_refinance_a/"
+    },
+    {
+     "rank": 3,
+     "title": "Is Auto Approve Legit? 2026 Review - Gerald Cash Advance",
+     "url": "https://joingerald.com/learn/debt--credit/auto-approve-es-confiable"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve Loan Department Is It Legit",
+     "url": "https://www.tiktok.com/discover/auto-approve-loan-department-is-it-legit"
+    },
+    {
+     "rank": 5,
+     "title": "Auto Approve Auto Refinance",
+     "url": "https://ai.banks.com/company/auto-approve/auto-refinance"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve Review – Easy Car Refinancing - SavingFreak.com",
+     "url": "https://www.savingfreak.com/car-loan-refinancing/best-companies/auto-approve-review/"
+    },
+    {
+     "rank": 7,
+     "title": "3 easy steps to refinance with Auto Approve.",
+     "url": "https://www.facebook.com/autoapproverefi/videos/3-easy-steps-to-refinance-with-auto-approve/444237070596902/"
+    },
+    {
+     "rank": 8,
+     "title": "Is Auto Approve Legit and Safe?",
+     "url": "https://legitandsafe.com/is-auto-approve-legit-and-safe"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve Motorcycle Refinance Review",
+     "url": "https://www.banks.com/reviews/autoapprove-motorcycle-refinance/"
+    }
+   ]
+  },
+  {
+   "query": "auto approve pull request tools for github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/auto-approve"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approving Pull Requests",
+     "url": "https://projen.io/docs/integrations/github/auto-approve/"
+    },
+    {
+     "rank": 4,
+     "title": "self-approval",
+     "url": "https://probot.github.io/apps/self-approval/"
+    },
+    {
+     "rank": 5,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 6,
+     "title": "What is currently the best AI-powered agent for automatic GitHub Pull ...",
+     "url": "https://github.com/orgs/community/discussions/209811"
+    },
+    {
+     "rank": 7,
+     "title": "Github Auto Approve - Chrome Web Store",
+     "url": "https://chromewebstore.google.com/detail/github-auto-approve/pidhaefckmljflidiacaclfokiidnddg"
+    },
+    {
+     "rank": 8,
+     "title": "Thinkmill/auto-approve-action: A GitHub action to automatically ...",
+     "url": "https://github.com/Thinkmill/auto-approve-action"
+    },
+    {
+     "rank": 9,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 10,
+     "title": "I built a GitHub Action that automatically reviews PRs with AI",
+     "url": "https://www.reddit.com/r/git/comments/1sxevht/i_built_a_github_action_that_automatically/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.facebook.com/autoapproverefi/photos/1798292658398592/",
+  "https://www.reddit.com/r/debtfree/comments/158xten/has_anyone_tried_auto_approve_llc_to_refinance_a/",
+  "https://joingerald.com/learn/debt--credit/auto-approve-es-confiable",
+  "https://github.com/marketplace/actions/auto-approve-pull-requests",
+  "https://github.com/marketplace/actions/auto-approve"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve Pull Requests",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "An action for automatically approving pull requests based on allow list, label requirements, and status check verification."
+  },
+  {
+   "name": "Auto Approve GitHub Action",
+   "url": "https://github.com/marketplace/actions/auto-approve",
+   "description": "An action that brings automated pull request approval to your GitHub workflow, enabling you to automatically approve qualified PRs from trusted sources."
+  },
+  {
+   "name": "self-approval",
+   "url": "https://probot.github.io/apps/self-approval/",
+   "description": "A GitHub app that allows users to approve their own pull requests without needing additional approvals."
+  }
+ ]
+}

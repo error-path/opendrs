@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+     "rank": 3,
+     "title": "How to get a Claude code review on every pull request with just your Pro/ ...",
+     "url": "https://www.reddit.com/r/ClaudeAI/comments/1xmop2l/how_to_get_a_claude_code_review_on_every_pull/"
+    },
+    {
+     "rank": 4,
+     "title": "tag1consulting/claude-comprehensive-review",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 5,
+     "title": "Best Claude Code Review Skills & Tools in 2026",
+     "url": "https://agentskillshub.top/best/code-review/"
+    },
+    {
+     "rank": 6,
+     "title": "Claude AI Code Review",
+     "url": "https://marketplace.visualstudio.com/items?itemName=TsezariMshvenieradzeTfsAIReviewTask.ai-pr-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Introducing Code Review, a new feature for Claude Code. : r/ClaudeAI",
+     "url": "https://www.reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/"
+    },
+    {
+     "rank": 8,
+     "title": "Claude Code Review: How It Works and Where Cosmos Wins",
+     "url": "https://www.augmentcode.com/guides/claude-code-review-how-it-works"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 10,
+     "title": "Claude Code Review Reaches General Availability - AI Catchup",
+     "url": "https://aicatchup.com/news/claude-code-review-general-availability"
+    }
+   ]
+  },
+  {
+   "query": "Best AI tools for automated code review and risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Which is best AI code review tool that you've come across recently?",
+     "url": "https://www.reddit.com/r/codereview/comments/1ctxbw7/which_is_best_ai_code_review_tool_that_youve_come/"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best Security-Focused AI Code Review Tools",
+     "url": "https://www.greptile.com/content-library/best-security-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs&vl=en-US"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "The Best Code Review Tools of 2026",
+     "url": "https://www.aikido.dev/blog/best-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "10 AI Code Review Tools That Find Bugs & Flaws in 2025",
+     "url": "https://www.digitalocean.com/resources/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "10 Best AI Code Security Tools in 2026 (Tested & Compared)",
+     "url": "https://corgea.com/learn/best-ai-code-security-tools"
+    },
+    {
+     "rank": 10,
+     "title": "10 Open Source AI Code Review Tools Tested on a 450K-File Monorepo ...",
+     "url": "https://www.augmentcode.com/tools/open-source-ai-code-review-tools-worth-trying"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://code.claude.com/docs/en/github-actions",
+  "https://www.reddit.com/r/ClaudeAI/comments/1xmop2l/how_to_get_a_claude_code_review_on_every_pull/",
+  "https://deepsource.com/resources/ai-code-review-tools",
+  "https://sourcegraph.com/blog/automated-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "An article discussing how AI can automatically score the risk of a pull request based on various factors."
+  },
+  {
+   "name": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A comprehensive list and comparison of the best AI code review tools available for 2026."
+  },
+  {
+   "name": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared",
+   "url": "https://sourcegraph.com/blog/automated-code-review-tools",
+   "description": "A detailed comparison of 13 automated code review tools, including both AI-powered and static analysis options."
+  }
+ ]
+}

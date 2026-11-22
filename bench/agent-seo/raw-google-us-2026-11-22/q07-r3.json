@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius - Series: Agentic Engineering Framework",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It - Riftmap",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories with popular PR blast radius analyzers",
+   "results": [
+    {
+     "rank": 1,
+     "title": "blast-radius · GitHub Topics",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "error-path/opendrs: PR blast radius analyzer: a 0-1 risk score for every ...",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 4,
+     "title": "Built an open source SRE Tool that Predicts Blast Radius of a GitHub PR ...",
+     "url": "https://www.reddit.com/r/Backend/comments/1rnbe5w/built_an_open_source_sre_tool_that_predicts_blast/"
+    },
+    {
+     "rank": 5,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub repo analyzer tool for repository statistics",
+     "url": "https://www.facebook.com/groups/vibecodinglife/posts/1983916412196886/"
+    },
+    {
+     "rank": 7,
+     "title": "Repository insights - edgedelta/blast-radius-bench",
+     "url": "https://github.com/edgedelta/blast-radius-bench/insights"
+    },
+    {
+     "rank": 8,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 9,
+     "title": "Building a opensource Private Code Intelligence Engine : r/github",
+     "url": "https://www.reddit.com/r/github/comments/1qfursr/building_a_opensource_private_code_intelligence/"
+    },
+    {
+     "rank": 10,
+     "title": "BlastRadius — PR Impact Analysis for IBM Bob Hackathon",
+     "url": "https://lablab.ai/ai-hackathons/ibm-bob-hackathon/ghost-commiter/blastradius-pr-impact-analysis"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated",
+  "https://github.com/error-path/opendrs"
+ ],
+ "recommendations": [
+  {
+   "name": "Blast Radius Analyzer by Amit Gambhir",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made."
+  },
+  {
+   "name": "PR Blast Radius Analyzer by error-path",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "A tool that analyzes the risk score for every pull request, helping to auto-approve low-risk PRs into the merge queue."
+  },
+  {
+   "name": "GitHub Topic: Blast Radius",
+   "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated",
+   "description": "A collection of GitHub repositories focusing on the topic of blast radius, including TypeScript-based tools."
+  }
+ ]
+}

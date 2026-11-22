@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time ...",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 2,
+     "title": "Top 14 Agent Observability Tools",
+     "url": "https://www.apono.io/blog/top-agent-observability-tools/"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best AI Agent Observability Tools for Production in 2026",
+     "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html"
+    },
+    {
+     "rank": 4,
+     "title": "11 Top AI observability platforms for IT and security in 2026",
+     "url": "https://www.google.com/goto?url=CAESjAEBxCJF15N_x6T6lDaf8_X-03khjeC3FcKePZO84RxKusuW8nUDaeUegyQ6jByZzvJ7D9ykImVlY2Gvz0fb3SXgKoky4iCz9b3dGJ0tCdZtBxGCxYnIbh_t7M4jCAW_-82Y42V0MD0rje5EnoPUoX-sgSjuaw2atdsOOuXykHQ_C_edE1IWfPnnNjOkiw&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 5,
+     "title": "SOC 2 Type II + fully autonomous AI agents merging PRs",
+     "url": "https://www.google.com/goto?url=CAESnQEBxCJF15IdRTQ6PBAnsSwwy3LSuRjS27YAbLqfhx8eDrGYoZjXPuNedZ4KFhCkzMw-v3-gHpJ2Jvlo3TI8g27WW3OzwdVVicOoH771Ewli-pfcyhTO_uE6VyL57lSyO4076eW0No7lMZQl5jOqFZEPrRuTT2zcztqQW9iwWdiDZw26lP7wT48Yab0HlBzoq2BAbosNEga0ul82I5K5&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 6,
+     "title": "8 Best Observability Platforms for 2026",
+     "url": "https://www.google.com/goto?url=CAESewHEIkXXK6_n4pkLBDTUv5mDwhG_e871WP1huAY15hOS-HhahyulF9IHxf73MhY8SfMPQ7oXpmjzkX44IdbxTu8UrBCGJxJGykwCXmhB6sgYE7_vBf7qHvj15yw_3eRn2ONE8XF4qiYZh95jGimN5BSmuU8q276mJLncBQ&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 7,
+     "title": "3 AI agent observability platforms to consider in 2026",
+     "url": "https://www.google.com/goto?url=CAESeAHEIkXXyPykGsJ_IsKTuxfzmaLKRnNXbsq3rWsiw-bBHJjJC1rk-ZG0cvNmUE7vVqtzqrQjIuByw5z_D106-VRPdhIi78ntFFmckqPUfyMboIi1rMK1svw9xbF5O5ggqX4fkISb94fDKIB7uooDDDvqeZmraAKC1g&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 8,
+     "title": "Agent Observability | LLM Observability",
+     "url": "https://www.google.com/goto?url=CAESdwHEIkXXI-SBLiFSXvFp8XpzLN-nV0_K6Nh-Jxzhg5GgHn6jL9BkTROWVPnIowsSAeGTN3RPv1lU-CQOS1cJdDIXRrBPOeV8jUuUfyzYIwhF88G6FPjBNAVlTpbtgrT3Mu-CcBrxCnxFh5iRWbaKu0jB3G6R4_Hx&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 9,
+     "title": "Best AI Agent Observability Tools in 2026 - Vellum",
+     "url": "https://www.google.com/goto?url=CAESeQHEIkXXQo7RDyjCpwFsOlX3Tl04d5s-7cBJCz-uhuf5g7k79-zWEDYMyjYsNP79-wXKY6puImVNPMPGt1ijKFJUh4iUt704SJtcrKlD0dZPkaRLnSM198NMdzame4IsfXqeM4k7ppBEICU1pLnYUo279dTaCkSy72s&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    },
+    {
+     "rank": 10,
+     "title": "Auto-Approving PRs for Coding Agents - elvis",
+     "url": "https://www.google.com/goto?url=CAESbgHEIkXXyvSTyf4toqJ0BpuiV34RGpD6v0Z2x2bm6UbKMT6IStOREeIEzYCb2FFEklqqs8cKp1pvRCv_-BwYVnHuSqWgC1rqUPmBNgjcBs8tbqhdWQ0D9X1tl3eNzkJBktdHlsaAKxehSkS0gLjW&gsessionid=OnezHOKK52GekpJLeD2oeDV6qEOsSS5wmG8oyhge74tgRCk7ct7ImA"
+    }
+   ]
+  },
+  {
+   "query": "Which observability platforms specifically offer AI-driven approval agents or auto-merge features for low-risk pull requests?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Agent Observability Tools for Production in 2026",
+     "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html"
+    },
+    {
+     "rank": 2,
+     "title": "The 18 Best AI Observability Tools In Nov 2026",
+     "url": "https://www.google.com/goto?url=CAEScwHEIkXXPvE9ycsGWcQjwG9fA2zeBV-QJ2IW_OzYB1UqYs7DWo4Qk5_8xtmxeR2EJwz-nxKBjm7QZPAlWqUn5eqF-D0yJtfA92LUHbv3VZcJt6f76cuecYQovflFvWasNsdUGvnd88mcSKYHrrmHi_Jkkkc&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 3,
+     "title": "Top 14 Agent Observability Tools",
+     "url": "https://www.google.com/goto?url=CAESdQHEIkXX0zCytuum2Y9dwEOSeUTiF_B0ug0dU2l7NWX4ZM_cXFfCqhqUSV274Mqar23nmOt-rNb5f7l4xeHSDC11xu7XJaw5NbQ3vd9Bo5LyAqHRAF4Je_0n_OKs04rLuCiYXTMEvQkr8_quW2pabzBtsT0spQ&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 4,
+     "title": "AI Agent Observability: Standards and Best Practices",
+     "url": "https://www.google.com/goto?url=CAESiAEBxCJF108jymcgHXQYWVyXpBIchB3xSrK5pnGO95wmLxaGRGpy018Co7f9poOX2EXeEvl0G19rYXbp4Bdn3qhKvGJgO-DVtjcpRy6nOhIq9-QP25wkG3CJdnDuKNOwSlTeuuA-BgUupx8LGqn5OwOSVWeFpF-K7HXH5Z58Sq2587DORpGf7yIM&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 5,
+     "title": "9 LLM Observability Tools for Production AI Agents",
+     "url": "https://www.google.com/goto?url=CAESeAHEIkXXb3Ezg60lu3JReaSOXC81XtLhe-hYwU35IZanjlZKesCZisr7rXW_nzXcSsdyJjBzzcvAymd67tQuiLCynoDlYCRE0Odb7i4RE41pGNLbTB-wBLFdbOHHvq7QuZKoje8QEUgEFjPmHoGUoxdkpyB7NtGYbA&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 6,
+     "title": "11 Top AI observability platforms for IT and security in 2026",
+     "url": "https://www.google.com/goto?url=CAESjAEBxCJF1yiSehYTDbn5doJgbue-j1uy-Xw06xscNcrN-Rcw8ygGExWm9ZLM3Xad4uJeXtKRWSVDgxYfdniS4d4oxEMadQphvDPxH5QGdsSt3PEW0zu0bBGgItEWF8iNGx_NMTlOISYr4iS3Y-uuvhUnlSSAmJwEoqczd0RYrrOP4A13awE9HhMAhYQiuw&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 7,
+     "title": "7 Best AI Agent Observability Tools for Coding Teams in ...",
+     "url": "https://www.google.com/goto?url=CAESgAEBxCJF1y1kfCASV4cUE_-ds72JXY2IpgK-DxMII23oucQil9banRg5vJncyhMiWukikms5J28FVcNXoiG7xL_-yHmYswEe87Oc9wd8gOigXkY5L63xkE-ebknimDGWzRmTJkA4TflAHITRNjKLLbbE2iX29gXB4JvHY_iF_HrGrA&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 8,
+     "title": "AI Observability and Security Platform",
+     "url": "https://www.google.com/goto?url=CAESZAHEIkXXlKz3VRYp76qUlOiWAsodVC4zbZ7IDdXe1wmdXrqPvzC1at29M_SUhgEAIDwYCt9hNZl3G38pH8d76WjPEn4XENROYCkBfZN6bh6FrcVCengPqC2FksUwhSpy6FMCq_w&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 9,
+     "title": "AI Observability for Modern Applications",
+     "url": "https://www.google.com/goto?url=CAESawHEIkXXiRBcVZVwPqfgRPZMaX4R0iyPXsxrlKMZZMilU6StIzE_BQGl11ruStvIEECy9Wqfjal9ojLGtNT0MrxsZqXRdrZP_6GXvF2bZkTr1OeDUuiXI5CAT5mb0wWZFzcq86xssglLRYjV&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    },
+    {
+     "rank": 10,
+     "title": "Practical AI-Enabled Observability for Agents and LLMs",
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXRaIQALu-YFijWXYVE34TlQ11MK7uvlG0VD7H5pWxR9JNQWf2n4lsZSQJwTVZf2o-n-SAz8pe-mvnlmxZakwHJctAr99LdMbMBEhsTDjSlPxWT2tc58G00Z7qEWTad3THCevk&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://ona.com/stories/auto-approving-low-risk-prs",
+  "https://www.apono.io/blog/top-agent-observability-tools/",
+  "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html",
+  "https://www.google.com/goto?url=CAEScwHEIkXXPvE9ycsGWcQjwG9fA2zeBV-QJ2IW_OzYB1UqYs7DWo4Qk5_8xtmxeR2EJwz-nxKBjm7QZPAlWqUn5eqF-D0yJtfA92LUHbv3VZcJt6f76cuecYQovflFvWasNsdUGvnd88mcSKYHrrmHi_Jkkkc&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ",
+  "https://www.google.com/goto?url=CAESdQHEIkXX0zCytuum2Y9dwEOSeUTiF_B0ug0dU2l7NWX4ZM_cXFfCqhqUSV274Mqar23nmOt-rNb5f7l4xeHSDC11xu7XJaw5NbQ3vd9Bo5LyAqHRAF4Je_0n_OKs04rLuCiYXTMEvQkr8_quW2pabzBtsT0spQ&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ"
+ ],
+ "recommendations": [
+  {
+   "name": "Ona",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "Ona's AI agent can automatically approve low-risk pull requests, significantly reducing lead time."
+  },
+  {
+   "name": "Splunk Agent Observability",
+   "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html",
+   "description": "Splunk's agent observability tools provide detailed insights and control over AI agent workflows, including evaluation and regression testing."
+  },
+  {
+   "name": "LangSmith",
+   "url": "https://www.google.com/goto?url=CAESaAHEIkXXRaIQALu-YFijWXYVE34TlQ11MK7uvlG0VD7H5pWxR9JNQWf2n4lsZSQJwTVZf2o-n-SAz8pe-mvnlmxZakwHJctAr99LdMbMBEhsTDjSlPxWT2tc58G00Z7qEWTad3THCevk&gsessionid=8FrIeXWyHJf29waxB98BlmoEY1am8dZp9Xyj4T_X7XQgJdtsGMV2CQ",
+   "description": "LangSmith is a purpose-built tool for evaluating and debugging AI agents, which can be integrated into a workflow for automated approval of low-risk PRs."
+  }
+ ]
+}

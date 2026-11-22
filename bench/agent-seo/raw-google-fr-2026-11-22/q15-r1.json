@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approve | Docs",
+     "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-Approving Actions",
+     "url": "https://kilo.ai/docs/getting-started/settings/auto-approving-actions"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review?eafs_enabled=false"
+    },
+    {
+     "rank": 8,
+     "title": "How do you guys work with Codex in auto-approval mode?",
+     "url": "https://community.openai.com/t/how-do-you-guys-work-with-codex-in-auto-approval-mode/1380717"
+    },
+    {
+     "rank": 9,
+     "title": "How do we auto-approve and merge 60% of PRs?",
+     "url": "https://swizec.com/blog/how-do-we-auto-approve-and-merge-60p-of-prs"
+    },
+    {
+     "rank": 10,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    }
+   ]
+  },
+  {
+   "query": "Best practices for setting up automated pull request approval workflows in GitLab",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Merge request approvals",
+     "url": "https://docs.gitlab.com/user/project/merge_requests/approvals/"
+    },
+    {
+     "rank": 2,
+     "title": "Automating GitLab Merge Request Approvals: A Developer's Guide to ...",
+     "url": "https://medium.com/@sattarkars45/automating-gitlab-merge-request-approvals-a-developers-guide-to-streamlined-code-reviews-49c9182c306b"
+    },
+    {
+     "rank": 3,
+     "title": "How to write custom GitLab approval rules?",
+     "url": "https://stackoverflow.com/questions/72297944/how-to-write-custom-gitlab-approval-rules"
+    },
+    {
+     "rank": 4,
+     "title": "Deploy approval workflow - are we missing something?",
+     "url": "https://www.reddit.com/r/gitlab/comments/1i29usx/deploy_approval_workflow_are_we_missing_something/"
+    },
+    {
+     "rank": 5,
+     "title": "Is there a method to have an issue approval workflow that is not a merge request?",
+     "url": "https://www.reddit.com/r/gitlab/comments/1ecrcd9/is_there_a_method_to_have_an_issue_approval/"
+    },
+    {
+     "rank": 6,
+     "title": "GitLab Code Review: How to Review Merge Requests and Best Practices",
+     "url": "https://axolo.co/blog/p/gitlab-code-review-best-practices"
+    },
+    {
+     "rank": 7,
+     "title": "Code Review Flow",
+     "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/"
+    },
+    {
+     "rank": 8,
+     "title": "GitLab Approval Rules on Merge Requests",
+     "url": "https://www.youtube.com/watch?v=FpRCO_qfbWE"
+    },
+    {
+     "rank": 9,
+     "title": "GitLab Issue Approval: Configuration and Best Practices",
+     "url": "https://ones.com/blog/gitlab-issue-approval-configuration-and-best-practices/"
+    },
+    {
+     "rank": 10,
+     "title": "Code Review Guidelines",
+     "url": "https://docs.gitlab.com/development/code_review/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://autoapprove.com/",
+  "https://www.trustpilot.com/review/autoapprove.com",
+  "https://docs.gitlab.com/user/project/merge_requests/approvals/",
+  "https://medium.com/@sattarkars45/automating-gitlab-merge-request-approvals-a-developers-guide-to-streamlined-code-reviews-49c9182c306b"
+ ],
+ "recommendations": [
+  {
+   "name": "GitLab Merge Request Approvals",
+   "url": "https://docs.gitlab.com/user/project/merge_requests/approvals/",
+   "description": "GitLab's built-in feature to set up automated pull request approval workflows."
+  },
+  {
+   "name": "Automating GitLab Merge Request Approvals",
+   "url": "https://medium.com/@sattarkars45/automating-gitlab-merge-request-approvals-a-developers-guide-to-streamlined-code-reviews-49c9182c306b",
+   "description": "A detailed guide on automating merge request approvals in GitLab."
+  },
+  {
+   "name": "GitLab Approval Rules on Merge Requests",
+   "url": "https://www.youtube.com/watch?v=FpRCO_qfbWE",
+   "description": "A video tutorial on setting up and configuring approval rules for merge requests in GitLab."
+  }
+ ]
+}

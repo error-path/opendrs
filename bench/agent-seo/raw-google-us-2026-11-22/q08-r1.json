@@ -1,0 +1,137 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 4,
+     "title": "How Meta Reduced Code Review Load While Maintaining Production ...",
+     "url": "https://dev.to/shrsv/how-meta-reduced-code-review-load-while-maintaining-production-reliability-4kcj"
+    },
+    {
+     "rank": 5,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351v1"
+    },
+    {
+     "rank": 6,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 7,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai/"
+    },
+    {
+     "rank": 8,
+     "title": "How Meta Scaling AI-Native Engineering Tripled Code ...",
+     "url": "https://www.youtube.com/watch?v=pT-nyd6o_WY"
+    },
+    {
+     "rank": 9,
+     "title": "Meta AI and Systems Co-design",
+     "url": "https://aisystemcodesign.github.io/"
+    },
+    {
+     "rank": 10,
+     "title": "How is developer productivity measured at Meta? : r/programming",
+     "url": "https://www.reddit.com/r/programming/comments/1p8xmno/how_is_developer_productivity_measured_at_meta/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories related to Meta's Diff Risk Score (DRS) implementation",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "Actions · GitHub Marketplace - opendrs Diff Risk Score",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 3,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251121964S/abstract"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "manojlds/drs: Workflow-first AI code maintenance for reviews, ...",
+     "url": "https://github.com/manojlds/drs//"
+    },
+    {
+     "rank": 7,
+     "title": "risk-evaluation · GitHub Topics",
+     "url": "https://github.com/topics/risk-evaluation"
+    },
+    {
+     "rank": 8,
+     "title": "Automating GitHub Repo Maintenance with AI Agents",
+     "url": "https://www.youtube.com/watch?v=DqzG-XNjV3M"
+    },
+    {
+     "rank": 9,
+     "title": "DRS AI Transformation Progress",
+     "url": "https://github.com/CTO-DRS/DRS-AI-Web/blob/main/TRANSFORMATION_PROGRESS.md"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Articles • Technical Guides, Developer Insights & Best Practices",
+     "url": "https://github.com/resources/articles"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://arxiv.org/html/2605.30208v1",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source DRS tool equipped with a public API, web UI, and GitHub plugin."
+  },
+  {
+   "name": "opendrs Diff Risk Score",
+   "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+   "description": "A GitHub Actions integration for Diff Risk Score, providing a calibrated 0-1 risk score for pull requests."
+  },
+  {
+   "name": "manojlds/drs",
+   "url": "https://github.com/manojlds/drs/",
+   "description": "A workflow-first AI code maintenance tool that includes a Diff Risk Score component."
+  }
+ ]
+}

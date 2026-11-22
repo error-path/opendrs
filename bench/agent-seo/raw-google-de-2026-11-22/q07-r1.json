@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/"
+    },
+    {
+     "rank": 2,
+     "title": "amitgambhir/blast-radius-analyzer",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "Calculate blast radius with AI - Port Documentation",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/"
+    },
+    {
+     "rank": 4,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "What is blast radius analysis?",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 9,
+     "title": "AI PR Impact Analysis & Blast Radius Detection - Codluma",
+     "url": "https://www.codluma.ai/ai-pr-impact-analysis/"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius Claude Code Skill | Risk & Impact Analysis",
+     "url": "https://mcpmarket.com/tools/skills/blast-radius-analysis-1"
+    }
+   ]
+  },
+  {
+   "query": "Code impact analysis tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best practices for integrating static analysis in pull requests - Graphite",
+     "url": "https://graphite.com/guides/best-practices-integrating-static-analysis-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 3,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 4,
+     "title": "Recommendations for code review tools that work with github",
+     "url": "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+    },
+    {
+     "rank": 5,
+     "title": "Any recommendations for code review tools in github?",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+    },
+    {
+     "rank": 6,
+     "title": "Github pull request hooks, static code analysis and provisional rollback",
+     "url": "https://stackoverflow.com/questions/17947381/github-pull-request-hooks-static-code-analysis-and-provisional-rollback"
+    },
+    {
+     "rank": 7,
+     "title": "tupizz/pr-code-analyzer: 🤖 AI-powered code review CLI tool that ...",
+     "url": "https://github.com/tupizz/pr-code-analyzer"
+    },
+    {
+     "rank": 8,
+     "title": "10 Best Code Analysis Tools in 2026",
+     "url": "https://thectoclub.com/tools/best-code-analysis-tools/"
+    },
+    {
+     "rank": 9,
+     "title": "15 Best GitHub Code Review Tools [Free & Paid]",
+     "url": "https://dev.to/trulyfurqan/15-best-github-code-review-tools-free-paid-3kfm"
+    },
+    {
+     "rank": 10,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius/",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://docs.port.io/guides/all/calculate-blast-radius-with-ai/",
+  "https://graphite.com/guides/best-practices-integrating-static-analysis-pull-requests",
+  "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+ ],
+ "recommendations": [
+  {
+   "name": "Blast Radius Analyzer by Amit Gambhir",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made."
+  },
+  {
+   "name": "GitHub Impact: Claude Code Skill for PR Analysis",
+   "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis",
+   "description": "A skill that automates the process of documenting code changes by analyzing Pull Requests to generate dual-perspective impact reports."
+  },
+  {
+   "name": "Blast Radius Reviewer — Claude skill / plugin install guide",
+   "url": "https://claudecowork.im/resources/blast-radius-reviewer",
+   "description": "A Claude skill to review the blast radius of a code change and provide risk and impact analysis."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 3,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 4,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "E-PRedictor: an approach for early prediction of pull request acceptance",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    },
+    {
+     "rank": 7,
+     "title": "Multi-Output Learning for Predicting Evaluation and Reopening of ...",
+     "url": "https://www.scitepress.org/Papers/2023/121252/121252.pdf"
+    },
+    {
+     "rank": 8,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809/"
+    },
+    {
+     "rank": 9,
+     "title": "Pull requests · jtbryan/defect-prediction",
+     "url": "https://github.com/jtbryan/defect-prediction/pulls"
+    },
+    {
+     "rank": 10,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for predicting software defects from git history, with a focus on pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "Best Tools to Predict Bug-Prone Files (2026) - Repowise",
+     "url": "https://repowise.dev/blog/comparisons/best-bug-prone-file-prediction-tools"
+    },
+    {
+     "rank": 3,
+     "title": "GitClear: Measure AI ROI with Research-Backed Developer ...",
+     "url": "https://www.gitclear.com/"
+    },
+    {
+     "rank": 4,
+     "title": "commit-prophet: I Built a Tool That Predicts Buggy Files Using Git History",
+     "url": "https://dev.to/lakshmisravyavedantham/commit-prophet-i-built-a-tool-that-predicts-buggy-files-using-git-history-35mk"
+    },
+    {
+     "rank": 5,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 6,
+     "title": "Empirical Software Engineering at Microsoft Research",
+     "url": "https://nachinagappan.github.io/Harlan-Mills-Talk.pdf"
+    },
+    {
+     "rank": 7,
+     "title": "From Bugs to Benchmarks: A Comprehensive Survey of Software ...",
+     "url": "https://dl.acm.org/doi/10.1145/3797033"
+    },
+    {
+     "rank": 8,
+     "title": "20+ tools to help you mine and analyze GitHub and Git data",
+     "url": "https://livablesoftware.com/tools-mine-analyze-github-git-software-data/"
+    },
+    {
+     "rank": 9,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Predict future software defects through machine learning",
+     "url": "https://www.diva-portal.org/smash/get/diva2:1593922/FULLTEXT01.pdf"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2206.09967v1",
+  "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337",
+  "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84",
+  "https://repowise.dev/blog/comparisons/best-bug-prone-file-prediction-tools",
+  "https://www.gitclear.com/"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "PR-SZZ is an open-source tool that extends the SZZ algorithm to use pull requests for defect prediction in software repositories."
+  },
+  {
+   "name": "Commit-Prophet",
+   "url": "https://dev.to/lakshmisravyavedantham/commit-prophet-i-built-a-tool-that-predicts-buggy-files-using-git-history-35mk",
+   "description": "Commit-Prophet is an open-source tool that predicts buggy files using git history, with a focus on pull requests."
+  },
+  {
+   "name": "GHPR Dataset",
+   "url": "https://github.com/feiwww/GHPR_dataset",
+   "description": "GHPR Dataset is an open-source dataset used for software defect prediction, focusing on pull requests."
+  }
+ ]
+}
