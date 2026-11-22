@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 4,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "What Is a Pull Request?",
+     "url": "https://www.ibm.com/think/topics/pull-request"
+    },
+    {
+     "rank": 7,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects"
+    },
+    {
+     "rank": 8,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 9,
+     "title": "AI vs Human Code Generation Report",
+     "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+    },
+    {
+     "rank": 10,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for predicting software defects based on pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PyTraceBugs: A Large Python Code Dataset for Supervised Machine ...",
+     "url": "https://www.computer.org/csdl/proceedings-article/apsec/2021/378400a141/1B4maZEZCNi"
+    },
+    {
+     "rank": 2,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 3,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 4,
+     "title": "Predicting Software Defectiveness by Mining Software Repositories",
+     "url": "https://www.diva-portal.org/smash/get/diva2:1261573/FULLTEXT01.pdf"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "Refining software defect prediction through attentive neural models for ...",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0164121224003108"
+    },
+    {
+     "rank": 7,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 8,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Cross-Project Online Just-In-Time Software Defect Prediction",
+     "url": "https://minkull.github.io/publications/TabassumTSE2022.pdf"
+    },
+    {
+     "rank": 10,
+     "title": "E-PRedictor: an approach for early prediction of pull request acceptance",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2206.09967v1",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337",
+  "https://www.computer.org/csdl/proceedings-article/apsec/2021/378400a141/1B4maZEZCNi",
+  "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "A research paper introducing an updated version of SZZ algorithm that utilizes pull requests to support the tracing of defects in software repositories."
+  },
+  {
+   "name": "GHPR Dataset",
+   "url": "https://github.com/feiwww/GHPR_dataset",
+   "description": "A dataset for software defect prediction based on GitHub pull requests, which can be used for training and evaluating defect prediction models."
+  },
+  {
+   "name": "E-PRedictor",
+   "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4",
+   "description": "An approach for early prediction of pull request acceptance, which can be used to identify risky commits or pull requests."
+  }
+ ]
+}

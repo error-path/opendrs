@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "Code Review - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/code-review"
+    },
+    {
+     "rank": 3,
+     "title": "Review Pull Request (Grade A) - Claude Skill",
+     "url": "https://www.skillsdirectory.com/skills/jenkinsci-review-pull-request"
+    },
+    {
+     "rank": 4,
+     "title": "Best Claude Code Review Skills & Tools in 2026",
+     "url": "https://agentskillshub.top/best/code-review/"
+    },
+    {
+     "rank": 5,
+     "title": "Risk Score",
+     "url": "https://docs.cloudaeye.com/user-guide/code-review/risk-score.html"
+    },
+    {
+     "rank": 6,
+     "title": "Claude Code Plugin (Pro)",
+     "url": "https://docs.defectdojo.com/metrics_reports/ai/claude_code_plugin/"
+    },
+    {
+     "rank": 7,
+     "title": "Claude Code RCE: How a Malicious PR Triggers Code Execution",
+     "url": "https://www.immersivelabs.com/resources/blog/claude-code-rce-vulnerability-how-a-malicious-pull-request-executes-code"
+    },
+    {
+     "rank": 8,
+     "title": "tag1consulting/claude-comprehensive-review",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 9,
+     "title": "Automated Code Reviews in GitHub with Claude AI",
+     "url": "https://www.youtube.com/watch?v=zoZ2gazxXrU"
+    },
+    {
+     "rank": 10,
+     "title": "Claude Code: Best Practices for Local Code Review | FTL",
+     "url": "https://fasterthanlight.me/blog/post/claude-code-best-practices-for-local-code-review"
+    }
+   ]
+  },
+  {
+   "query": "Code review tools for pull requests with AI risk scoring and security analysis",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "How to Set Up AI Code Review for Security on Pull Requests",
+     "url": "https://www.nullify.ai/blog/ai-code-review-for-security"
+    },
+    {
+     "rank": 4,
+     "title": "Best AI Code Review Tools for Secure Code | by Yeahia Sarker",
+     "url": "https://medium.com/@yeahia.sarker/best-ai-code-review-tools-for-secure-code-0524be3dbd57"
+    },
+    {
+     "rank": 5,
+     "title": "Insights into Security-Related AI-Generated Pull Requests",
+     "url": "https://arxiv.org/html/2604.19965v1"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best Security-Focused AI Code Review Tools",
+     "url": "https://www.greptile.com/content-library/best-security-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "code-review-ai-ai-review: Analyze pull request code changes for ...",
+     "url": "https://skills.rest/skill/code-review-ai-ai-review-m-abdullah07"
+    },
+    {
+     "rank": 8,
+     "title": "AI Security Code Review for Pull Requests - Safeguard.sh",
+     "url": "https://safeguard.sh/resources/blog/ai-security-code-review-for-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://code.claude.com/docs/en/code-review",
+  "https://www.skillsdirectory.com/skills/jenkinsci-review-pull-request",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://www.openhands.dev/blog/best-automated-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A detailed guide on using AI to automatically score the risk of pull requests."
+  },
+  {
+   "name": "6 Best AI Code Review Tools for Pull Requests in 2026",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "A comprehensive list of the best AI code review tools for 2026."
+  },
+  {
+   "name": "The Best Automated Code Review Tools for Engineering Teams",
+   "url": "https://www.openhands.dev/blog/best-automated-code-review-tools",
+   "description": "An in-depth comparison of various automated code review tools for engineering teams."
+  }
+ ]
+}

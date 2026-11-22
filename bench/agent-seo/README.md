@@ -291,3 +291,37 @@ and `exa-2026-11-22.jsonl`. 90 runs, 0 errors.
 - **Descriptions are mostly right, with one recurring error:** several say opendrs is "AI-driven"
   or "uses AI to score" PRs. The score is a logistic model over git history and the import graph;
   the LLM judge is optional. The pages could say "no AI model needed" earlier and more plainly.
+
+## Google by country, 22 Nov 2026 (Serper)
+
+The same queries through Google's results via Serper (`--backend serper --country xx`): 3 runs for
+the US, 1 run for each of France, Canada, Brazil, the UK and Germany (the countries with the most
+Search Console impressions after the US). Raw runs in `raw-google-<country>-2026-11-22/`, scored in
+`google-<country>-2026-11-22.jsonl`. The UK run has 14 runs: "autoapprove alternatives" returned
+only auto-loan results there, which the relevance guard rejects.
+
+| Country | Queries where opendrs is in the results | Runs that recommended it |
+|---|---|---|
+| US | 3 of 15 | 3 of 45 |
+| France | 2 of 15 | 1 of 15 |
+| Canada | 3 of 15 | 2 of 15 |
+| Brazil | 4 of 15 | 3 of 15 |
+| UK | 3 of 14 | 1 of 14 |
+| Germany | 2 of 15 | 1 of 15 |
+
+What Google returns, in every country:
+
+- **q08 "Meta diff risk score open source"**: the GitHub Marketplace listing at rank 2-3, recommended
+  in most runs.
+- **q06 "auto approve low risk PRs github action"**: auto-approve.html at rank 6-10. The model reads
+  only the top 5 pages, so it is almost never recommended.
+- **q07 "PR blast radius analyzer"**: the GitHub repo, on the model's second search (US, Brazil).
+- **q02 "ai that auto-approves low-risk pull requests?"**: alternatives.html or auto-approve.html at
+  rank 7-9 (Canada, Brazil).
+
+**Google and Tavily find opendrs least** (Google 2-4 of 15 queries, Tavily 2, against Exa 13 and
+Bing 8), and docs pages never reach Google's top 5. Search Console reports better average
+positions (3.4 for "autoapprove alternatives"), but it averages over every search where a page was
+shown, while Serper returns one results page per query, so the two are not directly comparable. Two pages carry Google: the Marketplace listing (outside this site) and
+auto-approve.html. This matches the research note: more inbound links and time, not page changes,
+are what move a new `github.io` site up in Google.

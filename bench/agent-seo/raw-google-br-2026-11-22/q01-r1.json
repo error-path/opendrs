@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "autoapprove alternatives",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Refinance Your Car | Lower Your Payments | Auto Refinance",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 3,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    },
+    {
+     "rank": 5,
+     "title": "Auto Approve: Revenue, Competitors, Alternatives",
+     "url": "https://growjo.com/company/Auto_Approve"
+    },
+    {
+     "rank": 6,
+     "title": "Top Auto Approve Competitors & Alternatives",
+     "url": "https://getlatka.com/companies/Auto_Approve/competitors"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve - Crunchbase Company Profile & Funding",
+     "url": "https://www.crunchbase.com/organization/auto-approve"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve Auto Loans Review 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/reviews/auto-approve-auto-loans"
+    },
+    {
+     "rank": 10,
+     "title": "Auto-refinance company doubles loans without adding agents",
+     "url": "https://www.techfabric.com/case-studies/auto-approve"
+    }
+   ]
+  },
+  {
+   "query": "user reviews and comparisons of pull request approval tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Recommendations for code review tools that work with github",
+     "url": "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+    },
+    {
+     "rank": 3,
+     "title": "Any recommendations for code review tools in github?",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 5,
+     "title": "Approving a pull request with required reviews",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/approving-a-pull-request-with-required-reviews"
+    },
+    {
+     "rank": 6,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Best Code Review Tools for Large Pull Requests and Repository Context",
+     "url": "https://www.cubic.dev/info/blog/listicle/what-are-the-best-code-review-tools-for-large-pull-requests-where-the-reviewer-needs-to-understand-t-fdc80d"
+    },
+    {
+     "rank": 8,
+     "title": "How to Review a Pull Request on GitHub",
+     "url": "https://www.youtube.com/watch?v=TO9xK4XTBbQ"
+    },
+    {
+     "rank": 9,
+     "title": "The 6 best AI code review tools for automated pull request reviews",
+     "url": "https://overcut.ai/blog/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "8 code review tools for achieving a clean and efficient workflow - Graphite",
+     "url": "https://graphite.com/guides/code-review-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://autoapprove.com/",
+  "https://www.trustpilot.com/review/autoapprove.com",
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+ ],
+ "recommendations": [
+  {
+   "name": "CodeRabbit",
+   "url": "https://coderabbit.io/",
+   "description": "An AI code review tool that understands code beyond the diff and allows teams to control noise."
+  },
+  {
+   "name": "GitHub Copilot",
+   "url": "https://copilot.github.com/",
+   "description": "A code review tool that keeps reviews inside the existing GitHub workflow."
+  },
+  {
+   "name": "GitLab Merge Request Approval Rules",
+   "url": "https://docs.gitlab.com/ee/user/project/merge_requests/approvals/",
+   "description": "A feature in GitLab that allows you to set approval rules for merge requests."
+  }
+ ]
+}

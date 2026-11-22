@@ -1,0 +1,137 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 2,
+     "title": "Top 14 Agent Observability Tools",
+     "url": "https://www.apono.io/blog/top-agent-observability-tools/"
+    },
+    {
+     "rank": 3,
+     "title": "3 AI agent observability platforms to consider in 2026",
+     "url": "https://www.merge.dev/blog/ai-agent-observability-platforms"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best AI Agent Observability Tools for Production in 2026",
+     "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html"
+    },
+    {
+     "rank": 5,
+     "title": "AI Agent Observability: The 8 Best Tools for Production Agents",
+     "url": "https://newrelic.com/blog/observability/ai-agent-observability"
+    },
+    {
+     "rank": 6,
+     "title": "Top 11 AI/LLM Observability Platforms for IT and security in 2026",
+     "url": "https://cribl.io/resources/comparison-guides/top-11-ai-observability-platforms/"
+    },
+    {
+     "rank": 7,
+     "title": "8 Best Observability Platforms for 2026",
+     "url": "https://www.augmentcode.com/tools/best-observability-platforms"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Observability Tools: 9 Compared for 2026",
+     "url": "https://amplitude.com/compare/best-ai-observability-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Top LLM Observability Platforms in 2026 | Data Science Collective",
+     "url": "https://medium.com/data-science-collective/top-llm-observability-platforms-in-2026-2c1c37619766"
+    },
+    {
+     "rank": 10,
+     "title": "AI Observability Tools: 8 Platforms for Tracing AI Agents in 2026",
+     "url": "https://www.cognee.ai/ai-observability-tools"
+    }
+   ]
+  },
+  {
+   "query": "AI Agent Observability Platforms for Low-Risk PR Approval and Auto-Merge: Best Practices and Case Studies",
+   "results": [
+    {
+     "rank": 1,
+     "title": "3 AI agent observability platforms to consider in 2026",
+     "url": "https://www.merge.dev/blog/ai-agent-observability-platforms"
+    },
+    {
+     "rank": 2,
+     "title": "Top 14 Agent Observability Tools",
+     "url": "https://www.apono.io/blog/top-agent-observability-tools/"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best AI Agent Observability Tools for Production in 2026",
+     "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html"
+    },
+    {
+     "rank": 4,
+     "title": "Top 8 AI Agent Observability Platforms for 2026",
+     "url": "https://www.confident-ai.com/knowledge-base/compare/best-ai-agent-observability-tools-2026"
+    },
+    {
+     "rank": 5,
+     "title": "Practical AI-Enabled Observability for Agents and LLMs",
+     "url": "https://www.youtube.com/watch?v=Xe60gkyDtGw"
+    },
+    {
+     "rank": 6,
+     "title": "AI Agent Observability: The 8 Best Tools for Production Agents",
+     "url": "https://newrelic.com/blog/observability/ai-agent-observability"
+    },
+    {
+     "rank": 7,
+     "title": "AI Agent Observability Open Source: Tools, Tradeoffs, And When To ...",
+     "url": "https://montecarlo.ai/blog-ai-agent-observability-open-source"
+    },
+    {
+     "rank": 8,
+     "title": "Agent Observability | LLM Observability",
+     "url": "https://www.datadoghq.com/products/ai/agent-observability/"
+    },
+    {
+     "rank": 9,
+     "title": "AI Agent Best Practices That Actually Drive Results",
+     "url": "https://www.domo.com/learn/article/ai-agent-best-practices"
+    },
+    {
+     "rank": 10,
+     "title": "7 Best AI Agent Observability Tools for Coding Teams in 2026",
+     "url": "https://www.augmentcode.com/tools/best-ai-agent-observability-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://ona.com/stories/auto-approving-low-risk-prs",
+  "https://www.apono.io/blog/top-agent-observability-tools/",
+  "https://www.merge.dev/blog/ai-agent-observability-platforms",
+  "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html"
+ ],
+ "recommendations": [
+  {
+   "name": "Ona",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "Ona provides an AI-driven approach to approving low-risk pull requests, reducing the lead time from 2 hours to just 3.8 minutes."
+  },
+  {
+   "name": "Merge.dev",
+   "url": "https://www.merge.dev/blog/ai-agent-observability-platforms",
+   "description": "Merge.dev features several AI agent observability platforms that can help automate the approval of low-risk pull requests, enhancing efficiency and reducing the time spent on manual reviews."
+  },
+  {
+   "name": "Splunk",
+   "url": "https://www.splunk.com/en_us/blog/learn/best-agent-observability-platforms.html",
+   "description": "Splunk offers the Splunk Agent Observability platform, which includes features for capturing and analyzing agent behavior, making it easier to identify and approve low-risk changes."
+  }
+ ]
+}

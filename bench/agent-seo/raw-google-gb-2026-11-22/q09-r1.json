@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 2,
+     "title": "Fixing a PR with AI: Copilot, MCP, and ToolHive in Action",
+     "url": "https://www.youtube.com/watch?v=1FqXdcqCu08"
+    },
+    {
+     "rank": 3,
+     "title": "Understanding MCP security: Common risks to watch for",
+     "url": "https://www.datadoghq.com/blog/monitor-mcp-servers/"
+    },
+    {
+     "rank": 4,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 5,
+     "title": "Model Context Protocol (MCP) Security Risks",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1lg82p6/model_context_protocol_mcp_security_risks/"
+    },
+    {
+     "rank": 6,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 7,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 8,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 9,
+     "title": "Full Pull Request Lifecycle Using Agent Mode and GitHub MCP",
+     "url": "https://www.youtube.com/watch?v=VX1zP3irSYU"
+    },
+    {
+     "rank": 10,
+     "title": "What Is MCP Security? Risks and Best Practices for MCP",
+     "url": "https://nexusvoidai.com/research-analysis/what-is-mcp-security-model-context-protocol"
+    }
+   ]
+  },
+  {
+   "query": "Comparing MCP Security Tools: Features and Capabilities",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP vs. Tools vs. Skills: What AI Architects Need to Know",
+     "url": "https://thetrainingboss.com/mcp-vs-tools-vs-skills/"
+    },
+    {
+     "rank": 2,
+     "title": "MCP vs CLI Tools: Why Security Changes the Answer",
+     "url": "https://stacklok.com/blog/mcp-vs-cli-tools-why-security-changes-the-answer/"
+    },
+    {
+     "rank": 3,
+     "title": "Best MCP Security Tools 2026: Compared - PipeLab",
+     "url": "https://pipelab.org/learn/mcp-security-tools/"
+    },
+    {
+     "rank": 4,
+     "title": "MCP Tools: How They Work, Use Cases & Best Practices",
+     "url": "https://www.exabeam.com/explainers/model-context-protocol/mcp-tools-how-they-work-use-cases-and-best-practices/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP: Building Your SecOps AI Ecosystem - by Jack Naglieri",
+     "url": "https://www.detectionatscale.com/p/mcp-and-security-operations"
+    },
+    {
+     "rank": 6,
+     "title": "MCP vs CLI: I Tested Both and Here's What Won",
+     "url": "https://www.youtube.com/watch?v=TuIZoFyBKIM&vl=en"
+    },
+    {
+     "rank": 7,
+     "title": "MCP vs CLI: a framework for choosing the right tool interface for AI",
+     "url": "https://www.speakeasy.com/blog/mcp-vs-cli"
+    },
+    {
+     "rank": 8,
+     "title": "Best MCP Security Tools for AI Agents",
+     "url": "https://neuraltrust.ai/blog/best-mcp-security-tools"
+    },
+    {
+     "rank": 9,
+     "title": "The Best MCP Security Tools 2026",
+     "url": "https://mcpmanager.ai/blog/mcp-security-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "When to use WebMCP and MCP | AI in Chrome",
+     "url": "https://developer.chrome.com/docs/ai/webmcp/compare-mcp"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://cycode.com/blog/mcp-security-risks-best-practices/",
+  "https://www.youtube.com/watch?v=1FqXdcqCu08",
+  "https://www.datadoghq.com/blog/monitor-mcp-servers/",
+  "https://thetrainingboss.com/mcp-vs-tools-vs-skills/",
+  "https://stacklok.com/blog/mcp-vs-cli-tools-why-security-changes-the-answer/"
+ ],
+ "recommendations": [
+  {
+   "name": "MCP Security Best Practices - Cycode",
+   "url": "https://cycode.com/blog/mcp-security-risks-best-practices/",
+   "description": "Cycode offers comprehensive guidelines and best practices for managing MCP security, covering risks and mitigation strategies."
+  },
+  {
+   "name": "Comparing MCP Security Tools: Features and Capabilities",
+   "url": "https://thetrainingboss.com/mcp-vs-tools-vs-skills/",
+   "description": "This article provides a detailed comparison of MCP, tools, and skills, helping to understand their roles and advantages in security architecture."
+  },
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A detailed guide on using AI to automatically score and assess the risk of pull requests, enhancing the security and efficiency of code reviews."
+  }
+ ]
+}

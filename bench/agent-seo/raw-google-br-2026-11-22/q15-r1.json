@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approve | Docs",
+     "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve & YOLO Mode",
+     "url": "https://docs.cline.bot/features/auto-approve"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Careers and Employment",
+     "url": "https://www.indeed.com/cmp/Auto-Approve"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-Approving Actions",
+     "url": "https://kilo.ai/docs/getting-started/settings/auto-approving-actions"
+    },
+    {
+     "rank": 10,
+     "title": "Auto Approve PR - CodeAnt AI",
+     "url": "https://codeantai.mintlify.app/pull_request/features/auto_approve_pr"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of Auto Approve tools for pull requests in software development environments?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 3,
+     "title": "What Is a Pull Request?",
+     "url": "https://www.ibm.com/think/topics/pull-request"
+    },
+    {
+     "rank": 4,
+     "title": "Feature which automatically approves pull requests if the ...",
+     "url": "https://community.atlassian.com/forums/discussion/3258427/feature-which-automatically-approves-pull-requests-if-the-comments-have-been-resolved"
+    },
+    {
+     "rank": 5,
+     "title": "What is a Pull Request & Why It's Important for Code Review",
+     "url": "https://www.greptile.com/content-library/what-is-a-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 7,
+     "title": "What is a pull request? Why engineering leaders use them as ...",
+     "url": "https://getdx.com/blog/pull-request/"
+    },
+    {
+     "rank": 8,
+     "title": "Auto-approving Pull Requests",
+     "url": "https://projen.io/docs/integrations/github/auto-approve/"
+    },
+    {
+     "rank": 9,
+     "title": "Copilot Can Now Approve Pull Requests. Should It Count Toward ...",
+     "url": "https://dev.to/pwd9000/copilot-can-now-approve-pull-requests-should-it-count-toward-your-branch-protection-2b78"
+    },
+    {
+     "rank": 10,
+     "title": "More Collaborative Pull Requests",
+     "url": "https://medium.com/@vorahsa/more-collaborative-pull-requests-105eef7b420b"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://autoapprove.com/",
+  "https://www.trustpilot.com/review/autoapprove.com",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://github.com/marketplace/actions/auto-approve-pull-requests"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub Actions",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "GitHub Actions provides a powerful platform for automating workflows, including automatically approving pull requests based on predefined conditions."
+  },
+  {
+   "name": "CodeRabbit",
+   "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+   "description": "CodeRabbit is an AI code review tool that can automatically approve pull requests, ensuring that only high-quality code is merged into the repository."
+  },
+  {
+   "name": "Auto-approve PRs",
+   "url": "https://codeantai.mintlify.app/pull_request/features/auto_approve_pr",
+   "description": "Auto-approve PRs is a feature offered by CodeAnt AI that automatically approves pull requests based on predefined rules and conditions, streamlining the development process."
+  }
+ ]
+}

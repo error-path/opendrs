@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "Risk scoring on pull requests: what agents can do about it - Unblocked",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 6,
+     "title": "What is an AI Pull Request Review? How It Works",
+     "url": "https://playerzero.ai/glossary/ai-pull-request-review"
+    },
+    {
+     "rank": 7,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 8,
+     "title": "A Practical Guide to Risk-Based Code Review - Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 9,
+     "title": "\"Part 4: AI Scores Pull Request Risk in .NET\" | Mesut Atasoy posted on the topic",
+     "url": "https://www.linkedin.com/posts/mesut-atasoy_automatically-scoring-pull-request-risk-with-activity-7383739120445124608--r0x"
+    },
+    {
+     "rank": 10,
+     "title": "9 Best Pull Request Automation Tools [2026]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    }
+   ]
+  },
+  {
+   "query": "user's specific requirements, such as the size of their codebase, the programming languages they use, and the tools they are already using in their development workflow.",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl",
+     "url": "https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html"
+    },
+    {
+     "rank": 2,
+     "title": "Understanding Codebase like a Professional! Human–AI ...",
+     "url": "https://arxiv.org/html/2504.04553v2"
+    },
+    {
+     "rank": 3,
+     "title": "I Tested Three Spec-Driven AI Tools. Here's My Honest Take.",
+     "url": "https://ranthebuilder.cloud/blog/i-tested-three-spec-driven-ai-tools-here-s-my-honest-take/"
+    },
+    {
+     "rank": 4,
+     "title": "Stack Overflow Developer Survey 2023",
+     "url": "https://survey.stackoverflow.co/2023/"
+    },
+    {
+     "rank": 5,
+     "title": "How Claude Code works in large codebases: Best practices and ...",
+     "url": "https://claude.com/resources/articles/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start"
+    },
+    {
+     "rank": 6,
+     "title": "AI Coding Explained: Tools, Benefits, and Limitations",
+     "url": "https://www.coursera.org/articles/coding-ai"
+    },
+    {
+     "rank": 7,
+     "title": "13 Best AI Coding Tools for Complex Codebases in 2026",
+     "url": "https://www.augmentcode.com/tools/13-best-ai-coding-tools-for-complex-codebases"
+    },
+    {
+     "rank": 8,
+     "title": "How to write a good spec for AI agents",
+     "url": "https://addyosmani.com/blog/good-spec/"
+    },
+    {
+     "rank": 9,
+     "title": "Running a Software Factory Efficiently at Uber Scale",
+     "url": "https://www.uber.com/us/en/blog/efficient-software-factory/"
+    },
+    {
+     "rank": 10,
+     "title": "Complete Guide to Code Bases in Software Development",
+     "url": "https://www.sonarsource.com/resources/library/code-base-in-software-development/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://getunblocked.com/blog/risk-scoring-agents-triage/",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html",
+  "https://arxiv.org/html/2504.04553v2"
+ ],
+ "recommendations": [
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A detailed blog post explaining how AI can be used to automatically score pull request risk, providing a practical solution for developers looking to enhance the security and quality of their code."
+  },
+  {
+   "name": "Risk scoring on pull requests: what agents can do about it",
+   "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/",
+   "description": "An article discussing the use of agents to score and reduce the risk of pull requests, offering insights into how organizations can implement effective risk management strategies."
+  },
+  {
+   "name": "6 Best AI Code Review Tools for Pull Requests in 2026",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "A curated list of the top 6 AI code review tools designed to enhance the review process, providing a comprehensive overview for developers and teams."
+  }
+ ]
+}

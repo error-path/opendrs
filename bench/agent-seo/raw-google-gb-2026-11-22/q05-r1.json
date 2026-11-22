@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Risk scoring on pull requests: what agents can do about it - Unblocked",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage/"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 5,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 6,
+     "title": "\"Part 4: AI Scores Pull Request Risk in .NET\" | Mesut Atasoy posted on the topic",
+     "url": "https://www.linkedin.com/posts/mesut-atasoy_automatically-scoring-pull-request-risk-with-activity-7383739120445124608--r0x"
+    },
+    {
+     "rank": 7,
+     "title": "A Practical Guide to Risk-Based Code Review - Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 8,
+     "title": "How to Assess Pull Request Impact from AI Coding Tools",
+     "url": "https://blog.exceeds.ai/assess-ai-pull-request-impact/"
+    },
+    {
+     "rank": 9,
+     "title": "9 Best Pull Request Automation Tools [2026]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 10,
+     "title": "PullRequest",
+     "url": "https://www.pullrequest.com/"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of AI-based pull request risk scoring tools and their features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 5,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update)",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 7,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 8,
+     "title": "How to Assess Pull Request Impact from AI Coding Tools",
+     "url": "https://blog.exceeds.ai/assess-ai-pull-request-impact/"
+    },
+    {
+     "rank": 9,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Comparing AI Coding Agents: A Task-Stratified Analysis of Pull Request ...",
+     "url": "https://arxiv.org/html/2602.08915v1"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://getunblocked.com/blog/risk-scoring-agents-triage/",
+  "https://www.openhands.dev/blog/best-automated-code-review-tools",
+  "https://deepsource.com/resources/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "DeepSource",
+   "url": "https://deepsource.com/resources/ai-code-review-tools",
+   "description": "A comprehensive tool that combines static analysis and AI for accurate code review, with a focus on actionable and specific findings."
+  },
+  {
+   "name": "CodeRabbit",
+   "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage",
+   "description": "A tool designed for dedicated AI code review across pull requests, IDEs, and the CLI, suitable for teams with specific repository conventions."
+  },
+  {
+   "name": "GitHub Copilot Code Review",
+   "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026",
+   "description": "A tool that integrates with GitHub and uses Copilot for AI code review, keeping the review process within the existing vendor workflow."
+  }
+ ]
+}

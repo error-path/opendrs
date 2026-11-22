@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Code review bottleneck after AI, how are teams handling it? : r/TechLeader",
+     "url": "https://www.reddit.com/r/TechLeader/comments/1welhjo/code_review_bottleneck_after_ai_how_are_teams/"
+    },
+    {
+     "rank": 2,
+     "title": "How are you keeping PR review from becoming the bottleneck now that AI writes more of the ...",
+     "url": "https://www.reddit.com/r/EngineeringManagers/comments/1wyoxt9/how_are_you_keeping_pr_review_from_becoming_the/"
+    },
+    {
+     "rank": 3,
+     "title": "How do you deal with AI generated PRs? - Development & Design",
+     "url": "https://forum.openrefine.org/t/how-do-you-deal-with-ai-generated-prs/2578"
+    },
+    {
+     "rank": 4,
+     "title": "How I Came to Embrace the Code Review Bottleneck - Honeycomb",
+     "url": "https://www.honeycomb.io/blog/embracing-code-review-bottleneck"
+    },
+    {
+     "rank": 5,
+     "title": "AI Is Breaking Code Review: How Engineering Teams Fix the PR ...",
+     "url": "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck"
+    },
+    {
+     "rank": 6,
+     "title": "How to Unblock Your AI PR Review Bottleneck: A Tech Lead's Guide ...",
+     "url": "https://www.freecodecamp.org/news/how-to-unblock-ai-pr-review-bottleneck-handbook/"
+    },
+    {
+     "rank": 7,
+     "title": "AI Architect: Why The Best Engineers Are Solving Code Review Bottlenecks",
+     "url": "https://www.youtube.com/watch?v=W1uG25of2t0&vl=en"
+    },
+    {
+     "rank": 8,
+     "title": "AI Code Review Bottleneck: Why Quality Must Move Upstream",
+     "url": "https://designverse.ai/blog/ai-code-review-bottleneck"
+    },
+    {
+     "rank": 9,
+     "title": "AI Code Review Is the New Bottleneck in Agentic Coding - Moderne AI",
+     "url": "https://moderne.ai/blog/ai-didnt-break-coding-it-broke-code-review"
+    },
+    {
+     "rank": 10,
+     "title": "AI Is Writing More Code. Review Is Becoming the Bottleneck.",
+     "url": "https://mstone.ai/blog/ai-code-review-bottleneck/"
+    }
+   ]
+  },
+  {
+   "query": "best code review tools for handling AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    },
+    {
+     "rank": 3,
+     "title": "Best Code Review Tools 2026: 8 AI Code Review Tools Compared",
+     "url": "https://www.greptile.com/content-library/best-ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "AI Code Review Tools for 2026: A Buyer's Guide",
+     "url": "https://www.wiz.io/academy/application-security/ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "How I Review PRs with AI — Without Losing My Own Judgment",
+     "url": "https://medium.com/@rajkundalia/how-i-review-prs-with-ai-without-losing-my-own-judgment-f930ad30dc60"
+    },
+    {
+     "rank": 6,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs"
+    },
+    {
+     "rank": 7,
+     "title": "The 6 best AI code review tools for automated pull request reviews",
+     "url": "https://overcut.ai/blog/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "AI code review tools: Key benefits and 8 tools to know in 2026",
+     "url": "https://www.mend.io/blog/ai-code-review-tools-key-benefits-and-tools/"
+    },
+    {
+     "rank": 9,
+     "title": "The 10 Best AI PR Code Review Tools in 2026 (4 Tested Hands-On)",
+     "url": "https://qa.tech/blog/top-5-ai-pr-code-reviewers-2025"
+    },
+    {
+     "rank": 10,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/TechLeader/comments/1welhjo/code_review_bottleneck_after_ai_how_are_teams/",
+  "https://www.reddit.com/r/EngineeringManagers/comments/1wyoxt9/how_are_you_keeping_pr_review_from_becoming_the/",
+  "https://forum.openrefine.org/t/how-do-you-deal-with-ai-generated-prs/2578",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+ ],
+ "recommendations": [
+  {
+   "name": "How to Unblock Your AI PR Review Bottleneck: A Tech Lead's Guide",
+   "url": "https://www.freecodecamp.org/news/how-to-unblock-ai-pr-review-bottleneck-handbook/",
+   "description": "A detailed guide on how tech leads can effectively manage the PR review bottleneck when AI-generated PRs increase."
+  },
+  {
+   "name": "6 Best AI Code Review Tools for Pull Requests in 2026",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "A comparison of the top AI code review tools available, evaluating their performance and control over the review process."
+  },
+  {
+   "name": "Best AI Code Review Tools for 2026: A Buyer's Guide",
+   "url": "https://www.wiz.io/academy/application-security/ai-code-review-tools",
+   "description": "A comprehensive buyer's guide to the best AI code review tools, providing insights into their features and benefits."
+  }
+ ]
+}

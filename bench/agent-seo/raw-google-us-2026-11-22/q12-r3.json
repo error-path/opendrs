@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "What's a Merge Queue and Why Use it? : r/github",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You ...",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-merge failure for repositories with merge queues - Bug Reports",
+     "url": "https://forum.cursor.com/t/auto-merge-failure-for-repositories-with-merge-queues/163624"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Queue | Repositories",
+     "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Introducing the Merge Queue",
+     "url": "https://shopify.engineering/introducing-the-merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "Does \"Branch out of date with Base Branch\" cause issues with Merge ...",
+     "url": "https://stackoverflow.com/questions/77239986/does-branch-out-of-date-with-base-branch-cause-issues-with-merge-queues"
+    },
+    {
+     "rank": 8,
+     "title": "Auto-merge \"Changes must be made through the merge queue\" on ...",
+     "url": "https://github.com/renovatebot/renovate/discussions/25065"
+    },
+    {
+     "rank": 9,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Merge Queue Explained — Stop the PR “Up to Date” Merge Race ...",
+     "url": "https://www.youtube.com/watch?v=vDQ2IG5u1t8"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Merge Queue Tools Comparison",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Managing a merge queue",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 2,
+     "title": "Merge Queue for GitHub",
+     "url": "https://mergify.com/product/merge-queue"
+    },
+    {
+     "rank": 3,
+     "title": "Benefits of a merge queue vs. direct merging - Graphite",
+     "url": "https://graphite.com/guides/merge-queue-vs-direct-merging-benefits"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Merge Queue Alternatives: Trunk, Mergify, Aviator | Pyor",
+     "url": "https://pyor.review/blog/github-merge-queue-alternatives"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Queue for GitHub: Parallel and Flake-Proof - Trunk.io",
+     "url": "https://trunk.io/merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Boosting GitHub Actions Efficiency with Merge Queue | by Tom Brovender",
+     "url": "https://medium.com/@tbrovy/boosting-github-actions-efficiency-with-merge-queue-69377551271c"
+    },
+    {
+     "rank": 7,
+     "title": "Merge Queue Feedback · community · Discussion #14801",
+     "url": "https://github.com/orgs/community/discussions/14801"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub merge queue is generally available",
+     "url": "https://news.ycombinator.com/item?id=36707239"
+    },
+    {
+     "rank": 9,
+     "title": "Mergify vs Trunk Merge Queue",
+     "url": "https://faun.dev/toolbox/mergify-vs-trunk-merge-queue/"
+    },
+    {
+     "rank": 10,
+     "title": "What's a Merge Queue and Why Use it?",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+  "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it/",
+  "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+  "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+  "https://mergify.com/product/merge-queue"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub Auto-Merge",
+   "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+   "description": "A detailed blog post explaining when and how to use GitHub's native auto-merge feature, and when to consider using Mergify for more advanced merge queues."
+  },
+  {
+   "name": "Managing a merge queue",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+   "description": "Official GitHub documentation on how to configure and manage a merge queue for your repository, including auto-merge settings and advanced options."
+  },
+  {
+   "name": "Merge Queue for GitHub",
+   "url": "https://mergify.com/product/merge-queue",
+   "description": "A product page from Mergify, a third-party tool that provides advanced merge queue management and features for GitHub repositories."
+  }
+ ]
+}

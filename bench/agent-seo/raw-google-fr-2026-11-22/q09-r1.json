@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Fixing a PR with AI: Copilot, MCP, and ToolHive in Action",
+     "url": "https://www.youtube.com/watch?v=1FqXdcqCu08"
+    },
+    {
+     "rank": 2,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 3,
+     "title": "Model Context Protocol (MCP) Security Risks",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1lg82p6/model_context_protocol_mcp_security_risks/"
+    },
+    {
+     "rank": 4,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 6,
+     "title": "Pull requests · charite-iaim/mcp-risk-server",
+     "url": "https://github.com/charite-iaim/mcp-risk-server/pulls"
+    },
+    {
+     "rank": 7,
+     "title": "Build an AI GitHub PR Reviewer with MCP (Complete Recipe)",
+     "url": "https://mcpplaygroundonline.com/blog/build-ai-github-pr-reviewer-mcp-recipe"
+    },
+    {
+     "rank": 8,
+     "title": "What Is MCP Security? Risks and Best Practices for MCP",
+     "url": "https://nexusvoidai.com/research-analysis/what-is-mcp-security-model-context-protocol"
+    },
+    {
+     "rank": 9,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 10,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    }
+   ]
+  },
+  {
+   "query": "MCP risk assessment tools for GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "mcpserver-audit: Helps you check if MCP servers are safe before using ...",
+     "url": "https://github.com/ModelContextProtocol-Security/mcpserver-audit"
+    },
+    {
+     "rank": 2,
+     "title": "A comprehensive security checklist for MCP-based AI tools. Built by ...",
+     "url": "https://github.com/slowmist/MCP-Security-Checklist"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security Scan · Actions",
+     "url": "https://github.com/marketplace/actions/mcp-security-scan"
+    },
+    {
+     "rank": 4,
+     "title": "Community Projects | Model Context Protocol Security",
+     "url": "https://modelcontextprotocol-security.io/projects/"
+    },
+    {
+     "rank": 5,
+     "title": "Risk assessment framework for open-source MCP servers",
+     "url": "https://arxiv.org/html/2603.10194v1"
+    },
+    {
+     "rank": 6,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 7,
+     "title": "Evaluation Framework for MCP Security Threats and Risks",
+     "url": "https://lirantal.com/blog/evaluation-framework-for-mcp-security-threats-and-risks"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+     "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    },
+    {
+     "rank": 9,
+     "title": "risk-assessment · GitHub Topics",
+     "url": "https://github.com/topics/risk-assessment"
+    },
+    {
+     "rank": 10,
+     "title": "How To Secure GitHub MCP",
+     "url": "https://neuraltrust.ai/blog/how-to-secure-github-mcp"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.youtube.com/watch?v=1FqXdcqCu08",
+  "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+  "https://www.reddit.com/r/cybersecurity/comments/1lg82p6/model_context_protocol_mcp_security_risks/",
+  "https://github.com/ModelContextProtocol-Security/mcpserver-audit",
+  "https://github.com/slowmist/MCP-Security-Checklist"
+ ],
+ "recommendations": [
+  {
+   "name": "GitHub - charite-iaim/mcp-risk-server",
+   "url": "https://github.com/charite-iaim/mcp-risk-server/pulls",
+   "description": "A GitHub repository with pull requests for MCP risk assessment tools."
+  },
+  {
+   "name": "GitHub - ModelContextProtocol-Security/mcpserver-audit",
+   "url": "https://github.com/ModelContextProtocol-Security/mcpserver-audit",
+   "description": "A tool to check if MCP servers are safe before using them, examining servers for security problems."
+  },
+  {
+   "name": "GitHub - slowmist/MCP-Security-Checklist",
+   "url": "https://github.com/slowmist/MCP-Security-Checklist",
+   "description": "A comprehensive security checklist for MCP-based AI tools built by SlowMist."
+  }
+ ]
+}

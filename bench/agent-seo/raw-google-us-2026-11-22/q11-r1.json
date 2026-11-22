@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 2,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 3,
+     "title": "How To Predict Which Pull Requests Will Cause Incidents",
+     "url": "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "I tested whether specs reduces defects. It doesn't. (119 repos, 100K PRs)",
+     "url": "https://www.reddit.com/r/SpecDrivenDevelopment/comments/1sexm55/i_tested_whether_specs_reduces_defects_it_doesnt/"
+    },
+    {
+     "rank": 5,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809/"
+    },
+    {
+     "rank": 6,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Top 7 AI Bug-Finding Tools Compared: From Detection to Fixes | Early",
+     "url": "https://www.startearly.ai/post/ai-bug-finding-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "syedayazsa/Software-Defect-Analysis-Tool",
+     "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool"
+    },
+    {
+     "rank": 10,
+     "title": "DeepSource: The AI Code Review Platform",
+     "url": "https://deepsource.com/"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for static code analysis and code review in 2023",
+   "results": [
+    {
+     "rank": 1,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Comparative Analysis of Open-Source Tools for Conducting Static ...",
+     "url": "https://www.mdpi.com/1424-8220/23/18/7978"
+    },
+    {
+     "rank": 3,
+     "title": "Static Source Code Analysis: Best Tools August 2026",
+     "url": "https://www.arnica.io/blog/static-source-code-analysis"
+    },
+    {
+     "rank": 4,
+     "title": "What is your favorite open source security static code analyzer for .NET?",
+     "url": "https://www.reddit.com/r/dotnet/comments/vz16m4/what_is_your_favorite_open_source_security_static/"
+    },
+    {
+     "rank": 5,
+     "title": "️ A curated list of static analysis (SAST) tools and linters for all programming ...",
+     "url": "https://github.com/analysis-tools-dev/static-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "Automated code review tool with static analysis",
+     "url": "https://www.sonarsource.com/solutions/code-review/"
+    },
+    {
+     "rank": 7,
+     "title": "Top 8 Java code review tools 2023",
+     "url": "https://snyk.io/blog/java-code-review-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "Best free web app source code static analysis tool",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1pzfetb/best_free_web_app_source_code_static_analysis_tool/"
+    },
+    {
+     "rank": 9,
+     "title": "What are the top static code analysis tools in 2023?",
+     "url": "https://www.quora.com/What-are-the-top-static-code-analysis-tools-in-2023"
+    },
+    {
+     "rank": 10,
+     "title": "Static Code Analysis: Tools and Best Practices",
+     "url": "https://cycode.com/blog/static-code-analysis/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/feiwww/GHPR_dataset",
+  "https://arxiv.org/html/2206.09967v1",
+  "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools",
+  "https://www.mdpi.com/1424-8220/23/18/7978"
+ ],
+ "recommendations": [
+  {
+   "name": "GHPR Dataset",
+   "url": "https://github.com/feiwww/GHPR_dataset",
+   "description": "A GitHub-based dataset for software defect prediction using pull request data."
+  },
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "A paper presenting an updated version of the SZZ algorithm that utilizes pull requests for defect prediction."
+  },
+  {
+   "name": "Software-Defect-Analysis-Tool",
+   "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool",
+   "description": "An open-source tool for software defect analysis that includes features for predicting defects in pull requests."
+  }
+ ]
+}

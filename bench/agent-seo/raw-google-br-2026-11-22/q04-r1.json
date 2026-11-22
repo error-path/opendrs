@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "plugins/pstack/skills/blast-radius/SKILL.md at main · cursor/plugins",
+     "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+     "rank": 2,
+     "title": "Blast Radius",
+     "url": "https://28mm.github.io/blast-radius-docs/"
+    },
+    {
+     "rank": 3,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "What Is Blast Radius?",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 5,
+     "title": "blast-radius · GitHub Topics",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 6,
+     "title": "28mm/blast-radius - Docker Image",
+     "url": "https://hub.docker.com/r/28mm/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "Issues · 28mm/blast-radius",
+     "url": "https://github.com/28mm/blast-radius/issues"
+    },
+    {
+     "rank": 8,
+     "title": "blast-radius/README.md at main",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 9,
+     "title": "r/Terraform on Reddit",
+     "url": "https://www.reddit.com/r/Terraform/comments/1guxx2i/blast_radius_and_cicd_consequences/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Pull Request Impact Analysis Tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Actions: The Impact on the Pull Request Process",
+     "url": "https://dl.acm.org/doi/abs/10.1007/s10664-023-10369-w"
+    },
+    {
+     "rank": 2,
+     "title": "AI Pull Request Analysis · Actions",
+     "url": "https://github.com/marketplace/actions/ai-pull-request-analysis"
+    },
+    {
+     "rank": 3,
+     "title": "Pull Request Impact Analysis Testing: A Guide (2026)",
+     "url": "https://contextqa.com/blog/pull-request-impact-analysis-testing/"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub Actions: The Impact on the Pull Request Process - Springer Nature",
+     "url": "https://link.springer.com/article/10.1007/s10664-023-10369-w"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub Action: Key Metrics to Improve Code Reviews",
+     "url": "https://www.reddit.com/r/github/comments/1fco1p4/github_action_key_metrics_to_improve_code_reviews/"
+    },
+    {
+     "rank": 7,
+     "title": "Recommendations for code review tools that work with github",
+     "url": "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+    },
+    {
+     "rank": 8,
+     "title": "Github pull request hooks, static code analysis and provisional rollback",
+     "url": "https://stackoverflow.com/questions/17947381/github-pull-request-hooks-static-code-analysis-and-provisional-rollback"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Pull Request Analytics · Actions",
+     "url": "https://github.com/marketplace/actions/pull-request-analytics"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md",
+  "https://28mm.github.io/blast-radius-docs/",
+  "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+  "https://dl.acm.org/doi/abs/10.1007/s10664-023-10369-w",
+  "https://github.com/marketplace/actions/ai-pull-request-analysis"
+ ],
+ "recommendations": [
+  {
+   "name": "BlastGuard PR Blast Radius",
+   "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+   "description": "A GitHub Action to score pull request risk based on changed files and co-authored history."
+  },
+  {
+   "name": "AI Pull Request Analysis",
+   "url": "https://github.com/marketplace/actions/ai-pull-request-analysis",
+   "description": "A GitHub Action that analyzes pull requests using Anthropic Claude AI to provide intelligent feedback."
+  },
+  {
+   "name": "Pull Request Analytics",
+   "url": "https://github.com/marketplace/actions/pull-request-analytics",
+   "description": "A GitHub Action that provides detailed analytics for pull requests, including code coverage and test results."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Should an AI coding agent ever be allowed to merge its own PR?",
+     "url": "https://www.reddit.com/r/AI_Agents/comments/1wmvq2p/should_an_ai_coding_agent_ever_be_allowed_to/"
+    },
+    {
+     "rank": 2,
+     "title": "The End of Pull Requests: How AI Is Rewriting Code Collaboration",
+     "url": "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b"
+    },
+    {
+     "rank": 3,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 5,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 6,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "How to Review AI-Generated Pull Requests (2026)",
+     "url": "https://www.aibuilderclub.com/blog/reviewing-ai-generated-pull-requests"
+    },
+    {
+     "rank": 8,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026)",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 9,
+     "title": "Best AI Code Review Tools for GitLab and Azure DevOps (2026) - Repowise",
+     "url": "https://repowise.dev/blog/comparisons/ai-code-review-gitlab-merge-requests"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Copilot & Auto-Merge: Integrating AI Reviews into Your ...",
+     "url": "https://devactivity.com/insights/integrating-ai-reviews-how-to-ensure-github-copilot-blocks-auto-merge-for-better-code-review-analytics/"
+    }
+   ]
+  },
+  {
+   "query": "Comparative analysis of AI code review tools for pull requests across different platforms and industries in 2026",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "The State of AI Code Review in 2026 - Trends, Tools, and What's Next",
+     "url": "https://dev.to/rahulxsingh/the-state-of-ai-code-review-in-2026-trends-tools-and-whats-next-2gfh"
+    },
+    {
+     "rank": 4,
+     "title": "Top 5 AI code review tools in 2026",
+     "url": "https://blog.logrocket.com/ai-code-review-tools-2026/"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.youtube.com/watch?v=dLoa8hCsxdQ"
+    },
+    {
+     "rank": 6,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "The Best Code Review Tools of 2026",
+     "url": "https://www.aikido.dev/blog/best-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "AI Code Review Tools Comparison in 2026: Qodo, CodeRabbit, Copilot ...",
+     "url": "https://www.youtube.com/watch?v=Iqr5UCuki84"
+    },
+    {
+     "rank": 9,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared/"
+    },
+    {
+     "rank": 10,
+     "title": "AI Code Review Benchmark 2026: Which Models Catch the Most Real ...",
+     "url": "https://macroscope.com/content/ai-code-review-benchmark-best-models"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/AI_Agents/comments/1wmvq2p/should_an_ai_coding_agent_ever_be_allowed_to/",
+  "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://sourcegraph.com/blog/automated-code-review-tools",
+  "https://dev.to/rahulxsingh/the-state-of-ai-code-review-in-2026-trends-tools-and-whats-next-2gfh"
+ ],
+ "recommendations": [
+  {
+   "name": "CodeRabbit",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "CodeRabbit is a dedicated AI code review tool for pull requests, IDEs, and the CLI."
+  },
+  {
+   "name": "GitHub Copilot",
+   "url": "https://www.openhands.dev/blog/best-automated-code-review-tools",
+   "description": "GitHub Copilot is an AI coding assistant that can also be used for code review within the existing GitHub workflow."
+  },
+  {
+   "name": "Qodo Merge",
+   "url": "https://repowise.dev/blog/comparisons/ai-code-review-gitlab-merge-requests",
+   "description": "Qodo Merge is an AI-powered code review tool that can be integrated into GitLab and Azure DevOps environments."
+  }
+ ]
+}

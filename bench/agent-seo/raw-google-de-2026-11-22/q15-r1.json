@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "\"auto approve\"",
+   "results": [
+    {
+     "rank": 1,
+     "title": "is Auto Approve a legit place? : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 3,
+     "title": "Auto Approve",
+     "url": "https://www.linkedin.com/company/auto-approve"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-approve | Docs",
+     "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions"
+    },
+    {
+     "rank": 5,
+     "title": "Auto Approve",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 6,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve & YOLO Mode",
+     "url": "https://docs.cline.bot/features/auto-approve"
+    },
+    {
+     "rank": 8,
+     "title": "Auto-approve, new report gadget, & more",
+     "url": "https://confluence.atlassian.com/servicedeskcloud/blog/2017/02/auto-approve-new-report-gadget-more"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve (@AutoApproveRefi) / X",
+     "url": "https://x.com/autoapproverefi"
+    },
+    {
+     "rank": 10,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and user reviews of different auto-approve tools for pull requests in software development environments?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 3,
+     "title": "What is a Pull Request & Why It's Important for Code Review",
+     "url": "https://www.greptile.com/content-library/what-is-a-pull-request"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve Pull Requests · Actions",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 6,
+     "title": "Automated Code Review In Practice",
+     "url": "https://arxiv.org/html/2412.18531v1"
+    },
+    {
+     "rank": 7,
+     "title": "What Is a Pull Request?",
+     "url": "https://www.ibm.com/think/topics/pull-request"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub Copilot PR Approvals: Keep Human Review Required",
+     "url": "https://generalanalysis.com/guides/github-copilot-pull-request-approvals"
+    },
+    {
+     "rank": 9,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 10,
+     "title": "What is a pull request? Why engineering leaders use them as ...",
+     "url": "https://getdx.com/blog/pull-request/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/personalfinance/comments/1fk7yd2/is_auto_approve_a_legit_place/",
+  "https://www.trustpilot.com/review/autoapprove.com",
+  "https://www.linkedin.com/company/auto-approve",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto-approve | Docs",
+   "url": "https://bob.ibm.com/docs/ide/features/auto-approving-actions",
+   "description": "IBM's documentation for auto-approving actions in software development environments."
+  },
+  {
+   "name": "Auto Approve Pull Requests · Actions",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "GitHub Marketplace action for automatically approving pull requests."
+  },
+  {
+   "name": "6 Best AI Code Review Tools for Pull Requests in 2026",
+   "url": "https://mastra.ai/articles/ai-code-review-tools",
+   "description": "A list of the best AI code review tools for pull requests in 2026, including their features and user reviews."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 4,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 6,
+     "title": "A Practical Guide to Risk-Based Code Review - Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 8,
+     "title": "\"Part 4: AI Scores Pull Request Risk in .NET\" | Mesut Atasoy posted on the topic",
+     "url": "https://www.linkedin.com/posts/mesut-atasoy_automatically-scoring-pull-request-risk-with-activity-7383739120445124608--r0x"
+    },
+    {
+     "rank": 9,
+     "title": "How to Assess Pull Request Impact from AI Coding Tools",
+     "url": "https://blog.exceeds.ai/assess-ai-pull-request-impact/"
+    },
+    {
+     "rank": 10,
+     "title": "Change risk: blast radius, tests to run and reviewers for every PR | repowise",
+     "url": "https://repowise.dev/features/change-risk"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of each AI-based pull request risk scoring tool mentioned in the search results?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "AI code review tools: Key benefits and 8 tools to know in 2026",
+     "url": "https://www.mend.io/blog/ai-code-review-tools-key-benefits-and-tools/"
+    },
+    {
+     "rank": 3,
+     "title": "4 Best Platforms to Triage Pull Request Risk Using AI",
+     "url": "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+    },
+    {
+     "rank": 4,
+     "title": "Insights into Security-Related AI-Generated Pull Requests",
+     "url": "https://arxiv.org/html/2604.19965v1"
+    },
+    {
+     "rank": 5,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "AI code review: how it works, benefits & best practices",
+     "url": "https://www.wiz.io/academy/application-security/ai-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "6 Best Security-Focused AI Code Review Tools",
+     "url": "https://www.greptile.com/content-library/best-security-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "A Practical Guide to Risk-Based Code Review - Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 9,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs"
+    },
+    {
+     "rank": 10,
+     "title": "Enhanced code reviews using pull request based change impact ...",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2511.21964v1",
+  "https://mastra.ai/articles/ai-code-review-tools",
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://www.mend.io/blog/ai-code-review-tools-key-benefits-and-tools/",
+  "https://www.cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+   "url": "https://arxiv.org/html/2511.21964v1",
+   "description": "An open-source LLM-based tool for predicting the risk of defects in pull requests based on commit messages, structured diffs, and change metrics."
+  },
+  {
+   "name": "CodeRabbit",
+   "url": "https://www.coderabbit.io/",
+   "description": "A dedicated AI code review tool that fits teams needing repository conventions, linked issue requirements, and related repositories in the review context."
+  },
+  {
+   "name": "GitHub Copilot",
+   "url": "https://docs.github.com/en/copilot",
+   "description": "An AI-powered code assistant that suggests code, helps debug, and generates documentation, enhancing code quality and speed."
+  }
+ ]
+}

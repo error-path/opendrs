@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "plugins/pstack/skills/blast-radius/SKILL.md at main · cursor/plugins",
+     "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+     "rank": 2,
+     "title": "Blast Radius",
+     "url": "https://28mm.github.io/blast-radius-docs/"
+    },
+    {
+     "rank": 3,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "blast-radius · GitHub Topics",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 5,
+     "title": "What Is Blast Radius?",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 6,
+     "title": "28mm/blast-radius - Docker Image",
+     "url": "https://hub.docker.com/r/28mm/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "Issues · 28mm/blast-radius",
+     "url": "https://github.com/28mm/blast-radius/issues"
+    },
+    {
+     "rank": 8,
+     "title": "by Digger HQ",
+     "url": "https://medium.com/@DiggerHQ/understanding-and-limiting-terraform-blast-radius-da071673df16"
+    },
+    {
+     "rank": 9,
+     "title": "r/Terraform on Reddit",
+     "url": "https://www.reddit.com/r/Terraform/comments/1guxx2i/blast_radius_and_cicd_consequences/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for PR blast radius testing and monitoring",
+   "results": [
+    {
+     "rank": 1,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "How should security teams reduce the blast radius of malicious GitHub ...",
+     "url": "https://nhimg.org/faq/how-should-security-teams-reduce-the-blast-radius-of-malicious-github-actions-wh/"
+    },
+    {
+     "rank": 3,
+     "title": "Github Actions to simulate Terraform runs before apply",
+     "url": "https://github.com/overmindtech/actions"
+    },
+    {
+     "rank": 4,
+     "title": "Security Blast Radius",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 5,
+     "title": "Built an open source SRE Tool that Predicts Blast Radius of a GitHub PR ...",
+     "url": "https://www.reddit.com/r/Backend/comments/1rnbe5w/built_an_open_source_sre_tool_that_predicts_blast/"
+    },
+    {
+     "rank": 6,
+     "title": "How to Assess the Blast Radius of a Code Change - Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 7,
+     "title": "Github actions: Stuck in \"Expected — Waiting for status to be reported\"",
+     "url": "https://github.com/orgs/community/discussions/26698"
+    },
+    {
+     "rank": 8,
+     "title": "Blast Radius of the tj-actions/changed-files Supply Chain Attack",
+     "url": "https://www.endorlabs.com/learn/blast-radius-of-the-tj-actions-changed-files-supply-chain-attack"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Blast Radius Check: CXGRD Action Explained - Volanea",
+     "url": "https://www.volanea.com/blog/github-blast-radius-check-cxgrd"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Actions Is Already Powerful - Here's How to Make It Indispensable",
+     "url": "https://github.com/orgs/community/discussions/191011"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md",
+  "https://28mm.github.io/blast-radius-docs/",
+  "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+  "https://nhimg.org/faq/how-should-security-teams-reduce-the-blast-radius-of-malicious-github-actions-wh/",
+  "https://github.com/overmindtech/actions"
+ ],
+ "recommendations": [
+  {
+   "name": "BlastGuard PR Blast Radius",
+   "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+   "description": "A GitHub Action that helps you score pull request blast radius and review risk for .NET repositories."
+  },
+  {
+   "name": "BlastRadius",
+   "url": "https://28mm.github.io/blast-radius-docs/",
+   "description": "A tool for reasoning about Terraform dependency graphs through interactive visualizations."
+  },
+  {
+   "name": "GitHub Actions for PR Blast Radius Testing",
+   "url": "https://github.com/overmindtech/actions",
+   "description": "A collection of GitHub Actions to simulate Terraform runs before apply."
+  }
+ ]
+}

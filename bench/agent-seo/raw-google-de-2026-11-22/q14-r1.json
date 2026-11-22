@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+     "rank": 2,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 3,
+     "title": "Best Claude Code Review Skills & Tools in 2026",
+     "url": "https://agentskillshub.top/best/code-review/"
+    },
+    {
+     "rank": 4,
+     "title": "Automated code review for Bitbucket Cloud pull requests - Claude ...",
+     "url": "https://github.com/yoonjong12/bitbucket-code-review"
+    },
+    {
+     "rank": 5,
+     "title": "Review Pull Request (Grade A) - Claude Skill",
+     "url": "https://www.skillsdirectory.com/skills/jenkinsci-review-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "Code Review - Claude Plugin Marketplace",
+     "url": "https://pluginmarketplace.ai/plugin/code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Claude Code Review Reaches General Availability - AI Catchup",
+     "url": "https://aicatchup.com/news/claude-code-review-general-availability"
+    },
+    {
+     "rank": 8,
+     "title": "How do you handle pull requests? : r/ClaudeCode",
+     "url": "https://www.reddit.com/r/ClaudeCode/comments/1vsc42t/how_do_you_handle_pull_requests/"
+    },
+    {
+     "rank": 9,
+     "title": "Automate GitHub PR Reviews with AI (Node.js, Claude & GitHub Actions)",
+     "url": "https://www.youtube.com/watch?v=XgAZBRZ7yy0"
+    },
+    {
+     "rank": 10,
+     "title": "Claude Code for Bitbucket Pull Request Review",
+     "url": "https://gitautoreview.com/blog/claude-code-bitbucket-pull-request-review"
+    }
+   ]
+  },
+  {
+   "query": "AI-driven code review tools for GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Code Review AI",
+     "url": "https://github.com/marketplace/code-review-ai"
+    },
+    {
+     "rank": 2,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update)",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 3,
+     "title": "5 AI-Powered GitHub Code Review Tools [Feb 2026]",
+     "url": "https://www.qodo.ai/blog/github-ai-code-review/"
+    },
+    {
+     "rank": 4,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Nayjest/Gito: An AI-powered GitHub code review tool that uses LLMs to ...",
+     "url": "https://github.com/Nayjest/Gito"
+    },
+    {
+     "rank": 6,
+     "title": "Any AI code review tools for GitHub PRs? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1gpbq93/any_ai_code_review_tools_for_github_prs/"
+    },
+    {
+     "rank": 7,
+     "title": "Nikita-Filonov/ai-review: 🚀 AI-powered code review tool for ...",
+     "url": "https://github.com/Nikita-Filonov/ai-review"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools for GitHub in 2026",
+     "url": "https://dev.to/dev_kiran/best-ai-code-review-tools-for-github-in-2026-4pjk"
+    },
+    {
+     "rank": 9,
+     "title": "AI code review tools for GitHub: A complete comparison",
+     "url": "https://kodus.io/en/ai-code-review-tools-for-github/"
+    },
+    {
+     "rank": 10,
+     "title": "9 Crazy GitHub AI Code Review Tools in 2025 | by Sonali Sood",
+     "url": "https://medium.com/@sonalisood0/9-crazy-github-ai-code-review-tools-in-2025-a8ce557930a6"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://code.claude.com/docs/en/github-actions",
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://agentskillshub.top/best/code-review/",
+  "https://github.com/marketplace/code-review-ai",
+  "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+ ],
+ "recommendations": [
+  {
+   "name": "Claude Code GitHub Actions",
+   "url": "https://code.claude.com/docs/en/github-actions",
+   "description": "A GitHub Action that runs Claude Code inside your repository's workflows to analyze code, implement changes, and push commits."
+  },
+  {
+   "name": "Code Review AI",
+   "url": "https://github.com/marketplace/code-review-ai",
+   "description": "An AI-powered code checking and improvement suggestions tool for GitHub pull requests."
+  },
+  {
+   "name": "AI Code Review",
+   "url": "https://code-review-ai.com/",
+   "description": "An automated and interactive code review tool for GitHub workflows that provides guidance on refining code and facilitating discussions."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "ai that auto-approves low-risk pull requests?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74%",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 2,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide)",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 3,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 4,
+     "title": "Meet LiveReview: Auto Approve 30-50% of Your Low-Risk PRs, Safely",
+     "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g"
+    },
+    {
+     "rank": 5,
+     "title": "When should AI be allowed to approve a pull request?",
+     "url": "https://rootly.com/blog/when-should-ai-be-allowed-to-approve-a-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "Risk-Gated AI Pull Request Approval with Copilot",
+     "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 8,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 9,
+     "title": "AI Code Review Tools That Approve Pull Requests, Compared",
+     "url": "https://warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests"
+    },
+    {
+     "rank": 10,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    }
+   ]
+  },
+  {
+   "query": "User's specific requirements for the AI-powered tool, such as the programming language, type of project, and preferred features.",
+   "results": [
+    {
+     "rank": 1,
+     "title": "An Empirical Study of Developer-Provided Context for AI Coding ...",
+     "url": "https://arxiv.org/html/2512.18925v1"
+    },
+    {
+     "rank": 2,
+     "title": "AI in Software Development",
+     "url": "https://www.ibm.com/think/topics/ai-in-software-development"
+    },
+    {
+     "rank": 3,
+     "title": "AI tools in software development: risks and benefits | LLlnformatics",
+     "url": "https://llinformatics.com/blog/ai-tools-in-software-development"
+    },
+    {
+     "rank": 4,
+     "title": "the most advanced AI coding assistant in 2025! From writing code to fixing ...",
+     "url": "https://www.facebook.com/TheNetRider/videos/boost-your-coding-skills-with-cursor-ai-the-net-rider/4379880255615624/"
+    },
+    {
+     "rank": 5,
+     "title": "AI-Driven Software Development: Opportunities and Good Practices",
+     "url": "https://uu.diva-portal.org/smash/get/diva2:1996184/FULLTEXT01.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "Best 10 AI Tools for Coding: A Developer's Ultimate Toolkit for 2026",
+     "url": "https://manus.im/blog/best-ai-coding-assistant-tools"
+    },
+    {
+     "rank": 7,
+     "title": "How To Build an App With Windsurf AI",
+     "url": "https://www.codecademy.com/article/how-to-build-an-app-with-windsurf-ai"
+    },
+    {
+     "rank": 8,
+     "title": "AI-Assisted Software Development: A Comprehensive Guide ... - Medium",
+     "url": "https://aalapdavjekar.medium.com/ai-assisted-software-development-a-comprehensive-guide-with-practical-prompts-part-1-3-989a529908e0"
+    },
+    {
+     "rank": 9,
+     "title": "AI-Powered Software Development: A Systematic Review of ...",
+     "url": "https://www.mdpi.com/2073-431X/14/4/119"
+    },
+    {
+     "rank": 10,
+     "title": "Vibe Coding Explained: Tools and Guides",
+     "url": "https://cloud.google.com/discover/what-is-vibe-coding"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://ona.com/stories/auto-approving-low-risk-prs",
+  "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+  "https://arxiv.org/html/2512.18925v1",
+  "https://www.ibm.com/think/topics/ai-in-software-development"
+ ],
+ "recommendations": [
+  {
+   "name": "Ona",
+   "url": "https://ona.com/stories/auto-approving-low-risk-prs",
+   "description": "Ona is a tool that uses AI to auto-approve low-risk pull requests, significantly reducing lead time."
+  },
+  {
+   "name": "Macroscope",
+   "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely",
+   "description": "Macroscope offers a guide on how to use AI to safely speed up pull request approvals by routing PRs based on risk."
+  },
+  {
+   "name": "LiveReview",
+   "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g",
+   "description": "LiveReview is an AI tool that automatically approves up to 30-50% of low-risk pull requests safely."
+  }
+ ]
+}

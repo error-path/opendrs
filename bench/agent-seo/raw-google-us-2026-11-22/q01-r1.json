@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "autoapprove alternatives",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Refinance Your Car | Lower Your Payments | Auto Refinance",
+     "url": "https://autoapprove.com/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto refinancing options and how to decide : r/personalfinance",
+     "url": "https://www.reddit.com/r/personalfinance/comments/1sbhewe/auto_refinancing_options_and_how_to_decide/"
+    },
+    {
+     "rank": 3,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    },
+    {
+     "rank": 4,
+     "title": "5 Best Auto Refinance Companies of November 2026 | Money",
+     "url": "https://money.com/best-auto-refinance/"
+    },
+    {
+     "rank": 5,
+     "title": "Best Auto Refinance Loans & Rates of 2026",
+     "url": "https://www.cars.com/auto-loans/money/best-auto-loans/"
+    },
+    {
+     "rank": 6,
+     "title": "Best Auto Refinance Companies of 2026",
+     "url": "https://www.youtube.com/watch?v=ef2KWyEfcE0"
+    },
+    {
+     "rank": 7,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    },
+    {
+     "rank": 9,
+     "title": "Best Auto Refinance Loans and Rates of 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/best/refinance-car-loan"
+    },
+    {
+     "rank": 10,
+     "title": "The BEST Auto Refinance Options (LendingTree, RefiJet, myAutoloan)",
+     "url": "https://www.youtube.com/watch?v=PTlFFM7COyE"
+    }
+   ]
+  },
+  {
+   "query": "user's specific needs and criteria for the auto-approve tool, such as interest rates, fees, customer reviews, and ease of use.",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    },
+    {
+     "rank": 2,
+     "title": "Auto Approve Auto Loans Review 2026",
+     "url": "https://www.nerdwallet.com/auto-loans/reviews/auto-approve-auto-loans"
+    },
+    {
+     "rank": 3,
+     "title": "2026 Auto Approve Auto Loan Review",
+     "url": "https://www.lendingtree.com/auto/reviews/auto-approve/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto Approve Auto Refinance Review 2026",
+     "url": "https://www.wsj.com/buyside/personal-finance/auto-loans/auto-approve-auto-loans-review"
+    },
+    {
+     "rank": 5,
+     "title": "Auto Approve Reviews (From First-hand Experiences) | Page 5",
+     "url": "https://www.consumeraffairs.com/finance/auto-approve.html?page=5"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve: Auto Loan Review",
+     "url": "https://www.bankrate.com/loans/auto-loans/reviews/auto-approve/"
+    },
+    {
+     "rank": 7,
+     "title": "I thought it was just another ad, but Auto Approve surprised me with ...",
+     "url": "https://www.facebook.com/autoapproverefi/videos/trustpilot-review-by-rebecca-pilette/801716868492529/"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Auto Loan Review: Pros, Cons & Verdict",
+     "url": "https://www.forbes.com/advisor/auto-loans/auto-approve-auto-refinance-review/"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve auto refinance review: saved $600/month",
+     "url": "https://www.facebook.com/autoapproverefi/posts/we-recently-refinanced-both-of-our-vehicles-with-auto-approve-they-were-able-to-/1747772140117311/"
+    },
+    {
+     "rank": 10,
+     "title": "Auto Approve Auto Refinance Reviews (2026) - SuperMoney",
+     "url": "https://www.supermoney.com/reviews/auto-refinance/auto-approve-auto-refinance"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://autoapprove.com/",
+  "https://www.reddit.com/r/personalfinance/comments/1sbhewe/auto_refinancing_options_and_how_to_decide/",
+  "https://www.lendingtree.com/auto/reviews/auto-approve/",
+  "https://www.trustpilot.com/review/autoapprove.com",
+  "https://www.nerdwallet.com/auto-loans/reviews/auto-approve-auto-loans"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto Approve",
+   "url": "https://autoapprove.com/",
+   "description": "A platform that allows users to lower their car payments without needing a credit check."
+  },
+  {
+   "name": "NerdWallet",
+   "url": "https://www.nerdwallet.com/auto-loans/reviews/auto-approve-auto-loans",
+   "description": "Provides reviews and insights into Auto Approve's services, including customer satisfaction and rates."
+  },
+  {
+   "name": "SuperMoney",
+   "url": "https://www.supermoney.com/reviews/auto-refinance/auto-approve-auto-refinance",
+   "description": "Offers a detailed review of Auto Approve's auto refinance services, focusing on ease of use and customer reviews."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Code review bottleneck after AI, how are teams handling it? : r/TechLeader",
+     "url": "https://www.reddit.com/r/TechLeader/comments/1welhjo/code_review_bottleneck_after_ai_how_are_teams/"
+    },
+    {
+     "rank": 2,
+     "title": "How are you keeping PR review from becoming the bottleneck now that AI writes more of the ...",
+     "url": "https://www.reddit.com/r/EngineeringManagers/comments/1wyoxt9/how_are_you_keeping_pr_review_from_becoming_the/"
+    },
+    {
+     "rank": 3,
+     "title": "How do you deal with AI generated PRs? - Development & Design",
+     "url": "https://forum.openrefine.org/t/how-do-you-deal-with-ai-generated-prs/2578"
+    },
+    {
+     "rank": 4,
+     "title": "How I Came to Embrace the Code Review Bottleneck - Honeycomb",
+     "url": "https://www.honeycomb.io/blog/embracing-code-review-bottleneck"
+    },
+    {
+     "rank": 5,
+     "title": "AI Is Breaking Code Review: How Engineering Teams Fix the PR ...",
+     "url": "https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck"
+    },
+    {
+     "rank": 6,
+     "title": "How to Unblock Your AI PR Review Bottleneck: A Tech Lead's Guide ...",
+     "url": "https://www.freecodecamp.org/news/how-to-unblock-ai-pr-review-bottleneck-handbook/"
+    },
+    {
+     "rank": 7,
+     "title": "AI Architect: Why The Best Engineers Are Solving Code Review Bottlenecks",
+     "url": "https://www.youtube.com/watch?v=W1uG25of2t0&vl=en"
+    },
+    {
+     "rank": 8,
+     "title": "AI Code Review Is the New Bottleneck in Agentic Coding - Moderne AI",
+     "url": "https://moderne.ai/blog/ai-didnt-break-coding-it-broke-code-review"
+    },
+    {
+     "rank": 9,
+     "title": "AI Code Review Bottleneck: Why Quality Must Move Upstream",
+     "url": "https://designverse.ai/blog/ai-code-review-bottleneck"
+    },
+    {
+     "rank": 10,
+     "title": "Code Review is Now Our Bottleneck, and We Made it Worse | by David Lee",
+     "url": "https://medium.com/@lordmoma/code-review-is-now-our-bottleneck-and-we-made-it-worse-551058bb96e7"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Pull Request review tools and integrations",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Pull requests",
+     "url": "https://docs.github.com/articles/about-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "Any recommendations for code review tools in github? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+    },
+    {
+     "rank": 3,
+     "title": "Marketplace · GitHub - Code review apps",
+     "url": "https://github.com/marketplace?type=apps&category=code-review"
+    },
+    {
+     "rank": 4,
+     "title": "Review GitHub pull requests with Codex",
+     "url": "https://learn.chatgpt.com/docs/third-party/github"
+    },
+    {
+     "rank": 5,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 6,
+     "title": "PR Agent: The Original Open-Source PR Reviewer. This project is not ...",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 7,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best Git clients for managing pull requests - Graphite",
+     "url": "https://graphite.com/guides/best-git-clients-for-managing-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Platform · Repositories, Collaboration, and AI",
+     "url": "https://github.com/platform"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/TechLeader/comments/1welhjo/code_review_bottleneck_after_ai_how_are_teams/",
+  "https://www.reddit.com/r/EngineeringManagers/comments/1wyoxt9/how_are_you_keeping_pr_review_from_becoming_the/",
+  "https://forum.openrefine.org/t/how-do-you-deal-with-ai-generated-prs/2578",
+  "https://docs.github.com/articles/about-pull-requests",
+  "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Agent",
+   "url": "https://github.com/The-PR-Agent/pr-agent",
+   "description": "An open-source PR reviewer that can help with the review of AI-generated PRs."
+  },
+  {
+   "name": "Codex",
+   "url": "https://learn.chatgpt.com/docs/third-party/github",
+   "description": "A tool that integrates with GitHub to help with code review, including the review of PRs."
+  },
+  {
+   "name": "GitHub Pull Request Review Tools",
+   "url": "https://github.com/marketplace?type=apps&category=code-review",
+   "description": "A collection of tools and integrations available on GitHub Marketplace that can help with the review of PRs."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "autoapprove alternatives",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to auto approve commands in Codex? : r/OpenAI",
+     "url": "https://www.reddit.com/r/OpenAI/comments/1n2eocl/how_to_auto_approve_commands_in_codex/"
+    },
+    {
+     "rank": 2,
+     "title": "Manage approvals and permissions",
+     "url": "https://code.visualstudio.com/docs/agents/run/approvals"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-Approving Actions | Roo Code Documentation",
+     "url": "https://roocodeinc.github.io/Roo-Code/features/auto-approving-actions/"
+    },
+    {
+     "rank": 4,
+     "title": "chat.tools.terminal.autoApprove (and related terminal tool auto ...",
+     "url": "https://github.com/microsoft/vscode/issues/318347"
+    },
+    {
+     "rank": 5,
+     "title": "How to automatically approve/continue GitHub Copilot terminal ...",
+     "url": "https://stackoverflow.com/questions/79720577/how-to-automatically-approve-continue-github-copilot-terminal-commands-in-vs-cod"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-review",
+     "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review"
+    },
+    {
+     "rank": 7,
+     "title": "How We Use AI Agents to Auto Approve Github PRs | by Adrian Booth",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 8,
+     "title": "How to auto-approve tools in your remote dev environment",
+     "url": "https://www.linkedin.com/posts/vs-code_tired-of-manually-approving-agent-mode-tools-activity-7333937801232531456-78NW"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Copilot Agent Mode Tips: Auto-Approve Commands & Instant ...",
+     "url": "https://www.youtube.com/shorts/-s8C0QTjqow?vl=en"
+    },
+    {
+     "rank": 10,
+     "title": "Auto Approve Reviews | Read Customer Service ...",
+     "url": "https://www.trustpilot.com/review/autoapprove.com"
+    }
+   ]
+  },
+  {
+   "query": "Best GitHub PR approval tools for developers",
+   "results": [
+    {
+     "rank": 1,
+     "title": "kodustech/awesome-code-review-tools",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Recommendations for code review tools that work with github",
+     "url": "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+    },
+    {
+     "rank": 4,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 5,
+     "title": "Any recommendations for code review tools in github? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+    },
+    {
+     "rank": 6,
+     "title": "PR Agent: The Original Open-Source PR Reviewer. This project is not ...",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 7,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update)",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 9,
+     "title": "eckyputrady/github-pr-approver: Github Code Review is a Chrome ...",
+     "url": "https://github.com/eckyputrady/github-pr-approver"
+    },
+    {
+     "rank": 10,
+     "title": "Best GitHub Alternative Pull Request Review Tool",
+     "url": "https://www.gitclear.com/best_github_alternative_pull_request_review_tool"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.reddit.com/r/OpenAI/comments/1n2eocl/how_to_auto_approve_commands_in_codex/",
+  "https://code.visualstudio.com/docs/agents/run/approvals",
+  "https://roocodeinc.github.io/Roo-Code/features/auto-approving-actions/",
+  "https://github.com/kodustech/awesome-code-review-tools",
+  "https://mastra.ai/articles/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Roo Code - Auto-Approving Actions",
+   "url": "https://roocodeinc.github.io/Roo-Code/features/auto-approving-actions/",
+   "description": "Roo Code offers a feature for auto-approving actions, which can help streamline the approval process for pull requests."
+  },
+  {
+   "name": "kodustech/awesome-code-review-tools",
+   "url": "https://github.com/kodustech/awesome-code-review-tools",
+   "description": "This GitHub repository provides a curated list of code review tools, including those that can help with automating the approval process."
+  },
+  {
+   "name": "CodeRabbit Reviewer",
+   "url": "https://www.coderabbit.io/",
+   "description": "CodeRabbit is an AI code review tool designed to automate the review process and provide insights beyond the diff, making it easier to approve pull requests."
+  }
+ ]
+}

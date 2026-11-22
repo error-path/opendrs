@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 2,
+     "title": "Prediction of Pull Requests Review Time in Open Source Projects",
+     "url": "https://dl.acm.org/doi/fullHtml/10.1145/3493244.3493262"
+    },
+    {
+     "rank": 3,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 4,
+     "title": "E-PRedictor: an approach for early prediction of pull request acceptance",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    },
+    {
+     "rank": 5,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://www.researchgate.net/publication/351100520_Predicting_the_lifetime_of_pull_requests_in_open-source_projects"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809/"
+    },
+    {
+     "rank": 8,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 10,
+     "title": "Pull requests · jtbryan/defect-prediction",
+     "url": "https://github.com/jtbryan/defect-prediction/pulls"
+    }
+   ]
+  },
+  {
+   "query": "Code review tools for open-source projects GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Awesome list of code review resources and tools",
+     "url": "https://github.com/kh4sh3i/Awesome-Code-Review"
+    },
+    {
+     "rank": 2,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Marketplace · GitHub - Code review apps",
+     "url": "https://github.com/marketplace?type=apps&category=code-review"
+    },
+    {
+     "rank": 4,
+     "title": "kodustech/awesome-code-review-tools",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "PR Agent: The Original Open-Source PR Reviewer. This project is not ...",
+     "url": "https://github.com/The-PR-Agent/pr-agent"
+    },
+    {
+     "rank": 6,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "9 Best AI Code Review Tools in GitHub Marketplace",
+     "url": "https://codeant.ai/blogs/ai-code-review-tools-github-marketplace"
+    },
+    {
+     "rank": 8,
+     "title": "5 Open Source Code Review Tools Comparison [2026]",
+     "url": "https://www.qodo.ai/blog/open-source-code-review-tools/"
+    },
+    {
+     "rank": 9,
+     "title": "Review GitHub pull requests with Codex",
+     "url": "https://learn.chatgpt.com/docs/third-party/github"
+    },
+    {
+     "rank": 10,
+     "title": "Recommendations for code review tools that work with github",
+     "url": "https://www.reddit.com/r/github/comments/1e02eqg/recommendations_for_code_review_tools_that_work/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2206.09967v1",
+  "https://dl.acm.org/doi/fullHtml/10.1145/3493244.3493262",
+  "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337",
+  "https://github.com/kh4sh3i/Awesome-Code-Review",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://arxiv.org/html/2206.09967v1",
+   "description": "An open-source tool that extends the SZZ algorithm with pull request data for defect prediction in software repositories."
+  },
+  {
+   "name": "Awesome list of code review resources and tools",
+   "url": "https://github.com/kh4sh3i/Awesome-Code-Review",
+   "description": "A GitHub repository containing a curated list of code review resources and tools, including several open-source options."
+  },
+  {
+   "name": "GitHub PR Agent",
+   "url": "https://github.com/The-PR-Agent/pr-agent",
+   "description": "An open-source tool designed to help automate and improve the quality of pull requests on GitHub."
+  }
+ ]
+}

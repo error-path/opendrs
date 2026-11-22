@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Actions · GitHub Marketplace - opendrs Diff Risk Score",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 4,
+     "title": "RADAR, Risk Calibration, and Review Efficiency | Matt Steiner | 17 comments",
+     "url": "https://www.linkedin.com/posts/mattsteiner_automating-low-risk-code-review-at-meta-activity-7466148084193091585-ZTYe"
+    },
+    {
+     "rank": 5,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 6,
+     "title": "Go implementation of RADAR (Risk Aware Diff Auto Review), the code- ...",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 7,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 8,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 9,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai/"
+    },
+    {
+     "rank": 10,
+     "title": "How Meta reduced diff authoring time by 40%",
+     "url": "https://daily.dev/posts/how-meta-reduced-diff-authoring-time-by-40--tylmafdcz"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for automated code review and risk scoring",
+   "results": [
+    {
+     "rank": 1,
+     "title": "The Best Automated Code Review Tools for Engineering Teams",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "CodeRabbit | Governance & Control for Agentic Development",
+     "url": "https://www.coderabbit.ai/"
+    },
+    {
+     "rank": 3,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Best Code Review Tools Reviews 2026 | Gartner Peer Insights",
+     "url": "https://www.gartner.com/reviews/market/code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 6,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis ...",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "10 Best Security Code Review Tools to Improve Code Quality",
+     "url": "https://www.legitsecurity.com/aspm-knowledge-base/best-security-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "I tested 9 code review tools to see which is best!",
+     "url": "https://www.youtube.com/watch?v=JmraS29Kqgs"
+    },
+    {
+     "rank": 9,
+     "title": "What open source tools exists to help with code reviews?",
+     "url": "https://www.reddit.com/r/softwaredevelopment/comments/1s5e4bz/what_open_source_tools_exists_to_help_with_code/"
+    },
+    {
+     "rank": 10,
+     "title": "Looking for a Free/Open Source AI Code Review Tool – Suggestions?",
+     "url": "https://www.reddit.com/r/developersIndia/comments/1lrrsvl/looking_for_a_freeopen_source_ai_code_review_tool/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+  "https://www.openhands.dev/blog/best-automated-code-review-tools",
+  "https://www.coderabbit.ai/"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source DRS tool equipped with a public API, web UI, and GitHub plugin."
+  },
+  {
+   "name": "opendrs Diff Risk Score",
+   "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+   "description": "GitHub Actions for automated code review and risk scoring."
+  },
+  {
+   "name": "CodeRabbit | Governance Control for Agentic Development",
+   "url": "https://www.coderabbit.ai/",
+   "description": "A platform for agentic development with automated code review and risk management."
+  }
+ ]
+}

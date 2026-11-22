@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "plugins/pstack/skills/blast-radius/SKILL.md at main · cursor/plugins",
+     "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+     "rank": 2,
+     "title": "Blast Radius",
+     "url": "https://28mm.github.io/blast-radius-docs/"
+    },
+    {
+     "rank": 3,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "blast-radius · GitHub Topics",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 5,
+     "title": "Issues · 28mm/blast-radius",
+     "url": "https://github.com/28mm/blast-radius/issues"
+    },
+    {
+     "rank": 6,
+     "title": "28mm/blast-radius - Docker Image",
+     "url": "https://hub.docker.com/r/28mm/blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "What Is Blast Radius?",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 8,
+     "title": "JokingHero/code-blast-radius",
+     "url": "https://github.com/JokingHero/code-blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "blast-radius/README.md at main",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    }
+   ]
+  },
+  {
+   "query": "GitHub PR impact analysis tools comparison",
+   "results": [
+    {
+     "rank": 1,
+     "title": "change-impact-analysis",
+     "url": "https://github.com/topics/change-impact-analysis"
+    },
+    {
+     "rank": 2,
+     "title": "impact-initiatives/analysistools",
+     "url": "https://github.com/impact-initiatives/analysistools"
+    },
+    {
+     "rank": 3,
+     "title": "Pull Request Analytics · Actions",
+     "url": "https://github.com/marketplace/actions/pull-request-analytics"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Impact: Claude Code Skill for PR Analysis",
+     "url": "https://mcpmarket.com/tools/skills/github-pr-impact-analysis"
+    },
+    {
+     "rank": 5,
+     "title": "Git Analytics Tools: Code-Level and Team-Level, Compared - Repowise",
+     "url": "https://repowise.dev/blog/comparisons/best-git-analytics-tools"
+    },
+    {
+     "rank": 6,
+     "title": "Best Code Review Tools for GitHub - GauntletCI",
+     "url": "https://gauntletci.com/articles/best-code-review-tools-github"
+    },
+    {
+     "rank": 7,
+     "title": "Any recommendations for code review tools in github? : r/codereview",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in/"
+    },
+    {
+     "rank": 8,
+     "title": "5 Open Source Code Review Tools Comparison [2026]",
+     "url": "https://www.qodo.ai/blog/open-source-code-review-tools/"
+    },
+    {
+     "rank": 9,
+     "title": "8 code review tools for achieving a clean and efficient workflow - Graphite",
+     "url": "https://graphite.com/guides/code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md",
+  "https://28mm.github.io/blast-radius-docs/",
+  "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+  "https://github.com/topics/change-impact-analysis",
+  "https://github.com/impact-initiatives/analysistools"
+ ],
+ "recommendations": [
+  {
+   "name": "cursor/plugins/pstack/skills/blast-radius",
+   "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md",
+   "description": "A tool for reasoning about code changes and potential impacts."
+  },
+  {
+   "name": "BlastGuard PR Blast Radius",
+   "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+   "description": "GitHub Action for analyzing the blast radius of pull requests."
+  },
+  {
+   "name": "impact-initiatives/analysistools",
+   "url": "https://github.com/impact-initiatives/analysistools",
+   "description": "A collection of tools for analyzing code changes and their impacts."
+  }
+ ]
+}

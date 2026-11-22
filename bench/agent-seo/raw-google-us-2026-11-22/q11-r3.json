@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 2,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in ...",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 3,
+     "title": "How To Predict Which Pull Requests Will Cause Incidents",
+     "url": "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "I tested whether specs reduces defects. It doesn't. (119 repos, 100K PRs)",
+     "url": "https://www.reddit.com/r/SpecDrivenDevelopment/comments/1sexm55/i_tested_whether_specs_reduces_defects_it_doesnt/"
+    },
+    {
+     "rank": 5,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809/"
+    },
+    {
+     "rank": 6,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Top 7 AI Bug-Finding Tools Compared: From Detection to Fixes | Early",
+     "url": "https://www.startearly.ai/post/ai-bug-finding-tools/"
+    },
+    {
+     "rank": 8,
+     "title": "An Empirical Test of Spec-Driven Development Claims - DROPS",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "syedayazsa/Software-Defect-Analysis-Tool",
+     "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool"
+    },
+    {
+     "rank": 10,
+     "title": "DeepSource: The AI Code Review Platform",
+     "url": "https://deepsource.com/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub-based open-source tools for software defect prediction and pull request analysis",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 2,
+     "title": "syedayazsa/Software-Defect-Analysis-Tool",
+     "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool"
+    },
+    {
+     "rank": 3,
+     "title": "naman-sriv/Software_Defect_Prediction",
+     "url": "https://github.com/naman-sriv/Software_Defect_Prediction"
+    },
+    {
+     "rank": 4,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://www.researchgate.net/publication/340227556_A_GitHub-Based_Data_Collection_Method_for_Software_Defect_Prediction"
+    },
+    {
+     "rank": 5,
+     "title": "OpenSZZ: A Free, Open-Source, Web-Accessible Implementation of the ...",
+     "url": "https://fpalomba.github.io/pdf/Conferencs/C49.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "12 Best Open Source Code Review Tools in 2026",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "bavanya/Software_fault_prediction",
+     "url": "https://github.com/bavanya/Software_fault_prediction"
+    },
+    {
+     "rank": 8,
+     "title": "Top 7 AI Bug-Finding Tools Compared: From Detection to Fixes | Early",
+     "url": "https://www.startearly.ai/post/ai-bug-finding-tools/"
+    },
+    {
+     "rank": 9,
+     "title": "7 tools for code review engineers (GitHub edition)",
+     "url": "https://blog.codacy.com/7-tools-code-review-engineers-github"
+    },
+    {
+     "rank": 10,
+     "title": "r/QualityAssurance - Top Software Testing Tools With GitHub Integration",
+     "url": "https://www.reddit.com/r/QualityAssurance/comments/8yi610/top_software_testing_tools_with_github_integration/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/feiwww/GHPR_dataset",
+  "https://arxiv.org/html/2206.09967v1",
+  "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests",
+  "https://github.com/syedayazsa/Software-Defect-Analysis-Tool",
+  "https://github.com/naman-sriv/Software_Defect_Prediction"
+ ],
+ "recommendations": [
+  {
+   "name": "GHPR Dataset",
+   "url": "https://github.com/feiwww/GHPR_dataset",
+   "description": "A GitHub-based dataset for software defect prediction that includes a collection of pull requests and bug fixes."
+  },
+  {
+   "name": "syedayazsa/Software-Defect-Analysis-Tool",
+   "url": "https://github.com/syedayazsa/Software-Defect-Analysis-Tool",
+   "description": "A tool that collects various software attributes and probes whether the software is defective, potentially useful for predicting defects."
+  },
+  {
+   "name": "naman-sriv/Software_Defect_Prediction",
+   "url": "https://github.com/naman-sriv/Software_Defect_Prediction",
+   "description": "An open-source project focused on software defect prediction, offering tools and resources for identifying and predicting defects in software."
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Full Pull Request Lifecycle Using Agent Mode and GitHub MCP",
+     "url": "https://www.youtube.com/watch?v=VX1zP3irSYU"
+    },
+    {
+     "rank": 2,
+     "title": "How to Contribute to the MCP Security Project #2",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security Best Practices: How to Prevent Risks / Shadow MCP",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/"
+    },
+    {
+     "rank": 4,
+     "title": "Enables management of Bitbucket Cloud pull requests through natural language, including ...",
+     "url": "https://www.reddit.com/r/mcp/comments/1rapfd1/bitbucket_mcp_server_enables_management_of/"
+    },
+    {
+     "rank": 5,
+     "title": "MCP Security: Risks and Best Practices",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices/"
+    },
+    {
+     "rank": 6,
+     "title": "Build an AI GitHub PR Reviewer with MCP (Complete Recipe)",
+     "url": "https://mcpplaygroundonline.com/blog/build-ai-github-pr-reviewer-mcp-recipe"
+    },
+    {
+     "rank": 7,
+     "title": "Using GitHub MCP With Continue to Review PRs and Issues 5 Faster",
+     "url": "https://dev.to/anita_ihuman/using-github-mcp-with-continue-to-review-prs-and-issues-5x-faster-1p8a"
+    },
+    {
+     "rank": 8,
+     "title": "Orcus2021/code-review-mcp-server: A Model Context Protocol (MCP) tool ...",
+     "url": "https://github.com/Orcus2021/code-review-mcp-server"
+    },
+    {
+     "rank": 9,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 10,
+     "title": "Automatically Scoring Pull Request Risk with AI | by Mesut Atasoy",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    }
+   ]
+  },
+  {
+   "query": "Comparing different MCP server tools for assessing pull request risk and their features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to Evaluate an MCP Server's Risk Before Employees Install It",
+     "url": "https://www.backslash.security/learning/how-to-evaluate-an-mcp-server-s-risk-before-employees-install-it"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Studying the Security and Maintainability of MCP Servers",
+     "url": "https://arxiv.org/html/2506.13538v5"
+    },
+    {
+     "rank": 4,
+     "title": "Best MCP Servers for Third-Party Risk Management (2026)",
+     "url": "https://www.bitsight.com/guides/best-mcp-servers-third-party-risk-management"
+    },
+    {
+     "rank": 5,
+     "title": "5 Best MCP Testing Tools for Server Reliability (2026)",
+     "url": "https://www.mcpjam.com/blog/best-mcp-testing-tools"
+    },
+    {
+     "rank": 6,
+     "title": "MCP-Scanner: Detecting Security Risks in Model Context Protocol ...",
+     "url": "https://dl.acm.org/doi/full/10.1145/3786160.3788471"
+    },
+    {
+     "rank": 7,
+     "title": "10 Best MCP Servers for Developers in 2026",
+     "url": "https://amplitude.com/compare/best-mcp-servers"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub MCP Server Toolsets: Read, Write, Destroy",
+     "url": "https://trussed.ai/resources/github-mcp-server-toolsets-read-write-destroy"
+    },
+    {
+     "rank": 9,
+     "title": "Product Management MCP Servers Compared (2026)",
+     "url": "https://zentrik.ai/blog/product-management-mcp-servers-compared"
+    },
+    {
+     "rank": 10,
+     "title": "7 MCP Servers to Evaluate in 2026: Features and Use Cases",
+     "url": "https://www.syncfusion.com/blogs/post/mcp-servers-evaluation-guide-2026"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.youtube.com/watch?v=VX1zP3irSYU",
+  "https://github.com/orgs/ModelContextProtocol-Security/discussions/2",
+  "https://www.reddit.com/r/cybersecurity/comments/1o91p4d/mcp_security_best_practices_how_to_prevent_risks/",
+  "https://www.backslash.security/learning/how-to-evaluate-an-mcp-server-s-risk-before-employees-install-it",
+  "https://mastra.ai/articles/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Prompt → Pull Request",
+   "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42",
+   "description": "A blog post that demonstrates how to use a MCP server to automate GitHub pull request reviews."
+  },
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A medium article discussing the use of AI to automatically score pull request risks."
+  },
+  {
+   "name": "GitHub MCP Server Toolsets",
+   "url": "https://trussed.ai/resources/github-mcp-server-toolsets-read-write-destroy",
+   "description": "A resource page on Trussed AI that provides information on GitHub MCP server toolsets."
+  }
+ ]
+}

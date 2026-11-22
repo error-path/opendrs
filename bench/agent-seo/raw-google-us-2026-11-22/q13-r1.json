@@ -1,0 +1,133 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Can AI Agents Safely Approve Pull Requests? Guardrails for ...",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 2,
+     "title": "How is your company handling merging code that doesn't have a ...",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1wo1hnh/how_is_your_company_handling_merging_code_that/"
+    },
+    {
+     "rank": 3,
+     "title": "The End of Pull Requests: How AI Is Rewriting Code Collaboration",
+     "url": "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b"
+    },
+    {
+     "rank": 4,
+     "title": "Review is the bottleneck now: How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 5,
+     "title": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 8,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub PR Review Agent: AI Code Review Automation",
+     "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of AI-driven pull request merge tools that ensure safe and efficient code integration?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "What Is a Pull Request?",
+     "url": "https://www.ibm.com/think/topics/pull-request"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "AI code review tools: Key benefits and 8 tools to know in 2026",
+     "url": "https://www.mend.io/blog/ai-code-review-tools-key-benefits-and-tools/"
+    },
+    {
+     "rank": 4,
+     "title": "I Tested Three Spec-Driven AI Tools. Here's My Honest Take.",
+     "url": "https://ranthebuilder.cloud/blog/i-tested-three-spec-driven-ai-tools-here-s-my-honest-take/"
+    },
+    {
+     "rank": 5,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 6,
+     "title": "AI code review: how it works, benefits & best practices",
+     "url": "https://www.wiz.io/academy/application-security/ai-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Best practices for using GitHub AI coding agents in production ...",
+     "url": "https://github.com/orgs/community/discussions/182197"
+    },
+    {
+     "rank": 8,
+     "title": "Reviewing 2000 line AI Slop Pull Request : r/ExperiencedDevs",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1osyyci/reviewing_2000_line_ai_slop_pull_request/"
+    },
+    {
+     "rank": 9,
+     "title": "Git Best Practices and AI-Driven Development",
+     "url": "https://medium.com/@FrankGoortani/git-best-practices-and-ai-driven-development-rethinking-documentation-and-coding-standards-bca75567566a"
+    },
+    {
+     "rank": 10,
+     "title": "AI Code Reviews: The Ultimate Guide",
+     "url": "https://www.greptile.com/what-is-ai-code-review"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails",
+  "https://www.reddit.com/r/ExperiencedDevs/comments/1wo1hnh/how_is_your_company_handling_merging_code_that/",
+  "https://medium.com/@sebuzdugan/the-end-of-pull-requests-how-ai-is-rewriting-code-collaboration-2bd251dc030b",
+  "https://www.ibm.com/think/topics/pull-request",
+  "https://mastra.ai/articles/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "AI Pull Request Auto-Merge: Enterprise Guide 2026",
+   "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026",
+   "description": "A detailed guide on setting up safe and efficient AI-driven pull request merge tools for enterprise environments."
+  },
+  {
+   "name": "CodeRabbit",
+   "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails",
+   "description": "An AI code review tool that fits teams needing repository conventions, linked issue requirements, and related repositories in the review context."
+  },
+  {
+   "name": "GitHub Copilot",
+   "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1wo1hnh/how_is_your_company_handling_merging_code_that/",
+   "description": "A tool that integrates seamlessly with GitHub, using repository instructions and existing workflows for code review and merge."
+  }
+ ]
+}

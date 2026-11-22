@@ -1,0 +1,138 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Actions · GitHub Marketplace - opendrs Diff Risk Score",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 4,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 5,
+     "title": "RADAR, Risk Calibration, and Review Efficiency | Matt Steiner | 17 comments",
+     "url": "https://www.linkedin.com/posts/mattsteiner_automating-low-risk-code-review-at-meta-activity-7466148084193091585-ZTYe"
+    },
+    {
+     "rank": 6,
+     "title": "Go implementation of RADAR (Risk Aware Diff Auto Review), the code- ...",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 7,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 8,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/pdf/2605.30208"
+    },
+    {
+     "rank": 9,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai/"
+    },
+    {
+     "rank": 10,
+     "title": "digest018",
+     "url": "https://safeaifoundation.com/digest018"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for implementing AI-driven risk-aware software development like Diff Risk Score (DRS)",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/"
+    },
+    {
+     "rank": 2,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and ...",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 3,
+     "title": "AI-driven risk-aware software development | James Everingham",
+     "url": "https://www.linkedin.com/posts/jevering_diff-risk-score-ai-driven-risk-aware-software-activity-7358927668869804032-wZLZ"
+    },
+    {
+     "rank": 4,
+     "title": "Actions · GitHub Marketplace - opendrs Diff Risk Score",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 5,
+     "title": "Diff Risk Score: AI-driven risk-aware software development",
+     "url": "https://daily.dev/posts/diff-risk-score-ai-driven-risk-aware-software-development-1u0y8ewu0"
+    },
+    {
+     "rank": 6,
+     "title": "Code Reviewer Recommendation for High Risk Diffs at Scale",
+     "url": "https://dl.acm.org/doi/pdf/10.1145/3803437.3805220"
+    },
+    {
+     "rank": 7,
+     "title": "2026 Open Source Security and Risk Analysis Report",
+     "url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html"
+    },
+    {
+     "rank": 8,
+     "title": "Open Source Software (OSS) Risk Scoring by OpsMx",
+     "url": "https://www.opsmx.com/blog/open-source-software-oss-risk-scoring-by-opsmx/"
+    },
+    {
+     "rank": 9,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 10,
+     "title": "Mitigating Risks with Open Source AI Governance",
+     "url": "https://www.sonatype.com/blog/governing-open-source-and-ai-in-mitigating-modern-risks-in-software-development"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+  "https://arxiv.org/html/2605.30208v1",
+  "https://www.linkedin.com/posts/jevering_diff-risk-score-ai-driven-risk-aware-software-activity-7358927668869804032-wZLZ"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source implementation of Diff Risk Score (DRS) built on LLMs for practical diff risk scoring in large-scale open-source projects."
+  },
+  {
+   "name": "opendrs Diff Risk Score GitHub Action",
+   "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+   "description": "A GitHub Action for integrating DRS into your workflow to provide automated risk scores for pull requests."
+  },
+  {
+   "name": "Automating Low-Risk Code Review at Meta: RADAR",
+   "url": "https://arxiv.org/html/2605.30208v1",
+   "description": "A detailed technical report on the development and implementation of the RADAR tool, which includes DRS, for automating low-risk code review at Meta."
+  }
+ ]
+}
