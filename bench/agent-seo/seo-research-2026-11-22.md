@@ -46,3 +46,40 @@ PulseMCP ingest from it), `SoftwareApplication` JSON-LD, GitHub topics, npm keyw
   between related pages and a short real-numbers summary on the homepage and alternatives page;
   (4) Context7, DeepWiki badge, plugin submission; (5) change one thing at a time and re-run the
   benchmark before the next.
+
+## Round 2 (four Opus research passes, same day)
+
+**Sitemap "Couldn't fetch" (verified by curl):** the sitemap is valid (200, `application/xml`, 26
+URLs); the github.io root `robots.txt` is a 404, which Google treats as "no restrictions". Google
+said on 6 Oct 2026 that "Couldn't fetch" also shows for valid sitemaps when crawl demand is low
+([SEJ](https://www.searchenginejournal.com/google-explains-couldnt-fetch-sitemap-errors/592040)).
+Do not keep resubmitting; use URL Inspection "Test live URL" on the sitemap and "Request indexing"
+on 5-10 key pages; if still failing after 2-3 weeks, submit a renamed copy.
+
+**Custom domain (e.g. opendrs.dev): yes, do it early.** GitHub Pages does send 301s from the
+github.io path to a custom domain (verified), so signals carry over. Gains: own `robots.txt`, a
+Domain property in Search Console, off a free-subdomain host
+([SEJ](https://www.searchenginejournal.com/googles-mueller-free-subdomain-hosting-makes-seo-harder/565249/)).
+No measured indexing speed-up. Costs a domain purchase.
+
+**How AI assistants pick tools:** "best X" list articles were 43.8% of ChatGPT's cited pages for
+software questions, 35% of them on low-authority sites
+([Ahrefs, Dec 2025](https://ahrefs.com/blog/best-lists-research/)): ask authors of current "best AI
+code review / PR risk" lists to consider opendrs. Inbound links predicted Perplexity visibility,
+"AI-optimized" content did not ([arXiv 2601.00912](https://arxiv.org/abs/2601.00912)). Answers
+rarely repeat (SparkToro: <1% identical lists), so measure share of mentions over many runs.
+
+**Launch tactics with numbers:** Show HN framed as "open-source alternative to <known tool>",
+posted 12-17 UTC, answering comments from the first minute (138-launch study,
+[arXiv 2511.04453](https://arxiv.org/html/2511.04453v1)); one concrete post per niche subreddit;
+one niche-blogger write-up; honest one-page-per-competitor comparisons.
+
+**Inside GitHub / Marketplace / npm / MCP registry:** opendrs ranks 23rd on GitHub search for
+"blast radius pull request" (name matches win); Marketplace listing title is `name:` in
+`action.yml` ("opendrs Diff Risk Score") and categories are the only documented discovery path;
+MCP registry search is a substring match on the name; npm search is a text match on name,
+description, keywords and README ([Socket, Dec 2024](https://socket.dev/blog/npm-updates-search-experience)).
+
+**Against the rules / backfires:** bought or ring stars, HN upvote rings, seeded Reddit accounts,
+hidden text aimed at models, writing your own Wikipedia article, keyword-stuffed topics/keywords,
+duplicate packages or Actions.
