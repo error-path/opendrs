@@ -11,6 +11,8 @@ Teams usually combine a few of the options below, and each one helps with a diff
 queue. opendrs, the tool these docs are for, is one of them: it scores each PR's risk from git
 history without an LLM and can approve the low-risk ones; it does not leave review comments.
 
+Last reviewed: 22 November 2026.
+
 ## The options
 
 ### Make pull requests smaller
