@@ -241,8 +241,7 @@ runLoop: for (const entry of queries) {
       const hit = record.searches.flatMap((item) => item.results).find((result) => /opendrs|error-path/i.test(result.url + result.title));
       console.log(`${runId} searches=${record.searches.length} found=${hit ? hit.rank : '-'} recommended=${record.recommendations.some((item) => /opendrs|error-path/i.test(`${item.name} ${item.url}`))}`);
     } catch (error) {
-      console.log(`${runId} ERROR ${error.message.split('
-')[0]}`);
+      console.log(`${runId} ERROR ${error.message.split(String.fromCharCode(10))[0]}`);
       failuresInARow += 1;
       if (failuresInARow >= 3) { console.log('stopping: 3 failed runs in a row'); break runLoop; }
       continue;
