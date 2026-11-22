@@ -303,4 +303,33 @@ Also frequent and often recommended by the model: `ona.com/stories/auto-approvin
 (an article on the same idea; a natural place for a comment or a note to the author) and
 `mcpmarket.com/server/opendrs` (the MCP directory listing, recommended 6 times on Bing).
 Lists by companies that sell a code review product (deepsource, cubic, sourcegraph, gitkraken) are
-less likely to add an outside tool; mastra and warpway appear not to (unchecked), so they are likely better first asks.
+less likely to add an outside tool. Checked 22 Nov 2026: mastra sells an agent framework, not a
+code review product, and does not list itself, so it is the best first ask. warpway is not neutral:
+its own pages (search titles "Auto-approval · Warpway", warpway.ai/docs/auto-approval) show it sells
+PR auto-approval and gating; the site returned 503, so its article text is unread. Details below.
+
+## Per-target notes (checked 22 Nov 2026)
+
+Fetched once each on 22 Nov 2026. "Sells a competitor" means a code review, approval or merge
+product. Contact routes are only those published on the page or site; no personal emails guessed.
+
+| Article | Publisher, author, date | Sells a competitor? | Tools listed | opendrs fits? | Public contact route | Verdict |
+|---|---|---|---|---|---|---|
+| mastra.ai/articles/ai-code-review-tools | Mastra; Sam Bhagwat; published 13 Aug 2026, no update date | No: agent framework, "Factory" and hosting; not in its own list | CodeRabbit, Copilot code review, Qodo, Greptile, Graphite Agent, SonarQube Cloud | Partly: list is of reviewers; opendrs is a step after one. It notes Copilot comments neither approve nor block merges, which is the gap opendrs covers | mastra.ai/contact; @mastra on X; company GitHub. No author profile linked, no suggest-a-tool route | Worth asking: most-cited page, neutral publisher; odds still modest, as opendrs is not a reviewer |
+| gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026 | GitKraken; Jade Nangah; 16 Sep 2026 | Yes: ranks itself first | GitKraken, LinearB, CodeScene, Code Climate, Jellyfish, Waydev | Poor: metrics and review workspaces, no approval tools | gitkraken.com/contact (general) | Skip: self-ranked vendor list in another category |
+| deepsource.com/resources/ai-code-review-tools | DeepSource; no author; "Last updated: March 2026" | Yes: ranks itself first | DeepSource, CodeRabbit, Greptile, Graphite, Cursor Bugbot, Amazon CodeGuru, Copilot code review | Poor: reviewers only | Contact Sales only | Skip: vendor list, sales route only |
+| warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests | Warpway; author and date unread (503 on 3 tries) | Yes, from its own page titles: auto-approval docs and a "gating and routing PR reviews" product | Unread | Topic fits exactly, but it is a direct competitor | Unread | Skip: direct competitor; re-check the page if it comes back up |
+| cubic.dev/info/task/blog/ai-platforms-pull-request-risk-triage | cubic; no author, no date | Yes: cubic is "Top Pick", and sells auto-approval | cubic, Corgea, Warestack, Bito | Topic fits (risk triage), publisher competes | None on the page | Skip: direct competitor |
+| sourcegraph.com/blog/automated-code-review-tools | Sourcegraph; Matt Tanner; 30 Sep 2026 | Partly: lists its own Code Search and MCP server, disclosed ("This one's ours"); no approval product | Qodo, CodeRabbit, Greptile, Copilot, Sourcegraph; SonarQube, Codacy, Semgrep, DeepSource, Snyk Code; open source: ESLint, Pylint, RuboCop, PMD, Reviewdog, Danger | Partly: an open-source section and a section on adopting AI review without losing reviewer trust | Only sourcegraph.com/contact/request-info (a sales form); no public author profile found | Low odds: vendor blog, only a sales form to reach it |
+| ona.com/stories/auto-approving-low-risk-prs | Ona; Benjamin Stark; 9 Apr 2026 | Yes: sells AI code review (its agent approves the PRs) | None outside Ona; low risk is six fixed rules (under 1,000 lines, no protobuf, migrations, infra/CI, auth or audit-log changes) | Same idea, but an engineering story, not a list | No comments; Contact sales and a general contact page | Low odds: no list to join; good reading for the rule-based vs risk-scored point in docs/alternatives.md |
+
+### Note for mastra.ai (Sam Bhagwat), for the maintainer to send via a public route
+
+> Hi Sam, I read "6 Best AI Code Review Tools for Pull Requests in 2026"; the pilot section is
+> practical. Disclosure: I maintain opendrs, an MIT-licensed tool, so I am not neutral. It is not a
+> reviewer and would not belong in your six. It runs after one: it scores each PR 0-1 for risk from
+> git history and the import graph (a logistic model, no LLM needed) and can approve low-risk PRs
+> once the AI review passes. You note that Copilot's comments neither approve nor block merges; that
+> is the step it covers. On the public ApacheJIT benchmark it reaches AUC 0.823, on par with a
+> classic regression (0.821): https://github.com/error-path/opendrs/blob/main/docs/results.md
+> No pressure either way.
