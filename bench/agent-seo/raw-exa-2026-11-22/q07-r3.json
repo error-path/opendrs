@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Blast Radius Analysis Tool | Codluma",
+     "url": "https://www.codluma.ai/pr-blast-radius-analysis/"
+    },
+    {
+     "rank": 2,
+     "title": "CodeDig — Know the blast radius of every PR before you merge",
+     "url": "https://codedig.ai/"
+    },
+    {
+     "rank": 3,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 4,
+     "title": "Impact & Analysis | NestWeaver Docs",
+     "url": "https://docs.nestweaver.kehl.io/cli/impact-analysis/"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub - srbmaury/pr-blast-radius: Production-aware PR blast-radius analysis using code, PostgreSQL, and OpenTelemetry dependencies. · GitHub",
+     "url": "https://github.com/srbmaury/pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "docs/github-action.md",
+     "url": "https://github.com/ehermanson/blast-radius/blob/main/docs/github-action.md"
+    },
+    {
+     "rank": 7,
+     "title": "AtlasMindAI/bigi",
+     "url": "https://github.com/AtlasMindAI/bigi"
+    },
+    {
+     "rank": 8,
+     "title": "bipu-biz/Blast-Radius",
+     "url": "https://github.com/bipu-biz/Blast-Radius"
+    },
+    {
+     "rank": 9,
+     "title": "",
+     "url": "https://docs.supermodeltools.com/cli/commands/blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "tazwaryayyyy/BlastRadius",
+     "url": "https://github.com/tazwaryayyyy/blastradius"
+    },
+    {
+     "rank": 11,
+     "title": "Pull request impact analysis: the blast radius outside the diff · Veridu",
+     "url": "https://veridu.io/change-impact-analysis/"
+    },
+    {
+     "rank": 12,
+     "title": "km impact · Kimün",
+     "url": "https://kimun.tools/en/docs/impact/"
+    },
+    {
+     "rank": 13,
+     "title": "Blast Radius Analysis · Docs · rgctl",
+     "url": "https://rgctl.io/docs/guides/blast-radius-analysis/"
+    },
+    {
+     "rank": 14,
+     "title": "Impact Evaluation",
+     "url": "https://coderadius.ai/docs/guide/impact-evaluation/"
+    },
+    {
+     "rank": 15,
+     "title": "Releases · ehermanson/blast-radius · GitHub",
+     "url": "https://github.com/ehermanson/blast-radius/releases"
+    },
+    {
+     "rank": 16,
+     "title": "PR Impact Analysis: A Guide for Engineering Teams | Codluma Blog",
+     "url": "https://www.codluma.ai/blog/tutorial/pr-impact-analysis-guide/"
+    },
+    {
+     "rank": 17,
+     "title": "Impact Analysis — SynapsesOS Docs",
+     "url": "https://synapsesos.com/docs/v1/reference/tools/impact/"
+    },
+    {
+     "rank": 18,
+     "title": "get_blast_radius | Kivgraph",
+     "url": "https://kivgraph.dev/docs/tools/get-blast-radius/"
+    },
+    {
+     "rank": 19,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius Scoring",
+     "url": "https://coderadius.ai/docs/explore/blast-radius-scoring/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub API for PR analysis and impact assessment tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "cbrethick/PR-Autopilot",
+     "url": "https://github.com/cbrethick/PR-Autopilot"
+    },
+    {
+     "rank": 2,
+     "title": "docs/DX.md",
+     "url": "https://github.com/Agent-Field/pr-af/blob/main/docs/DX.md"
+    },
+    {
+     "rank": 3,
+     "title": "hidetzu/prism-api",
+     "url": "https://github.com/hidetzu/prism-api"
+    },
+    {
+     "rank": 4,
+     "title": "REST API endpoints for dependency review",
+     "url": "https://docs.github.com/en/rest/dependency-graph/dependency-review"
+    },
+    {
+     "rank": 5,
+     "title": "Merge Gate API | Critique",
+     "url": "https://www.critique.sh/docs/platform/merge-gate-api"
+    },
+    {
+     "rank": 6,
+     "title": "REST API endpoints for pull requests",
+     "url": "https://docs.github.com/en/rest/pulls/pulls?apiVersion=2026-03-10"
+    },
+    {
+     "rank": 7,
+     "title": "nexicturbo/github-pr-control-mcp",
+     "url": "https://github.com/nexicturbo/github-pr-control-mcp"
+    },
+    {
+     "rank": 8,
+     "title": "REST API endpoints for pull request reviews",
+     "url": "https://docs.github.com/en/rest/pulls/reviews"
+    },
+    {
+     "rank": 9,
+     "title": "REST API endpoints for pull requests",
+     "url": "https://docs.github.com/en/rest/pulls?apiVersion=2026-03-10"
+    },
+    {
+     "rank": 10,
+     "title": "CI/CD Integration | CKB Documentation | CKB · Code Knowledge Backend",
+     "url": "https://codeknowledge.dev/docs/CI-CD-Integration"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub pull request API · JSON, examples & price · API.SH",
+     "url": "https://api.sh/docs/github-repository-pull"
+    },
+    {
+     "rank": 12,
+     "title": "Depwire PR Impact Analysis - GitHub Marketplace",
+     "url": "https://github.com/marketplace/actions/depwire-pr-impact"
+    },
+    {
+     "rank": 13,
+     "title": "I counted AI review findings with the GitHub API and got the answer wrong three times - DEV Community",
+     "url": "https://dev.to/cole_halton_42f71d71b809b/i-counted-ai-review-findings-with-the-github-api-and-got-the-answer-wrong-three-times-20am"
+    },
+    {
+     "rank": 14,
+     "title": "Detect downstream microservice impact before merging a GitHub PR | Impact Gate Docs",
+     "url": "https://impactgate.in/docs/detect-breaking-api-changes-in-pull-requests"
+    },
+    {
+     "rank": 15,
+     "title": "radireddy/github-mcp",
+     "url": "https://github.com/radireddy/github-mcp"
+    },
+    {
+     "rank": 16,
+     "title": "skills/codegraph/pr-analysis.md at main · alibaba/neug",
+     "url": "https://github.com/alibaba/neug/blob/main/skills/codegraph/pr-analysis.md"
+    },
+    {
+     "rank": 17,
+     "title": "skills/cocosearch-review-pr/SKILL.md",
+     "url": "https://github.com/VioletCranberry/coco-search/blob/main/skills/cocosearch-review-pr/SKILL.md"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub integration | Luumen",
+     "url": "https://www.luumen.ai/integrations/github/"
+    },
+    {
+     "rank": 19,
+     "title": ".github/workflows/codegraph-impact-comment.yml",
+     "url": "https://github.com/optave/ops-codegraph-tool/blob/main/.github/workflows/codegraph-impact-comment.yml"
+    },
+    {
+     "rank": 20,
+     "title": "api/github_app/service.py",
+     "url": "https://github.com/issdandavis/SCBE-AETHERMOORE/blob/main/api/github_app/service.py"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.codluma.ai/pr-blast-radius-analysis/",
+  "https://codedig.ai/",
+  "https://error-path.github.io/opendrs/",
+  "https://github.com/cbrethick/PR-Autopilot",
+  "https://github.com/Agent-Field/pr-af/blob/main/docs/DX.md"
+ ],
+ "recommendations": [
+  {
+   "name": "Codluma PR Blast Radius Analysis Tool",
+   "url": "https://www.codluma.ai/pr-blast-radius-analysis/",
+   "description": "Codluma offers real-time feedback on pull requests, identifies affected files and services, and provides risk scores and reviewer recommendations."
+  },
+  {
+   "name": "CodeDig PR Analysis",
+   "url": "https://codedig.ai/",
+   "description": "CodeDig analyzes pull requests to determine their blast radius, test coverage, and risk, providing actionable recommendations."
+  },
+  {
+   "name": "opendrs PR Blast Radius Analyzer",
+   "url": "https://error-path.github.io/opendrs/",
+   "description": "opendrs uses AI to score the risk of pull requests based on blast radius and history, guiding reviewers and suggesting auto-approval."
+  }
+ ]
+}

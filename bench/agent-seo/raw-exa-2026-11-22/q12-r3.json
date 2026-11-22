@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Merge Queue — Omniscio",
+     "url": "https://docs.omniscio.com/library/pr-merge-queue.html"
+    },
+    {
+     "rank": 2,
+     "title": "Risk tiers – fremforge docs",
+     "url": "https://docs.frem.sh/develop/risk-tiers/"
+    },
+    {
+     "rank": 3,
+     "title": "Risk-Based Reviews",
+     "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews"
+    },
+    {
+     "rank": 4,
+     "title": "usebrindle/brindle",
+     "url": "https://github.com/usebrindle/brindle"
+    },
+    {
+     "rank": 5,
+     "title": "Merge pull requests with PR Merge Queue | Yardmaster Guide",
+     "url": "https://docs.yardmaster.io/guide/connect/pr-merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Using Queue Rules",
+     "url": "https://docs.mergify.com/merge-queue/rules/"
+    },
+    {
+     "rank": 7,
+     "title": "Risk control: risk scores, change freezes and risk holds | Merge Pilot",
+     "url": "https://www.merge-pilot.com/docs/policies/controls/risk"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Risk - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/pr-reviews/merge-risk"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 10,
+     "title": "Managing a merge queue",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "Merge Queue and PR Risk - Loki Mode Documentation | Autonomi",
+     "url": "https://www.autonomi.dev/docs/merge-review"
+    },
+    {
+     "rank": 12,
+     "title": "The merge gate and the merge queue · cterm documentation",
+     "url": "https://cterm.dev/docs/merge-queue"
+    },
+    {
+     "rank": 13,
+     "title": "Merge Queue",
+     "url": "https://docs.wit.sh/features/merge-queue"
+    },
+    {
+     "rank": 14,
+     "title": "Optimistic merging",
+     "url": "https://docs.trunk.io/merge-queue/optimizations/optimistic-merging"
+    },
+    {
+     "rank": 15,
+     "title": "docs/AUTO-MERGE-FUTURE-CONTRACT.md",
+     "url": "https://github.com/fullsend-ai/auto-merge/blob/main/docs/AUTO-MERGE-FUTURE-CONTRACT.md"
+    },
+    {
+     "rank": 16,
+     "title": "Merge with the queue · TanStack Source",
+     "url": "https://source.tanstack.com/docs/merge-queue"
+    },
+    {
+     "rank": 17,
+     "title": "Keeping the Mainline Green across Diverse Language Monorepos - InfoQ",
+     "url": "https://www.infoq.com/presentations/mergequeue/"
+    },
+    {
+     "rank": 18,
+     "title": "Merge queue | knotless docs",
+     "url": "https://knotless.dev/docs/design/merge-queue/"
+    },
+    {
+     "rank": 19,
+     "title": "Merge Queue - Graphite",
+     "url": "https://graphite.com/docs/graphite-merge-queue"
+    },
+    {
+     "rank": 20,
+     "title": "merge-review - オンラインツール",
+     "url": "https://tool.lu/ja_JP/skill/s/iF7"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of risk-based auto-merge tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "LLM-based vs. Search-based Merge Conflict Resolution:An Empirical Study of Competing Paradigms",
+     "url": "http://arxiv.org/abs/2605.16646v1"
+    },
+    {
+     "rank": 3,
+     "title": "LLMs Resolve Java Merge Conflicts Better Than Structured Tools - Because They Never Give Up",
+     "url": "https://www.developersdigest.tech/blog/llm-merge-conflict-resolution-study-2026"
+    },
+    {
+     "rank": 4,
+     "title": "File comparison tools in 2026: Beyond Compare vs Araxis Merge vs WinMerge vs Meld vs KDiff3 - Rivalivo",
+     "url": "https://rivalivo.com/blog/file-comparison-tools-beyond-compare-araxis-merge-winmerge-meld-kdiff3"
+    },
+    {
+     "rank": 5,
+     "title": "ConflictBench: A Benchmark to Evaluate Software Merge Tools",
+     "url": "https://people.cs.vt.edu/nm8247/publications/bowen-jss-2024-preprint.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "Best Git Merge Conflict Resolution Tools for Dev Teams (2026) | Listicler",
+     "url": "https://listicler.com/best/best-git-merge-conflict-resolution-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Evaluation of Version Control Merge Tools",
+     "url": "https://dl.acm.org/doi/pdf/10.1145/3691620.3695075"
+    },
+    {
+     "rank": 8,
+     "title": "Evaluation of Version Control Merge Tools",
+     "url": "https://doi.org/10.1145/3691620.3695075"
+    },
+    {
+     "rank": 9,
+     "title": "The Journal of Systems & Software",
+     "url": "https://par.nsf.gov/servlets/purl/10515800"
+    },
+    {
+     "rank": 10,
+     "title": "MergirafSemi: A Language-Agnostic Semistructured Merge Tool",
+     "url": "https://arxiv.org/html/2608.11345"
+    },
+    {
+     "rank": 11,
+     "title": "Evaluation of Version Control Merge Tools",
+     "url": "https://arxiv.org/abs/2410.09934"
+    },
+    {
+     "rank": 12,
+     "title": "Evaluation of Version Control Merge Tools",
+     "url": "https://homes.cs.washington.edu/~mernst/pubs/merge-evaluation-ase2024.pdf"
+    },
+    {
+     "rank": 13,
+     "title": "MergirafSemi: A Language-Agnostic Semistructured Merge Tool",
+     "url": "https://arxiv.org/abs/2608.11345"
+    },
+    {
+     "rank": 14,
+     "title": "MergirafSemi: A Language-Agnostic Semistructured Merge Tool",
+     "url": "https://arxiv.org/html/2608.11345v1"
+    },
+    {
+     "rank": 15,
+     "title": "Evaluation of Version Control Merge Tools | alphaXiv",
+     "url": "https://www.alphaxiv.org/abs/2410.09934"
+    },
+    {
+     "rank": 16,
+     "title": "Risk-based merging decisions for autonomous vehicles",
+     "url": "https://doi.org/10.1016/j.jsr.2022.08.003"
+    },
+    {
+     "rank": 17,
+     "title": "Risk-Aware Reranking for Agentic Tool Retrieval",
+     "url": "https://arxiv.org/html/2608.22751"
+    },
+    {
+     "rank": 18,
+     "title": "Right Family, Wrong Skill: Evaluating Risk Exposure in Agent Skill Retrieval",
+     "url": "https://arxiv.org/abs/2606.10388"
+    },
+    {
+     "rank": 19,
+     "title": "10 Best Risk-Based Vulnerability Management Tools (2026)",
+     "url": "https://gbhackers.com/rbvm-buyers-guide/"
+    },
+    {
+     "rank": 20,
+     "title": "Comparison-Based Ordinal Learning for Proactive Driving Risk Assessment",
+     "url": "https://arxiv.org/abs/2607.11128"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.omniscio.com/library/pr-merge-queue.html",
+  "https://docs.frem.sh/develop/risk-tiers/",
+  "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews",
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "http://arxiv.org/abs/2605.16646v1"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Merge Queue — Omniscio",
+   "url": "https://docs.omniscio.com/library/pr-merge-queue.html",
+   "description": "A comprehensive tool that integrates with various version control systems to manage and prioritize pull requests based on risk assessment."
+  },
+  {
+   "name": "Risk-Based Reviews - Zenable Documentation",
+   "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews",
+   "description": "A service that provides risk-based reviews for pull requests, allowing low-risk changes to be auto-merged without human intervention."
+  },
+  {
+   "name": "Risk tiers – fremforge docs",
+   "url": "https://docs.frem.sh/develop/risk-tiers/",
+   "description": "A guide on implementing risk tiers for pull requests, which helps in automating the merge of low-risk changes while holding high-risk ones for human review."
+  }
+ ]
+}

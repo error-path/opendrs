@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - DIYA73/PR-Blast-Radius-: Flags scope creep in a PR using deterministic import-graph analysis — no LLM, zero API cost per run. CLI + GitHub Action that comments on PRs. · GitHub",
+     "url": "https://github.com/DIYA73/PR-Blast-Radius-"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - amitgambhir/blast-radius-analyzer: Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made. · GitHub",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "AI PR Impact Analysis & Blast Radius Detection - Codluma",
+     "url": "https://www.codluma.ai/ai-pr-impact-analysis"
+    },
+    {
+     "rank": 4,
+     "title": "Calculate blast radius with AI | Port",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai"
+    },
+    {
+     "rank": 5,
+     "title": "Blast Radius Claude Code Skill | Risk & Impact Analysis",
+     "url": "https://mcpmarket.com/tools/skills/blast-radius-analysis-1"
+    },
+    {
+     "rank": 6,
+     "title": "How to Assess the Blast Radius of a Code Change · Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 7,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis | SixDegree",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 8,
+     "title": "Security Blast Radius - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "Code Change Blast Radius: Safer AI Coding",
+     "url": "https://pharaoh.so/blog/code-change-blast-radius-2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius - Series: Agentic Engineering Framework - DEV Community",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 11,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 12,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius"
+    },
+    {
+     "rank": 13,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide | Claude Cowork Guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 14,
+     "title": "What is blast radius analysis? | NOFire AI",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 15,
+     "title": "Understanding your Identity Blast Radius in Security | Proofpoint US",
+     "url": "https://www.proofpoint.com/us/blog/identity-threat-defense/identity-blast-radius"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius Detection For Faster Incident Response",
+     "url": "https://www.netdata.cloud/features/aiml/blast-radius-detection"
+    },
+    {
+     "rank": 17,
+     "title": "What Is Blast-Radius Analysis? Definition & Examples",
+     "url": "https://nhimg.org/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 18,
+     "title": "Vulnerability Blast Radius: How to Measure and Reduce Impact | Endor Labs",
+     "url": "https://www.endorlabs.com/learn/vulnerability-blast-radius-how-to-measure-and-reduce-impact"
+    },
+    {
+     "rank": 19,
+     "title": "What is Blast Radius? | AI SRE Glossary",
+     "url": "https://www.traversal.com/glossary/blast-radius"
+    },
+    {
+     "rank": 20,
+     "title": "AI Blast Radius | Map the Real Scope of Agent Authority | Obsidian Security",
+     "url": "https://www.obsidiansecurity.com/ai-blast-radius"
+    }
+   ]
+  },
+  {
+   "query": "GitHub - amitgambhir/blast-radius-analyzer: Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made.",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - amitgambhir/blast-radius-analyzer: Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made. · GitHub",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "blast-radius · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub - IWasZ3r0Cool/blast-radius: Repo dependency analyzer with **blast-radius impact scoring** for AI-assisted development. · GitHub",
+     "url": "https://github.com/IWasZ3r0Cool/blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "Calculate blast radius with AI | Port",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai"
+    },
+    {
+     "rank": 5,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 6,
+     "title": "What is blast radius analysis? | NOFire AI",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 7,
+     "title": "Blast Radius Detection For Faster Incident Response",
+     "url": "https://www.netdata.cloud/features/aiml/blast-radius-detection"
+    },
+    {
+     "rank": 8,
+     "title": "How to Run an AI Agent Blast Radius Assessment",
+     "url": "https://trussed.ai/resources/how-to-run-an-ai-agent-blast-radius-assessment"
+    },
+    {
+     "rank": 9,
+     "title": "How to Assess the Blast Radius of a Code Change · Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius Monitor | Map Real Third-Party Access | Lema",
+     "url": "https://www.lema.ai/platform/blast-radius-monitoring"
+    },
+    {
+     "rank": 11,
+     "title": "Assess code change risk using blast radius - Qodo Documentation",
+     "url": "https://docs.qodo.ai/code-review/assess-risk-with-blast-radius"
+    },
+    {
+     "rank": 12,
+     "title": "Blast Radius and Cloud Threat Detection | CSA",
+     "url": "https://cloudsecurityalliance.org/blog/2026/05/29/understanding-the-blast-radius-how-cloud-threat-detection-speeds-up-incident-scoping"
+    },
+    {
+     "rank": 13,
+     "title": "Security Blast Radius - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 14,
+     "title": "Blast Radius Employee Directory, Headcount & Staff | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23/employee-directory"
+    },
+    {
+     "rank": 15,
+     "title": "Blast Radius Company Overview, Contact Details & Competitors | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius - Products, Competitors, Financials, Employees, Headquarters Locations",
+     "url": "https://www.cbinsights.com/company/blast-radius"
+    },
+    {
+     "rank": 17,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/us/new-york/blast-radius-407461812"
+    },
+    {
+     "rank": 18,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/ca/british-columbia/blast-radius-inc-281161703"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub",
+     "url": "https://tavily.com/knowledge/company/WGf4o1saQ1yD"
+    },
+    {
+     "rank": 20,
+     "title": "Unicorn! · GitHub",
+     "url": "https://github.com/github/awesome-copilot/blob/main/skills/data-breach-blast-radius/SKILL.md"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/DIYA73/PR-Blast-Radius-",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://www.codluma.ai/ai-pr-impact-analysis",
+  "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated",
+  "https://github.com/IWasZ3r0Cool/blast-radius"
+ ],
+ "recommendations": [
+  {
+   "name": "DIYA73/PR-Blast-Radius-",
+   "url": "https://github.com/DIYA73/PR-Blast-Radius-",
+   "description": "A CLI and GitHub Action tool for analyzing the impact of pull requests using deterministic import-graph analysis."
+  },
+  {
+   "name": "amitgambhir/blast-radius-analyzer",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made."
+  },
+  {
+   "name": "IWasZ3r0Cool/blast-radius",
+   "url": "https://github.com/IWasZ3r0Cool/blast-radius",
+   "description": "A repo dependency analyzer with blast-radius impact scoring for AI-assisted development."
+  }
+ ]
+}

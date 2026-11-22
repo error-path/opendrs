@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "ehermanson/blast-radius",
+     "url": "https://github.com/ehermanson/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "claude-code/mods/blast-radius/README.md",
+     "url": "https://github.com/anthropics/claude-code-playground/blob/main/claude-code/mods/blast-radius/README.md"
+    },
+    {
+     "rank": 3,
+     "title": "README.md",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 4,
+     "title": "README.md",
+     "url": "https://github.com/IWasZ3r0Cool/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 5,
+     "title": "heidericklucas/blast-radius",
+     "url": "https://github.com/heidericklucas/blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "phoenix-assistant/blastradius",
+     "url": "https://github.com/phoenix-assistant/blastradius"
+    },
+    {
+     "rank": 7,
+     "title": "28mm/blast-radius",
+     "url": "https://github.com/28mm/blast-radius"
+    },
+    {
+     "rank": 8,
+     "title": "jonathimer/blast-radius",
+     "url": "https://github.com/jonathimer/blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "0xelitesystem/cantundo",
+     "url": "https://github.com/0xelitesystem/agent-blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "Mullassery/PyBlastRadius",
+     "url": "https://github.com/Mullassery/PyBlastRadius"
+    },
+    {
+     "rank": 11,
+     "title": "coreyhiggins/blastradius",
+     "url": "https://github.com/coreyhiggins/blastradius"
+    },
+    {
+     "rank": 12,
+     "title": "DIYA73/PR-Blast-Radius-",
+     "url": "https://github.com/DIYA73/PR-Blast-Radius-"
+    },
+    {
+     "rank": 13,
+     "title": "himanshu748/blastradius",
+     "url": "https://github.com/himanshu748/blastradius"
+    },
+    {
+     "rank": 14,
+     "title": "blast-radius/README.md",
+     "url": "https://github.com/YeonwooSung/my-claude-code-mods/blob/HEAD/blast-radius/README.md"
+    },
+    {
+     "rank": 15,
+     "title": "phllp-tanstic/radius",
+     "url": "https://github.com/phllp-tanstic/radius"
+    },
+    {
+     "rank": 16,
+     "title": "edgedelta/blast-radius-bench",
+     "url": "https://github.com/edgedelta/blast-radius-bench"
+    },
+    {
+     "rank": 17,
+     "title": "rickjeffsolutions/blastradius-os",
+     "url": "https://github.com/rickjeffsolutions/blastradius-os"
+    },
+    {
+     "rank": 18,
+     "title": "philipbankier/Blast-Radius-Calculator-App",
+     "url": "https://github.com/philipbankier/Blast-Radius-Calculator-App"
+    },
+    {
+     "rank": 19,
+     "title": "BENCHMARKS.md",
+     "url": "https://github.com/Rohit-ATS/blast-radius/blob/main/BENCHMARKS.md"
+    },
+    {
+     "rank": 20,
+     "title": "nuclearblastsimulator/nuclear-blast-simulator",
+     "url": "https://github.com/nuclearblastsimulator/nuclear-blast-simulator"
+    }
+   ]
+  },
+  {
+   "query": "GitHub pull request impact analysis tools and best practices",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Review pull requests locally with graphify prs",
+     "url": "https://docs.graphify.com/open-source/features/pr-impact"
+    },
+    {
+     "rank": 2,
+     "title": "Code impact analysis: a workflow before the edit",
+     "url": "https://pharaoh.so/blog/code-impact-analysis/"
+    },
+    {
+     "rank": 3,
+     "title": "Impact Analysis | CKB Documentation | CKB · Code Knowledge Backend",
+     "url": "https://www.codeknowledge.dev/docs/Impact-Analysis"
+    },
+    {
+     "rank": 4,
+     "title": "docs/guides/recommended-practices.md",
+     "url": "https://github.com/optave/codegraph/blob/main/docs/guides/recommended-practices.md"
+    },
+    {
+     "rank": 5,
+     "title": "Reviewing dependency changes in a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-dependency-changes-in-a-pull-request"
+    },
+    {
+     "rank": 6,
+     "title": "How to Calculate Pull Request Blast Radius Before Merge | Helix",
+     "url": "https://www.helix-engineering.dev/blog/pull-request-blast-radius-guide"
+    },
+    {
+     "rank": 7,
+     "title": "Impact & Analysis | NestWeaver Docs",
+     "url": "https://docs.nestweaver.kehl.io/cli/impact-analysis/"
+    },
+    {
+     "rank": 8,
+     "title": "ontoindex-claude-plugin/skills/ontoindex-pr-review/SKILL.md",
+     "url": "https://github.com/ontograph/ontoindex/blob/master/ontoindex-claude-plugin/skills/ontoindex-pr-review/SKILL.md"
+    },
+    {
+     "rank": 9,
+     "title": "Blast radius: what a pull request touches outside its diff · diffox",
+     "url": "https://diffox.ai/blog/blast-radius-in-software-engineering"
+    },
+    {
+     "rank": 10,
+     "title": "Enhanced code reviews using pull request based change impact analysis | Empirical Software Engineering | Springer Nature Link",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 11,
+     "title": "commands/pr-impact.md",
+     "url": "https://github.com/helweg/open-codebase-index/blob/main/commands/pr-impact.md"
+    },
+    {
+     "rank": 12,
+     "title": "YanibHQ/reverb-impact",
+     "url": "https://github.com/YanibHQ/reverb-impact"
+    },
+    {
+     "rank": 13,
+     "title": "PR Impact Analyzer Documentation | Codluma",
+     "url": "https://www.codluma.ai/docs/impact-analyzer/"
+    },
+    {
+     "rank": 14,
+     "title": "Pull request impact analysis: the blast radius outside the diff · Veridu",
+     "url": "https://veridu.io/change-impact-analysis/"
+    },
+    {
+     "rank": 15,
+     "title": "adiarora06/RepoRipple",
+     "url": "https://github.com/adiarora06/RepoRipple"
+    },
+    {
+     "rank": 16,
+     "title": "stulevtoday/Impulse",
+     "url": "https://github.com/stulevtoday/Impulse"
+    },
+    {
+     "rank": 17,
+     "title": "How to Add a Blast-Radius Gate to Your Merge Pipeline",
+     "url": "https://riftmap.dev/blog/blast-radius-gate-merge-pipeline/"
+    },
+    {
+     "rank": 18,
+     "title": "Impact Evaluation",
+     "url": "https://coderadius.ai/docs/guide/impact-evaluation/"
+    },
+    {
+     "rank": 19,
+     "title": "sumit-gupta03/impactgraph",
+     "url": "https://github.com/sumit-gupta03/impactgraph"
+    },
+    {
+     "rank": 20,
+     "title": "Omar8345/IMPACT",
+     "url": "https://github.com/Omar8345/IMPACT"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/ehermanson/blast-radius",
+  "https://github.com/anthropics/claude-code-playground/blob/main/claude-code/mods/blast-radius/README.md",
+  "https://github.com/buildingopen/blast-radius/blob/main/README.md",
+  "https://docs.graphify.com/open-source/features/pr-impact",
+  "https://pharaoh.so/blog/code-impact-analysis/"
+ ],
+ "recommendations": [
+  {
+   "name": "Review pull requests locally with graphify prs",
+   "url": "https://docs.graphify.com/open-source/features/pr-impact",
+   "description": "A tool that analyzes the impact of pull requests on a codebase using a graph of the repository."
+  },
+  {
+   "name": "Code impact analysis: a workflow before the edit",
+   "url": "https://pharaoh.so/blog/code-impact-analysis/",
+   "description": "A detailed guide on how to perform code impact analysis to understand the potential impact of changes on the codebase."
+  },
+  {
+   "name": "Impact Analysis | CKB Documentation | CKB · Code Knowledge Backend",
+   "url": "https://www.codeknowledge.dev/docs/Impact-Analysis",
+   "description": "Documentation on how to perform impact analysis on code changes to identify potential breakages."
+  }
+ ]
+}

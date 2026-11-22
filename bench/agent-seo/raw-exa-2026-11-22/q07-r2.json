@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Blast Radius Analysis Tool | Codluma",
+     "url": "https://www.codluma.ai/pr-blast-radius-analysis/"
+    },
+    {
+     "rank": 2,
+     "title": "CodeDig — Know the blast radius of every PR before you merge",
+     "url": "https://codedig.ai/"
+    },
+    {
+     "rank": 3,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 4,
+     "title": "Impact & Analysis | NestWeaver Docs",
+     "url": "https://docs.nestweaver.kehl.io/cli/impact-analysis/"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub - srbmaury/pr-blast-radius: Production-aware PR blast-radius analysis using code, PostgreSQL, and OpenTelemetry dependencies. · GitHub",
+     "url": "https://github.com/srbmaury/pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "docs/github-action.md",
+     "url": "https://github.com/ehermanson/blast-radius/blob/main/docs/github-action.md"
+    },
+    {
+     "rank": 7,
+     "title": "AtlasMindAI/bigi",
+     "url": "https://github.com/AtlasMindAI/bigi"
+    },
+    {
+     "rank": 8,
+     "title": "bipu-biz/Blast-Radius",
+     "url": "https://github.com/bipu-biz/Blast-Radius"
+    },
+    {
+     "rank": 9,
+     "title": "",
+     "url": "https://docs.supermodeltools.com/cli/commands/blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "tazwaryayyyy/BlastRadius",
+     "url": "https://github.com/tazwaryayyyy/blastradius"
+    },
+    {
+     "rank": 11,
+     "title": "Pull request impact analysis: the blast radius outside the diff · Veridu",
+     "url": "https://veridu.io/change-impact-analysis/"
+    },
+    {
+     "rank": 12,
+     "title": "km impact · Kimün",
+     "url": "https://kimun.tools/en/docs/impact/"
+    },
+    {
+     "rank": 13,
+     "title": "Blast Radius Analysis · Docs · rgctl",
+     "url": "https://rgctl.io/docs/guides/blast-radius-analysis/"
+    },
+    {
+     "rank": 14,
+     "title": "Impact Evaluation",
+     "url": "https://coderadius.ai/docs/guide/impact-evaluation/"
+    },
+    {
+     "rank": 15,
+     "title": "Releases · ehermanson/blast-radius · GitHub",
+     "url": "https://github.com/ehermanson/blast-radius/releases"
+    },
+    {
+     "rank": 16,
+     "title": "PR Impact Analysis: A Guide for Engineering Teams | Codluma Blog",
+     "url": "https://www.codluma.ai/blog/tutorial/pr-impact-analysis-guide/"
+    },
+    {
+     "rank": 17,
+     "title": "Impact Analysis — SynapsesOS Docs",
+     "url": "https://synapsesos.com/docs/v1/reference/tools/impact/"
+    },
+    {
+     "rank": 18,
+     "title": "get_blast_radius | Kivgraph",
+     "url": "https://kivgraph.dev/docs/tools/get-blast-radius/"
+    },
+    {
+     "rank": 19,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius Scoring",
+     "url": "https://coderadius.ai/docs/explore/blast-radius-scoring/"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories with PR blast radius analysis tools and their features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Nxtsoft/blastline",
+     "url": "https://github.com/Nxtsoft/blastline"
+    },
+    {
+     "rank": 2,
+     "title": "docs/github-action.md",
+     "url": "https://github.com/ehermanson/blast-radius/blob/main/docs/github-action.md"
+    },
+    {
+     "rank": 3,
+     "title": "manishiitmandi/Prism",
+     "url": "https://github.com/manishiitmandi/Prism"
+    },
+    {
+     "rank": 4,
+     "title": "bipu-biz/Blast-Radius",
+     "url": "https://github.com/bipu-biz/Blast-Radius"
+    },
+    {
+     "rank": 5,
+     "title": "cbrethick/PR-Autopilot",
+     "url": "https://github.com/cbrethick/PR-Autopilot"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub - srbmaury/pr-blast-radius: Production-aware PR blast-radius analysis using code, PostgreSQL, and OpenTelemetry dependencies. · GitHub",
+     "url": "https://github.com/srbmaury/pr-blast-radius"
+    },
+    {
+     "rank": 7,
+     "title": "DIYA73/PR-Blast-Radius-",
+     "url": "https://github.com/DIYA73/PR-Blast-Radius-"
+    },
+    {
+     "rank": 8,
+     "title": "Releases · ehermanson/blast-radius · GitHub",
+     "url": "https://github.com/ehermanson/blast-radius/releases"
+    },
+    {
+     "rank": 9,
+     "title": "README.md",
+     "url": "https://github.com/SanderMuller/richter/blob/main/README.md"
+    },
+    {
+     "rank": 10,
+     "title": "enhanciar/blastradius",
+     "url": "https://github.com/enhanciar/blastradius"
+    },
+    {
+     "rank": 11,
+     "title": "smarwat/blast-radius",
+     "url": "https://github.com/smarwat/blast-radius"
+    },
+    {
+     "rank": 12,
+     "title": "mchittineni/blast-radius-check",
+     "url": "https://github.com/mchittineni/blast-radius-check"
+    },
+    {
+     "rank": 13,
+     "title": "jovianebellegarde/focus",
+     "url": "https://github.com/jovianebellegarde/focus"
+    },
+    {
+     "rank": 14,
+     "title": "The-Harsh-Vardhan/CASCADE",
+     "url": "https://github.com/The-Harsh-Vardhan/CASCADE"
+    },
+    {
+     "rank": 15,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 16,
+     "title": "abhigyanpatwari/GitNexus",
+     "url": "https://github.com/abhigyanpatwari/GitNexus"
+    },
+    {
+     "rank": 17,
+     "title": "README.md",
+     "url": "https://github.com/IWasZ3r0Cool/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 18,
+     "title": "paleto30/impactwave",
+     "url": "https://github.com/paleto30/impactwave"
+    },
+    {
+     "rank": 19,
+     "title": "prem-programs/shadowGraph",
+     "url": "https://github.com/prem-programs/shadowGraph"
+    },
+    {
+     "rank": 20,
+     "title": "vladimirvalcourt/culprit",
+     "url": "https://github.com/vladimirvalcourt/culprit"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.codluma.ai/pr-blast-radius-analysis/",
+  "https://codedig.ai/",
+  "https://error-path.github.io/opendrs/",
+  "https://github.com/Nxtsoft/blastline",
+  "https://github.com/ehermanson/blast-radius/blob/main/docs/github-action.md"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Blast Radius Analysis Tool | Codluma",
+   "url": "https://www.codluma.ai/pr-blast-radius-analysis/",
+   "description": "A tool that identifies affected files, services, APIs, dependencies, and risk areas before merging pull requests."
+  },
+  {
+   "name": "CodeDig — Know the blast radius of every PR",
+   "url": "https://codedig.ai/",
+   "description": "An AI platform that automatically analyzes PRs and provides a risk score and blast radius."
+  },
+  {
+   "name": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+   "url": "https://error-path.github.io/opendrs/",
+   "description": "An open-source tool that calculates the risk score of a PR based on its blast radius and history."
+  }
+ ]
+}

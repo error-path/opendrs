@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories"
+    },
+    {
+     "rank": 2,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 3,
+     "title": "How To Predict Which Pull Requests Will Cause Incidents | PlayerZero",
+     "url": "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction - GitHub",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 7,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 8,
+     "title": "Specification Artifacts in Open-Source Pull Request Workflows Do Not Reduce Defects: An Empirical Test of Spec-Driven Development Claims",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "DeepSource: The AI Code Review Platform",
+     "url": "https://deepsource.com"
+    },
+    {
+     "rank": 11,
+     "title": "Just-In-Time Software Defect Prediction using version control tool ...",
+     "url": "https://www.diva-portal.org/smash/get/diva2:1414481/FULLTEXT01.pdf"
+    },
+    {
+     "rank": 12,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809"
+    },
+    {
+     "rank": 13,
+     "title": "Open source maintainers are drowning in AI-generated pull requests. Enterprise teams are next. - The New Stack",
+     "url": "https://thenewstack.io/ai-generated-code-crisis"
+    },
+    {
+     "rank": 14,
+     "title": "E-PRedictor: an approach for early prediction of pull request ...",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    },
+    {
+     "rank": 15,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "AI vs Human Code Generation Report | CodeRabbit",
+     "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+    },
+    {
+     "rank": 17,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request-Level ...",
+     "url": "https://www.researchgate.net/publication/369897078_Are_Code_Review_Smells_and_Metrics_Useful_in_Pull_Request-Level_Software_Defect_Prediction"
+    },
+    {
+     "rank": 18,
+     "title": "DefectDojo: Open Source Vulnerability Management and ASPM",
+     "url": "https://defectdojo.com"
+    },
+    {
+     "rank": 19,
+     "title": "7 tools for code review engineers (GitHub edition)",
+     "url": "https://blog.codacy.com/7-tools-code-review-engineers-github"
+    },
+    {
+     "rank": 20,
+     "title": "Papers | Code Review Papers",
+     "url": "https://naist-se.github.io/code-review/publications"
+    }
+   ]
+  },
+  {
+   "query": "Open-source tools for pull request defect prediction: user reviews and case studies",
+   "results": [
+    {
+     "rank": 1,
+     "title": "CodeRabbit AI Code Review Case Study | Roseram",
+     "url": "https://roseram.com/case-studies/coderabbit-ai-pull-request-review-case-study"
+    },
+    {
+     "rank": 2,
+     "title": "9 Best PR Automation Tools [2026 Review]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 4,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 5,
+     "title": "AI Code Review Tools: Key Benefits and 8 Tools to Know",
+     "url": "https://www.mend.io/blog/ai-code-review-tools-key-benefits-and-tools"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "AI Code Review Tools for 2026: A Buyer's Guide | Wiz",
+     "url": "https://www.wiz.io/academy/application-security/ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "The Best Automated Code Review Tools for Engineering Teams | Sep 23, 2026",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Enhanced code reviews using pull request based change impact analysis | Empirical Software Engineering | Springer Nature Link",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub - kodustech/awesome-code-review-tools: A curated list of the best code review tools, platforms, and automation for modern development teams. · GitHub",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "Best Automated Code Review Tools in 2025🔥 | AI Pull Request Review Comparison",
+     "url": "https://www.youtube.com/watch?v=-cjqqXGN-0E&vl=en"
+    },
+    {
+     "rank": 13,
+     "title": "Overview of Code Review Research | Awesome Code Reviews",
+     "url": "https://www.awesomecodereviews.com/research/code-review-research-overview"
+    },
+    {
+     "rank": 14,
+     "title": "AI code review tools: what works, what doesn't, and how to set it up",
+     "url": "https://madewithlove.com/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 15,
+     "title": "Papers | Code Review Papers",
+     "url": "https://naist-se.github.io/code-review/publications"
+    },
+    {
+     "rank": 16,
+     "title": "A Practical Guide to Risk-Based Code Review | Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 17,
+     "title": "Visualize the impact of automated code reviews | Announcement",
+     "url": "https://codescene.com/blog/visualize-the-impact-of-automated-code-reviews-announcement"
+    },
+    {
+     "rank": 18,
+     "title": "What open source tools exists to help with code reviews? - Reddit",
+     "url": "https://www.reddit.com/r/softwaredevelopment/comments/1s5e4bz/what_open_source_tools_exists_to_help_with_code"
+    },
+    {
+     "rank": 19,
+     "title": "7 Code Review Tools to Balance Quality and Speed",
+     "url": "https://www.atlassian.com/blog/loom/code-review-tools"
+    },
+    {
+     "rank": 20,
+     "title": "A Large-Scale Study of Modern Code Review and Security in Open ...",
+     "url": "https://dl.acm.org/doi/10.1145/3127005.3127014"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories",
+  "https://arxiv.org/html/2206.09967v1",
+  "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests",
+  "https://roseram.com/case-studies/coderabbit-ai-pull-request-review-case-study",
+  "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories",
+   "description": "PR-SZZ is an open-source tool that extends the SZZ algorithm to utilize pull requests for better defect prediction."
+  },
+  {
+   "name": "E-PRedictor",
+   "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4",
+   "description": "E-PRedictor is a machine learning-based tool that predicts the likelihood of defects in pull requests using historical data."
+  },
+  {
+   "name": "DeepSource",
+   "url": "https://deepsource.com",
+   "description": "DeepSource is an AI-driven platform that analyzes code changes in pull requests to identify potential defects and security vulnerabilities."
+  }
+ ]
+}

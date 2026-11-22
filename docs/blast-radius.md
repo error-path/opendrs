@@ -54,7 +54,8 @@ otherwise repeat a raw dependents count — that is editor trivia the captain ca
 
 A logistic model turns the signals into a probability between 0 and 1. Each signal's contribution
 is shown in the PR comment, so you can see why a PR scored what it did. The default weights are
-priors; `opendrs calibrate` fits them to your repository's history. The full feature table and
+priors; `opendrs calibrate` fits them to your repository's history (see
+[Calibration and backtesting](calibration.md)). The full feature table and
 its link to Meta's Diff Risk Score are in the
 [signal reference](signals.md#metas-drs-features-and-their-opendrs-signals).
 

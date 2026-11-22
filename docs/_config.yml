@@ -43,6 +43,8 @@ nav:
     - title: Configuration
       url: /configuration.html
   more:
+    - title: Review bottleneck
+      url: /ai-pr-review-bottleneck.html
     - title: Research
       url: /research/
     - title: Policy

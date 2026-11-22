@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-merge AI pull requests safely: the merge gate | Orbi",
+     "url": "https://orbi.build/guides/auto-merge-ai-prs"
+    },
+    {
+     "rank": 2,
+     "title": "Cogny Auto-Merge — AI Coding Agent PRs That Merge Themselves, Safely (2026)",
+     "url": "https://cogny.com/blog/auto-merge-coding-agent-pull-requests"
+    },
+    {
+     "rank": 3,
+     "title": "How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely"
+    },
+    {
+     "rank": 4,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 5,
+     "title": "Merging AI-Generated Pull Requests: A Review Process That Actually Scales",
+     "url": "https://medium.com/@visrow/merging-ai-generated-pull-requests-a-review-process-that-actually-scales-05c9f85f454f"
+    },
+    {
+     "rank": 6,
+     "title": "Should AI-written fix PRs ever auto-merge? - Safeguard.sh",
+     "url": "https://safeguard.sh/resources/blog/should-ai-written-fix-prs-ever-auto-merge"
+    },
+    {
+     "rank": 7,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests"
+    },
+    {
+     "rank": 8,
+     "title": "Can AI Agents Safely Approve Pull Requests? Guardrails for Autonomous Code Review | Augment Code",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub PR Review Agent: AI Code Review Automation | xpander.ai — AI Agent Platform",
+     "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more"
+    },
+    {
+     "rank": 10,
+     "title": "Auto-merging agent PRs stops at the UI · UI Verify",
+     "url": "https://uiverify.ai/blog/auto-merge-agent-prs-visual"
+    },
+    {
+     "rank": 11,
+     "title": "How to Merge Pull Requests Safely on GitHub | Uxcel Lesson",
+     "url": "https://uxcel.com/lessons/how-to-merge-pull-requests-safely-on-github-961"
+    },
+    {
+     "rank": 12,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026) — screencli blog",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 13,
+     "title": "Automated AI pull request review on GitHub | GitHub Agentic Workflows",
+     "url": "https://github.github.com/gh-aw/gallery/automated-pr-review"
+    },
+    {
+     "rank": 14,
+     "title": "AI Can Speed Up Code Review — but Merge Decisions Still Need Deterministic Guardrails",
+     "url": "https://medium.com/@mvtavares/ai-can-speed-up-code-review-but-merge-decisions-still-need-deterministic-guardrails-c9d6ec9325e6"
+    },
+    {
+     "rank": 15,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "When AI Reviews AI, Who Owns the Merge? | GitMe Blog",
+     "url": "https://www.gitdotme.com/blog-when-ai-reviews-ai-who-owns-the-merge"
+    },
+    {
+     "rank": 17,
+     "title": "Automate Your GitHub PR Reviews with AI Agents in Minutes!",
+     "url": "https://www.linkedin.com/pulse/automate-your-github-pr-reviews-ai-agents-minutes-pavan-belagatti-y359c"
+    },
+    {
+     "rank": 18,
+     "title": "Sumit Saha on Facebook: \"How to Build a Secure AI PR Reviewer with Claude Tired of spending hours manually reviewing code? Le…\"",
+     "url": "https://www.facebook.com/groups/learnwithsumit/posts/1651713456146722"
+    },
+    {
+     "rank": 19,
+     "title": "Automatically merge verified and tested GitHub Pull Requests - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/40391344/automatically-merge-verified-and-tested-github-pull-requests"
+    },
+    {
+     "rank": 20,
+     "title": "Should an AI coding agent ever be allowed to merge its own PR?",
+     "url": "https://www.reddit.com/r/AI_Agents/comments/1wmvq2p/should_an_ai_coding_agent_ever_be_allowed_to"
+    }
+   ]
+  },
+  {
+   "query": "GitHub auto-merge policies and best practices",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to Set Up Auto-Merge in GitHub Actions",
+     "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view"
+    },
+    {
+     "rank": 2,
+     "title": "Merging pull requests using GitHub Actions",
+     "url": "https://graphite.com/guides/merge-pull-request-github-actions"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Auto Merge: Good Uses and the Stale Approval Trap | Pyor",
+     "url": "https://pyor.review/blog/github-auto-merge"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You Outgrow It | Mergify",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-merge GitHub pull requests after GitHub Actions pass - Andrea Zonca",
+     "url": "https://www.zonca.dev/posts/2025-10-20-github-actions-auto-merge"
+    },
+    {
+     "rank": 6,
+     "title": "Who actually approves an auto-merge in GitHub? : r/github",
+     "url": "https://www.reddit.com/r/github/comments/1rp76zp/who_actually_approves_an_automerge_in_github"
+    },
+    {
+     "rank": 7,
+     "title": "Auto-merge now requires all PR requirements to be met before enabling (undocumented behavior change, HTTP 422) · community · Discussion #190610 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/190610"
+    },
+    {
+     "rank": 8,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 9,
+     "title": "Managing auto-merge for pull requests in your repository - GitHub Docs",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository"
+    },
+    {
+     "rank": 10,
+     "title": "auto-merge doesn't work with rulesets · community · Discussion #162623 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/162623"
+    },
+    {
+     "rank": 11,
+     "title": "How to Allow Auto Merge on GitHub (Step-by-Step Tutorial)",
+     "url": "https://www.youtube.com/watch?v=5-LTfjv2k0k&vl=en"
+    },
+    {
+     "rank": 12,
+     "title": "Updated pull request auto-merge behavior for users without write access - GitHub Changelog",
+     "url": "https://github.blog/changelog/2021-03-22-updated-pull-request-auto-merge-behavior-for-users-without-write-access"
+    },
+    {
+     "rank": 13,
+     "title": "Creating a GitHub Action to auto-merge pull requests – alexwlchan",
+     "url": "https://alexwlchan.net/2019/creating-a-github-action-to-auto-merge-pull-requests"
+    },
+    {
+     "rank": 14,
+     "title": "Turn off auto-merge from pull request on GitHub? : r/git",
+     "url": "https://www.reddit.com/r/git/comments/1r59qy/turn_off_automerge_from_pull_request_on_github"
+    },
+    {
+     "rank": 15,
+     "title": "Boosting GitHub Actions Efficiency with Merge Queue",
+     "url": "https://medium.com/@tbrovy/boosting-github-actions-efficiency-with-merge-queue-69377551271c"
+    },
+    {
+     "rank": 16,
+     "title": "git - Can GitHub automatically merge branches? - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/35445186/can-github-automatically-merge-branches"
+    },
+    {
+     "rank": 17,
+     "title": "Managing a merge queue - GitHub Docs",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub - securitytxt/security-txt: A proposed standard that allows websites to define security policies. · GitHub",
+     "url": "https://github.com/securitytxt/security-txt"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub",
+     "url": "https://tavily.com/knowledge/company/WGf4o1saQ1yD"
+    },
+    {
+     "rank": 20,
+     "title": "Asana, GitHub, Atlassian Share Best Remote Management Practices - Business Insider",
+     "url": "https://www.businessinsider.com/asana-github-atlassian-best-remote-management-practices-engineers-2020-7"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://orbi.build/guides/auto-merge-ai-prs",
+  "https://cogny.com/blog/auto-merge-coding-agent-pull-requests",
+  "https://rewind.com/blog/ai-approve-pull-requests-safely",
+  "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view",
+  "https://graphite.com/guides/merge-pull-request-github-actions"
+ ],
+ "recommendations": [
+  {
+   "name": "Orbi - Auto-Merge AI Pull Requests Safely",
+   "url": "https://orbi.build/guides/auto-merge-ai-prs",
+   "description": "Orbi provides a robust auto-merge solution for AI-reviewed pull requests with four safety gates: independent verdict, fresh base, CI concluded, and head still safe."
+  },
+  {
+   "name": "Cogny Auto-Merge — AI Coding Agent PRs That Merge Themselves, Safely",
+   "url": "https://cogny.com/blog/auto-merge-coding-agent-pull-requests",
+   "description": "Cogny offers an auto-merge feature for AI-written PRs with hard rules, a merge review process, and a review that follows policy, providing clear visibility and control."
+  },
+  {
+   "name": "GitHub Auto-Merge Policies and Best Practices",
+   "url": "https://oneuptime.com/blog/post/2025-12-20-github-actions-auto-merge/view",
+   "description": "GitHub Actions provides a native auto-merge feature with granular control through the automerge-action, allowing for automated merging based on specific labels and criteria."
+  }
+ ]
+}

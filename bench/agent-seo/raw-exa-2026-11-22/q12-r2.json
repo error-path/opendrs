@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Merge Queue — Omniscio",
+     "url": "https://docs.omniscio.com/library/pr-merge-queue.html"
+    },
+    {
+     "rank": 2,
+     "title": "Risk tiers – fremforge docs",
+     "url": "https://docs.frem.sh/develop/risk-tiers/"
+    },
+    {
+     "rank": 3,
+     "title": "Risk-Based Reviews",
+     "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews"
+    },
+    {
+     "rank": 4,
+     "title": "usebrindle/brindle",
+     "url": "https://github.com/usebrindle/brindle"
+    },
+    {
+     "rank": 5,
+     "title": "Merge pull requests with PR Merge Queue | Yardmaster Guide",
+     "url": "https://docs.yardmaster.io/guide/connect/pr-merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Using Queue Rules",
+     "url": "https://docs.mergify.com/merge-queue/rules/"
+    },
+    {
+     "rank": 7,
+     "title": "Risk control: risk scores, change freezes and risk holds | Merge Pilot",
+     "url": "https://www.merge-pilot.com/docs/policies/controls/risk"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Risk - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/pr-reviews/merge-risk"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 10,
+     "title": "Managing a merge queue",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "Merge Queue and PR Risk - Loki Mode Documentation | Autonomi",
+     "url": "https://www.autonomi.dev/docs/merge-review"
+    },
+    {
+     "rank": 12,
+     "title": "The merge gate and the merge queue · cterm documentation",
+     "url": "https://cterm.dev/docs/merge-queue"
+    },
+    {
+     "rank": 13,
+     "title": "Merge Queue",
+     "url": "https://docs.wit.sh/features/merge-queue"
+    },
+    {
+     "rank": 14,
+     "title": "Optimistic merging",
+     "url": "https://docs.trunk.io/merge-queue/optimizations/optimistic-merging"
+    },
+    {
+     "rank": 15,
+     "title": "docs/AUTO-MERGE-FUTURE-CONTRACT.md",
+     "url": "https://github.com/fullsend-ai/auto-merge/blob/main/docs/AUTO-MERGE-FUTURE-CONTRACT.md"
+    },
+    {
+     "rank": 16,
+     "title": "Merge with the queue · TanStack Source",
+     "url": "https://source.tanstack.com/docs/merge-queue"
+    },
+    {
+     "rank": 17,
+     "title": "Keeping the Mainline Green across Diverse Language Monorepos - InfoQ",
+     "url": "https://www.infoq.com/presentations/mergequeue/"
+    },
+    {
+     "rank": 18,
+     "title": "Merge queue | knotless docs",
+     "url": "https://knotless.dev/docs/design/merge-queue/"
+    },
+    {
+     "rank": 19,
+     "title": "Merge Queue - Graphite",
+     "url": "https://graphite.com/docs/graphite-merge-queue"
+    },
+    {
+     "rank": 20,
+     "title": "merge-review - オンラインツール",
+     "url": "https://tool.lu/ja_JP/skill/s/iF7"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for automating pull request merges based on risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "usebrindle/brindle",
+     "url": "https://github.com/usebrindle/brindle"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub Action: score, label and auto-approve pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/github-action.html"
+    },
+    {
+     "rank": 3,
+     "title": "DNYoussef/guardspine-code-action",
+     "url": "https://github.com/DNYoussef/guardspine-code-action"
+    },
+    {
+     "rank": 4,
+     "title": "examples/gate-ai-agent-pr.yml",
+     "url": "https://github.com/decionis/govern/blob/v1/examples/gate-ai-agent-pr.yml"
+    },
+    {
+     "rank": 5,
+     "title": "mergeshield/risk-check",
+     "url": "https://github.com/mergeshield/risk-check"
+    },
+    {
+     "rank": 6,
+     "title": ".github/workflows/hydra-automerge.yml",
+     "url": "https://github.com/airbytehq/airbyte/blob/b4cdfd7c/.github/workflows/hydra-automerge.yml"
+    },
+    {
+     "rank": 7,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 8,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 9,
+     "title": "One-Code-LLC/mergerisk-action",
+     "url": "https://github.com/One-Code-LLC/mergerisk-action"
+    },
+    {
+     "rank": 10,
+     "title": "I built a GitHub Action that scores pull requests and never auto-closes them - DEV Community",
+     "url": "https://dev.to/solo_developer_ai/i-built-a-github-action-that-scores-pull-requests-and-never-auto-closes-them-2cb6"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub Integration: PR Agent and CI Agent (MC Prevent)",
+     "url": "https://docs.getmontecarlo.com/changelog/github-integration-pr-agent-and-ci-agent-mc-prevent-1"
+    },
+    {
+     "rank": 12,
+     "title": "nikhilkxmar/axis-security",
+     "url": "https://github.com/nikhilkxmar/axis-security"
+    },
+    {
+     "rank": 13,
+     "title": "Auto-Merge for a Fleet of One · Jimmy Van Veen",
+     "url": "https://www.jimmyvanveen.com/blog/auto-merge-for-a-fleet-of-one"
+    },
+    {
+     "rank": 14,
+     "title": "Automate Dependabot Triage with GitHub Copilot in 4 Steps | AI Tool Recipes",
+     "url": "https://aitoolrecipes.com/recipes/auto-triage-dependabot-prs-with-github-copilot-github-actions"
+    },
+    {
+     "rank": 15,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 16,
+     "title": "aragossa/codeguard-action",
+     "url": "https://github.com/aragossa/codeguard-action"
+    },
+    {
+     "rank": 17,
+     "title": ".github/workflows/pr-auto-approve.yml",
+     "url": "https://github.com/langwatch/langwatch/blob/df839568c221ec1a5eb617f935da6b29e3724bd7/.github/workflows/pr-auto-approve.yml"
+    },
+    {
+     "rank": 18,
+     "title": "Automatically merging a pull request",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 19,
+     "title": "Claude Code GitHub Actions で Dependabot が作成した PR を自動マージ | CyberAgent Developers Blog",
+     "url": "https://developers.cyberagent.co.jp/blog/archives/60598/"
+    },
+    {
+     "rank": 20,
+     "title": ".github/workflows/preflight-gate.yml",
+     "url": "https://github.com/apexpdl/agent-preflight/blob/260435714b8283a8917946e593cdb456bbc4cf26/.github/workflows/preflight-gate.yml"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.omniscio.com/library/pr-merge-queue.html",
+  "https://docs.frem.sh/develop/risk-tiers/",
+  "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews",
+  "https://github.com/usebrindle/brindle",
+  "https://error-path.github.io/opendrs/github-action.html"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Merge Queue — Omniscio",
+   "url": "https://docs.omniscio.com/library/pr-merge-queue.html",
+   "description": "Omniscio's PR Merge Queue helps in automating the merge of low-risk pull requests while holding risky ones for human review."
+  },
+  {
+   "name": "usebrindle/brindle",
+   "url": "https://github.com/usebrindle/brindle",
+   "description": "A GitHub Action for risk-based merge gating, automatically merging low-risk PRs and holding high-risk ones for human review."
+  },
+  {
+   "name": "GitHub Action: score, label and auto-approve pull requests | opendrs",
+   "url": "https://error-path.github.io/opendrs/github-action.html",
+   "description": "opendrs is a GitHub Action that scores PRs, labels them, and can auto-approve low-risk ones, while holding high-risk ones for review."
+  }
+ ]
+}

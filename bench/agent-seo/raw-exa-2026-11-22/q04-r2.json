@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "ehermanson/blast-radius",
+     "url": "https://github.com/ehermanson/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "claude-code/mods/blast-radius/README.md",
+     "url": "https://github.com/anthropics/claude-code-playground/blob/main/claude-code/mods/blast-radius/README.md"
+    },
+    {
+     "rank": 3,
+     "title": "README.md",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 4,
+     "title": "README.md",
+     "url": "https://github.com/IWasZ3r0Cool/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 5,
+     "title": "heidericklucas/blast-radius",
+     "url": "https://github.com/heidericklucas/blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "phoenix-assistant/blastradius",
+     "url": "https://github.com/phoenix-assistant/blastradius"
+    },
+    {
+     "rank": 7,
+     "title": "28mm/blast-radius",
+     "url": "https://github.com/28mm/blast-radius"
+    },
+    {
+     "rank": 8,
+     "title": "jonathimer/blast-radius",
+     "url": "https://github.com/jonathimer/blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "0xelitesystem/cantundo",
+     "url": "https://github.com/0xelitesystem/agent-blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "Mullassery/PyBlastRadius",
+     "url": "https://github.com/Mullassery/PyBlastRadius"
+    },
+    {
+     "rank": 11,
+     "title": "coreyhiggins/blastradius",
+     "url": "https://github.com/coreyhiggins/blastradius"
+    },
+    {
+     "rank": 12,
+     "title": "DIYA73/PR-Blast-Radius-",
+     "url": "https://github.com/DIYA73/PR-Blast-Radius-"
+    },
+    {
+     "rank": 13,
+     "title": "himanshu748/blastradius",
+     "url": "https://github.com/himanshu748/blastradius"
+    },
+    {
+     "rank": 14,
+     "title": "blast-radius/README.md",
+     "url": "https://github.com/YeonwooSung/my-claude-code-mods/blob/HEAD/blast-radius/README.md"
+    },
+    {
+     "rank": 15,
+     "title": "phllp-tanstic/radius",
+     "url": "https://github.com/phllp-tanstic/radius"
+    },
+    {
+     "rank": 16,
+     "title": "edgedelta/blast-radius-bench",
+     "url": "https://github.com/edgedelta/blast-radius-bench"
+    },
+    {
+     "rank": 17,
+     "title": "rickjeffsolutions/blastradius-os",
+     "url": "https://github.com/rickjeffsolutions/blastradius-os"
+    },
+    {
+     "rank": 18,
+     "title": "philipbankier/Blast-Radius-Calculator-App",
+     "url": "https://github.com/philipbankier/Blast-Radius-Calculator-App"
+    },
+    {
+     "rank": 19,
+     "title": "BENCHMARKS.md",
+     "url": "https://github.com/Rohit-ATS/blast-radius/blob/main/BENCHMARKS.md"
+    },
+    {
+     "rank": 20,
+     "title": "nuclearblastsimulator/nuclear-blast-simulator",
+     "url": "https://github.com/nuclearblastsimulator/nuclear-blast-simulator"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories for analyzing potential impact of code changes",
+   "results": [
+    {
+     "rank": 1,
+     "title": "shade-loop/impactos",
+     "url": "https://github.com/shade-loop/impactos"
+    },
+    {
+     "rank": 2,
+     "title": "Cosmic-hackers/changegraph",
+     "url": "https://github.com/Cosmic-hackers/changegraph"
+    },
+    {
+     "rank": 3,
+     "title": "smarwat/blast-radius",
+     "url": "https://github.com/smarwat/blast-radius"
+    },
+    {
+     "rank": 4,
+     "title": "theaniqusman/change-impact-analyzer",
+     "url": "https://github.com/theaniqusman/change-impact-analyzer"
+    },
+    {
+     "rank": 5,
+     "title": "nano-harness/impact-analyzer",
+     "url": "https://github.com/nano-harness/impact-analyzer"
+    },
+    {
+     "rank": 6,
+     "title": "daedalus/ImpactGuard",
+     "url": "https://github.com/daedalus/ImpactGuard"
+    },
+    {
+     "rank": 7,
+     "title": "adiarora06/RepoRipple",
+     "url": "https://github.com/adiarora06/RepoRipple"
+    },
+    {
+     "rank": 8,
+     "title": "YanibHQ/reverb-impact",
+     "url": "https://github.com/YanibHQ/reverb-impact"
+    },
+    {
+     "rank": 9,
+     "title": "acrticsludge/Impact-graph",
+     "url": "https://github.com/acrticsludge/Impact-graph"
+    },
+    {
+     "rank": 10,
+     "title": "INDEX0-RESEARCH-LABS/repograph",
+     "url": "https://github.com/INDEX0-RESEARCH-LABS/repograph"
+    },
+    {
+     "rank": 11,
+     "title": "VantaTree/Code-Ripple",
+     "url": "https://github.com/VantaTree/Code-Ripple"
+    },
+    {
+     "rank": 12,
+     "title": "sumit-gupta03/impactgraph",
+     "url": "https://github.com/sumit-gupta03/impactgraph"
+    },
+    {
+     "rank": 13,
+     "title": "sourcegraph-community/precise-impact-analysis",
+     "url": "https://github.com/sourcegraph-community/precise-impact-analysis"
+    },
+    {
+     "rank": 14,
+     "title": "IronAdamant/Chisel",
+     "url": "https://github.com/IronAdamant/Chisel/"
+    },
+    {
+     "rank": 15,
+     "title": "ChristosGrigoras/nodestradamus",
+     "url": "https://github.com/ChristosGrigoras/nodestradamus"
+    },
+    {
+     "rank": 16,
+     "title": "xpushkal/CodeGraph",
+     "url": "https://github.com/xpushkal/CodeGraph"
+    },
+    {
+     "rank": 17,
+     "title": "VinayKumar2320/CodeImpact",
+     "url": "https://github.com/VinayKumar2320/CodeImpact"
+    },
+    {
+     "rank": 18,
+     "title": "yuanyuanyuan/mycodemap",
+     "url": "https://github.com/yuanyuanyuan/mycodemap"
+    },
+    {
+     "rank": 19,
+     "title": "adityapatel5912/RepoScope",
+     "url": "https://github.com/adityapatel5912/RepoScope"
+    },
+    {
+     "rank": 20,
+     "title": "phoenix-assistant/impact-graph",
+     "url": "https://github.com/phoenix-assistant/impact-graph"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/ehermanson/blast-radius",
+  "https://github.com/anthropics/claude-code-playground/blob/main/claude-code/mods/blast-radius/README.md",
+  "https://github.com/buildingopen/blast-radius/blob/main/README.md",
+  "https://github.com/shade-loop/impactos",
+  "https://github.com/Cosmic-hackers/changegraph"
+ ],
+ "recommendations": [
+  {
+   "name": "ehermanson/blast-radius",
+   "url": "https://github.com/ehermanson/blast-radius",
+   "description": "A tool for analyzing the potential impact of code changes."
+  },
+  {
+   "name": "shade-loop/impactos",
+   "url": "https://github.com/shade-loop/impactos",
+   "description": "An open-source tool for impact analysis."
+  },
+  {
+   "name": "Cosmic-hackers/changegraph",
+   "url": "https://github.com/Cosmic-hackers/changegraph",
+   "description": "A tool for analyzing the impact of code changes and tracking project evolution."
+  }
+ ]
+}

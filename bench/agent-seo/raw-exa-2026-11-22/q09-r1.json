@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Deepthi-04/deltaprobe",
+     "url": "https://github.com/deepthi-04/deltaprobe"
+    },
+    {
+     "rank": 2,
+     "title": "Kaushal-SF/devflow-mcp",
+     "url": "https://github.com/Kaushal-SF/devflow-mcp"
+    },
+    {
+     "rank": 3,
+     "title": "gitlumen-team/gitlumen-mcp",
+     "url": "https://github.com/gitlumen-team/gitlumen-mcp"
+    },
+    {
+     "rank": 4,
+     "title": "Senix: AI Code Review for Pull Requests",
+     "url": "https://senix.dev/"
+    },
+    {
+     "rank": 5,
+     "title": "mann-uofg/codeview-mcp",
+     "url": "https://github.com/mann-uofg/codeview-mcp"
+    },
+    {
+     "rank": 6,
+     "title": "x-asd/pr-guard-mcp",
+     "url": "https://github.com/x-asd/pr-guard-mcp"
+    },
+    {
+     "rank": 7,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 8,
+     "title": "thangtn83/mcp_pr_review",
+     "url": "https://github.com/thangtn83/mcp_pr_review"
+    },
+    {
+     "rank": 9,
+     "title": "AshishChandpa/AI-PR-Review-MCP",
+     "url": "https://github.com/AshishChandpa/AI-PR-Review-MCP"
+    },
+    {
+     "rank": 10,
+     "title": "culprit by noordeen123 | Glama",
+     "url": "https://glama.ai/mcp/servers/noordeen123/culprit"
+    },
+    {
+     "rank": 11,
+     "title": "salesforce-misc/pr-council-mcp",
+     "url": "https://github.com/salesforce-misc/pr-council-mcp"
+    },
+    {
+     "rank": 12,
+     "title": "meanusarcanus/ai-pr-reviewer-action",
+     "url": "https://github.com/meanusarcanus/ai-pr-reviewer-action"
+    },
+    {
+     "rank": 13,
+     "title": "Gitlumen | AI Powered Code Review Intelligence",
+     "url": "https://gitlumen.com/"
+    },
+    {
+     "rank": 14,
+     "title": "trajanovd/Ai-code-reviewer",
+     "url": "https://github.com/trajnovd/Ai-code-reviewer"
+    },
+    {
+     "rank": 15,
+     "title": "code-guardian-mcp v0.3.1",
+     "url": "https://pypi.org/project/code-guardian-mcp/"
+    },
+    {
+     "rank": 16,
+     "title": "dstamand-msft/AzureDevOpsPullRequestAgent",
+     "url": "https://github.com/dstamand-msft/AzureDevOpsPullRequestAgent"
+    },
+    {
+     "rank": 17,
+     "title": "ayushv7/PRPilot",
+     "url": "https://github.com/ayushv7/PRPilot"
+    },
+    {
+     "rank": 18,
+     "title": "check_pr_risk - deltaprobe | Glama",
+     "url": "https://glama.ai/mcp/servers/Deepthi-04/deltaprobe/tools/check_pr_risk"
+    },
+    {
+     "rank": 19,
+     "title": "CoderSufiyan/mcp-risk",
+     "url": "https://github.com/CoderSufiyan/mcp-risk"
+    },
+    {
+     "rank": 20,
+     "title": "Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers — ChatForest",
+     "url": "https://chatforest.com/reviews/code-review-pull-request-mcp-servers/"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and performance metrics of each of these MCP servers for pull request risk assessment, and how do they compare to each other?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "mann-uofg/codeview-mcp",
+     "url": "https://github.com/mann-uofg/codeview-mcp"
+    },
+    {
+     "rank": 2,
+     "title": "Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers — ChatForest",
+     "url": "https://chatforest.com/reviews/code-review-pull-request-mcp-servers/"
+    },
+    {
+     "rank": 3,
+     "title": "Best MCP Servers for Codebase Intelligence and Code Review",
+     "url": "https://hub.qodo.ai/post/best-mcp-servers-codebase-intelligence-code-review/"
+    },
+    {
+     "rank": 4,
+     "title": "score_pr_for_deploy_risk - Koalr | Glama",
+     "url": "https://glama.ai/mcp/connectors/com.koalr.mcp/koalr/tools/score_pr_for_deploy_risk"
+    },
+    {
+     "rank": 5,
+     "title": "thangtn83/mcp_pr_review",
+     "url": "https://github.com/thangtn83/mcp_pr_review"
+    },
+    {
+     "rank": 6,
+     "title": "check_pr_risk - deltaprobe | Glama",
+     "url": "https://glama.ai/mcp/servers/Deepthi-04/deltaprobe/tools/check_pr_risk"
+    },
+    {
+     "rank": 7,
+     "title": "salesforce-misc/pr-council-mcp",
+     "url": "https://github.com/salesforce-misc/pr-council-mcp"
+    },
+    {
+     "rank": 8,
+     "title": "ayushv7/PRPilot",
+     "url": "https://github.com/ayushv7/PRPilot"
+    },
+    {
+     "rank": 9,
+     "title": "MCP Security Checks in GitHub Pull Requests: 10 Tools | Foo Guard",
+     "url": "https://blog.fooguard.com/mcp-security-checks-in-git-hub-pull-requests"
+    },
+    {
+     "rank": 10,
+     "title": "Best Devtools MCP Servers for Code Review: A 2026 Comparison",
+     "url": "https://mcpfind.org/blog/best-devtools-mcp-servers-code-review"
+    },
+    {
+     "rank": 11,
+     "title": "utpal21/CodeReviewHQ",
+     "url": "https://github.com/utpal21/CodeReviewHQ"
+    },
+    {
+     "rank": 12,
+     "title": "hasanyelaldi/repo-pulse-mcp",
+     "url": "https://github.com/hasanyelaldi/repo-pulse-mcp"
+    },
+    {
+     "rank": 13,
+     "title": "x-asd/pr-guard-mcp",
+     "url": "https://github.com/x-asd/pr-guard-mcp"
+    },
+    {
+     "rank": 14,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 15,
+     "title": "Best MCP Servers for Automated Code Review in 2026 · ScreenshotNeo",
+     "url": "https://screenshotneo.com/blog/best-mcp-servers-automated-code-review/"
+    },
+    {
+     "rank": 16,
+     "title": "Code Impact MCP by vk0dev | Glama",
+     "url": "https://glama.ai/mcp/servers/vk0dev/code-impact-mcp"
+    },
+    {
+     "rank": 17,
+     "title": "Code Security MCP Servers — Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, and Beyond — ChatForest",
+     "url": "https://chatforest.com/reviews/code-security-mcp-servers/"
+    },
+    {
+     "rank": 18,
+     "title": "Review Pull Requests on an MCP Server",
+     "url": "https://getrush.ai/run/review-pull-requests/mcp-server/"
+    },
+    {
+     "rank": 19,
+     "title": "Ataraxy-Labs/inspect",
+     "url": "https://github.com/Ataraxy-Labs/inspect"
+    },
+    {
+     "rank": 20,
+     "title": "I Read Cursor's Security Agent Prompts, So You Don't Have To",
+     "url": "https://snyk.io/blog/cursor-security-agent-prompts/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/deepthi-04/deltaprobe",
+  "https://github.com/Kaushal-SF/devflow-mcp",
+  "https://github.com/gitlumen-team/gitlumen-mcp",
+  "https://github.com/mann-uofg/codeview-mcp",
+  "https://chatforest.com/reviews/code-review-pull-request-mcp-servers/"
+ ],
+ "recommendations": [
+  {
+   "name": "Senix: AI Code Review for Pull Requests",
+   "url": "https://senix.dev/",
+   "description": "Senix offers an AI-driven platform for automated code review of pull requests, providing real-time feedback and risk assessment."
+  },
+  {
+   "name": "Gitlumen | AI Powered Code Review Intelligence",
+   "url": "https://gitlumen.com/",
+   "description": "Gitlumen provides an AI-powered MCP server for code review, offering automated analysis, risk assessment, and intelligent workflows."
+  },
+  {
+   "name": "Deepthi-04/deltaprobe",
+   "url": "https://github.com/deepthi-04/deltaprobe",
+   "description": "deltaprobe is an AI-based code review tool that analyzes GitHub pull requests and provides risk assessments."
+  }
+ ]
+}

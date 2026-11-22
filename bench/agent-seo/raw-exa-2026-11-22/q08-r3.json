@@ -1,0 +1,233 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 3,
+     "title": "Risk signals: what opendrs measures | opendrs",
+     "url": "https://error-path.github.io/opendrs/signals.html"
+    },
+    {
+     "rank": 4,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency",
+     "url": "https://arxiv.org/abs/2605.30208"
+    },
+    {
+     "rank": 5,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351"
+    },
+    {
+     "rank": 6,
+     "title": "travisjeffery/radar",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 7,
+     "title": "Diff Risk Score Model – Ian’s Blog",
+     "url": "https://ianbarber.blog/2024/12/17/diff-risk-score-model/"
+    },
+    {
+     "rank": 8,
+     "title": "Sharing broadly, DRS is something we have been working on here at Meta the last 2 years. | Nachi Nagappan",
+     "url": "https://www.linkedin.com/posts/nachi-nagappan-10910b1_diff-risk-score-ai-driven-risk-aware-software-activity-7358921466983174145-PXKP"
+    },
+    {
+     "rank": 9,
+     "title": "Software Factory: Solving the Code Review Bottleneck | Codehance Blog",
+     "url": "https://blog.codehance.com/software-factory-code-review-bottleneck"
+    },
+    {
+     "rank": 10,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency | Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "url": "https://dl.acm.org/doi/10.1145/3832783.3834493"
+    },
+    {
+     "rank": 11,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows | arXiv Science",
+     "url": "https://arxiv.science/abs/2511.21964"
+    },
+    {
+     "rank": 12,
+     "title": "Code Reviewer Recommendation for High Risk Diffs at Scale: Workflow, Recommender, and Live Experiments",
+     "url": "https://mockus.org/papers/RevRisk.pdf"
+    },
+    {
+     "rank": 13,
+     "title": "A Preliminary Study on Explaining Risk of Code Changes using LLM-Based Prediction Models",
+     "url": "https://arxiv.org/html/2607.02782v1"
+    },
+    {
+     "rank": 14,
+     "title": "Big PRs, manifests and old files: risk patterns from 33 open-source repos",
+     "url": "https://dev.to/errorpath/big-prs-manifests-and-old-files-risk-patterns-from-33-open-source-repos-27a1"
+    },
+    {
+     "rank": 15,
+     "title": "Code Reviewer Recommendation for High Risk Diffs at Scale: Workflow, Recommender, and Live Experiments",
+     "url": "https://dl.acm.org/doi/pdf/10.1145/3803437.3805220"
+    },
+    {
+     "rank": 16,
+     "title": "Diff Risk Score: AI-driven risk-aware software development | Tech Report",
+     "url": "https://techreport.ngo/ai-ml/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 17,
+     "title": "Diff Risk Score: AI-driven risk-aware software development | Paper | There's An AI For That",
+     "url": "https://theresanaiforthat.com/paper/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 18,
+     "title": "PR blast radius analyzer: a 0-1 risk score so low-risk PRs can auto-approve - DEV Community",
+     "url": "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13"
+    },
+    {
+     "rank": 19,
+     "title": "Deployment Risk Assessment Using Diff-Aware Features: A Case Study at Prime Video",
+     "url": "https://arxiv.org/html/2607.06766"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for AI-driven risk assessment in software development",
+   "results": [
+    {
+     "rank": 1,
+     "title": "arm/metis",
+     "url": "https://github.com/arm/metis?tab=readme-ov-file"
+    },
+    {
+     "rank": 2,
+     "title": "davidmatousek/tachi",
+     "url": "https://github.com/davidmatousek/tachi"
+    },
+    {
+     "rank": 3,
+     "title": "NVIDIA/SkillSpector",
+     "url": "https://github.com/NVIDIA/SkillSpector"
+    },
+    {
+     "rank": 4,
+     "title": "cisco-open/ai-deep-sast",
+     "url": "https://github.com/cisco-open/ai-deep-sast"
+    },
+    {
+     "rank": 5,
+     "title": "seqra/opentaint",
+     "url": "https://github.com/seqra/opentaint/"
+    },
+    {
+     "rank": 6,
+     "title": "scadastrangelove/awesome-ai-security-tools",
+     "url": "https://github.com/scadastrangelove/awesome-ai-security-tools/"
+    },
+    {
+     "rank": 7,
+     "title": "CodeCheck - CommBank",
+     "url": "https://www.commbank.com.au/support/security/codecheck.html"
+    },
+    {
+     "rank": 8,
+     "title": "block/codecrucible",
+     "url": "https://github.com/block/codecrucible"
+    },
+    {
+     "rank": 9,
+     "title": "NuGuardAI/nuguard",
+     "url": "https://github.com/nuguardai/nuguard"
+    },
+    {
+     "rank": 10,
+     "title": "hamza-miladin-symphonygroup/Vulnchain",
+     "url": "https://github.com/hamzamiladin/Vulnchain"
+    },
+    {
+     "rank": 11,
+     "title": "abhi10/gremlin",
+     "url": "https://github.com/abhi10/gremlin"
+    },
+    {
+     "rank": 12,
+     "title": "NVIDIA/SkillSpector",
+     "url": "http://github.com/nvidia/skillspector"
+    },
+    {
+     "rank": 13,
+     "title": "OSS Directory | Society for AI Security",
+     "url": "https://societyforaisecurity.com/oss"
+    },
+    {
+     "rank": 14,
+     "title": "zhixuli0406/vettalon",
+     "url": "https://github.com/zhixuli0406/vettalon"
+    },
+    {
+     "rank": 15,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 16,
+     "title": "microsoft/PyRIT",
+     "url": "https://github.com/microsoft/PyRIT"
+    },
+    {
+     "rank": 17,
+     "title": "IkarusAILabs/SafeAI",
+     "url": "https://github.com/ikaruscareer/SafeAI"
+    },
+    {
+     "rank": 18,
+     "title": "Risk analysis | Trustworthy AI Tool Library",
+     "url": "https://tool-library.appliedai-institute.de/app/discover?practice=risk-analysis"
+    },
+    {
+     "rank": 19,
+     "title": "Open-source AI security tools | The Injection",
+     "url": "https://theinjection.dev/tools/"
+    },
+    {
+     "rank": 20,
+     "title": "Agent-Field/sec-af",
+     "url": "https://github.com/Agent-Field/sec-af/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2511.21964v2",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+  "https://error-path.github.io/opendrs/signals.html",
+  "https://github.com/arm/metis?tab=readme-ov-file",
+  "https://github.com/davidmatousek/tachi"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source DRS tool equipped with a public API, web UI, and GitHub plugin."
+  },
+  {
+   "name": "opendrs Diff Risk Score",
+   "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+   "description": "A GitHub action for calculating a calibrated 0-1 risk score for every pull request."
+  },
+  {
+   "name": "Metis",
+   "url": "https://github.com/arm/metis?tab=readme-ov-file",
+   "description": "An open-source, AI-driven tool for deep security code review."
+  }
+ ]
+}

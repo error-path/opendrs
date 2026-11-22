@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to Automate GitHub PR Reviews with Smart Workflows",
+     "url": "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows"
+    },
+    {
+     "rank": 2,
+     "title": "How We Use AI Agents to Auto Approve Github PRs",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 3,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide) | Macroscope",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 4,
+     "title": "fix(api-keys): make permission categories list full width in drawer · langwatch/langwatch@47bb0a3  · GitHub",
+     "url": "https://github.com/langwatch/langwatch/actions/runs/26122100958/workflow"
+    },
+    {
+     "rank": 5,
+     "title": "Meet LiveReview: Auto Approve 30-50% of Your Low-Risk PRs, Safely - DEV Community",
+     "url": "https://dev.to/rijultp/introducing-livereview-auto-approve-30-50-of-your-low-risk-prs-safely-376g"
+    },
+    {
+     "rank": 6,
+     "title": "We now auto-approve and merge 15% of PRs",
+     "url": "https://swizec.com/blog/we-now-auto-approve-and-merge-15p-of-prs"
+    },
+    {
+     "rank": 7,
+     "title": "https://www.greptile.com/docs/code-review/auto-approve-prs.md",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs.md"
+    },
+    {
+     "rank": 8,
+     "title": "Auto Approve Pull Requests · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "Can I set up Github repo to autoapprove and merge PRs from a specific user? - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/74159955/can-i-set-up-github-repo-to-autoapprove-and-merge-prs-from-a-specific-user"
+    },
+    {
+     "rank": 10,
+     "title": "Auto-Approving safe-settings PRs with OPA and Rego · Caffeine, Code, & Chaos",
+     "url": "https://dxrf.com/blog/2026/04/08/auto-approving-safe-settings-prs-with-opa-and-rego"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub - step-security/auto-approve-action: 👍 GitHub Action for automatically approving GitHub pull requests. Secure drop-in replacement for hmarr/auto-approve-action. · GitHub",
+     "url": "https://github.com/step-security/auto-approve-action"
+    },
+    {
+     "rank": 12,
+     "title": "Auto-approving Pull Requests | projen",
+     "url": "https://projen.io/docs/integrations/github/auto-approve"
+    },
+    {
+     "rank": 13,
+     "title": "Auto PR Review · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/auto-pr-review"
+    },
+    {
+     "rank": 14,
+     "title": "Can you use GitHub Action account to approve PRs? · community · Discussion #27090 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/27090"
+    },
+    {
+     "rank": 15,
+     "title": "Autoapproval · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/autoapproval"
+    },
+    {
+     "rank": 16,
+     "title": "Auto-Approve Pull Requests by Policy | CodeAnt AI",
+     "url": "https://codeant.ai/blogs/policy-aware-pr-approval-agents"
+    },
+    {
+     "rank": 17,
+     "title": "GitHub - Thinkmill/auto-approve-action: A GitHub action to automatically approve(and dismiss approval) of PRs based on a condition · GitHub",
+     "url": "https://github.com/Thinkmill/auto-approve-action"
+    },
+    {
+     "rank": 18,
+     "title": "public-github-actions/dependabot-auto-approve/README.md at main · Cognigy/public-github-actions · GitHub",
+     "url": "https://github.com/Cognigy/public-github-actions/blob/main/dependabot-auto-approve/README.md"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub - danielma/reviewbot: Send reminders to team members to review PRs · GitHub",
+     "url": "https://github.com/danielma/reviewbot"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub",
+     "url": "https://tavily.com/knowledge/company/WGf4o1saQ1yD"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Action for auto-approving PRs based on risk assessment criteria",
+   "results": [
+    {
+     "rank": 1,
+     "title": "How to Automate GitHub PR Reviews with Smart Workflows",
+     "url": "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub Actions Workflow to Auto-Approve and Auto-Merge Renovate PRs",
+     "url": "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d"
+    },
+    {
+     "rank": 3,
+     "title": "Auto PR Review · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/auto-pr-review"
+    },
+    {
+     "rank": 4,
+     "title": "How We Use AI Agents to Auto Approve Github PRs",
+     "url": "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3"
+    },
+    {
+     "rank": 5,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide) | Macroscope",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 6,
+     "title": "Auto Approve Pull Requests · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/auto-approve-pull-requests"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub - Thinkmill/auto-approve-action: A GitHub action to automatically approve(and dismiss approval) of PRs based on a condition · GitHub",
+     "url": "https://github.com/Thinkmill/auto-approve-action"
+    },
+    {
+     "rank": 8,
+     "title": "Auto-Approving safe-settings PRs with OPA and Rego · Caffeine, Code, & Chaos",
+     "url": "https://dxrf.com/blog/2026/04/08/auto-approving-safe-settings-prs-with-opa-and-rego"
+    },
+    {
+     "rank": 9,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% · Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 10,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 11,
+     "title": "Can you use GitHub Action account to approve PRs? · community · Discussion #27090 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/27090"
+    },
+    {
+     "rank": 12,
+     "title": "[feat] Option to auto-approve tool calls upon green AI risk assessment · Issue #318090 · microsoft/vscode · GitHub",
+     "url": "https://github.com/microsoft/vscode/issues/318090"
+    },
+    {
+     "rank": 13,
+     "title": "Restrict who can approve pull requests in GitHub",
+     "url": "https://graphite.com/guides/restrict-who-can-approve-pull-requests-in-github"
+    },
+    {
+     "rank": 14,
+     "title": "How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely"
+    },
+    {
+     "rank": 15,
+     "title": "GitHub PR Review Agent: AI Code Review Automation | xpander.ai — AI Agent Platform",
+     "url": "https://xpander.ai/blog/how-to-build-a-github-pr-review-agent-that-analyses-your-repo-auto-merges-more"
+    },
+    {
+     "rank": 16,
+     "title": "GitHub Actions: Prevent GitHub Actions from approving pull requests - GitHub Changelog",
+     "url": "https://github.blog/changelog/2022-01-13-github-actions-prevent-github-actions-from-approving-pull-requests"
+    },
+    {
+     "rank": 17,
+     "title": "GitHub Copilot PR Approvals: Keep Human Review Required | General Analysis",
+     "url": "https://generalanalysis.com/guides/github-copilot-pull-request-approvals"
+    },
+    {
+     "rank": 18,
+     "title": "Automate GitHub PR Reviews with AI (Node.js, Claude & GitHub Actions)",
+     "url": "https://www.youtube.com/watch?v=XgAZBRZ7yy0"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub - danielma/reviewbot: Send reminders to team members to review PRs · GitHub",
+     "url": "https://github.com/danielma/reviewbot"
+    },
+    {
+     "rank": 20,
+     "title": "competent-prs-authority-impact-assessment. ...",
+     "url": "https://assets.publishing.service.gov.uk/media/5a7c120fed915d1c30daa62a/competent-prs-authority-impact-assessment.pdf"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.simular.ai/workflow/how-to-automate-github-pr-reviews-with-smart-workflows",
+  "https://medium.com/@adrianbooth/how-we-use-ai-agents-to-auto-approve-github-prs-74e50d4b97d3",
+  "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely",
+  "https://blog.stackademic.com/github-actions-workflow-to-auto-approve-and-auto-merge-renovate-prs-0f26b63f853d",
+  "https://github.com/marketplace/actions/auto-pr-review"
+ ],
+ "recommendations": [
+  {
+   "name": "auto-approve-pull-requests",
+   "url": "https://github.com/marketplace/actions/auto-approve-pull-requests",
+   "description": "A GitHub Action for automatically approving pull requests based on risk assessment criteria."
+  },
+  {
+   "name": "step-security/auto-approve-action",
+   "url": "https://github.com/step-security/auto-approve-action",
+   "description": "A secure drop-in replacement for hmarr/auto-approve-action, automatically approving GitHub pull requests."
+  },
+  {
+   "name": "Thinkmill/auto-approve-action",
+   "url": "https://github.com/Thinkmill/auto-approve-action",
+   "description": "A GitHub action to automatically approve and dismiss PRs based on a condition."
+  }
+ ]
+}

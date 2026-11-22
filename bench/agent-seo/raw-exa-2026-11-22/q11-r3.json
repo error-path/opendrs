@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 2,
+     "title": "armaansingla14/pr-pilot",
+     "url": "https://github.com/armaansingla14/pr-pilot"
+    },
+    {
+     "rank": 3,
+     "title": "VinayKumar2320/CodeImpact",
+     "url": "https://github.com/VinayKumar2320/CodeImpact"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/html/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "Hotspots — Find the code that's actually causing problems",
+     "url": "https://hotspots.dev/"
+    },
+    {
+     "rank": 7,
+     "title": "PR Guard · typestrict docs",
+     "url": "https://docs.typestrict.ai/en/pr-guard"
+    },
+    {
+     "rank": 8,
+     "title": "manishiitmandi/Prism",
+     "url": "https://github.com/manishiitmandi/Prism"
+    },
+    {
+     "rank": 9,
+     "title": "SubmuxHQ/CodeDecay",
+     "url": "https://github.com/SubmuxHQ/CodeDecay"
+    },
+    {
+     "rank": 10,
+     "title": "Are code review smells and metrics useful in pull request-level software defect prediction?",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 11,
+     "title": "Ataraxy-Labs/inspect",
+     "url": "https://github.com/ataraxy-labs/inspect"
+    },
+    {
+     "rank": 12,
+     "title": "radon-h2020/radon-defect-prediction-cli",
+     "url": "https://github.com/radon-h2020/radon-defect-prediction-cli"
+    },
+    {
+     "rank": 13,
+     "title": "aricent/codedefectai",
+     "url": "https://github.com/aricent/codedefectai"
+    },
+    {
+     "rank": 14,
+     "title": "frankekn/needlefish",
+     "url": "https://github.com/frankekn/needlefish"
+    },
+    {
+     "rank": 15,
+     "title": "Graph-Based Machine Learning Improves Just-in-Time Defect Prediction",
+     "url": "https://arxiv.org/html/2110.05371v1"
+    },
+    {
+     "rank": 16,
+     "title": "Quantumstringfloops/PRanalyzer",
+     "url": "https://github.com/Quantumstringfloops/PRanalyzer"
+    },
+    {
+     "rank": 17,
+     "title": "(PDF) QualiGuard: An AI-driven risk-based quality gate for defect prediction and code smell detection in DevOps pipelines",
+     "url": "https://www.researchgate.net/publication/415013077_QualiGuard_An_AI-driven_risk-based_quality_gate_for_defect_prediction_and_code_smell_detection_in_DevOps_pipelines"
+    },
+    {
+     "rank": 18,
+     "title": "thanhlecongg/PatchGuru",
+     "url": "https://github.com/thanhlecongg/PatchGuru"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://doi.org/10.48550/arxiv.2511.21964"
+    },
+    {
+     "rank": 20,
+     "title": "IRJIT: A Simple, Online, Information Retrieval Approach for Just-In-Time Software Defect Prediction",
+     "url": "https://arxiv.org/html/2210.02435"
+    }
+   ]
+  },
+  {
+   "query": "Code review metrics and their effectiveness in pull request-level software defect prediction",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Are code review smells and metrics useful in pull request-level software defect prediction?",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 2,
+     "title": "Feature Sets in Just-in-Time Defect Prediction: An Empirical Evaluation",
+     "url": "https://arxiv.org/pdf/2209.13978"
+    },
+    {
+     "rank": 3,
+     "title": "Citation (APA) Pascarella, L. (2020). Augmented Fine-Grained Defect Prediction for Code Review. [Dissertation (TU Delft), Delft University of Technology]. https://doi.org/10.4233/uuid:e553e8ae-73be-4718-ab93-81f466db7347",
+     "url": "https://pure.tudelft.nl/ws/portalfiles/portal/82582665/dissertation_luca_pascarella.pdf"
+    },
+    {
+     "rank": 4,
+     "title": "Do Code Review Measures Explain the Incidence of Post-Release Defects?",
+     "url": "https://arxiv.org/abs/2005.09217"
+    },
+    {
+     "rank": 5,
+     "title": "Code smells in pull requests: An exploratory study",
+     "url": "https://doi.org/10.1002/spe.3283"
+    },
+    {
+     "rank": 6,
+     "title": "A review of process metrics in defect prediction studies",
+     "url": "https://madeyski.e-informatyka.pl/download/Madeyski11.pdf"
+    },
+    {
+     "rank": 7,
+     "title": "A Survey of Code Review Benchmarks and Evaluation Practices in Pre-LLM and LLM Era",
+     "url": "https://arxiv.org/html/2602.13377"
+    },
+    {
+     "rank": 8,
+     "title": "Investigating Code Review Practices in Defective",
+     "url": "https://rebels.cs.uwaterloo.ca/papers/msr2015_thongtanunam.pdf"
+    },
+    {
+     "rank": 9,
+     "title": "Which bugs are missed in code reviews: An empirical study on SmartSHARK dataset",
+     "url": "https://arxiv.org/abs/2205.09428"
+    },
+    {
+     "rank": 10,
+     "title": "Analysing Quality Metrics and Automated Scoring of Code Reviews",
+     "url": "https://doi.org/10.3390/software3040025"
+    },
+    {
+     "rank": 11,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request-Level Software Defect Prediction?",
+     "url": "https://doi.org/10.1007/978-3-031-27506-7_2"
+    },
+    {
+     "rank": 12,
+     "title": "Source Code Metrics for Software Defects Prediction",
+     "url": "https://arxiv.org/abs/2301.08022"
+    },
+    {
+     "rank": 13,
+     "title": "Rethinking Effort Awareness: A Novel Perspective on Applicable Just-In-Time Defect Prediction",
+     "url": "https://doi.org/10.36227/techrxiv.171440925.50536437/v1"
+    },
+    {
+     "rank": 14,
+     "title": "Breaking New Ground in Software Defect Prediction: Introducing Practical and Actionable Metrics with Superior Predictive Power for Enhanced Decision-Making",
+     "url": "https://doi.org/10.48550/arxiv.2508.04408"
+    },
+    {
+     "rank": 15,
+     "title": "Can We Benchmark Code Review Studies? A Systematic Mapping Study of Methodology, Dataset, and Metric",
+     "url": "https://arxiv.org/html/1911.08816v2"
+    },
+    {
+     "rank": 16,
+     "title": "[2005.09217] Do Code Review Measures Explain the Incidence of Post-Release Defects?",
+     "url": "https://ar5iv.labs.arxiv.org/html/2005.09217"
+    },
+    {
+     "rank": 17,
+     "title": "Breaking New Ground in Software Defect Prediction: Introducing Practical and Actionable Metrics with Superior Predictive Power for Enhanced Decision-Making",
+     "url": "http://arxiv.org/abs/2508.04408"
+    },
+    {
+     "rank": 18,
+     "title": "SWE-PRBench: Benchmarking AI Code Review Quality Against Pull Request Feedback",
+     "url": "https://arxiv.org/html/2603.26130"
+    },
+    {
+     "rank": 19,
+     "title": "Do code review measures explain the incidence of post-release defects?",
+     "url": "https://doi.org/10.1007/s10664-020-09837-4"
+    },
+    {
+     "rank": 20,
+     "title": "An Empirical Study on Code Review Activity Prediction and Its Impact in Practice | Proceedings of the ACM on Software Engineering",
+     "url": "https://dl.acm.org/doi/full/10.1145/3660806"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/error-path/opendrs",
+  "https://github.com/armaansingla14/pr-pilot",
+  "https://github.com/VinayKumar2320/CodeImpact",
+  "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf",
+  "https://arxiv.org/pdf/2209.13978"
+ ],
+ "recommendations": [
+  {
+   "name": "opendrs",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "A tool for analyzing the risk of pull requests using AI and providing a 0-1 risk score for auto-approval."
+  },
+  {
+   "name": "CodeImpact",
+   "url": "https://github.com/VinayKumar2320/CodeImpact",
+   "description": "An ML-powered tool for GitHub pull request risk analysis and intelligent CI test selection."
+  },
+  {
+   "name": "pr-pilot",
+   "url": "https://github.com/armaansingla14/pr-pilot",
+   "description": "An open-source tool for automating code review and detecting risky code changes."
+  }
+ ]
+}

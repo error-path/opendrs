@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP Security: Risks, Real Incidents & Controls (2026) - Checkmarx",
+     "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls"
+    },
+    {
+     "rank": 2,
+     "title": "pull request MCP Servers | Glama",
+     "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security: Risks and Best Practices | Cycode",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices"
+    },
+    {
+     "rank": 4,
+     "title": "Securing the Model Context Protocol (MCP): Risks, Controls, and Governance",
+     "url": "https://arxiv.org/html/2511.20920v1"
+    },
+    {
+     "rank": 5,
+     "title": "Add recommended security policies for tool-level enforcement by L1AD · Pull Request #2294 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/pull/2294/files"
+    },
+    {
+     "rank": 6,
+     "title": "`pull_request_review_write` combines create/submit/delete into one tool, making fine-grained permissions by method impossible · Issue #2525 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2525"
+    },
+    {
+     "rank": 7,
+     "title": "Git Pr: Automate Git & Pull Requests with MCP",
+     "url": "https://mcpmarket.com/server/git-pr"
+    },
+    {
+     "rank": 8,
+     "title": "Build an AI GitHub PR Reviewer with MCP (Complete Recipe)",
+     "url": "https://mcpplaygroundonline.com/blog/build-ai-github-pr-reviewer-mcp-recipe"
+    },
+    {
+     "rank": 9,
+     "title": "Build an AI PR Reviewer with MCP & Gemini",
+     "url": "https://www.decodingai.com/p/build-with-mcp-like-a-real-engineer"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+     "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    },
+    {
+     "rank": 11,
+     "title": "Using GitHub MCP With Continue to Review PRs and Issues 5 Faster - DEV Community",
+     "url": "https://dev.to/anita_ihuman/using-github-mcp-with-continue-to-review-prs-and-issues-5x-faster-1p8a"
+    },
+    {
+     "rank": 12,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 13,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 14,
+     "title": "Understanding MCP security: Common risks to watch for | Datadog",
+     "url": "https://www.datadoghq.com/blog/monitor-mcp-servers"
+    },
+    {
+     "rank": 15,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 16,
+     "title": "Review MCP Server Security Best Practices | BACKSLASH SECURITY - Backslash",
+     "url": "https://www.backslash.security/blog/top-risks-mcp-servers-ide"
+    },
+    {
+     "rank": 17,
+     "title": "Enables management of Bitbucket Cloud pull requests through natural ...",
+     "url": "https://www.reddit.com/r/mcp/comments/1rapfd1/bitbucket_mcp_server_enables_management_of"
+    },
+    {
+     "rank": 18,
+     "title": "Model Context Protocol: Security Risks & Mitigations | SOC Prime",
+     "url": "https://socprime.com/blog/mcp-security-risks-and-mitigations"
+    },
+    {
+     "rank": 19,
+     "title": "failed to create pull request: repeat PR, better error msging · Issue #2931 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2931"
+    },
+    {
+     "rank": 20,
+     "title": "How to Contribute to the MCP Security Project · ModelContextProtocol-Security · Discussion #2 · GitHub",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    }
+   ]
+  },
+  {
+   "query": "Best MCP (Model Context Protocol) servers for pull request risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best Model Context Protocol (MCP) Servers in 2025 | Pomerium",
+     "url": "https://www.pomerium.com/blog/best-model-context-protocol-mcp-servers-in-2025"
+    },
+    {
+     "rank": 2,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=mac&os=linux"
+    },
+    {
+     "rank": 3,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=mac&license=osi-approved-open-source"
+    },
+    {
+     "rank": 4,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=linux&license=osi-approved-open-source"
+    },
+    {
+     "rank": 5,
+     "title": "Best Model Context Protocol (MCP) Servers in 2025 | Pomerium",
+     "url": "https://pomerium.com/blog/best-model-context-protocol-mcp-servers-in-2025"
+    },
+    {
+     "rank": 6,
+     "title": "Best Open Source Go Model Context Protocol (MCP) Servers",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/go?os=windows&os=mac"
+    },
+    {
+     "rank": 7,
+     "title": "Add GitHub Pull Request Activity MCP Server | MCP Servers - Model Context Protocol | The #1 MCP Server List",
+     "url": "https://mcpservers.com/servers/kfischer-okarin-github-pull-request-activity"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub Pull Request for Claude | MCP Servers - Model Context Protocol | The #1 MCP Server List",
+     "url": "https://mcpservers.com/servers/gourav221b-github-pull-request/claude"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub Pull Request for Cline | MCP Servers - Model Context Protocol | The #1 MCP Server List",
+     "url": "https://mcpservers.com/servers/gourav221b-github-pull-request/cline"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Pull Request for Windsurf | MCP Servers - Model Context Protocol | The #1 MCP Server List",
+     "url": "https://mcpservers.com/servers/gourav221b-github-pull-request/windsurf"
+    },
+    {
+     "rank": 11,
+     "title": "MCP Servers: Complete Guide to Model Context Protocol for AI Integration",
+     "url": "https://www.allmcpservers.com/blog/mcp-servers-complete-guide-to-model-context-protocol-for-ai-integration"
+    },
+    {
+     "rank": 12,
+     "title": "Model Context Protocol Servers – README | MCP Marketplace",
+     "url": "https://ubos.tech/mcp/model-context-protocol-servers"
+    },
+    {
+     "rank": 13,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=linux&os=bsd"
+    },
+    {
+     "rank": 14,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=mobile-operating-systems&os=linux"
+    },
+    {
+     "rank": 15,
+     "title": "Best Open Source Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=mobile-operating-systems&license=osi-approved-open-source"
+    },
+    {
+     "rank": 16,
+     "title": "Best Open Source Mac Model Context Protocol (MCP) Servers 2026",
+     "url": "http://sourceforge.net/directory/model-context-protocol-mcp-servers/mac?natlanguage=korean"
+    },
+    {
+     "rank": 17,
+     "title": "Best Open Source Windows Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?topic=system&developmentstatus=4-beta"
+    },
+    {
+     "rank": 18,
+     "title": "Best Open Source Windows Model Context Protocol (MCP) Servers 2026",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?topic=system&natlanguage=english"
+    },
+    {
+     "rank": 19,
+     "title": "Best Open Source PHP Model Context Protocol (MCP) Servers  for Mac",
+     "url": "https://sourceforge.net/directory/model-context-protocol-mcp-servers/php?os=mac"
+    },
+    {
+     "rank": 20,
+     "title": "Best Open Source JavaScript Model Context Protocol (MCP) Servers for Windows",
+     "url": "http://sourceforge.net/directory/model-context-protocol-mcp-servers/javascript?topic=system&os=windows"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+  "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+  "https://cycode.com/blog/mcp-security-risks-best-practices",
+  "https://www.pomerium.com/blog/best-model-context-protocol-mcp-servers-in-2025",
+  "https://sourceforge.net/directory/model-context-protocol-mcp-servers/windows?os=mac&os=linux"
+ ],
+ "recommendations": [
+  {
+   "name": "Checkmarx",
+   "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+   "description": "A unified AI-powered application security platform that offers comprehensive security controls for pull requests."
+  },
+  {
+   "name": "Glama",
+   "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+   "description": "Provides MCP servers with logging capabilities for analyzing pull requests using AI coding agents."
+  },
+  {
+   "name": "Cycode",
+   "url": "https://cycode.com/blog/mcp-security-risks-best-practices",
+   "description": "A platform that focuses on security best practices and risks associated with Model Context Protocol (MCP), including risks related to pull requests."
+  }
+ ]
+}

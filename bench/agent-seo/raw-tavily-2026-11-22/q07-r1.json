@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - DIYA73/PR-Blast-Radius-: Flags scope creep in a PR using deterministic import-graph analysis — no LLM, zero API cost per run. CLI + GitHub Action that comments on PRs. · GitHub",
+     "url": "https://github.com/DIYA73/PR-Blast-Radius-"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - amitgambhir/blast-radius-analyzer: Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made. · GitHub",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 3,
+     "title": "AI PR Impact Analysis & Blast Radius Detection - Codluma",
+     "url": "https://www.codluma.ai/ai-pr-impact-analysis"
+    },
+    {
+     "rank": 4,
+     "title": "Calculate blast radius with AI | Port",
+     "url": "https://docs.port.io/guides/all/calculate-blast-radius-with-ai"
+    },
+    {
+     "rank": 5,
+     "title": "Blast Radius Claude Code Skill | Risk & Impact Analysis",
+     "url": "https://mcpmarket.com/tools/skills/blast-radius-analysis-1"
+    },
+    {
+     "rank": 6,
+     "title": "How to Assess the Blast Radius of a Code Change · Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 7,
+     "title": "Blast Radius in Software Engineering: Meaning, Examples & Analysis | SixDegree",
+     "url": "https://sixdegree.ai/blog/blast-radius-analysis"
+    },
+    {
+     "rank": 8,
+     "title": "Security Blast Radius - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/security/blast-radius"
+    },
+    {
+     "rank": 9,
+     "title": "Code Change Blast Radius: Safer AI Coding",
+     "url": "https://pharaoh.so/blog/code-change-blast-radius-2"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius - Series: Agentic Engineering Framework - DEV Community",
+     "url": "https://dev.to/irrindar/blast-radius-series-agentic-engineering-framework-4km2"
+    },
+    {
+     "rank": 11,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 12,
+     "title": "Programmatically figuring out impact/blast radius of code changes",
+     "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1eljry6/programmatically_figuring_out_impactblast_radius"
+    },
+    {
+     "rank": 13,
+     "title": "Blast Radius Reviewer — Claude skill / plugin install guide | Claude Cowork Guide",
+     "url": "https://claudecowork.im/resources/blast-radius-reviewer"
+    },
+    {
+     "rank": 14,
+     "title": "What is blast radius analysis? | NOFire AI",
+     "url": "https://www.nofire.ai/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 15,
+     "title": "Understanding your Identity Blast Radius in Security | Proofpoint US",
+     "url": "https://www.proofpoint.com/us/blog/identity-threat-defense/identity-blast-radius"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius Detection For Faster Incident Response",
+     "url": "https://www.netdata.cloud/features/aiml/blast-radius-detection"
+    },
+    {
+     "rank": 17,
+     "title": "What Is Blast-Radius Analysis? Definition & Examples",
+     "url": "https://nhimg.org/glossary/blast-radius-analysis"
+    },
+    {
+     "rank": 18,
+     "title": "Vulnerability Blast Radius: How to Measure and Reduce Impact | Endor Labs",
+     "url": "https://www.endorlabs.com/learn/vulnerability-blast-radius-how-to-measure-and-reduce-impact"
+    },
+    {
+     "rank": 19,
+     "title": "What is Blast Radius? | AI SRE Glossary",
+     "url": "https://www.traversal.com/glossary/blast-radius"
+    },
+    {
+     "rank": 20,
+     "title": "AI Blast Radius | Map the Real Scope of Agent Authority | Obsidian Security",
+     "url": "https://www.obsidiansecurity.com/ai-blast-radius"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories with open-source tools for code impact analysis and PR blast radius assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - amitgambhir/blast-radius-analyzer: Blast Radius Analyzer is an open-source AI tool that maps the technical and organizational blast radius of engineering decisions before they're made. · GitHub",
+     "url": "https://github.com/amitgambhir/blast-radius-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - vk0dev/code-impact-mcp: Dependency graph, blast-radius analysis, and pre-commit safety gates for AI coding agents. MCP server. · GitHub",
+     "url": "https://github.com/vk0dev/code-impact-mcp"
+    },
+    {
+     "rank": 3,
+     "title": "change-impact-analysis · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/change-impact-analysis"
+    },
+    {
+     "rank": 4,
+     "title": "Best PR Risk Score and Blast Radius Tools (2026)",
+     "url": "https://repowise.dev/blog/comparisons/best-pr-risk-score-blast-radius-tools"
+    },
+    {
+     "rank": 5,
+     "title": "blast-radius · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 6,
+     "title": "Arbor Impact Analysis · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/arbor-impact-analysis"
+    },
+    {
+     "rank": 7,
+     "title": "dead-code-detection · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/dead-code-detection"
+    },
+    {
+     "rank": 8,
+     "title": "Microservices Impact Analysis: AI-Powered Dependency Mapping | Augment Code",
+     "url": "https://www.augmentcode.com/tools/microservices-impact-analysis"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 10,
+     "title": "Building an AI-Powered Multi-Repository Impact Analyzer",
+     "url": "https://medium.com/@dhandedhan/building-an-ai-powered-multi-repository-impact-analyzer-2247ab0c81a7"
+    },
+    {
+     "rank": 11,
+     "title": "code-intelligence · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/code-intelligence"
+    },
+    {
+     "rank": 12,
+     "title": "How to Assess the Blast Radius of a Code Change · Tomosu AI",
+     "url": "https://tomosu.ai/blogs/how-to-assess-blast-radius-of-a-code-change.html"
+    },
+    {
+     "rank": 13,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.qodo.ai/academy/best-ai-code-review-tools-for-github"
+    },
+    {
+     "rank": 14,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 15,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared | Sourcegraph",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 17,
+     "title": "CodeRabbit | Governance & Control for Agentic Development",
+     "url": "https://www.coderabbit.ai"
+    },
+    {
+     "rank": 18,
+     "title": "Salt Security Launches GitHub Connect to Proactively Discover Shadow APIs and MCP Risks in Code Repositories",
+     "url": "https://finance.yahoo.com/news/salt-security-launches-github-connect-130000790.html"
+    },
+    {
+     "rank": 19,
+     "title": "Malicious GitHub repositories deploying hidden attacks on crypto wallets | featured Hacks | CryptoRank.io",
+     "url": "https://cryptorank.io/news/feed/6a2af-kaspersky-discovers-github-repo-poisoning-used-to-steal-bitcoin"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Launches GitHub Package Registry to Provide Open-Source Tools - Business Insider",
+     "url": "https://www.businessinsider.com/github-package-registry-open-source-tools-2019-5"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/DIYA73/PR-Blast-Radius-",
+  "https://github.com/amitgambhir/blast-radius-analyzer",
+  "https://www.codluma.ai/ai-pr-impact-analysis",
+  "https://github.com/vk0dev/code-impact-mcp",
+  "https://github.com/topics/change-impact-analysis"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-Blast-Radius-",
+   "url": "https://github.com/DIYA73/PR-Blast-Radius-",
+   "description": "A CLI + GitHub Action tool that flags scope creep in a PR using deterministic import-graph analysis."
+  },
+  {
+   "name": "Blast Radius Analyzer",
+   "url": "https://github.com/amitgambhir/blast-radius-analyzer",
+   "description": "An open-source AI tool that maps the technical and organizational blast radius of engineering decisions."
+  },
+  {
+   "name": "Code Impact MCP",
+   "url": "https://github.com/vk0dev/code-impact-mcp",
+   "description": "A dependency graph, blast-radius analysis, and pre-commit safety gates tool for AI coding agents."
+  }
+ ]
+}

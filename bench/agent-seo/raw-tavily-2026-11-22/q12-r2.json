@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Merge Queue | Repositories | Harness",
+     "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue"
+    },
+    {
+     "rank": 2,
+     "title": "Introducing the Merge Queue - Shopify",
+     "url": "https://shopify.engineering/introducing-the-merge-queue"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub Auto-Merge: When the Native Button Is Enough, and When You Outgrow It | Mergify",
+     "url": "https://mergify.com/blog/github-auto-merge-when-native-is-enough"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-merge failure for repositories with merge queues - Bug Reports - Cursor - Community Forum",
+     "url": "https://forum.cursor.com/t/auto-merge-failure-for-repositories-with-merge-queues/163624"
+    },
+    {
+     "rank": 5,
+     "title": "How GitHub uses merge queue to ship hundreds of changes every day - The GitHub Blog",
+     "url": "https://github.blog/engineering/engineering-principles/how-github-uses-merge-queue-to-ship-hundreds-of-changes-every-day"
+    },
+    {
+     "rank": 6,
+     "title": "What is a merge queue? Meaning + example - deployment.to",
+     "url": "https://glossary.deployment.to/merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub PR Review at Scale — Merge Strategies, Auto-Merge, and the ...",
+     "url": "https://www.resumelens.org/blog/github/github-pr-review-at-scale"
+    },
+    {
+     "rank": 8,
+     "title": "Automatically merging a pull request - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-merge \"Changes must be made through the merge queue\" on GitHub, can't quite see what's wrong · renovatebot/renovate · Discussion #25065 · GitHub",
+     "url": "https://github.com/renovatebot/renovate/discussions/25065"
+    },
+    {
+     "rank": 10,
+     "title": "Boosting GitHub Actions Efficiency with Merge Queue",
+     "url": "https://medium.com/@tbrovy/boosting-github-actions-efficiency-with-merge-queue-69377551271c"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub merge queue is generally available | Hacker News",
+     "url": "https://news.ycombinator.com/item?id=36707239"
+    },
+    {
+     "rank": 12,
+     "title": "GitHub Merge Queue Explained — Stop the PR “Up to Date” Merge Race (Full Tutorial)",
+     "url": "https://www.youtube.com/watch?v=vDQ2IG5u1t8"
+    },
+    {
+     "rank": 13,
+     "title": "GitHub Merge Queue, Explained: Why Green PRs Break Main | Pyor",
+     "url": "https://pyor.review/blog/github-merge-queue-explained"
+    },
+    {
+     "rank": 14,
+     "title": "Merge Queue for GitHub: Parallel and Flake-Proof | Trunk",
+     "url": "https://trunk.io/merge-queue"
+    },
+    {
+     "rank": 15,
+     "title": "GitHub merge queue: why required checks never report",
+     "url": "https://safeguard.sh/resources/blog/github-merge-queue-merge-group-required-checks"
+    },
+    {
+     "rank": 16,
+     "title": "Merge Queues for Bitbucket Cloud, now in open beta - Inside Atlassian",
+     "url": "https://www.atlassian.com/blog/bitbucket/merge-queues-open-beta"
+    },
+    {
+     "rank": 17,
+     "title": "What's a Merge Queue and Why Use it? : r/github",
+     "url": "https://www.reddit.com/r/github/comments/15tjoid/whats_a_merge_queue_and_why_use_it"
+    },
+    {
+     "rank": 18,
+     "title": "Why do auto merge workflows become risky when they rely on Dependabot ...",
+     "url": "https://nhimg.org/faq/why-do-auto-merge-workflows-become-risky-when-they-rely-on-dependabot-identity-a"
+    },
+    {
+     "rank": 19,
+     "title": "github actions - Does \"Branch out of date with Base Branch\" cause issues with Merge Queues? - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/77239986/does-branch-out-of-date-with-base-branch-cause-issues-with-merge-queues"
+    },
+    {
+     "rank": 20,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests? A Safe Setup Guide",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests"
+    }
+   ]
+  },
+  {
+   "query": "GitHub merge queue integrations with third-party tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Integrations | Mergify",
+     "url": "https://mergify.com/integrations"
+    },
+    {
+     "rank": 2,
+     "title": "How to implement a merge queue for your project",
+     "url": "https://graphite.com/guides/merge-queue-tools-options"
+    },
+    {
+     "rank": 3,
+     "title": "Managing a merge queue - GitHub Docs",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 4,
+     "title": "Buildkite adds GitHub merge queues support | Buildkite posted on the topic | LinkedIn",
+     "url": "https://www.linkedin.com/posts/buildkite_github-merge-queue-integration-activity-7386499033772683265-j1zb"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub Merge Queue Alternatives: Trunk, Mergify, Aviator | Pyor",
+     "url": "https://pyor.review/blog/github-merge-queue-alternatives"
+    },
+    {
+     "rank": 6,
+     "title": "Set up a GitHub merge queue with Paradime Turbo CI - Paradime",
+     "url": "https://docs.paradime.io/guides/working-with-git/github-merge-queue"
+    },
+    {
+     "rank": 7,
+     "title": "merge-queue · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/merge-queue"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub merge queue integration | Buildkite",
+     "url": "https://buildkite.com/resources/changelog/310-github-merge-queue-integration"
+    },
+    {
+     "rank": 9,
+     "title": "Merge Queue for GitHub | Mergify",
+     "url": "https://mergify.com/product/merge-queue"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Merge Queue Explained — Stop the PR “Up to Date” Merge Race (Full Tutorial)",
+     "url": "https://www.youtube.com/watch?v=vDQ2IG5u1t8"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub merge queue is generally available - The GitHub Blog",
+     "url": "https://github.blog/news-insights/product-news/github-merge-queue-is-generally-available"
+    },
+    {
+     "rank": 12,
+     "title": "Boosting GitHub Actions Efficiency with Merge Queue",
+     "url": "https://medium.com/@tbrovy/boosting-github-actions-efficiency-with-merge-queue-69377551271c"
+    },
+    {
+     "rank": 13,
+     "title": "sketch blog: A Lightweight Merge Queue using GitHub Actions",
+     "url": "https://sketch.dev/blog/lightweight-merge-queue"
+    },
+    {
+     "rank": 14,
+     "title": "Merge Queue Action · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/merge-queue-action"
+    },
+    {
+     "rank": 15,
+     "title": "LOW: Workflow to add PR to merge queue is slightly odd for Github Apps · community · Discussion #62599 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/62599"
+    },
+    {
+     "rank": 16,
+     "title": "Improving GitHub Deployments with Merge Queue - InfoQ",
+     "url": "https://www.infoq.com/news/2024/03/github-merge-queues"
+    },
+    {
+     "rank": 17,
+     "title": "Merge Queue feature availability? · community · Discussion #51483 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/51483"
+    },
+    {
+     "rank": 18,
+     "title": "Our GitHub merge workflow",
+     "url": "https://authzed.com/blog/our-github-merge-workflow"
+    },
+    {
+     "rank": 19,
+     "title": "Merge Queue - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+     "url": "https://tracxn.com/d/companies/merge-queue/__Osvt2IKByieYVGA_J_9hoHYtWJ8NLmfhnERKAUzU3Z4"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Copilot · Your AI coding agent · GitHub · GitHub",
+     "url": "https://github.com/features/copilot"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue",
+  "https://shopify.engineering/introducing-the-merge-queue",
+  "https://mergify.com/blog/github-auto-merge-when-native-is-enough",
+  "https://mergify.com/integrations",
+  "https://graphite.com/guides/merge-queue-tools-options"
+ ],
+ "recommendations": [
+  {
+   "name": "Harness Merge Queue",
+   "url": "https://developer.harness.io/code-repository/2.0/use-harness-code/pull-requests/merge-queue",
+   "description": "Harness provides a risk-based merge queue that ensures only low-risk pull requests are merged automatically, while high-risk ones are held for manual review."
+  },
+  {
+   "name": "Mergify Merge Queue",
+   "url": "https://mergify.com/integrations",
+   "description": "Mergify offers a robust merge queue feature that automatically merges low-risk pull requests and holds high-risk ones for human review."
+  },
+  {
+   "name": "GitHub Merge Queue",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue",
+   "description": "GitHub's built-in merge queue feature allows for automatic merging of low-risk pull requests while holding high-risk ones for manual review."
+  }
+ ]
+}

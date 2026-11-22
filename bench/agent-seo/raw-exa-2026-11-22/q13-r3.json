@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "safely auto-merge AI-reviewed pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-merge AI pull requests safely: the merge gate | Orbi",
+     "url": "https://orbi.build/guides/auto-merge-ai-prs/"
+    },
+    {
+     "rank": 2,
+     "title": "Auto-Merge",
+     "url": "https://docs.gitar.ai/features/code-review/auto-merge"
+    },
+    {
+     "rank": 3,
+     "title": "Renovate and Claude: auto-merge your updates, undo what breaks | Andy Hawks",
+     "url": "https://andyhawks.com/posts/ai-reviewed-updates/"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 5,
+     "title": "Safe Outputs (Pull Requests) | GitHub Agentic Workflows",
+     "url": "https://github.github.com/gh-aw/reference/safe-outputs-pull-requests/"
+    },
+    {
+     "rank": 6,
+     "title": "Get pull requests merged",
+     "url": "https://evergreen.carta.com/docs/use/pull-requests"
+    },
+    {
+     "rank": 7,
+     "title": "Merge Automation",
+     "url": "https://baz.ai/docs/capabilities/merge-automation"
+    },
+    {
+     "rank": 8,
+     "title": "AutoMerge approves your pull requests · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 10,
+     "title": "Agent review and auto-merge — InterviewKata AI engineering",
+     "url": "https://interviewkata.com/ai/modules/13a-agent-review-auto-merge.html"
+    },
+    {
+     "rank": 11,
+     "title": "How We Made Code Review Optional at Corridor | Corridor",
+     "url": "https://www.corridor.dev/blog/making-code-review-optional/"
+    },
+    {
+     "rank": 12,
+     "title": "MergeShield — Govern AI-Generated Code Before It Ships",
+     "url": "https://mergeshield.dev/"
+    },
+    {
+     "rank": 13,
+     "title": "agent-loop/commands/autoreview.md",
+     "url": "https://github.com/duyet/codex-claude-plugins/blob/master/agent-loop/commands/autoreview.md"
+    },
+    {
+     "rank": 14,
+     "title": "How it works",
+     "url": "https://mergejudge.si/guide/how-it-works"
+    },
+    {
+     "rank": 15,
+     "title": "Reviewing pull requests written by AI coding agents",
+     "url": "https://mergesafe.ai/for/ai-agent-pull-requests.html"
+    },
+    {
+     "rank": 16,
+     "title": "docs/src/content/docs/reference/safe-outputs-pull-requests.md",
+     "url": "https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md"
+    },
+    {
+     "rank": 17,
+     "title": "MergeSafe FAQ: AI code review for GitHub pull requests",
+     "url": "https://mergesafe.ai/docs/faq.html"
+    },
+    {
+     "rank": 18,
+     "title": "The Merge Button Should Be Policy, Not a Person",
+     "url": "https://radar.firstaimovers.com/ai-pull-request-auto-merge-enterprise-guide-2026"
+    },
+    {
+     "rank": 19,
+     "title": "How to Know If an AI Pull Request Is Safe to Merge - DEV Community",
+     "url": "https://dev.to/alichherawalla/how-to-know-if-an-ai-pull-request-is-safe-to-merge-57nj"
+    },
+    {
+     "rank": 20,
+     "title": "FelipeOFF/pr-autopilot",
+     "url": "https://github.com/FelipeOFF/pr-autopilot"
+    }
+   ]
+  },
+  {
+   "query": "Best tools for safe auto-merge of AI-reviewed pull requests based on user reviews and community recommendations",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-Merge",
+     "url": "https://docs.gitar.ai/features/code-review/auto-merge"
+    },
+    {
+     "rank": 2,
+     "title": "9 Best PR Automation Tools [2026 Review]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 4,
+     "title": "AutoMerge - Darkplane · Dash0",
+     "url": "https://www.dash0.com/darkplane-automerge"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 6,
+     "title": "MergeShield — Govern AI-Generated Code Before It Ships",
+     "url": "https://mergeshield.dev/"
+    },
+    {
+     "rank": 7,
+     "title": "How do I merge pull requests from Claude Code and other coding agents safely? | Mergify",
+     "url": "https://mergify.com/guides/merge-pull-requests-from-coding-agents"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI Code Review Tools in 2026: 16 Compared, With Benchmarks",
+     "url": "https://agentsystems.blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "AutoMerge approves your pull requests · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI PR review tools for GitHub (2026) | MergeGuard",
+     "url": "https://www.mergeguard.ai/best-ai-pr-review-tools"
+    },
+    {
+     "rank": 11,
+     "title": "Juror-AI/juror",
+     "url": "https://github.com/Juror-AI/juror"
+    },
+    {
+     "rank": 12,
+     "title": "Can AI Agents Safely Approve Pull Requests? Guardrails for Autonomous Code Review | Augment Code",
+     "url": "https://www.augmentcode.com/guides/ai-agents-pull-request-approval-guardrails"
+    },
+    {
+     "rank": 13,
+     "title": "Best AI code review for SaaS and AI apps: what makers chose",
+     "url": "https://howmakersbuild.com/tasks/ai-code-review"
+    },
+    {
+     "rank": 14,
+     "title": "Review and merge: tools for every stack · Impatient Programming",
+     "url": "https://impatientprogramming.org/tools/review-and-merge/"
+    },
+    {
+     "rank": 15,
+     "title": "Can Copilot Approve Pull Requests? Yes, If You Turn It On | TLM Forge Blog",
+     "url": "https://tlmforge.dev/blog/can-copilot-approve-pull-requests/"
+    },
+    {
+     "rank": 16,
+     "title": "Best AI Code Review Tools According to AI (2026) | Parse",
+     "url": "https://parse.gl/markets/ai-code-review-tools"
+    },
+    {
+     "rank": 17,
+     "title": "Best 10 AI Code Review Tools For Business (2026)",
+     "url": "https://expertinsights.com/application-security/best-ai-code-review-tools-for-business"
+    },
+    {
+     "rank": 18,
+     "title": "MergeGuard — Review smarter. Ship with confidence.",
+     "url": "https://www.mergeguard.ai/"
+    },
+    {
+     "rank": 19,
+     "title": "Docs: AI code review for GitHub pull requests | MergeSafe",
+     "url": "https://mergesafe.ai/docs/index.html"
+    },
+    {
+     "rank": 20,
+     "title": "Reviewing pull requests written by AI coding agents",
+     "url": "https://mergesafe.ai/for/ai-agent-pull-requests.html"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://orbi.build/guides/auto-merge-ai-prs/",
+  "https://docs.gitar.ai/features/code-review/auto-merge",
+  "https://andyhawks.com/posts/ai-reviewed-updates/",
+  "https://www.greptile.com/content-library/best-pull-request-automation-tools",
+  "https://error-path.github.io/opendrs/alternatives.html"
+ ],
+ "recommendations": [
+  {
+   "name": "Auto-merge AI pull requests safely: the merge gate | Orbi",
+   "url": "https://orbi.build/guides/auto-merge-ai-prs/",
+   "description": "A guide to safely merging AI-reviewed pull requests using a four-gate process."
+  },
+  {
+   "name": "Auto-Merge - Gitar Documentation",
+   "url": "https://docs.gitar.ai/features/code-review/auto-merge",
+   "description": "Documentation for auto-merging pull requests after they pass Gitar's AI code review."
+  },
+  {
+   "name": "AutoMerge approves your pull requests · Dash0",
+   "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests",
+   "description": "A tool for automatically merging pull requests that have passed AI code review."
+  }
+ ]
+}

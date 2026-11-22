@@ -26,6 +26,13 @@ no service or API key, and its score can be backtested against your own reposito
 see what it measures, read [what PR blast radius is](blast-radius.md); to set it up, see
 [auto-approve low-risk pull requests](auto-approve.md).
 
+**What has been measured for opendrs:** on the public ApacheJIT benchmark, calibrated opendrs
+reaches AUC 0.823, against 0.821 for a regression on the classic JIT metrics. Untuned, it ranked
+later-fixed commits better than chance in 17 of 18 open-source repositories, and calibration beat
+the default priors on held-out commits in all nine repositories of a longer run. On its own
+repository, the Action auto-approved 11 of 54 scored PRs. The labels come from reverts and bug-fix
+commits, not incident lists. The tables and caveats are in [Benchmark results](results.md).
+
 ## Rule-based approval and merge
 
 These tools do not judge the change. They act when your conditions hold, so they are as safe as the

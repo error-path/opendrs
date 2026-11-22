@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Pull Request Risk Triage | Auto-Merge Low Risk Changes | Sonar",
+     "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/"
+    },
+    {
+     "rank": 2,
+     "title": "About AutoMerge · Dash0",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"
+    },
+    {
+     "rank": 3,
+     "title": "AutoMerge is generally available · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-is-generally-available"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-Merge",
+     "url": "https://docs.gitar.ai/features/code-review/auto-merge"
+    },
+    {
+     "rank": 5,
+     "title": "+1: Introducing Approvability — Auto-approve PRs | Macroscope",
+     "url": "https://macroscope.com/blog/introducing-approvability"
+    },
+    {
+     "rank": 6,
+     "title": "Taking the training wheels off your merge button - Hud",
+     "url": "https://www.hud.io/blog/taking-the-training-wheels-off-your-merge-button/"
+    },
+    {
+     "rank": 7,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Automation",
+     "url": "https://baz.ai/docs/capabilities/merge-automation"
+    },
+    {
+     "rank": 9,
+     "title": "PR review",
+     "url": "https://docs.getmontecarlo.com/docs/pr-agent"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Action: score, label and auto-approve pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/github-action.html"
+    },
+    {
+     "rank": 11,
+     "title": "The software factory needs a faster review loop: further optimizing the path from PR to merge | Augment Code",
+     "url": "https://www.augmentcode.com/blog/optimizing-pr-to-merge-loop"
+    },
+    {
+     "rank": 12,
+     "title": "AI-assisted code review with auto-approve — Software Engineering | The State of Play",
+     "url": "https://www.thestateofplay.ai/practice/ai-assisted-code-review-with-auto-approve"
+    },
+    {
+     "rank": 13,
+     "title": "Mergebot – AI Merge Orchestration for Regulated Engineering Teams",
+     "url": "https://mergebot.dev/"
+    },
+    {
+     "rank": 14,
+     "title": "Get pull requests merged",
+     "url": "https://evergreen.carta.com/docs/use/pull-requests"
+    },
+    {
+     "rank": 15,
+     "title": "Autonomous merge | Taiga Docs",
+     "url": "https://docs.tai.ga/deliver/auto-merge/"
+    },
+    {
+     "rank": 16,
+     "title": "Merge on green automatically",
+     "url": "https://diffinery.com/docs/collaboration/merge-on-green"
+    },
+    {
+     "rank": 17,
+     "title": "Configuration Reference · Kodiak",
+     "url": "https://kodiakhq.com/docs/config-reference"
+    },
+    {
+     "rank": 18,
+     "title": "macroscope",
+     "url": "https://linkedin.com/company/macroscopeai"
+    },
+    {
+     "rank": 19,
+     "title": "superlog (yc p26)",
+     "url": "https://linkedin.com/company/superlogyc"
+    },
+    {
+     "rank": 20,
+     "title": "Cogny Auto-Merge — AI Coding Agent PRs That Merge Themselves, Safely (2026)",
+     "url": "https://cogny.com/blog/auto-merge-coding-agent-pull-requests"
+    }
+   ]
+  },
+  {
+   "query": "Best practices for choosing an observability platform with approval agents or auto-merge features for low-risk PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Roll Out AutoMerge · Dash0",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge/recommendations"
+    },
+    {
+     "rank": 2,
+     "title": "Auto-Merge",
+     "url": "https://docs.gitar.ai/features/code-review/auto-merge"
+    },
+    {
+     "rank": 3,
+     "title": "AI Monitoring Solutions: How to Choose an AIOps Platform",
+     "url": "https://www.effred.com/resources/ai-monitoring-aiops-guide"
+    },
+    {
+     "rank": 4,
+     "title": "AutoMerge is generally available · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-is-generally-available"
+    },
+    {
+     "rank": 5,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 6,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide) | Macroscope",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 7,
+     "title": "Taking the training wheels off your merge button - Hud",
+     "url": "https://www.hud.io/blog/taking-the-training-wheels-off-your-merge-button/"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Automation",
+     "url": "https://baz.ai/docs/capabilities/merge-automation"
+    },
+    {
+     "rank": 9,
+     "title": "Autonomous Observability: Faster RCA for SRE Teams",
+     "url": "https://struct.ai/articles/autonomous-observability-faster-rca-sre/"
+    },
+    {
+     "rank": 10,
+     "title": "What Is Approvability? AI Auto-Approve Pull Requests | Macroscope",
+     "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests"
+    },
+    {
+     "rank": 11,
+     "title": "AI SRE Agents Compared: What Each Can Do in 2026 | InfraZen",
+     "url": "https://infrazen.io/blog/ai-sre-agents-compared-2026"
+    },
+    {
+     "rank": 12,
+     "title": "Best AI-Powered Observability Tools in 2026 (Agentic Observability Compared)",
+     "url": "https://metoro.io/blog/best-observability-tools-with-ai"
+    },
+    {
+     "rank": 13,
+     "title": "15 best AI SRE tools for 2026 - Guideflow Blog",
+     "url": "https://www.guideflow.com/blog/ai-sre-tools"
+    },
+    {
+     "rank": 14,
+     "title": "State of Observability 2026: AI observability strategy guide",
+     "url": "https://www.dynatrace.com/news/blog/state-of-observability-2026-how-to-build-an-observability-strategy-for-reliable-ai/"
+    },
+    {
+     "rank": 15,
+     "title": "AI observability buyer’s guide",
+     "url": "https://arize.com/resources/how-to-choose-an-ai-observability-platform/"
+    },
+    {
+     "rank": 16,
+     "title": "Repository Best Practices | ProPR",
+     "url": "https://docs.propr.dev/docs/concepts/repository-best-practices"
+    },
+    {
+     "rank": 17,
+     "title": "Best AI Agents for DevOps in 2026: 15 Agents Ranked by Blast Radius",
+     "url": "https://resources.rework.com/tools/ai-agents/best-ai-agents-for-devops-2026"
+    },
+    {
+     "rank": 18,
+     "title": "Autonomous merge | Taiga Docs",
+     "url": "https://docs.tai.ga/deliver/auto-merge/"
+    },
+    {
+     "rank": 19,
+     "title": "Best AI SRE Tools In 2026: A Buyer’s Guide",
+     "url": "https://struct.ai/articles/top-ai-sre-tools-2026/"
+    },
+    {
+     "rank": 20,
+     "title": "+1: Introducing Approvability — Auto-approve PRs | Macroscope",
+     "url": "https://macroscope.com/blog/introducing-approvability"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+  "https://www.dash0.com/docs/dash0/darkplane/automerge",
+  "https://www.dash0.com/changelog/automerge-is-generally-available",
+  "https://www.dash0.com/docs/dash0/darkplane/automerge/recommendations",
+  "https://docs.gitar.ai/features/code-review/auto-merge"
+ ],
+ "recommendations": [
+  {
+   "name": "Sonar - Pull Request Risk Triage | Auto-Merge Low Risk Changes",
+   "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+   "description": "Sonar's Gitar platform provides automated risk assessment and auto-merge for low-risk pull requests."
+  },
+  {
+   "name": "Dash0 - AutoMerge",
+   "url": "https://www.dash0.com/docs/dash0/darkplane/automerge",
+   "description": "Dash0's AutoMerge feature uses AI to score and approve low-risk pull requests, reducing the need for manual review."
+  },
+  {
+   "name": "Macroscope - Introducing Approvability — Auto-approve PRs",
+   "url": "https://macroscope.com/blog/introducing-approvability",
+   "description": "Macroscope's Approvability tool automates the approval of low-risk pull requests based on AI analysis."
+  }
+ ]
+}

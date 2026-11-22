@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 2,
+     "title": "karamage/cc-auto-review",
+     "url": "https://github.com/karamage/cc-auto-review"
+    },
+    {
+     "rank": 3,
+     "title": "Code Review | Claude by Anthropic",
+     "url": "https://claude.com/marketplace/plugins/code-review"
+    },
+    {
+     "rank": 4,
+     "title": "",
+     "url": "https://error-path.github.io/opendrs/llms.txt"
+    },
+    {
+     "rank": 5,
+     "title": "Using as a Skill - PR Risk Scorer",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/using-as-skill/"
+    },
+    {
+     "rank": 6,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 7,
+     "title": "pr-risk | i",
+     "url": "https://www.claudepluginhub.com/skills/intuscare-i/pr-risk"
+    },
+    {
+     "rank": 8,
+     "title": "PagerDuty Pre-Commit Risk Score | Claude by Anthropic",
+     "url": "https://claude.com/marketplace/plugins/pagerduty"
+    },
+    {
+     "rank": 9,
+     "title": "Code Review",
+     "url": "https://code.claude.com/docs/en/code-review"
+    },
+    {
+     "rank": 10,
+     "title": "MergeShield — Govern AI-Generated Code Before It Ships",
+     "url": "https://mergeshield.dev/"
+    },
+    {
+     "rank": 11,
+     "title": "claude-code/plugins/code-review at main · anthropics/claude-code · GitHub",
+     "url": "https://github.com/anthropics/claude-code/tree/main/plugins/code-review"
+    },
+    {
+     "rank": 12,
+     "title": "andyzengmath/soliton",
+     "url": "https://github.com/andyzengmath/soliton"
+    },
+    {
+     "rank": 13,
+     "title": "Assess Pr Risk (Grade A) - Claude Skill | Skills Directory",
+     "url": "https://www.skillsdirectory.com/skills/tomzx-assess-pr-risk"
+    },
+    {
+     "rank": 14,
+     "title": "I Built a Claude Code Plugin Because I Was Becoming a Rubber-Stamp Reviewer - DEV Community",
+     "url": "https://dev.to/jaehong_kim_d5b09a9422944/i-built-a-claude-code-plugin-because-i-was-becoming-a-rubber-stamp-reviewer-4hj1"
+    },
+    {
+     "rank": 15,
+     "title": "plugins/pr-review-toolkit/agents/code-reviewer.md",
+     "url": "https://github.com/anthropics/claude-plugins-official/blob/main/plugins/pr-review-toolkit/agents/code-reviewer.md"
+    },
+    {
+     "rank": 16,
+     "title": "How AI code reviewers judge pull request risk | opendrs",
+     "url": "https://error-path.github.io/opendrs/research/2026-10-18-review-risk-heuristics.html"
+    },
+    {
+     "rank": 17,
+     "title": "plugins/code-review/README.md",
+     "url": "https://github.com/closedloop-ai/claude-plugins/blob/main/plugins/code-review/README.md"
+    },
+    {
+     "rank": 18,
+     "title": "Merge Risk Agent Skill by warpdotdev | MCPInstall",
+     "url": "https://www.mcpinstall.com/skills/warpdotdev/common-skills/merge-risk"
+    },
+    {
+     "rank": 19,
+     "title": "mcarlssen/claude-adversarial-review",
+     "url": "https://github.com/mcarlssen/claude-adversarial-review"
+    },
+    {
+     "rank": 20,
+     "title": "code-review Plugin | anthropics/claude-plugins-official | DeepWiki",
+     "url": "https://deepwiki.com/anthropics/claude-plugins-official/7.2.4-code-review-plugin"
+    }
+   ]
+  },
+  {
+   "query": "Best tools for pull request risk assessment in software development",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best PR Risk Score and Blast Radius Tools (2026)",
+     "url": "https://repowise.dev/blog/comparisons/best-pr-risk-score-blast-radius-tools"
+    },
+    {
+     "rank": 2,
+     "title": "PR Security Review Tools Compared: Diff Checks Before Merge | Borg",
+     "url": "https://www.borghq.io/blog/pr-security-review-tools-compared-diff-checks-before-merge"
+    },
+    {
+     "rank": 3,
+     "title": "Assess pull request risk with Merge Risk",
+     "url": "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk"
+    },
+    {
+     "rank": 4,
+     "title": "Pull Request checks | Scan, fix, and prevent | Snyk User Docs",
+     "url": "https://docs.snyk.io/scan-fix-and-prevent/prevent/pull-request-checks"
+    },
+    {
+     "rank": 5,
+     "title": "11 Best Secure Code Review Tools in 2026, Ranked With Pricing | Superblocks",
+     "url": "https://www.superblocks.com/blog/secure-code-review-tools"
+    },
+    {
+     "rank": 6,
+     "title": "Code Review by Claude | AI code review tool for pull requests",
+     "url": "https://claude.com/product/code-review"
+    },
+    {
+     "rank": 7,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 8,
+     "title": "Best code security review tools in 2027 for first-party and AI-generated code | Endor Labs",
+     "url": "https://www.endorlabs.com/learn/best-code-security-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "10 Best Code Analysis and Code Quality Tools in 2026",
+     "url": "https://www.qodo.ai/blog/code-analysis-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review tools: ranked and compared",
+     "url": "https://faun.dev/toolbox/compare-ai-code-review-tools/"
+    },
+    {
+     "rank": 11,
+     "title": "PR Risk Analyzer | Skaftor",
+     "url": "https://skaftor.com/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 12,
+     "title": "Change risk: blast radius, tests to run and reviewers for every PR | repowise",
+     "url": "https://repowise.dev/features/change-risk"
+    },
+    {
+     "rank": 13,
+     "title": "AI Code Review and PR Risk Analysis | Kodyon",
+     "url": "https://www.kodyon.com/documentation/pr-intelligence"
+    },
+    {
+     "rank": 14,
+     "title": "PR Impact Analyzer Documentation | Codluma",
+     "url": "https://www.codluma.ai/docs/impact-analyzer/"
+    },
+    {
+     "rank": 15,
+     "title": "AI-Native PR and MR Security Reviews | DryRun Security",
+     "url": "https://www.dryrun.security/product/pr-code-reviews"
+    },
+    {
+     "rank": 16,
+     "title": "PullRule — Automated Code Review Scoring for Git",
+     "url": "https://pullrule.com/"
+    },
+    {
+     "rank": 17,
+     "title": "PRISM | See beyond the diff",
+     "url": "https://prismdevtools.com/"
+    },
+    {
+     "rank": 18,
+     "title": "Top 13 AI code review tools for vulnerability detection",
+     "url": "https://www.mend.io/blog/ai-code-review-tools-for-vulnerability-detection/"
+    },
+    {
+     "rank": 19,
+     "title": "PR Analyzer - Deep Pull Request Analysis & Insights | CodeRaptor",
+     "url": "https://www.coderaptor.ai/features/pr-analysis/"
+    },
+    {
+     "rank": 20,
+     "title": "Best AI Code Security Tools 2026: Which Get Findings Fixed",
+     "url": "https://www.pixee.ai/blog/best-ai-code-security-tools-2026"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/error-path/opendrs",
+  "https://github.com/karamage/cc-auto-review",
+  "https://claude.com/marketplace/plugins/code-review",
+  "https://repowise.dev/blog/comparisons/best-pr-risk-score-blast-radius-tools",
+  "https://www.borghq.io/blog/pr-security-review-tools-compared-diff-checks-before-merge"
+ ],
+ "recommendations": [
+  {
+   "name": "opendrs - PR blast radius analyzer",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "A GitHub Action, CLI, and Claude Code plugin for assigning a 0-1 risk score to pull requests."
+  },
+  {
+   "name": "cc-auto-review",
+   "url": "https://github.com/karamage/cc-auto-review",
+   "description": "A desktop app for macOS and Linux that reviews GitHub pull requests with a 0-100 risk score and optional autopilot."
+  },
+  {
+   "name": "Code Review | Claude by Anthropic",
+   "url": "https://claude.com/marketplace/plugins/code-review",
+   "description": "An Anthropic plugin for automating pull request code review with multiple specialized agents and confidence-based scoring."
+  }
+ ]
+}

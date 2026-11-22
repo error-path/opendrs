@@ -2,7 +2,7 @@
   "name": "@error-path/opendrs",
   "version": "0.6.0",
   "mcpName": "io.github.error-path/opendrs",
-  "description": "PR blast radius analyzer and pull request risk score (Open Diff Risk Score): a calibrated 0-1 score from git history and the import graph, to auto-approve low-risk PRs. CLI, GitHub Action and MCP server.",
+  "description": "PR risk score and blast radius analyzer for pull requests: a calibrated 0-1 score from git history and the import graph, to auto-approve low-risk PRs. CLI, GitHub Action and MCP server.",
   "type": "module",
   "license": "MIT",
   "author": "error-path",
