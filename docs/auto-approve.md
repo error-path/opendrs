@@ -13,7 +13,9 @@ up a gate that approves the low-risk ones on its own and sends everything else t
 > passed is approved and goes to the merge queue. Everything else waits for a reviewer.
 
 The score comes from [opendrs](./), which measures each PR's [blast radius](blast-radius.md),
-file history, author experience, size and tests.
+file history, author experience, size and tests. Auto-approval is one of several ways to
+[reduce the review bottleneck for AI-generated PRs](ai-pr-review-bottleneck.md); that page compares
+them.
 
 ## 1. Score every PR without approving anything
 
