@@ -188,6 +188,8 @@ one more condition, approve only when both agree, in the same job after the open
 ```yaml
       - uses: error-path/opendrs@v0
         id: opendrs
+        with:
+          sample-salt: ${{ secrets.OPENDRS_SAMPLE_SALT }}
       - if: github.event.pull_request.user.login == 'dependabot[bot]'
         id: metadata
         uses: dependabot/fetch-metadata@v2   # pin to a commit, as GitHub's example does
@@ -197,7 +199,7 @@ one more condition, approve only when both agree, in the same job after the open
 ```
 {% endraw %}
 
-The `tier` output comes from the score alone, so blocked and ignored paths do not change it. For
+The `tier` output comes from the score alone, so blocked paths do not change it, and ignored files are left out of it. For
 a version bump it reflects the manifest's history, the size and the author, not the new
 dependency's code. Use `tier`, never the `risk:green` label, which anyone with triage access can
 add.
