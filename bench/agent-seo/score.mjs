@@ -5,8 +5,8 @@ import { join } from 'node:path';
 
 const [rawDir, runLabel] = process.argv.slice(2);
 const queries = JSON.parse(readFileSync(new URL('./queries.json', import.meta.url), 'utf8'));
-/** True when a URL, title or name points at opendrs or its GitHub owner. */
-const isOpendrs = (text) => /opendrs|error-path/i.test(text ?? '');
+/** True when a URL, title or name points at opendrs or its owner (error-path on GitHub, errorpath on dev.to). */
+const isOpendrs = (text) => /opendrs|error-?path/i.test(text ?? '');
 
 for (const fileName of readdirSync(rawDir).filter((name) => name.endsWith('.json')).sort()) {
   const [queryId, run] = fileName.replace('.json', '').split('-');

@@ -79,6 +79,7 @@ async function searchUncached(query) {
   }
   if (backend === 'chrome') return searchInChrome(query);
   if (backend === 'relay') return searchViaRelay(query);
+  if (backend === 'files') return searchFromFiles(query);
   if (backend === 'google') {
     const results = [];
     for (const start of [1, 11]) {
@@ -103,6 +104,32 @@ async function searchUncached(query) {
     }
     await sleep(2000);
   }
+  assertRelevant(query, results);
+  return results;
+}
+
+/** Search results saved by a browser tab, keyed by query, for the files backend. */
+let savedResults = null;
+/** Queries the files backend was asked for but has no saved results for. */
+const missingQueries = new Set();
+
+/**
+ * Reads results a browser tab saved to JSON files ({ "<query>": [{ title, url }] }), for search
+ * engines whose page policy blocks the relay (Brave Search allows connections only to brave.com).
+ * Queries with no saved results are collected and written to pending-queries.json at the end, so
+ * the tab can search them and the script can be re-run; seeded model calls repeat exactly.
+ *
+ * @param query - The search text.
+ * @returns The saved results in order.
+ * @throws If the query has no saved results yet, or they are unrelated to it.
+ */
+function searchFromFiles(query) {
+  if (!savedResults) {
+    savedResults = {};
+    for (const file of option('results', '').split(',').filter(Boolean)) Object.assign(savedResults, JSON.parse(readFileSync(file, 'utf8')));
+  }
+  if (!savedResults[query]) { missingQueries.add(query); throw new Error(`no saved results for "${query}"`); }
+  const results = savedResults[query].map((link, index) => ({ rank: index + 1, title: link.title, url: link.url }));
   assertRelevant(query, results);
   return results;
 }
@@ -284,16 +311,20 @@ runLoop: for (const entry of queries) {
       const record = await runOnce(entry, run);
       failuresInARow = 0;
       writeFileSync(join(outDir.pathname.replace(/^\/([A-Za-z]:)/, '$1'), `${runId}.json`), JSON.stringify(record, null, 1));
-      const hit = record.searches.flatMap((item) => item.results).find((result) => /opendrs|error-path/i.test(result.url + result.title));
-      console.log(`${runId} searches=${record.searches.length} found=${hit ? hit.rank : '-'} recommended=${record.recommendations.some((item) => /opendrs|error-path/i.test(`${item.name} ${item.url}`))}`);
+      const hit = record.searches.flatMap((item) => item.results).find((result) => /opendrs|error-?path/i.test(result.url + result.title));
+      console.log(`${runId} searches=${record.searches.length} found=${hit ? hit.rank : '-'} recommended=${record.recommendations.some((item) => /opendrs|error-?path/i.test(`${item.name} ${item.url}`))}`);
     } catch (error) {
       console.log(`${runId} ERROR ${error.message.split(String.fromCharCode(10))[0]}`);
       failuresInARow += 1;
-      if (failuresInARow >= 3) { console.log('stopping: 3 failed runs in a row'); break runLoop; }
+      if (failuresInARow >= 3 && backend !== 'files') { console.log('stopping: 3 failed runs in a row'); break runLoop; }
       continue;
     }
   }
 }
 if (chromePage) await chromePage.context().close();
 relayFinished = true;
+if (missingQueries.size > 0) {
+  writeFileSync(new URL('pending-queries.json', outDir), JSON.stringify([...missingQueries], null, 1));
+  console.log(`${missingQueries.size} queries need searching: see pending-queries.json`);
+}
 if (relayServer) setTimeout(() => relayServer.close(), 15000);
