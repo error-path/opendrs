@@ -132,7 +132,8 @@ entry, so an error never leaves an earlier approval in force.
    a job's check name depends on your workflow.
 
 If you require review from code owners, opendrs cannot satisfy it, because the bot is not a code
-owner.
+owner. For this and the other reasons GitHub ignores a bot's approval, see
+[Why a bot approval does not count as a required review](bot-approval-required-reviews.md).
 
 ### Set sample-salt
 

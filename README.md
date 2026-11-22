@@ -164,6 +164,7 @@ Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server, Claude Code 
 |---|---|
 | [Auto-approve low-risk PRs](docs/auto-approve.md) | set up a risk-based approval gate step by step |
 | [Reduce the review bottleneck for AI-generated PRs](docs/ai-pr-review-bottleneck.md) | compare the options and see where opendrs fits |
+| [Why a bot approval does not count](docs/bot-approval-required-reviews.md) | fix a GitHub Actions or bot approval that required reviews or auto-merge ignore |
 | [GitHub Action reference](docs/github-action.md) | look up inputs, outputs, permissions, branch rules and the scheduled sweep |
 | [Policy and safety rails](docs/policy.md) | know exactly why a PR was or was not approved |
 | [Configuration reference](docs/configuration.md) | change `.opendrs.yml` |
