@@ -161,3 +161,34 @@ pre-1.0 tools; already contacted on 12 Nov), one Show HN.
 | Submit to the Anthropic plugin directory, Cline marketplace, mcpservers.org (free), AlternativeTo; awesome-claude-code once it reopens | 15-30 min each | Listings where agents and developers look; no measured effect yet |
 | Changelog News note (draft in outreach-drafts.md), then one Show HN | 15 min; 1 day answering comments | Third-party pages that agents cite; HN threads rank |
 | Short arXiv cs.SE tool report on the Diff Risk Score reproduction, reused for the FSE 2027 tool-demo track (due 26 Jan 2027) | 2-4 days | Research pages rank on several engines (DRS-OSS precedent) |
+
+## Round 5: Reddit threads (searched through the Tavily API, snippets only)
+
+Claude's web search cannot reach Reddit, so four passes searched it through Tavily. These are
+posters' own numbers from search snippets, not verified studies.
+
+- **Citations decay; freshness correlates.** 62% of sources cited in month 1 were gone by month 3
+  (500+ citations tracked); pages updated within 14 days were cited 2.3x more (correlational);
+  refreshing old posts for 30 days moved one site's citation rate from 8.7% to 10.7%. Measure a rate
+  over repeated runs, not a single hit, and refresh the comparison pages with each release.
+- **Few tactics moved anything.** 2 of 5 common tactics moved citations across 9 sites; rewriting
+  homepage copy "for AI" did nothing; adding JSON-LD barely moved citations (Ahrefs, 1,885 pages
+  against controls).
+- **Third-party discussion beats owned pages.** Forums were cited 3.2x more than branded comparison
+  pages in one 250-citation count. Answering real threads (with disclosure) is the honest version.
+- **Small sites win narrow questions.** Specific long-tail prompts, one clear sentence of what the
+  tool is. A new site was cited about a week after Bing indexed it.
+- **Coding agents.** People steer agents with AGENTS.md / Cursor rules lines and a docs index; agents
+  install mistyped or invented packages. Ideas: an "Add to your AGENTS.md" snippet in the docs; a
+  page on scoring PRs where an agent adds a dependency; check that the MCP server describes itself
+  before a client connects; Glama ranks by recent usage.
+- **The pain, in users' words:** "rubber stamp", "LGTM rubber stamps", "review fatigue", "AI slop
+  PRs", "code review is the new bottleneck", "auto approve everything". Objection to answer:
+  "AI reviewing AI is the author reviewing their own PR" (opendrs's score comes from git history,
+  not from trusting the reviewer).
+- **Compliance angle.** SOC 2 auditors now ask about AI-written code; the control wording is
+  review "by individuals other than the originating author". A page on what record an auto-approve
+  policy leaves for auditors would answer it; what counts depends on each team's written policy.
+
+Candidate docs work (maintainer to choose): AGENTS.md snippet, agent-added-dependency page,
+auditor-evidence page, "last updated" dates on comparison pages.
