@@ -243,3 +243,51 @@ first result was the opendrs post on dev.to. Two things stop a scripted run:
   no results. The run was stopped there; nothing was scored.
 
 The Brave Search API has no free tier. Brave is therefore not part of the re-test.
+
+## Search APIs used by AI agents, 22 Nov 2026: Tavily and Exa
+
+Many agent frameworks search through Tavily or Exa rather than Bing or Google, so the same 15
+queries were run through both (`run-local.mjs --backend tavily|exa --runs 3`, free API keys in
+`~/.opendrs-bench.env`), with `qwen2.5-coder:7b` reading pages and recommending as in the Bing run.
+Raw runs in `raw-tavily-2026-11-22/` and `raw-exa-2026-11-22/`, scored in `tavily-2026-11-22.jsonl`
+and `exa-2026-11-22.jsonl`. 90 runs, 0 errors.
+
+| Query | Bing (local) | Tavily | Exa: first hit | Exa |
+|---|---|---|---|---|
+| q01 autoapprove alternatives | - | - | alternatives.html, rank 7 | found, 0/3 |
+| q02 ai that auto-approves low-risk pull requests? | found, 0/3 | - | auto-approve.html, rank 12 | found, 0/3 |
+| q03 which observability platforms ... low-risk prs? | found, 3/3 | - | github-action.html, rank 10 | found, 0/3 |
+| q04 blast radius github | - | glama.ai (search 2, rank 8), 1/3 | | - |
+| q15 "auto approve" | - | - | alternatives.html (search 2, rank 9) | found, 0/3 |
+| q05 tool to score pull request risk | found, 0/3 | - | Marketplace listing, rank 7 | found, 0/3 |
+| q06 auto approve low risk PRs github action | found, 3/3 | - | auto-approve.html, **rank 1** | found, 3/3 |
+| q07 PR blast radius analyzer | found, 3/3 | - | homepage, rank 3 | found, 3/3 |
+| q08 Meta diff risk score open source | found, 3/3 | Marketplace (search 2, rank 1), 2/3 | Marketplace listing, rank 2 | found, 3/3 |
+| q09 MCP server for pull request risk | - | - | GitHub repo, rank 7 | found, 0/3 |
+| q10 reduce code review bottleneck for AI generated PRs | - | - | | - |
+| q11 defect prediction for pull requests open source tool | - | - | GitHub repo, **rank 1** | found, 3/3 |
+| q12 risk based auto merge merge queue | found, 0/3 | - | auto-approve.html, rank 9 | found, 1/3 |
+| q13 safely auto-merge AI-reviewed pull requests | found, 0/3 | - | auto-approve.html, rank 4 | found, 0/3 |
+| q14 claude code plugin pull request risk score | - | - | GitHub repo, **rank 1** | found, 2/3 |
+
+"x/3" is runs that recommended opendrs.
+
+| | Bing (local) | Tavily | Exa |
+|---|---|---|---|
+| Queries where opendrs is in the results | 8 of 15 | 2 of 15 | 13 of 15 |
+| Runs that recommended it | 12 of 45 | 3 of 45 | 15 of 45 |
+
+- **Exa finds opendrs almost everywhere** (13 of 15 queries), including four that Bing misses
+  (MCP server, defect prediction, Claude Code plugin, autoapprove alternatives), and reaches more
+  pages: auto-approve.html, github-action.html, the homepage and the GitHub repo, not only
+  alternatives.html. Exa is a neural index, so it matches meaning rather than words.
+- **Tavily barely finds it** (2 of 15, both on the model's second search, both through third-party
+  listings: glama.ai and the GitHub Marketplace). No opendrs page ranks on Tavily for any query.
+  Tavily is a common search tool in agent frameworks such as LangChain, so this is the
+  weakest of the three for agent visibility.
+- **Found is not recommended.** On Exa opendrs is in the results for 13 queries but recommended for
+  6; when it ranks below about 5 the model's top-5 page fetch does not reach it. Ranking, not
+  presence, decides recommendations.
+- **Descriptions are mostly right, with one recurring error:** several say opendrs is "AI-driven"
+  or "uses AI to score" PRs. The score is a logistic model over git history and the import graph;
+  the LLM judge is optional. The pages could say "no AI model needed" earlier and more plainly.

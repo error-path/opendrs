@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - DhruvP2205/blast-radius: Blast Radius is a browser-based interactive simulation built for the System Collapse Hackathon. It turns the abstract concepts of distributed system failure, cascading latency, and \"blast radius\" into a visceral, visual, and educational experience. · GitHub",
+     "url": "https://github.com/DhruvP2205/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "blast-radius · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 3,
+     "title": "blast-radius/README.md at main · buildingopen/blast-radius · GitHub",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 4,
+     "title": "What Is Blast Radius? How to Reduce It Strategically｜ExplainThis",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 5,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "plugins/pstack/skills/blast-radius/SKILL.md at main · cursor/plugins · GitHub",
+     "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+     "rank": 7,
+     "title": "Blast Radius",
+     "url": "https://28mm.github.io/blast-radius-docs"
+    },
+    {
+     "rank": 8,
+     "title": "BLAST RADIUS",
+     "url": "https://www.blastradius.fail"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius in Terraform: What it is and how to reduce it",
+     "url": "https://stategraph.com/blog/terraform-blast-radius"
+    },
+    {
+     "rank": 11,
+     "title": "pfrederiksen/blast-radius: Local-first AWS dependency graph CLI to ...",
+     "url": "https://github.com/pfrederiksen/blast-radius"
+    },
+    {
+     "rank": 12,
+     "title": "Understanding and Limiting Terraform Blast Radius",
+     "url": "https://medium.com/@DiggerHQ/understanding-and-limiting-terraform-blast-radius-da071673df16"
+    },
+    {
+     "rank": 13,
+     "title": "[2608.07440] Blast Radius",
+     "url": "https://arxiv.org/abs/2608.07440"
+    },
+    {
+     "rank": 14,
+     "title": "BlastRadius - patel-aum",
+     "url": "https://github.com/patel-aum/BlastRadius"
+    },
+    {
+     "rank": 15,
+     "title": "Blast Radius",
+     "url": "https://tavily.com/knowledge/company/pkwKNY0rr8KS"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius Company Overview, Contact Details & Competitors | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23"
+    },
+    {
+     "rank": 17,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/us/new-york/blast-radius-407461812"
+    },
+    {
+     "rank": 18,
+     "title": "Blast Radius - Products, Competitors, Financials, Employees, Headquarters Locations",
+     "url": "https://www.cbinsights.com/company/blast-radius"
+    },
+    {
+     "rank": 19,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/ca/british-columbia/blast-radius-inc-281161703"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius Employee Directory, Headcount & Staff | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23/employee-directory"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories with tools for analyzing and visualizing the blast radius of GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - IWasZ3r0Cool/blast-radius: Repo dependency analyzer with **blast-radius impact scoring** for AI-assisted development. · GitHub",
+     "url": "https://github.com/IWasZ3r0Cool/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "Claude-Skills/engineering/pr-review-expert/SKILL.md at main · borghei/Claude-Skills · GitHub",
+     "url": "https://github.com/borghei/Claude-Skills/blob/main/engineering/pr-review-expert/SKILL.md"
+    },
+    {
+     "rank": 3,
+     "title": "blast-radius · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 4,
+     "title": "gitnexus-pr-review: Detect code changes in pull requests and map them to affected execution flows and symbols | skills.rest",
+     "url": "https://skills.rest/skill/gitnexus-pr-review-anukkrit149"
+    },
+    {
+     "rank": 5,
+     "title": "10 Best Change Impact Analysis GitHub Repos (2026)",
+     "url": "https://awesome-repositories.com/f/development-tools-productivity/dependency-analysis-tools/change-impact-analysis"
+    },
+    {
+     "rank": 6,
+     "title": "https://raw.githubusercontent.com/borghei/Claude-Skills/main/engineering/pr-review-expert/SKILL.md",
+     "url": "https://raw.githubusercontent.com/borghei/Claude-Skills/main/engineering/pr-review-expert/SKILL.md"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub Action Blast Radius Analysis: CXGRD Explained | Elma",
+     "url": "https://elma.sh/blog/github-action-blast-radius-analysis-cxgrd"
+    },
+    {
+     "rank": 8,
+     "title": "opendrs by error-path | Glama",
+     "url": "https://glama.ai/mcp/servers/error-path/opendrs"
+    },
+    {
+     "rank": 9,
+     "title": "Best Cross-Repo Code Intelligence Tools (2026), Compared",
+     "url": "https://repowise.dev/blog/comparisons/best-cross-repo-code-intelligence-tools"
+    },
+    {
+     "rank": 10,
+     "title": "Best GitHub Pull Request Analytics Tools 2026 — Pull Tally",
+     "url": "https://pulltally.com/blog/best-github-pull-request-analytics-tools"
+    },
+    {
+     "rank": 11,
+     "title": "https://github.com/communitybridge/docs/raw/refs/heads/master/insights/analyzing-the-data/analyze-github-pull-requests.md",
+     "url": "https://github.com/communitybridge/docs/raw/refs/heads/master/insights/analyzing-the-data/analyze-github-pull-requests.md"
+    },
+    {
+     "rank": 12,
+     "title": "Visual Analysis of GitHub Issues to Gain Insights",
+     "url": "https://arxiv.org/html/2407.20900v1"
+    },
+    {
+     "rank": 13,
+     "title": "What Is a Dependency Graph? Blast Radius Explained",
+     "url": "https://hub.qodo.ai/post/what-is-a-dependency-graph"
+    },
+    {
+     "rank": 14,
+     "title": "Top Pull Request Metrics Tools (2026) - DEV Community",
+     "url": "https://dev.to/parinita_kapoor_d76c5fba6/top-9-pull-request-metrics-tools-2026-4mof"
+    },
+    {
+     "rank": 15,
+     "title": "Visual Analysis of GitHub Issues to Gain Insights",
+     "url": "https://arxiv.org/pdf/2407.20900"
+    },
+    {
+     "rank": 16,
+     "title": "GitHub - jitsejan/github-trend-insights: A Python toolkit for discovering, analyzing, and visualizing trends in GitHub repositories based on any keyword or topic. It searches GitHub using both query and topic, stores raw repository data, and aggregates key metrics (releases, pull requests, activity, stars, etc.) for actionable insights and graphs. · GitHub",
+     "url": "https://github.com/jitsejan/github-trend-insights"
+    },
+    {
+     "rank": 17,
+     "title": "Pull Requests Analysis Dashboard – GitHub Demos | Bold BI",
+     "url": "https://samples.boldbi.com/integrations/github/pull-requests-analysis-dashboard"
+    },
+    {
+     "rank": 18,
+     "title": "https://api.github.com/search/repositories?q=%22blast+radius%22+agent+in%3Aname%2Cdescription+pushed%3A%3E2026-03-01&sort=updated&per_page=40",
+     "url": "https://api.github.com/search/repositories?q=%22blast+radius%22+agent+in%3Aname%2Cdescription+pushed%3A%3E2026-03-01&sort=updated&per_page=40"
+    },
+    {
+     "rank": 19,
+     "title": "Tracking GitHub Pull Requests with Screenful - Screenful Blog",
+     "url": "https://screenful.com/blog/tracking-pull-requests-with-screenful-and-github"
+    },
+    {
+     "rank": 20,
+     "title": "Built a workspace for analyzing any GitHub repo — feedback wanted : r/coolgithubprojects",
+     "url": "https://www.reddit.com/r/coolgithubprojects/comments/1t2qnki/built_a_workspace_for_analyzing_any_github_repo"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/DhruvP2205/blast-radius",
+  "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated",
+  "https://github.com/buildingopen/blast-radius/blob/main/README.md",
+  "https://github.com/IWasZ3r0Cool/blast-radius",
+  "https://github.com/borghei/Claude-Skills/blob/main/engineering/pr-review-expert/SKILL.md"
+ ],
+ "recommendations": [
+  {
+   "name": "IWasZ3r0Cool/blast-radius",
+   "url": "https://github.com/IWasZ3r0Cool/blast-radius",
+   "description": "Repo dependency analyzer with blast-radius impact scoring for AI-assisted development."
+  },
+  {
+   "name": "error-path / opendrs",
+   "url": "https://glama.ai/mcp/servers/error-path/opendrs",
+   "description": "A tool for analyzing GitHub repositories, including blast radius."
+  },
+  {
+   "name": "Claude-Skills/pr-review-expert",
+   "url": "https://github.com/borghei/Claude-Skills/blob/main/engineering/pr-review-expert/SKILL.md",
+   "description": "A skill for Claude AI that reviews risky PRs by blast radius."
+  }
+ ]
+}

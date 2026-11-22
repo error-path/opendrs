@@ -1,0 +1,233 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 2,
+     "title": "armaansingla14/pr-pilot",
+     "url": "https://github.com/armaansingla14/pr-pilot"
+    },
+    {
+     "rank": 3,
+     "title": "VinayKumar2320/CodeImpact",
+     "url": "https://github.com/VinayKumar2320/CodeImpact"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/html/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "Hotspots — Find the code that's actually causing problems",
+     "url": "https://hotspots.dev/"
+    },
+    {
+     "rank": 7,
+     "title": "PR Guard · typestrict docs",
+     "url": "https://docs.typestrict.ai/en/pr-guard"
+    },
+    {
+     "rank": 8,
+     "title": "manishiitmandi/Prism",
+     "url": "https://github.com/manishiitmandi/Prism"
+    },
+    {
+     "rank": 9,
+     "title": "SubmuxHQ/CodeDecay",
+     "url": "https://github.com/SubmuxHQ/CodeDecay"
+    },
+    {
+     "rank": 10,
+     "title": "Are code review smells and metrics useful in pull request-level software defect prediction?",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 11,
+     "title": "Ataraxy-Labs/inspect",
+     "url": "https://github.com/ataraxy-labs/inspect"
+    },
+    {
+     "rank": 12,
+     "title": "radon-h2020/radon-defect-prediction-cli",
+     "url": "https://github.com/radon-h2020/radon-defect-prediction-cli"
+    },
+    {
+     "rank": 13,
+     "title": "aricent/codedefectai",
+     "url": "https://github.com/aricent/codedefectai"
+    },
+    {
+     "rank": 14,
+     "title": "frankekn/needlefish",
+     "url": "https://github.com/frankekn/needlefish"
+    },
+    {
+     "rank": 15,
+     "title": "Graph-Based Machine Learning Improves Just-in-Time Defect Prediction",
+     "url": "https://arxiv.org/html/2110.05371v1"
+    },
+    {
+     "rank": 16,
+     "title": "Quantumstringfloops/PRanalyzer",
+     "url": "https://github.com/Quantumstringfloops/PRanalyzer"
+    },
+    {
+     "rank": 17,
+     "title": "(PDF) QualiGuard: An AI-driven risk-based quality gate for defect prediction and code smell detection in DevOps pipelines",
+     "url": "https://www.researchgate.net/publication/415013077_QualiGuard_An_AI-driven_risk-based_quality_gate_for_defect_prediction_and_code_smell_detection_in_DevOps_pipelines"
+    },
+    {
+     "rank": 18,
+     "title": "thanhlecongg/PatchGuru",
+     "url": "https://github.com/thanhlecongg/PatchGuru"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://doi.org/10.48550/arxiv.2511.21964"
+    },
+    {
+     "rank": 20,
+     "title": "IRJIT: A Simple, Online, Information Retrieval Approach for Just-In-Time Software Defect Prediction",
+     "url": "https://arxiv.org/html/2210.02435"
+    }
+   ]
+  },
+  {
+   "query": "user feedback and reviews for open-source just-in-time defect prediction tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "A Survey on Software Bug Prediction Practices:Tools and Techniques",
+     "url": "https://vfast.org/journals/index.php/VTSE/article/download/2440/1874/12880"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/abs/2511.21964"
+    },
+    {
+     "rank": 3,
+     "title": "Commits: A tool, statistical models, and a preliminary user study",
+     "url": "https://users.encs.concordia.ca/~pcr/paper/Querel2021ICPC-RENE.pdf"
+    },
+    {
+     "rank": 4,
+     "title": "JIT Feedback — what Experienced Developers like about Static Analysis",
+     "url": "https://scg.unibe.ch/archive/papers/Tymc18a.pdf"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 6,
+     "title": "Excited to announce DRS-OSS, our open-source, Llama-based system for Just-In-Time Software Defect Prediction!",
+     "url": "https://www.linkedin.com/posts/peter-rigby-27532a7b_ai-softwareengineering-defectprediction-activity-7391208305114783744-vhfU"
+    },
+    {
+     "rank": 7,
+     "title": "Towards Applicable Just-In-Time Defect Prediction: A Practical Perspective on Effort Awareness",
+     "url": "https://doi.org/10.21203/rs.3.rs-4716570/v1"
+    },
+    {
+     "rank": 8,
+     "title": "Investigating the Practicality of Just-in-time Defect Prediction with Semi-supervised Learning on Industrial Commit Data",
+     "url": "https://www.diva-portal.org/smash/get/diva2:1336751/FULLTEXT02.pdf"
+    },
+    {
+     "rank": 9,
+     "title": "IRJIT: A simple, online, information retrieval approach for just-in-time software defect prediction",
+     "url": "https://arxiv.org/html/2210.02435v2"
+    },
+    {
+     "rank": 10,
+     "title": "A Formal Explainer for Just-In-Time Defect Predictions | ACM Transactions on Software Engineering and Methodology",
+     "url": "https://dl.acm.org/doi/10.1145/3664809"
+    },
+    {
+     "rank": 11,
+     "title": "I Put My AI Code Reviewer Through 100 Real-World Testing Scenarios. Here's What I've Learned So Far - DEV Community",
+     "url": "https://dev.to/sweety717/i-put-my-ai-code-reviewer-through-100-real-world-testing-scenarios-heres-what-ive-learned-so-far-5a0a"
+    },
+    {
+     "rank": 12,
+     "title": "On the calibration of Just-in-time Defect Prediction",
+     "url": "https://arxiv.org/html/2504.12051"
+    },
+    {
+     "rank": 13,
+     "title": "Human-in-the-loop online just-in-time software defect prediction: : What have we achieved and what do we still miss?: Science of Computer Programming: Vol 244, No C",
+     "url": "https://dl.acm.org/doi/10.1016/j.scico.2025.103296"
+    },
+    {
+     "rank": 14,
+     "title": "A Systematic Survey of Just-in-Time Software Defect Prediction | ACM Computing Surveys",
+     "url": "https://dl.acm.org/doi/10.1145/3567550"
+    },
+    {
+     "rank": 15,
+     "title": "sadiaTab/CPJITSDP",
+     "url": "https://github.com/sadiaTab/CPJITSDP"
+    },
+    {
+     "rank": 16,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/pdf/2511.21964"
+    },
+    {
+     "rank": 17,
+     "title": "Commit-Checker: A human-centric approach for adopting bug inducing commit detection using machine learning models",
+     "url": "https://dl.acm.org/doi/pdf/10.1145/3511430.3511463"
+    },
+    {
+     "rank": 18,
+     "title": "Enhancing Just-In-Time Defect Prediction Models with Developer- ...",
+     "url": "https://emanuelaguglielmi.it/assets/PDF/JIT-DefectPrediction.pdf"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://doi.org/10.48550/arxiv.2511.21964"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/error-path/opendrs",
+  "https://github.com/armaansingla14/pr-pilot",
+  "https://github.com/VinayKumar2320/CodeImpact",
+  "https://vfast.org/journals/index.php/VTSE/article/download/2440/1874/12880",
+  "https://arxiv.org/abs/2511.21964"
+ ],
+ "recommendations": [
+  {
+   "name": "opendrs",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "A 0-1 risk score for every pull request, integrating with GitHub Actions, CLI, and other tools for AI-reviewed, low-risk PRs auto-approvals."
+  },
+  {
+   "name": "CodeImpact",
+   "url": "https://github.com/VinayKumar2320/CodeImpact",
+   "description": "ML-powered GitHub pull request risk analysis using static analysis, dependency graphs, and XGBoost for intelligent CI test selection."
+  },
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/abs/2511.21964",
+   "description": "An open-source diff-risk scoring tool for continuous integration workflows, combining a REST API gateway, containerized model services, and GitHub integration."
+  }
+ ]
+}

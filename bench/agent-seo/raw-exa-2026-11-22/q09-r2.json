@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Deepthi-04/deltaprobe",
+     "url": "https://github.com/deepthi-04/deltaprobe"
+    },
+    {
+     "rank": 2,
+     "title": "Kaushal-SF/devflow-mcp",
+     "url": "https://github.com/Kaushal-SF/devflow-mcp"
+    },
+    {
+     "rank": 3,
+     "title": "gitlumen-team/gitlumen-mcp",
+     "url": "https://github.com/gitlumen-team/gitlumen-mcp"
+    },
+    {
+     "rank": 4,
+     "title": "Senix: AI Code Review for Pull Requests",
+     "url": "https://senix.dev/"
+    },
+    {
+     "rank": 5,
+     "title": "mann-uofg/codeview-mcp",
+     "url": "https://github.com/mann-uofg/codeview-mcp"
+    },
+    {
+     "rank": 6,
+     "title": "x-asd/pr-guard-mcp",
+     "url": "https://github.com/x-asd/pr-guard-mcp"
+    },
+    {
+     "rank": 7,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 8,
+     "title": "thangtn83/mcp_pr_review",
+     "url": "https://github.com/thangtn83/mcp_pr_review"
+    },
+    {
+     "rank": 9,
+     "title": "AshishChandpa/AI-PR-Review-MCP",
+     "url": "https://github.com/AshishChandpa/AI-PR-Review-MCP"
+    },
+    {
+     "rank": 10,
+     "title": "culprit by noordeen123 | Glama",
+     "url": "https://glama.ai/mcp/servers/noordeen123/culprit"
+    },
+    {
+     "rank": 11,
+     "title": "salesforce-misc/pr-council-mcp",
+     "url": "https://github.com/salesforce-misc/pr-council-mcp"
+    },
+    {
+     "rank": 12,
+     "title": "meanusarcanus/ai-pr-reviewer-action",
+     "url": "https://github.com/meanusarcanus/ai-pr-reviewer-action"
+    },
+    {
+     "rank": 13,
+     "title": "Gitlumen | AI Powered Code Review Intelligence",
+     "url": "https://gitlumen.com/"
+    },
+    {
+     "rank": 14,
+     "title": "trajanovd/Ai-code-reviewer",
+     "url": "https://github.com/trajnovd/Ai-code-reviewer"
+    },
+    {
+     "rank": 15,
+     "title": "code-guardian-mcp v0.3.1",
+     "url": "https://pypi.org/project/code-guardian-mcp/"
+    },
+    {
+     "rank": 16,
+     "title": "dstamand-msft/AzureDevOpsPullRequestAgent",
+     "url": "https://github.com/dstamand-msft/AzureDevOpsPullRequestAgent"
+    },
+    {
+     "rank": 17,
+     "title": "ayushv7/PRPilot",
+     "url": "https://github.com/ayushv7/PRPilot"
+    },
+    {
+     "rank": 18,
+     "title": "check_pr_risk - deltaprobe | Glama",
+     "url": "https://glama.ai/mcp/servers/Deepthi-04/deltaprobe/tools/check_pr_risk"
+    },
+    {
+     "rank": 19,
+     "title": "CoderSufiyan/mcp-risk",
+     "url": "https://github.com/CoderSufiyan/mcp-risk"
+    },
+    {
+     "rank": 20,
+     "title": "Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers — ChatForest",
+     "url": "https://chatforest.com/reviews/code-review-pull-request-mcp-servers/"
+    }
+   ]
+  },
+  {
+   "query": "Best AI-based code review tools for pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Code Review Tools Benchmark",
+     "url": "https://aimultiple.com/ai-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "Best AI Code Review Tools (2026): 13 Compared",
+     "url": "https://crewmark.ai/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Best AI Code Review Tools in 2026, Ranked | cubic",
+     "url": "https://www.cubic.dev/best-ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Best AI Code Review Tools in 2026: CodeRabbit vs Greptile vs Qodo vs Cursor Bugbot vs CodeCrab",
+     "url": "https://www.codecrab.ai/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "AI Code Review Tools Compared on the Same Pull Requests · Veridical.dev",
+     "url": "https://veridical.dev/compare"
+    },
+    {
+     "rank": 6,
+     "title": "6 Best AI Code Review Tools for Automated PR Reviews | Overcut",
+     "url": "https://overcut.ai/blog/best-ai-code-review-tools/"
+    },
+    {
+     "rank": 7,
+     "title": "Comparing 9 Code Review Tools - Which is Best?",
+     "url": "https://stack.convex.dev/best-ai-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best AI code review tools in 2026, ranked by precision",
+     "url": "https://heydeer.ai/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Best AI Code Review Tools in 2026: Top 8 Compared",
+     "url": "https://www.qodo.ai/blog/ai-code-review-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review Tools in 2026: Top 17 Tools Compared",
+     "url": "https://ccodelearner.com/ai-code-review-tools/"
+    },
+    {
+     "rank": 11,
+     "title": "7 best AI code review tools for 2026",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "Best AI Code Review Tools in 2026 (Free and Paid) | MegaLens.ai",
+     "url": "https://megalens.ai/ai-code-review-tools"
+    },
+    {
+     "rank": 13,
+     "title": "10 Best AI Code Review Tools in 2026: Ranked by a 300,000-PR Benchmark",
+     "url": "https://codeant.ai/blogs/best-ai-code-review-tools"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI Code Review tools: ranked and compared",
+     "url": "https://faun.dev/toolbox/compare-ai-code-review-tools/"
+    },
+    {
+     "rank": 15,
+     "title": "Best AI Code Review Tools for Pull Requests, Ranked by Bug…",
+     "url": "https://topaitracker.com/rankings/2026-06-12-best-ai-code-review-tools-for-pull-requests-ranked-by-bug-catch-rate-and-workflo/"
+    },
+    {
+     "rank": 16,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared/"
+    },
+    {
+     "rank": 17,
+     "title": "Best AI Code Review Tools in 2026 Compared | Fastio",
+     "url": "https://fast.io/resources/best-ai-code-review-tools-2026/"
+    },
+    {
+     "rank": 18,
+     "title": "5 AI code review tools, ranked on one head-to-head test. - DEV Community",
+     "url": "https://dev.to/technaom/5-ai-code-review-tools-ranked-on-one-head-to-head-test-4cp7"
+    },
+    {
+     "rank": 19,
+     "title": "15 Best Code Review Tools in 2026, Including AI Reviewers",
+     "url": "https://www.testmuai.com/blog/code-review-tools/"
+    },
+    {
+     "rank": 20,
+     "title": "AI Code Review Tools: 8 Options for the Agent Era - Codegen",
+     "url": "https://codegen.com/ai-code-review-tools/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/deepthi-04/deltaprobe",
+  "https://github.com/Kaushal-SF/devflow-mcp",
+  "https://github.com/gitlumen-team/gitlumen-mcp",
+  "https://aimultiple.com/ai-code-review-tools",
+  "https://crewmark.ai/blog/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Deepthi-04/deltaprobe",
+   "url": "https://github.com/deepthi-04/deltaprobe",
+   "description": "A GitHub MCP server for assessing code changes and pull requests with AI-based code review."
+  },
+  {
+   "name": "Kaushal-SF/devflow-mcp",
+   "url": "https://github.com/Kaushal-SF/devflow-mcp",
+   "description": "A read-only GitHub MCP server for pull-request review, providing context, risk scores, and other features."
+  },
+  {
+   "name": "gitlumen-team/gitlumen-mcp",
+   "url": "https://github.com/gitlumen-team/gitlumen-mcp",
+   "description": "An MCP server for GitHub-powered AI workflows, integrating with AI agents and providing intelligent development workflows."
+  }
+ ]
+}

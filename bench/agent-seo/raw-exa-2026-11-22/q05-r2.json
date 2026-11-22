@@ -1,0 +1,237 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Risk Analyzer | Skaftor",
+     "url": "https://skaftor.com/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "Merge Risk: assess risk before you merge | Warp",
+     "url": "https://www.warp.dev/merge-risk"
+    },
+    {
+     "rank": 3,
+     "title": "Assess pull request risk with Merge Risk",
+     "url": "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk"
+    },
+    {
+     "rank": 4,
+     "title": "Change risk and release radar · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/change-risk"
+    },
+    {
+     "rank": 5,
+     "title": "PR Risk Score | Massu AI Docs",
+     "url": "https://massu.ai/docs/guides/pr-risk-score"
+    },
+    {
+     "rank": 6,
+     "title": "PullRule — Automated Code Review Scoring for Git",
+     "url": "https://pullrule.com/"
+    },
+    {
+     "rank": 7,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 8,
+     "title": "tranhoangtu-it/pr-risk-scorer",
+     "url": "https://github.com/tranhoangtu-it/pr-risk-scorer"
+    },
+    {
+     "rank": 9,
+     "title": "PRMergeSafe — Is this PR safe to merge?",
+     "url": "https://prmergesafe.com/"
+    },
+    {
+     "rank": 10,
+     "title": "README.md",
+     "url": "https://github.com/winnin/farol/blob/main/README.md"
+    },
+    {
+     "rank": 11,
+     "title": "How risk scoring works | Pullminder Docs",
+     "url": "https://docs.pullminder.com/guides/how-risk-scoring-works/"
+    },
+    {
+     "rank": 12,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 13,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 14,
+     "title": "RepoSignal — Repo-specific PR risk intelligence",
+     "url": "https://reposignal.io/"
+    },
+    {
+     "rank": 15,
+     "title": "How the risk score works: Merge Lantern",
+     "url": "https://mergelantern.com/how-scoring-works"
+    },
+    {
+     "rank": 16,
+     "title": "AI-powered PR verification and risk scoring | Pullminder",
+     "url": "https://pullminder.com/"
+    },
+    {
+     "rank": 17,
+     "title": "vladzima/pullguard",
+     "url": "https://github.com/vladzima/pullguard"
+    },
+    {
+     "rank": 18,
+     "title": "PR Analyzer - Deep Pull Request Analysis & Insights | CodeRaptor",
+     "url": "https://www.coderaptor.ai/features/pr-analysis/"
+    },
+    {
+     "rank": 19,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 20,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and user reviews of PR risk analysis tools like Skaftor, Warp, and MergeHarbor?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Risk Analyzer | Skaftor",
+     "url": "https://skaftor.com/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "Merge Risk: assess risk before you merge | Warp",
+     "url": "https://www.warp.dev/merge-risk"
+    },
+    {
+     "rank": 3,
+     "title": "Pull request risk scores and test gaps · MergeHarbor",
+     "url": "https://mergeharbor.com/features/change-risk"
+    },
+    {
+     "rank": 4,
+     "title": "AI code review features · MergeHarbor AI code review",
+     "url": "https://mergeharbor.com/features"
+    },
+    {
+     "rank": 5,
+     "title": "Pull requests, review and gates | Skaftor",
+     "url": "https://skaftor.com/docs/build/pull-requests"
+    },
+    {
+     "rank": 6,
+     "title": "Free tools for engineering teams | Skaftor",
+     "url": "https://skaftor.com/tools"
+    },
+    {
+     "rank": 7,
+     "title": "Skaftor — AI SDLC Platform for Orchestrating AI Coding Agents",
+     "url": "https://skaftor.com/"
+    },
+    {
+     "rank": 8,
+     "title": "Merge gates and safe-to-merge checks · MergeHarbor",
+     "url": "https://mergeharbor.com/guides/merge-gates"
+    },
+    {
+     "rank": 9,
+     "title": "Warp Reviews (2026) | Product Hunt",
+     "url": "https://www.producthunt.com/products/warp/reviews"
+    },
+    {
+     "rank": 10,
+     "title": "What is Skaftor? | Skaftor",
+     "url": "https://skaftor.com/what-is-skaftor"
+    },
+    {
+     "rank": 11,
+     "title": "Warp Reviews November 2026: Details, Pricing, & Features | G2",
+     "url": "https://www.g2.com/products/warp-warp/reviews"
+    },
+    {
+     "rank": 12,
+     "title": "MergeHarbor docs: set up and configure AI code review",
+     "url": "https://mergeharbor.com/docs"
+    },
+    {
+     "rank": 13,
+     "title": "Learning and review quality · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/learning"
+    },
+    {
+     "rank": 14,
+     "title": "Changelog: new features and fixes · MergeHarbor",
+     "url": "https://mergeharbor.com/changelog"
+    },
+    {
+     "rank": 15,
+     "title": "Pull requests in the console · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/pull-requests"
+    },
+    {
+     "rank": 16,
+     "title": "Features and the workflow | Skaftor",
+     "url": "https://skaftor.com/docs/concepts/features-and-workflow"
+    },
+    {
+     "rank": 17,
+     "title": "Best 5 AI Code Review Tools: Complete Comparison with Real Data",
+     "url": "https://www.codewalnut.com/learn/best-ai-code-review-tools-comparison"
+    },
+    {
+     "rank": 18,
+     "title": "What is AI code review? · MergeHarbor AI code review",
+     "url": "https://mergeharbor.com/guides/what-is-ai-code-review"
+    },
+    {
+     "rank": 19,
+     "title": "Introduction | Skaftor",
+     "url": "https://skaftor.com/docs/get-started/introduction"
+    },
+    {
+     "rank": 20,
+     "title": "Warestack: Engineering delivery governance for GitHub organizations | Product Hunt",
+     "url": "https://www.producthunt.com/products/warestack"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://skaftor.com/tools/pr-risk-analyzer",
+  "https://www.warp.dev/merge-risk",
+  "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk",
+  "https://mergeharbor.com/features/change-risk"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Risk Analyzer | Skaftor",
+   "url": "https://skaftor.com/tools/pr-risk-analyzer",
+   "description": "A tool that scores a pull request based on risk signals, providing a recommended review protocol."
+  },
+  {
+   "name": "Merge Risk: assess risk before you merge | Warp",
+   "url": "https://www.warp.dev/merge-risk",
+   "description": "Evaluates pull request risk through five criteria: alignment, impact, verification, rollback cost, and error detection."
+  },
+  {
+   "name": "RepoSignal — Repo-specific PR risk intelligence",
+   "url": "https://reposignal.io/",
+   "description": "Provides insights into the risk associated with pull requests based on repository-specific data and patterns."
+  }
+ ]
+}

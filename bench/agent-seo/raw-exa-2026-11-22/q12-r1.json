@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "risk based auto merge merge queue",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Merge Queue — Omniscio",
+     "url": "https://docs.omniscio.com/library/pr-merge-queue.html"
+    },
+    {
+     "rank": 2,
+     "title": "Risk tiers – fremforge docs",
+     "url": "https://docs.frem.sh/develop/risk-tiers/"
+    },
+    {
+     "rank": 3,
+     "title": "Risk-Based Reviews",
+     "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews"
+    },
+    {
+     "rank": 4,
+     "title": "usebrindle/brindle",
+     "url": "https://github.com/usebrindle/brindle"
+    },
+    {
+     "rank": 5,
+     "title": "Merge pull requests with PR Merge Queue | Yardmaster Guide",
+     "url": "https://docs.yardmaster.io/guide/connect/pr-merge-queue"
+    },
+    {
+     "rank": 6,
+     "title": "Using Queue Rules",
+     "url": "https://docs.mergify.com/merge-queue/rules/"
+    },
+    {
+     "rank": 7,
+     "title": "Risk control: risk scores, change freezes and risk holds | Merge Pilot",
+     "url": "https://www.merge-pilot.com/docs/policies/controls/risk"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Risk - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/pr-reviews/merge-risk"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 10,
+     "title": "Managing a merge queue",
+     "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue"
+    },
+    {
+     "rank": 11,
+     "title": "Merge Queue and PR Risk - Loki Mode Documentation | Autonomi",
+     "url": "https://www.autonomi.dev/docs/merge-review"
+    },
+    {
+     "rank": 12,
+     "title": "The merge gate and the merge queue · cterm documentation",
+     "url": "https://cterm.dev/docs/merge-queue"
+    },
+    {
+     "rank": 13,
+     "title": "Merge Queue",
+     "url": "https://docs.wit.sh/features/merge-queue"
+    },
+    {
+     "rank": 14,
+     "title": "Optimistic merging",
+     "url": "https://docs.trunk.io/merge-queue/optimizations/optimistic-merging"
+    },
+    {
+     "rank": 15,
+     "title": "docs/AUTO-MERGE-FUTURE-CONTRACT.md",
+     "url": "https://github.com/fullsend-ai/auto-merge/blob/main/docs/AUTO-MERGE-FUTURE-CONTRACT.md"
+    },
+    {
+     "rank": 16,
+     "title": "Merge with the queue · TanStack Source",
+     "url": "https://source.tanstack.com/docs/merge-queue"
+    },
+    {
+     "rank": 17,
+     "title": "Keeping the Mainline Green across Diverse Language Monorepos - InfoQ",
+     "url": "https://www.infoq.com/presentations/mergequeue/"
+    },
+    {
+     "rank": 18,
+     "title": "Merge queue | knotless docs",
+     "url": "https://knotless.dev/docs/design/merge-queue/"
+    },
+    {
+     "rank": 19,
+     "title": "Merge Queue - Graphite",
+     "url": "https://graphite.com/docs/graphite-merge-queue"
+    },
+    {
+     "rank": 20,
+     "title": "merge-review - オンラインツール",
+     "url": "https://tool.lu/ja_JP/skill/s/iF7"
+    }
+   ]
+  },
+  {
+   "query": "Comparative analysis of risk-based auto-merge tools for GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 2,
+     "title": "Risk-Based Reviews",
+     "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews"
+    },
+    {
+     "rank": 3,
+     "title": "How AI code reviewers judge pull request risk | opendrs",
+     "url": "https://error-path.github.io/opendrs/research/2026-10-18-review-risk-heuristics.html"
+    },
+    {
+     "rank": 4,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 5,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-Merge for a Fleet of One · Jimmy Van Veen",
+     "url": "https://www.jimmyvanveen.com/blog/auto-merge-for-a-fleet-of-one"
+    },
+    {
+     "rank": 7,
+     "title": "Code Review Automation in 2026 — Deep Dive into Graphite / Aviator / Mergify / Greptile / CodeRabbit / Copilot Code Review — TT Lab Blog",
+     "url": "https://ttlab.hopto.org/blog/culture/2026-05-16-code-review-automation-2026-graphite-aviator-mergify-greptile-coderabbit-copilot-deep-dive?lang=en"
+    },
+    {
+     "rank": 8,
+     "title": "Open Source Code Review Tools for GitHub and Self-Hosted Teams",
+     "url": "https://mergejudge.si/guide/open-source-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub-Native Merge Automation — a complete replacement for merge-automation bots (Mergify/Kodiak/Bulldozer/Trunk/Aviator/Graphite/MergeFreeze/backport bots), with native config + CI recipes for each feature",
+     "url": "https://gist.github.com/andrewxhill/eb36e01bf54f672b5648c6e8c435e118"
+    },
+    {
+     "rank": 10,
+     "title": "AI-assisted code review with auto-approve — Software Engineering | The State of Play",
+     "url": "https://www.thestateofplay.ai/practice/ai-assisted-code-review-with-auto-approve"
+    },
+    {
+     "rank": 11,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 12,
+     "title": "PR Security Review Tools Compared: Diff Checks Before Merge | Borg",
+     "url": "https://www.borghq.io/blog/pr-security-review-tools-compared-diff-checks-before-merge"
+    },
+    {
+     "rank": 13,
+     "title": "Should AI Coding Agents Auto-Merge Pull Requests?",
+     "url": "https://contextqa.com/blog/should-ai-coding-agents-auto-merge-pull-requests/"
+    },
+    {
+     "rank": 14,
+     "title": "Software Factory Best Practices from Open-Source Projects (2/4): Who Merges? :: ROBOCO",
+     "url": "https://roboco.io/en/posts/software-factory-who-merges/"
+    },
+    {
+     "rank": 15,
+     "title": "docs/adr/0093-merge-through-githubs-merge-queue-with-the-pull-request-checks-the-risk-gate-and-codeql-reporting-on-the-queues-commits.md",
+     "url": "https://github.com/northMES/northmes/blob/main/docs/adr/0093-merge-through-githubs-merge-queue-with-the-pull-request-checks-the-risk-gate-and-codeql-reporting-on-the-queues-commits.md"
+    },
+    {
+     "rank": 16,
+     "title": "Is it safe to auto-merge security fix pull requests?",
+     "url": "https://safeguard.sh/resources/blog/auto-merge-for-security-prs-what-must-pass-first"
+    },
+    {
+     "rank": 17,
+     "title": "mergeshield/risk-check",
+     "url": "https://github.com/mergeshield/risk-check"
+    },
+    {
+     "rank": 18,
+     "title": "docs/keel/comparison.md",
+     "url": "https://github.com/berkayturanci/keel/blob/main/docs/keel/comparison.md"
+    },
+    {
+     "rank": 19,
+     "title": "Auto-merging dependency PRs isn't reckless. Doing it without these 4 rules is. - DEV Community",
+     "url": "https://dev.to/getversyka/auto-merging-dependency-prs-isnt-reckless-doing-it-without-these-4-rules-is-1p7f"
+    },
+    {
+     "rank": 20,
+     "title": "Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
+     "url": "https://arxiv.org/html/2601.00477"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://docs.omniscio.com/library/pr-merge-queue.html",
+  "https://docs.frem.sh/develop/risk-tiers/",
+  "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews",
+  "https://error-path.github.io/opendrs/alternatives.html",
+  "https://error-path.github.io/opendrs/research/2026-10-18-review-risk-heuristics.html"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Merge Queue",
+   "url": "https://docs.omniscio.com/library/pr-merge-queue.html",
+   "description": "A tool for automating the merging of pull requests based on predefined risk thresholds."
+  },
+  {
+   "name": "Risk-Based Reviews",
+   "url": "https://docs.zenable.io/integrations/vcs-reviewers/risk-based-reviews",
+   "description": "A documentation page explaining how to set up and use risk-based reviews for pull requests."
+  },
+  {
+   "name": "Risk control: risk scores, change freezes and risk holds",
+   "url": "https://www.merge-pilot.com/docs/policies/controls/risk",
+   "description": "A detailed guide on implementing risk controls, including risk scores and change freezes, for pull requests."
+  }
+ ]
+}

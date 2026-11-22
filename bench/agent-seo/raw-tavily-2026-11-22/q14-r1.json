@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "code-review - Claude Code Commands Plugin | ClaudePluginHub",
+     "url": "https://www.claudepluginhub.com/plugins/anthropics-code-review-plugins-code-review-2"
+    },
+    {
+     "rank": 2,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 3,
+     "title": "Use Cases for AI Code Review and Governance | CloudAEye",
+     "url": "https://www.cloudaeye.com/solutions/use-case"
+    },
+    {
+     "rank": 4,
+     "title": "Claude Code Review: How It Works and Where Cosmos Wins | Augment Code",
+     "url": "https://www.augmentcode.com/guides/claude-code-review-how-it-works"
+    },
+    {
+     "rank": 5,
+     "title": "Claude Code Review Skills & Tools: 183 Graded (2026)",
+     "url": "https://agentskillshub.top/best/code-review"
+    },
+    {
+     "rank": 6,
+     "title": "claude-code-plugins-plus-skills/000-docs/008-TQ-SECU-security.md at @intentsolutionsio/beads-dolt@0.1.0 · jeremylongshore/claude-code-plugins-plus-skills · GitHub",
+     "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/@intentsolutionsio/beads-dolt@0.1.0/000-docs/008-TQ-SECU-security.md"
+    },
+    {
+     "rank": 7,
+     "title": "Claude Code's new AI code review agents scan pull requests for bugs",
+     "url": "https://tessl.io/blog/anthropic-launches-ai-code-review-agents-that-scan-pull-requests-for-bugs"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub - anthropics/claude-code-security-review: An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities. · GitHub",
+     "url": "https://github.com/anthropics/claude-code-security-review"
+    },
+    {
+     "rank": 9,
+     "title": "create-pull-request - Claude Code Plugin | ClaudePluginHub",
+     "url": "https://www.claudepluginhub.com/plugins/ccplugins-create-pull-request-plugins-create-pull-request"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub - tag1consulting/claude-comprehensive-review: A comprehensive pull request creator and reviewer · GitHub",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 11,
+     "title": "Claude Code Review: How It Works, Pricing & Setup",
+     "url": "https://umesh-malik.com/blog/anthropic-code-review-claude-code-guide"
+    },
+    {
+     "rank": 12,
+     "title": "PR Review Toolkit — Claude Code Plugin",
+     "url": "https://pluginmarketplace.ai/plugin/pr-review-toolkit"
+    },
+    {
+     "rank": 13,
+     "title": "Claude AI Code Review - Visual Studio Marketplace",
+     "url": "https://marketplace.visualstudio.com/items?itemName=TsezariMshvenieradzeTfsAIReviewTask.ai-pr-code-review"
+    },
+    {
+     "rank": 14,
+     "title": "Claude Code for Bitbucket Pull Request Review: What Actually Works (2026) | Git AutoReview",
+     "url": "https://gitautoreview.com/blog/claude-code-bitbucket-pull-request-review"
+    },
+    {
+     "rank": 15,
+     "title": "New Claude tool uses AI agents to find bugs in pull requests - Help Net Security",
+     "url": "https://www.helpnetsecurity.com/2026/03/10/anthropic-claude-code-review"
+    },
+    {
+     "rank": 16,
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+     "rank": 17,
+     "title": "Customize Claude Code with plugins | Claude by Anthropic",
+     "url": "https://www.anthropic.com/news/claude-code-plugins?i=3"
+    },
+    {
+     "rank": 18,
+     "title": "🤯 Automated Code Reviews in GitHub with Claude AI",
+     "url": "https://www.youtube.com/watch?v=zoZ2gazxXrU"
+    },
+    {
+     "rank": 19,
+     "title": "This Claude Skill Handles Your Entire PR For You",
+     "url": "https://www.youtube.com/watch?v=TpoJ044l0Q8"
+    },
+    {
+     "rank": 20,
+     "title": "Reflections of Claude Code from CHANGELOG - DEV Community",
+     "url": "https://dev.to/oikon/reflections-of-claude-code-from-changelog-833"
+    }
+   ]
+  },
+  {
+   "query": "Comparative analysis of AI code review tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI code review tools for GitHub: A complete comparison",
+     "url": "https://kodus.io/en/ai-code-review-tools-for-github"
+    },
+    {
+     "rank": 2,
+     "title": "🧠 Best AI Code Review Agents for GitHub PRs (2026)",
+     "url": "https://medium.com/@piyalidas.it/best-ai-code-review-agents-for-github-prs-2026-ac4c86ef3a63"
+    },
+    {
+     "rank": 3,
+     "title": "7 Best AI Code Review Tools for 2026 — Compared & Benchmarked",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "Top AI Code Review Tools for GitHub Pull Requests in 2026",
+     "url": "https://codeant.ai/blogs/ai-code-review-tools-github-pull-requests"
+    },
+    {
+     "rank": 5,
+     "title": "AI Code Review Tools: Which Actually Save Time (2026 Tests)",
+     "url": "https://codepulsehq.com/guides/ai-code-review-tools-guide"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Reviewer: An Honest 2026 Comparison",
+     "url": "https://axonbuild.com/blog/best-ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Better Code Reviews with AI? GitHub Copilot and Qodo Merge Tested",
+     "url": "https://www.youtube.com/watch?v=wmmMYFVNxA0"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "AI Code Review Blog — Guides, Benchmarks & Tutorials (2026) | Git AutoReview",
+     "url": "https://gitautoreview.com/blog"
+    },
+    {
+     "rank": 10,
+     "title": "The 6 Best AI Code Review Tools for Pull Requests in 2025 - DEV Community",
+     "url": "https://dev.to/heraldofsolace/the-6-best-ai-code-review-tools-for-pull-requests-in-2025-4n43"
+    },
+    {
+     "rank": 11,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update) | Macroscope",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 12,
+     "title": "The Best Automated Code Review Tools for Engineering Teams | Sep 23, 2026",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 13,
+     "title": "ReviewBench: An open benchmark for AI code review - The GitHub Blog",
+     "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.youtube.com/watch?v=dLoa8hCsxdQ"
+    },
+    {
+     "rank": 15,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared | Sourcegraph",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "GitHub - kodustech/awesome-code-review-tools: A curated list of the best code review tools, platforms, and automation for modern development teams. · GitHub",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 17,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub - Nikita-Filonov/ai-review: 🚀 AI-powered code review tool for GitHub, GitLab, Bitbucket Cloud, Bitbucket Server, Azure DevOps and Gitea — built with LLMs like OpenAI, Claude, Gemini, Ollama, Bedrock, OpenRouter and Azure OpenAI · GitHub",
+     "url": "https://github.com/Nikita-Filonov/ai-review"
+    },
+    {
+     "rank": 19,
+     "title": "Changelog - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/changelog"
+    },
+    {
+     "rank": 20,
+     "title": "Enhancing Code Quality at Scale with AI-Powered Code Reviews - Engineering@Microsoft",
+     "url": "https://devblogs.microsoft.com/engineering-at-microsoft/enhancing-code-quality-at-scale-with-ai-powered-code-reviews"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.claudepluginhub.com/plugins/anthropics-code-review-plugins-code-review-2",
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://www.cloudaeye.com/solutions/use-case",
+  "https://kodus.io/en/ai-code-review-tools-for-github",
+  "https://medium.com/@piyalidas.it/best-ai-code-review-agents-for-github-prs-2026-ac4c86ef3a63"
+ ],
+ "recommendations": [
+  {
+   "name": "claude-code-plugins-plus-skills/000-docs/008-TQ-SECU-security.md",
+   "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/@intentsolutionsio/beads-dolt@0.1.0/000-docs/008-TQ-SECU-security.md",
+   "description": "A GitHub repository containing a documentation file for a security-related Claude Code plugin."
+  },
+  {
+   "name": "claude-code-security-review",
+   "url": "https://github.com/anthropics/claude-code-security-review",
+   "description": "An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities."
+  },
+  {
+   "name": "claude-code-plugins-plus-skills",
+   "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+   "description": "A GitHub repository containing various Claude Code plugins and skills, including security-related ones."
+  }
+ ]
+}

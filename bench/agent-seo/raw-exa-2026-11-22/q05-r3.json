@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Risk Analyzer | Skaftor",
+     "url": "https://skaftor.com/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "Merge Risk: assess risk before you merge | Warp",
+     "url": "https://www.warp.dev/merge-risk"
+    },
+    {
+     "rank": 3,
+     "title": "Assess pull request risk with Merge Risk",
+     "url": "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk"
+    },
+    {
+     "rank": 4,
+     "title": "Change risk and release radar · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/change-risk"
+    },
+    {
+     "rank": 5,
+     "title": "PR Risk Score | Massu AI Docs",
+     "url": "https://massu.ai/docs/guides/pr-risk-score"
+    },
+    {
+     "rank": 6,
+     "title": "PullRule — Automated Code Review Scoring for Git",
+     "url": "https://pullrule.com/"
+    },
+    {
+     "rank": 7,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 8,
+     "title": "tranhoangtu-it/pr-risk-scorer",
+     "url": "https://github.com/tranhoangtu-it/pr-risk-scorer"
+    },
+    {
+     "rank": 9,
+     "title": "PRMergeSafe — Is this PR safe to merge?",
+     "url": "https://prmergesafe.com/"
+    },
+    {
+     "rank": 10,
+     "title": "README.md",
+     "url": "https://github.com/winnin/farol/blob/main/README.md"
+    },
+    {
+     "rank": 11,
+     "title": "How risk scoring works | Pullminder Docs",
+     "url": "https://docs.pullminder.com/guides/how-risk-scoring-works/"
+    },
+    {
+     "rank": 12,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 13,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 14,
+     "title": "RepoSignal — Repo-specific PR risk intelligence",
+     "url": "https://reposignal.io/"
+    },
+    {
+     "rank": 15,
+     "title": "How the risk score works: Merge Lantern",
+     "url": "https://mergelantern.com/how-scoring-works"
+    },
+    {
+     "rank": 16,
+     "title": "AI-powered PR verification and risk scoring | Pullminder",
+     "url": "https://pullminder.com/"
+    },
+    {
+     "rank": 17,
+     "title": "vladzima/pullguard",
+     "url": "https://github.com/vladzima/pullguard"
+    },
+    {
+     "rank": 18,
+     "title": "PR Analyzer - Deep Pull Request Analysis & Insights | CodeRaptor",
+     "url": "https://www.coderaptor.ai/features/pr-analysis/"
+    },
+    {
+     "rank": 19,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 20,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    }
+   ]
+  },
+  {
+   "query": "user reviews and comparisons of PR risk scoring tools",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best PR Risk Score and Blast Radius Tools (2026)",
+     "url": "https://repowise.dev/blog/comparisons/best-pr-risk-score-blast-radius-tools"
+    },
+    {
+     "rank": 2,
+     "title": "CodeOtter vs PR-Agent (Qodo): 2026 Comparison",
+     "url": "https://codeotter.io/compare/pr-agent/"
+    },
+    {
+     "rank": 3,
+     "title": "Farol tells a reviewer where to look. It cannot tell them whether it works · Reticle Signal",
+     "url": "https://www.reticle.sh/signal/2026-10-25-farol-pr-risk-map-teardown"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 5,
+     "title": "Automated PR risk scoring with LLMs | Hacker News",
+     "url": "https://news.ycombinator.com/item?id=47105219"
+    },
+    {
+     "rank": 6,
+     "title": "Review risky pull request changes without AI keys: meet PatchScope - DEV Community",
+     "url": "https://dev.to/brunnojob/review-risky-pull-request-changes-without-ai-keys-meet-patchscope-30jj"
+    },
+    {
+     "rank": 7,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 8,
+     "title": "Free pull request risk analyzer | Scopy Tools",
+     "url": "https://scopy.dev/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 9,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 10,
+     "title": "Can AI Check the Blast Radius of a PR Before Merge?",
+     "url": "https://riftmap.dev/blog/can-ai-check-blast-radius-of-pr-before-merge/"
+    },
+    {
+     "rank": 11,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/html/2511.21964"
+    },
+    {
+     "rank": 12,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 13,
+     "title": "README.md",
+     "url": "https://github.com/tranhoangtu-it/pr-risk-scorer/blob/main/README.md"
+    },
+    {
+     "rank": 14,
+     "title": "How AI code reviewers judge pull request risk | opendrs",
+     "url": "https://error-path.github.io/opendrs/research/2026-10-18-review-risk-heuristics.html"
+    },
+    {
+     "rank": 15,
+     "title": "ivosetyadi/pr-risk-radar",
+     "url": "https://github.com/ivosetyadi/pr-risk-radar"
+    },
+    {
+     "rank": 16,
+     "title": "Enhanced code reviews using pull request based change impact analysis | Empirical Software Engineering | Springer Nature Link",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 17,
+     "title": "pr-risk-score · Nicheloom",
+     "url": "https://www.nicheloom.com/launches/81732/"
+    },
+    {
+     "rank": 18,
+     "title": "CC Auto Review Automated Code Review: PRs, Scored",
+     "url": "https://mtdtechnologies.com/cc-auto-review-automated-code-review-local-claude-code-for-every-pull-request/"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://doi.org/10.48550/arxiv.2511.21964"
+    },
+    {
+     "rank": 20,
+     "title": "Risk Radar Software Pricing, Alternatives & More 2026 | Capterra",
+     "url": "https://www.capterra.com/p/130763/Risk-Radar/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://skaftor.com/tools/pr-risk-analyzer",
+  "https://www.warp.dev/merge-risk",
+  "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk",
+  "https://repowise.dev/blog/comparisons/best-pr-risk-score-blast-radius-tools",
+  "https://codeotter.io/compare/pr-agent/"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Risk Analyzer | Skaftor",
+   "url": "https://skaftor.com/tools/pr-risk-analyzer",
+   "description": "A tool that scores pull requests based on various signals to predict incidents and recommends review protocols."
+  },
+  {
+   "name": "Merge Risk: assess risk before you merge | Warp",
+   "url": "https://www.warp.dev/merge-risk",
+   "description": "Evaluates pull requests based on alignment, impact, verification, rollback cost, and error detection to determine risk."
+  },
+  {
+   "name": "RepoSignal — Repo-specific PR risk intelligence",
+   "url": "https://reposignal.io/",
+   "description": "Provides a risk score for pull requests based on historical data and machine learning to predict potential issues."
+  }
+ ]
+}

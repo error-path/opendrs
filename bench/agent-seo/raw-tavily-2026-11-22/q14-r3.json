@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "claude code plugin pull request risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "code-review - Claude Code Commands Plugin | ClaudePluginHub",
+     "url": "https://www.claudepluginhub.com/plugins/anthropics-code-review-plugins-code-review-2"
+    },
+    {
+     "rank": 2,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 3,
+     "title": "Use Cases for AI Code Review and Governance | CloudAEye",
+     "url": "https://www.cloudaeye.com/solutions/use-case"
+    },
+    {
+     "rank": 4,
+     "title": "Claude Code Review: How It Works and Where Cosmos Wins | Augment Code",
+     "url": "https://www.augmentcode.com/guides/claude-code-review-how-it-works"
+    },
+    {
+     "rank": 5,
+     "title": "Claude Code Review Skills & Tools: 183 Graded (2026)",
+     "url": "https://agentskillshub.top/best/code-review"
+    },
+    {
+     "rank": 6,
+     "title": "claude-code-plugins-plus-skills/000-docs/008-TQ-SECU-security.md at @intentsolutionsio/beads-dolt@0.1.0 · jeremylongshore/claude-code-plugins-plus-skills · GitHub",
+     "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/@intentsolutionsio/beads-dolt@0.1.0/000-docs/008-TQ-SECU-security.md"
+    },
+    {
+     "rank": 7,
+     "title": "Claude Code's new AI code review agents scan pull requests for bugs",
+     "url": "https://tessl.io/blog/anthropic-launches-ai-code-review-agents-that-scan-pull-requests-for-bugs"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub - anthropics/claude-code-security-review: An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities. · GitHub",
+     "url": "https://github.com/anthropics/claude-code-security-review"
+    },
+    {
+     "rank": 9,
+     "title": "create-pull-request - Claude Code Plugin | ClaudePluginHub",
+     "url": "https://www.claudepluginhub.com/plugins/ccplugins-create-pull-request-plugins-create-pull-request"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub - tag1consulting/claude-comprehensive-review: A comprehensive pull request creator and reviewer · GitHub",
+     "url": "https://github.com/tag1consulting/claude-comprehensive-review"
+    },
+    {
+     "rank": 11,
+     "title": "Claude Code Review: How It Works, Pricing & Setup",
+     "url": "https://umesh-malik.com/blog/anthropic-code-review-claude-code-guide"
+    },
+    {
+     "rank": 12,
+     "title": "PR Review Toolkit — Claude Code Plugin",
+     "url": "https://pluginmarketplace.ai/plugin/pr-review-toolkit"
+    },
+    {
+     "rank": 13,
+     "title": "Claude AI Code Review - Visual Studio Marketplace",
+     "url": "https://marketplace.visualstudio.com/items?itemName=TsezariMshvenieradzeTfsAIReviewTask.ai-pr-code-review"
+    },
+    {
+     "rank": 14,
+     "title": "Claude Code for Bitbucket Pull Request Review: What Actually Works (2026) | Git AutoReview",
+     "url": "https://gitautoreview.com/blog/claude-code-bitbucket-pull-request-review"
+    },
+    {
+     "rank": 15,
+     "title": "New Claude tool uses AI agents to find bugs in pull requests - Help Net Security",
+     "url": "https://www.helpnetsecurity.com/2026/03/10/anthropic-claude-code-review"
+    },
+    {
+     "rank": 16,
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "url": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+     "rank": 17,
+     "title": "Customize Claude Code with plugins | Claude by Anthropic",
+     "url": "https://www.anthropic.com/news/claude-code-plugins?i=3"
+    },
+    {
+     "rank": 18,
+     "title": "🤯 Automated Code Reviews in GitHub with Claude AI",
+     "url": "https://www.youtube.com/watch?v=zoZ2gazxXrU"
+    },
+    {
+     "rank": 19,
+     "title": "This Claude Skill Handles Your Entire PR For You",
+     "url": "https://www.youtube.com/watch?v=TpoJ044l0Q8"
+    },
+    {
+     "rank": 20,
+     "title": "Reflections of Claude Code from CHANGELOG - DEV Community",
+     "url": "https://dev.to/oikon/reflections-of-claude-code-from-changelog-833"
+    }
+   ]
+  },
+  {
+   "query": "GitHub - anthropics/claude-code-review: An AI-powered code review GitHub Action using Claude to analyze code changes for bugs and security vulnerabilities. · GitHub - https://github.com/anthropics/claude-code-review",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Claude Code Security Review: /security-review, GitHub Action and Limits (2026) | Nurbak",
+     "url": "https://nurbak.com/en/blog/claude-code-security-review"
+    },
+    {
+     "rank": 2,
+     "title": "Automated security code reviews with Claude Code and GitHub Actions: How we did it at Deriv",
+     "url": "https://derivai.substack.com/p/automated-security-code-reviews-claude-code-github-actions"
+    },
+    {
+     "rank": 3,
+     "title": "GitHub - anthropics/claude-code-security-review: An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities. · GitHub",
+     "url": "https://github.com/anthropics/claude-code-security-review"
+    },
+    {
+     "rank": 4,
+     "title": "Claude Code Security Review: /security-review, the GitHub Action, and Is It Safe? · Taku",
+     "url": "https://taku.ai/blog/claude-code-security-review"
+    },
+    {
+     "rank": 5,
+     "title": "Set Up Claude Code GitHub Actions for PR Review and CI | systemprompt.io",
+     "url": "https://systemprompt.io/guides/claude-code-github-actions"
+    },
+    {
+     "rank": 6,
+     "title": "Claude Code Review: GitHub App vs Action vs /code-review",
+     "url": "https://qodex.ai/blog/claude-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "Add Claude Code Review GitHub Action for automated PR review · Issue #3345 · awslabs/mcp · GitHub",
+     "url": "https://github.com/awslabs/mcp/issues/3345"
+    },
+    {
+     "rank": 8,
+     "title": "GitHub - anthropics/claude-code-action · GitHub",
+     "url": "https://github.com/anthropics/claude-code-action"
+    },
+    {
+     "rank": 9,
+     "title": "claude-code-security-review/README.md at main · anthropics/claude-code-security-review · GitHub",
+     "url": "https://github.com/anthropics/claude-code-security-review/blob/main/README.md?plain=1"
+    },
+    {
+     "rank": 10,
+     "title": "Automated Security Reviews in Claude Code | Claude Help Center",
+     "url": "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
+    },
+    {
+     "rank": 11,
+     "title": "Anthropic’s NEW Claude Code Review Agent (Full Open Source Workflow)",
+     "url": "https://www.youtube.com/watch?v=nItsfXwujjg"
+    },
+    {
+     "rank": 12,
+     "title": "Securing CI/CD in an agentic world: Claude Code Github action case | Microsoft Security Blog",
+     "url": "https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case"
+    },
+    {
+     "rank": 13,
+     "title": "Anthropic's AI Code Reviewer Sparks Backlash Over Token Costs - Business Insider",
+     "url": "https://www.businessinsider.com/anthropic-claude-code-review-token-costs-developers-backlash-engineers-2026-3?IR=T"
+    },
+    {
+     "rank": 14,
+     "title": "Anthropic's AI Code Reviewer Sparks Backlash Over Token Costs - Business Insider",
+     "url": "https://www.businessinsider.com/anthropic-claude-code-review-token-costs-developers-backlash-engineers-2026-3"
+    },
+    {
+     "rank": 15,
+     "title": "A Workaround for the Broken `code-review` Plugin : r/ClaudeWorkflows",
+     "url": "https://www.reddit.com/r/ClaudeWorkflows/comments/1xmpwfo/workflow_fixing_claude_code_review_in_github"
+    },
+    {
+     "rank": 16,
+     "title": "Anthropic Code Review Launches to Tame the Critical Flood of AI-Generated Code | AI News artificial intelligence | CryptoRank.io",
+     "url": "https://cryptorank.io/news/feed/2d404-anthropic-code-review-ai-generated-code"
+    },
+    {
+     "rank": 17,
+     "title": "AI Code Review // VERY POWERFULL · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/ai-code-review-very-powerfull"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub Action vulnerability in Anthropic’s Claude Code: What Software Teams Need to Know - testRigor AI-Based Automated Testing Tool",
+     "url": "https://testrigor.com/blog/github-action-vulnerability-in-anthropics-claude-code"
+    },
+    {
+     "rank": 19,
+     "title": "Poisoning Claude Code: One GitHub Issue to Break the Supply Chain - GMO Flatt Security Research",
+     "url": "https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain"
+    },
+    {
+     "rank": 20,
+     "title": "Claude Code Security: Enterprise Guide | NeuralTrust",
+     "url": "https://neuraltrust.ai/blog/claude-code-security"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.claudepluginhub.com/plugins/anthropics-code-review-plugins-code-review-2",
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://www.cloudaeye.com/solutions/use-case",
+  "https://nurbak.com/en/blog/claude-code-security-review",
+  "https://derivai.substack.com/p/automated-security-code-reviews-claude-code-github-actions"
+ ],
+ "recommendations": [
+  {
+   "name": "claude-code-review - Claude Code Commands Plugin",
+   "url": "https://www.claudepluginhub.com/plugins/anthropics-code-review-plugins-code-review-2",
+   "description": "A Claude Code plugin that reviews pull requests with parallel agents, checking for CLAUDE.md compliance, bugs, and git history, and posting a PR comment only with issues scored 80+ confidence."
+  },
+  {
+   "name": "Automatically Scoring Pull Request Risk with AI",
+   "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+   "description": "A medium article discussing how to automatically score the risk of pull requests using AI."
+  },
+  {
+   "name": "GitHub - anthropics/claude-code-review: An AI-powered security review GitHub Action using Claude",
+   "url": "https://github.com/anthropics/claude-code-review",
+   "description": "An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities."
+  }
+ ]
+}

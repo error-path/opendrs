@@ -68,7 +68,8 @@ const agentApis = {
   exa: { url: 'https://api.exa.ai/search', key: 'EXA_API_KEY', header: (key) => ({ 'x-api-key': key }),
     body: (query) => ({ query, numResults: 20 }), list: (body) => body.results ?? [], link: (item) => item.url },
   serper: { url: 'https://google.serper.dev/search', key: 'SERPER_API_KEY', header: (key) => ({ 'X-API-KEY': key }),
-    body: (query) => ({ q: query, gl: country, hl: 'en', num: 20 }), list: (body) => body.organic ?? [], link: (item) => item.link },
+    // Serper's free tier rejects quoted queries with num 20 ("Query pattern not allowed"), so those ask for 10.
+    body: (query) => ({ q: query, gl: country, hl: 'en', num: query.includes('"') ? 10 : 20 }), list: (body) => body.organic ?? [], link: (item) => item.link },
 };
 
 /**

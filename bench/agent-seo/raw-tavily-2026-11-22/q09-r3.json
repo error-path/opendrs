@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP Security: Risks, Real Incidents & Controls (2026) - Checkmarx",
+     "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls"
+    },
+    {
+     "rank": 2,
+     "title": "pull request MCP Servers | Glama",
+     "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security: Risks and Best Practices | Cycode",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices"
+    },
+    {
+     "rank": 4,
+     "title": "Securing the Model Context Protocol (MCP): Risks, Controls, and Governance",
+     "url": "https://arxiv.org/html/2511.20920v1"
+    },
+    {
+     "rank": 5,
+     "title": "Add recommended security policies for tool-level enforcement by L1AD · Pull Request #2294 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/pull/2294/files"
+    },
+    {
+     "rank": 6,
+     "title": "`pull_request_review_write` combines create/submit/delete into one tool, making fine-grained permissions by method impossible · Issue #2525 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2525"
+    },
+    {
+     "rank": 7,
+     "title": "Git Pr: Automate Git & Pull Requests with MCP",
+     "url": "https://mcpmarket.com/server/git-pr"
+    },
+    {
+     "rank": 8,
+     "title": "Build an AI GitHub PR Reviewer with MCP (Complete Recipe)",
+     "url": "https://mcpplaygroundonline.com/blog/build-ai-github-pr-reviewer-mcp-recipe"
+    },
+    {
+     "rank": 9,
+     "title": "Build an AI PR Reviewer with MCP & Gemini",
+     "url": "https://www.decodingai.com/p/build-with-mcp-like-a-real-engineer"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+     "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    },
+    {
+     "rank": 11,
+     "title": "Using GitHub MCP With Continue to Review PRs and Issues 5 Faster - DEV Community",
+     "url": "https://dev.to/anita_ihuman/using-github-mcp-with-continue-to-review-prs-and-issues-5x-faster-1p8a"
+    },
+    {
+     "rank": 12,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 13,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 14,
+     "title": "Understanding MCP security: Common risks to watch for | Datadog",
+     "url": "https://www.datadoghq.com/blog/monitor-mcp-servers"
+    },
+    {
+     "rank": 15,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 16,
+     "title": "Review MCP Server Security Best Practices | BACKSLASH SECURITY - Backslash",
+     "url": "https://www.backslash.security/blog/top-risks-mcp-servers-ide"
+    },
+    {
+     "rank": 17,
+     "title": "Enables management of Bitbucket Cloud pull requests through natural ...",
+     "url": "https://www.reddit.com/r/mcp/comments/1rapfd1/bitbucket_mcp_server_enables_management_of"
+    },
+    {
+     "rank": 18,
+     "title": "Model Context Protocol: Security Risks & Mitigations | SOC Prime",
+     "url": "https://socprime.com/blog/mcp-security-risks-and-mitigations"
+    },
+    {
+     "rank": 19,
+     "title": "failed to create pull request: repeat PR, better error msging · Issue #2931 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2931"
+    },
+    {
+     "rank": 20,
+     "title": "How to Contribute to the MCP Security Project · ModelContextProtocol-Security · Discussion #2 · GitHub",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    }
+   ]
+  },
+  {
+   "query": "Best tools for assessing pull request risk using Model Context Protocol (MCP)",
+   "results": [
+    {
+     "rank": 1,
+     "title": "5 best MCP testing tools for agent evals in 2026 - Articles - Braintrust",
+     "url": "https://www.braintrust.dev/articles/best-mcp-testing-tools-agent-evals-2026"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Medium",
+     "url": "https://medium.com/ai-agent-insider/build-a-claude-powered-pr-review-system-with-mcp-26c78411e766"
+    },
+    {
+     "rank": 4,
+     "title": "Securing the Model Context Protocol (MCP): Risks, Controls, and Governance",
+     "url": "https://arxiv.org/html/2511.20920v1"
+    },
+    {
+     "rank": 5,
+     "title": "MCP vulnerabilities: top 25 ranked, scored and mitigated",
+     "url": "https://adversa.ai/resources/mcp-security-top-25-mcp-vulnerabilities"
+    },
+    {
+     "rank": 6,
+     "title": "Model Context Protocol (MCP)",
+     "url": "https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf"
+    },
+    {
+     "rank": 7,
+     "title": "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents",
+     "url": "https://www.elastic.co/security-labs/threat-command/mcp-tools-attack-defense-recommendations"
+    },
+    {
+     "rank": 8,
+     "title": "Evaluation Framework for MCP Security Threats and Risks — Liran Tal",
+     "url": "https://lirantal.com/blog/evaluation-framework-for-mcp-security-threats-and-risks"
+    },
+    {
+     "rank": 9,
+     "title": "MCP-Scanner: Detecting Security Risks in Model Context Protocol Systems | Proceedings of the 2026 ACM/IEEE 7th International Workshop on Engineering and Cybersecurity of Critical Systems",
+     "url": "https://dl.acm.org/doi/full/10.1145/3786160.3788471"
+    },
+    {
+     "rank": 10,
+     "title": "Measuring what matters: How offline evaluation of GitHub MCP Server works - The GitHub Blog",
+     "url": "https://github.blog/ai-and-ml/generative-ai/measuring-what-matters-how-offline-evaluation-of-github-mcp-server-works"
+    },
+    {
+     "rank": 11,
+     "title": "11 Emerging AI Security Risks with MCP (Model Context Protocol) - Checkmarx",
+     "url": "https://checkmarx.com/zero-post/11-emerging-ai-security-risks-with-mcp-model-context-protocol"
+    },
+    {
+     "rank": 12,
+     "title": "Model Context Protocol: Security Risks & Mitigations | SOC Prime",
+     "url": "https://socprime.com/blog/mcp-security-risks-and-mitigations"
+    },
+    {
+     "rank": 13,
+     "title": "How to Contribute to the MCP Security Project · ModelContextProtocol-Security · Discussion #2 · GitHub",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    },
+    {
+     "rank": 14,
+     "title": "Model Context Protocol (MCP): Understanding security risks and controls",
+     "url": "https://www.redhat.com/en/blog/model-context-protocol-mcp-understanding-security-risks-and-controls"
+    },
+    {
+     "rank": 15,
+     "title": "Model Context Protocol (MCP) Security Risks : r/cybersecurity - Reddit",
+     "url": "https://www.reddit.com/r/cybersecurity/comments/1lg82p6/model_context_protocol_mcp_security_risks"
+    },
+    {
+     "rank": 16,
+     "title": "MCP Tools: Model Context Protocol for AI Agents Data Analysis | WisdomAI",
+     "url": "https://www.wisdom.ai/resources/guides/ai-context/mcp-tools-and-ai-agents"
+    },
+    {
+     "rank": 17,
+     "title": "Securing the Model Context Protocol (MCP) Server",
+     "url": "https://kenhuangus.substack.com/p/securing-the-model-context-protocol"
+    },
+    {
+     "rank": 18,
+     "title": "MCP: What It Is and Why It Matters for AI in Software Testing - Deterministic AI End-to-End Testing | Applitools",
+     "url": "https://applitools.com/blog/model-context-protocol-ai-testing"
+    },
+    {
+     "rank": 19,
+     "title": "Beyond API Testing: Evaluating Agentic Systems with MCP - LinkedIn",
+     "url": "https://www.linkedin.com/posts/deepchecks_the-ultimate-mcp-evaluation-checklist-for-activity-7442833153569996800-KzR5"
+    },
+    {
+     "rank": 20,
+     "title": "Model Context Protocol (MCP) Explained in 20 Minutes",
+     "url": "https://www.youtube.com/watch?v=N3vHJcHBS-w&vl=en"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+  "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+  "https://cycode.com/blog/mcp-security-risks-best-practices",
+  "https://www.braintrust.dev/articles/best-mcp-testing-tools-agent-evals-2026",
+  "https://mastra.ai/articles/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Checkmarx",
+   "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+   "description": "Checkmarx provides a comprehensive platform for identifying and managing security risks in Model Context Protocol (MCP) systems."
+  },
+  {
+   "name": "Glama",
+   "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+   "description": "Glama offers MCP servers that allow for the management and logging of pull requests using natural language processing."
+  },
+  {
+   "name": "Cycode",
+   "url": "https://cycode.com/blog/mcp-security-risks-best-practices",
+   "description": "Cycode provides resources and best practices for securing Model Context Protocol (MCP) systems, including risk assessment."
+  }
+ ]
+}

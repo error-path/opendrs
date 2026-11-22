@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "PR blast radius analyzer",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Blast Radius Analysis Tool | Codluma",
+     "url": "https://www.codluma.ai/pr-blast-radius-analysis/"
+    },
+    {
+     "rank": 2,
+     "title": "CodeDig — Know the blast radius of every PR before you merge",
+     "url": "https://codedig.ai/"
+    },
+    {
+     "rank": 3,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 4,
+     "title": "Impact & Analysis | NestWeaver Docs",
+     "url": "https://docs.nestweaver.kehl.io/cli/impact-analysis/"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub - srbmaury/pr-blast-radius: Production-aware PR blast-radius analysis using code, PostgreSQL, and OpenTelemetry dependencies. · GitHub",
+     "url": "https://github.com/srbmaury/pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "docs/github-action.md",
+     "url": "https://github.com/ehermanson/blast-radius/blob/main/docs/github-action.md"
+    },
+    {
+     "rank": 7,
+     "title": "AtlasMindAI/bigi",
+     "url": "https://github.com/AtlasMindAI/bigi"
+    },
+    {
+     "rank": 8,
+     "title": "bipu-biz/Blast-Radius",
+     "url": "https://github.com/bipu-biz/Blast-Radius"
+    },
+    {
+     "rank": 9,
+     "title": "",
+     "url": "https://docs.supermodeltools.com/cli/commands/blast-radius"
+    },
+    {
+     "rank": 10,
+     "title": "tazwaryayyyy/BlastRadius",
+     "url": "https://github.com/tazwaryayyyy/blastradius"
+    },
+    {
+     "rank": 11,
+     "title": "Pull request impact analysis: the blast radius outside the diff · Veridu",
+     "url": "https://veridu.io/change-impact-analysis/"
+    },
+    {
+     "rank": 12,
+     "title": "km impact · Kimün",
+     "url": "https://kimun.tools/en/docs/impact/"
+    },
+    {
+     "rank": 13,
+     "title": "Blast Radius Analysis · Docs · rgctl",
+     "url": "https://rgctl.io/docs/guides/blast-radius-analysis/"
+    },
+    {
+     "rank": 14,
+     "title": "Impact Evaluation",
+     "url": "https://coderadius.ai/docs/guide/impact-evaluation/"
+    },
+    {
+     "rank": 15,
+     "title": "Releases · ehermanson/blast-radius · GitHub",
+     "url": "https://github.com/ehermanson/blast-radius/releases"
+    },
+    {
+     "rank": 16,
+     "title": "PR Impact Analysis: A Guide for Engineering Teams | Codluma Blog",
+     "url": "https://www.codluma.ai/blog/tutorial/pr-impact-analysis-guide/"
+    },
+    {
+     "rank": 17,
+     "title": "Impact Analysis — SynapsesOS Docs",
+     "url": "https://synapsesos.com/docs/v1/reference/tools/impact/"
+    },
+    {
+     "rank": 18,
+     "title": "get_blast_radius | Kivgraph",
+     "url": "https://kivgraph.dev/docs/tools/get-blast-radius/"
+    },
+    {
+     "rank": 19,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius Scoring",
+     "url": "https://coderadius.ai/docs/explore/blast-radius-scoring/"
+    }
+   ]
+  },
+  {
+   "query": "Code dependency analysis tools for GitHub",
+   "results": [
+    {
+     "rank": 1,
+     "title": "jkspeaks/gitalyzer",
+     "url": "https://github.com/jkspeaks/gitalyzer"
+    },
+    {
+     "rank": 2,
+     "title": "PViz - Dependency Graph Analysis for GitHub Repositories",
+     "url": "https://pvizgenerator.com/"
+    },
+    {
+     "rank": 3,
+     "title": "depwire/depwire",
+     "url": "https://github.com/depwire/depwire"
+    },
+    {
+     "rank": 4,
+     "title": "optave/ops-codegraph-tool",
+     "url": "https://github.com/optave/codegraph"
+    },
+    {
+     "rank": 5,
+     "title": "scheidydude/codeindex",
+     "url": "https://github.com/scheidydude/codeindex"
+    },
+    {
+     "rank": 6,
+     "title": "POLPROG-TECH/CodeMap",
+     "url": "https://github.com/polprog-tech/CodeMap"
+    },
+    {
+     "rank": 7,
+     "title": "DevLens — Codebase Visualizer for TypeScript, Python, Java, Go & Rust",
+     "url": "https://devlens.io/"
+    },
+    {
+     "rank": 8,
+     "title": "alexandrmotologa/repograph",
+     "url": "https://github.com/alexandrmotologa/repograph"
+    },
+    {
+     "rank": 9,
+     "title": "Sphellep04/codeblueprint",
+     "url": "https://github.com/Sphellep04/codeblueprint"
+    },
+    {
+     "rank": 10,
+     "title": "depatlas · PyPI",
+     "url": "https://pypi.org/project/depatlas/"
+    },
+    {
+     "rank": 11,
+     "title": "gabotechs/dep-tree",
+     "url": "https://github.com/gabotechs/dep-tree?tab=readme-ov-file"
+    },
+    {
+     "rank": 12,
+     "title": "code-ranker-com/code-ranker",
+     "url": "https://github.com/code-ranker-com/code-ranker"
+    },
+    {
+     "rank": 13,
+     "title": "Sidhant0707/codeautopsy",
+     "url": "https://github.com/Sidhant0707/codeautopsy"
+    },
+    {
+     "rank": 14,
+     "title": "braedonsaunders/codeflow",
+     "url": "https://github.com/braedonsaunders/codeflow"
+    },
+    {
+     "rank": 15,
+     "title": "Aletheore/Aletheore",
+     "url": "https://github.com/Aletheore/Aletheore"
+    },
+    {
+     "rank": 16,
+     "title": "magic5644/Graph-It-Live",
+     "url": "https://github.com/magic5644/Graph-It-Live/"
+    },
+    {
+     "rank": 17,
+     "title": "taeezx44/Live-codebase",
+     "url": "https://github.com/taeezx44/Live-codebase"
+    },
+    {
+     "rank": 18,
+     "title": "Arham-Qureshi/codebase-vis",
+     "url": "https://www.github.com/Arham-Qureshi/codebase-vis"
+    },
+    {
+     "rank": 19,
+     "title": "abhigyanpatwari/GitNexus",
+     "url": "https://github.com/abhigyanpatwari/GitNexus/"
+    },
+    {
+     "rank": 20,
+     "title": "Dependency graph",
+     "url": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.codluma.ai/pr-blast-radius-analysis/",
+  "https://codedig.ai/",
+  "https://error-path.github.io/opendrs/",
+  "https://github.com/jkspeaks/gitalyzer",
+  "https://pvizgenerator.com/"
+ ],
+ "recommendations": [
+  {
+   "name": "Codluma PR Blast Radius Analysis Tool",
+   "url": "https://www.codluma.ai/pr-blast-radius-analysis/",
+   "description": "Real-time feedback on PR impact, automated security and quality scanning, and risk score with reviewer recommendations."
+  },
+  {
+   "name": "CodeDig PR Analysis",
+   "url": "https://codedig.ai/",
+   "description": "AI platform for analyzing PRs, identifying affected files and dependencies, and providing risk scores and recommendations."
+  },
+  {
+   "name": "opendrs PR Blast Radius Analyzer",
+   "url": "https://error-path.github.io/opendrs/",
+   "description": "AI-driven tool for scoring PR risk based on blast radius, file history, and author experience, with auto-approval capabilities."
+  }
+ ]
+}

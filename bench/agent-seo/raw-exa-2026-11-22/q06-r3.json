@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "auto approve low risk PRs github action",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 2,
+     "title": ".github/workflows/auto_approve_low_risk.yml",
+     "url": "https://github.com/cypress-io/cypress/blob/develop/.github/workflows/auto_approve_low_risk.yml"
+    },
+    {
+     "rank": 3,
+     "title": "sturdy-dev/codeball-action",
+     "url": "https://github.com/sturdy-dev/codeball-action/"
+    },
+    {
+     "rank": 4,
+     "title": ".github/workflows/pr-auto-approve.yml",
+     "url": "https://github.com/langwatch/langwatch/blob/df839568c221ec1a5eb617f935da6b29e3724bd7/.github/workflows/pr-auto-approve.yml"
+    },
+    {
+     "rank": 5,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-approval",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval"
+    },
+    {
+     "rank": 7,
+     "title": "lekman/auto-approve-action",
+     "url": "https://github.com/lekman/auto-approve-action"
+    },
+    {
+     "rank": 8,
+     "title": ".github/workflows/ai-auto-approve.yml",
+     "url": "https://github.com/mvp-ai-lab/mvp-engine/blob/06b8fc3a7ef9815554998955f1ad3f7f1cd46b9a/.github/workflows/ai-auto-approve.yml"
+    },
+    {
+     "rank": 9,
+     "title": "Auto Approve PR",
+     "url": "https://docs.codeant.ai/pull_request/features/auto_approve_pr"
+    },
+    {
+     "rank": 10,
+     "title": "Approval agent | Inspect documentation",
+     "url": "https://docs.inspect.com/pull-requests/approval-agent"
+    },
+    {
+     "rank": 11,
+     "title": "hmarr/auto-approve-action",
+     "url": "https://github.com/hmarr/auto-approve-action/"
+    },
+    {
+     "rank": 12,
+     "title": "Policy and safety rails: how opendrs decides | opendrs",
+     "url": "https://error-path.github.io/opendrs/policy.html"
+    },
+    {
+     "rank": 13,
+     "title": "Auto-Approve Low-Risk PRs",
+     "url": "https://docs.getblame.com/auto-approve-low-risk-prs"
+    },
+    {
+     "rank": 14,
+     "title": "jacsamell/github-pr-bot",
+     "url": "https://github.com/jacsamell/github-pr-bot"
+    },
+    {
+     "rank": 15,
+     "title": "csm-actions/approve-pr-action",
+     "url": "https://github.com/csm-actions/approve-pr-action/"
+    },
+    {
+     "rank": 16,
+     "title": ".github/workflows/pr-gate.yml",
+     "url": "https://github.com/arivero/agentbook/blob/9178ae4555d12a597f6363c90b821a94fdc333d4/.github/workflows/pr-gate.yml"
+    },
+    {
+     "rank": 17,
+     "title": "Auto-approve PRs",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 18,
+     "title": "Auto-approval · Warpway",
+     "url": "https://warpway.ai/docs/auto-approval"
+    },
+    {
+     "rank": 19,
+     "title": "step-security/auto-approve-action",
+     "url": "https://github.com/step-security/auto-approve-action"
+    },
+    {
+     "rank": 20,
+     "title": "We now auto-approve and merge 15% of PRs | Engineered.at",
+     "url": "https://engineered.at/articles/we-now-auto-approve-and-merge-15-of-prs"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for auto-approving pull requests based on risk score",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Action: score, label and auto-approve pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/github-action.html"
+    },
+    {
+     "rank": 2,
+     "title": "sturdy-dev/codeball-action",
+     "url": "https://github.com/sturdy-dev/codeball-action/"
+    },
+    {
+     "rank": 3,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 4,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 5,
+     "title": "lokeshkaki/Pullmint",
+     "url": "https://github.com/lokeshkaki/Pullmint"
+    },
+    {
+     "rank": 6,
+     "title": ".github/workflows/pr-auto-approve.yml",
+     "url": "https://github.com/langwatch/langwatch/blob/df839568c221ec1a5eb617f935da6b29e3724bd7/.github/workflows/pr-auto-approve.yml"
+    },
+    {
+     "rank": 7,
+     "title": "AI Risk Gate · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/ai-risk-gate"
+    },
+    {
+     "rank": 8,
+     "title": "Getting Started - PR Risk Scorer",
+     "url": "https://fasterapiweb.github.io/pr-risk-scorer/getting-started/"
+    },
+    {
+     "rank": 9,
+     "title": "mergeshield/risk-check",
+     "url": "https://github.com/mergeshield/risk-check"
+    },
+    {
+     "rank": 10,
+     "title": "docs/callers/pr-risk.md",
+     "url": "https://github.com/Comfy-Org/github-workflows/blob/main/docs/callers/pr-risk.md"
+    },
+    {
+     "rank": 11,
+     "title": "PullGuard PR Risk · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/pullguard-pr-risk"
+    },
+    {
+     "rank": 12,
+     "title": "ivosetyadi/pr-risk-radar",
+     "url": "https://github.com/ivosetyadi/pr-risk-radar"
+    },
+    {
+     "rank": 13,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 14,
+     "title": "",
+     "url": "https://error-path.github.io/opendrs/llms.txt"
+    },
+    {
+     "rank": 15,
+     "title": "Policy and safety rails: how opendrs decides | opendrs",
+     "url": "https://error-path.github.io/opendrs/policy.html"
+    },
+    {
+     "rank": 16,
+     "title": ".github/workflows/pr-risk.yml",
+     "url": "https://github.com/getsentry/cli/blob/main/.github/workflows/pr-risk.yml"
+    },
+    {
+     "rank": 17,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 18,
+     "title": "Risk Assessment",
+     "url": "https://docs.getunblocked.com/code-review/risk-assessment"
+    },
+    {
+     "rank": 19,
+     "title": "One-Code-LLC/mergerisk-action",
+     "url": "https://github.com/One-Code-LLC/mergerisk-action"
+    },
+    {
+     "rank": 20,
+     "title": "Auto-Approve Low-Risk PRs",
+     "url": "https://docs.getblame.com/auto-approve-low-risk-prs"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://error-path.github.io/opendrs/auto-approve.html",
+  "https://github.com/cypress-io/cypress/blob/develop/.github/workflows/auto_approve_low_risk.yml",
+  "https://github.com/sturdy-dev/codeball-action/",
+  "https://error-path.github.io/opendrs/github-action.html",
+  "https://github.com/error-path/opendrs"
+ ],
+ "recommendations": [
+  {
+   "name": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+   "url": "https://error-path.github.io/opendrs/",
+   "description": "A GitHub Action that scores each pull request and automatically approves low-risk ones based on a risk score."
+  },
+  {
+   "name": "sturdy-dev/codeball-action",
+   "url": "https://github.com/sturdy-dev/codeball-action/",
+   "description": "An AI code review tool that automatically approves low-risk pull requests and finds bugs in your code."
+  },
+  {
+   "name": "lekman/auto-approve-action",
+   "url": "https://github.com/lekman/auto-approve-action",
+   "description": "A GitHub Action that automatically approves low-risk pull requests based on a risk score."
+  }
+ ]
+}

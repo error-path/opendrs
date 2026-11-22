@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 2,
+     "title": "armaansingla14/pr-pilot",
+     "url": "https://github.com/armaansingla14/pr-pilot"
+    },
+    {
+     "rank": 3,
+     "title": "VinayKumar2320/CodeImpact",
+     "url": "https://github.com/VinayKumar2320/CodeImpact"
+    },
+    {
+     "rank": 4,
+     "title": "DRS-OSS: LLM-Driven Diff Risk Scoring Tool for PR Risk Prediction",
+     "url": "https://arxiv.org/html/2511.21964v1"
+    },
+    {
+     "rank": 5,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://arxiv.org/html/2511.21964"
+    },
+    {
+     "rank": 6,
+     "title": "Hotspots — Find the code that's actually causing problems",
+     "url": "https://hotspots.dev/"
+    },
+    {
+     "rank": 7,
+     "title": "PR Guard · typestrict docs",
+     "url": "https://docs.typestrict.ai/en/pr-guard"
+    },
+    {
+     "rank": 8,
+     "title": "manishiitmandi/Prism",
+     "url": "https://github.com/manishiitmandi/Prism"
+    },
+    {
+     "rank": 9,
+     "title": "SubmuxHQ/CodeDecay",
+     "url": "https://github.com/SubmuxHQ/CodeDecay"
+    },
+    {
+     "rank": 10,
+     "title": "Are code review smells and metrics useful in pull request-level software defect prediction?",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 11,
+     "title": "Ataraxy-Labs/inspect",
+     "url": "https://github.com/ataraxy-labs/inspect"
+    },
+    {
+     "rank": 12,
+     "title": "radon-h2020/radon-defect-prediction-cli",
+     "url": "https://github.com/radon-h2020/radon-defect-prediction-cli"
+    },
+    {
+     "rank": 13,
+     "title": "aricent/codedefectai",
+     "url": "https://github.com/aricent/codedefectai"
+    },
+    {
+     "rank": 14,
+     "title": "frankekn/needlefish",
+     "url": "https://github.com/frankekn/needlefish"
+    },
+    {
+     "rank": 15,
+     "title": "Graph-Based Machine Learning Improves Just-in-Time Defect Prediction",
+     "url": "https://arxiv.org/html/2110.05371v1"
+    },
+    {
+     "rank": 16,
+     "title": "Quantumstringfloops/PRanalyzer",
+     "url": "https://github.com/Quantumstringfloops/PRanalyzer"
+    },
+    {
+     "rank": 17,
+     "title": "(PDF) QualiGuard: An AI-driven risk-based quality gate for defect prediction and code smell detection in DevOps pipelines",
+     "url": "https://www.researchgate.net/publication/415013077_QualiGuard_An_AI-driven_risk-based_quality_gate_for_defect_prediction_and_code_smell_detection_in_DevOps_pipelines"
+    },
+    {
+     "rank": 18,
+     "title": "thanhlecongg/PatchGuru",
+     "url": "https://github.com/thanhlecongg/PatchGuru"
+    },
+    {
+     "rank": 19,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows",
+     "url": "https://doi.org/10.48550/arxiv.2511.21964"
+    },
+    {
+     "rank": 20,
+     "title": "IRJIT: A Simple, Online, Information Retrieval Approach for Just-In-Time Software Defect Prediction",
+     "url": "https://arxiv.org/html/2210.02435"
+    }
+   ]
+  },
+  {
+   "query": "Code quality analysis tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub Code Quality",
+     "url": "https://docs.github.com/en/code-security/concepts/code-quality/code-quality"
+    },
+    {
+     "rank": 2,
+     "title": "Ship good code, faster.",
+     "url": "https://deepsource.com/platform/code-quality"
+    },
+    {
+     "rank": 3,
+     "title": "CodeQL-powered analysis for Code Quality",
+     "url": "https://docs.github.com/en/code-security/reference/code-quality/codeql-detection"
+    },
+    {
+     "rank": 4,
+     "title": "7 best AI code review tools for 2026",
+     "url": "https://deepsource.com/resources/ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Code Review by Claude | AI code review tool for pull requests",
+     "url": "https://claude.com/product/code-review"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub AI Code Review: Best AI Code Review Tools Tested on Real PRs (2026) | Morph",
+     "url": "https://www.morphllm.com/github-ai-code-review"
+    },
+    {
+     "rank": 7,
+     "title": "PullGuard — SAST Code Security, Quality & Compliance on Every PR",
+     "url": "https://pullguard.dev/"
+    },
+    {
+     "rank": 8,
+     "title": "Static Analysis\n| PullRequest | Ship Secure Code",
+     "url": "https://www.pullrequest.com/static-analysis/"
+    },
+    {
+     "rank": 9,
+     "title": "34 Automated Code Review Tools Compared (2026) | ACR",
+     "url": "https://aicodereview.cc/blog/automated-code-review-tools/"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review Tools in 2026 (Compared) | DevOpsNess",
+     "url": "https://www.devopsness.com/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 11,
+     "title": "Best AI Code Review Tools in 2026: Tested & Ranked | DevToolLab Blog",
+     "url": "https://devtoollab.com/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "How Pullminder works | Pullminder",
+     "url": "https://pullminder.com/product/"
+    },
+    {
+     "rank": 13,
+     "title": "AI Code Review Tool for GitHub, GitLab & Azure DevOps | Codluma",
+     "url": "https://www.codluma.ai/"
+    },
+    {
+     "rank": 14,
+     "title": "octopusreview/octopus",
+     "url": "https://github.com/octopusreview/octopus/"
+    },
+    {
+     "rank": 15,
+     "title": "AI Code Review on Every Pull Request | Qodex",
+     "url": "https://qodex.ai/product/ai-code-review"
+    },
+    {
+     "rank": 16,
+     "title": "codqual — Know if your code is safe to ship",
+     "url": "https://codqual.com/"
+    },
+    {
+     "rank": 17,
+     "title": "Codesurf | GitHub Pull Request Check & AI Code Review Tool",
+     "url": "https://codesurf.app/"
+    },
+    {
+     "rank": 18,
+     "title": "MicroReview — AI Code Review Tool for GitHub & GitLab",
+     "url": "https://microreview.dev/"
+    },
+    {
+     "rank": 19,
+     "title": "PR Analyzer - Deep Pull Request Analysis & Insights | CodeRaptor",
+     "url": "https://www.coderaptor.ai/features/pr-analysis/"
+    },
+    {
+     "rank": 20,
+     "title": "CodeCanary — AI Code Review for GitHub Pull Requests",
+     "url": "https://codecanary.sh/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/error-path/opendrs",
+  "https://github.com/armaansingla14/pr-pilot",
+  "https://github.com/VinayKumar2320/CodeImpact",
+  "https://docs.github.com/en/code-security/concepts/code-quality/code-quality",
+  "https://deepsource.com/platform/code-quality"
+ ],
+ "recommendations": [
+  {
+   "name": "OpenDRS",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "PR blast radius analyzer: a 0-1 risk score for every pull request so AI-reviewed, low-risk PRs auto-approve into the merge queue."
+  },
+  {
+   "name": "pr-pilot",
+   "url": "https://github.com/armaansingla14/pr-pilot",
+   "description": "No description provided, repository seems empty or not actively maintained."
+  },
+  {
+   "name": "CodeImpact",
+   "url": "https://github.com/VinayKumar2320/CodeImpact",
+   "description": "ML-powered GitHub pull request risk analysis and intelligent CI test selection using static analysis, dependency graphs, and XGBoost."
+  }
+ ]
+}

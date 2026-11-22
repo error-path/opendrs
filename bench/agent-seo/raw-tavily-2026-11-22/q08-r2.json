@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development at Meta — brainai.pro",
+     "url": "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 4,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://code-dev.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 5,
+     "title": "How Meta Reduced Code Review Load While Maintaining Production Reliability - DEV Community",
+     "url": "https://dev.to/shrsv/how-meta-reduced-code-review-load-while-maintaining-production-reliability-4kcj"
+    },
+    {
+     "rank": 6,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351v1"
+    },
+    {
+     "rank": 7,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 8,
+     "title": "Why Meta Platforms' Open-Source AI Strategy Might Win the Long Game",
+     "url": "https://finance.yahoo.com/news/why-meta-platforms-open-source-080000414.html"
+    },
+    {
+     "rank": 9,
+     "title": "AI Lab Watch",
+     "url": "https://ailabwatch.org/companies/meta"
+    },
+    {
+     "rank": 10,
+     "title": "Here’s How Meta Platforms’ (META) Open-Source Advantage Will Drive Future Growth",
+     "url": "https://finance.yahoo.com/news/meta-platforms-meta-open-source-165031151.html"
+    },
+    {
+     "rank": 11,
+     "title": "Meta Made Llama 2 AI Model Open-Source Because 'Zuck Has Balls' - Business Insider",
+     "url": "https://www.businessinsider.com/meta-llama2-open-source-mark-zuckerberg-balls-replit-amjad-masad-2023-10"
+    },
+    {
+     "rank": 12,
+     "title": "Meta Outlines Open Source Contributions in 2024 [Infographic]",
+     "url": "https://finance.yahoo.com/news/meta-outlines-open-source-contributions-153103318.html"
+    },
+    {
+     "rank": 13,
+     "title": "Hidden Risks in Open-Source Code and AI Models",
+     "url": "https://www.youtube.com/watch?v=1NUwUBtttzU"
+    },
+    {
+     "rank": 14,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai"
+    },
+    {
+     "rank": 15,
+     "title": "How Meta reduced diff authoring time by 40%",
+     "url": "https://www.youtube.com/watch?v=d1gFQ_6OWAQ"
+    },
+    {
+     "rank": 16,
+     "title": "Meta may ditch open-source Behemoth for a private model",
+     "url": "https://cryptorank.io/news/feed/41713-meta-may-ditch-open-source-behemoth"
+    },
+    {
+     "rank": 17,
+     "title": "How Meta Scaling AI-Native Engineering Tripled Code Coverage (And Cut Slop)",
+     "url": "https://www.youtube.com/watch?v=pT-nyd6o_WY"
+    },
+    {
+     "rank": 18,
+     "title": "Meta AI and Systems Co-design",
+     "url": "https://aisystemcodesign.github.io"
+    },
+    {
+     "rank": 19,
+     "title": "Engineering Clarity, The GitClear Blog",
+     "url": "https://www.gitclear.com/blog"
+    },
+    {
+     "rank": 20,
+     "title": "Data Points: Meta’s newest world model research project",
+     "url": "https://www.deeplearning.ai/the-batch/metas-newest-world-model-research-project"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories for open-source AI tools and libraries related to code review and risk assessment",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 2,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared"
+    },
+    {
+     "rank": 4,
+     "title": "15 Open Source AI Code Review Tools (2026) - DEV Community",
+     "url": "https://dev.to/rahulxsingh/15-open-source-ai-code-review-tools-2026-605"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.qodo.ai/academy/best-ai-code-review-tools-for-github"
+    },
+    {
+     "rank": 6,
+     "title": "Best Trending GitHub Repositories for AI Developers to Star in 2026",
+     "url": "https://www.firecrawl.dev/blog/best-github-repos"
+    },
+    {
+     "rank": 7,
+     "title": "GitHub - kodustech/awesome-code-review-tools: A curated list of the best code review tools, platforms, and automation for modern development teams. · GitHub",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.youtube.com/watch?v=dLoa8hCsxdQ"
+    },
+    {
+     "rank": 10,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared | Sourcegraph",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 11,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 12,
+     "title": "Top 12 GitHub AI Repositories That Are Actually Worth Your Time in 2026 | by mata | The Pythonworld | Medium",
+     "url": "https://medium.com/the-pythonworld/top-12-github-ai-repositories-that-are-actually-worth-your-time-in-2026-ca4afe2bfa8b"
+    },
+    {
+     "rank": 13,
+     "title": "11 Top AI GitHub Repos You Need in 2026",
+     "url": "https://www.youtube.com/watch?v=nro10fQVEM0"
+    },
+    {
+     "rank": 14,
+     "title": "🌟 280+ Ultimate Open-Source Repositories: The Developer’s Curated Guide [2026] — 🚀 (Curated by Category) | top-github-repos-list",
+     "url": "https://md8-habibullah.github.io/top-github-repos-list"
+    },
+    {
+     "rank": 15,
+     "title": "12 Essential GitHub Repos for AI Developers | Altiam Kabir posted on the topic | LinkedIn",
+     "url": "https://www.linkedin.com/posts/altiamkabir_12-github-repositories-every-ai-developer-activity-7518633479085916160-QMcz"
+    },
+    {
+     "rank": 16,
+     "title": "Top AI GitHub Repositories in 2026 - ByteByteGo Newsletter",
+     "url": "https://blog.bytebytego.com/p/top-ai-github-repositories-in-2026"
+    },
+    {
+     "rank": 17,
+     "title": "🤖 Best AI Tools for Developers in 2026: What Are Your Must-Have Tools? · community · Discussion #187143 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/187143"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub - alvinreal/awesome-opensource-ai: Curated list of the best truly open-source AI projects, models, tools, and infrastructure. Daily updated. · GitHub",
+     "url": "https://github.com/alvinreal/awesome-opensource-ai"
+    },
+    {
+     "rank": 19,
+     "title": "Top 10 Open-Source AI Projects Trending on GitHub in 2026 – Zima Store Online",
+     "url": "https://shop.zimaspace.com/en-ca/blogs/tech-ai-hub/top-10-open-source-ai-projects-trending-on-github-in-2026"
+    },
+    {
+     "rank": 20,
+     "title": "Medium",
+     "url": "https://blog.stackademic.com/30-github-repositories-every-ai-engineer-should-bookmark-in-2026-eb48b1186951"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta",
+  "https://codeant.ai/blogs/github-ai-code-review-tools-open-source",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "DRS-OSS is an open-source DRS tool equipped with a public API, web UI, and GitHub plugin."
+  },
+  {
+   "name": "CodeAnt AI",
+   "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source",
+   "description": "CodeAnt AI offers automated, context-aware feedback on every pull request, catching bugs and enforcing standards."
+  },
+  {
+   "name": "GitHub AI Code Review Tools",
+   "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools",
+   "description": "A list of 12 best open-source code review tools in 2026, including tools like GitLab CE and Gitea."
+  }
+ ]
+}

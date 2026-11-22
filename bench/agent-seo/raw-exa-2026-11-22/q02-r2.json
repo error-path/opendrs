@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "ai that auto-approves low-risk pull requests?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "AI Code Review That Auto-Approves Safe PRs | Macroscope Approvability",
+     "url": "https://macroscope.com/approvability"
+    },
+    {
+     "rank": 2,
+     "title": "Auto-approve PRs",
+     "url": "https://www.greptile.com/docs/code-review/auto-approve-prs"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approval",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval"
+    },
+    {
+     "rank": 4,
+     "title": "PR Routing & Approval",
+     "url": "https://cursor.com/docs/approval-agents"
+    },
+    {
+     "rank": 5,
+     "title": "AutoMerge approves your pull requests · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-approves-your-pull-requests"
+    },
+    {
+     "rank": 6,
+     "title": "Auto-Approve",
+     "url": "https://docs.gitar.ai/features/code-review/auto-approve"
+    },
+    {
+     "rank": 7,
+     "title": "How auto-approving low-risk PRs with AI cut our lead time by 74% · Ona",
+     "url": "https://ona.com/stories/auto-approving-low-risk-prs"
+    },
+    {
+     "rank": 8,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 9,
+     "title": "Auto-Approve Low-Risk PRs",
+     "url": "https://docs.getblame.com/auto-approve-low-risk-prs"
+    },
+    {
+     "rank": 10,
+     "title": "Automatic approval · HeyDeer docs",
+     "url": "https://heydeer.ai/docs/approval"
+    },
+    {
+     "rank": 11,
+     "title": "How we let AI approve pull requests (safely)",
+     "url": "https://rewind.com/blog/ai-approve-pull-requests-safely/"
+    },
+    {
+     "rank": 12,
+     "title": "Auto-approve low-risk pull requests safely | opendrs",
+     "url": "https://error-path.github.io/opendrs/auto-approve.html"
+    },
+    {
+     "rank": 13,
+     "title": "HexmosTech/LiveReview",
+     "url": "https://github.com/HexmosTech/LiveReview"
+    },
+    {
+     "rank": 14,
+     "title": "Automatic Approvals - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/pr-reviews/automatic-approvals"
+    },
+    {
+     "rank": 15,
+     "title": "We now auto-approve and merge 15% of PRs | Swizec Teller",
+     "url": "https://swizec.com/blog/we-now-auto-approve-and-merge-15p-of-prs"
+    },
+    {
+     "rank": 16,
+     "title": "Auto Approve PR",
+     "url": "https://docs.codeant.ai/pull_request/features/auto_approve_pr"
+    },
+    {
+     "rank": 17,
+     "title": "Approval agent | Inspect documentation",
+     "url": "https://docs.inspect.com/pull-requests/approval-agent"
+    },
+    {
+     "rank": 18,
+     "title": "Cursor · Assess PR risk and assign reviewers",
+     "url": "https://cursor.com/workflows/autonomous-agents/assign-pr-reviewers"
+    },
+    {
+     "rank": 19,
+     "title": "How to Speed Up Pull Request Approvals Safely with AI (2026 Guide) | Macroscope",
+     "url": "https://macroscope.com/content/how-to-speed-up-pull-request-approvals-safely"
+    },
+    {
+     "rank": 20,
+     "title": "HexmosTech/LiveReview",
+     "url": "https://github.com/hexmostech/livereview"
+    }
+   ]
+  },
+  {
+   "query": "What are the key features and benefits of each AI-powered tool for auto-approving low-risk pull requests, and how do they compare?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Auto-approval",
+     "url": "https://docs.cubic.dev/ai-review/auto-approval"
+    },
+    {
+     "rank": 2,
+     "title": "AI Code Review Tools That Approve Pull Requests, Compared · Warpway",
+     "url": "https://warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests"
+    },
+    {
+     "rank": 3,
+     "title": "Auto-approve alternatives for low-risk pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/alternatives.html"
+    },
+    {
+     "rank": 4,
+     "title": "Approval agent | Inspect documentation",
+     "url": "https://docs.inspect.com/pull-requests/approval-agent"
+    },
+    {
+     "rank": 5,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 6,
+     "title": "Automatic Approvals - CodeRabbit",
+     "url": "https://docs.coderabbit.ai/pr-reviews/automatic-approvals"
+    },
+    {
+     "rank": 7,
+     "title": "Cubic Alternatives 2026: AI Code Review Tools Compared | Macroscope",
+     "url": "https://macroscope.com/content/cubic-ai-code-review-alternatives-2026"
+    },
+    {
+     "rank": 8,
+     "title": "What Is Approvability? AI Auto-Approve Pull Requests | Macroscope",
+     "url": "https://macroscope.com/content/what-is-approvability-auto-approve-safe-pull-requests"
+    },
+    {
+     "rank": 9,
+     "title": "AI-assisted code review with auto-approve — Software Engineering | The State of Play",
+     "url": "https://www.thestateofplay.ai/practice/ai-assisted-code-review-with-auto-approve"
+    },
+    {
+     "rank": 10,
+     "title": "Cursor Bugbot Alternative for Gating and Routing PR Reviews · Warpway",
+     "url": "https://warpway.ai/guides/cursor-bugbot-alternative"
+    },
+    {
+     "rank": 11,
+     "title": "LiveReview vs. CodeRabbit, Copilot, Bugbot, Claude Code and SonarQube",
+     "url": "https://hexmos.com/livereview/compare/"
+    },
+    {
+     "rank": 12,
+     "title": "Gitar vs Macroscope: AI code review compared | Sonar",
+     "url": "https://www.sonarsource.com/comparison/gitar-vs-macroscope/"
+    },
+    {
+     "rank": 13,
+     "title": "FAQ - LiveReview Docs",
+     "url": "https://hexmos.com/livereview/docs/faq/"
+    },
+    {
+     "rank": 14,
+     "title": "AI Code Review Case Study: Pydantic Auto-Approves 91% of PRs | Macroscope",
+     "url": "https://macroscope.com/content/ai-code-review-case-study-pydantic-auto-approve-pull-requests"
+    },
+    {
+     "rank": 15,
+     "title": "Risk-Gated AI Pull Request Approval with Copilot | Keyhole Software",
+     "url": "https://keyholesoftware.com/ai-pull-request-approval-copilot/"
+    },
+    {
+     "rank": 16,
+     "title": "Best AI Code Review Tools | April 2026 Edition - DEV Community",
+     "url": "https://dev.to/lewiska/best-ai-code-review-tools-april-2026-edition-4pp8"
+    },
+    {
+     "rank": 17,
+     "title": "8 Best AI Code Review Tools for Enterprise Teams (2026)",
+     "url": "https://kodus.io/en/best-ai-code-review-tools-enterprise-teams/"
+    },
+    {
+     "rank": 18,
+     "title": "Best Tools to Cut Pull Request Review Time in 2026 - ItechFAQs",
+     "url": "https://www.itechfaqs.com/best-tools-to-cut-pull-request-review-time-in-2026/"
+    },
+    {
+     "rank": 19,
+     "title": "Qodo Bets on Earned Autonomy to Break the AI Code Review Bottleneck",
+     "url": "https://futurumgroup.com/insights/qodo-bets-on-earned-autonomy-to-break-the-ai-code-review-bottleneck/"
+    },
+    {
+     "rank": 20,
+     "title": "Best Agentic Code Review Tools for Enterprise Teams (2026)",
+     "url": "https://hub.qodo.ai/post/best-agentic-code-review-tools-enterprise-teams/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://macroscope.com/approvability",
+  "https://www.greptile.com/docs/code-review/auto-approve-prs",
+  "https://docs.cubic.dev/ai-review/auto-approval",
+  "https://warpway.ai/guides/ai-code-review-tools-that-approve-pull-requests",
+  "https://error-path.github.io/opendrs/alternatives.html"
+ ],
+ "recommendations": [
+  {
+   "name": "Macroscope Approvability",
+   "url": "https://macroscope.com/approvability",
+   "description": "Macroscope's Approvability tool automatically approves low-risk PRs based on predefined policies, ensuring that only safe changes receive approval."
+  },
+  {
+   "name": "Greptile Auto-approve PRs",
+   "url": "https://www.greptile.com/docs/code-review/auto-approve-prs",
+   "description": "Greptile's Auto-approve PRs feature allows the tool to automatically approve low-risk, bug-free PRs after a clean 5/5 review."
+  },
+  {
+   "name": "cubic Auto-approval",
+   "url": "https://docs.cubic.dev/ai-review/auto-approval",
+   "description": "cubic's Auto-approval feature enables the tool to skip human review for clean, low-risk pull requests based on your repository policy."
+  }
+ ]
+}

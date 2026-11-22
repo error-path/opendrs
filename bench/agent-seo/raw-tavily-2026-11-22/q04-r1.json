@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "blast radius github",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub - DhruvP2205/blast-radius: Blast Radius is a browser-based interactive simulation built for the System Collapse Hackathon. It turns the abstract concepts of distributed system failure, cascading latency, and \"blast radius\" into a visceral, visual, and educational experience. · GitHub",
+     "url": "https://github.com/DhruvP2205/blast-radius"
+    },
+    {
+     "rank": 2,
+     "title": "blast-radius · GitHub Topics · GitHub",
+     "url": "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated"
+    },
+    {
+     "rank": 3,
+     "title": "blast-radius/README.md at main · buildingopen/blast-radius · GitHub",
+     "url": "https://github.com/buildingopen/blast-radius/blob/main/README.md"
+    },
+    {
+     "rank": 4,
+     "title": "What Is Blast Radius? How to Reduce It Strategically｜ExplainThis",
+     "url": "https://www.explainthis.io/en/swe/what-is-blast-radius-how-to-reduce-strategically"
+    },
+    {
+     "rank": 5,
+     "title": "BlastGuard PR Blast Radius · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius"
+    },
+    {
+     "rank": 6,
+     "title": "plugins/pstack/skills/blast-radius/SKILL.md at main · cursor/plugins · GitHub",
+     "url": "https://github.com/cursor/plugins/blob/main/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+     "rank": 7,
+     "title": "Blast Radius",
+     "url": "https://28mm.github.io/blast-radius-docs"
+    },
+    {
+     "rank": 8,
+     "title": "BLAST RADIUS",
+     "url": "https://www.blastradius.fail"
+    },
+    {
+     "rank": 9,
+     "title": "Blast Radius in Software Engineering: Measure It, Contain It",
+     "url": "https://riftmap.dev/blog/blast-radius-software-engineering"
+    },
+    {
+     "rank": 10,
+     "title": "Blast Radius in Terraform: What it is and how to reduce it",
+     "url": "https://stategraph.com/blog/terraform-blast-radius"
+    },
+    {
+     "rank": 11,
+     "title": "pfrederiksen/blast-radius: Local-first AWS dependency graph CLI to ...",
+     "url": "https://github.com/pfrederiksen/blast-radius"
+    },
+    {
+     "rank": 12,
+     "title": "Understanding and Limiting Terraform Blast Radius",
+     "url": "https://medium.com/@DiggerHQ/understanding-and-limiting-terraform-blast-radius-da071673df16"
+    },
+    {
+     "rank": 13,
+     "title": "[2608.07440] Blast Radius",
+     "url": "https://arxiv.org/abs/2608.07440"
+    },
+    {
+     "rank": 14,
+     "title": "BlastRadius - patel-aum",
+     "url": "https://github.com/patel-aum/BlastRadius"
+    },
+    {
+     "rank": 15,
+     "title": "Blast Radius",
+     "url": "https://tavily.com/knowledge/company/pkwKNY0rr8KS"
+    },
+    {
+     "rank": 16,
+     "title": "Blast Radius Company Overview, Contact Details & Competitors | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23"
+    },
+    {
+     "rank": 17,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/us/new-york/blast-radius-407461812"
+    },
+    {
+     "rank": 18,
+     "title": "Blast Radius - Products, Competitors, Financials, Employees, Headquarters Locations",
+     "url": "https://www.cbinsights.com/company/blast-radius"
+    },
+    {
+     "rank": 19,
+     "title": "Blast Radius",
+     "url": "https://www.mapquest.com/ca/british-columbia/blast-radius-inc-281161703"
+    },
+    {
+     "rank": 20,
+     "title": "Blast Radius Employee Directory, Headcount & Staff | LeadIQ",
+     "url": "https://leadiq.com/c/blast-radius/5a1d8a182400002400636b23/employee-directory"
+    }
+   ]
+  },
+  {
+   "query": "GitHub Actions for automating pull request checks and validation",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Validate Issues over Pull Requests · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/validate-issues-over-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "How to Set Up Automated PR Review in Your GitHub Workflow (2026) — screencli blog",
+     "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+    },
+    {
+     "rank": 3,
+     "title": "How to Configure GitHub Actions for Pull Requests",
+     "url": "https://oneuptime.com/blog/post/2026-02-02-github-actions-pull-requests/view"
+    },
+    {
+     "rank": 4,
+     "title": "Pull Request Checks · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/pull-request-checks"
+    },
+    {
+     "rank": 5,
+     "title": "Pull Request Validator · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/pull-request-validator"
+    },
+    {
+     "rank": 6,
+     "title": "Verify your Pull Requests with GitHub Actions in Node.js projects - DEV Community",
+     "url": "https://dev.to/octolab/verify-your-pull-requests-with-github-actions-in-nodejs-projects-5fdk"
+    },
+    {
+     "rank": 7,
+     "title": "Smarter Pull Requests: Balancing AI, Automation, and Human Review",
+     "url": "https://medium.com/@rethinkyourunderstanding/smarter-pull-requests-balancing-ai-automation-and-human-review-ebb7d586e968"
+    },
+    {
+     "rank": 8,
+     "title": "Streamlining the pull request process with automation tools",
+     "url": "https://graphite.com/guides/streamlining-pull-request-process-automation"
+    },
+    {
+     "rank": 9,
+     "title": "Code Review for GitHub: A Practical Workflow Guide | Vision",
+     "url": "https://vson.ai/blog/code-review-for-github"
+    },
+    {
+     "rank": 10,
+     "title": "Creating GitHub Checks (and Understanding the Checks API) - Ken Muse",
+     "url": "https://www.kenmuse.com/blog/creating-github-checks"
+    },
+    {
+     "rank": 11,
+     "title": "Automated Github PR Testing | DevAssure O2",
+     "url": "https://www.devassure.io/github-actions"
+    },
+    {
+     "rank": 12,
+     "title": "How to Automate Code Reviews Using GitHub Actions for Better Workflow · community · Discussion #178963 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/178963"
+    },
+    {
+     "rank": 13,
+     "title": "Automated Pull Request Checks on Github – Sam Turrell",
+     "url": "https://samturrell.github.io/2018/11/26/automated-github-checks-probot"
+    },
+    {
+     "rank": 14,
+     "title": "Automate GitHub PR Reviews with AI (Node.js, Claude & GitHub Actions)",
+     "url": "https://www.youtube.com/watch?v=XgAZBRZ7yy0"
+    },
+    {
+     "rank": 15,
+     "title": "Secure use reference - GitHub Enterprise Cloud Docs",
+     "url": "https://docs.github.com/en/enterprise-cloud@latest/actions/reference/security/secure-use"
+    },
+    {
+     "rank": 16,
+     "title": "Pull request reviewer reminder action · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/pull-request-reviewer-reminder-action"
+    },
+    {
+     "rank": 17,
+     "title": "Status checks - GitHub Docs",
+     "url": "https://docs.github.com/en/pull-requests/reference/status-checks"
+    },
+    {
+     "rank": 18,
+     "title": "TestMu AI Announces GitHub App Integration for KaneAI, enabling End‑to‑End AI‑Powered Test Validation Directly in Pull Requests",
+     "url": "https://ca.finance.yahoo.com/news/testmu-ai-announces-github-app-150000004.html"
+    },
+    {
+     "rank": 19,
+     "title": "github - Trigger action on pull request not working - Stack Overflow",
+     "url": "https://stackoverflow.com/questions/79292495/trigger-action-on-pull-request-not-working"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub Launches GitHub Actions for Developers - Business Insider",
+     "url": "https://www.businessinsider.com/github-launches-github-actions-for-developers-2018-10"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/DhruvP2205/blast-radius",
+  "https://github.com/topics/blast-radius?l=typescript&o=desc&s=updated",
+  "https://github.com/buildingopen/blast-radius/blob/main/README.md",
+  "https://github.com/marketplace/actions/validate-issues-over-pull-requests",
+  "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow"
+ ],
+ "recommendations": [
+  {
+   "name": "BlastGuard PR Blast Radius",
+   "url": "https://github.com/marketplace/actions/blastguard-pr-blast-radius",
+   "description": "A GitHub Action to assess the potential impact of a pull request on a project's dependencies."
+  },
+  {
+   "name": "Validate Issues over Pull Requests",
+   "url": "https://github.com/marketplace/actions/validate-issues-over-pull-requests",
+   "description": "A GitHub Action to ensure that a pull request is linked to a valid issue."
+  },
+  {
+   "name": "ScreenCLI Automated PR Review",
+   "url": "https://screencli.sh/blog/set-up-automated-pr-review-github-workflow",
+   "description": "A detailed guide on setting up automated PR review in your GitHub workflow, including deterministic gates, AI review, and behavioral verification."
+  }
+ ]
+}

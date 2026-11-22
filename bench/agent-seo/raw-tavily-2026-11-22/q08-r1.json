@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Diff Risk Score: AI-driven risk-aware software development at Meta — brainai.pro",
+     "url": "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 4,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://code-dev.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 5,
+     "title": "How Meta Reduced Code Review Load While Maintaining Production Reliability - DEV Community",
+     "url": "https://dev.to/shrsv/how-meta-reduced-code-review-load-while-maintaining-production-reliability-4kcj"
+    },
+    {
+     "rank": 6,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351v1"
+    },
+    {
+     "rank": 7,
+     "title": "Measuring the Impact of AI on Developer Productivity at Meta",
+     "url": "https://www.youtube.com/watch?v=1OzxYK2-qsI"
+    },
+    {
+     "rank": 8,
+     "title": "Why Meta Platforms' Open-Source AI Strategy Might Win the Long Game",
+     "url": "https://finance.yahoo.com/news/why-meta-platforms-open-source-080000414.html"
+    },
+    {
+     "rank": 9,
+     "title": "AI Lab Watch",
+     "url": "https://ailabwatch.org/companies/meta"
+    },
+    {
+     "rank": 10,
+     "title": "Here’s How Meta Platforms’ (META) Open-Source Advantage Will Drive Future Growth",
+     "url": "https://finance.yahoo.com/news/meta-platforms-meta-open-source-165031151.html"
+    },
+    {
+     "rank": 11,
+     "title": "Meta Made Llama 2 AI Model Open-Source Because 'Zuck Has Balls' - Business Insider",
+     "url": "https://www.businessinsider.com/meta-llama2-open-source-mark-zuckerberg-balls-replit-amjad-masad-2023-10"
+    },
+    {
+     "rank": 12,
+     "title": "Meta Outlines Open Source Contributions in 2024 [Infographic]",
+     "url": "https://finance.yahoo.com/news/meta-outlines-open-source-contributions-153103318.html"
+    },
+    {
+     "rank": 13,
+     "title": "Hidden Risks in Open-Source Code and AI Models",
+     "url": "https://www.youtube.com/watch?v=1NUwUBtttzU"
+    },
+    {
+     "rank": 14,
+     "title": "Open Source AI | Meta",
+     "url": "https://ai.meta.com/opensourceai"
+    },
+    {
+     "rank": 15,
+     "title": "How Meta reduced diff authoring time by 40%",
+     "url": "https://www.youtube.com/watch?v=d1gFQ_6OWAQ"
+    },
+    {
+     "rank": 16,
+     "title": "Meta may ditch open-source Behemoth for a private model",
+     "url": "https://cryptorank.io/news/feed/41713-meta-may-ditch-open-source-behemoth"
+    },
+    {
+     "rank": 17,
+     "title": "How Meta Scaling AI-Native Engineering Tripled Code Coverage (And Cut Slop)",
+     "url": "https://www.youtube.com/watch?v=pT-nyd6o_WY"
+    },
+    {
+     "rank": 18,
+     "title": "Meta AI and Systems Co-design",
+     "url": "https://aisystemcodesign.github.io"
+    },
+    {
+     "rank": 19,
+     "title": "Engineering Clarity, The GitClear Blog",
+     "url": "https://www.gitclear.com/blog"
+    },
+    {
+     "rank": 20,
+     "title": "Data Points: Meta’s newest world model research project",
+     "url": "https://www.deeplearning.ai/the-batch/metas-newest-world-model-research-project"
+    }
+   ]
+  },
+  {
+   "query": "Meta's Diff Risk Score (DRS) open-source implementation tools and libraries",
+   "results": [
+    {
+     "rank": 1,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 2,
+     "title": "GitHub - travisjeffery/radar: Go implementation of RADAR (Risk Aware Diff Auto Review), the code-review automation funnel from arXiv:2605.30208 · GitHub",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 3,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 4,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency",
+     "url": "https://arxiv.org/html/2605.30208v1"
+    },
+    {
+     "rank": 5,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 6,
+     "title": "How Meta Reduced Code Review Load While Maintaining Production Reliability - DEV Community",
+     "url": "https://dev.to/shrsv/how-meta-reduced-code-review-load-while-maintaining-production-reliability-4kcj"
+    },
+    {
+     "rank": 7,
+     "title": "How Meta Scaling AI-Native Engineering Tripled Code Coverage (And Cut Slop)",
+     "url": "https://www.youtube.com/watch?v=pT-nyd6o_WY"
+    },
+    {
+     "rank": 8,
+     "title": "CORA: Config Risk Analyzer – Predicting Risk of Configuration ...",
+     "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol394-esem2026/LIPIcs.ESEM.2026.86/LIPIcs.ESEM.2026.86.pdf"
+    },
+    {
+     "rank": 9,
+     "title": "Models and libraries - Meta AI",
+     "url": "https://ai.meta.com/resources/models-and-libraries"
+    },
+    {
+     "rank": 10,
+     "title": "Hidden Risks in Open-Source Code and AI Models",
+     "url": "https://www.youtube.com/watch?v=1NUwUBtttzU"
+    },
+    {
+     "rank": 11,
+     "title": "Open-Source NLP Libraries & Frameworks - ESP on CB Insights",
+     "url": "https://www.cbinsights.com/esp/enterprise-tech/development/open-source-nlp-libraries-&-frameworks"
+    },
+    {
+     "rank": 12,
+     "title": "Open-Source NLP Libraries & Frameworks - ESP on CB Insights",
+     "url": "https://www.cbinsights.com/esp/enterprise-tech/bi-&-operational-intelligence/open-source-nlp-libraries-&-frameworks"
+    },
+    {
+     "rank": 13,
+     "title": "Meta's AI ecosystem: all in on open source",
+     "url": "https://www.cnbc.com/video/2024/10/23/metas-ai-ecosystem-all-in-on-open-source.html"
+    },
+    {
+     "rank": 14,
+     "title": "Meta AI and Systems Co-design",
+     "url": "https://aisystemcodesign.github.io"
+    },
+    {
+     "rank": 15,
+     "title": "Europe Should Keep Open-Source AI Legal, Said Meta's AI Chief - Business Insider",
+     "url": "https://www.businessinsider.com/europe-should-keep-open-source-ai-legal-yann-lecun-2025-2"
+    },
+    {
+     "rank": 16,
+     "title": "SEC.gov | Open Source Policy Implementation",
+     "url": "https://www.sec.gov/about/developer-resources/open-source-policy-implementation"
+    },
+    {
+     "rank": 17,
+     "title": "Search Results | Endor Labs",
+     "url": "https://www.endorlabs.com/results"
+    },
+    {
+     "rank": 18,
+     "title": "Meta",
+     "url": "https://tavily.com/knowledge/company/x3SEp4jnYMU3"
+    },
+    {
+     "rank": 19,
+     "title": "Meta",
+     "url": "https://tavily.com/knowledge/company/qEUrWqYCMNS1"
+    },
+    {
+     "rank": 20,
+     "title": "Articles",
+     "url": "https://getdx.com/articles"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://brainai.pro/news/en/2025/08/06/diff-risk-score-ai-driven-risk-aware-software-development",
+  "https://arxiv.org/html/2511.21964v2",
+  "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+  "https://github.com/travisjeffery/radar"
+ ],
+ "recommendations": [
+  {
+   "name": "opendrs Diff Risk Score",
+   "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+   "description": "An open-source action for GitHub that provides a 0-1 risk score for pull requests, enabling AI-reviewed, low-blast-radius PRs to be auto-approved."
+  },
+  {
+   "name": "RADAR",
+   "url": "https://github.com/travisjeffery/radar",
+   "description": "A Go implementation of RADAR (Risk Aware Diff Auto Review), a code-review automation funnel that uses AI to assess the risk of code changes."
+  },
+  {
+   "name": "DRS-OSS",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "An open-source DRS tool equipped with a public API, web UI, and GitHub plugin, designed to predict the risk of code changes causing defects."
+  }
+ ]
+}

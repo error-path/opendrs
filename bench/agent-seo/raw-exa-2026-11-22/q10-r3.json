@@ -1,0 +1,228 @@
+{
+ "searches": [
+  {
+   "query": "reduce code review bottleneck for AI generated PRs",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency | Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "url": "https://dl.acm.org/doi/10.1145/3832783.3834493"
+    },
+    {
+     "rank": 2,
+     "title": "Code review best practices for AI-generated diffs",
+     "url": "https://www.coderabbit.ai/guides/code-review-best-practices-for-ai-generated-code"
+    },
+    {
+     "rank": 3,
+     "title": "How Cosmos accelerated our AI-native transformation by removing the code review bottleneck | Augment Code",
+     "url": "https://www.augmentcode.com/blog/solving-code-review-with-cosmos"
+    },
+    {
+     "rank": 4,
+     "title": "Building a gated review pipeline for AI coding agents on AWS | AWS DevOps & Developer Productivity Blog",
+     "url": "https://aws.amazon.com/blogs/devops/building-a-gated-review-pipeline-for-ai-coding-agents-on-aws/"
+    },
+    {
+     "rank": 5,
+     "title": "AI Code Review Bottleneck: Fix PR Congestion From AI Tools",
+     "url": "https://www.metacto.com/blogs/code-review-bottleneck-ai-development"
+    },
+    {
+     "rank": 6,
+     "title": "How Auto-Approving Low-Risk PRs Lifted Throughput 2.4×",
+     "url": "https://www.assembled.com/blog/code-review-bottlenecks-how-we-hill-climbed-our-way-to-higher-pr-throughput"
+    },
+    {
+     "rank": 7,
+     "title": "How the Claude Code team does code review / claude.dev Blog",
+     "url": "https://claude.dev/blog/solving-code-review-at-anthropic/"
+    },
+    {
+     "rank": 8,
+     "title": "PR Radar: three lessons from building AI-assisted code review",
+     "url": "https://miro.com/articles/engineering/pr-radar-three-lessons-from-building-ai-assisted-code-review/"
+    },
+    {
+     "rank": 9,
+     "title": "AI code review bottleneck: what to measure and decide",
+     "url": "https://tiphys.dev/ai-code-review-bottleneck/"
+    },
+    {
+     "rank": 10,
+     "title": "AI Agent Code Review Bottleneck Fix (2026) | DevOS",
+     "url": "https://devos.team/blog/agents-outpace-human-code-review-bottleneck"
+    },
+    {
+     "rank": 11,
+     "title": "AI Code Review Tool for Every Pull Request | LinearB",
+     "url": "https://linearb.io/platform/ai-code-reviews"
+    },
+    {
+     "rank": 12,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 13,
+     "title": "How Atlassian cut PR cycle time by 45% with AI code reviews - Inside Atlassian",
+     "url": "https://www.atlassian.com/blog/rovo/how-we-cut-pr-cycle-time-with-ai-code-reviews"
+    },
+    {
+     "rank": 14,
+     "title": "GitHub Introduces Stacked PRs to Ease Review Bottlenecks",
+     "url": "https://devops.com/github-introduces-stacked-prs-to-ease-review-bottlenecks"
+    },
+    {
+     "rank": 15,
+     "title": "A Practical Approach to Verifying Code at Scale | OpenAI",
+     "url": "https://openai.com/safety-alignment/scaling-code-verification/"
+    },
+    {
+     "rank": 16,
+     "title": "Configure a Code Review Pipeline",
+     "url": "https://docs.augmentcode.com/cosmos/experts-code-review"
+    },
+    {
+     "rank": 17,
+     "title": "Code Review for AI-Generated Code: What Changes and What to Focus On",
+     "url": "https://verygood.ventures/blog/code-review-ai-generated-code/"
+    },
+    {
+     "rank": 18,
+     "title": "How we accelerated code review in a large monorepo using Agentic Pipelines - Inside Atlassian",
+     "url": "https://www.atlassian.com/blog/bitbucket/how-we-accelerated-code-review-in-a-large-monorepo-using-agentic-pipelines"
+    },
+    {
+     "rank": 19,
+     "title": "Scaling code review for AI-generated PRs: Intent and invariants over line-by-line reading",
+     "url": "https://thekernelwire.com/devops/scaling-code-review-for-ai-generated-prs-intent-and-invariants-over-line-by-line-reading"
+    },
+    {
+     "rank": 20,
+     "title": "Code Review in the Age of AI-Generated PRs · Subash Adhikari",
+     "url": "https://subash.tech/2026/code-review-ai-prs"
+    }
+   ]
+  },
+  {
+   "query": "AI code review tools comparison and user reviews",
+   "results": [
+    {
+     "rank": 1,
+     "title": "We Ran 11 AI PR Review Bots (and kept 1) | xD (Logan's Blog)",
+     "url": "https://loganharless.com/blog/ai-pr-bot-rankings"
+    },
+    {
+     "rank": 2,
+     "title": "AI Code Review Tools Benchmark",
+     "url": "https://aimultiple.com/ai-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "What's the best AI code review tool? First impressions from trying 8 tools including Greptile, Copilot, CodeAnt, Ellipsis, Sourcery, CodeRabbit, CloudAEye and Kypso.",
+     "url": "https://blog.bluedot.org/p/best-ai-code-review-tools-2025"
+    },
+    {
+     "rank": 4,
+     "title": "Comparing 9 Code Review Tools - Which is Best?",
+     "url": "https://stack.convex.dev/best-ai-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "7 AI Code Review Tools Benchmarked & Compared",
+     "url": "https://www.turingpost.com/p/augmentedcode2"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools (2026): 13 Compared",
+     "url": "https://crewmark.ai/blog/ai-code-review-tools"
+    },
+    {
+     "rank": 7,
+     "title": "Picking an AI Code Reviewer",
+     "url": "https://markmarkoh.com/post/picking-an-ai-code-reviewer/"
+    },
+    {
+     "rank": 8,
+     "title": "How to Choose an AI Code Review Tool by Testing It Yourself",
+     "url": "https://aicodereviewtools.dev/how-to-choose-an-ai-code-review-tool/"
+    },
+    {
+     "rank": 9,
+     "title": "5 AI code review tools, ranked on one head-to-head test. - DEV Community",
+     "url": "https://dev.to/technaom/5-ai-code-review-tools-ranked-on-one-head-to-head-test-4cp7"
+    },
+    {
+     "rank": 10,
+     "title": "Best AI Code Review Tools (2026) - Independent Reviews & Rankings | ACR",
+     "url": "https://aicodereview.cc/"
+    },
+    {
+     "rank": 11,
+     "title": "AI Code Review Tools 2026: CodeRabbit, Greptile, Diamond, Cody, Cursor — The Comparison Nobody Publishes Honestly | BirJob",
+     "url": "https://www.birjob.com/blog/ai-code-review-tools-2026"
+    },
+    {
+     "rank": 12,
+     "title": "Best AI Code Review Tool 2026: I Tested Every Major Option",
+     "url": "https://aiproductweekly.substack.com/p/best-ai-code-review-tool-2026-i-tested-faf"
+    },
+    {
+     "rank": 13,
+     "title": "I Tested 12 AI Code Review Tools — Only 3 Passed My 2026 Standards - DEV Community",
+     "url": "https://dev.to/hopkins_jesse_cdb68cfa22c/i-tested-12-ai-code-review-tools-only-3-passed-my-2026-standards-joa"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update) | Macroscope",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 15,
+     "title": "Best Code Review Tools in 2026 | Toolradar",
+     "url": "https://toolradar.com/best/code-review"
+    },
+    {
+     "rank": 16,
+     "title": "Code review: which tools coding agents choose",
+     "url": "https://armature.tech/leaderboards/code-review.md"
+    },
+    {
+     "rank": 17,
+     "title": "We Ran 11 AI PR Bots (and kept 1) - Indie Hackers",
+     "url": "https://www.indiehackers.com/post/we-ran-11-ai-pr-bots-and-kept-1-061e5ec680"
+    },
+    {
+     "rank": 18,
+     "title": "Best AI Code Review Tools in 2026: 16 Compared, With Benchmarks",
+     "url": "https://agentsystems.blog/best-ai-code-review-tools"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://dl.acm.org/doi/10.1145/3832783.3834493",
+  "https://www.coderabbit.ai/guides/code-review-best-practices-for-ai-generated-code",
+  "https://www.augmentcode.com/blog/solving-code-review-with-cosmos",
+  "https://loganharless.com/blog/ai-pr-bot-rankings",
+  "https://aimultiple.com/ai-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "Cosmos",
+   "url": "https://www.augmentcode.com/blog/solving-code-review-with-cosmos",
+   "description": "A tool that accelerates code review by automatically approving low-risk changes and focusing human reviewers on more complex PRs."
+  },
+  {
+   "name": "LoganHarless's AI PR Bot Rankings",
+   "url": "https://loganharless.com/blog/ai-pr-bot-rankings",
+   "description": "A comparison of 11 AI PR review bots, with 'Gemini Code Assist' and 'Cursor Bugbot' ranking highest for intelligence, speed, and affordability."
+  },
+  {
+   "name": "AIMultiple's AI Code Review Tools Benchmark",
+   "url": "https://aimultiple.com/ai-code-review-tools",
+   "description": "A comprehensive benchmark of AI code review tools, featuring categories like AI Agents, Model Context, Protocol, and more."
+  }
+ ]
+}

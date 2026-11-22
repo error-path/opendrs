@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Deepthi-04/deltaprobe",
+     "url": "https://github.com/deepthi-04/deltaprobe"
+    },
+    {
+     "rank": 2,
+     "title": "Kaushal-SF/devflow-mcp",
+     "url": "https://github.com/Kaushal-SF/devflow-mcp"
+    },
+    {
+     "rank": 3,
+     "title": "gitlumen-team/gitlumen-mcp",
+     "url": "https://github.com/gitlumen-team/gitlumen-mcp"
+    },
+    {
+     "rank": 4,
+     "title": "Senix: AI Code Review for Pull Requests",
+     "url": "https://senix.dev/"
+    },
+    {
+     "rank": 5,
+     "title": "mann-uofg/codeview-mcp",
+     "url": "https://github.com/mann-uofg/codeview-mcp"
+    },
+    {
+     "rank": 6,
+     "title": "x-asd/pr-guard-mcp",
+     "url": "https://github.com/x-asd/pr-guard-mcp"
+    },
+    {
+     "rank": 7,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 8,
+     "title": "thangtn83/mcp_pr_review",
+     "url": "https://github.com/thangtn83/mcp_pr_review"
+    },
+    {
+     "rank": 9,
+     "title": "AshishChandpa/AI-PR-Review-MCP",
+     "url": "https://github.com/AshishChandpa/AI-PR-Review-MCP"
+    },
+    {
+     "rank": 10,
+     "title": "culprit by noordeen123 | Glama",
+     "url": "https://glama.ai/mcp/servers/noordeen123/culprit"
+    },
+    {
+     "rank": 11,
+     "title": "salesforce-misc/pr-council-mcp",
+     "url": "https://github.com/salesforce-misc/pr-council-mcp"
+    },
+    {
+     "rank": 12,
+     "title": "meanusarcanus/ai-pr-reviewer-action",
+     "url": "https://github.com/meanusarcanus/ai-pr-reviewer-action"
+    },
+    {
+     "rank": 13,
+     "title": "Gitlumen | AI Powered Code Review Intelligence",
+     "url": "https://gitlumen.com/"
+    },
+    {
+     "rank": 14,
+     "title": "trajanovd/Ai-code-reviewer",
+     "url": "https://github.com/trajnovd/Ai-code-reviewer"
+    },
+    {
+     "rank": 15,
+     "title": "code-guardian-mcp v0.3.1",
+     "url": "https://pypi.org/project/code-guardian-mcp/"
+    },
+    {
+     "rank": 16,
+     "title": "dstamand-msft/AzureDevOpsPullRequestAgent",
+     "url": "https://github.com/dstamand-msft/AzureDevOpsPullRequestAgent"
+    },
+    {
+     "rank": 17,
+     "title": "ayushv7/PRPilot",
+     "url": "https://github.com/ayushv7/PRPilot"
+    },
+    {
+     "rank": 18,
+     "title": "check_pr_risk - deltaprobe | Glama",
+     "url": "https://glama.ai/mcp/servers/Deepthi-04/deltaprobe/tools/check_pr_risk"
+    },
+    {
+     "rank": 19,
+     "title": "CoderSufiyan/mcp-risk",
+     "url": "https://github.com/CoderSufiyan/mcp-risk"
+    },
+    {
+     "rank": 20,
+     "title": "Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers — ChatForest",
+     "url": "https://chatforest.com/reviews/code-review-pull-request-mcp-servers/"
+    }
+   ]
+  },
+  {
+   "query": "Best practices for evaluating the risk of code changes or pull requests in software development projects",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Risk-Based Code Review: Match Checks to Failure Modes · Yelno",
+     "url": "https://yelno.ai/blog/risk-based-code-review-process"
+    },
+    {
+     "rank": 2,
+     "title": "8. Review, merging and risk | Programming the Loop",
+     "url": "https://programmingtheloop.com/guides/programming-the-loop/review-merging-risk/"
+    },
+    {
+     "rank": 3,
+     "title": "Secure Code Review - OWASP DevSecOps Guideline",
+     "url": "https://owasp.github.io/DevSecOpsGuideline/2-Process/2-2-Develop/2-2-3-Secure-Code-Review/"
+    },
+    {
+     "rank": 4,
+     "title": "Secure Code Review - OWASP Cheat Sheet Series",
+     "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html"
+    },
+    {
+     "rank": 5,
+     "title": "Code Review Best Practices | IBM",
+     "url": "https://www.ibm.com/think/topics/code-review-best-practices"
+    },
+    {
+     "rank": 6,
+     "title": "Pull Requests - Engineering Fundamentals Playbook",
+     "url": "https://microsoft.github.io/code-with-engineering-playbook/code-reviews/pull-requests/"
+    },
+    {
+     "rank": 7,
+     "title": "Assess pull request risk with Merge Risk",
+     "url": "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk"
+    },
+    {
+     "rank": 8,
+     "title": "How to review a pull request | Good Code Review",
+     "url": "https://goodcodereview.com/guides/how-to-review-a-pull-request"
+    },
+    {
+     "rank": 9,
+     "title": "Pull Request Review Checklist | Good Code Review",
+     "url": "https://goodcodereview.com/change"
+    },
+    {
+     "rank": 10,
+     "title": "2.5 Code review and collaboration — Software Engineering Guide",
+     "url": "https://software-engineering-guide.github.io/en-us/topics/02-05-code-review-and-collaboration/"
+    },
+    {
+     "rank": 11,
+     "title": "Enhanced code reviews using pull request based change impact analysis | Empirical Software Engineering | Springer Nature Link",
+     "url": "https://link.springer.com/article/10.1007/s10664-024-10600-2"
+    },
+    {
+     "rank": 12,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency | Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "url": "https://dl.acm.org/doi/10.1145/3832783.3834493"
+    },
+    {
+     "rank": 13,
+     "title": "An Industrial Study on the Risk of Software Changes",
+     "url": "https://www.eecs.yorku.ca/~zmjiang/publications/FSE2012_shihab.pdf"
+    },
+    {
+     "rank": 14,
+     "title": "How risk scoring works | Pullminder Docs",
+     "url": "https://docs.pullminder.com/guides/how-risk-scoring-works/"
+    },
+    {
+     "rank": 15,
+     "title": "Change risk and release radar · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/change-risk"
+    },
+    {
+     "rank": 16,
+     "title": "Security code review: trace a pull request's boundaries",
+     "url": "https://softwaresecurity.com/domains/appsec/code-review/security-code-review/"
+    },
+    {
+     "rank": 17,
+     "title": "Finding and Fixing Vulnerabilities Using AI – Evaluate merge/pull requests",
+     "url": "https://best.openssf.org/Finding-and-Fixing-Vulnerabilities-Using-AI/evaluate-mergepull-requests.html"
+    },
+    {
+     "rank": 18,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 19,
+     "title": "What a Repository-Wide Review Finds That a PR Diff Misses · Tomosu AI",
+     "url": "https://tomosu.ai/blogs/repository-wide-review-vs-pr-diff.html"
+    },
+    {
+     "rank": 20,
+     "title": "reviewing-code-changes — SecSkills",
+     "url": "https://trilwu.github.io/secskills/skills/reviewing-code-changes.html"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://github.com/deepthi-04/deltaprobe",
+  "https://github.com/Kaushal-SF/devflow-mcp",
+  "https://github.com/gitlumen-team/gitlumen-mcp",
+  "https://yelno.ai/blog/risk-based-code-review-process",
+  "https://programmingtheloop.com/guides/programming-the-loop/review-merging-risk/"
+ ],
+ "recommendations": [
+  {
+   "name": "deltaprobe",
+   "url": "https://github.com/deepthi-04/deltaprobe",
+   "description": "An open-source tool that provides a framework for building AI-powered code review tools."
+  },
+  {
+   "name": "devflow-mcp",
+   "url": "https://github.com/Kaushal-SF/devflow-mcp",
+   "description": "A tool for automating the review and merging of pull requests using machine learning."
+  },
+  {
+   "name": "gitlumen-mcp",
+   "url": "https://github.com/gitlumen-team/gitlumen-mcp",
+   "description": "An open-source platform for automating code review and repository management using AI."
+  }
+ ]
+}

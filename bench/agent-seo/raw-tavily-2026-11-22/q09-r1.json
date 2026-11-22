@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "MCP server for pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "MCP Security: Risks, Real Incidents & Controls (2026) - Checkmarx",
+     "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls"
+    },
+    {
+     "rank": 2,
+     "title": "pull request MCP Servers | Glama",
+     "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request"
+    },
+    {
+     "rank": 3,
+     "title": "MCP Security: Risks and Best Practices | Cycode",
+     "url": "https://cycode.com/blog/mcp-security-risks-best-practices"
+    },
+    {
+     "rank": 4,
+     "title": "Securing the Model Context Protocol (MCP): Risks, Controls, and Governance",
+     "url": "https://arxiv.org/html/2511.20920v1"
+    },
+    {
+     "rank": 5,
+     "title": "Add recommended security policies for tool-level enforcement by L1AD · Pull Request #2294 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/pull/2294/files"
+    },
+    {
+     "rank": 6,
+     "title": "`pull_request_review_write` combines create/submit/delete into one tool, making fine-grained permissions by method impossible · Issue #2525 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2525"
+    },
+    {
+     "rank": 7,
+     "title": "Git Pr: Automate Git & Pull Requests with MCP",
+     "url": "https://mcpmarket.com/server/git-pr"
+    },
+    {
+     "rank": 8,
+     "title": "Build an AI GitHub PR Reviewer with MCP (Complete Recipe)",
+     "url": "https://mcpplaygroundonline.com/blog/build-ai-github-pr-reviewer-mcp-recipe"
+    },
+    {
+     "rank": 9,
+     "title": "Build an AI PR Reviewer with MCP & Gemini",
+     "url": "https://www.decodingai.com/p/build-with-mcp-like-a-real-engineer"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+     "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    },
+    {
+     "rank": 11,
+     "title": "Using GitHub MCP With Continue to Review PRs and Issues 5 Faster - DEV Community",
+     "url": "https://dev.to/anita_ihuman/using-github-mcp-with-continue-to-review-prs-and-issues-5x-faster-1p8a"
+    },
+    {
+     "rank": 12,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 13,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 14,
+     "title": "Understanding MCP security: Common risks to watch for | Datadog",
+     "url": "https://www.datadoghq.com/blog/monitor-mcp-servers"
+    },
+    {
+     "rank": 15,
+     "title": "Prompt → Pull Request: Automating GitHub with MCP Server",
+     "url": "https://blog.devops.dev/prompt-pull-request-automating-github-with-mcp-server-4b426974bb42"
+    },
+    {
+     "rank": 16,
+     "title": "Review MCP Server Security Best Practices | BACKSLASH SECURITY - Backslash",
+     "url": "https://www.backslash.security/blog/top-risks-mcp-servers-ide"
+    },
+    {
+     "rank": 17,
+     "title": "Enables management of Bitbucket Cloud pull requests through natural ...",
+     "url": "https://www.reddit.com/r/mcp/comments/1rapfd1/bitbucket_mcp_server_enables_management_of"
+    },
+    {
+     "rank": 18,
+     "title": "Model Context Protocol: Security Risks & Mitigations | SOC Prime",
+     "url": "https://socprime.com/blog/mcp-security-risks-and-mitigations"
+    },
+    {
+     "rank": 19,
+     "title": "failed to create pull request: repeat PR, better error msging · Issue #2931 · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/issues/2931"
+    },
+    {
+     "rank": 20,
+     "title": "How to Contribute to the MCP Security Project · ModelContextProtocol-Security · Discussion #2 · GitHub",
+     "url": "https://github.com/orgs/ModelContextProtocol-Security/discussions/2"
+    }
+   ]
+  },
+  {
+   "query": "MCP server tools for GitHub pull requests",
+   "results": [
+    {
+     "rank": 1,
+     "title": "GitHub MCP Server – Manage Repos, PRs & Issues | Top MCPs",
+     "url": "https://top-mcps.com/mcp/github"
+    },
+    {
+     "rank": 2,
+     "title": "Git Pr: Automate Git & Pull Requests with MCP",
+     "url": "https://mcpmarket.com/server/git-pr"
+    },
+    {
+     "rank": 3,
+     "title": "Server Github MCP (PR Comment): Tools, Setup & Config",
+     "url": "https://mcp.so/servers/server-github-mcp"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub PR MCP Server: Tools, Setup & Config",
+     "url": "https://mcp.so/servers/github-mcp"
+    },
+    {
+     "rank": 5,
+     "title": "GitHub MCP Server now comes with server instructions, better tools, and more - GitHub Changelog",
+     "url": "https://github.blog/changelog/2025-10-29-github-mcp-server-now-comes-with-server-instructions-better-tools-and-more"
+    },
+    {
+     "rank": 6,
+     "title": "GitHub MCP Server | Awesome MCP Servers",
+     "url": "https://mcpservers.org/servers/MissionSquad/mcp-github"
+    },
+    {
+     "rank": 7,
+     "title": "List of all 51 MCP tools available (as of June 23 2025) on GitHub official Remote MCP (via streamable http) server at https://api.githubcopilot.com/mcp/ · GitHub",
+     "url": "https://gist.github.com/didier-durand/2970be82fec6c84d522f7953ac7881b4"
+    },
+    {
+     "rank": 8,
+     "title": "Medium",
+     "url": "https://medium.com/ai-agent-insider/build-a-claude-powered-pr-review-system-with-mcp-26c78411e766"
+    },
+    {
+     "rank": 9,
+     "title": "GitHub - yazcaleb/mcp-pr-reviewer: Intelligent PR reviews powered by the Model Context Protocol and LLMs · GitHub",
+     "url": "https://github.com/yazcaleb/mcp-pr-reviewer"
+    },
+    {
+     "rank": 10,
+     "title": "Using the GitHub MCP Server from Copilot Chat - GitHub Docs",
+     "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/copilot-for-github-tasks/using-the-github-mcp-server-from-copilot-chat"
+    },
+    {
+     "rank": 11,
+     "title": "GitHub PR Scraper - Pull Requests, Reviews & Metrics API MCP server · Apify",
+     "url": "https://apify.com/fresh_cliff/github-pull-request-scraper-api/api/mcp"
+    },
+    {
+     "rank": 12,
+     "title": "Creating Pull Requests Using GitHub's MCP Server",
+     "url": "https://www.youtube.com/watch?v=cz866bi96_Q"
+    },
+    {
+     "rank": 13,
+     "title": "Using the GitHub MCP Server in your IDE - GitHub Docs",
+     "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server"
+    },
+    {
+     "rank": 14,
+     "title": "Using GitHub MCP With Continue to Review PRs and Issues 5 Faster - DEV Community",
+     "url": "https://dev.to/anita_ihuman/using-github-mcp-with-continue-to-review-prs-and-issues-5x-faster-1p8a"
+    },
+    {
+     "rank": 15,
+     "title": "Pull requests · github/github-mcp-server · GitHub",
+     "url": "https://github.com/github/github-mcp-server/pulls"
+    },
+    {
+     "rank": 16,
+     "title": "Introducing MCP · Introduction to Model Context Protocol · Claude Academy",
+     "url": "https://academy.claude.com/courses/introduction-to-model-context-protocol/introducing-mcp"
+    },
+    {
+     "rank": 17,
+     "title": "GitHub - useparagon/paragon-mcp · GitHub",
+     "url": "https://github.com/useparagon/paragon-mcp"
+    },
+    {
+     "rank": 18,
+     "title": "GitHub - contextstream/mcp-server: The context platform for AI agents. Code search, team decisions, and shared project context with traceable sources and scoped access, carried across sessions and tools. · GitHub",
+     "url": "https://github.com/contextstream/mcp-server"
+    },
+    {
+     "rank": 19,
+     "title": "Miro Launches MCP Server to Connect Visual Collaboration With AI Coding Tools",
+     "url": "https://finance.yahoo.com/news/miro-launches-mcp-server-connect-130000959.html"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub MCP Conformance Testing for QA: Validate the Stateless Migration - QATechTools",
+     "url": "https://qatechtools.com/2026/07/27/github-mcp-conformance-testing-qa-stateless-migration"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+  "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+  "https://cycode.com/blog/mcp-security-risks-best-practices",
+  "https://top-mcps.com/mcp/github",
+  "https://mcpmarket.com/server/git-pr"
+ ],
+ "recommendations": [
+  {
+   "name": "Checkmarx MCP Security",
+   "url": "https://checkmarx.com/learn/mcp-security-risks-real-world-incidents-and-security-controls",
+   "description": "A comprehensive platform for assessing security risks in code repositories, including pull requests."
+  },
+  {
+   "name": "Glama MCP Servers",
+   "url": "https://glama.ai/mcp/servers?attributes=capability%3Alogging&query=pull+request",
+   "description": "A set of MCP servers that can be used to automate pull request workflows and manage repositories."
+  },
+  {
+   "name": "Cycode MCP Security",
+   "url": "https://cycode.com/blog/mcp-security-risks-best-practices",
+   "description": "A resource for understanding the risks associated with MCP security and best practices for managing them."
+  }
+ ]
+}

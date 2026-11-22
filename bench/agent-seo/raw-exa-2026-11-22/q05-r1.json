@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Risk Analyzer | Skaftor",
+     "url": "https://skaftor.com/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 2,
+     "title": "Merge Risk: assess risk before you merge | Warp",
+     "url": "https://www.warp.dev/merge-risk"
+    },
+    {
+     "rank": 3,
+     "title": "Assess pull request risk with Merge Risk",
+     "url": "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk"
+    },
+    {
+     "rank": 4,
+     "title": "Change risk and release radar · MergeHarbor docs",
+     "url": "https://mergeharbor.com/docs/change-risk"
+    },
+    {
+     "rank": 5,
+     "title": "PR Risk Score | Massu AI Docs",
+     "url": "https://massu.ai/docs/guides/pr-risk-score"
+    },
+    {
+     "rank": 6,
+     "title": "PullRule — Automated Code Review Scoring for Git",
+     "url": "https://pullrule.com/"
+    },
+    {
+     "rank": 7,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 8,
+     "title": "tranhoangtu-it/pr-risk-scorer",
+     "url": "https://github.com/tranhoangtu-it/pr-risk-scorer"
+    },
+    {
+     "rank": 9,
+     "title": "PRMergeSafe — Is this PR safe to merge?",
+     "url": "https://prmergesafe.com/"
+    },
+    {
+     "rank": 10,
+     "title": "README.md",
+     "url": "https://github.com/winnin/farol/blob/main/README.md"
+    },
+    {
+     "rank": 11,
+     "title": "How risk scoring works | Pullminder Docs",
+     "url": "https://docs.pullminder.com/guides/how-risk-scoring-works/"
+    },
+    {
+     "rank": 12,
+     "title": "PR risk check",
+     "url": "https://docs.hud.io/docs/pr-risk-check"
+    },
+    {
+     "rank": 13,
+     "title": "karamage/pr-risk-score",
+     "url": "https://github.com/karamage/pr-risk-score"
+    },
+    {
+     "rank": 14,
+     "title": "RepoSignal — Repo-specific PR risk intelligence",
+     "url": "https://reposignal.io/"
+    },
+    {
+     "rank": 15,
+     "title": "How the risk score works: Merge Lantern",
+     "url": "https://mergelantern.com/how-scoring-works"
+    },
+    {
+     "rank": 16,
+     "title": "AI-powered PR verification and risk scoring | Pullminder",
+     "url": "https://pullminder.com/"
+    },
+    {
+     "rank": 17,
+     "title": "vladzima/pullguard",
+     "url": "https://github.com/vladzima/pullguard"
+    },
+    {
+     "rank": 18,
+     "title": "PR Analyzer - Deep Pull Request Analysis & Insights | CodeRaptor",
+     "url": "https://www.coderaptor.ai/features/pr-analysis/"
+    },
+    {
+     "rank": 19,
+     "title": "attrecto/merge-risk",
+     "url": "https://github.com/attrecto/merge-risk"
+    },
+    {
+     "rank": 20,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    }
+   ]
+  },
+  {
+   "query": "Comparison of PR risk analysis tools and their features",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best Crisis and Reputation Risk Monitoring Tools in 2026: Compared by Alerting, Analysis, and Reporting — Delve Blog",
+     "url": "https://delve.news/post/best-crisis-reputation-risk-monitoring-tools-2026/"
+    },
+    {
+     "rank": 2,
+     "title": "PR and Media Monitoring Tools Reviews and Ratings",
+     "url": "https://www.gartner.com/reviews/market/pr-and-media-monitoring-tools"
+    },
+    {
+     "rank": 3,
+     "title": "Meltwater alternatives for corporate affairs teams",
+     "url": "https://polecat.com/compare/meltwater-alternatives-for-corporate-affairs"
+    },
+    {
+     "rank": 4,
+     "title": "Best Narrative Tracking Tools for PR Teams in 2026 • Pulsar Platform",
+     "url": "https://www.pulsarplatform.com/guides/best-narrative-tracking-tools-2026"
+    },
+    {
+     "rank": 5,
+     "title": "Risk and Reputational Intelligence Platforms Compared: What to look for if you're a CRO or CCO",
+     "url": "https://maha.global/blog/risk-intelligence-platforms-compared-a-guide-for-cros-and-ccos"
+    },
+    {
+     "rank": 6,
+     "title": "PR Media Monitoring Tools: Match Tool to Job - MultisensorProject.eu",
+     "url": "https://www.multisensorproject.eu/pr-media-monitoring-tools/"
+    },
+    {
+     "rank": 7,
+     "title": "Narrative Risk Detection: Monitor Brand Threats Before They Break | Pulsar",
+     "url": "https://www.pulsarplatform.com/guides/narrative-risk-monitoring"
+    },
+    {
+     "rank": 8,
+     "title": "Media and news intelligence: buyer guide (October 2026) | Stratrix",
+     "url": "https://www.stratrix.com/buyer-guides/media-and-news-intelligence"
+    },
+    {
+     "rank": 9,
+     "title": "Critical Capabilities for PR and Media Monitoring Tools",
+     "url": "https://www.gartner.com/en/documents/8527709"
+    },
+    {
+     "rank": 10,
+     "title": "The best risk intelligence platforms for CROs in 2026",
+     "url": "https://polecat.com/blog/best-risk-intelligence-platforms"
+    },
+    {
+     "rank": 11,
+     "title": "12 Best AI Tools for PR to Try in 2026 | Brand24 | Brand24",
+     "url": "https://brand24.com/blog/ai-tools-for-pr/"
+    },
+    {
+     "rank": 12,
+     "title": "Reputation Risk Scoring: Principles and Methods | Meltwater",
+     "url": "https://www.meltwater.com/en/blog/reputation-risk-score"
+    },
+    {
+     "rank": 13,
+     "title": "7 Best Narrative Intelligence Solutions for Information Risk",
+     "url": "https://bestnarrativeintelligencesolutions.com/"
+    },
+    {
+     "rank": 14,
+     "title": "Best AI-powered PR tools for agencies and brands",
+     "url": "https://www.contentgrip.com/top-ai-powered-pr-tools/"
+    },
+    {
+     "rank": 15,
+     "title": "RepTrak vs RepRisk: ESG Risk vs Corporate Reputation",
+     "url": "https://www.reptrak.com/compare/reptrak-vs-reprisk/"
+    },
+    {
+     "rank": 16,
+     "title": "The best ESG controversy and reputational risk data providers in 2026",
+     "url": "https://polecat.com/blog/best-esg-controversy-data-providers"
+    },
+    {
+     "rank": 17,
+     "title": "The best peer benchmarking tools for risk and reputation",
+     "url": "https://polecat.com/blog/best-peer-benchmarking-tools-risk-reputation"
+    },
+    {
+     "rank": 18,
+     "title": "13 Best Brand Monitoring Tools to Track Reputation (2026)",
+     "url": "https://geekflare.com/guides/best-brand-monitoring-tools/"
+    },
+    {
+     "rank": 19,
+     "title": "Best PR Tools for 2026: The complete guide (60+ tools, no B.S.)",
+     "url": "https://pr.co/pr-resources/best-pr-tools"
+    },
+    {
+     "rank": 20,
+     "title": "Best AI Tools for Public Relations in 2026 (By Job) | YouScan",
+     "url": "https://youscan.io/blog/ai-tools-for-public-relations/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://skaftor.com/tools/pr-risk-analyzer",
+  "https://www.warp.dev/merge-risk",
+  "https://docs.qodo.ai/code-review/assess-pull-request-merge-risk",
+  "https://delve.news/post/best-crisis-reputation-risk-monitoring-tools-2026/",
+  "https://www.gartner.com/reviews/market/pr-and-media-monitoring-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "PR Risk Analyzer by Skaftor",
+   "url": "https://skaftor.com/tools/pr-risk-analyzer",
+   "description": "An AI-powered tool that scores pull requests based on signals like change size, test coverage, and author familiarity."
+  },
+  {
+   "name": "Merge Risk by Warp",
+   "url": "https://www.warp.dev/merge-risk",
+   "description": "A tool that assesses the risk of merging pull requests by evaluating alignment, impact, verification, rollback cost, and error detection."
+  },
+  {
+   "name": "PRMergeSafe",
+   "url": "https://prmergesafe.com/",
+   "description": "A tool designed to evaluate the risk of merging pull requests by analyzing the code changes and their potential impact."
+  }
+ ]
+}

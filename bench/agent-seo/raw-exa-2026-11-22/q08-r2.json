@@ -1,0 +1,233 @@
+{
+ "searches": [
+  {
+   "query": "Meta diff risk score open source",
+   "results": [
+    {
+     "rank": 1,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 2,
+     "title": "opendrs Diff Risk Score · Actions · GitHub Marketplace · GitHub",
+     "url": "https://github.com/marketplace/actions/opendrs-diff-risk-score"
+    },
+    {
+     "rank": 3,
+     "title": "Risk signals: what opendrs measures | opendrs",
+     "url": "https://error-path.github.io/opendrs/signals.html"
+    },
+    {
+     "rank": 4,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency",
+     "url": "https://arxiv.org/abs/2605.30208"
+    },
+    {
+     "rank": 5,
+     "title": "Moving Faster and Reducing Risk: Using LLMs in Release Deployment",
+     "url": "https://arxiv.org/html/2410.06351"
+    },
+    {
+     "rank": 6,
+     "title": "travisjeffery/radar",
+     "url": "https://github.com/travisjeffery/radar"
+    },
+    {
+     "rank": 7,
+     "title": "Diff Risk Score Model – Ian’s Blog",
+     "url": "https://ianbarber.blog/2024/12/17/diff-risk-score-model/"
+    },
+    {
+     "rank": 8,
+     "title": "Sharing broadly, DRS is something we have been working on here at Meta the last 2 years. | Nachi Nagappan",
+     "url": "https://www.linkedin.com/posts/nachi-nagappan-10910b1_diff-risk-score-ai-driven-risk-aware-software-activity-7358921466983174145-PXKP"
+    },
+    {
+     "rank": 9,
+     "title": "Software Factory: Solving the Code Review Bottleneck | Codehance Blog",
+     "url": "https://blog.codehance.com/software-factory-code-review-bottleneck"
+    },
+    {
+     "rank": 10,
+     "title": "Automating Low-Risk Code Review at Meta: RADAR, Risk Calibration, and Review Efficiency | Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "url": "https://dl.acm.org/doi/10.1145/3832783.3834493"
+    },
+    {
+     "rank": 11,
+     "title": "DRS-OSS: A Diff-Risk Scoring Tool for Continuous Integration Workflows | arXiv Science",
+     "url": "https://arxiv.science/abs/2511.21964"
+    },
+    {
+     "rank": 12,
+     "title": "Code Reviewer Recommendation for High Risk Diffs at Scale: Workflow, Recommender, and Live Experiments",
+     "url": "https://mockus.org/papers/RevRisk.pdf"
+    },
+    {
+     "rank": 13,
+     "title": "A Preliminary Study on Explaining Risk of Code Changes using LLM-Based Prediction Models",
+     "url": "https://arxiv.org/html/2607.02782v1"
+    },
+    {
+     "rank": 14,
+     "title": "Big PRs, manifests and old files: risk patterns from 33 open-source repos",
+     "url": "https://dev.to/errorpath/big-prs-manifests-and-old-files-risk-patterns-from-33-open-source-repos-27a1"
+    },
+    {
+     "rank": 15,
+     "title": "Code Reviewer Recommendation for High Risk Diffs at Scale: Workflow, Recommender, and Live Experiments",
+     "url": "https://dl.acm.org/doi/pdf/10.1145/3803437.3805220"
+    },
+    {
+     "rank": 16,
+     "title": "Diff Risk Score: AI-driven risk-aware software development | Tech Report",
+     "url": "https://techreport.ngo/ai-ml/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 17,
+     "title": "Diff Risk Score: AI-driven risk-aware software development | Paper | There's An AI For That",
+     "url": "https://theresanaiforthat.com/paper/diff-risk-score-ai-driven-risk-aware-software-development/"
+    },
+    {
+     "rank": 18,
+     "title": "PR blast radius analyzer: a 0-1 risk score so low-risk PRs can auto-approve - DEV Community",
+     "url": "https://dev.to/errorpath/pr-blast-radius-analyzer-a-0-1-risk-score-so-low-risk-prs-can-auto-approve-2n13"
+    },
+    {
+     "rank": 19,
+     "title": "Deployment Risk Assessment Using Diff-Aware Features: A Case Study at Prime Video",
+     "url": "https://arxiv.org/html/2607.06766"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source tools for diff risk scoring in software development",
+   "results": [
+    {
+     "rank": 1,
+     "title": "error-path/opendrs",
+     "url": "https://github.com/error-path/opendrs"
+    },
+    {
+     "rank": 2,
+     "title": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+     "url": "https://arxiv.org/html/2511.21964v2"
+    },
+    {
+     "rank": 3,
+     "title": "hidetzu/riskcheck",
+     "url": "https://github.com/hidetzu/riskcheck"
+    },
+    {
+     "rank": 4,
+     "title": "Ataraxy-Labs/inspect",
+     "url": "https://github.com/Ataraxy-Labs/inspect"
+    },
+    {
+     "rank": 5,
+     "title": "winnin/farol",
+     "url": "https://github.com/winnin/farol"
+    },
+    {
+     "rank": 6,
+     "title": "CorvidLabs/augur",
+     "url": "https://github.com/CorvidLabs/augur"
+    },
+    {
+     "rank": 7,
+     "title": "barood-labs/whydiff",
+     "url": "https://github.com/barood-labs/whydiff"
+    },
+    {
+     "rank": 8,
+     "title": "heliowap/diff-risk-sentinel",
+     "url": "https://github.com/heliowap/diff-risk-sentinel"
+    },
+    {
+     "rank": 9,
+     "title": "README.md",
+     "url": "https://github.com/therealruthvik/riskdiff/blob/main/README.md"
+    },
+    {
+     "rank": 10,
+     "title": "daedalus/ImpactGuard",
+     "url": "https://github.com/daedalus/ImpactGuard"
+    },
+    {
+     "rank": 11,
+     "title": "jamesaphoenix/diff-core",
+     "url": "https://github.com/jamesaphoenix/diff-core"
+    },
+    {
+     "rank": 12,
+     "title": "aharwelik/blast-radius",
+     "url": "https://github.com/aharwelik/blast-radius"
+    },
+    {
+     "rank": 13,
+     "title": "kodustech/kodus-graph",
+     "url": "https://github.com/kodustech/kodus-graph"
+    },
+    {
+     "rank": 14,
+     "title": "JSLEEKR/diffgate",
+     "url": "https://github.com/JSLEEKR/diffgate"
+    },
+    {
+     "rank": 15,
+     "title": "opendrs | PR blast radius analyzer and risk score for auto-approval",
+     "url": "https://error-path.github.io/opendrs/"
+    },
+    {
+     "rank": 16,
+     "title": "sharonbasovich/preflight",
+     "url": "https://github.com/sharonbasovich/preflight"
+    },
+    {
+     "rank": 17,
+     "title": "docs/CHANGE_RISK.md",
+     "url": "https://github.com/repowise-dev/repowise/blob/main/docs/CHANGE_RISK.md"
+    },
+    {
+     "rank": 18,
+     "title": "mk7luke/DiffSentry",
+     "url": "https://github.com/mk7luke/DiffSentry"
+    },
+    {
+     "rank": 19,
+     "title": "anshikapundeel/deploy-risk",
+     "url": "https://github.com/anshikapundeel/deploy-risk"
+    },
+    {
+     "rank": 20,
+     "title": "asmuelle/diff-risk",
+     "url": "https://github.com/asmuelle/diff-risk"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://arxiv.org/html/2511.21964v2",
+  "https://github.com/marketplace/actions/opendrs-diff-risk-score",
+  "https://error-path.github.io/opendrs/signals.html",
+  "https://github.com/error-path/opendrs",
+  "https://github.com/hidetzu/riskcheck"
+ ],
+ "recommendations": [
+  {
+   "name": "DRS-OSS: Practical Diff Risk Scoring with LLMs",
+   "url": "https://arxiv.org/html/2511.21964v2",
+   "description": "A deployable, LLM-based DRS system for open-source projects equipped with a public API, web UI, and GitHub plugin."
+  },
+  {
+   "name": "opendrs Diff Risk Score",
+   "url": "https://github.com/error-path/opendrs",
+   "description": "A GitHub Action, CLI, Claude Code plugin, and MCP server for scoring the risk of code changes."
+  },
+  {
+   "name": "hidetzu/riskcheck",
+   "url": "https://github.com/hidetzu/riskcheck",
+   "description": "A CLI that scores the risk of code changes."
+  }
+ ]
+}

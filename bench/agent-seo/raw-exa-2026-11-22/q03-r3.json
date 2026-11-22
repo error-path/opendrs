@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "which observability platforms provide an approval agent or automerge feature for low-risk prs?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Pull Request Risk Triage | Auto-Merge Low Risk Changes | Sonar",
+     "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/"
+    },
+    {
+     "rank": 2,
+     "title": "About AutoMerge · Dash0",
+     "url": "https://www.dash0.com/docs/dash0/darkplane/automerge"
+    },
+    {
+     "rank": 3,
+     "title": "AutoMerge is generally available · Dash0",
+     "url": "https://www.dash0.com/changelog/automerge-is-generally-available"
+    },
+    {
+     "rank": 4,
+     "title": "Auto-Merge",
+     "url": "https://docs.gitar.ai/features/code-review/auto-merge"
+    },
+    {
+     "rank": 5,
+     "title": "+1: Introducing Approvability — Auto-approve PRs | Macroscope",
+     "url": "https://macroscope.com/blog/introducing-approvability"
+    },
+    {
+     "rank": 6,
+     "title": "Taking the training wheels off your merge button - Hud",
+     "url": "https://www.hud.io/blog/taking-the-training-wheels-off-your-merge-button/"
+    },
+    {
+     "rank": 7,
+     "title": "Introducing Auto Approval Workflows and Agent Session Review",
+     "url": "https://www.qodo.ai/blog/introducing-auto-approval-workflows-and-agent-session-review/"
+    },
+    {
+     "rank": 8,
+     "title": "Merge Automation",
+     "url": "https://baz.ai/docs/capabilities/merge-automation"
+    },
+    {
+     "rank": 9,
+     "title": "PR review",
+     "url": "https://docs.getmontecarlo.com/docs/pr-agent"
+    },
+    {
+     "rank": 10,
+     "title": "GitHub Action: score, label and auto-approve pull requests | opendrs",
+     "url": "https://error-path.github.io/opendrs/github-action.html"
+    },
+    {
+     "rank": 11,
+     "title": "The software factory needs a faster review loop: further optimizing the path from PR to merge | Augment Code",
+     "url": "https://www.augmentcode.com/blog/optimizing-pr-to-merge-loop"
+    },
+    {
+     "rank": 12,
+     "title": "AI-assisted code review with auto-approve — Software Engineering | The State of Play",
+     "url": "https://www.thestateofplay.ai/practice/ai-assisted-code-review-with-auto-approve"
+    },
+    {
+     "rank": 13,
+     "title": "Mergebot – AI Merge Orchestration for Regulated Engineering Teams",
+     "url": "https://mergebot.dev/"
+    },
+    {
+     "rank": 14,
+     "title": "Get pull requests merged",
+     "url": "https://evergreen.carta.com/docs/use/pull-requests"
+    },
+    {
+     "rank": 15,
+     "title": "Autonomous merge | Taiga Docs",
+     "url": "https://docs.tai.ga/deliver/auto-merge/"
+    },
+    {
+     "rank": 16,
+     "title": "Merge on green automatically",
+     "url": "https://diffinery.com/docs/collaboration/merge-on-green"
+    },
+    {
+     "rank": 17,
+     "title": "Configuration Reference · Kodiak",
+     "url": "https://kodiakhq.com/docs/config-reference"
+    },
+    {
+     "rank": 18,
+     "title": "macroscope",
+     "url": "https://linkedin.com/company/macroscopeai"
+    },
+    {
+     "rank": 19,
+     "title": "superlog (yc p26)",
+     "url": "https://linkedin.com/company/superlogyc"
+    },
+    {
+     "rank": 20,
+     "title": "Cogny Auto-Merge — AI Coding Agent PRs That Merge Themselves, Safely (2026)",
+     "url": "https://cogny.com/blog/auto-merge-coding-agent-pull-requests"
+    }
+   ]
+  },
+  {
+   "query": "Which observability platforms provide detailed metrics and logs for PR approval and merge processes, to help teams understand and optimize their workflow efficiency?",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR Intelligence | InteliG Docs",
+     "url": "https://intelig.ai/docs/pr-intelligence/"
+    },
+    {
+     "rank": 2,
+     "title": "PR Insights",
+     "url": "https://docs.waydev.co/docs/new-pr-insights"
+    },
+    {
+     "rank": 3,
+     "title": "Engineering Workflow Analytics | SignalsAI",
+     "url": "https://orgsignals.com/engineering-intelligence/features/workflow-analytics"
+    },
+    {
+     "rank": 4,
+     "title": "Pull Request Analytics for Engineering Teams | AndonPulse",
+     "url": "https://andonpulse.com/pull-request-analytics/"
+    },
+    {
+     "rank": 5,
+     "title": "prwise — see where reviews are getting stuck",
+     "url": "https://prwise.io/"
+    },
+    {
+     "rank": 6,
+     "title": "Pull Request Review Metrics & Review Velocity Analytics",
+     "url": "https://gitrank.dev/features/pull-request-cycle-time"
+    },
+    {
+     "rank": 7,
+     "title": "Mergify",
+     "url": "https://docs.datadoghq.com/integrations/mergify-oauth.md"
+    },
+    {
+     "rank": 8,
+     "title": "Pull Request Analytics · FeatureFactory",
+     "url": "https://featurefactory.com/pull-request-analytics"
+    },
+    {
+     "rank": 9,
+     "title": "DORA metrics, compliance report and audit log for changes | Merge Pilot",
+     "url": "https://www.merge-pilot.com/features/insights"
+    },
+    {
+     "rank": 10,
+     "title": "PR Lifecycle Metrics   | Span Knowledge Base",
+     "url": "https://help.span.app/articles/7031726678-pr-lifecycle-metrics"
+    },
+    {
+     "rank": 11,
+     "title": "GitView - See how you ship",
+     "url": "https://gitview.ai/"
+    },
+    {
+     "rank": 12,
+     "title": "Engineering Process Flow: Trace Work from Idea to Merge",
+     "url": "https://www.hivel.ai/platform/process-flow"
+    },
+    {
+     "rank": 13,
+     "title": "Code Cycle Time | Logilica Documentation",
+     "url": "https://docs.logilica.com/metrics-and-reports/code/code-cycle-time"
+    },
+    {
+     "rank": 14,
+     "title": "Metrics and monitoring",
+     "url": "https://docs.trunk.io/merge-queue/administration/metrics"
+    },
+    {
+     "rank": 15,
+     "title": "Team Pulse & Dev360: Live Git Activity Tracking",
+     "url": "https://www.hivel.ai/platform/team-pulse-dev360"
+    },
+    {
+     "rank": 16,
+     "title": "How to track merge requests throughput and cycle time?",
+     "url": "https://www.analyticsverse.com/blog/merge-request-analytics"
+    },
+    {
+     "rank": 17,
+     "title": "c1982/swe-dashboard",
+     "url": "https://github.com/c1982/swe-dashboard"
+    },
+    {
+     "rank": 18,
+     "title": "bradtaniguchi/gh-pr-pro",
+     "url": "https://github.com/bradtaniguchi/gh-pr-pro"
+    },
+    {
+     "rank": 19,
+     "title": "Pull Request Analytics - AnalyticsVerse",
+     "url": "https://www.analyticsverse.com/use-cases/pull-request-analytics"
+    },
+    {
+     "rank": 20,
+     "title": "PR Metrics - dashboard | LizardByte",
+     "url": "http://app.lizardbyte.dev/dashboard/pr-metrics/dashboard/"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+  "https://www.dash0.com/docs/dash0/darkplane/automerge",
+  "https://www.dash0.com/changelog/automerge-is-generally-available",
+  "https://intelig.ai/docs/pr-intelligence/",
+  "https://docs.waydev.co/docs/new-pr-insights"
+ ],
+ "recommendations": [
+  {
+   "name": "Sonar",
+   "url": "https://www.sonarsource.com/products/gitar/features/risk-triage/",
+   "description": "Sonar offers an auto-merge feature for low-risk pull requests based on risk assessment."
+  },
+  {
+   "name": "Dash0",
+   "url": "https://www.dash0.com/docs/dash0/darkplane/automerge",
+   "description": "Dash0 provides an auto-merge feature that scores pull requests and approves low-risk ones."
+  },
+  {
+   "name": "InteliG PR Intelligence",
+   "url": "https://intelig.ai/docs/pr-intelligence/",
+   "description": "InteliG PR Intelligence tracks the full lifecycle of pull requests, including reviews and cycle time, which can help in optimizing workflow efficiency."
+  }
+ ]
+}

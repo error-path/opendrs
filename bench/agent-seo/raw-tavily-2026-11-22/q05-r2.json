@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "tool to score pull request risk",
+   "results": [
+    {
+     "rank": 1,
+     "title": "8 Best Tools to Flag High-Risk Pull Requests for Security Review",
+     "url": "https://www.cubic.dev/info/task/blog/flagging-security-risks-pull-requests"
+    },
+    {
+     "rank": 2,
+     "title": "Automatically Scoring Pull Request Risk with AI",
+     "url": "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192"
+    },
+    {
+     "rank": 3,
+     "title": "Free pull request risk analyzer | Scopy Tools",
+     "url": "https://scopy.dev/tools/pr-risk-analyzer"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub - greenpioneersolutions/pull-request-score · GitHub",
+     "url": "https://github.com/greenpioneersolutions/pull-request-score"
+    },
+    {
+     "rank": 5,
+     "title": "ReviewDebt: a practical framework for scoring every pull request — Sachin Gupta, Ebay",
+     "url": "https://www.youtube.com/watch?v=TJPInBjhE4Q"
+    },
+    {
+     "rank": 6,
+     "title": "\"Part 4: AI Scores Pull Request Risk in .NET\" | Mesut Atasoy posted on the topic | LinkedIn",
+     "url": "https://www.linkedin.com/posts/mesut-atasoy_automatically-scoring-pull-request-risk-with-activity-7383739120445124608--r0x"
+    },
+    {
+     "rank": 7,
+     "title": "A Practical Guide to Risk-Based Code Review | Cortex",
+     "url": "https://www.cortex.io/post/risk-based-code-review"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 9,
+     "title": "How to Risk-Assess Pull Requests and Skip Review Safely | Unblocked",
+     "url": "https://getunblocked.com/answers/risk-assess-pull-requests-skip-human-review"
+    },
+    {
+     "rank": 10,
+     "title": "What is an AI Pull Request Review? How It Works | PlayerZero",
+     "url": "https://playerzero.ai/glossary/ai-pull-request-review"
+    },
+    {
+     "rank": 11,
+     "title": "9 Best PR Automation Tools [2026 Review]",
+     "url": "https://www.greptile.com/content-library/best-pull-request-automation-tools"
+    },
+    {
+     "rank": 12,
+     "title": "AI-Powered PR Reviews - Automated Security Code Reviews | ZeroPath | ZeroPath",
+     "url": "https://zeropath.com/products/pr-reviews"
+    },
+    {
+     "rank": 13,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 14,
+     "title": "How to Assess Pull Request Impact from AI Coding Tools",
+     "url": "https://blog.exceeds.ai/assess-ai-pull-request-impact"
+    },
+    {
+     "rank": 15,
+     "title": "How AI-Based PR Decisions Reduce Review Bottlenecks",
+     "url": "https://codeant.ai/blogs/ai-based-pr-decision-making-code-review"
+    },
+    {
+     "rank": 16,
+     "title": "Risk scoring on pull requests: what agents can do about it - Unblocked",
+     "url": "https://getunblocked.com/blog/risk-scoring-agents-triage"
+    },
+    {
+     "rank": 17,
+     "title": "Early-Stage Prediction of Review Effort in AI-Generated Pull Requests",
+     "url": "https://arxiv.org/html/2601.00753v1"
+    },
+    {
+     "rank": 18,
+     "title": "Diff Risk Score: AI-driven risk-aware software development - Engineering at Meta",
+     "url": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta"
+    },
+    {
+     "rank": 19,
+     "title": "HackerOne Code | Ship Secure Code",
+     "url": "https://www.pullrequest.com"
+    },
+    {
+     "rank": 20,
+     "title": "7 Code Review Tools to Balance Quality and Speed",
+     "url": "https://www.atlassian.com/blog/loom/code-review-tools"
+    }
+   ]
+  },
+  {
+   "query": "Best open-source pull request risk scoring tools for GitHub repositories",
+   "results": [
+    {
+     "rank": 1,
+     "title": "Best Open Source Project Risk Scoring Tools in 2026",
+     "url": "https://safeguard.sh/resources/blog/best-open-source-project-risk-scoring-tools"
+    },
+    {
+     "rank": 2,
+     "title": "6 Best Pull Request Review Tools for Enterprise Teams in 2026",
+     "url": "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+    },
+    {
+     "rank": 3,
+     "title": "Best AI PR review tools for GitHub (2026) | MergeGuard",
+     "url": "https://www.mergeguard.ai/best-ai-pr-review-tools"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub AI Code Review Tools for Open Source PRs",
+     "url": "https://codeant.ai/blogs/github-ai-code-review-tools-open-source"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI Code Review Tools for GitHub in 2026 (Ranked, Oct Update) | Macroscope",
+     "url": "https://macroscope.com/content/best-ai-code-review-tools-github-2026"
+    },
+    {
+     "rank": 6,
+     "title": "Tools and Integrations to Significantly Improve Code Review in GitHub - DEV Community",
+     "url": "https://dev.to/thawkin3/tools-and-integrations-to-significantly-improve-code-review-in-github-emf"
+    },
+    {
+     "rank": 7,
+     "title": "Best GitHub Alternative for Pull Request Review - GitClear",
+     "url": "https://www.gitclear.com/best_github_alternative_pull_request_review_tool"
+    },
+    {
+     "rank": 8,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 9,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 10,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 11,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared | Sourcegraph",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 12,
+     "title": "The Best Automated Code Review Tools for Engineering Teams | Sep 23, 2026",
+     "url": "https://www.openhands.dev/blog/best-automated-code-review-tools"
+    },
+    {
+     "rank": 13,
+     "title": "Any recommendations for code review tools in github? - Reddit",
+     "url": "https://www.reddit.com/r/codereview/comments/1e02dto/any_recommendations_for_code_review_tools_in"
+    },
+    {
+     "rank": 14,
+     "title": "AI Code Review for GitHub, GitLab, and Bitbucket",
+     "url": "https://www.youtube.com/watch?v=a4k32JVNKSI"
+    },
+    {
+     "rank": 15,
+     "title": "8 code review tools for achieving a clean and efficient workflow",
+     "url": "https://graphite.com/guides/code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "GitHub - kodustech/awesome-code-review-tools: A curated list of the best code review tools, platforms, and automation for modern development teams. · GitHub",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 17,
+     "title": "7 tools for code review engineers (GitHub edition)",
+     "url": "https://blog.codacy.com/7-tools-code-review-engineers-github"
+    },
+    {
+     "rank": 18,
+     "title": "The 9 Best Code Review Tools for Clean Code",
+     "url": "https://www.mend.io/blog/code-review-tools"
+    },
+    {
+     "rank": 19,
+     "title": "7 Code Review Tools to Balance Quality and Speed",
+     "url": "https://www.atlassian.com/blog/loom/code-review-tools"
+    },
+    {
+     "rank": 20,
+     "title": "GitHub",
+     "url": "https://tavily.com/knowledge/company/WGf4o1saQ1yD"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.cubic.dev/info/task/blog/flagging-security-risks-pull-requests",
+  "https://medium.com/@mesutatasoy/automatically-scoring-pull-request-risk-with-ai-98055d85e192",
+  "https://scopy.dev/tools/pr-risk-analyzer",
+  "https://safeguard.sh/resources/blog/best-open-source-project-risk-scoring-tools",
+  "https://www.gitkraken.com/blog/6-best-pull-request-review-tools-for-enterprise-teams-in-2026"
+ ],
+ "recommendations": [
+  {
+   "name": "Scopy Tools",
+   "url": "https://scopy.dev/tools/pr-risk-analyzer",
+   "description": "A free tool for analyzing the risk of pull requests based on various signals such as the size of the change, spread across different files, and the presence of sensitive paths."
+  },
+  {
+   "name": "GitHub - greenpioneersolutions/pull-request-score",
+   "url": "https://github.com/greenpioneersolutions/pull-request-score",
+   "description": "An open-source project that provides a tool for scoring pull requests based on various criteria such as the number of changes, lines added or deleted, and the complexity of the code."
+  },
+  {
+   "name": "ReviewDebt",
+   "url": "https://www.youtube.com/watch?v=TJPInBjhE4Q",
+   "description": "A practical framework for scoring every pull request using a combination of static analysis and dynamic testing to assess the risk and impact of the changes."
+  }
+ ]
+}

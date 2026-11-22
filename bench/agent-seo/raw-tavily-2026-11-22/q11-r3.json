@@ -1,0 +1,238 @@
+{
+ "searches": [
+  {
+   "query": "defect prediction for pull requests open source tool",
+   "results": [
+    {
+     "rank": 1,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories"
+    },
+    {
+     "rank": 2,
+     "title": "PR-SZZ: How pull requests can support the tracing of defects in software repositories",
+     "url": "https://arxiv.org/html/2206.09967v1"
+    },
+    {
+     "rank": 3,
+     "title": "How To Predict Which Pull Requests Will Cause Incidents | PlayerZero",
+     "url": "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests"
+    },
+    {
+     "rank": 4,
+     "title": "GHPR Dataset: A Dataset for Software Defect Prediction - GitHub",
+     "url": "https://github.com/feiwww/GHPR_dataset"
+    },
+    {
+     "rank": 5,
+     "title": "Are code review smells and metrics useful in pull request-level ...",
+     "url": "https://madeyski.e-informatyka.pl/download/BaciejowskiEtAl23.pdf"
+    },
+    {
+     "rank": 6,
+     "title": "Predicting the lifetime of pull requests in open‐source projects",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/smr.2337"
+    },
+    {
+     "rank": 7,
+     "title": "4 Best AI Code Review Tools for Large Open Source Projects",
+     "url": "https://www.cubic.dev/info/task/blog/tools-for-reviewing-pull-requests-in-open-source-projects"
+    },
+    {
+     "rank": 8,
+     "title": "Specification Artifacts in Open-Source Pull Request Workflows Do Not Reduce Defects: An Empirical Test of Spec-Driven Development Claims",
+     "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESEM.2026.84"
+    },
+    {
+     "rank": 9,
+     "title": "6 Best AI Code Review Tools for Pull Requests in 2026",
+     "url": "https://mastra.ai/articles/ai-code-review-tools"
+    },
+    {
+     "rank": 10,
+     "title": "DeepSource: The AI Code Review Platform",
+     "url": "https://deepsource.com"
+    },
+    {
+     "rank": 11,
+     "title": "Just-In-Time Software Defect Prediction using version control tool ...",
+     "url": "https://www.diva-portal.org/smash/get/diva2:1414481/FULLTEXT01.pdf"
+    },
+    {
+     "rank": 12,
+     "title": "A GitHub-Based Data Collection Method for Software Defect Prediction",
+     "url": "https://ieeexplore.ieee.org/document/9045809"
+    },
+    {
+     "rank": 13,
+     "title": "Open source maintainers are drowning in AI-generated pull requests. Enterprise teams are next. - The New Stack",
+     "url": "https://thenewstack.io/ai-generated-code-crisis"
+    },
+    {
+     "rank": 14,
+     "title": "E-PRedictor: an approach for early prediction of pull request ...",
+     "url": "https://link.springer.com/article/10.1007/s11432-022-3953-4"
+    },
+    {
+     "rank": 15,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 16,
+     "title": "AI vs Human Code Generation Report | CodeRabbit",
+     "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report"
+    },
+    {
+     "rank": 17,
+     "title": "Are Code Review Smells and Metrics Useful in Pull Request-Level ...",
+     "url": "https://www.researchgate.net/publication/369897078_Are_Code_Review_Smells_and_Metrics_Useful_in_Pull_Request-Level_Software_Defect_Prediction"
+    },
+    {
+     "rank": 18,
+     "title": "DefectDojo: Open Source Vulnerability Management and ASPM",
+     "url": "https://defectdojo.com"
+    },
+    {
+     "rank": 19,
+     "title": "7 tools for code review engineers (GitHub edition)",
+     "url": "https://blog.codacy.com/7-tools-code-review-engineers-github"
+    },
+    {
+     "rank": 20,
+     "title": "Papers | Code Review Papers",
+     "url": "https://naist-se.github.io/code-review/publications"
+    }
+   ]
+  },
+  {
+   "query": "GitHub repositories with open-source code review tools that are actively maintained and have a good user base.",
+   "results": [
+    {
+     "rank": 1,
+     "title": "12 Best Open Source Code Review Tools in 2026 | Augment Code",
+     "url": "https://www.augmentcode.com/tools/best-open-source-code-review-tools"
+    },
+    {
+     "rank": 2,
+     "title": "5 Open Source Code Review Tools Comparison [2026]",
+     "url": "https://www.qodo.ai/blog/open-source-code-review-tools"
+    },
+    {
+     "rank": 3,
+     "title": "7 Open-Source AI Code Review Tools Compared for 2026",
+     "url": "https://kodus.io/en/open-source-ai-code-review-tools-compared"
+    },
+    {
+     "rank": 4,
+     "title": "GitHub - kodustech/awesome-code-review-tools: A curated list of the best code review tools, platforms, and automation for modern development teams. · GitHub",
+     "url": "https://github.com/kodustech/awesome-code-review-tools"
+    },
+    {
+     "rank": 5,
+     "title": "Best AI Code Review Tools for GitHub in 2026 - DEV Community",
+     "url": "https://dev.to/dev_kiran/best-ai-code-review-tools-for-github-in-2026-4pjk"
+    },
+    {
+     "rank": 6,
+     "title": "Best AI Code Review Tools for GitHub (2026) | Qodo Academy",
+     "url": "https://www.youtube.com/watch?v=dLoa8hCsxdQ"
+    },
+    {
+     "rank": 7,
+     "title": "13 Best Automated Code Review Tools in 2026: AI and Static Analysis Compared | Sourcegraph",
+     "url": "https://sourcegraph.com/blog/automated-code-review-tools"
+    },
+    {
+     "rank": 8,
+     "title": "Best Open-Source GitHub Projects (2026) | OpenCurious",
+     "url": "https://www.opencurious.com/explore-open-source"
+    },
+    {
+     "rank": 9,
+     "title": "Best Trending GitHub Repositories for AI Developers to Star in 2026",
+     "url": "https://www.firecrawl.dev/blog/best-github-repos"
+    },
+    {
+     "rank": 10,
+     "title": "Top AI GitHub Repositories in 2026 - ByteByteGo Newsletter",
+     "url": "https://blog.bytebytego.com/p/top-ai-github-repositories-in-2026"
+    },
+    {
+     "rank": 11,
+     "title": "🌟 280+ Ultimate Open-Source Repositories: The Developer’s Curated Guide [2026] — 🚀 (Curated by Category) | top-github-repos-list",
+     "url": "https://md8-habibullah.github.io/top-github-repos-list"
+    },
+    {
+     "rank": 12,
+     "title": "Top 10 GitHub Repositories in June 2026 | AI Tools, Containers & Dev Workflows",
+     "url": "https://www.youtube.com/watch?v=f5OWBYcJc9o"
+    },
+    {
+     "rank": 13,
+     "title": "Medium",
+     "url": "https://medium.com/data-science-collective/25-github-repositories-every-software-engineer-should-study-in-2026-4539eec7c83a"
+    },
+    {
+     "rank": 14,
+     "title": "🤖 Best AI Tools for Developers in 2026: What Are Your Must-Have Tools? · community · Discussion #187143 · GitHub",
+     "url": "https://github.com/orgs/community/discussions/187143"
+    },
+    {
+     "rank": 15,
+     "title": "GitHub",
+     "url": "https://tavily.com/knowledge/company/WGf4o1saQ1yD"
+    },
+    {
+     "rank": 16,
+     "title": "This year’s most influential open source projects - The GitHub Blog",
+     "url": "https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects"
+    },
+    {
+     "rank": 17,
+     "title": "Top 10 Open-Source AI Projects Trending on GitHub in 2026 – Zima Store Online",
+     "url": "https://shop.zimaspace.com/en-ca/blogs/tech-ai-hub/top-10-open-source-ai-projects-trending-on-github-in-2026"
+    },
+    {
+     "rank": 18,
+     "title": "Trending repositories on GitHub today · GitHub",
+     "url": "https://github.com/trending"
+    },
+    {
+     "rank": 19,
+     "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+     "url": "https://github.com"
+    },
+    {
+     "rank": 20,
+     "title": "Gitee, China's answer to GitHub, to review all code by temporarily closing open-source projects to the public",
+     "url": "https://finance.yahoo.com/news/gitee-chinas-answer-github-review-093000997.html"
+    }
+   ]
+  }
+ ],
+ "fetches": [
+  "https://www.academia.edu/102873684/PR_SZZ_How_pull_requests_can_support_the_tracing_of_defects_in_software_repositories",
+  "https://arxiv.org/html/2206.09967v1",
+  "https://playerzero.ai/resources/how-to-predict-production-incidents-from-pull-requests",
+  "https://www.augmentcode.com/tools/best-open-source-code-review-tools",
+  "https://www.qodo.ai/blog/open-source-code-review-tools"
+ ],
+ "recommendations": [
+  {
+   "name": "PR-SZZ",
+   "url": "https://www.arxiv.org/html/2206.09967v1",
+   "description": "PR-SZZ is an open-source tool that uses pull requests to enhance the SZZ algorithm for identifying bug fixing commits."
+  },
+  {
+   "name": "GitHub - kodustech/awesome-code-review-tools",
+   "url": "https://github.com/kodustech/awesome-code-review-tools",
+   "description": "This GitHub repository is a curated list of the best code review tools, platforms, and automation for modern development teams."
+  },
+  {
+   "name": "Qodo Qodo for Open Source vs Teams",
+   "url": "https://www.qodo.ai/blog/qodo-for-open-source-vs-teams",
+   "description": "Qodo is an open-source code review tool that can help teams enforce standards and catch breaking changes before they reach other repos."
+  }
+ ]
+}
