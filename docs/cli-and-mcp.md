@@ -70,3 +70,18 @@ it opens a pull request. Install it from inside Claude Code:
 
 The agent skill in [`plugin/skills/opendrs/SKILL.md`](https://github.com/error-path/opendrs/blob/main/plugin/skills/opendrs/SKILL.md) tells an agent to run
 `opendrs score` before opening a PR and to split changes with a large blast radius.
+
+## Any coding agent: an AGENTS.md snippet
+
+Many coding agents read an `AGENTS.md` file at the root of the repository
+([agents.md](https://agents.md/)). If your agent does not use the plugin or the MCP server, paste
+this section into that file:
+
+```markdown
+## Pull request risk
+
+Before opening or updating a pull request, run `npx @error-path/opendrs score --markdown`
+and put its output in the PR description. If it reports a red tier, or a file with a large
+blast radius, consider splitting the change into smaller PRs. Never edit `.opendrs.yml` or
+`.opendrs/model.json`, or add files to `paths.ignore`, to lower a score.
+```

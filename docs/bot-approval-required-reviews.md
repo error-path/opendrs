@@ -5,6 +5,8 @@ description: "Why an approval from GitHub Actions, a GitHub App or a coding agen
 
 # Why a bot approval does not count as a required review
 
+Last checked against GitHub's documentation: 22 November 2026.
+
 You add a workflow step that approves pull requests, the approval shows up, and the PR still says
 "Review required", or auto-merge never fires. GitHub checks who approved, what that account wrote,
 and when, before it counts an approval. This page lists the causes, each with GitHub's own

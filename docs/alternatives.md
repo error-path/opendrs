@@ -14,7 +14,7 @@ This page compares both kinds and says when each is the better
 choice, including when opendrs is not.
 
 It was written by the opendrs maintainers from each project's public documentation in October and
-November 2026. If something here is out of date, please
+November 2026, and last checked against them on 22 November 2026. If something here is out of date, please
 [open an issue](https://github.com/error-path/opendrs/issues).
 
 **In short:** if you can say in a rule which PRs are safe (dependency bumps, a bot's PRs, docs
