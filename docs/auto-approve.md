@@ -57,7 +57,8 @@ npx @error-path/opendrs backtest     # compare default and calibrated
 
 The backtest reports what share of bug-introducing commits the score would have flagged at each
 threshold. Commit the calibrated model through a normal reviewed PR. See
-[Calibration and backtesting](calibration.md) for how to read the numbers.
+[Calibration and backtesting](calibration.md) for how to read the numbers, and
+[Benchmark results](results.md) for how the score did on 27 open-source repositories.
 
 ## 3. Turn on the branch rules approval depends on
 
@@ -132,4 +133,5 @@ Whatever the score:
 - PRs from forks, drafts, and PRs where a reviewer requested changes;
 - PRs where a signal could not be computed and that unknown could have changed the tier.
 
-The full rule order and every option are in the [GitHub Action guide](github-action.md).
+The full rule order and every option are in the [GitHub Action guide](github-action.md), and what
+each rail guards against is in [Policy and safety rails](policy.md).

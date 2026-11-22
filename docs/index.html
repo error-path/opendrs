@@ -102,6 +102,7 @@ faq:
       <p><strong>A PR cannot turn it off</strong>The config and model are read from the base branch. The Action never approves changes to its own config or to CI, and never approves PRs from forks.</p>
       <p><strong>Unknown is never safe</strong>A signal that cannot be computed blocks approval whenever it could have changed the tier. A failed LLM answer counts the same way.</p>
     </div>
+    <p>Measured so far: on the public ApacheJIT benchmark, calibrated opendrs reaches AUC 0.823 and catches 67% of buggy commits in its riskiest 30%, on par with a regression on the classic JIT metrics (0.821, 66%). Untuned, it ranked later-fixed commits better than chance in 17 of 18 open-source repositories (median AUC 0.71). The labels come from reverts and bug-fix commits, not production incidents. Tables and caveats are in the <a href="results.html">benchmark results</a>.</p>
   </section>
 
   <section aria-labelledby="ways">

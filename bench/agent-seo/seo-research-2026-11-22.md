@@ -83,3 +83,12 @@ description, keywords and README ([Socket, Dec 2024](https://socket.dev/blog/npm
 **Against the rules / backfires:** bought or ring stars, HN upvote rings, seeded Reddit accounts,
 hidden text aimed at models, writing your own Wikipedia article, keyword-stuffed topics/keywords,
 duplicate packages or Actions.
+
+## Maintainer decisions (not changed in the repo)
+
+- **`action.yml` name:** rename "opendrs Diff Risk Score" to "opendrs PR Risk Score and Blast
+  Radius", since the Marketplace listing title is `name:`. Risk: the listing slug
+  (`opendrs-diff-risk-score`) may change, which would break links to the current listing.
+- **Marketplace categories:** Code review and Continuous integration.
+- **GitHub repo About text:** start with "PR blast radius analyzer and risk score ...".
+- **Custom domain:** buy one (for example opendrs.dev) and point GitHub Pages at it (see Round 2).
