@@ -3,7 +3,7 @@
 **A calibrated 0-1 risk score for every pull request, so AI-reviewed, low-blast-radius PRs can be
 auto-approved into the merge queue while risky ones still wait for a human.**
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-opendrs%20Diff%20Risk%20Score-2ea44f?logo=github)](https://github.com/marketplace/actions/opendrs-diff-risk-score)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-opendrs%20PR%20Risk%20Score%20and%20Blast%20Radius-2ea44f?logo=github)](https://github.com/marketplace/actions/opendrs-diff-risk-score)
 [![CI](https://github.com/error-path/opendrs/actions/workflows/ci.yml/badge.svg)](https://github.com/error-path/opendrs/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
