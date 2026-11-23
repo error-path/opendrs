@@ -166,6 +166,8 @@ Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server, Claude Code 
 | [Reduce the review bottleneck for AI-generated PRs](docs/ai-pr-review-bottleneck.md) | compare the options and see where opendrs fits |
 | [Is AI reviewing AI just self-review?](docs/ai-reviewing-ai.md) | decide what an AI review of an AI-written PR can and cannot vouch for |
 | [Why a bot approval does not count](docs/bot-approval-required-reviews.md) | fix a GitHub Actions or bot approval that required reviews or auto-merge ignore |
+| [Review PRs where an agent adds a dependency](docs/agent-added-dependencies.md) | know what opendrs does with manifest and lockfile changes, and what to check yourself |
+| [What auto-approval leaves for auditors](docs/auto-approval-audit-evidence.md) | export the record of what the gate approved, and know what it does not settle |
 | [GitHub Action reference](docs/github-action.md) | look up inputs, outputs, permissions, branch rules and the scheduled sweep |
 | [Policy and safety rails](docs/policy.md) | know exactly why a PR was or was not approved |
 | [Configuration reference](docs/configuration.md) | change `.opendrs.yml` |

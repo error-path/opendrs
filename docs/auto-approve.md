@@ -173,6 +173,9 @@ let through, on a fixed schedule, for example monthly.
    for a source whose landed commits were reverted too often), or set
    `enabled: false`; opendrs then withdraws its approvals on the next run.
 
+To export this record for an auditor, and for what it does not settle, see
+[What auto-approval leaves for auditors](auto-approval-audit-evidence.md).
+
 ## Dependabot and Renovate PRs
 
 With the default config, opendrs never auto-approves a typical dependency update. The lockfile is
@@ -180,7 +183,8 @@ in `paths.ignore`, the manifest (`package.json`, `pyproject.toml`, `go.mod`, `Ca
 `requirements*.txt` and others) is in `paths.block`, an update to GitHub Actions changes
 `.github/**`, and Renovate's own config files are blocked. A version bump brings in code that the
 diff does not show, so opendrs's score cannot measure it. opendrs still scores and comments these
-PRs and labels their source `bot`.
+PRs and labels their source `bot`. When a coding agent adds a dependency, see
+[Review pull requests where a coding agent adds a dependency](agent-added-dependencies.md).
 
 To merge dependency updates without a person, use Renovate automerge, or GitHub's
 [Dependabot recipe](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions)
