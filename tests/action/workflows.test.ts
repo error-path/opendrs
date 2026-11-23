@@ -39,6 +39,11 @@ describe("workflows that run the Action", () => {
     expect(Object.keys(on)).not.toContain("pull_request_target");
   });
 
+  // GitHub Marketplace refuses to publish a release whose action.yml description is 125 characters or more.
+  it("action.yml's description fits the Marketplace limit", () => {
+    expect(String(parse(read("action.yml")).description).length).toBeLessThan(125);
+  });
+
   it("action.yml declares and the docs describe the sample-salt input", () => {
     expect(parse(read("action.yml")).inputs["sample-salt"]).toMatchObject({ required: false, default: "" });
     expect(docs).toMatch(/\| `sample-salt` \|.*secret/);
