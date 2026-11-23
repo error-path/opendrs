@@ -53,6 +53,8 @@ nav:
       url: /agent-added-dependencies.html
     - title: Audit evidence
       url: /auto-approval-audit-evidence.html
+    - title: Change evidence
+      url: /risk-tiered-approval-change-evidence.html
     - title: Research
       url: /research/
     - title: Policy
