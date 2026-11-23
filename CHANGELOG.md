@@ -2,6 +2,20 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Added
+
+- An `approved` Action output: `true` only when opendrs approved the head commit in this run, after
+  every safety rail. Gate your own merge step on it, not on `decision`.
+
+### Fixed
+
+- The auto-merge example in the docs, and opendrs's own workflow, gated on `decision`, which is
+  `auto-approve` even when a safety rail such as the self-modification guard refused the approval.
+  They enabled auto-merge on a PR opendrs had not approved; a required review still kept it from
+  merging. Both now gate on `approved`.
+
 ## 0.7.0 - 2026-11-23
 
 ### Changed

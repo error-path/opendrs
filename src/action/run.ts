@@ -313,6 +313,7 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
   const current = await client.pullHeadSha(pr.number);
   if (current !== pr.head.sha) {
     io.notice(`The PR head moved to ${current} while opendrs scored ${pr.head.sha}: not approving. The run for the new head decides.`);
+    io.setOutput("approved", "false");
     return { score: result.score, tier: result.tier, decision: result.policy.decision, approved: false };
   }
 
@@ -340,6 +341,8 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
   const approval = await io.group("Approval", () =>
     reconcileApproval({ client, io, pr, config, result, files, viewer, now: new Date(), eligibleSince: trustedSince(mine, pr.head.sha), labels, commentEnabled: d.inputs.comment }),
   );
+  // Unlike `decision`, this is after every safety rail: a workflow's own merge step must gate on it.
+  io.setOutput("approved", String(approval.approved));
 
   const rescore = previousState ? rescoreLine(previousState, runNumber, pr.head.sha, result.score, result.tier) : undefined;
 

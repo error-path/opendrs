@@ -106,16 +106,19 @@ access can add a label.
 ```yaml
       - uses: error-path/opendrs@v0
         id: opendrs
-      - if: steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick'
+      - if: steps.opendrs.outputs.approved == 'true' && steps.opendrs.outputs.captain == 'quick'
         env: { GH_TOKEN: "${{ github.token }}", PR: "${{ github.event.pull_request.number }}" }
         run: gh pr merge "$PR" --auto --squash --repo "$GITHUB_REPOSITORY"
-      - if: ${{ !cancelled() && !(steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick') }}
+      - if: ${{ !cancelled() && !(steps.opendrs.outputs.approved == 'true' && steps.opendrs.outputs.captain == 'quick') }}
         env: { GH_TOKEN: "${{ github.token }}", PR: "${{ github.event.pull_request.number }}" }
         run: gh pr merge "$PR" --disable-auto --repo "$GITHUB_REPOSITORY" || true
 ```
 {% endraw %}
 
-The second step turns auto-merge off whenever a later push is no longer quick-confirm. Give the
+Gate on `approved`, not on `decision`: `decision` is the policy verdict before the safety rails,
+so a PR the self-modification guard refused still reads `auto-approve`. `approved` is new after
+0.7.0; with 0.7.0 or older it is empty and the first step never merges. The second step turns
+auto-merge off whenever a later push is no longer quick-confirm. Give the
 job `contents: write` and allow auto-merge in the repository settings. opendrs's own repository
 runs this setup in [`.github/workflows/opendrs.yml`](https://github.com/error-path/opendrs/blob/main/.github/workflows/opendrs.yml),
 with a GitHub App token instead of `GITHUB_TOKEN`, so its merges also start workflows on `main`.

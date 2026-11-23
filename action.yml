@@ -54,6 +54,8 @@ outputs:
     description: green, yellow or red.
   decision:
     description: auto-approve, deferred-review, waiting-ai-review or human-review. This is the policy decision; the PR is approved only when autoApprove.enabled is true, every safety rail passes and any landing delay has run. On a schedule or workflow_dispatch sweep, the outputs are those of the last PR swept.
+  approved:
+    description: true when opendrs approved this PR's head commit in this run (every safety rail passed), otherwise false. Gate any merge step of your own on this, not on decision. Empty when nothing was scored.
   captain:
     description: How much attention the captain (the final human reviewer) should give this PR - careful, standard or quick. Empty when captain.enabled is false or the brief input is false.
   brief:

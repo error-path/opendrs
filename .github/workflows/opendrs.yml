@@ -49,10 +49,11 @@ jobs:
           DECISION: ${{ steps.opendrs.outputs.decision }}
           CAPTAIN: ${{ steps.opendrs.outputs.captain }}
         run: echo "score=$SCORE tier=$TIER decision=$DECISION captain=$CAPTAIN"
-      # The decision and captain come from this run, never from labels: anyone with triage access
-      # can add a label. auto-approve already means green with every safety rule passed.
-      - name: Auto-merge a green, quick-confirm PR once the required checks pass
-        if: steps.app-token.outputs.token != '' && steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick'
+      # Approval and captain come from this run, never from labels: anyone with triage access can add
+      # a label. `approved` is set only after every safety rail passed; `decision` is the policy
+      # verdict before them, so a PR the self-modification guard refused still reads auto-approve.
+      - name: Auto-merge an approved, quick-confirm PR once the required checks pass
+        if: steps.app-token.outputs.token != '' && steps.opendrs.outputs.approved == 'true' && steps.opendrs.outputs.captain == 'quick'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           PR: ${{ github.event.pull_request.number }}
@@ -60,7 +61,7 @@ jobs:
       # Turn it off in every other case, including a failed opendrs step, so a later push that is no
       # longer quick-confirm cannot merge on auto-merge set by an earlier run.
       - name: Otherwise turn auto-merge off
-        if: ${{ !cancelled() && !(steps.opendrs.outputs.decision == 'auto-approve' && steps.opendrs.outputs.captain == 'quick') }}
+        if: ${{ !cancelled() && !(steps.opendrs.outputs.approved == 'true' && steps.opendrs.outputs.captain == 'quick') }}
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
           PR: ${{ github.event.pull_request.number }}
