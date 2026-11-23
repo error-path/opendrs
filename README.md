@@ -168,6 +168,7 @@ Flags, exit codes, MCP tools and the agent skill: [CLI, MCP server, Claude Code 
 | [Why a bot approval does not count](docs/bot-approval-required-reviews.md) | fix a GitHub Actions or bot approval that required reviews or auto-merge ignore |
 | [Review PRs where an agent adds a dependency](docs/agent-added-dependencies.md) | know what opendrs does with manifest and lockfile changes, and what to check yourself |
 | [What auto-approval leaves for auditors](docs/auto-approval-audit-evidence.md) | export the record of what the gate approved, and know what it does not settle |
+| [Risk-tiered approval as change evidence](docs/risk-tiered-approval-change-evidence.md) | use a PR risk score in a regulated team's change control, and see what regulators do and do not say |
 | [GitHub Action reference](docs/github-action.md) | look up inputs, outputs, permissions, branch rules and the scheduled sweep |
 | [Policy and safety rails](docs/policy.md) | know exactly why a PR was or was not approved |
 | [Configuration reference](docs/configuration.md) | change `.opendrs.yml` |
