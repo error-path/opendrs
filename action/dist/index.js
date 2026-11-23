@@ -34070,6 +34070,7 @@ async function scorePullRequest(d, pr) {
   const current = await client.pullHeadSha(pr.number);
   if (current !== pr.head.sha) {
     io.notice(`The PR head moved to ${current} while opendrs scored ${pr.head.sha}: not approving. The run for the new head decides.`);
+    io.setOutput("approved", "false");
     return { score: result.score, tier: result.tier, decision: result.policy.decision, approved: false };
   }
   const files = await changedFiles(d.repoDir, pr.base.sha, pr.head.sha);
@@ -34088,6 +34089,7 @@ async function scorePullRequest(d, pr) {
     "Approval",
     () => reconcileApproval({ client, io, pr, config: config2, result, files, viewer, now: /* @__PURE__ */ new Date(), eligibleSince: trustedSince(mine, pr.head.sha), labels, commentEnabled: d.inputs.comment })
   );
+  io.setOutput("approved", String(approval.approved));
   const rescore = previousState ? rescoreLine(previousState, runNumber, pr.head.sha, result.score, result.tier) : void 0;
   const warning = predictable ? `
 

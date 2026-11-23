@@ -18,10 +18,24 @@ describe("approval", () => {
     expect(t.gh.ops("enqueue")).toEqual([]);
   });
 
+  it("sets the approved output to true only after it approved", async () => {
+    const t = await run();
+    await t.promise;
+    expect(t.output()).toMatch(/^approved<<(\S+)\ntrue\n\1$/m);
+  });
+
+  // A workflow gates its own auto-merge on this output, not on `decision`, which ignores the safety rails.
+  it("sets the approved output to false when a safety rail refuses an auto-approve decision", async () => {
+    const t = await run({ headFiles: { "src/a.ts": "2\n", "action.yml": "x\n" } });
+    await expect(t.promise).resolves.toMatchObject({ approved: false, decision: "auto-approve" });
+    expect(t.output()).toMatch(/^approved<<(\S+)\nfalse\n\1$/m);
+  });
+
   it("does not approve or merge when a new commit was pushed while it scored", async () => {
     const t = await run();
     t.gh.headSha = "f".repeat(40);
     await expect(t.promise).resolves.toMatchObject({ approved: false });
+    expect(t.output()).toMatch(/^approved<<(\S+)\nfalse\n\1$/m);
     expect(t.gh.ops("getPull")).toHaveLength(1);
     expect(t.gh.ops("createReview")).toEqual([]);
     expect(t.gh.ops("enableAutoMerge")).toEqual([]);

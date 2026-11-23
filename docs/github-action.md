@@ -83,6 +83,7 @@ either.
 | `score` | 0 to 1, four decimals |
 | `tier` | `green`, `yellow`, `red` |
 | `decision` | `auto-approve`, `deferred-review`, `waiting-ai-review`, `human-review` (the policy decision, even when approval is disabled or a landing delay is still running) |
+| `approved` | `true` when opendrs approved the head commit in this run (every safety rail passed), otherwise `false`. Gate your own merge step on this, not on `decision`. Empty when nothing was scored. |
 | `captain` | `careful`, `standard` or `quick`: how much attention the captain brief says this PR needs. Empty when `captain.enabled` is false or `brief: false`. See [the captain brief](captain.md). |
 | `brief` | The review brief as Markdown (empty when `brief: false`) |
 | `brief-file` | Path to the review brief as JSON, under `$RUNNER_TEMP` (empty when `brief: false`) |
