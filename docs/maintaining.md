@@ -42,8 +42,12 @@ A short runbook for the maintainer.
    git push origin v0.2.0 && git push -f origin v0
    ```
 
-4. Create a GitHub release from the tag with the changelog section as notes. Publishing it starts
-   the **Publish to npm** workflow (`publish.yml`), which stages the package on npm (see below).
+4. Create a GitHub release from the tag with the changelog section as notes, with **Publish this
+   Action to the GitHub Marketplace** ticked: that is what updates the Marketplace listing from
+   `action.yml`. The form refuses a `description` of 125 characters or more (a test in
+   `tests/action/workflows.test.ts` checks this), and GitHub asks for your 2FA code to publish.
+   Publishing starts the **Publish to npm** workflow (`publish.yml`), which stages the package on
+   npm (see below).
 5. When that run passes, approve the staged version on npmjs.com, in the package's
    **Staged Packages** tab, with your 2FA code. Then check that
    `npm view @error-path/opendrs version` shows the release.
