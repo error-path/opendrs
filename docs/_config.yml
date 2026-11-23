@@ -45,6 +45,8 @@ nav:
   more:
     - title: Review bottleneck
       url: /ai-pr-review-bottleneck.html
+    - title: AI reviewing AI
+      url: /ai-reviewing-ai.html
     - title: Bot approvals
       url: /bot-approval-required-reviews.html
     - title: Research
