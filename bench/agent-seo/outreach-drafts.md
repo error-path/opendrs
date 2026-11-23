@@ -1,7 +1,24 @@
 # Outreach drafts for opendrs, 22 Nov 2026
 
-Research and drafts only. Nothing here has been posted, sent, submitted or signed up for. The
-maintainer reviews, edits and sends everything personally, with their own accounts.
+Research and drafts, written 22 Nov 2026. What was actually sent or submitted is listed under
+"Status" just below; everything else here is still a draft. Each was sent with the maintainer's
+own accounts and approval.
+
+## Status (23 Nov 2026)
+
+| Target | What happened | Next |
+|---|---|---|
+| eltociear/awesome-AI-driven-development#228, ai-for-developers/awesome-ai-coding-tools#1342 | Awesome-list PRs opened 22 Nov | Open, no comments yet |
+| support@mastra.ai | Note to the article author sent 22 Nov | Wait for a reply |
+| mcpservers.org | Submitted on the free plan (Development category, registry name `io.github.error-path/opendrs`) | Review within 2 weeks; the email says when approved |
+| Changelog News | Submitted: "opendrs: an open-source take on Meta's Diff Risk Score for pull requests", numbers from docs/results.md only | Editors decide; an email comes if it is used |
+| AlternativeTo | App submitted (MIT, free, Self-Hosted/Linux/Windows/Mac, tags code-review, github-actions, pull-requests, mcp, risk-assessment) | Admin review; no "alternative to" links added, on purpose (docs/alternatives.md: not a code reviewer) |
+| GitHub topics | Swapped ci-cd, devops, developer-tools for mcp-server, risk-assessment, pr-risk-score | Done |
+| Anthropic plugin directory | Validation blocked: local MCP servers and inline shell are accepted only from Verified organizations | Revisit 23 Dec 2026: Verified org, a skill-only plugin, or skip |
+| Cline MCP marketplace | Not submitted: its form asks for a real Cline test first | Test with the Cline CLI, then decide |
+| Release 0.7.0 | Marketplace name, npm keywords and MCP registry text are live | Re-run the benchmark (scheduled 29 Nov and 8 Dec) |
+
+Submission text and field values used: [submissions-packet-2026-11-23.md](submissions-packet-2026-11-23.md).
 
 Sources: web searches and page fetches on 22 Nov 2026. Items marked "unverified" came from a
 search snippet only, or the page could not be fetched (Reddit, LibHunt and StackShare blocked the
