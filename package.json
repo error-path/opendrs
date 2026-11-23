@@ -1,6 +1,6 @@
 {
   "name": "@error-path/opendrs",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "mcpName": "io.github.error-path/opendrs",
   "description": "PR risk score and blast radius analyzer for pull requests: a calibrated 0-1 score from git history and the import graph, to auto-approve low-risk PRs. CLI, GitHub Action and MCP server.",
   "type": "module",

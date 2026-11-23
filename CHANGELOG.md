@@ -2,6 +2,26 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
+## 0.7.0 - 2026-11-23
+
+### Changed
+
+- The GitHub Marketplace listing is now named "opendrs PR Risk Score and Blast Radius" (the `name` in
+  `action.yml`), and the action, npm package and MCP registry descriptions lead with "PR risk score".
+  The npm package gains the keywords `diff-risk-score`, `pull-request-risk`, `risk-score`,
+  `mcp-server` and `pr-review`, and the MCP registry title is "PR Risk Score (opendrs)". The
+  Marketplace URL slug and the package name do not change.
+
+### Added
+
+- Releases are partly automated: `npm run release:prepare -- <version>` sets the version everywhere
+  and rebuilds `action/dist`, and a **Finish a release** workflow publishes `server.json` to the MCP
+  registry and prepares the plugin pin branch (#90).
+- Documentation: an AI PR review bottleneck page, a page on why bot approvals may not satisfy
+  required reviews, an honest alternatives comparison, new research notes and benchmark results on
+  size-normalized fix rates and agent search visibility, an `AGENTS.md` snippet for any coding
+  agent, and a `CITATION.cff` file. No change to scoring or to the CLI, Action or MCP behaviour.
+
 ## 0.6.0 - 2026-11-16
 
 ### Added
