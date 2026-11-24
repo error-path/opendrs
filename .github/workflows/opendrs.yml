@@ -1,7 +1,7 @@
 # Dogfood: score this repository's own PRs and approve the low-risk ones (.opendrs.yml), and
 # auto-merge only those that are also a captain "quick confirm", once the required checks pass.
-# Runs the RELEASED action (@v0), never the PR's own copy: a PR must not be able to edit the
-# code that decides whether to approve it.
+# Runs a RELEASED action, pinned to a release commit that Dependabot bumps, never the PR's own
+# copy: a PR must not be able to edit the code that decides whether to approve it.
 name: OpenDRS
 
 on:
@@ -13,17 +13,19 @@ concurrency:
   group: opendrs-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
-# GITHUB_TOKEN only checks out and, on fork PRs, comments; the opendrs-bot app token below does
-# the rest, including enabling auto-merge.
 permissions:
   contents: read
-  pull-requests: write
-  checks: read
 
 jobs:
   opendrs:
     name: Score, label and approve
     runs-on: ubuntu-latest
+    # GITHUB_TOKEN only checks out and, on fork PRs, comments; the opendrs-bot app token below does
+    # the rest, including enabling auto-merge. Write access is granted here, not at the top level.
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -38,7 +40,7 @@ jobs:
         with:
           client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
           private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
-      - uses: error-path/opendrs@v0
+      - uses: error-path/opendrs@a746b7bd335008fcd03a8857aa0fd8c43c8190ce # v0.7.0
         id: opendrs
         with:
           github-token: ${{ steps.app-token.outputs.token || github.token }}
