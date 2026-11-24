@@ -1,12 +1,13 @@
 # The opendrs MCP server over stdio, for registries that build and introspect it (Glama) and for
 # running it in a container. Mount the repository to score at /repo: docker run -i -v "$PWD:/repo" ...
-FROM node:22-slim AS build
+# Base images are pinned by digest (multi-arch index); Dependabot bumps them.
+FROM node:22-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee AS build
 WORKDIR /app
 COPY package.json package-lock.json tsconfig.json tsconfig.build.json ./
 COPY src ./src
 RUN npm ci --ignore-scripts && npm run build
 
-FROM node:22-slim
+FROM node:22-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
 # opendrs reads history and diffs with git.
 RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
