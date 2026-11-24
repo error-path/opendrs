@@ -14,6 +14,7 @@ permissions:
 
 jobs:
   analyze:
+    name: CodeQL analysis
     runs-on: ubuntu-latest
     permissions:
       security-events: write # upload the analysis
@@ -24,4 +25,7 @@ jobs:
       - uses: github/codeql-action/init@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4
         with:
           languages: javascript-typescript, actions
+          # Bundled and third-party code only adds noise alerts.
+          config: |
+            paths-ignore: [action/dist, dist, node_modules]
       - uses: github/codeql-action/analyze@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4

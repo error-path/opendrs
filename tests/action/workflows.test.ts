@@ -65,7 +65,7 @@ describe("workflows that run the Action", () => {
     expect(check.name).toBeUndefined();
   });
 
-  it.each(["ci", "opendrs", "pages", "publish"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
+  it.each(["ci", "codeql", "opendrs", "pages", "publish", "scorecard"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
     const wf = parse(read(`.github/workflows/${file}.yml`));
     // A set name, not GitHub's default (the bare file name), which says little in the Actions tab.
     expect(wf.name).toMatch(/[A-Z]/);

@@ -42,6 +42,9 @@ A short runbook for the maintainer.
    git push origin v0.2.0 && git push -f origin v0
    ```
 
+   This repository's own dogfood (`.github/workflows/opendrs.yml`) pins the action by commit, so
+   it does not follow `v0`: bump its SHA and `# vX.Y.Z` comment in a PR, or merge Dependabot's.
+
 4. Create a GitHub release from the tag with the changelog section as notes, with **Publish this
    Action to the GitHub Marketplace** ticked: that is what updates the Marketplace listing from
    `action.yml`. The form refuses a `description` of 125 characters or more (a test in
