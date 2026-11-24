@@ -18,6 +18,12 @@ file history, author experience, size and tests. Auto-approval is one of several
 [reduce the review bottleneck for AI-generated PRs](ai-pr-review-bottleneck.md); that page compares
 them.
 
+Meta runs the same kind of gate at scale. Its RADAR system has reviewed more than 535,000 diffs,
+and auto-approved diffs had about a third of the revert rate and a fiftieth of the incident rate
+of other diffs. Those numbers are observational, not from a controlled trial (Adams et al.,
+[Automating Low-Risk Code Review at Meta](https://arxiv.org/abs/2605.30208), 2026). The
+[policy](policy.md) page lists which of RADAR's rules opendrs follows.
+
 ## 1. Score every PR without approving anything
 
 Add `.github/workflows/opendrs.yml`. It comments a risk report on each PR and sets a
