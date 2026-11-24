@@ -6,6 +6,7 @@ auto-approved into the merge queue while risky ones still wait for a human.**
 [![GitHub Marketplace](https://img.shields.io/badge/Marketplace-opendrs%20PR%20Risk%20Score%20and%20Blast%20Radius-2ea44f?logo=github)](https://github.com/marketplace/actions/opendrs-diff-risk-score)
 [![CI](https://github.com/error-path/opendrs/actions/workflows/ci.yml/badge.svg)](https://github.com/error-path/opendrs/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/error-path/opendrs/badge)](https://scorecard.dev/viewer/?uri=github.com/error-path/opendrs)
 
 AI agents now write and review code faster than people can read it, so human review has become
 the bottleneck. Most pull requests are low risk, and a few cause most incidents. opendrs measures
