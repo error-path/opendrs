@@ -4,8 +4,8 @@ opendrs can approve and merge pull requests, so a way around its safety rails is
 
 ## Reporting
 
-Report privately through GitHub: **Security → Report a vulnerability** on this repository. Do not
-open a public issue. Include the opendrs version, your `.opendrs.yml`, and the steps or diff that
+Report privately through GitHub: **Security → Report a vulnerability** on this repository
+(<https://github.com/error-path/opendrs/security/advisories/new>). Do not open a public issue. Include the opendrs version, your `.opendrs.yml`, and the steps or diff that
 reproduce the problem.
 
 You should get a reply within 7 days. Confirmed issues are fixed in a patch release and credited in
