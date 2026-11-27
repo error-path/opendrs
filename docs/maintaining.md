@@ -65,7 +65,9 @@ npm, and finishing.
 7. Merge the pins PR when CI passes. The plugin directory follows `main`, so a pin merged before
    npm has the version would point at a version that does not exist yet; that is why it comes
    last. The dogfood pin is in a composite action rather than in `opendrs.yml` because a
-   workflow's token may not change files under `.github/workflows/`.
+   workflow's token may not change files under `.github/workflows/`. `opendrs.yml` restores
+   that file from the PR's base commit before running it, so a PR never runs its own copy of the pin:
+   the pins PR is still scored by the previous release, and the new one applies from the next PR.
 
    If a workflow cannot run, every step still works by hand: `npm run release:prepare -- 0.7.2` on
    a branch and a PR; `git tag v0.7.2 && git push origin v0.7.2` after the merge;
