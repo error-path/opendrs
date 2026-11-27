@@ -2,12 +2,20 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.7.1 - 2026-11-27
 
 ### Added
 
 - An `approved` Action output: `true` only when opendrs approved the head commit in this run, after
   every safety rail. Gate your own merge step on it, not on `decision`.
+- Documentation: pages on agent-added dependencies, auto-approval audit evidence and risk-tiered
+  approval as change evidence for regulated teams, and an `llms-install.md` so agents such as Cline
+  can set up the MCP server. No change to scoring or to the CLI or MCP behaviour.
+
+### Changed
+
+- Security hardening of the repository: OpenSSF Scorecard and CodeQL workflows, narrower workflow
+  token permissions, and the Docker base image pinned by digest (now `node:25-slim`).
 
 ### Fixed
 
