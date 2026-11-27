@@ -2,8 +2,8 @@ name: opendrs (pinned release)
 description: Runs a released opendrs on this repository's own PRs. Used only by .github/workflows/opendrs.yml.
 
 # The pin lives here, not in the workflow, so the "Finish a release" workflow can bump it: a
-# workflow's token may not change files under .github/workflows/. A PR could edit this file, as it
-# could edit the workflow; the self-modification guard never auto-approves either (.github/**).
+# workflow's token may not change files under .github/workflows/. opendrs.yml restores this file
+# from the PR's base commit before using it, so a PR's edit to it never runs with the bot token.
 inputs:
   github-token:
     description: Token opendrs comments, labels and approves with.

@@ -183,7 +183,7 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git switch -c "$BRANCH"
-          git -c user.name="opendrs-bot[bot]" -c user.email="opendrs-bot[bot]@users.noreply.github.com" \
+          git -c user.name="opendrs-bot[bot]" -c user.email="344752653+opendrs-bot[bot]@users.noreply.github.com" \
             commit -am "chore(release): pin the plugin and this repository's opendrs to $VERSION"
           git push "https://x-access-token:$GH_TOKEN@github.com/$REPOSITORY.git" "HEAD:refs/heads/$BRANCH"
           URL=$(gh pr create --repo "$REPOSITORY" --base main --head "$BRANCH" \

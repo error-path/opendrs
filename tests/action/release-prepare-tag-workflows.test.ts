@@ -69,3 +69,30 @@ describe("tag-a-release workflow", () => {
     expect(runs).not.toMatch(/git tag -f|push -f/);
   });
 });
+
+describe("prepare-a-release checkouts", () => {
+  it("runs only on main, and both jobs check out the run's own commit, never one the build job names", () => {
+    expect(prepareJobs.build!.steps[1]!.run).toContain('test "$REF" = "refs/heads/main"');
+    for (const job of Object.values(prepareJobs)) {
+      const checkout = job.steps.find((step) => step.uses?.startsWith("actions/checkout@"))!;
+      expect(checkout.with).toMatchObject({ ref: "${{ github.sha }}", "persist-credentials": false });
+    }
+  });
+});
+
+describe("the dogfood workflow", () => {
+  const steps: Step[] = parse(read(".github/workflows/opendrs.yml")).jobs.opendrs.steps;
+
+  it("restores the pinned composite action from the PR's base commit before it runs", () => {
+    const restore = steps.findIndex((step) => step.run === 'git checkout "$BASE_SHA" -- .github/actions/opendrs-release');
+    const mint = steps.findIndex((step) => step.uses?.startsWith("actions/create-github-app-token@"));
+    const opendrs = steps.findIndex((step) => step.uses === "./.github/actions/opendrs-release");
+    expect(restore).toBeGreaterThan(0);
+    expect(restore).toBeLessThan(mint);
+    expect(mint).toBeLessThan(opendrs);
+  });
+
+  it("pins the composite's opendrs step to a full release commit", () => {
+    expect(read(".github/actions/opendrs-release/action.yml")).toMatch(/uses: error-path\/opendrs@[0-9a-f]{40} # v\d+\.\d+\.\d+/);
+  });
+});
