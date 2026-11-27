@@ -40,7 +40,7 @@ jobs:
         with:
           client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
           private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
-      - uses: error-path/opendrs@a746b7bd335008fcd03a8857aa0fd8c43c8190ce # v0.7.0
+      - uses: error-path/opendrs@541a0cf40f50de3b6b7d25ddf280bc05f6e7dd81 # v0.7.1
         id: opendrs
         with:
           github-token: ${{ steps.app-token.outputs.token || github.token }}
