@@ -60,12 +60,13 @@ describe("workflows that run the Action", () => {
 
   it("CI keeps the job id `check` that the main ruleset's required checks name", () => {
     const check = parse(read(".github/workflows/ci.yml")).jobs.check;
-    expect(check.strategy.matrix.node).toEqual([22, 24]);
+    // 22 and 24 are the required checks; 26, the newest LTS, runs too but is not required.
+    expect(check.strategy.matrix.node).toEqual([22, 24, 26]);
     // A job name would replace `check (22)` and `check (24)` as the check names.
     expect(check.name).toBeUndefined();
   });
 
-  it.each(["ci", "codeql", "opendrs", "pages", "publish", "scorecard"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
+  it.each(["ci", "codeql", "opendrs", "pages", "publish", "release-finish", "release-prepare", "release-tag", "scorecard"])("this repo's %s workflow and its jobs have descriptive names", (file) => {
     const wf = parse(read(`.github/workflows/${file}.yml`));
     // A set name, not GitHub's default (the bare file name), which says little in the Actions tab.
     expect(wf.name).toMatch(/[A-Z]/);

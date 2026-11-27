@@ -28,13 +28,36 @@ describe("finish-a-release workflow", () => {
     }
   });
 
-  it("gives each job only the permissions it needs, and uses no stored secret", () => {
+  it("gives each job only the permissions it needs", () => {
     expect(workflow.permissions).toEqual({});
     expect(jobs.check!.permissions).toEqual({ contents: "read" });
     expect(jobs.registry!.permissions).toEqual({ contents: "read", "id-token": "write" });
-    // Pushing a branch only: a PR opened with this token would not start CI.
-    expect(jobs["plugin-pin"]!.permissions).toEqual({ contents: "write" });
-    expect(text).not.toMatch(/secrets\./);
+    expect(jobs["major-tag"]!.permissions).toEqual({ contents: "write" });
+    // The pins PR is pushed and opened with the opendrs-bot token, so CI runs on it.
+    expect(jobs.pins!.permissions).toEqual({ contents: "read" });
+  });
+
+  it("uses the opendrs-bot key only in the pins job, for a token narrowed to contents and pull requests", () => {
+    for (const [jobId, job] of Object.entries(jobs)) {
+      if (jobId !== "pins") expect(JSON.stringify(job)).not.toMatch(/secrets\./);
+    }
+    const mint = jobs.pins!.steps.find((step) => step.uses?.startsWith("actions/create-github-app-token@"))!;
+    expect(mint.with).toMatchObject({ "permission-contents": "write", "permission-pull-requests": "write" });
+    // Nothing is installed next to the token: no npm ci or npm install in the job.
+    expect(jobs.pins!.steps.map((step) => step.run ?? "").join("\n")).not.toMatch(/npm (ci|install)/);
+  });
+
+  it("moves the major tag only when asked, never for a prerelease, after the registry publish", () => {
+    const majorTag = jobs["major-tag"] as Job & { if: string };
+    expect(majorTag.if).toBe("inputs.move-major-tag && !contains(inputs.tag, '-')");
+    expect(majorTag.needs).toEqual(["check", "registry"]);
+    expect(workflow.on.workflow_dispatch.inputs["move-major-tag"]).toMatchObject({ type: "boolean", default: true });
+  });
+
+  it("pins the plugin and the dogfood action to the release tag's commit", () => {
+    const runs = jobs.pins!.steps.map((step) => step.run ?? "").join("\n");
+    expect(runs).toContain('node scripts/release.mjs pin-plugin "$VERSION"');
+    expect(runs).toContain('node scripts/release.mjs pin-dogfood "$VERSION" "$(git rev-parse "refs/tags/$TAG^{commit}")"');
   });
 
   it("never puts an expression inside a shell script, where a value could run as code", () => {

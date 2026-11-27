@@ -1,0 +1,65 @@
+name: Tag a release
+
+# When a release PR (from "Prepare a release") lands on main, tags the merge commit vX.Y.Z and
+# drafts the GitHub release with the changelog section as notes. It does not publish: the
+# maintainer publishes the draft with "Publish this Action to the GitHub Marketplace" ticked (a
+# form only the web page has, behind 2FA), which starts the npm publish. It never moves the major
+# tag (v0): "Finish a release" does that, after npm serves the version. See docs/maintaining.md.
+on:
+  push:
+    branches: [main]
+    paths: [package.json]
+
+permissions: {}
+
+concurrency:
+  group: release-tag
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    name: Tag and draft the release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to push the tag and create the draft release
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # to see existing tags
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Read the version and skip one that is already tagged
+        id: version
+        run: |
+          VERSION=$(node -p 'require("./package.json").version')
+          # Same pattern as the publish and finish workflows; [[ =~ ]] matches the whole value.
+          if ! [[ "v$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::package.json version '$VERSION' is not a release version"
+            exit 1
+          fi
+          if git rev-parse -q --verify "refs/tags/v$VERSION" > /dev/null; then
+            echo "v$VERSION is already tagged; nothing to do." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$(node -p 'require("./server.json").version')" = "$VERSION" \
+            || { echo "::error::server.json's version is not $VERSION"; exit 1; }
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Tag the commit and draft the release
+        if: steps.version.outputs.skip != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/release.mjs notes "$VERSION" > "$RUNNER_TEMP/notes.md"
+          git tag "v$VERSION" "$GITHUB_SHA"
+          git push origin "refs/tags/v$VERSION"
+          PRERELEASE=()
+          [[ "$VERSION" == *-* ]] && PRERELEASE=(--prerelease)
+          URL=$(gh release create "v$VERSION" --draft --verify-tag --title "v$VERSION" --notes-file "$RUNNER_TEMP/notes.md" "${PRERELEASE[@]}")
+          {
+            echo "### Tagged v$VERSION and drafted the release"
+            echo
+            echo "Publish it with **Publish this Action to the GitHub Marketplace** ticked: $URL"
+          } >> "$GITHUB_STEP_SUMMARY"

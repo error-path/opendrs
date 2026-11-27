@@ -1,7 +1,8 @@
 # Dogfood: score this repository's own PRs and approve the low-risk ones (.opendrs.yml), and
 # auto-merge only those that are also a captain "quick confirm", once the required checks pass.
-# Runs a RELEASED action, pinned to a release commit that Dependabot bumps, never the PR's own
-# copy: a PR must not be able to edit the code that decides whether to approve it.
+# Runs a RELEASED action, pinned to a release commit in .github/actions/opendrs-release (bumped by
+# "Finish a release"), never the PR's own copy: a PR must not be able to edit the code that
+# decides whether to approve it.
 name: OpenDRS
 
 on:
@@ -40,7 +41,8 @@ jobs:
         with:
           client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
           private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
-      - uses: error-path/opendrs@541a0cf40f50de3b6b7d25ddf280bc05f6e7dd81 # v0.7.1
+      # The release pin is in this composite action, so "Finish a release" can bump it.
+      - uses: ./.github/actions/opendrs-release
         id: opendrs
         with:
           github-token: ${{ steps.app-token.outputs.token || github.token }}

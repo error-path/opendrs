@@ -2,6 +2,17 @@
 
 All notable changes to opendrs. Versions follow [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Changed
+
+- Releases run mostly in GitHub Actions: **Prepare a release** opens the release PR, **Tag a
+  release** tags the merge and drafts the GitHub release, and **Finish a release** also moves the
+  major tag and opens one PR that pins the plugin and this repository's own opendrs step. The
+  maintainer still reads and merges the PRs, publishes the draft (Marketplace) and approves npm.
+- The Docker image is back on an LTS Node (`node:24-slim`; Node 25 reached end-of-life on 1 June
+  2026), Dependabot no longer proposes new Node majors for it, and CI also runs on Node 26.
+
 ## 0.7.1 - 2026-11-27
 
 ### Added
