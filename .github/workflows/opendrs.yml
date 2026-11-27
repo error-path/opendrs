@@ -1,7 +1,8 @@
 # Dogfood: score this repository's own PRs and approve the low-risk ones (.opendrs.yml), and
 # auto-merge only those that are also a captain "quick confirm", once the required checks pass.
-# Runs a RELEASED action, pinned to a release commit that Dependabot bumps, never the PR's own
-# copy: a PR must not be able to edit the code that decides whether to approve it.
+# Runs a RELEASED action, pinned to a release commit in .github/actions/opendrs-release (bumped by
+# "Finish a release"), never the PR's own copy: a PR must not be able to edit the code that
+# decides whether to approve it.
 name: OpenDRS
 
 on:
@@ -30,6 +31,12 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0 # required: the score reads past commits, authors and the merge-base
+      # Run the pinned release from the base branch, never the PR's copy: changing a file under
+      # .github/actions/ needs only contents write, not the workflows permission a workflow edit needs.
+      - name: Use the base branch's opendrs pin
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git checkout "$BASE_SHA" -- .github/actions/opendrs-release
       # opendrs comments, labels, approves and merges as the opendrs-bot GitHub App, not as
       # github-actions. The token lasts one hour, covers this repository only and is revoked when
       # the job ends. Fork PRs get no secrets: they fall back to GITHUB_TOKEN and are never approved.
@@ -40,7 +47,9 @@ jobs:
         with:
           client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
           private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
-      - uses: error-path/opendrs@541a0cf40f50de3b6b7d25ddf280bc05f6e7dd81 # v0.7.1
+      # The release pin is in this composite action, so "Finish a release" can bump it. A pins PR
+      # therefore still runs the previous release; the new pin applies from the next PR.
+      - uses: ./.github/actions/opendrs-release
         id: opendrs
         with:
           github-token: ${{ steps.app-token.outputs.token || github.token }}

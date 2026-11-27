@@ -1,16 +1,21 @@
 name: Finish a release
 
 # Run by hand after you approve a staged npm version: publishes server.json to the MCP registry,
-# then pushes a branch that pins the Claude Code plugin to the version, for you to open as a PR
-# (a PR opened by this workflow's token would not start CI). Only the repository owner can run it,
-# and it signs in to the registry with the run's OIDC token, so no secret is stored. See
-# docs/maintaining.md, "Releasing".
+# moves the major tag (v0) to the release so `@v0` users get it, and opens one PR, as opendrs-bot
+# so CI runs on it, that pins the Claude Code plugin and this repository's own opendrs step to the
+# release. Only the repository owner can run it. The registry login uses the run's OIDC token; the
+# only stored secret is the opendrs-bot key, used in the pins job alone. See docs/maintaining.md,
+# "Releasing".
 on:
   workflow_dispatch:
     inputs:
       tag:
         description: "Release tag that npm already serves, such as v0.6.0"
         required: true
+      move-major-tag:
+        description: "Move the major tag (v0) to this release. Untick for a release with a breaking change: release v1 instead."
+        type: boolean
+        default: true
 
 permissions: {}
 
@@ -112,36 +117,76 @@ jobs:
           "$RUNNER_TEMP/mcp-publisher" publish
           echo "### Published $VERSION to the MCP registry" >> "$GITHUB_STEP_SUMMARY"
 
-  plugin-pin:
-    name: Push the plugin pin branch
+  major-tag:
+    name: Move the major tag
+    needs: [check, registry]
+    # A prerelease never moves it; untick the input for a breaking change.
+    if: inputs.move-major-tag && !contains(inputs.tag, '-')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to force-push the major tag
+    env:
+      TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/tags/${{ env.TAG }}
+      - name: Move the major tag to the release commit
+        run: |
+          MAJOR="${TAG%%.*}" # v0.7.1 -> v0
+          git tag -f "$MAJOR" "$(git rev-parse "refs/tags/$TAG^{commit}")"
+          git push -f origin "refs/tags/$MAJOR"
+          echo "### Moved $MAJOR to $TAG" >> "$GITHUB_STEP_SUMMARY"
+
+  pins:
+    name: Open the release pins PR
     needs: [check, registry]
     runs-on: ubuntu-latest
     permissions:
-      contents: write # to push the branch; the PR is opened by the owner, so CI runs on it
+      contents: read # the push and the PR use the opendrs-bot token, so CI runs on the PR
     env:
+      TAG: ${{ inputs.tag }}
       VERSION: ${{ needs.check.outputs.version }}
-      BRANCH: chore/plugin-pin-${{ needs.check.outputs.version }}
+      BRANCH: chore/release-pins-${{ needs.check.outputs.version }}
       REPOSITORY: ${{ github.repository }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
+          fetch-depth: 0 # to read the tag's commit
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
-      - name: Pin the plugin and push the branch
+      # release.mjs imports only Node's own modules, and nothing is installed in this job.
+      - name: Pin the plugin and the dogfood action
+        id: pin
         run: |
           node scripts/release.mjs pin-plugin "$VERSION"
+          node scripts/release.mjs pin-dogfood "$VERSION" "$(git rev-parse "refs/tags/$TAG^{commit}")"
           if git diff --quiet; then
-            echo "main already pins $VERSION; no branch to push." | tee -a "$GITHUB_STEP_SUMMARY"
-            exit 0
+            echo "main already pins $VERSION; no PR to open." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
+      - name: Mint an opendrs-bot token
+        id: app-token
+        if: steps.pin.outputs.skip != 'true'
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Push the branch and open the PR
+        if: steps.pin.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
           git switch -c "$BRANCH"
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -am "chore(plugin): pin @error-path/opendrs $VERSION"
-          git push origin "HEAD:refs/heads/$BRANCH"
-          {
-            echo "### Plugin pin branch pushed"
-            echo
-            echo "Open the PR: https://github.com/$REPOSITORY/compare/main...$BRANCH?expand=1"
-          } >> "$GITHUB_STEP_SUMMARY"
+          git -c user.name="opendrs-bot[bot]" -c user.email="344752653+opendrs-bot[bot]@users.noreply.github.com" \
+            commit -am "chore(release): pin the plugin and this repository's opendrs to $VERSION"
+          git push "https://x-access-token:$GH_TOKEN@github.com/$REPOSITORY.git" "HEAD:refs/heads/$BRANCH"
+          URL=$(gh pr create --repo "$REPOSITORY" --base main --head "$BRANCH" \
+            --title "chore(release): pin the plugin and this repository's opendrs to $VERSION" \
+            --body "Opened by **Finish a release** for $TAG: npm serves $VERSION and the MCP registry lists it. Pins the Claude Code plugin's npx calls and the dogfood action (.github/actions/opendrs-release) to the release. Merge when CI passes.")
+          echo "### Pins PR opened: $URL" >> "$GITHUB_STEP_SUMMARY"

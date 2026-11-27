@@ -1,0 +1,121 @@
+name: Prepare a release
+
+# Run by hand with the version to release: runs `npm run release:prepare` on main and opens the
+# release PR as opendrs-bot, so CI runs on it. Read the changelog section in the PR, then merge it;
+# "Tag a release" takes over from there. Only the repository owner can run it. The build job has no
+# secret; the bot token is minted in a job that installs and runs no dependency. See
+# docs/maintaining.md, "Releasing".
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, without the v, such as 0.7.2"
+        required: true
+
+permissions: {}
+
+concurrency:
+  group: release-prepare
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Set the version and rebuild the action
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Check who started the run
+        env:
+          TRIGGERING_ACTOR: ${{ github.triggering_actor }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          test "$TRIGGERING_ACTOR" = "$OWNER" \
+            || { echo "::error::Only $OWNER can prepare a release, not $TRIGGERING_ACTOR"; exit 1; }
+      - name: Check that the run is on main
+        env:
+          REF: ${{ github.ref }}
+        run: |
+          test "$REF" = "refs/heads/main" || { echo "::error::Run this from main, not $REF"; exit 1; }
+      - name: Check the version
+        run: |
+          # The release tag's pattern without the v; [[ =~ ]] matches the whole value.
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::'$VERSION' is not a release version like 1.2.3"
+            exit 1
+          fi
+      # Both jobs check out the commit the run started on, never one the build job names.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: npm ci
+      - name: Prepare the release
+        run: |
+          node scripts/release.mjs prepare "$VERSION"
+          git diff --binary > "$RUNNER_TEMP/release.patch"
+          test -s "$RUNNER_TEMP/release.patch" || { echo "::error::release:prepare changed nothing"; exit 1; }
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-patch
+          path: ${{ runner.temp }}/release.patch
+          retention-days: 1
+
+  pull-request:
+    name: Open the release PR
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      VERSION: ${{ inputs.version }}
+      BRANCH: release/${{ inputs.version }}
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release-patch
+          path: ${{ runner.temp }}/release
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      # Only contents and pull-requests: the patch is limited to release:prepare's files below.
+      - name: Mint an opendrs-bot token
+        id: app-token
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Push the branch and open the PR
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          git apply --index "$RUNNER_TEMP/release/release.patch"
+          # The build job ran npm dependencies, so accept only the files release:prepare writes.
+          UNEXPECTED=$(git diff --cached --name-only | grep -vxE 'package\.json|package-lock\.json|src/version\.ts|server\.json|tests/fixtures/golden-full-score\.json|CHANGELOG\.md|action/dist/.+' || true)
+          if [ -n "$UNEXPECTED" ]; then
+            echo "::error::the release patch changes files release:prepare never writes: $UNEXPECTED"; exit 1
+          fi
+          git switch -c "$BRANCH"
+          git -c user.name="opendrs-bot[bot]" -c user.email="344752653+opendrs-bot[bot]@users.noreply.github.com" \
+            commit -m "chore(release): $VERSION"
+          git push "https://x-access-token:$GH_TOKEN@github.com/$REPOSITORY.git" "HEAD:refs/heads/$BRANCH"
+          node scripts/release.mjs notes "$VERSION" > "$RUNNER_TEMP/notes.md"
+          {
+            echo "Prepared by the **Prepare a release** workflow (\`npm run release:prepare -- $VERSION\`)."
+            echo "Read the changelog section below, then merge: **Tag a release** tags the merge commit and drafts the GitHub release."
+            echo
+            echo "## Changelog"
+            echo
+            cat "$RUNNER_TEMP/notes.md"
+          } > "$RUNNER_TEMP/body.md"
+          URL=$(gh pr create --repo "$REPOSITORY" --base main --head "$BRANCH" --title "chore(release): $VERSION" --body-file "$RUNNER_TEMP/body.md")
+          echo "### Release PR opened: $URL" >> "$GITHUB_STEP_SUMMARY"

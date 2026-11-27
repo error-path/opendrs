@@ -12,6 +12,10 @@ updates:
   - package-ecosystem: docker
     directory: /
     schedule: { interval: weekly }
+    # Digest and patch bumps only: a new Node major is chosen by hand, and only an LTS (even) one.
+    ignore:
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: bundler
     directory: /docs
     schedule: { interval: weekly }

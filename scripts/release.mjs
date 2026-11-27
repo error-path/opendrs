@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Release edits, run by the maintainer (`npm run release:prepare -- 0.7.0`) and by the
-// "Finish a release" workflow (`node scripts/release.mjs pin-plugin 0.7.0`). See
-// docs/maintaining.md, "Releasing".
+// Release edits, run by the "Prepare a release" workflow or the maintainer
+// (`npm run release:prepare -- 0.7.0`), by "Tag a release" (`notes 0.7.0`) and by "Finish a
+// release" (`pin-plugin 0.7.0`, `pin-dogfood 0.7.0 <commit>`). See docs/maintaining.md, "Releasing".
 import { spawnSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -12,6 +12,12 @@ const VERSION_PATTERN = /^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$/;
 
 /** Files that pin the npm package for plugin installs. */
 const PLUGIN_FILES = ["plugin/.claude-plugin/plugin.json", "plugin/commands/opendrs-review.md", "plugin/skills/opendrs/SKILL.md"];
+
+/** The composite action that runs a released opendrs on this repository's own PRs. */
+const DOGFOOD_FILE = ".github/actions/opendrs-release/action.yml";
+
+/** The dogfood action's pin: a full commit SHA, then the release tag as a comment. */
+const DOGFOOD_PIN_PATTERN = /error-path\/opendrs@[0-9a-f]{40} # v[0-9A-Za-z.-]+/g;
 
 /**
  * Throws unless `version` is a release version.
@@ -117,8 +123,47 @@ export function pinPlugin(rootDir, version) {
   );
 }
 
+/**
+ * Pins this repository's own opendrs step to a release commit. The pin lives in a composite action,
+ * not in a workflow, because a workflow's token may not change files under `.github/workflows/`.
+ *
+ * @param rootDir - The repository root.
+ * @param version - The released version, written as the `# vX.Y.Z` comment.
+ * @param commit - The full SHA of the release tag's commit.
+ * @returns The changed files, relative to the root; empty when the pin is already this commit.
+ * @throws {@link Error} If the version or commit is invalid, or the file pins no release commit.
+ */
+export function pinDogfood(rootDir, version, commit) {
+  assertVersion(version);
+  if (!/^[0-9a-f]{40}$/.test(commit)) throw new Error(`'${commit}' is not a full commit SHA`);
+  return applyEdits(rootDir, {
+    [DOGFOOD_FILE]: (text) => {
+      if (!text.match(DOGFOOD_PIN_PATTERN)) throw new Error(`${DOGFOOD_FILE} pins no opendrs release commit`);
+      return text.replace(DOGFOOD_PIN_PATTERN, `error-path/opendrs@${commit} # v${version}`);
+    },
+  });
+}
+
+/**
+ * Reads a released version's changelog section, for the GitHub release's notes.
+ *
+ * @param rootDir - The repository root.
+ * @param version - The version whose `## X.Y.Z - date` section to read.
+ * @returns The section's text without its heading, trimmed.
+ * @throws {@link Error} If the version is invalid, or the changelog has no non-empty section for it.
+ */
+export function releaseNotes(rootDir, version) {
+  assertVersion(version);
+  const lines = readFileSync(join(rootDir, "CHANGELOG.md"), "utf8").split(/\r?\n/);
+  const start = lines.findIndex((line) => line === `## ${version}` || line.startsWith(`## ${version} `));
+  const end = lines.findIndex((line, index) => index > start && line.startsWith("## "));
+  const notes = start < 0 ? "" : lines.slice(start + 1, end < 0 ? undefined : end).join("\n").trim();
+  if (!notes) throw new Error(`CHANGELOG.md has no section for ${version}`);
+  return notes;
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const [command, version] = process.argv.slice(2);
+  const [command, version, commit] = process.argv.slice(2);
   try {
     if (command === "prepare") {
       const changed = bumpVersion(process.cwd(), version ?? "", new Date().toISOString().slice(0, 10));
@@ -130,8 +175,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     } else if (command === "pin-plugin") {
       const changed = pinPlugin(process.cwd(), version ?? "");
       console.log(changed.length ? `Pinned ${version} in:\n  ${changed.join("\n  ")}` : `The plugin already pins ${version}.`);
+    } else if (command === "pin-dogfood") {
+      const changed = pinDogfood(process.cwd(), version ?? "", commit ?? "");
+      console.log(changed.length ? `Pinned ${version} in:\n  ${changed.join("\n  ")}` : `The dogfood action already pins ${version}.`);
+    } else if (command === "notes") {
+      console.log(releaseNotes(process.cwd(), version ?? ""));
     } else {
-      console.error("Usage: node scripts/release.mjs prepare <version> | pin-plugin <version>");
+      console.error("Usage: node scripts/release.mjs prepare <version> | pin-plugin <version> | pin-dogfood <version> <commit> | notes <version>");
       process.exit(2);
     }
   } catch (error) {

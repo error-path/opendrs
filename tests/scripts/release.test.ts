@@ -2,9 +2,16 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { bumpVersion, pinPlugin } from "../../scripts/release.mjs";
+import { bumpVersion, pinDogfood, pinPlugin, releaseNotes } from "../../scripts/release.mjs";
 
 let rootDir: string;
+
+/** The release commit the dogfood action pins before each test. */
+const OLD_COMMIT = "a".repeat(40);
+/** A release commit to pin. */
+const NEW_COMMIT = "0123456789abcdef0123456789abcdef01234567";
+/** The dogfood action's path under the repository root. */
+const DOGFOOD_FILE = ".github/actions/opendrs-release/action.yml";
 
 /** Writes `content` to `relativePath` under the temporary repository root. */
 const writeRepoFile = (relativePath: string, content: string) => {
@@ -31,6 +38,7 @@ beforeEach(() => {
   writeRepoFile("plugin/.claude-plugin/plugin.json", '{\n  "version": "0.5.2",\n  "args": ["-y", "@error-path/opendrs@0.5.2", "mcp"]\n}\n');
   writeRepoFile("plugin/commands/opendrs-review.md", "Run !`npx @error-path/opendrs@0.5.2 brief`.\n");
   writeRepoFile("plugin/skills/opendrs/SKILL.md", "npx @error-path/opendrs@0.5.2 score\nnpx @error-path/opendrs@0.5.2 brief\n");
+  writeRepoFile(DOGFOOD_FILE, `runs:\n  steps:\n    - uses: error-path/opendrs@${OLD_COMMIT} # v0.5.2\n`);
 });
 
 afterEach(() => rmSync(rootDir, { recursive: true, force: true }));
@@ -101,5 +109,44 @@ describe("pinPlugin", () => {
 
   it("refuses a value that is not a version", () => {
     expect(() => pinPlugin(rootDir, "0.6.0 && id")).toThrow(/not a version/);
+  });
+});
+
+describe("pinDogfood", () => {
+  it("pins this repository's own opendrs step to the release commit, with the tag as a comment", () => {
+    expect(pinDogfood(rootDir, "0.6.0", NEW_COMMIT)).toEqual([DOGFOOD_FILE]);
+    expect(readRepoFile(DOGFOOD_FILE)).toBe(`runs:\n  steps:\n    - uses: error-path/opendrs@${NEW_COMMIT} # v0.6.0\n`);
+    expect(pinDogfood(rootDir, "0.6.0", NEW_COMMIT)).toEqual([]);
+  });
+
+  it("refuses a commit that is not a full SHA, and a value that is not a version", () => {
+    expect(() => pinDogfood(rootDir, "0.6.0", "v0.6.0")).toThrow(/not a full commit SHA/);
+    expect(() => pinDogfood(rootDir, "0.6.0", NEW_COMMIT.slice(0, 7))).toThrow(/not a full commit SHA/);
+    expect(() => pinDogfood(rootDir, "0.6.0 && id", NEW_COMMIT)).toThrow(/not a version/);
+  });
+
+  it("refuses to run when the file pins no release commit, and changes nothing", () => {
+    writeRepoFile(DOGFOOD_FILE, "runs:\n  steps: []\n");
+    expect(() => pinDogfood(rootDir, "0.6.0", NEW_COMMIT)).toThrow(/pins no opendrs release commit/);
+    expect(readRepoFile(DOGFOOD_FILE)).toBe("runs:\n  steps: []\n");
+  });
+});
+
+describe("releaseNotes", () => {
+  it("returns the version's changelog section without its heading", () => {
+    writeRepoFile("CHANGELOG.md", "# Changelog\n\n## 0.6.0 - 2026-11-20\n\n### Fixed\n\n- A bug.\n\n## 0.5.2 - 2026-11-12\n\n- Old.\n");
+    expect(releaseNotes(rootDir, "0.6.0")).toBe("### Fixed\n\n- A bug.");
+    expect(releaseNotes(rootDir, "0.5.2")).toBe("- Old.");
+  });
+
+  it("does not match a longer version that starts the same way, and reads CRLF files", () => {
+    writeRepoFile("CHANGELOG.md", "## 0.6.10 - 2026-11-20\r\n\r\n- Ten.\r\n\r\n## 0.6.1 - 2026-11-19\r\n\r\n- One.\r\n");
+    expect(releaseNotes(rootDir, "0.6.1")).toBe("- One.");
+  });
+
+  it("refuses a version with no section, or an empty one", () => {
+    expect(() => releaseNotes(rootDir, "9.9.9")).toThrow(/no section for 9\.9\.9/);
+    writeRepoFile("CHANGELOG.md", "## 0.6.0 - 2026-11-20\n\n## 0.5.2 - 2026-11-12\n");
+    expect(() => releaseNotes(rootDir, "0.6.0")).toThrow(/no section for 0\.6\.0/);
   });
 });

@@ -29,46 +29,55 @@ A short runbook for the maintainer.
 
 ## Releasing
 
-1. On a branch from `main`, run `npm run release:prepare -- 0.7.0`. It sets the version in
-   `package.json`, `package-lock.json`, `src/version.ts`, both fields of `server.json` and the
-   golden score fixture, renames `## Unreleased` in `CHANGELOG.md` to the dated release, and
-   rebuilds `action/dist`. Read the changelog section, run `npm run check`, and open the PR.
-2. Merge that PR.
-3. Tag the release and move the major tag (from a network that allows pushes):
+Most of a release runs in GitHub Actions. You do only the steps that need your judgement or your
+2FA code: starting it, reading and merging the release PR, publishing the draft release, approving
+npm, and finishing.
 
-   ```sh
-   git checkout main && git pull
-   git tag v0.2.0 && git tag -f v0
-   git push origin v0.2.0 && git push -f origin v0
-   ```
-
-   This repository's own dogfood (`.github/workflows/opendrs.yml`) pins the action by commit, so
-   it does not follow `v0`: bump its SHA and `# vX.Y.Z` comment in a PR, or merge Dependabot's.
-
-4. Create a GitHub release from the tag with the changelog section as notes, with **Publish this
-   Action to the GitHub Marketplace** ticked: that is what updates the Marketplace listing from
-   `action.yml`. The form refuses a `description` of 125 characters or more (a test in
-   `tests/action/workflows.test.ts` checks this), and GitHub asks for your 2FA code to publish.
-   Publishing starts the **Publish to npm** workflow (`publish.yml`), which stages the package on
-   npm (see below).
+1. Under **Actions**, open **Prepare a release** (`release-prepare.yml`), choose **Run workflow**
+   and give the version, such as `0.7.2`. Only the repository owner can run it. Its first job runs
+   `npm run release:prepare` on `main` with no secret: that sets the version in `package.json`,
+   `package-lock.json`, `src/version.ts`, both fields of `server.json` and the golden score
+   fixture, renames `## Unreleased` in `CHANGELOG.md` to the dated release, and rebuilds
+   `action/dist`. Its second job installs nothing, refuses a patch that touches any other file, and
+   opens the release PR as opendrs-bot, so CI runs on it. Before you run it, make sure the
+   `## Unreleased` section says what the release ships.
+2. Read the changelog section in the PR and merge it when CI passes. The self-modification guard
+   never auto-approves it (it changes `action/dist`), so you merge it.
+3. **Tag a release** (`release-tag.yml`) runs on that merge: it tags the merge commit `vX.Y.Z` and
+   drafts the GitHub release with the changelog section as notes. A push to `main` whose
+   `package.json` version is already tagged does nothing.
+4. Open the draft from the run's summary or the **Releases** page, tick **Publish this Action to
+   the GitHub Marketplace** (only the web form has it), and publish with your 2FA code. That
+   updates the Marketplace listing from `action.yml`; the form refuses a `description` of 125
+   characters or more (a test in `tests/action/workflows.test.ts` checks this). Publishing starts
+   the **Publish to npm** workflow (`publish.yml`), which stages the package on npm (see below).
 5. When that run passes, approve the staged version on npmjs.com, in the package's
-   **Staged Packages** tab, with your 2FA code. Then check that
-   `npm view @error-path/opendrs version` shows the release.
-6. Under **Actions**, open **Finish a release**, choose **Run workflow** and give the tag, such as
-   `v0.7.0` (`release-finish.yml`; only the repository owner can run it). It checks that npm
-   serves the version, publishes `server.json` to the MCP registry with the run's OIDC token, and
-   pushes a `chore/plugin-pin-<version>` branch made by `node scripts/release.mjs pin-plugin`. The
-   registry checks that the npm package's `mcpName` matches `server.json`'s `name`, so it must run
-   after npm has the version. A re-run skips a version the registry already lists.
-7. Open the plugin pin PR from the link in the run's summary, and merge it when CI passes. You open
-   it, not the workflow, because a PR opened with the workflow's token would not start CI. The
-   plugin directory follows `main`, so a pin merged before npm has the version would point at a
-   version that does not exist yet.
+   **Staged Packages** tab, with your 2FA code.
+6. Under **Actions**, open **Finish a release** (`release-finish.yml`), choose **Run workflow** and
+   give the tag, such as `v0.7.2`. Only the repository owner can run it. It checks that npm serves
+   the version, publishes `server.json` to the MCP registry with the run's OIDC token (a re-run
+   skips a version the registry already lists), moves the major tag (`v0`) to the release, and
+   opens one PR as opendrs-bot that pins the Claude Code plugin (`pin-plugin`) and this
+   repository's own opendrs step (`pin-dogfood`, in `.github/actions/opendrs-release/action.yml`)
+   to the release. Untick **Move the major tag** for a release with a breaking change; a
+   prerelease never moves it. The registry checks that the npm package's `mcpName` matches
+   `server.json`'s `name`, so this must run after npm has the version.
+7. Merge the pins PR when CI passes. The plugin directory follows `main`, so a pin merged before
+   npm has the version would point at a version that does not exist yet; that is why it comes
+   last. The dogfood pin is in a composite action rather than in `opendrs.yml` because a
+   workflow's token may not change files under `.github/workflows/`.
 
-   If the workflow cannot run, do steps 6 and 7 by hand: `mcp-publisher login github` and
-   `mcp-publisher publish` from the tag, then `node scripts/release.mjs pin-plugin 0.7.0` on a
-   branch and open the PR. To move to a newer mcp-publisher, update `PUBLISHER_VERSION` and
-   `PUBLISHER_SHA256` (the release's `mcp-publisher_linux_amd64.tar.gz` digest) together.
+   If a workflow cannot run, every step still works by hand: `npm run release:prepare -- 0.7.2` on
+   a branch and a PR; `git tag v0.7.2 && git push origin v0.7.2` after the merge;
+   `git tag -f v0 v0.7.2 && git push -f origin v0`; `mcp-publisher login github` and
+   `mcp-publisher publish` from the tag; and `node scripts/release.mjs pin-plugin 0.7.2` plus
+   `node scripts/release.mjs pin-dogfood 0.7.2 <tag commit SHA>` on a branch and a PR. To move to a
+   newer mcp-publisher, update `PUBLISHER_VERSION` and `PUBLISHER_SHA256` (the release's
+   `mcp-publisher_linux_amd64.tar.gz` digest) together.
+
+   **Prepare a release** and **Finish a release** push and open PRs with the opendrs-bot app
+   (`OPENDRS_APP_CLIENT_ID`, `OPENDRS_APP_PRIVATE_KEY`), with a token narrowed to contents and pull
+   requests, because a PR opened with the workflow's own token would not start CI.
 8. Refresh the directory listings that are not driven by the registry: on
    [Glama](https://glama.ai/mcp/servers) (configured by `glama.json`) and on
    [mcp.so](https://mcp.so/servers/opendrs), sign in as a maintainer and check that the listing

@@ -1,0 +1,38 @@
+name: opendrs (pinned release)
+description: Runs a released opendrs on this repository's own PRs. Used only by .github/workflows/opendrs.yml.
+
+# The pin lives here, not in the workflow, so the "Finish a release" workflow can bump it: a
+# workflow's token may not change files under .github/workflows/. opendrs.yml restores this file
+# from the PR's base commit before using it, so a PR's edit to it never runs with the bot token.
+inputs:
+  github-token:
+    description: Token opendrs comments, labels and approves with.
+    required: true
+  sample-salt:
+    description: Salt for the sampled-review hash.
+    required: false
+    default: ""
+outputs:
+  score:
+    description: The PR's risk score.
+    value: ${{ steps.opendrs.outputs.score }}
+  tier:
+    description: The risk tier.
+    value: ${{ steps.opendrs.outputs.tier }}
+  decision:
+    description: The policy verdict, before the safety rails.
+    value: ${{ steps.opendrs.outputs.decision }}
+  captain:
+    description: The captain priority.
+    value: ${{ steps.opendrs.outputs.captain }}
+  approved:
+    description: true only when opendrs approved the head commit in this run.
+    value: ${{ steps.opendrs.outputs.approved }}
+runs:
+  using: composite
+  steps:
+    - uses: error-path/opendrs@541a0cf40f50de3b6b7d25ddf280bc05f6e7dd81 # v0.7.1
+      id: opendrs
+      with:
+        github-token: ${{ inputs.github-token }}
+        sample-salt: ${{ inputs.sample-salt }}
