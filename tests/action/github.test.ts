@@ -155,6 +155,16 @@ describe("GitHubClient", () => {
     expect(err.status).toBe(403);
   });
 
+  it("gives every request a timeout, and a timed-out request fails as an error", async () => {
+    const fetch = vi.fn(async (_url: string, init: RequestInit) => {
+      expect(init.signal).toBeInstanceOf(AbortSignal);
+      throw new DOMException("The operation was aborted due to timeout", "TimeoutError");
+    });
+    vi.stubGlobal("fetch", fetch);
+    await expect(client().listComments(7)).rejects.toThrow(/timeout/);
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
+
   it("falls back to GET /user when the GraphQL viewer query fails", async () => {
     const fetch = vi
       .fn()
@@ -178,7 +188,8 @@ describe("GitHubClient", () => {
     ["GitHub-Actions[bot]", { login: "github-actions[bot]", type: "Bot" }, true],
     ["github-actions", { login: "github-actions", type: "User" }, true],
     ["github-actions", { login: "mallory", type: "Bot" }, false],
-    [undefined, { login: "some-app[bot]", type: "Bot" }, true],
+    [undefined, { login: "some-app[bot]", type: "Bot" }, false],
+    [undefined, { login: "github-actions[bot]", type: "Bot" }, true],
     [undefined, { login: "alice", type: "User" }, false],
     [undefined, null, false],
   ] as const)("isSelf(%j, %j) is %s", (viewer, user, expected) => {

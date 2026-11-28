@@ -16,7 +16,12 @@ export const cell = (text: string) =>
       .replace(/[\\|`[\]]/g, "\\$&")
       .trim(),
   );
-/** Untrusted text as inline code, where HTML, links and mentions are inert; only a backtick could end it. */
-export const code = (text: string) => `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "ˋ").trim())}\``;
+/**
+ * Untrusted text as inline code, where HTML, links and mentions are inert; only a backtick could end it.
+ * GitHub still hides an HTML comment inside a code span from readers of the raw body, and opendrs reads
+ * its own markers from that body, so `<!--` is broken with a zero-width non-joiner like `~~~`.
+ */
+export const code = (text: string) =>
+  `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "ˋ").replace(/<!--/g, "<‌!--").trim())}\``;
 /** LLM output is shaped by the (untrusted) diff, so also stop it from @-mentioning people. */
 export const untrusted = (text: string) => cell(text).replace(/@(?=\w)/g, "@​");

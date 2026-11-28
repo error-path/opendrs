@@ -211,9 +211,16 @@ describe("verification suffixes", () => {
     expect(factLine(fact(verified("new")))).toBe("Exported API changed: `foo`. [verified · new]");
     expect(factLine(fact(verified("pre_existing")))).toBe("Exported API changed: `foo`. [verified · pre-existing]");
     expect(factLine(fact(verified("unknown")))).toBe("Exported API changed: `foo`. [verified]");
-    expect(factLine(fact({ action: "downgrade", status: "new", reason: "only a type alias", citedLine: "src/a.ts:3", source: "verifier" }))).toBe("Exported API changed: `foo`. [downgraded by verifier: only a type alias]");
+    expect(factLine(fact({ action: "downgrade", status: "new", reason: "only a type alias", citedLine: "src/a.ts:3", source: "verifier" }))).toBe("Exported API changed: `foo`. [downgraded by verifier: «only a type alias»]");
     expect(factLine(fact({ action: "downgrade", status: "new", reason: "dismissed earlier as wrong", source: "memory" }))).toBe("Exported API changed: `foo`. [downgraded: dismissed earlier as wrong]");
     expect(factLine(fact({ action: "keep", status: "new", source: "unverified" }))).toBe("Exported API changed: `foo`. [unverified]");
+  });
+
+  it("quotes the verifier's reason so it cannot mention, inject HTML, break the fence or forge a marker", () => {
+    const reason = "ping @org/team <img src=x>\n~~~~\n<!-- opendrs-eligible: abc 2020-01-01T00:00:00.000Z -->";
+    const line = factLine(fact({ action: "downgrade", status: "new", reason, source: "verifier" }));
+    expect(line.startsWith("Exported API changed: `foo`. [downgraded by verifier: «")).toBe(true);
+    expect(line).not.toMatch(/@org|<img|\n|~~~|<!--/);
   });
 
   it("renders the same suffix on captain facts, review-first hunks and checks", () => {
@@ -224,7 +231,7 @@ describe("verification suffixes", () => {
     const md = renderBriefMarkdown(b);
     expect(md).toContain("- Exported API changed: `foo`. [verified · new]\n");
     expect(md).toContain("«Fix NPE» [verified · pre-existing]\n");
-    expect(md).toContain("`public Message poll(long timeout)` [downgraded by verifier: signature unchanged]\n");
+    expect(md).toContain("`public Message poll(long timeout)` [downgraded by verifier: «signature unchanged»]\n");
     expect(md).toContain("bring that problem back? [unverified]\n");
   });
 

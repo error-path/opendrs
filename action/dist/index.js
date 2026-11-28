@@ -27503,9 +27503,10 @@ async function unlessForbidden(fn, onForbidden) {
 }
 var normaliseLogin = (login) => login.toLowerCase().replace(/\[bot\]$/, "");
 var sameLogin = (a, b) => a !== void 0 && b !== void 0 && normaliseLogin(a) === normaliseLogin(b);
+var GITHUB_ACTIONS_BOT = "github-actions[bot]";
 function isSelf(user, viewer) {
   if (!user) return false;
-  return viewer === void 0 ? user.type === "Bot" : sameLogin(user.login, viewer);
+  return viewer === void 0 ? user.login === GITHUB_ACTIONS_BOT : sameLogin(user.login, viewer);
 }
 var OPENDRS_LABELS = {
   "risk:green": { color: "2ea44f", description: "opendrs: low-risk change" },
@@ -27519,6 +27520,7 @@ var OPENDRS_LABELS = {
   "captain:quick": { color: "0e8a16", description: "opendrs: captain quick confirm" }
 };
 var DEFAULT_LABEL_COLOR = "ededed";
+var REQUEST_TIMEOUT_MS = 3e4;
 var GitHubClient = class {
   constructor(opts) {
     this.opts = opts;
@@ -27535,6 +27537,7 @@ var GitHubClient = class {
    * @param acceptedMediaType - The `accept` header; GitHub's JSON unless a caller needs raw bytes.
    * @returns The response, when its status is 2xx.
    * @throws {@link GitHubError} On any other status, with GitHub's message.
+   * @throws A `TimeoutError` when GitHub does not answer within 30 seconds.
    */
   async send(method, url2, body, acceptedMediaType = "application/vnd.github+json") {
     const res = await fetch(url2, {
@@ -27546,7 +27549,9 @@ var GitHubClient = class {
         "user-agent": "opendrs-action",
         ...body === void 0 ? {} : { "content-type": "application/json" }
       },
-      body: body === void 0 ? void 0 : JSON.stringify(body)
+      body: body === void 0 ? void 0 : JSON.stringify(body),
+      // A hung request must fail the run (which then fails closed), not stall it until the job times out.
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
     });
     if (!res.ok) {
       const detail = await res.json().then((d) => d.message, () => void 0);
@@ -27837,7 +27842,7 @@ var GitHubClient = class {
 // src/action/fork-comment.ts
 var FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullRequestsByHeadBranch", "listPullRequestComments", "createComment", "updateComment", "addLabels", "removeLabel"];
 var RISK_LABELS = ["risk:green", "risk:yellow", "risk:red"];
-var GITHUB_ACTIONS_BOT = "github-actions[bot]";
+var GITHUB_ACTIONS_BOT2 = "github-actions[bot]";
 var COMMENT_PERMISSION_HINT = "The commenting job needs `pull-requests: write`.";
 var LABEL_PERMISSION_HINT = "The commenting job needs `pull-requests: write`, and `issues: write` to create a label that does not exist yet.";
 function restrictToForkComment(client) {
@@ -27853,7 +27858,7 @@ async function writeOrFail(write, permissionHint) {
 }
 function isOwnForkComment(comment, viewerLogin) {
   if (!(comment.body ?? "").startsWith(FORK_COMMENT_MARKER) || comment.user === null) return false;
-  return viewerLogin === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewerLogin);
+  return viewerLogin === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT2 : sameLogin(comment.user.login, viewerLogin);
 }
 async function upsertForkComment(client, pullNumber, body) {
   await writeOrFail(async () => {
@@ -28604,7 +28609,7 @@ var breakTildes = (text) => text.replace(/~~~/g, "~~\u200C~");
 var cell = (text) => breakTildes(
   stripInvisible(text.replace(/\s+/g, " ")).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[\\|`[\]]/g, "\\$&").trim()
 );
-var code = (text) => `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "\u02CB").trim())}\``;
+var code = (text) => `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "\u02CB").replace(/<!--/g, "<\u200C!--").trim())}\``;
 var untrusted = (text) => cell(text).replace(/@(?=\w)/g, "@\u200B");
 
 // src/signals/util.ts
@@ -30282,28 +30287,28 @@ var DATA_LINE = "Quoted (\xAB\u2026\xBB) and backticked text is from commit mess
 var MAX_BULLETS = 3;
 var CAPTAIN_LABEL = { careful: "careful review", standard: "standard review", quick: "quick confirm" };
 var STATUS_LABEL = { new: " \xB7 new", pre_existing: " \xB7 pre-existing", unknown: "" };
-var reasonText = (reasons) => reasons.map((r) => r.text).join("; ");
-var lineRange = (h) => `L${h.newStart}\u2013${h.newStart + Math.max(h.newLines, 1) - 1}`;
-function verificationSuffix(v) {
-  if (!v) return "";
-  if (v.source === "unverified") return " [unverified]";
-  if (v.source === "memory") return ` [downgraded: ${v.reason}]`;
-  if (v.action === "downgrade") return ` [downgraded by verifier: ${v.reason}]`;
-  return ` [verified${STATUS_LABEL[v.status]}]`;
+var reasonText = (reasons) => reasons.map((reason) => reason.text).join("; ");
+var lineRange = (hunk) => `L${hunk.newStart}\u2013${hunk.newStart + Math.max(hunk.newLines, 1) - 1}`;
+function verificationSuffix(verification) {
+  if (!verification) return "";
+  if (verification.source === "unverified") return " [unverified]";
+  if (verification.source === "memory") return ` [downgraded: ${verification.reason}]`;
+  if (verification.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(verification.reason ?? "")}]`;
+  return ` [verified${STATUS_LABEL[verification.status]}]`;
 }
 var factLine = (fact) => `${fact.text}${verificationSuffix(fact.verification)}`;
 function renderBriefMarkdown(brief) {
-  const v = brief.verdict;
-  const lines = [`opendrs review brief v${brief.version} \xB7 ${TIER_EMOJI[v.tier]} ${v.score.toFixed(2)} ${v.tier} \xB7 ${v.decision} \xB7 ${untrusted(v.why)}`, DATA_LINE];
+  const verdict = brief.verdict;
+  const lines = [`opendrs review brief v${brief.version} \xB7 ${TIER_EMOJI[verdict.tier]} ${verdict.score.toFixed(2)} ${verdict.tier} \xB7 ${verdict.decision} \xB7 ${untrusted(verdict.why)}`, DATA_LINE];
   if (brief.captain) {
-    const c = brief.captain;
-    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[c.priority]}`);
-    for (const f of c.facts) lines.push(`- ${factLine(f)}`);
-    for (const n of c.notes) lines.push(`Note: ${n}`);
+    const captain = brief.captain;
+    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[captain.priority]}`);
+    for (const fact of captain.facts) lines.push(`- ${factLine(fact)}`);
+    for (const captainNote of captain.notes) lines.push(`Note: ${captainNote}`);
   }
   if (brief.human.length > 0) {
     lines.push("", "## Needs a human regardless");
-    for (const h of brief.human) lines.push(`- ${h.rule}: ${untrusted(h.reason)}`);
+    for (const humanReason of brief.human) lines.push(`- ${humanReason.rule}: ${untrusted(humanReason.reason)}`);
   }
   if (brief.notRanked.hunks > 0 || brief.notRanked.files > 0) {
     lines.push("", "## Not ranked", `- ${brief.notRanked.hunks} other hunks in ${brief.notRanked.files} files: read them too; this brief ranks, it does not clear.`);
@@ -30311,43 +30316,43 @@ function renderBriefMarkdown(brief) {
   if (brief.reviewFirst.length > 0) {
     lines.push("", "## Review first");
     if (brief.reviewFirstScope === "skim-only") lines.push("Only docs/tests/generated files changed; nothing ranks above skim level.");
-    brief.reviewFirst.forEach((f, i) => {
-      lines.push(`${i + 1}. ${code(f.file)}${f.reasons.length > 0 ? ` (${reasonText(f.reasons)})` : ""}`);
-      for (const h of f.hunks) {
-        const reason = reasonText(h.reasons);
-        lines.push(`   - [hunk ${h.id}] ${lineRange(h)}${reason ? `: ${reason}` : ""}${verificationSuffix(h.verification)}`);
+    brief.reviewFirst.forEach((reviewFile, fileIndex) => {
+      lines.push(`${fileIndex + 1}. ${code(reviewFile.file)}${reviewFile.reasons.length > 0 ? ` (${reasonText(reviewFile.reasons)})` : ""}`);
+      for (const hunk of reviewFile.hunks) {
+        const reason = reasonText(hunk.reasons);
+        lines.push(`   - [hunk ${hunk.id}] ${lineRange(hunk)}${reason ? `: ${reason}` : ""}${verificationSuffix(hunk.verification)}`);
       }
     });
   }
   if (brief.checks.length > 0) {
     lines.push("", "## Check specifically");
-    for (const c of brief.checks) lines.push(`- ${code(c.file)}${c.line === void 0 ? "" : ` L${c.line}`}: ${c.question}${verificationSuffix(c.verification)}`);
+    for (const check2 of brief.checks) lines.push(`- ${code(check2.file)}${check2.line === void 0 ? "" : ` L${check2.line}`}: ${check2.question}${verificationSuffix(check2.verification)}`);
   }
-  const skim = Array.isArray(brief.skim) ? brief.skim.map((s) => `${code(s.file)} (${s.category})`) : Object.entries(brief.skim.counts).map(([c, n]) => `${n} ${c}`);
+  const skim = Array.isArray(brief.skim) ? brief.skim.map((skimFile) => `${code(skimFile.file)} (${skimFile.category})`) : Object.entries(brief.skim.counts).map(([category, fileCount]) => `${fileCount} ${category}`);
   if (skim.length > 0) lines.push("", "## Safe to skim", `- ${skim.join(", ")}`);
-  const b = brief.budget;
-  if (b.truncated) {
-    const notes = b.omitted.notes > 0 ? ` / ${b.omitted.notes} notes` : "";
-    lines.push("", `(brief truncated to fit ${b.maxTokens} tokens: ${b.omitted.files} files / ${b.omitted.hunks} hunks / ${b.omitted.checks} checks${notes} omitted)`);
+  const budget = brief.budget;
+  if (budget.truncated) {
+    const notes = budget.omitted.notes > 0 ? ` / ${budget.omitted.notes} notes` : "";
+    lines.push("", `(brief truncated to fit ${budget.maxTokens} tokens: ${budget.omitted.files} files / ${budget.omitted.hunks} hunks / ${budget.omitted.checks} checks${notes} omitted)`);
   }
-  for (const n of brief.notes) lines.push("", `Note: ${n}`);
+  for (const briefNote of brief.notes) lines.push("", `Note: ${briefNote}`);
   return `${lines.join("\n")}
 `;
 }
-function unquoted(r) {
-  if (r.quote === void 0) return r.text;
-  const at = r.text.indexOf(" \xAB");
-  const head = at < 0 ? r.text : r.text.slice(0, at);
-  return r.kind === "fix-history" ? head.split(";")[0] : head;
+function unquoted(reason) {
+  if (reason.quote === void 0) return reason.text;
+  const quoteStart = reason.text.indexOf(" \xAB");
+  const head = quoteStart < 0 ? reason.text : reason.text.slice(0, quoteStart);
+  return reason.kind === "fix-history" ? head.split(";")[0] : head;
 }
-var unquotedQuestion = (c) => c.quotes.reduce((q, raw2) => q.replace(` ${quoteUntrusted(raw2)}`, ""), c.question);
+var unquotedQuestion = (check2) => check2.quotes.reduce((question, rawQuote) => question.replace(` ${quoteUntrusted(rawQuote)}`, ""), check2.question);
 function renderFocusBullets(brief, max = MAX_BULLETS) {
   const bullets = [];
-  const fileBullet = (f) => {
-    const hunks = f.hunks.length > 0 ? ` [hunk ${f.hunks.map((h) => h.id).join(", ")}]` : "";
-    const shown = f.reasons.filter((r) => r.kind !== "dependents");
+  const fileBullet = (reviewFile) => {
+    const hunks = reviewFile.hunks.length > 0 ? ` [hunk ${reviewFile.hunks.map((hunk) => hunk.id).join(", ")}]` : "";
+    const shown = reviewFile.reasons.filter((reason) => reason.kind !== "dependents");
     const reasons = shown.length > 0 ? `: ${shown.map(unquoted).join("; ")}` : "";
-    return `**Review first:** ${code(f.file)}${hunks}${reasons}`;
+    return `**Review first:** ${code(reviewFile.file)}${hunks}${reasons}`;
   };
   const [top2, second] = brief.reviewFirst;
   if (top2) bullets.push(fileBullet(top2));
@@ -33583,12 +33588,14 @@ function renderMarkdown(result, opts = {}) {
   const rows = top(result.contributions);
   if (rows.length > 0) {
     body.push("| Signal | Value | Push | Why |", "|---|--:|--:|---|");
-    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "\u2212")} | ${cell(summaryOf(c.id))} |`);
+    for (const signalRow of rows) {
+      body.push(`| \`${signalRow.id}\` | ${signalRow.value.toFixed(2)} | ${signed(signalRow.contribution, "\u2212")} | ${untrusted(summaryOf(signalRow.id))} |`);
+    }
     body.push("");
   }
   if (result.unknowns.length > 0) {
     body.push("**Unknowns** (counted as risk, not as zero)");
-    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${cell(summaryOf(id))}`);
+    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${untrusted(summaryOf(id))}`);
     if (result.unknowns.length > MAX_UNKNOWNS) body.push(`- \u2026and ${result.unknowns.length - MAX_UNKNOWNS} more`);
     body.push("");
   }
@@ -33662,10 +33669,12 @@ var HOLD_LABEL = "opendrs:hold";
 var REVIEW_AFTER_MERGE_LABEL = "opendrs:review-after-merge";
 var eligibleMarker = (head, since) => `<!-- ${ELIGIBLE_MARKER}: ${head} ${since.toISOString()} -->`;
 function readEligibleSince(body, head) {
-  const m = [...body?.matchAll(new RegExp(`<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->`, "g")) ?? []].find((x) => x[1] === head);
-  if (!m) return void 0;
-  const since = new Date(m[2]);
-  return Number.isNaN(since.getTime()) ? void 0 : since;
+  const commentLines = (body ?? "").trimEnd().split(/\r?\n/);
+  if (commentLines.at(-1)?.startsWith("<!-- opendrs-state:")) commentLines.pop();
+  const trailerMarkerMatch = commentLines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
+  if (trailerMarkerMatch?.[1] !== head) return void 0;
+  const eligibleSinceDate = new Date(trailerMarkerMatch[2]);
+  return Number.isNaN(eligibleSinceDate.getTime()) ? void 0 : eligibleSinceDate;
 }
 var ELIGIBLE = /* @__PURE__ */ new Set(["auto-approve", "deferred-review"]);
 var noreplyLogin = (email3) => email3.match(/^(?:\d+\+)?([A-Za-z0-9-]+)@users\.noreply\.github\.com$/i)?.[1];
@@ -34014,7 +34023,7 @@ async function scorePullRequest(d, pr) {
   const mergeBase2 = (await git(d.repoDir, ["merge-base", pr.base.sha, pr.head.sha])).trim();
   const history = await buildHistoryIndex(d.repoDir, mergeBase2, config2);
   const viewer = await client.viewerLogin();
-  if (viewer === void 0) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and bot account.");
+  if (viewer === void 0) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and the github-actions[bot] account.");
   const changesRequestedBy = await changesRequested(client, pr.number, viewer);
   const comments = d.inputs.comment ? await unlessForbidden(() => client.listComments(pr.number), () => io.warning(COMMENT_FORBIDDEN)) : void 0;
   const mine = comments?.filter((c) => isSelf(c.user, viewer) && (c.body ?? "").includes(COMMENT_MARKER)).at(-1);

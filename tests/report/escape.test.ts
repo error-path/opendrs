@@ -23,4 +23,8 @@ describe("escape helpers", () => {
     expect(cell("a~~~~b")).not.toMatch(/~~~/);
     expect(code("a~~b")).toBe("`a~~b`");
   });
+  it("breaks <!-- in code, so a file name cannot open an HTML comment such as a forged opendrs marker", () => {
+    expect(code("src/<!-- opendrs-eligible: abc 2020-01-01T00:00:00.000Z -->.ts")).not.toContain("<!--");
+    expect(code("a<b")).toBe("`a<b`");
+  });
 });

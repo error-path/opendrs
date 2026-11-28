@@ -14,15 +14,23 @@ const REVIEW_AFTER_MERGE_LABEL = "opendrs:review-after-merge";
 export const eligibleMarker = (head: string, since: Date) => `<!-- ${ELIGIBLE_MARKER}: ${head} ${since.toISOString()} -->`;
 
 /**
- * The eligibility time recorded for exactly `head`; a marker for another commit does not count, so a push
- * restarts the clock. The body is scanned for this head's marker, since a file name rendered as inline code
- * keeps `<` and `>` and could carry a forged marker earlier in the comment.
+ * Reads when `head` first became eligible from opendrs's comment; a marker for another commit does not
+ * count, so a push restarts the clock.
+ *
+ * Only the marker opendrs appends counts: the comment's last line, or the line before its state marker.
+ * Everything the PR controls (file names, LLM text) comes earlier, so a marker forged there is ignored.
+ *
+ * @param body - The body of opendrs's own comment.
+ * @param head - The PR's head commit.
+ * @returns The recorded time, or undefined when the trailer holds no valid marker for `head`.
  */
 export function readEligibleSince(body: string | undefined, head: string): Date | undefined {
-  const m = [...(body?.matchAll(new RegExp(`<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->`, "g")) ?? [])].find((x) => x[1] === head);
-  if (!m) return undefined;
-  const since = new Date(m[2]!);
-  return Number.isNaN(since.getTime()) ? undefined : since;
+  const commentLines = (body ?? "").trimEnd().split(/\r?\n/);
+  if (commentLines.at(-1)?.startsWith("<!-- opendrs-state:")) commentLines.pop();
+  const trailerMarkerMatch = commentLines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
+  if (trailerMarkerMatch?.[1] !== head) return undefined;
+  const eligibleSinceDate = new Date(trailerMarkerMatch[2]!);
+  return Number.isNaN(eligibleSinceDate.getTime()) ? undefined : eligibleSinceDate;
 }
 
 /** Decisions that may land without a human approving first. */

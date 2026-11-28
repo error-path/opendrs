@@ -56,13 +56,20 @@ const normaliseLogin = (login: string) => login.toLowerCase().replace(/\[bot\]$/
 export const sameLogin = (a: string | undefined, b: string | undefined): boolean =>
   a !== undefined && b !== undefined && normaliseLogin(a) === normaliseLogin(b);
 
+/** The account GITHUB_TOKEN writes comments and reviews as, in REST responses. */
+const GITHUB_ACTIONS_BOT = "github-actions[bot]";
+
 /**
- * Whether `user` is this token's account. When the identity is unknown (`viewer` undefined),
- * any bot account counts; callers also require the opendrs marker in the body.
+ * Whether `user` is this token's account. Callers also require the opendrs marker in the body.
+ *
+ * @param user - The author of a comment or review.
+ * @param viewer - The token's login, or undefined when GitHub did not say.
+ * @returns True for this token's account. With the login unknown only `github-actions[bot]` counts,
+ *   so another bot's copy of the marker is never taken for opendrs's own.
  */
 export function isSelf(user: GitHubUser | null, viewer: string | undefined): boolean {
   if (!user) return false;
-  return viewer === undefined ? user.type === "Bot" : sameLogin(user.login, viewer);
+  return viewer === undefined ? user.login === GITHUB_ACTIONS_BOT : sameLogin(user.login, viewer);
 }
 
 /** An entry of GET /pulls/{n}/commits. `author` is GitHub's verified email-to-account mapping. */
@@ -89,6 +96,9 @@ const OPENDRS_LABELS: Record<string, { color: string; description: string }> = {
 /** The colour GitHub gives a label it creates on the fly when one is added that does not exist. */
 const DEFAULT_LABEL_COLOR = "ededed";
 
+/** How long one GitHub request may take. */
+const REQUEST_TIMEOUT_MS = 30_000;
+
 export interface GitHubClientOptions {
   token: string;
   apiUrl: string;
@@ -112,6 +122,7 @@ export class GitHubClient {
    * @param acceptedMediaType - The `accept` header; GitHub's JSON unless a caller needs raw bytes.
    * @returns The response, when its status is 2xx.
    * @throws {@link GitHubError} On any other status, with GitHub's message.
+   * @throws A `TimeoutError` when GitHub does not answer within 30 seconds.
    */
   private async send(method: string, url: string, body?: unknown, acceptedMediaType = "application/vnd.github+json"): Promise<Response> {
     const res = await fetch(url, {
@@ -124,6 +135,8 @@ export class GitHubClient {
         ...(body === undefined ? {} : { "content-type": "application/json" }),
       },
       body: body === undefined ? undefined : JSON.stringify(body),
+      // A hung request must fail the run (which then fails closed), not stall it until the job times out.
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
     if (!res.ok) {
       const detail = await res.json().then((d: { message?: string }) => d.message, () => undefined);

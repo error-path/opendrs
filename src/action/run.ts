@@ -245,7 +245,7 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
   const history = await buildHistoryIndex(d.repoDir, mergeBase, config);
 
   const viewer = await client.viewerLogin();
-  if (viewer === undefined) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and bot account.");
+  if (viewer === undefined) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and the github-actions[bot] account.");
   const changesRequestedBy = await changesRequested(client, pr.number, viewer);
 
   // opendrs's own comment carries the previous run's state; read now so the drift detector has its

@@ -229,8 +229,8 @@ Approval needs all of these:
 When any of these stop holding on a later push, the Action dismisses its own earlier approval and
 also disables auto-merge and removes the PR from the merge queue. It identifies its approvals by
 the `<!-- opendrs-approval -->` marker and the token's own user (`github-actions` and
-`github-actions[bot]` count as the same account; when the token cannot read its own login, any bot
-account with the marker counts), and never touches anyone else's review. Auto-merge is only
+`github-actions[bot]` count as the same account; when the token cannot read its own login, only
+`github-actions[bot]` with the marker counts), and never touches anyone else's review. Auto-merge is only
 turned off when opendrs had an approval to withdraw, so auto-merge a person enabled stays on. A
 PR that changes the opendrs config, the model or the workflows always needs a human.
 

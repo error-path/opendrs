@@ -166,6 +166,18 @@ describe("renderMarkdown", () => {
       expect(evil.split("\n").filter((l) => l.startsWith("| `"))).toHaveLength(6);
     });
 
+    it("defuses @-mentions in signal summaries in the table and the unknowns list", () => {
+      const mention = "judge says ping @org/team <!-- opendrs-eligible: abc 2020-01-01T00:00:00.000Z -->";
+      const md = renderMarkdown(
+        result({
+          signals: result().signals.map((sig) => (sig.id === "size.churn" || sig.id === "blast.dependents" ? { ...sig, summary: mention } : sig)),
+        }),
+      );
+      expect(md).not.toMatch(/@org|<!-- opendrs-eligible/);
+      expect(md).toContain("| judge says ping @​org/team &lt;!-- opendrs-eligible: abc 2020-01-01T00:00:00.000Z --&gt; |");
+      expect(md).toContain("- `blast.dependents`: judge says ping @​org/team");
+    });
+
     it("escapes policy reasons and the LLM rationale the same way", () => {
       expect(evil).toContain(`- blocked path ${ESCAPED}\n`);
       expect(evil).toContain(`> ${ESCAPED}\n`);
