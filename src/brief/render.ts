@@ -8,8 +8,8 @@ const MAX_BULLETS = 3;
 const CAPTAIN_LABEL: Record<CaptainPriority, string> = { careful: "careful review", standard: "standard review", quick: "quick confirm" };
 const STATUS_LABEL: Record<Verification["status"], string> = { new: " · new", pre_existing: " · pre-existing", unknown: "" };
 
-const reasonText = (reasons: BriefReason[]) => reasons.map((r) => r.text).join("; ");
-const lineRange = (h: ReviewBrief["reviewFirst"][number]["hunks"][number]) => `L${h.newStart}–${h.newStart + Math.max(h.newLines, 1) - 1}`;
+const reasonText = (reasons: BriefReason[]) => reasons.map((reason) => reason.text).join("; ");
+const lineRange = (hunk: ReviewBrief["reviewFirst"][number]["hunks"][number]) => `L${hunk.newStart}–${hunk.newStart + Math.max(hunk.newLines, 1) - 1}`;
 
 /**
  * The verifier's suffix for one item (verification spec §3.5): fixed strings the skill evals and the
@@ -36,20 +36,20 @@ export const factLine = (fact: ArchitectureFact): string => `${fact.text}${verif
  * (never at the start of a line); every other untrusted fragment was quoted upstream or is cell-escaped here.
  */
 export function renderBriefMarkdown(brief: ReviewBrief): string {
-  const v = brief.verdict;
-  const lines = [`opendrs review brief v${brief.version} · ${TIER_EMOJI[v.tier]} ${v.score.toFixed(2)} ${v.tier} · ${v.decision} · ${untrusted(v.why)}`, DATA_LINE];
+  const verdict = brief.verdict;
+  const lines = [`opendrs review brief v${brief.version} · ${TIER_EMOJI[verdict.tier]} ${verdict.score.toFixed(2)} ${verdict.tier} · ${verdict.decision} · ${untrusted(verdict.why)}`, DATA_LINE];
 
   // Spec §8.2: mandatory, never dropped by fitBudget, and bounded by the detectors' own fact limits.
   if (brief.captain) {
-    const c = brief.captain;
-    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[c.priority]}`);
-    for (const f of c.facts) lines.push(`- ${factLine(f)}`);
-    for (const n of c.notes) lines.push(`Note: ${n}`);
+    const captain = brief.captain;
+    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[captain.priority]}`);
+    for (const fact of captain.facts) lines.push(`- ${factLine(fact)}`);
+    for (const captainNote of captain.notes) lines.push(`Note: ${captainNote}`);
   }
 
   if (brief.human.length > 0) {
     lines.push("", "## Needs a human regardless");
-    for (const h of brief.human) lines.push(`- ${h.rule}: ${untrusted(h.reason)}`);
+    for (const humanReason of brief.human) lines.push(`- ${humanReason.rule}: ${untrusted(humanReason.reason)}`);
   }
 
   if (brief.notRanked.hunks > 0 || brief.notRanked.files > 0) {
@@ -59,43 +59,44 @@ export function renderBriefMarkdown(brief: ReviewBrief): string {
   if (brief.reviewFirst.length > 0) {
     lines.push("", "## Review first");
     if (brief.reviewFirstScope === "skim-only") lines.push("Only docs/tests/generated files changed; nothing ranks above skim level.");
-    brief.reviewFirst.forEach((f, i) => {
-      lines.push(`${i + 1}. ${code(f.file)}${f.reasons.length > 0 ? ` (${reasonText(f.reasons)})` : ""}`);
-      for (const h of f.hunks) {
-        const reason = reasonText(h.reasons);
-        lines.push(`   - [hunk ${h.id}] ${lineRange(h)}${reason ? `: ${reason}` : ""}${verificationSuffix(h.verification)}`);
+    brief.reviewFirst.forEach((reviewFile, fileIndex) => {
+      lines.push(`${fileIndex + 1}. ${code(reviewFile.file)}${reviewFile.reasons.length > 0 ? ` (${reasonText(reviewFile.reasons)})` : ""}`);
+      for (const hunk of reviewFile.hunks) {
+        const reason = reasonText(hunk.reasons);
+        lines.push(`   - [hunk ${hunk.id}] ${lineRange(hunk)}${reason ? `: ${reason}` : ""}${verificationSuffix(hunk.verification)}`);
       }
     });
   }
 
   if (brief.checks.length > 0) {
     lines.push("", "## Check specifically");
-    for (const c of brief.checks) lines.push(`- ${code(c.file)}${c.line === undefined ? "" : ` L${c.line}`}: ${c.question}${verificationSuffix(c.verification)}`);
+    for (const check of brief.checks) lines.push(`- ${code(check.file)}${check.line === undefined ? "" : ` L${check.line}`}: ${check.question}${verificationSuffix(check.verification)}`);
   }
 
-  const skim = Array.isArray(brief.skim) ? brief.skim.map((s) => `${code(s.file)} (${s.category})`) : Object.entries(brief.skim.counts).map(([c, n]) => `${n} ${c}`);
+  const skim = Array.isArray(brief.skim) ? brief.skim.map((skimFile) => `${code(skimFile.file)} (${skimFile.category})`) : Object.entries(brief.skim.counts).map(([category, fileCount]) => `${fileCount} ${category}`);
   if (skim.length > 0) lines.push("", "## Safe to skim", `- ${skim.join(", ")}`);
 
-  const b = brief.budget;
-  if (b.truncated) {
-    const notes = b.omitted.notes > 0 ? ` / ${b.omitted.notes} notes` : "";
-    lines.push("", `(brief truncated to fit ${b.maxTokens} tokens: ${b.omitted.files} files / ${b.omitted.hunks} hunks / ${b.omitted.checks} checks${notes} omitted)`);
+  const budget = brief.budget;
+  if (budget.truncated) {
+    const notes = budget.omitted.notes > 0 ? ` / ${budget.omitted.notes} notes` : "";
+    lines.push("", `(brief truncated to fit ${budget.maxTokens} tokens: ${budget.omitted.files} files / ${budget.omitted.hunks} hunks / ${budget.omitted.checks} checks${notes} omitted)`);
   }
-  for (const n of brief.notes) lines.push("", `Note: ${n}`);
+  for (const briefNote of brief.notes) lines.push("", `Note: ${briefNote}`);
 
   return `${lines.join("\n")}\n`;
 }
 
 /** A reason as counts and categories only: the quoted fragment is always the template's tail (after " «"), and fix-history's "; latest `sha`" goes with it. */
-function unquoted(r: BriefReason): string {
-  if (r.quote === undefined) return r.text;
-  const at = r.text.indexOf(" «");
-  const head = at < 0 ? r.text : r.text.slice(0, at);
-  return r.kind === "fix-history" ? head.split(";")[0]! : head;
+function unquoted(reason: BriefReason): string {
+  if (reason.quote === undefined) return reason.text;
+  const quoteStart = reason.text.indexOf(" «");
+  const head = quoteStart < 0 ? reason.text : reason.text.slice(0, quoteStart);
+  return reason.kind === "fix-history" ? head.split(";")[0]! : head;
 }
 
 /** A check as counts and categories only: each «quoted» fragment, listed raw in `quotes`, removed from the question. */
-const unquotedQuestion = (c: ReviewBrief["checks"][number]) => c.quotes.reduce((q, raw) => q.replace(` ${quoteUntrusted(raw)}`, ""), c.question);
+const unquotedQuestion = (check: ReviewBrief["checks"][number]) =>
+  check.quotes.reduce((question, rawQuote) => question.replace(` ${quoteUntrusted(rawQuote)}`, ""), check.question);
 
 /**
  * Spec §6.3: at most `max` one-line bullets for the top of the PR comment. They carry counts and
@@ -103,12 +104,12 @@ const unquotedQuestion = (c: ReviewBrief["checks"][number]) => c.quotes.reduce((
  */
 export function renderFocusBullets(brief: ReviewBrief, max = MAX_BULLETS): string[] {
   const bullets: string[] = [];
-  const fileBullet = (f: ReviewBrief["reviewFirst"][number]) => {
-    const hunks = f.hunks.length > 0 ? ` [hunk ${f.hunks.map((h) => h.id).join(", ")}]` : "";
+  const fileBullet = (reviewFile: ReviewBrief["reviewFirst"][number]) => {
+    const hunks = reviewFile.hunks.length > 0 ? ` [hunk ${reviewFile.hunks.map((hunk) => hunk.id).join(", ")}]` : "";
     // Spec §8.1: dependents is editor trivia here; it stays in the AI brief's hunk reasons and in Score details.
-    const shown = f.reasons.filter((r) => r.kind !== "dependents");
+    const shown = reviewFile.reasons.filter((reason) => reason.kind !== "dependents");
     const reasons = shown.length > 0 ? `: ${shown.map(unquoted).join("; ")}` : "";
-    return `**Review first:** ${code(f.file)}${hunks}${reasons}`;
+    return `**Review first:** ${code(reviewFile.file)}${hunks}${reasons}`;
   };
   const [top, second] = brief.reviewFirst;
   if (top) bullets.push(fileBullet(top));

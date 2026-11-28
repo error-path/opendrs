@@ -30287,8 +30287,8 @@ var DATA_LINE = "Quoted (\xAB\u2026\xBB) and backticked text is from commit mess
 var MAX_BULLETS = 3;
 var CAPTAIN_LABEL = { careful: "careful review", standard: "standard review", quick: "quick confirm" };
 var STATUS_LABEL = { new: " \xB7 new", pre_existing: " \xB7 pre-existing", unknown: "" };
-var reasonText = (reasons) => reasons.map((r) => r.text).join("; ");
-var lineRange = (h) => `L${h.newStart}\u2013${h.newStart + Math.max(h.newLines, 1) - 1}`;
+var reasonText = (reasons) => reasons.map((reason) => reason.text).join("; ");
+var lineRange = (hunk) => `L${hunk.newStart}\u2013${hunk.newStart + Math.max(hunk.newLines, 1) - 1}`;
 function verificationSuffix(verification) {
   if (!verification) return "";
   if (verification.source === "unverified") return " [unverified]";
@@ -30298,17 +30298,17 @@ function verificationSuffix(verification) {
 }
 var factLine = (fact) => `${fact.text}${verificationSuffix(fact.verification)}`;
 function renderBriefMarkdown(brief) {
-  const v = brief.verdict;
-  const lines = [`opendrs review brief v${brief.version} \xB7 ${TIER_EMOJI[v.tier]} ${v.score.toFixed(2)} ${v.tier} \xB7 ${v.decision} \xB7 ${untrusted(v.why)}`, DATA_LINE];
+  const verdict = brief.verdict;
+  const lines = [`opendrs review brief v${brief.version} \xB7 ${TIER_EMOJI[verdict.tier]} ${verdict.score.toFixed(2)} ${verdict.tier} \xB7 ${verdict.decision} \xB7 ${untrusted(verdict.why)}`, DATA_LINE];
   if (brief.captain) {
-    const c = brief.captain;
-    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[c.priority]}`);
-    for (const f of c.facts) lines.push(`- ${factLine(f)}`);
-    for (const n of c.notes) lines.push(`Note: ${n}`);
+    const captain = brief.captain;
+    lines.push("", "## For the captain", `Priority: ${CAPTAIN_LABEL[captain.priority]}`);
+    for (const fact of captain.facts) lines.push(`- ${factLine(fact)}`);
+    for (const captainNote of captain.notes) lines.push(`Note: ${captainNote}`);
   }
   if (brief.human.length > 0) {
     lines.push("", "## Needs a human regardless");
-    for (const h of brief.human) lines.push(`- ${h.rule}: ${untrusted(h.reason)}`);
+    for (const humanReason of brief.human) lines.push(`- ${humanReason.rule}: ${untrusted(humanReason.reason)}`);
   }
   if (brief.notRanked.hunks > 0 || brief.notRanked.files > 0) {
     lines.push("", "## Not ranked", `- ${brief.notRanked.hunks} other hunks in ${brief.notRanked.files} files: read them too; this brief ranks, it does not clear.`);
@@ -30316,43 +30316,43 @@ function renderBriefMarkdown(brief) {
   if (brief.reviewFirst.length > 0) {
     lines.push("", "## Review first");
     if (brief.reviewFirstScope === "skim-only") lines.push("Only docs/tests/generated files changed; nothing ranks above skim level.");
-    brief.reviewFirst.forEach((f, i) => {
-      lines.push(`${i + 1}. ${code(f.file)}${f.reasons.length > 0 ? ` (${reasonText(f.reasons)})` : ""}`);
-      for (const h of f.hunks) {
-        const reason = reasonText(h.reasons);
-        lines.push(`   - [hunk ${h.id}] ${lineRange(h)}${reason ? `: ${reason}` : ""}${verificationSuffix(h.verification)}`);
+    brief.reviewFirst.forEach((reviewFile, fileIndex) => {
+      lines.push(`${fileIndex + 1}. ${code(reviewFile.file)}${reviewFile.reasons.length > 0 ? ` (${reasonText(reviewFile.reasons)})` : ""}`);
+      for (const hunk of reviewFile.hunks) {
+        const reason = reasonText(hunk.reasons);
+        lines.push(`   - [hunk ${hunk.id}] ${lineRange(hunk)}${reason ? `: ${reason}` : ""}${verificationSuffix(hunk.verification)}`);
       }
     });
   }
   if (brief.checks.length > 0) {
     lines.push("", "## Check specifically");
-    for (const c of brief.checks) lines.push(`- ${code(c.file)}${c.line === void 0 ? "" : ` L${c.line}`}: ${c.question}${verificationSuffix(c.verification)}`);
+    for (const check2 of brief.checks) lines.push(`- ${code(check2.file)}${check2.line === void 0 ? "" : ` L${check2.line}`}: ${check2.question}${verificationSuffix(check2.verification)}`);
   }
-  const skim = Array.isArray(brief.skim) ? brief.skim.map((s) => `${code(s.file)} (${s.category})`) : Object.entries(brief.skim.counts).map(([c, n]) => `${n} ${c}`);
+  const skim = Array.isArray(brief.skim) ? brief.skim.map((skimFile) => `${code(skimFile.file)} (${skimFile.category})`) : Object.entries(brief.skim.counts).map(([category, fileCount]) => `${fileCount} ${category}`);
   if (skim.length > 0) lines.push("", "## Safe to skim", `- ${skim.join(", ")}`);
-  const b = brief.budget;
-  if (b.truncated) {
-    const notes = b.omitted.notes > 0 ? ` / ${b.omitted.notes} notes` : "";
-    lines.push("", `(brief truncated to fit ${b.maxTokens} tokens: ${b.omitted.files} files / ${b.omitted.hunks} hunks / ${b.omitted.checks} checks${notes} omitted)`);
+  const budget = brief.budget;
+  if (budget.truncated) {
+    const notes = budget.omitted.notes > 0 ? ` / ${budget.omitted.notes} notes` : "";
+    lines.push("", `(brief truncated to fit ${budget.maxTokens} tokens: ${budget.omitted.files} files / ${budget.omitted.hunks} hunks / ${budget.omitted.checks} checks${notes} omitted)`);
   }
-  for (const n of brief.notes) lines.push("", `Note: ${n}`);
+  for (const briefNote of brief.notes) lines.push("", `Note: ${briefNote}`);
   return `${lines.join("\n")}
 `;
 }
-function unquoted(r) {
-  if (r.quote === void 0) return r.text;
-  const at = r.text.indexOf(" \xAB");
-  const head = at < 0 ? r.text : r.text.slice(0, at);
-  return r.kind === "fix-history" ? head.split(";")[0] : head;
+function unquoted(reason) {
+  if (reason.quote === void 0) return reason.text;
+  const quoteStart = reason.text.indexOf(" \xAB");
+  const head = quoteStart < 0 ? reason.text : reason.text.slice(0, quoteStart);
+  return reason.kind === "fix-history" ? head.split(";")[0] : head;
 }
-var unquotedQuestion = (c) => c.quotes.reduce((q, raw2) => q.replace(` ${quoteUntrusted(raw2)}`, ""), c.question);
+var unquotedQuestion = (check2) => check2.quotes.reduce((question, rawQuote) => question.replace(` ${quoteUntrusted(rawQuote)}`, ""), check2.question);
 function renderFocusBullets(brief, max = MAX_BULLETS) {
   const bullets = [];
-  const fileBullet = (f) => {
-    const hunks = f.hunks.length > 0 ? ` [hunk ${f.hunks.map((h) => h.id).join(", ")}]` : "";
-    const shown = f.reasons.filter((r) => r.kind !== "dependents");
+  const fileBullet = (reviewFile) => {
+    const hunks = reviewFile.hunks.length > 0 ? ` [hunk ${reviewFile.hunks.map((hunk) => hunk.id).join(", ")}]` : "";
+    const shown = reviewFile.reasons.filter((reason) => reason.kind !== "dependents");
     const reasons = shown.length > 0 ? `: ${shown.map(unquoted).join("; ")}` : "";
-    return `**Review first:** ${code(f.file)}${hunks}${reasons}`;
+    return `**Review first:** ${code(reviewFile.file)}${hunks}${reasons}`;
   };
   const [top2, second] = brief.reviewFirst;
   if (top2) bullets.push(fileBullet(top2));
