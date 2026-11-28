@@ -28968,7 +28968,7 @@ function parseGemfile(text) {
   const stack = [];
   for (const raw2 of text.split("\n")) {
     const line2 = raw2.trim();
-    const group = /^group\s+((?::\w+\s*,?\s*)+)do\b/.exec(line2);
+    const group = /^group\s+((?::\w+(?:\s*,\s*|\s+))+)do\b/.exec(line2);
     if (group) {
       stack.push(/:development|:test/.test(group[1]));
       continue;

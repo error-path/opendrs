@@ -99,6 +99,18 @@ describe("addedPackages: Gemfile", () => {
   it("a top-level gem is runtime; a gem in group :test is dev", () => {
     expect(addedPackages("Gemfile", base, head)).toEqual({ runtime: ["pry"], dev: ["rspec"] });
   });
+
+  it("group lists separated by commas or spaces still open a group", () => {
+    const head = 'group :development, :test do\n  gem "rspec"\nend\ngroup :tools :test do\n  gem "pry"\nend\n';
+    expect(addedPackages("Gemfile", undefined, head)).toEqual({ runtime: [], dev: ["rspec", "pry"] });
+  });
+
+  it("a PR's group line without `do` parses in linear time, not by catastrophic backtracking", () => {
+    const head = `group ${":a  ".repeat(18)}x\ngem "rails"\n`;
+    const started = performance.now();
+    expect(addedPackages("Gemfile", undefined, head)).toEqual({ runtime: ["rails"], dev: [] });
+    expect(performance.now() - started).toBeLessThan(1000);
+  });
 });
 
 describe("addedPackages: new manifest", () => {
