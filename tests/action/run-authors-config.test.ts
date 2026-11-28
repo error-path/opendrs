@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { defaultConfig } from "../../src/domain/config.js";
+import { DEFAULT_WEIGHTS } from "../../src/model/defaults.js";
 import { type TestRepo } from "../helpers/repo.js";
 import { stringify } from "yaml";
 import { renderMarkdown, ENABLED, PR_EMAIL, prCommit, result, run } from "./run-harness.js";
@@ -179,10 +180,28 @@ describe("base-branch config", () => {
     expect(t.scoreArgs().model).toEqual(model);
   });
 
-  it("passes no model when the base has none", async () => {
-    const t = await run();
-    await t.promise;
-    expect(t.scoreArgs().model).toBeUndefined();
+  it("passes the built-in weights, reported as default, when the base has no model, never the PR's own model file", async () => {
+    const prModel = { version: 1, intercept: -20, weights: {} };
+    const actionRun = await run({ headFiles: { ".opendrs/model.json": JSON.stringify(prModel) } });
+    await actionRun.promise;
+    expect(actionRun.scoreArgs().model).toEqual(DEFAULT_WEIGHTS);
+    expect(actionRun.scoreArgs().modelKind).toBe("default");
+  });
+
+  it("takes the model from the base commit when base-config is false, not from the PR checkout", async () => {
+    const baseModel = { version: 1, intercept: -2, weights: { "size.churn": 0.5 } };
+    const prModel = { version: 1, intercept: -20, weights: {} };
+    const actionRun = await run({ baseFiles: { ".opendrs/model.json": JSON.stringify(baseModel) }, headFiles: { ".opendrs/model.json": JSON.stringify(prModel) }, inputs: { baseConfig: false } });
+    await actionRun.promise;
+    expect(actionRun.scoreArgs().model).toEqual(baseModel);
+  });
+
+  it("uses the built-in weights when base-config is false and the base has no model, even with one in the PR checkout", async () => {
+    const prModel = { version: 1, intercept: -20, weights: {} };
+    const actionRun = await run({ headFiles: { ".opendrs/model.json": JSON.stringify(prModel) }, inputs: { baseConfig: false } });
+    await actionRun.promise;
+    expect(actionRun.scoreArgs().model).toEqual(DEFAULT_WEIGHTS);
+    expect(actionRun.scoreArgs().modelKind).toBe("default");
   });
 
   it.each([

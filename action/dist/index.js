@@ -28829,8 +28829,8 @@ function parseGoMod(text) {
       addEntry(line2);
       continue;
     }
-    const m = /^require\s+(.+)$/.exec(line2);
-    if (m) addEntry(m[1]);
+    const requireMatch = /^require\s+(\S.*)$/.exec(line2);
+    if (requireMatch) addEntry(requireMatch[1]);
   }
   if (inBlock) return { error: "unclosed require block" };
   for (const name of direct) indirect.delete(name);
@@ -29092,7 +29092,7 @@ function declName(path, line2) {
       return /^func\s+(?:\([^)]*\)\s*)?([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /^(?:type|var|const)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1];
     case "java":
     case "kotlin":
-      return /\b(?:class|interface|object|fun)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /([A-Za-z_]\w*)\s*\(/.exec(trimmed)?.[1];
+      return /\b(?:class|interface|object|fun)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /\b([A-Za-z_]\w*)\s*\(/.exec(trimmed)?.[1];
     case "rust":
       return /^pub(?:\([^)]*\))?\s+(?:async\s+)?(?:fn|struct|enum|trait|const|static|type|mod)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1];
     default:
@@ -33004,9 +33004,9 @@ async function incidentSignal(ctx, files) {
   const id = "history.incident";
   let recorded;
   try {
-    recorded = await loadIncidents(ctx.repoDir);
-  } catch (e) {
-    return unknown2(id, `could not read ${INCIDENTS_FILE}: ${e.message}`);
+    recorded = ctx.asOf === void 0 ? parseIncidents(await ctx.readBase(INCIDENTS_FILE) ?? "") : await loadIncidents(ctx.repoDir);
+  } catch (error62) {
+    return unknown2(id, `could not read ${INCIDENTS_FILE}: ${error62.message}`);
   }
   const { lookup, reverts } = indexFor(ctx.history);
   const events = [...reverts];
@@ -33929,17 +33929,18 @@ function readPullRequest(event) {
   }
   return pr;
 }
-async function loadSettings(d, base) {
-  const { config: baseConfig, hasConfigFile } = await readBaseConfig(d.repoDir, base);
-  if (!d.inputs.baseConfig) {
-    d.io.warning(
-      `base-config is false: ${CONFIG_FILE} is read from the PR checkout, so a PR can change its own gate. Auto-approval still refuses PRs that modify it. The llm section and the model path still come from the base commit.`
+async function loadSettings(dependencies, base) {
+  const { config: baseConfig, hasConfigFile } = await readBaseConfig(dependencies.repoDir, base);
+  let config2 = baseConfig;
+  if (!dependencies.inputs.baseConfig) {
+    dependencies.io.warning(
+      `base-config is false: ${CONFIG_FILE} is read from the PR checkout, so a PR can change its own gate. Auto-approval still refuses PRs that modify it. The llm section and the model still come from the base commit.`
     );
-    return { config: { ...await loadConfig(d.repoDir), llm: baseConfig.llm, model: baseConfig.model } };
+    config2 = { ...await loadConfig(dependencies.repoDir), llm: baseConfig.llm, model: baseConfig.model };
+  } else {
+    logBaseConfigSource(dependencies.io, base, hasConfigFile);
   }
-  logBaseConfigSource(d.io, base, hasConfigFile);
-  const config2 = baseConfig;
-  const model = await readBaseModel(d.repoDir, base, config2, d.io);
+  const model = await readBaseModel(dependencies.repoDir, base, config2, dependencies.io);
   return model === void 0 ? { config: config2 } : { config: config2, model };
 }
 var llmKeyEnv = (config2) => config2.llm.apiKeyEnv ?? (config2.llm.provider === "openai" ? "OPENAI_API_KEY" : "ANTHROPIC_API_KEY");
@@ -34040,7 +34041,9 @@ async function scorePullRequest(d, pr) {
       base: pr.base.sha,
       head: pr.head.sha,
       config: config2,
-      model,
+      // Without a valid model on the base commit, the built-in weights: never the PR checkout's model file.
+      model: model ?? DEFAULT_WEIGHTS,
+      modelKind: model === void 0 ? "default" : "calibrated",
       history,
       authorVerified: author.verified,
       account: pr.user ? { login: pr.user.login, type: pr.user.type } : void 0,

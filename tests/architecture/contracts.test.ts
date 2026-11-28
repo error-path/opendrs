@@ -69,6 +69,17 @@ describe("detectContracts: contract.dependency for go.mod // indirect", () => {
 });
 
 describe("detectContracts: contract.api", () => {
+  it("names a Java declaration on a long public line without a parenthesis in linear time", async () => {
+    repo = makeRepo();
+    const base = repo.commit({ "src/A.java": "class A {}\n" }, "base");
+    // `([A-Za-z_]\w*)\s*\(` unanchored used to rescan the rest of the word from every letter.
+    repo.commit({ "src/A.java": `class A {}\npublic ${"a".repeat(50_000)}\n` }, "head");
+    const context = await contextFor(repo, base);
+    const started = performance.now();
+    await detectContracts(context, {});
+    expect(performance.now() - started).toBeLessThan(1000);
+  });
+
   it("removing an exported declaration from a file with a dependent is a strong fact", async () => {
     repo = makeRepo();
     const base = repo.commit(

@@ -1,5 +1,5 @@
 import type { ChangedFile, CommitInfo, Evidence, HistoryIndex, Incident, ScoringContext, Signal, SignalProvider } from "../domain/types.js";
-import { INCIDENTS_FILE, loadIncidents } from "../model/label.js";
+import { INCIDENTS_FILE, loadIncidents, parseIncidents } from "../model/label.js";
 import { asOfOrNow, countedFiles, historyAvailable, historyPath, plural, shallowAware, topEvidence, unknown } from "./util.js";
 
 /** Spec §4 "history.*" signals. */
@@ -54,13 +54,23 @@ interface IncidentEvent {
   prefixes: string[];
 }
 
+/**
+ * Computes `history.incident`: whether a recorded incident or a revert touched a changed file.
+ *
+ * @param ctx - The scoring context. Without `asOf` (scoring a change), incidents come from the base
+ * commit; with `asOf` (a replay over history), from the working tree's full log.
+ * @param files - The changed files that count.
+ * @returns The signal; unknown when the incidents file cannot be read or parsed.
+ */
 async function incidentSignal(ctx: ScoringContext, files: ChangedFile[]): Promise<Signal> {
   const id = "history.incident";
   let recorded: Incident[];
   try {
-    recorded = await loadIncidents(ctx.repoDir);
-  } catch (e) {
-    return unknown(id, `could not read ${INCIDENTS_FILE}: ${(e as Error).message}`);
+    // Like the brief: a PR must not write its own incidents. A replay is point-in-time through
+    // asOf instead, and needs incidents recorded after the replayed commit.
+    recorded = ctx.asOf === undefined ? parseIncidents((await ctx.readBase(INCIDENTS_FILE)) ?? "") : await loadIncidents(ctx.repoDir);
+  } catch (error) {
+    return unknown(id, `could not read ${INCIDENTS_FILE}: ${(error as Error).message}`);
   }
   const { lookup, reverts } = indexFor(ctx.history);
   const events = [...reverts];

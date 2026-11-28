@@ -1,5 +1,5 @@
 import { appendFile, mkdir, readFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { FACTS_FILE, factHash, parseFactMemory, type FactMemoryEntry, type FactVerdict } from "../../brief/facts-memory.js";
 import { factIds } from "../../brief/selfcheck.js";
@@ -9,7 +9,7 @@ import { OpendrsError } from "../../domain/types.js";
 import { scoreDiff } from "../../engine.js";
 import { git, gitMaybe } from "../../git/exec.js";
 import { INCIDENTS_FILE, loadIncidents } from "../../model/label.js";
-import { defaultBase, repoRoot } from "../repo.js";
+import { defaultBase, repoFileToWrite, repoRoot } from "../repo.js";
 import type { CliIo, Command } from "../types.js";
 
 const FACT_VERDICTS: readonly FactVerdict[] = ["wrong", "useful", "intentional", "ignored"];
@@ -60,7 +60,7 @@ async function recordFact(repoDir: string, values: { fact: string; verdict?: str
   if (!fact) throw new OpendrsError(`no fact ${values.fact} in this diff; available: ${ids.join(", ") || "none"}`, "usage");
 
   const entry: FactMemoryEntry = { hash: factHash(fact), id: fact.id, file: fact.file, verdict, ...(values.note ? { note: values.note } : {}), at: new Date().toISOString() };
-  const file = join(repoDir, FACTS_FILE);
+  const file = await repoFileToWrite(repoDir, FACTS_FILE);
   const current = await readFile(file, "utf8").catch(() => "");
   if (parseFactMemory(current).some((e) => e.hash === entry.hash && e.verdict === verdict)) {
     io.out(`Already recorded in ${FACTS_FILE}: ${values.fact} (${verdict})`);
@@ -154,7 +154,7 @@ Options:
     }
     if (lines.length === 0) return 0;
 
-    const file = join(repoDir, INCIDENTS_FILE);
+    const file = await repoFileToWrite(repoDir, INCIDENTS_FILE);
     await mkdir(dirname(file), { recursive: true });
     const current = await readFile(file, "utf8").catch(() => "");
     const separator = current && !current.endsWith("\n") ? "\n" : "";

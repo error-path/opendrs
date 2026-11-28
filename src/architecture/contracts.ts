@@ -75,7 +75,8 @@ function declName(path: string, line: string): string | undefined {
       return /^func\s+(?:\([^)]*\)\s*)?([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /^(?:type|var|const)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1];
     case "java":
     case "kotlin":
-      return /\b(?:class|interface|object|fun)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /([A-Za-z_]\w*)\s*\(/.exec(trimmed)?.[1];
+      // `\b` before the name: start only at a word, else a long word is rescanned from every letter.
+      return /\b(?:class|interface|object|fun)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1] ?? /\b([A-Za-z_]\w*)\s*\(/.exec(trimmed)?.[1];
     case "rust":
       return /^pub(?:\([^)]*\))?\s+(?:async\s+)?(?:fn|struct|enum|trait|const|static|type|mod)\s+([A-Za-z_]\w*)/.exec(trimmed)?.[1];
     default:

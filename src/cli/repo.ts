@@ -1,7 +1,8 @@
-import { realpath } from "node:fs/promises";
-import { isAbsolute, posix, relative, sep } from "node:path";
+import { lstat, realpath } from "node:fs/promises";
+import { isAbsolute, join, posix, relative, sep } from "node:path";
 import { OpendrsError } from "../domain/types.js";
 import { git, gitMaybe } from "../git/exec.js";
+import { joinPath } from "../graph/path-util.js";
 
 /** Repository root containing `cwd`. */
 export async function repoRoot(cwd: string): Promise<string> {
@@ -20,6 +21,31 @@ export async function defaultBase(repoDir: string): Promise<string> {
   if (remote && (await resolves(repoDir, remote))) return remote;
   for (const branch of ["main", "master"]) if (await resolves(repoDir, branch)) return branch;
   throw new OpendrsError("could not find a base branch (origin/HEAD, main or master); pass --base <ref>", "usage");
+}
+
+/**
+ * Resolves a repo-relative file the CLI is about to write, refusing one a cloned repository could point elsewhere.
+ *
+ * @param repoDir - The repository root.
+ * @param relativePath - The file, relative to the root (e.g. `config.model`).
+ * @returns The absolute path to write.
+ * @throws {@link OpendrsError} If the path is absolute or climbs out with `..`, or the file or a
+ * folder between the root and it is a symbolic link.
+ */
+export async function repoFileToWrite(repoDir: string, relativePath: string): Promise<string> {
+  const normalizedPath = isAbsolute(relativePath) ? undefined : joinPath("", relativePath.replaceAll("\\", "/"));
+  if (!normalizedPath) throw new OpendrsError(`refusing to write ${relativePath}: the path must stay inside the repository`, "config");
+  let current = repoDir;
+  for (const part of normalizedPath.split("/")) {
+    current = join(current, part);
+    const stats = await lstat(current).catch((error: NodeJS.ErrnoException) => {
+      if (error.code === "ENOENT") return undefined;
+      throw error;
+    });
+    if (stats === undefined) break;
+    if (stats.isSymbolicLink()) throw new OpendrsError(`refusing to write ${relativePath}: ${relative(repoDir, current)} is a symbolic link`, "io");
+  }
+  return join(repoDir, normalizedPath);
 }
 
 /** Convert a user-supplied path (relative to cwd, or absolute) to a repo-relative posix path. */

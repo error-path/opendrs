@@ -1,8 +1,8 @@
 import { access, mkdir, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { CONFIG_FILE } from "../../domain/config.js";
-import { repoRoot } from "../repo.js";
+import { repoFileToWrite, repoRoot } from "../repo.js";
 import { CONFIG_TEMPLATE, WORKFLOW_TEMPLATE } from "../templates.js";
 import type { Command } from "../types.js";
 
@@ -24,7 +24,7 @@ Write ${CONFIG_FILE} (every default, commented) and .github/workflows/opendrs.ym
       [".github/workflows/opendrs.yml", WORKFLOW_TEMPLATE],
     ];
     for (const [rel, content] of files) {
-      const abs = join(repoDir, rel);
+      const abs = await repoFileToWrite(repoDir, rel);
       if (!values.force && (await exists(abs))) {
         io.out(`kept ${rel} (exists; use --force to overwrite)`);
         continue;

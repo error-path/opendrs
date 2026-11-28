@@ -4,6 +4,19 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 
 ## Unreleased
 
+### Fixed
+
+- `history.incident` reads `.opendrs/incidents.jsonl` from the base commit when scoring a change,
+  as the brief already did, so a PR cannot delete or add its own incidents. `calibrate` and
+  `backtest` still read the working tree's file.
+- The Action scores with the built-in weights when the base commit has no valid model, never with a
+  model file from the PR checkout. With `base-config: false` the model now also comes from the base
+  commit.
+- `calibrate`, `feedback` and `init` refuse to write outside the repository: a `model` path that is
+  absolute or climbs out with `..`, or a target file or folder that is a symbolic link.
+- Two regular expressions that took quadratic time on long hostile lines (a `go.mod` `require`
+  line, and a Java or Kotlin public declaration without a parenthesis) now run in linear time.
+
 ### Changed
 
 - Releases run mostly in GitHub Actions: **Prepare a release** opens the release PR, **Tag a

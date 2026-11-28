@@ -105,6 +105,14 @@ describe("addedPackages: Gemfile", () => {
     expect(addedPackages("Gemfile", undefined, head)).toEqual({ runtime: [], dev: ["rspec", "pry"] });
   });
 
+  it("a go.mod require line with a run of spaces and a line separator parses in linear time", () => {
+    // `.` stops at \r but `\s` does not, so `require\s+(.+)$` used to retry every split of the spaces.
+    const head = `module m\n\nrequire${" ".repeat(50_000)}a\rb\n`;
+    const started = performance.now();
+    expect(addedPackages("go.mod", undefined, head)).toEqual({ runtime: [], dev: [] });
+    expect(performance.now() - started).toBeLessThan(1000);
+  });
+
   it("a PR's group line without `do` parses in linear time, not by catastrophic backtracking", () => {
     const head = `group ${":a  ".repeat(18)}x\ngem "rails"\n`;
     const started = performance.now();

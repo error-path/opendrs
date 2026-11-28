@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { loadConfig } from "../../domain/config.js";
 import { OpendrsError, type BacktestMetrics } from "../../domain/types.js";
@@ -7,7 +7,7 @@ import { loadModel } from "../../engine.js";
 import { backtest } from "../../model/backtest.js";
 import { calibrate, type HistoryRunOptions } from "../../model/calibrate.js";
 import { parsePositiveInt, pct } from "../args.js";
-import { repoRoot } from "../repo.js";
+import { repoFileToWrite, repoRoot } from "../repo.js";
 import type { CliIo, Command } from "../types.js";
 
 const HISTORY_OPTIONS = `  --since <date>       Only use commits after this date (e.g. 2026-01-01)
@@ -66,7 +66,7 @@ ${HISTORY_OPTIONS}`,
     const { model, warnings } = await calibrate(opts);
     io.progress("");
     for (const w of warnings) io.err(`opendrs: warning: ${w}`);
-    const file = join(opts.repoDir, opts.config.model);
+    const file = await repoFileToWrite(opts.repoDir, opts.config.model);
     await mkdir(dirname(file), { recursive: true });
     await writeFile(file, JSON.stringify(model, null, 2) + "\n");
 

@@ -73,14 +73,30 @@ describe("historySignals", () => {
     expect(byId(await historySignals(await contextFor(repo, "HEAD~1", "HEAD", { asOf: T })), "history.incident").value).toBe(0);
   });
 
-  it("reports history.incident as unknown when incidents.jsonl is malformed", async () => {
+  it("reports history.incident as unknown when the base commit's incidents.jsonl is malformed", async () => {
     repo = makeRepo();
-    repo.commit({ "a.ts": "1\n" }, "init");
+    repo.commit({ "a.ts": "1\n", ".opendrs/incidents.jsonl": "@attacker|x\n" }, "init");
     repo.commit({ "a.ts": "2\n" }, "change");
-    writeIncidents(repo, "{oops\n");
     const incident = byId(await historySignals(await contextFor(repo, "HEAD~1")), "history.incident");
     expect(incident).toMatchObject({ value: 0, status: "unknown" });
+    // The raw parse error stays in the summary; the comment renderer escapes every summary (report/markdown).
     expect(incident.summary).toMatch(/incidents\.jsonl/);
+  });
+
+  it("scoring a change reads incidents from the base commit, so a PR cannot delete or add its own", async () => {
+    repo = makeRepo();
+    repo.commit({ "pay/core.ts": "0\n", ".opendrs/incidents.jsonl": JSON.stringify({ paths: ["pay/"] }) + "\n" }, "init", undefined, T - 60 * DAY);
+    // The PR deletes the recorded incident and changes the implicated file.
+    repo.commit({ "pay/core.ts": "1\n", ".opendrs/incidents.jsonl": null }, "feat: scored", undefined, T);
+    expect(byId(await historySignals(await contextFor(repo, "HEAD~1")), "history.incident").value).toBe(1);
+
+    // An incident only in the working tree (not on the base commit) does not count.
+    repo.cleanup();
+    repo = makeRepo();
+    repo.commit({ "docs/x.md": "0\n" }, "init", undefined, T - 60 * DAY);
+    repo.commit({ "docs/x.md": "1\n" }, "docs: scored", undefined, T);
+    writeIncidents(repo, JSON.stringify({ paths: ["docs/"] }) + "\n");
+    expect(byId(await historySignals(await contextFor(repo, "HEAD~1")), "history.incident")).toMatchObject({ value: 0, status: "derived" });
   });
 
   it("is unknown when there is no prior history (root commit)", async () => {

@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { appendFileSync, mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { appendFileSync, mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 
@@ -36,6 +36,24 @@ const REPO_GIT_CONFIG = `[user]
 [maintenance]
 \tauto = false
 `;
+
+/**
+ * Checks whether this process may create a file symbolic link (Windows needs Developer Mode or admin).
+ *
+ * @returns True when a file symlink could be made in the temporary folder.
+ */
+export function canSymlinkFiles(): boolean {
+  const dir = mkdtempSync(join(tmpdir(), "opendrs-symlink-"));
+  try {
+    writeFileSync(join(dir, "target"), "");
+    symlinkSync(join(dir, "target"), join(dir, "link"));
+    return true;
+  } catch {
+    return false;
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
 
 /** Create a real temporary git repository for tests. */
 export function makeRepo(): TestRepo {
