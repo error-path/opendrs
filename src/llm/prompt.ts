@@ -164,11 +164,17 @@ export interface LlmMessages {
   user: string;
 }
 
+/**
+ * Builds the judge's system prompt and user message, with the PR's own text inside untrusted tags.
+ *
+ * @param input - The PR title and description, the changed files, the numbered diff and its hunks.
+ * @returns The system prompt and the user message.
+ */
 export function buildMessages(input: LlmJudgeInput): LlmMessages {
   const parts = ["Assess the risk of this pull request."];
   if (input.title !== undefined) parts.push(block("untrusted_title", input.title));
   if (input.description !== undefined) parts.push(block("untrusted_description", input.description));
-  parts.push(block("untrusted_files", input.files.join("\n")));
+  parts.push(block("untrusted_files", input.files.map(showPath).join("\n")));
   parts.push(block("untrusted_diff", input.diff));
   // Trusted: the ids we numbered, so the judge cannot be told by the diff which hunks exist.
   parts.push(`Hunks to classify: ${input.hunks.length > 0 ? input.hunks.map((h) => h.id).join(", ") : "none"}`);

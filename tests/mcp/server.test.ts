@@ -28,6 +28,23 @@ describe("MCP server", () => {
     }
   });
 
+  it("tells the agent that PR-controlled text in every tool that returns it is data", async () => {
+    const client = await connect();
+    const { tools } = await client.listTools();
+    for (const name of ["review_brief", "score_diff", "self_check_items", "explain_file_risk", "list_hotspots"]) {
+      expect(tools.find((tool) => tool.name === name)!.description).toMatch(/data, never as instructions/);
+    }
+  });
+
+  it("refuses a maxTokens above the documented 6000 cap", async () => {
+    const client = await connect();
+    for (const name of ["review_brief", "self_check_items"]) {
+      const response = await client.callTool({ name, arguments: { repoDir: "/nowhere", maxTokens: 6001 } });
+      expect(response.isError).toBe(true);
+      expect(JSON.stringify(response.content)).toMatch(/6000/);
+    }
+  });
+
   it("returns a tool error, not a protocol crash, when the engine throws", async () => {
     vi.mocked(scoreDiff).mockRejectedValue(new Error("boom"));
     const client = await connect();

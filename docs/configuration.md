@@ -108,7 +108,7 @@ llm:
   provider: anthropic   # anthropic | openai (any OpenAI-compatible endpoint)
   model: claude-sonnet-5
   # baseUrl: https://api.openai.com/v1
-  # apiKeyEnv: MY_KEY_VAR   # a remote baseUrl or custom apiKeyEnv needs OPENDRS_TRUST_REPO_LLM=1 outside the Action
+  # apiKeyEnv: MY_KEY_VAR   # a remote baseUrl or custom apiKeyEnv needs OPENDRS_TRUST_REPO_LLM=1 outside the Action; a localhost baseUrl gets no key without it
   includeDescription: false   # the PR body is untrusted; title only by default
   maxDiffChars: 60000
   verify:                     # the verification pass, see verification.html
