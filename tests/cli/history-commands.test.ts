@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { BacktestMetrics, ModelWeights } from "../../src/domain/types.js";
 import { makeRepo, type TestRepo } from "../helpers/repo.js";
@@ -46,6 +47,27 @@ describe("opendrs calibrate", () => {
     const t = testIo(repo.dir);
     expect(await runCli(["calibrate"], t.io)).toBe(0);
     expect(JSON.parse(readFileSync(join(repo.dir, ".opendrs/model.json"), "utf8"))).toEqual(MODEL);
+  });
+
+  it.each(["../../escaped.json", "/tmp/escaped.json", "models/../../escaped.json"])("refuses a model path that leaves the repository (%s)", async (modelPath) => {
+    writeFileSync(join(repo.dir, ".opendrs.yml"), `model: ${modelPath}\n`);
+    const cliOutput = testIo(repo.dir);
+    expect(await runCli(["calibrate"], cliOutput.io)).not.toBe(0);
+    expect(cliOutput.stderr()).toMatch(/inside the repository/);
+  });
+
+  // A directory junction needs no privilege on Windows; elsewhere "junction" makes a plain symlink.
+  it("refuses to write the model into a .opendrs folder that is a symbolic link", async () => {
+    const outside = mkdtempSync(join(tmpdir(), "opendrs-outside-"));
+    try {
+      symlinkSync(outside, join(repo.dir, ".opendrs"), "junction");
+      const cliOutput = testIo(repo.dir);
+      expect(await runCli(["calibrate"], cliOutput.io)).not.toBe(0);
+      expect(cliOutput.stderr()).toMatch(/symbolic link/);
+      expect(existsSync(join(outside, "model.json"))).toBe(false);
+    } finally {
+      rmSync(outside, { recursive: true, force: true });
+    }
   });
 
   it("honours a custom model path from .opendrs.yml", async () => {

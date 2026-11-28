@@ -11,6 +11,7 @@ import { git, gitMaybe } from "../git/exec.js";
 import { matchAny } from "../git/glob.js";
 import { buildHistoryIndex } from "../git/history.js";
 import { TRUST_REPO_LLM_ENV } from "../llm/provider.js";
+import { DEFAULT_WEIGHTS } from "../model/defaults.js";
 import { assignReviewer, suggestReviewers } from "../policy/reviewers.js";
 import { cell } from "../report/escape.js";
 import { renderMarkdown } from "../report/markdown.js";
@@ -97,23 +98,24 @@ function readPullRequest(event: unknown): PullRequest {
 /**
  * Loads the config and the calibrated model for a run.
  *
- * @param d - The run's dependencies; `inputs.baseConfig` chooses where the config is read from.
+ * @param dependencies - The run's dependencies; `inputs.baseConfig` chooses where the config is read from.
  * @param base - The pull request's base commit.
- * @returns The config, and the model when the base commit has a valid one and `base-config` is true.
+ * @returns The config, and the model when the base commit has a valid one (whatever `base-config` is).
  */
-async function loadSettings(d: ActionDeps, base: string): Promise<{ config: OpendrsConfig; model?: ModelWeights }> {
-  const { config: baseConfig, hasConfigFile } = await readBaseConfig(d.repoDir, base);
-  if (!d.inputs.baseConfig) {
-    d.io.warning(
+async function loadSettings(dependencies: ActionDeps, base: string): Promise<{ config: OpendrsConfig; model?: ModelWeights }> {
+  const { config: baseConfig, hasConfigFile } = await readBaseConfig(dependencies.repoDir, base);
+  let config = baseConfig;
+  if (!dependencies.inputs.baseConfig) {
+    dependencies.io.warning(
       `base-config is false: ${CONFIG_FILE} is read from the PR checkout, so a PR can change its own gate. ` +
-        "Auto-approval still refuses PRs that modify it. The llm section and the model path still come from the base commit.",
+        "Auto-approval still refuses PRs that modify it. The llm section and the model still come from the base commit.",
     );
     // Never let a PR choose where the LLM key is sent (llm.baseUrl) or which secret is exported (llm.apiKeyEnv).
-    return { config: { ...(await loadConfig(d.repoDir)), llm: baseConfig.llm, model: baseConfig.model } };
+    config = { ...(await loadConfig(dependencies.repoDir)), llm: baseConfig.llm, model: baseConfig.model };
+  } else {
+    logBaseConfigSource(dependencies.io, base, hasConfigFile);
   }
-  logBaseConfigSource(d.io, base, hasConfigFile);
-  const config = baseConfig;
-  const model = await readBaseModel(d.repoDir, base, config, d.io);
+  const model = await readBaseModel(dependencies.repoDir, base, config, dependencies.io);
   return model === undefined ? { config } : { config, model };
 }
 
@@ -269,7 +271,9 @@ async function scorePullRequest(d: ActionDeps, pr: PullRequest): Promise<ActionO
       base: pr.base.sha,
       head: pr.head.sha,
       config,
-      model,
+      // Without a valid model on the base commit, the built-in weights: never the PR checkout's model file.
+      model: model ?? DEFAULT_WEIGHTS,
+      modelKind: model === undefined ? "default" : "calibrated",
       history,
       authorVerified: author.verified,
       account: pr.user ? { login: pr.user.login, type: pr.user.type } : undefined,

@@ -71,8 +71,9 @@ function parseGoMod(text: string): ParseResult {
       addEntry(line);
       continue;
     }
-    const m = /^require\s+(.+)$/.exec(line);
-    if (m) addEntry(m[1]!);
+    // `\S` first: `\s+` and `.+` both take spaces, which made a line that fails to match quadratic.
+    const requireMatch = /^require\s+(\S.*)$/.exec(line);
+    if (requireMatch) addEntry(requireMatch[1]!);
   }
   if (inBlock) return { error: "unclosed require block" };
 

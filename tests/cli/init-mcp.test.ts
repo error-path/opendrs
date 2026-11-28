@@ -1,11 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { parse } from "yaml";
 import { DEFAULT_BLOCK, DEFAULT_CRITICAL, DEFAULT_INSTRUCTIONS, defaultConfig, parseConfigText } from "../../src/domain/config.js";
 import { runCli } from "../../src/cli/cli.js";
 import { mcpCommand } from "../../src/cli/commands/mcp.js";
-import { makeRepo, type TestRepo } from "../helpers/repo.js";
+import { canSymlinkFiles, makeRepo, type TestRepo } from "../helpers/repo.js";
 import { testIo } from "./helpers.js";
 
 let repo: TestRepo;
@@ -67,6 +68,32 @@ describe("opendrs init", () => {
     writeFileSync(join(repo.dir, ".opendrs.yml"), "mine: true\n");
     await runCli(["init", "--force"], testIo(repo.dir).io);
     expect(parseConfigText(readFileSync(join(repo.dir, ".opendrs.yml"), "utf8"))).toEqual(defaultConfig());
+  });
+
+  // A directory junction needs no privilege on Windows; elsewhere "junction" makes a plain symlink.
+  it("refuses --force through a .github folder that is a symbolic link", async () => {
+    const outside = mkdtempSync(join(tmpdir(), "opendrs-outside-"));
+    try {
+      symlinkSync(outside, join(repo.dir, ".github"), "junction");
+      const cliOutput = testIo(repo.dir);
+      expect(await runCli(["init", "--force"], cliOutput.io)).not.toBe(0);
+      expect(cliOutput.stderr()).toMatch(/symbolic link/);
+      expect(existsSync(join(outside, "workflows"))).toBe(false);
+    } finally {
+      rmSync(outside, { recursive: true, force: true });
+    }
+  });
+
+  it.skipIf(!canSymlinkFiles())("refuses --force on a .opendrs.yml that is a symbolic link", async () => {
+    const outside = mkdtempSync(join(tmpdir(), "opendrs-outside-"));
+    try {
+      writeFileSync(join(outside, "target"), "keep\n");
+      symlinkSync(join(outside, "target"), join(repo.dir, ".opendrs.yml"));
+      expect(await runCli(["init", "--force"], testIo(repo.dir).io)).not.toBe(0);
+      expect(readFileSync(join(outside, "target"), "utf8")).toBe("keep\n");
+    } finally {
+      rmSync(outside, { recursive: true, force: true });
+    }
   });
 });
 

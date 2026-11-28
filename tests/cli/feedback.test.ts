@@ -1,10 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { factHash, parseFactMemory } from "../../src/brief/facts-memory.js";
 import { feedbackCommand } from "../../src/cli/commands/feedback.js";
 import { loadIncidents } from "../../src/model/label.js";
-import { makeRepo, type TestRepo } from "../helpers/repo.js";
+import { canSymlinkFiles, makeRepo, type TestRepo } from "../helpers/repo.js";
 import { testIo } from "./helpers.js";
 
 let repo: TestRepo;
@@ -23,6 +24,35 @@ const seed = (text: string) => {
   mkdirSync(join(repo.dir, ".opendrs"), { recursive: true });
   writeFileSync(join(repo.dir, ".opendrs/incidents.jsonl"), text);
 };
+
+describe("opendrs feedback writes only inside the repository", () => {
+  // A directory junction needs no privilege on Windows; elsewhere "junction" makes a plain symlink.
+  it("refuses to append through a .opendrs folder that is a symbolic link", async () => {
+    repo.commit({ "a.ts": "1\n" }, "feat: a");
+    const outside = mkdtempSync(join(tmpdir(), "opendrs-outside-"));
+    try {
+      symlinkSync(outside, join(repo.dir, ".opendrs"), "junction");
+      await expect(feedbackCommand.run(["--inducing", "HEAD"], testIo(repo.dir).io)).rejects.toThrow(/symbolic link/);
+      expect(existsSync(join(outside, "incidents.jsonl"))).toBe(false);
+    } finally {
+      rmSync(outside, { recursive: true, force: true });
+    }
+  });
+
+  it.skipIf(!canSymlinkFiles())("refuses to append to an incidents file that is a symbolic link", async () => {
+    repo.commit({ "a.ts": "1\n" }, "feat: a");
+    const outside = mkdtempSync(join(tmpdir(), "opendrs-outside-"));
+    try {
+      writeFileSync(join(outside, "target"), "");
+      mkdirSync(join(repo.dir, ".opendrs"));
+      symlinkSync(join(outside, "target"), join(repo.dir, ".opendrs/incidents.jsonl"));
+      await expect(feedbackCommand.run(["--inducing", "HEAD"], testIo(repo.dir).io)).rejects.toThrow(/symbolic link/);
+      expect(readFileSync(join(outside, "target"), "utf8")).toBe("");
+    } finally {
+      rmSync(outside, { recursive: true, force: true });
+    }
+  });
+});
 
 describe("opendrs feedback", () => {
   it("records --inducing with fix, paths and note as a loadable incident", async () => {
