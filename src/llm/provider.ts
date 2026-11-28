@@ -39,19 +39,23 @@ function untrustedSettings(baseUrl: string | undefined, apiKeyEnv: string | unde
  * @param config - The loaded opendrs config. Outside the Action, it comes from the repository and
  * is untrusted. The Action passes `llm` settings from the base commit.
  * @param env - Where to read the API key and {@link TRUST_REPO_LLM_ENV}. Defaults to `process.env`.
+ * A `localhost` `llm.baseUrl` is allowed without the opt-in, but then gets no API key: any process
+ * can listen on a local port the repository picked.
+ *
  * @returns The Anthropic or OpenAI-compatible provider, or undefined when `llm.enabled` is false.
  * @throws {@link OpendrsError} With code `llm` if `llm.baseUrl` or `llm.apiKeyEnv` is refused, if
- * the key is missing (only an OpenAI-compatible server on localhost can run without one), or if
- * the `openai` provider is given a `claude-` model and no `llm.baseUrl`.
+ * the key is missing (a server on localhost can run without one; so can any local server when the
+ * key is withheld), or if the `openai` provider is given a `claude-` model and no `llm.baseUrl`.
  */
 export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv = process.env): LlmProvider | undefined {
   const { enabled, provider, model, baseUrl, apiKeyEnv } = config.llm;
   if (!enabled) return undefined;
 
   const defaultKeyEnv = provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+  const isOptedIn = env[TRUST_REPO_LLM_ENV] === "1";
   // Check before reading the key, so a refused config never touches the variable it named.
   const untrusted = untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv);
-  if (untrusted.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
+  if (untrusted.length > 0 && !isOptedIn) {
     throw new OpendrsError(
       `Refusing to call the LLM: .opendrs.yml sets ${untrusted.join(" and ")}, and that file comes with the repository. ` +
         `If you trust it, set ${TRUST_REPO_LLM_ENV}=1 for this run only: while set, it applies to every repository.`,
@@ -60,8 +64,9 @@ export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv 
   }
 
   const keyEnv = apiKeyEnv ?? defaultKeyEnv;
-  const apiKey = env[keyEnv] || undefined;
-  const keyOptional = provider === "openai" && isLocal(baseUrl);
+  const isKeyWithheld = isLocal(baseUrl) && !isOptedIn;
+  const apiKey = isKeyWithheld ? undefined : env[keyEnv] || undefined;
+  const keyOptional = isKeyWithheld || (provider === "openai" && isLocal(baseUrl));
   if (!apiKey && !keyOptional) {
     throw new OpendrsError(
       `The LLM judge is enabled (llm.enabled: true, provider ${provider}) but ${keyEnv} is not set. ` +
@@ -70,7 +75,7 @@ export function createLlmProvider(config: OpendrsConfig, env: NodeJS.ProcessEnv 
     );
   }
 
-  if (provider === "anthropic") return createAnthropicProvider({ model, apiKey: apiKey!, baseUrl });
+  if (provider === "anthropic") return createAnthropicProvider({ model, apiKey, baseUrl });
 
   // llm.model defaults to a Claude id; api.openai.com would reject it with an opaque 404.
   if (!baseUrl && model.startsWith("claude-")) {

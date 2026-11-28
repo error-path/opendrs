@@ -16,7 +16,7 @@ const { hotspots } = await import("../../src/hotspots.js");
 const { buildHistoryIndex } = await import("../../src/git/history.js");
 const { suggestReviewers } = await import("../../src/policy/reviewers.js");
 const { gitMaybe } = await import("../../src/git/exec.js");
-const { scoreDiffTool, explainFileRiskTool, listHotspotsTool, suggestReviewersTool } = await import("../../src/mcp/tools.js");
+const { scoreDiffTool, explainFileRiskTool, listHotspotsTool, suggestReviewersTool, UNTRUSTED_TEXT_NOTICE } = await import("../../src/mcp/tools.js");
 
 // The tools resolve repoDir, which on Windows turns /tmp/... into a C: drive path, so compare against that.
 const REPO = resolve("/tmp/opendrs-mcp-test-repo-does-not-exist");
@@ -26,12 +26,12 @@ function result(): ScoreResult {
   return {
     score: 0.71234,
     tier: "yellow",
-    signals: contributions.map((c) => ({
-      id: c.id,
-      value: c.value,
+    signals: contributions.map((contribution) => ({
+      id: contribution.id,
+      value: contribution.value,
       status: "observed",
-      summary: `summary ${c.id}`,
-      evidence: [{ file: "src/a.ts", detail: `ev ${c.id}` }],
+      summary: `summary ${contribution.id}`,
+      evidence: [{ file: "src/a.ts", detail: `ev ${contribution.id}` }],
     })),
     contributions,
     unknowns: ["blast.dependents"],
@@ -54,7 +54,7 @@ function result(): ScoreResult {
   };
 }
 
-const json = (r: { content: Array<{ type: string; text?: string }> }) => JSON.parse(r.content[0]!.text!);
+const json = (toolResult: { content: Array<{ type: string; text?: string }> }) => JSON.parse(toolResult.content[0]!.text!);
 
 /** The repo root is the given dir; `originHead` answers the origin/HEAD probe. */
 const gitAnswers = (originHead?: string) =>
@@ -70,11 +70,11 @@ describe("score_diff", () => {
     gitAnswers("abc123\n");
     vi.mocked(scoreDiff).mockResolvedValue(result());
 
-    const r = await scoreDiffTool({ repoDir: REPO });
+    const toolResult = await scoreDiffTool({ repoDir: REPO });
 
-    expect(r.isError).toBeFalsy();
+    expect(toolResult.isError).toBeFalsy();
     expect(vi.mocked(scoreDiff).mock.calls[0]![0]).toMatchObject({ repoDir: REPO, base: "origin/HEAD", head: "HEAD" });
-    const out = json(r);
+    const out = json(toolResult);
     expect(out).toMatchObject({
       score: 0.712,
       tier: "yellow",
@@ -107,9 +107,20 @@ describe("score_diff", () => {
   it("returns engine failures as a tool error instead of throwing", async () => {
     gitAnswers("abc");
     vi.mocked(scoreDiff).mockRejectedValue(new OpendrsError("git diff failed: bad revision", "git"));
-    const r = await scoreDiffTool({ repoDir: REPO });
-    expect(r.isError).toBe(true);
-    expect(r.content[0]).toMatchObject({ type: "text", text: expect.stringContaining("bad revision") });
+    const toolResult = await scoreDiffTool({ repoDir: REPO });
+    expect(toolResult.isError).toBe(true);
+    expect(toolResult.content[0]).toMatchObject({ type: "text", text: expect.stringContaining("bad revision") });
+  });
+
+  it("marks the PR-controlled text in its result as data", async () => {
+    vi.mocked(scoreDiff).mockResolvedValue(result());
+    expect(json(await scoreDiffTool({ repoDir: REPO })).notice).toBe(UNTRUSTED_TEXT_NOTICE);
+  });
+
+  it("replaces the absolute repository path in an error with .", async () => {
+    vi.mocked(scoreDiff).mockRejectedValue(new OpendrsError(`cannot read ${REPO}/.opendrs.yml or ${REPO.replaceAll("\\", "/")}/x`, "git"));
+    const toolResult = await scoreDiffTool({ repoDir: REPO });
+    expect(toolResult.content[0]).toMatchObject({ type: "text", text: "cannot read ./.opendrs.yml or ./x" });
   });
 });
 
@@ -126,9 +137,9 @@ describe("explain_file_risk", () => {
       blocked: false,
       topAuthors: ["ana@example.com"],
     });
-    const r = await explainFileRiskTool({ repoDir: REPO, path: "src/a.ts" });
+    const toolResult = await explainFileRiskTool({ repoDir: REPO, path: "src/a.ts" });
     expect(vi.mocked(explainFile).mock.calls[0]!.slice(0, 2)).toEqual([REPO, "src/a.ts"]);
-    expect(json(r)).toMatchObject({ path: "src/a.ts", transitiveDependents: 9 });
+    expect(json(toolResult)).toMatchObject({ path: "src/a.ts", transitiveDependents: 9, notice: UNTRUSTED_TEXT_NOTICE });
   });
 
   it("reports failures as a tool error", async () => {
@@ -142,10 +153,10 @@ describe("list_hotspots", () => {
     const row = { rank: 1, score: 3.2, path: "src/a.ts", commits: 4, fixCommits: 2, authors: 2, transitiveDependents: 9, critical: false, blocked: false };
     const warnings = ["import graph failed: boom; dependents not shown"];
     vi.mocked(hotspots).mockResolvedValue({ hotspots: [row], warnings });
-    const r = await listHotspotsTool({ repoDir: REPO, top: 5 });
+    const toolResult = await listHotspotsTool({ repoDir: REPO, top: 5 });
     expect(vi.mocked(hotspots).mock.calls[0]![0]).toBe(REPO);
     expect(vi.mocked(hotspots).mock.calls[0]![2]).toBe(5);
-    expect(json(r)).toEqual({ hotspots: [row], warnings });
+    expect(json(toolResult)).toEqual({ notice: UNTRUSTED_TEXT_NOTICE, hotspots: [row], warnings });
   });
 
   it("reports failures as a tool error", async () => {
@@ -160,17 +171,17 @@ describe("suggest_reviewers", () => {
     vi.mocked(buildHistoryIndex).mockResolvedValue(history);
     vi.mocked(suggestReviewers).mockReturnValue(["ana@example.com", "bo@example.com"]);
 
-    const r = await suggestReviewersTool({ repoDir: REPO, paths: ["src/a.ts"] });
+    const toolResult = await suggestReviewersTool({ repoDir: REPO, paths: ["src/a.ts"] });
 
     expect(vi.mocked(buildHistoryIndex).mock.calls[0]!.slice(0, 2)).toEqual([REPO, "HEAD"]);
     expect(vi.mocked(suggestReviewers).mock.calls[0]!.slice(0, 2)).toEqual([history, ["src/a.ts"]]);
-    expect(json(r)).toEqual({ reviewers: ["ana@example.com", "bo@example.com"] });
+    expect(json(toolResult)).toEqual({ reviewers: ["ana@example.com", "bo@example.com"] });
   });
 
   it("reports failures as a tool error", async () => {
     vi.mocked(buildHistoryIndex).mockRejectedValue(new OpendrsError("not a git repository", "git"));
-    const r = await suggestReviewersTool({ repoDir: REPO, paths: ["a"] });
-    expect(r.isError).toBe(true);
-    expect(r.content[0]).toMatchObject({ text: expect.stringContaining("not a git repository") });
+    const toolResult = await suggestReviewersTool({ repoDir: REPO, paths: ["a"] });
+    expect(toolResult.isError).toBe(true);
+    expect(toolResult.content[0]).toMatchObject({ text: expect.stringContaining("not a git repository") });
   });
 });

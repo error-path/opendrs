@@ -31106,7 +31106,7 @@ function buildMessages(input2) {
   const parts = ["Assess the risk of this pull request."];
   if (input2.title !== void 0) parts.push(block("untrusted_title", input2.title));
   if (input2.description !== void 0) parts.push(block("untrusted_description", input2.description));
-  parts.push(block("untrusted_files", input2.files.join("\n")));
+  parts.push(block("untrusted_files", input2.files.map(showPath).join("\n")));
   parts.push(block("untrusted_diff", input2.diff));
   parts.push(`Hunks to classify: ${input2.hunks.length > 0 ? input2.hunks.map((h) => h.id).join(", ") : "none"}`);
   parts.push("Respond with the JSON object only.");
@@ -31781,6 +31781,7 @@ var ACCEPTS_TEMPERATURE = /claude-(?:3[\w.-]*|(?:opus|sonnet|haiku)-4(?:-[0-6])?
 var LACKS_STRUCTURED_OUTPUTS = /claude-(?:3[\w.-]*|(?:opus|sonnet|haiku)-4(?:-0)?(?:[-@]\d{8})?)$/;
 function createAnthropicProvider(opts) {
   const url2 = `${(opts.baseUrl ?? ANTHROPIC_DEFAULT_BASE_URL).replace(/\/+$/, "")}/v1/messages`;
+  const auth = opts.apiKey ? { "x-api-key": opts.apiKey } : {};
   const samplingFor = (schema) => {
     const outputConfig = {
       ...ACCEPTS_TEMPERATURE.test(opts.model) ? {} : { effort: "low" },
@@ -31796,11 +31797,11 @@ function createAnthropicProvider(opts) {
   const post = (system, user, maxTokens, sampling2) => postJson(
     "Anthropic API",
     url2,
-    { "x-api-key": opts.apiKey, "anthropic-version": API_VERSION },
+    { ...auth, "anthropic-version": API_VERSION },
     { model: opts.model, max_tokens: maxTokens, ...sampling2, system, messages: [{ role: "user", content: user }] },
     opts.apiKey
   );
-  const textOf = (res) => (res.content ?? []).filter((b) => b.type === "text").map((b) => b.text ?? "").join("");
+  const textOf = (res) => (res.content ?? []).filter((contentBlock) => contentBlock.type === "text").map((contentBlock) => contentBlock.text ?? "").join("");
   return {
     name: "anthropic",
     async judge(input2) {
@@ -31819,7 +31820,7 @@ function createAnthropicProvider(opts) {
       if (res.stop_reason === "max_tokens") {
         throw new OpendrsError(`LLM reply was cut off at max_tokens (${VERIFY_MAX_TOKENS}); too many candidates to verify in one reply`, "llm");
       }
-      const files = [...new Set(input2.candidates.map((c) => c.file))];
+      const files = [...new Set(input2.candidates.map((candidate) => candidate.file))];
       return {
         verdicts: parseVerification(textOf(res), input2.candidates, files),
         usage: { inputTokens: res.usage?.input_tokens ?? 0, outputTokens: res.usage?.output_tokens ?? 0 }
@@ -31893,16 +31894,18 @@ function createLlmProvider(config2, env = process.env) {
   const { enabled, provider, model, baseUrl, apiKeyEnv } = config2.llm;
   if (!enabled) return void 0;
   const defaultKeyEnv = provider === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+  const isOptedIn = env[TRUST_REPO_LLM_ENV] === "1";
   const untrusted2 = untrustedSettings(baseUrl, apiKeyEnv, defaultKeyEnv);
-  if (untrusted2.length > 0 && env[TRUST_REPO_LLM_ENV] !== "1") {
+  if (untrusted2.length > 0 && !isOptedIn) {
     throw new OpendrsError(
       `Refusing to call the LLM: .opendrs.yml sets ${untrusted2.join(" and ")}, and that file comes with the repository. If you trust it, set ${TRUST_REPO_LLM_ENV}=1 for this run only: while set, it applies to every repository.`,
       "llm"
     );
   }
   const keyEnv = apiKeyEnv ?? defaultKeyEnv;
-  const apiKey = env[keyEnv] || void 0;
-  const keyOptional = provider === "openai" && isLocal(baseUrl);
+  const isKeyWithheld = isLocal(baseUrl) && !isOptedIn;
+  const apiKey = isKeyWithheld ? void 0 : env[keyEnv] || void 0;
+  const keyOptional = isKeyWithheld || provider === "openai" && isLocal(baseUrl);
   if (!apiKey && !keyOptional) {
     throw new OpendrsError(
       `The LLM judge is enabled (llm.enabled: true, provider ${provider}) but ${keyEnv} is not set. Export ${keyEnv}, or set llm.enabled: false in .opendrs.yml.`,

@@ -61,7 +61,10 @@ of your environment variables to its own server.
 - A refused call counts as a failed call: the signal is `unknown`.
 - Set the variable for one run, not in your shell profile. While it is set, it applies to every
   repository.
-- You don't need it for a `localhost` `baseUrl` with the default key variable.
+- You don't need it for a `localhost`, `127.0.0.1` or `[::1]` `baseUrl` with the default key
+  variable, but without it opendrs sends that local server no API key: any process can listen on
+  a port the repository picked. A local Ollama or vLLM works without a key. If your local gateway
+  needs the key, set the variable.
 - The Action doesn't need it. It reads the `llm` section from the base commit, which a PR can't change.
 
 The same provider can also run the optional [verification pass](verification.md)

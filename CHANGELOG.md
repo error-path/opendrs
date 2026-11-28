@@ -13,6 +13,16 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
 - The Docker image is back on an LTS Node (`node:24-slim`; Node 25 reached end-of-life on 1 June
   2026), Dependabot no longer proposes new Node majors for it, and CI also runs on Node 26.
 
+### Security
+
+- A `localhost` `llm.baseUrl` from a repository's `.opendrs.yml` no longer gets your API key unless
+  you set `OPENDRS_TRUST_REPO_LLM=1`: the request still goes out, without the key, so a local
+  Ollama or vLLM keeps working.
+- The MCP tools `score_diff`, `self_check_items`, `explain_file_risk` and `list_hotspots` now say,
+  in their description and in a `notice` field, that text from the diff and history is data, never
+  instructions. `maxTokens` above 6000 is refused, and error messages show the repository path as `.`.
+- The LLM judge's file list escapes a path with a control character, as the diff headers already did.
+
 ## 0.7.1 - 2026-11-27
 
 ### Added

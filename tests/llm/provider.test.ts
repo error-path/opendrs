@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { parseConfig } from "../../src/domain/config.js";
 import { OpendrsError } from "../../src/domain/types.js";
 import { createLlmProvider } from "../../src/llm/provider.js";
@@ -84,6 +84,53 @@ describe("createLlmProvider", () => {
       expect(createLlmProvider(cfg, {})?.name).toBe("openai");
     },
   );
+
+  describe("a local baseUrl chosen by the repository", () => {
+    const judgeInput = { diff: "d", files: [], hunks: [], truncated: false };
+    const judgementText = '{"risk":0.1,"confidence":5,"rationale":"r","hunks":[],"risky_snippets":[]}';
+    const anthropicReply = { stop_reason: "end_turn", content: [{ type: "text", text: judgementText }] };
+    const openAiReply = { choices: [{ message: { content: judgementText } }] };
+
+    afterEach(() => vi.unstubAllGlobals());
+
+    /**
+     * Runs one judge call through a fake fetch and returns the headers it sent.
+     *
+     * @param llm - The `llm` section of the config, on top of `enabled: true`.
+     * @param env - The environment the provider reads the key and the opt-in from.
+     * @param reply - The JSON body the fake server answers with.
+     * @returns The request headers of the single call.
+     */
+    async function sentHeaders(llm: Record<string, unknown>, env: NodeJS.ProcessEnv, reply: unknown): Promise<Record<string, string>> {
+      const fetchMock = vi.fn(async (_url: string, _init: RequestInit) => Response.json(reply));
+      vi.stubGlobal("fetch", fetchMock);
+      await createLlmProvider(config({ enabled: true, ...llm }), env)!.judge(judgeInput);
+      return fetchMock.mock.calls[0]![1].headers as Record<string, string>;
+    }
+
+    it("sends no Anthropic key to a local port without the opt-in", async () => {
+      const headers = await sentHeaders({ baseUrl: "http://localhost:9999" }, { ANTHROPIC_API_KEY: "secret" }, anthropicReply);
+      expect(headers["x-api-key"]).toBeUndefined();
+    });
+
+    it("sends no OpenAI key to a local port without the opt-in", async () => {
+      const llm = { provider: "openai", model: "llama3", baseUrl: "http://127.0.0.1:11434/v1" };
+      const headers = await sentHeaders(llm, { OPENAI_API_KEY: "secret" }, openAiReply);
+      expect(headers.authorization).toBeUndefined();
+    });
+
+    it("sends the key to a local port with the opt-in", async () => {
+      const anthropicEnv = { ANTHROPIC_API_KEY: "secret", OPENDRS_TRUST_REPO_LLM: "1" };
+      expect((await sentHeaders({ baseUrl: "http://localhost:9999" }, anthropicEnv, anthropicReply))["x-api-key"]).toBe("secret");
+      const llm = { provider: "openai", model: "llama3", baseUrl: "http://[::1]:8000/v1" };
+      const openAiEnv = { OPENAI_API_KEY: "secret", OPENDRS_TRUST_REPO_LLM: "1" };
+      expect((await sentHeaders(llm, openAiEnv, openAiReply)).authorization).toBe("Bearer secret");
+    });
+
+    it("does not require a key for a local Anthropic-compatible server without the opt-in", () => {
+      expect(createLlmProvider(config({ enabled: true, baseUrl: "http://localhost:9999" }), {})?.name).toBe("anthropic");
+    });
+  });
 
   it("refuses to send a Claude model id to api.openai.com", () => {
     const err = errorOf(() => createLlmProvider(config({ enabled: true, provider: "openai" }), { OPENAI_API_KEY: "k" }));

@@ -25,8 +25,16 @@ interface MessagesResponse {
   usage?: { input_tokens?: number; output_tokens?: number };
 }
 
-export function createAnthropicProvider(opts: { model: string; apiKey: string; baseUrl?: string }): LlmProvider {
+/**
+ * Creates the provider that calls the Anthropic Messages API, or a server that speaks it.
+ *
+ * @param opts - The model, the API key and the server URL (default: api.anthropic.com). Without
+ *   a key, the request has no `x-api-key` header; only a local server is called that way.
+ * @returns The provider for the judge and the verification pass.
+ */
+export function createAnthropicProvider(opts: { model: string; apiKey?: string; baseUrl?: string }): LlmProvider {
   const url = `${(opts.baseUrl ?? ANTHROPIC_DEFAULT_BASE_URL).replace(/\/+$/, "")}/v1/messages`;
+  const auth: Record<string, string> = opts.apiKey ? { "x-api-key": opts.apiKey } : {};
   const samplingFor = (schema: unknown) => {
     const outputConfig = {
       ...(ACCEPTS_TEMPERATURE.test(opts.model) ? {} : { effort: "low" }),
@@ -44,15 +52,15 @@ export function createAnthropicProvider(opts: { model: string; apiKey: string; b
     postJson(
       "Anthropic API",
       url,
-      { "x-api-key": opts.apiKey, "anthropic-version": API_VERSION },
+      { ...auth, "anthropic-version": API_VERSION },
       { model: opts.model, max_tokens: maxTokens, ...sampling, system, messages: [{ role: "user", content: user }] },
       opts.apiKey,
     ) as Promise<MessagesResponse>;
 
   const textOf = (res: MessagesResponse) =>
     (res.content ?? [])
-      .filter((b) => b.type === "text")
-      .map((b) => b.text ?? "")
+      .filter((contentBlock) => contentBlock.type === "text")
+      .map((contentBlock) => contentBlock.text ?? "")
       .join("");
 
   return {
@@ -75,7 +83,7 @@ export function createAnthropicProvider(opts: { model: string; apiKey: string; b
       if (res.stop_reason === "max_tokens") {
         throw new OpendrsError(`LLM reply was cut off at max_tokens (${VERIFY_MAX_TOKENS}); too many candidates to verify in one reply`, "llm");
       }
-      const files = [...new Set(input.candidates.map((c) => c.file))];
+      const files = [...new Set(input.candidates.map((candidate) => candidate.file))];
       return {
         verdicts: parseVerification(textOf(res), input.candidates, files),
         usage: { inputTokens: res.usage?.input_tokens ?? 0, outputTokens: res.usage?.output_tokens ?? 0 },

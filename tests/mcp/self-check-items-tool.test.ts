@@ -6,7 +6,7 @@ vi.mock("../../src/engine.js", () => ({ scoreDiff: vi.fn() }));
 vi.mock("../../src/git/exec.js", () => ({ gitMaybe: vi.fn(async (dir: string) => `${dir}\n`) }));
 
 const { scoreDiff } = await import("../../src/engine.js");
-const { selfCheckItemsTool } = await import("../../src/mcp/tools.js");
+const { selfCheckItemsTool, UNTRUSTED_TEXT_NOTICE } = await import("../../src/mcp/tools.js");
 
 // The tools resolve repoDir, which on Windows turns /tmp/... into a C: drive path, so compare against that.
 const REPO = resolve("/tmp/opendrs-mcp-self-check-test-repo-does-not-exist");
@@ -30,7 +30,7 @@ describe("selfCheckItemsTool", () => {
     vi.mocked(scoreDiff).mockResolvedValue({ brief: brief() } as never);
     const result = await selfCheckItemsTool({ repoDir: REPO, base: "main" });
     expect(result.isError).toBeUndefined();
-    expect(JSON.parse((result.content[0] as { text: string }).text)).toEqual({ items: [{ id: "hunk:a.ts:1", file: "a.ts", line: 1, text: "critical path" }] });
+    expect(JSON.parse((result.content[0] as { text: string }).text)).toEqual({ notice: UNTRUSTED_TEXT_NOTICE, items: [{ id: "hunk:a.ts:1", file: "a.ts", line: 1, text: "critical path" }] });
     expect(vi.mocked(scoreDiff).mock.calls[0]![0]).toMatchObject({ repoDir: REPO, base: "main", head: "HEAD" });
   });
 
