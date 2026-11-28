@@ -10,8 +10,8 @@ import { pathToFileURL } from "node:url";
 /** A release version such as `1.2.3` or `1.2.3-rc.1`, the release tag's pattern without the `v`. */
 const VERSION_PATTERN = /^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$/;
 
-/** Files that pin the npm package for plugin installs. */
-const PLUGIN_FILES = ["plugin/.claude-plugin/plugin.json", "plugin/commands/opendrs-review.md", "plugin/skills/opendrs/SKILL.md"];
+/** Files that pin the npm package for plugin and directory (llms-install.md) installs. */
+const PLUGIN_FILES = ["plugin/.claude-plugin/plugin.json", "plugin/commands/opendrs-review.md", "plugin/skills/opendrs/SKILL.md", "llms-install.md"];
 
 /** The composite action that runs a released opendrs on this repository's own PRs. */
 const DOGFOOD_FILE = ".github/actions/opendrs-release/action.yml";
@@ -101,8 +101,8 @@ export function bumpVersion(rootDir, newVersion, releaseDate) {
 }
 
 /**
- * Pins the Claude Code plugin to a released npm version: the manifest version and every
- * `@error-path/opendrs@<version>` call.
+ * Pins the Claude Code plugin and llms-install.md to a released npm version: the manifest version
+ * and every `@error-path/opendrs@<version>` call.
  *
  * @param rootDir - The repository root.
  * @param version - The version npm already serves.

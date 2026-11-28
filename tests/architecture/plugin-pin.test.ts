@@ -18,6 +18,12 @@ describe("plugin version pins", () => {
     for (const [text, pin] of mentions) expect(pin, text).toBe(`@${manifest.version}`);
   });
 
+  it("pins every package mention in llms-install.md to the manifest version", () => {
+    const installMentions = [...read("llms-install.md").matchAll(/@error-path\/opendrs(@[^\s`"]+)?/g)];
+    expect(installMentions.length).toBeGreaterThan(0);
+    for (const [text, pin] of installMentions) expect(pin, text).toBe(`@${manifest.version}`);
+  });
+
   it("pins the MCP server to the manifest version", () => {
     expect(manifest.mcpServers.opendrs.args).toContain(`@error-path/opendrs@${manifest.version}`);
   });

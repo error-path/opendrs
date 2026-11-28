@@ -70,7 +70,7 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
       - if: steps.published.outputs.skip != 'true'
-        run: npm ci
+        run: npm ci --ignore-scripts # no dependency install script runs in a job that can mint an npm token
       - if: steps.published.outputs.skip != 'true'
         run: npm run typecheck
       - if: steps.published.outputs.skip != 'true'

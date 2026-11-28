@@ -18,4 +18,6 @@ COPY --from=build /app/dist ./dist
 # A mounted repository is owned by another user; let git read it anyway.
 RUN git config --system --add safe.directory '*'
 WORKDIR /repo
+# The MCP server only reads the mounted repository, so it runs as the image's unprivileged user.
+USER node
 ENTRYPOINT ["node", "/app/dist/cli/index.js", "mcp"]

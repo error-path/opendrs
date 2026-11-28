@@ -12,6 +12,8 @@ All notable changes to opendrs. Versions follow [Semantic Versioning](https://se
   maintainer still reads and merges the PRs, publishes the draft (Marketplace) and approves npm.
 - The Docker image is back on an LTS Node (`node:24-slim`; Node 25 reached end-of-life on 1 June
   2026), Dependabot no longer proposes new Node majors for it, and CI also runs on Node 26.
+- The Docker image runs the MCP server as the unprivileged `node` user, not root, and
+  `llms-install.md` pins the npm version (bumped with the plugin on each release).
 
 ## 0.7.1 - 2026-11-27
 

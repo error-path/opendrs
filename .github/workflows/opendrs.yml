@@ -31,6 +31,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0 # required: the score reads past commits, authors and the merge-base
+          persist-credentials: false # later steps call the API with their own tokens, not git auth
       # Run the pinned release from the base branch, never the PR's copy: changing a file under
       # .github/actions/ needs only contents write, not the workflows permission a workflow edit needs.
       - name: Use the base branch's opendrs pin
@@ -47,6 +48,11 @@ jobs:
         with:
           client-id: ${{ vars.OPENDRS_APP_CLIENT_ID }}
           private-key: ${{ secrets.OPENDRS_APP_PRIVATE_KEY }}
+          # Only what opendrs and `gh pr merge` call, not the whole installation: contents for
+          # auto-merge and blobs, pull requests for comments, labels and reviews, checks for AI reviews.
+          permission-contents: write
+          permission-pull-requests: write
+          permission-checks: read
       # The release pin is in this composite action, so "Finish a release" can bump it. A pins PR
       # therefore still runs the previous release; the new pin applies from the next PR.
       - uses: ./.github/actions/opendrs-release
