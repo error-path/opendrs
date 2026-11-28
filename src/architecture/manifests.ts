@@ -230,13 +230,21 @@ function parseGradle(text: string): ParseResult {
   return { runtime, dev };
 }
 
+/**
+ * Minimal Gemfile parser: `gem "name"` lines, counted as dev inside a `group … do` block that lists
+ * `:development` or `:test`.
+ *
+ * @param text - The Gemfile's contents, from the PR head or the base commit (untrusted).
+ * @returns The gem names, split into runtime and dev.
+ */
 function parseGemfile(text: string): ParseResult {
   const runtime = new Set<string>();
   const dev = new Set<string>();
   const stack: boolean[] = [];
   for (const raw of text.split("\n")) {
     const line = raw.trim();
-    const group = /^group\s+((?::\w+\s*,?\s*)+)do\b/.exec(line);
+    // Each separator is a comma or whitespace, never an optional mix: `\s*,?\s*` let a failed match backtrack exponentially (ReDoS).
+    const group = /^group\s+((?::\w+(?:\s*,\s*|\s+))+)do\b/.exec(line);
     if (group) {
       stack.push(/:development|:test/.test(group[1]!));
       continue;
