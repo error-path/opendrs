@@ -57,7 +57,7 @@ npm, and finishing.
    give the tag, such as `v0.7.2`. Only the repository owner can run it. It checks that npm serves
    the version, publishes `server.json` to the MCP registry with the run's OIDC token (a re-run
    skips a version the registry already lists), moves the major tag (`v0`) to the release, and
-   opens one PR as opendrs-bot that pins the Claude Code plugin (`pin-plugin`) and this
+   opens one PR as opendrs-bot that pins the Claude Code plugin and `llms-install.md` (`pin-plugin`) and this
    repository's own opendrs step (`pin-dogfood`, in `.github/actions/opendrs-release/action.yml`)
    to the release. Untick **Move the major tag** for a release with a breaking change; a
    prerelease never moves it. The registry checks that the npm package's `mcpName` matches

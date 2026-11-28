@@ -19,7 +19,7 @@ Servers panel, "Configure MCP Servers"):
   "mcpServers": {
     "opendrs": {
       "command": "npx",
-      "args": ["-y", "@error-path/opendrs", "mcp"]
+      "args": ["-y", "@error-path/opendrs@0.7.1", "mcp"]
     }
   }
 }
@@ -32,14 +32,14 @@ On Windows, `npx` is a `.cmd` file that a stdio launcher cannot start directly. 
   "mcpServers": {
     "opendrs": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@error-path/opendrs", "mcp"]
+      "args": ["/c", "npx", "-y", "@error-path/opendrs@0.7.1", "mcp"]
     }
   }
 }
 ```
 
 With the Cline CLI, the same server is added with
-`cline mcp add opendrs --yes -- npx -y @error-path/opendrs mcp` (on Windows, run it from
+`cline mcp add opendrs --yes -- npx -y @error-path/opendrs@0.7.1 mcp` (on Windows, run it from
 PowerShell or cmd, and put `cmd /c` before `npx`).
 
 Do not run it from inside a checkout of the opendrs repository itself: there, `npx` resolves the

@@ -38,6 +38,7 @@ beforeEach(() => {
   writeRepoFile("plugin/.claude-plugin/plugin.json", '{\n  "version": "0.5.2",\n  "args": ["-y", "@error-path/opendrs@0.5.2", "mcp"]\n}\n');
   writeRepoFile("plugin/commands/opendrs-review.md", "Run !`npx @error-path/opendrs@0.5.2 brief`.\n");
   writeRepoFile("plugin/skills/opendrs/SKILL.md", "npx @error-path/opendrs@0.5.2 score\nnpx @error-path/opendrs@0.5.2 brief\n");
+  writeRepoFile("llms-install.md", '"args": ["-y", "@error-path/opendrs@0.5.2", "mcp"]\n`npx -y @error-path/opendrs@0.5.2 mcp`\n');
   writeRepoFile(DOGFOOD_FILE, `runs:\n  steps:\n    - uses: error-path/opendrs@${OLD_COMMIT} # v0.5.2\n`);
 });
 
@@ -100,10 +101,11 @@ describe("pinPlugin", () => {
     expect(JSON.parse(readRepoFile("plugin/.claude-plugin/plugin.json"))).toEqual({ version: "0.6.0", args: ["-y", "@error-path/opendrs@0.6.0", "mcp"] });
     expect(readRepoFile("plugin/commands/opendrs-review.md")).toBe("Run !`npx @error-path/opendrs@0.6.0 brief`.\n");
     expect(readRepoFile("plugin/skills/opendrs/SKILL.md")).toBe("npx @error-path/opendrs@0.6.0 score\nnpx @error-path/opendrs@0.6.0 brief\n");
+    expect(readRepoFile("llms-install.md")).toBe('"args": ["-y", "@error-path/opendrs@0.6.0", "mcp"]\n`npx -y @error-path/opendrs@0.6.0 mcp`\n');
   });
 
   it("returns only the files it changed, so a second run changes nothing", () => {
-    expect(pinPlugin(rootDir, "0.6.0")).toHaveLength(3);
+    expect(pinPlugin(rootDir, "0.6.0")).toHaveLength(4);
     expect(pinPlugin(rootDir, "0.6.0")).toEqual([]);
   });
 
