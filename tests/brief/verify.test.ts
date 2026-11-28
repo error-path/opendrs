@@ -173,7 +173,7 @@ describe("verifyBrief", () => {
     const md = renderBriefMarkdown(out);
     expect(md).toContain("(`package.json:4`). [verified · new]\n");
     expect(md).toContain("«fix: NPE in a.ts» [unverified]\n");
-    expect(md).toContain("bring that problem back? [downgraded by verifier: the fix is intact]\n");
+    expect(md).toContain("bring that problem back? [downgraded by verifier: «the fix is intact»]\n");
     expect(md).not.toContain("`package.json`\n");
     repo.cleanup();
   });

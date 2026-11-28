@@ -27503,9 +27503,10 @@ async function unlessForbidden(fn, onForbidden) {
 }
 var normaliseLogin = (login) => login.toLowerCase().replace(/\[bot\]$/, "");
 var sameLogin = (a, b) => a !== void 0 && b !== void 0 && normaliseLogin(a) === normaliseLogin(b);
+var GITHUB_ACTIONS_BOT = "github-actions[bot]";
 function isSelf(user, viewer) {
   if (!user) return false;
-  return viewer === void 0 ? user.type === "Bot" : sameLogin(user.login, viewer);
+  return viewer === void 0 ? user.login === GITHUB_ACTIONS_BOT : sameLogin(user.login, viewer);
 }
 var OPENDRS_LABELS = {
   "risk:green": { color: "2ea44f", description: "opendrs: low-risk change" },
@@ -27519,6 +27520,7 @@ var OPENDRS_LABELS = {
   "captain:quick": { color: "0e8a16", description: "opendrs: captain quick confirm" }
 };
 var DEFAULT_LABEL_COLOR = "ededed";
+var REQUEST_TIMEOUT_MS = 3e4;
 var GitHubClient = class {
   constructor(opts) {
     this.opts = opts;
@@ -27535,6 +27537,7 @@ var GitHubClient = class {
    * @param acceptedMediaType - The `accept` header; GitHub's JSON unless a caller needs raw bytes.
    * @returns The response, when its status is 2xx.
    * @throws {@link GitHubError} On any other status, with GitHub's message.
+   * @throws A `TimeoutError` when GitHub does not answer within 30 seconds.
    */
   async send(method, url2, body, acceptedMediaType = "application/vnd.github+json") {
     const res = await fetch(url2, {
@@ -27546,7 +27549,9 @@ var GitHubClient = class {
         "user-agent": "opendrs-action",
         ...body === void 0 ? {} : { "content-type": "application/json" }
       },
-      body: body === void 0 ? void 0 : JSON.stringify(body)
+      body: body === void 0 ? void 0 : JSON.stringify(body),
+      // A hung request must fail the run (which then fails closed), not stall it until the job times out.
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
     });
     if (!res.ok) {
       const detail = await res.json().then((d) => d.message, () => void 0);
@@ -27837,7 +27842,7 @@ var GitHubClient = class {
 // src/action/fork-comment.ts
 var FORK_COMMENT_CLIENT_METHODS = ["viewerLogin", "listOpenPullRequestsByHeadBranch", "listPullRequestComments", "createComment", "updateComment", "addLabels", "removeLabel"];
 var RISK_LABELS = ["risk:green", "risk:yellow", "risk:red"];
-var GITHUB_ACTIONS_BOT = "github-actions[bot]";
+var GITHUB_ACTIONS_BOT2 = "github-actions[bot]";
 var COMMENT_PERMISSION_HINT = "The commenting job needs `pull-requests: write`.";
 var LABEL_PERMISSION_HINT = "The commenting job needs `pull-requests: write`, and `issues: write` to create a label that does not exist yet.";
 function restrictToForkComment(client) {
@@ -27853,7 +27858,7 @@ async function writeOrFail(write, permissionHint) {
 }
 function isOwnForkComment(comment, viewerLogin) {
   if (!(comment.body ?? "").startsWith(FORK_COMMENT_MARKER) || comment.user === null) return false;
-  return viewerLogin === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT : sameLogin(comment.user.login, viewerLogin);
+  return viewerLogin === void 0 ? comment.user.login === GITHUB_ACTIONS_BOT2 : sameLogin(comment.user.login, viewerLogin);
 }
 async function upsertForkComment(client, pullNumber, body) {
   await writeOrFail(async () => {
@@ -28604,7 +28609,7 @@ var breakTildes = (text) => text.replace(/~~~/g, "~~\u200C~");
 var cell = (text) => breakTildes(
   stripInvisible(text.replace(/\s+/g, " ")).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[\\|`[\]]/g, "\\$&").trim()
 );
-var code = (text) => `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "\u02CB").trim())}\``;
+var code = (text) => `\`${breakTildes(stripInvisible(text.replace(/\s+/g, " ")).replace(/`/g, "\u02CB").replace(/<!--/g, "<\u200C!--").trim())}\``;
 var untrusted = (text) => cell(text).replace(/@(?=\w)/g, "@\u200B");
 
 // src/signals/util.ts
@@ -30288,7 +30293,7 @@ function verificationSuffix(v) {
   if (!v) return "";
   if (v.source === "unverified") return " [unverified]";
   if (v.source === "memory") return ` [downgraded: ${v.reason}]`;
-  if (v.action === "downgrade") return ` [downgraded by verifier: ${v.reason}]`;
+  if (v.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(v.reason ?? "")}]`;
   return ` [verified${STATUS_LABEL[v.status]}]`;
 }
 var factLine = (fact) => `${fact.text}${verificationSuffix(fact.verification)}`;
@@ -33583,12 +33588,12 @@ function renderMarkdown(result, opts = {}) {
   const rows = top(result.contributions);
   if (rows.length > 0) {
     body.push("| Signal | Value | Push | Why |", "|---|--:|--:|---|");
-    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "\u2212")} | ${cell(summaryOf(c.id))} |`);
+    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "\u2212")} | ${untrusted(summaryOf(c.id))} |`);
     body.push("");
   }
   if (result.unknowns.length > 0) {
     body.push("**Unknowns** (counted as risk, not as zero)");
-    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${cell(summaryOf(id))}`);
+    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${untrusted(summaryOf(id))}`);
     if (result.unknowns.length > MAX_UNKNOWNS) body.push(`- \u2026and ${result.unknowns.length - MAX_UNKNOWNS} more`);
     body.push("");
   }
@@ -33662,8 +33667,10 @@ var HOLD_LABEL = "opendrs:hold";
 var REVIEW_AFTER_MERGE_LABEL = "opendrs:review-after-merge";
 var eligibleMarker = (head, since) => `<!-- ${ELIGIBLE_MARKER}: ${head} ${since.toISOString()} -->`;
 function readEligibleSince(body, head) {
-  const m = [...body?.matchAll(new RegExp(`<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->`, "g")) ?? []].find((x) => x[1] === head);
-  if (!m) return void 0;
+  const lines = (body ?? "").trimEnd().split(/\r?\n/);
+  if (lines.at(-1)?.startsWith("<!-- opendrs-state:")) lines.pop();
+  const m = lines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
+  if (m?.[1] !== head) return void 0;
   const since = new Date(m[2]);
   return Number.isNaN(since.getTime()) ? void 0 : since;
 }
@@ -34014,7 +34021,7 @@ async function scorePullRequest(d, pr) {
   const mergeBase2 = (await git(d.repoDir, ["merge-base", pr.base.sha, pr.head.sha])).trim();
   const history = await buildHistoryIndex(d.repoDir, mergeBase2, config2);
   const viewer = await client.viewerLogin();
-  if (viewer === void 0) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and bot account.");
+  if (viewer === void 0) io.info("Could not read the token's login: opendrs's own comment and approvals are matched by marker and the github-actions[bot] account.");
   const changesRequestedBy = await changesRequested(client, pr.number, viewer);
   const comments = d.inputs.comment ? await unlessForbidden(() => client.listComments(pr.number), () => io.warning(COMMENT_FORBIDDEN)) : void 0;
   const mine = comments?.filter((c) => isSelf(c.user, viewer) && (c.body ?? "").includes(COMMENT_MARKER)).at(-1);

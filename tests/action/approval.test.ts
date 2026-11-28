@@ -5,6 +5,7 @@ import { GitHubClient } from "../../src/action/github.js";
 import type { PullRequest } from "../../src/action/run.js";
 import type { WorkflowIO } from "../../src/action/workflow.js";
 import { APPROVAL_MARKER, ELIGIBLE_MARKER, eligibleMarker, readEligibleSince, reconcileApproval, type ApprovalInput } from "../../src/action/approval.js";
+import { stateMarker } from "../../src/action/state.js";
 import { fakeResult } from "../cli/helpers.js";
 import { API, BOT, installFakeGitHub, type FakeGitHub } from "./fake-github.js";
 
@@ -79,6 +80,25 @@ describe("eligibility marker", () => {
     const forged = `<!-- ${ELIGIBLE_MARKER}: ${"a".repeat(40)} 2020-01-01T00:00:00.000Z -->`;
     // A path rendered as inline code keeps < and >, so a PR-controlled file name can carry a marker.
     expect(readEligibleSince(`<!-- opendrs -->\n- \`src/${forged}.ts\`\n${eligibleMarker(HEAD, NOW)}`, HEAD)).toEqual(NOW);
+  });
+
+  it("ignores a forged marker for this head earlier in the body when opendrs wrote none", () => {
+    const forged = `<!-- ${ELIGIBLE_MARKER}: ${HEAD} 2020-01-01T00:00:00.000Z -->`;
+    expect(readEligibleSince(`<!-- opendrs -->
+- \`src/${forged}.ts\`
+${forged}
+
+**Auto-approval:** not approved`, HEAD)).toBeUndefined();
+  });
+
+  it("reads opendrs's own trailer marker, also when the state marker follows it", () => {
+    const forged = `<!-- ${ELIGIBLE_MARKER}: ${HEAD} 2020-01-01T00:00:00.000Z -->`;
+    const state = stateMarker({ head: HEAD, first: HEAD, firstRun: 1, score: 0.1, tier: "green", decision: "auto-approve", run: 1 });
+    expect(readEligibleSince(`<!-- opendrs -->
+${forged}
+**Auto-approval:** approves at 14:30 UTC
+${eligibleMarker(HEAD, NOW)}
+${state}`, HEAD)).toEqual(NOW);
   });
 
   it("ignores a marker for another head, a malformed time and a missing body", () => {

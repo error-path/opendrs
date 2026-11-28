@@ -71,13 +71,13 @@ export function renderMarkdown(result: ScoreResult, opts: { omitBrief?: boolean;
   const rows = top(result.contributions);
   if (rows.length > 0) {
     body.push("| Signal | Value | Push | Why |", "|---|--:|--:|---|");
-    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "−")} | ${cell(summaryOf(c.id))} |`);
+    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "−")} | ${untrusted(summaryOf(c.id))} |`);
     body.push("");
   }
 
   if (result.unknowns.length > 0) {
     body.push("**Unknowns** (counted as risk, not as zero)");
-    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${cell(summaryOf(id))}`);
+    for (const id of result.unknowns.slice(0, MAX_UNKNOWNS)) body.push(`- \`${id}\`: ${untrusted(summaryOf(id))}`);
     if (result.unknowns.length > MAX_UNKNOWNS) body.push(`- …and ${result.unknowns.length - MAX_UNKNOWNS} more`);
     body.push("");
   }

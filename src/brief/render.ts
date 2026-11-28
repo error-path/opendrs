@@ -20,7 +20,8 @@ function verificationSuffix(v: Verification | undefined): string {
   if (!v) return "";
   if (v.source === "unverified") return " [unverified]";
   if (v.source === "memory") return ` [downgraded: ${v.reason}]`;
-  if (v.action === "downgrade") return ` [downgraded by verifier: ${v.reason}]`;
+  // The verifier's reason is LLM output shaped by the diff, so it is quoted like the judge's reasons (spec §7).
+  if (v.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(v.reason ?? "")}]`;
   return ` [verified${STATUS_LABEL[v.status]}]`;
 }
 
