@@ -25,12 +25,12 @@ export const eligibleMarker = (head: string, since: Date) => `<!-- ${ELIGIBLE_MA
  * @returns The recorded time, or undefined when the trailer holds no valid marker for `head`.
  */
 export function readEligibleSince(body: string | undefined, head: string): Date | undefined {
-  const lines = (body ?? "").trimEnd().split(/\r?\n/);
-  if (lines.at(-1)?.startsWith("<!-- opendrs-state:")) lines.pop();
-  const m = lines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
-  if (m?.[1] !== head) return undefined;
-  const since = new Date(m[2]!);
-  return Number.isNaN(since.getTime()) ? undefined : since;
+  const commentLines = (body ?? "").trimEnd().split(/\r?\n/);
+  if (commentLines.at(-1)?.startsWith("<!-- opendrs-state:")) commentLines.pop();
+  const trailerMarkerMatch = commentLines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
+  if (trailerMarkerMatch?.[1] !== head) return undefined;
+  const eligibleSinceDate = new Date(trailerMarkerMatch[2]!);
+  return Number.isNaN(eligibleSinceDate.getTime()) ? undefined : eligibleSinceDate;
 }
 
 /** Decisions that may land without a human approving first. */

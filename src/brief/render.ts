@@ -15,14 +15,17 @@ const lineRange = (h: ReviewBrief["reviewFirst"][number]["hunks"][number]) => `L
  * The verifier's suffix for one item (verification spec §3.5): fixed strings the skill evals and the
  * precision study match on. Empty when the item was never verified (llm.verify off). A dropped item
  * never reaches a line, so `drop` has no suffix.
+ *
+ * @param verification - The item's verification result, or undefined when it was never verified.
+ * @returns The suffix to append to the item's line, starting with a space; empty when unverified.
  */
-function verificationSuffix(v: Verification | undefined): string {
-  if (!v) return "";
-  if (v.source === "unverified") return " [unverified]";
-  if (v.source === "memory") return ` [downgraded: ${v.reason}]`;
+function verificationSuffix(verification: Verification | undefined): string {
+  if (!verification) return "";
+  if (verification.source === "unverified") return " [unverified]";
+  if (verification.source === "memory") return ` [downgraded: ${verification.reason}]`;
   // The verifier's reason is LLM output shaped by the diff, so it is quoted like the judge's reasons (spec §7).
-  if (v.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(v.reason ?? "")}]`;
-  return ` [verified${STATUS_LABEL[v.status]}]`;
+  if (verification.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(verification.reason ?? "")}]`;
+  return ` [verified${STATUS_LABEL[verification.status]}]`;
 }
 
 /** A captain fact's text plus its verification suffix: one helper for the AI brief and the PR comment. */

@@ -30289,12 +30289,12 @@ var CAPTAIN_LABEL = { careful: "careful review", standard: "standard review", qu
 var STATUS_LABEL = { new: " \xB7 new", pre_existing: " \xB7 pre-existing", unknown: "" };
 var reasonText = (reasons) => reasons.map((r) => r.text).join("; ");
 var lineRange = (h) => `L${h.newStart}\u2013${h.newStart + Math.max(h.newLines, 1) - 1}`;
-function verificationSuffix(v) {
-  if (!v) return "";
-  if (v.source === "unverified") return " [unverified]";
-  if (v.source === "memory") return ` [downgraded: ${v.reason}]`;
-  if (v.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(v.reason ?? "")}]`;
-  return ` [verified${STATUS_LABEL[v.status]}]`;
+function verificationSuffix(verification) {
+  if (!verification) return "";
+  if (verification.source === "unverified") return " [unverified]";
+  if (verification.source === "memory") return ` [downgraded: ${verification.reason}]`;
+  if (verification.action === "downgrade") return ` [downgraded by verifier: ${quoteUntrusted(verification.reason ?? "")}]`;
+  return ` [verified${STATUS_LABEL[verification.status]}]`;
 }
 var factLine = (fact) => `${fact.text}${verificationSuffix(fact.verification)}`;
 function renderBriefMarkdown(brief) {
@@ -33588,7 +33588,9 @@ function renderMarkdown(result, opts = {}) {
   const rows = top(result.contributions);
   if (rows.length > 0) {
     body.push("| Signal | Value | Push | Why |", "|---|--:|--:|---|");
-    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "\u2212")} | ${untrusted(summaryOf(c.id))} |`);
+    for (const signalRow of rows) {
+      body.push(`| \`${signalRow.id}\` | ${signalRow.value.toFixed(2)} | ${signed(signalRow.contribution, "\u2212")} | ${untrusted(summaryOf(signalRow.id))} |`);
+    }
     body.push("");
   }
   if (result.unknowns.length > 0) {
@@ -33667,12 +33669,12 @@ var HOLD_LABEL = "opendrs:hold";
 var REVIEW_AFTER_MERGE_LABEL = "opendrs:review-after-merge";
 var eligibleMarker = (head, since) => `<!-- ${ELIGIBLE_MARKER}: ${head} ${since.toISOString()} -->`;
 function readEligibleSince(body, head) {
-  const lines = (body ?? "").trimEnd().split(/\r?\n/);
-  if (lines.at(-1)?.startsWith("<!-- opendrs-state:")) lines.pop();
-  const m = lines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
-  if (m?.[1] !== head) return void 0;
-  const since = new Date(m[2]);
-  return Number.isNaN(since.getTime()) ? void 0 : since;
+  const commentLines = (body ?? "").trimEnd().split(/\r?\n/);
+  if (commentLines.at(-1)?.startsWith("<!-- opendrs-state:")) commentLines.pop();
+  const trailerMarkerMatch = commentLines.at(-1)?.match(new RegExp(`^<!-- ${ELIGIBLE_MARKER}: (\\S+) (\\S+) -->$`));
+  if (trailerMarkerMatch?.[1] !== head) return void 0;
+  const eligibleSinceDate = new Date(trailerMarkerMatch[2]);
+  return Number.isNaN(eligibleSinceDate.getTime()) ? void 0 : eligibleSinceDate;
 }
 var ELIGIBLE = /* @__PURE__ */ new Set(["auto-approve", "deferred-review"]);
 var noreplyLogin = (email3) => email3.match(/^(?:\d+\+)?([A-Za-z0-9-]+)@users\.noreply\.github\.com$/i)?.[1];

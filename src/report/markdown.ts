@@ -71,7 +71,9 @@ export function renderMarkdown(result: ScoreResult, opts: { omitBrief?: boolean;
   const rows = top(result.contributions);
   if (rows.length > 0) {
     body.push("| Signal | Value | Push | Why |", "|---|--:|--:|---|");
-    for (const c of rows) body.push(`| \`${c.id}\` | ${c.value.toFixed(2)} | ${signed(c.contribution, "−")} | ${untrusted(summaryOf(c.id))} |`);
+    for (const signalRow of rows) {
+      body.push(`| \`${signalRow.id}\` | ${signalRow.value.toFixed(2)} | ${signed(signalRow.contribution, "−")} | ${untrusted(summaryOf(signalRow.id))} |`);
+    }
     body.push("");
   }
 
